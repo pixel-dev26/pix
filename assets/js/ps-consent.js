@@ -216,13 +216,18 @@
         + '</div>';
     }).join('');
 
+    /* .ps-consent__copy wraps the title and lede so the panel can put the words
+       in one grid column and the buttons in the next. Without it the two text
+       nodes would each take a cell of their own and the layout falls apart. */
     root.innerHTML =
       '<div class="ps-consent__panel">'
+      + '<div class="ps-consent__copy">'
       + '<h2 class="ps-consent__title" id="ps-consent-title">Your choice about data</h2>'
       + '<p class="ps-consent__lede" id="ps-consent-desc">We use cookies and similar tools '
       + 'for analytics and to see how pages are used. None of it runs until you choose. '
       + 'You can change this at any time from <strong>Cookie preferences</strong> in the footer. '
       + '<a href="/privacy-policy">Read the privacy policy</a>.</p>'
+      + '</div>'
       + '<div class="ps-consent__rows" hidden>' + rows + '</div>'
       + '<div class="ps-consent__actions">'
       + '<button type="button" class="ps-consent__btn ps-consent__btn--primary" data-act="accept">Accept all</button>'

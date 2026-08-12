@@ -39,14 +39,40 @@
   }
 }
 
+/* Two columns: the words on the left, the buttons on the right, vertically
+   centred against each other. The category toggles are the exception — they
+   span both columns on the row underneath, because they are a panel that opens
+   rather than a third thing sitting in the bar.
+
+   Placement is explicit rather than left to auto-flow, and that is not
+   decoration: the DOM order is copy -> rows -> actions, so auto-placement would
+   put the buttons on the row BELOW the toggles instead of up beside the title.
+   The order is deliberate — with the manage panel open, a keyboard user runs
+   through the toggles and arrives at Save, rather than tabbing past the buttons
+   to reach the switches they control.
+
+   `auto` on the second track, not a fixed width, so the column is exactly as
+   wide as the three buttons need and every remaining pixel goes to the text.
+   minmax(0, 1fr) on the first, so a long lede wraps instead of forcing the
+   grid wider than the panel. */
 .ps-consent__panel {
   width: 100%;
   max-width: 61rem;
-  padding: var(--ps-space-5);
+  padding: 1rem;
   border: 1px solid var(--ps-line-hairline);
   border-radius: var(--ps-radius-xl);
   background: var(--ps-surface-page);
   box-shadow: var(--ps-shadow-lg);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--ps-space-5);
+  row-gap: var(--ps-space-4);
+}
+
+.ps-consent__copy {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .ps-consent__title {
@@ -58,9 +84,11 @@
   font-size: 16px;
 }
 
+/* No bottom margin any more — the lede is the last thing in its column, and the
+   gap to the toggles below is the grid's row-gap. Leaving it would double up. */
 .ps-consent__lede {
-  margin: 0 0 var(--ps-space-4);
-  font-size: 13px;
+  margin: 0;
+  font-size: 11px;
   line-height: 1.65;
   color: #000000;
 }
@@ -75,10 +103,14 @@
 
 /* ------------------------------------------------------------ the categories */
 
+/* Full width on the row under both columns. Bottom margin is gone — the space
+   below is the panel's own row-gap now, and keeping both stacked two gaps. */
 .ps-consent__rows {
+  grid-column: 1 / -1;
+  grid-row: 2;
   display: grid;
   gap: var(--ps-space-4);
-  margin: 0 0 var(--ps-space-5);
+  margin: 0;
   padding: var(--ps-space-4) 0 0;
   border-top: 1px solid var(--ps-line-hairline);
 }
@@ -124,9 +156,15 @@
 
 /* ---------------------------------------------------------------- the buttons */
 
+/* Right column, same row as the copy. nowrap keeps the three side by side —
+   the track is sized `auto`, so it asks for exactly the width they need and
+   there is nothing for them to wrap onto. The phone block below puts wrapping
+   back, where they stack full width instead. */
 .ps-consent__actions {
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--ps-space-3);
 }
 
@@ -134,20 +172,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: var(--ps-target-min);
-  padding: var(--ps-space-3) var(--ps-space-5);
+  min-height: auto;
+  padding: 7px 15px;
   border: 1px solid transparent;
   border-radius: var(--ps-radius-pill);
   font-family: inherit;
-  font-size: var(--ps-text-small);
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.06em;
+  letter-spacing: normal;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color var(--ps-motion-fast) var(--ps-motion-ease),
-    color var(--ps-motion-fast) var(--ps-motion-ease),
-    border-color var(--ps-motion-fast) var(--ps-motion-ease);
+  transition: background-color var(--ps-motion-fast) var(--ps-motion-ease), color var(--ps-motion-fast) var(--ps-motion-ease), border-color var(--ps-motion-fast) var(--ps-motion-ease);
 }
 
 /* Accept and Reject share this class deliberately — see the file header. */
@@ -176,9 +212,9 @@
 }
 
 .ps-consent__btn:focus-visible {
-  outline: var(--ps-focus-width) solid var(--ps-ink-strongest);
-  outline-offset: var(--ps-focus-offset);
-  box-shadow: 0 0 0 6px var(--ps-focus-colour);
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: 0;
 }
 
 /* --------------------------------------------------------------------- phone */
@@ -193,6 +229,23 @@
     /* A long notice must never trap the page behind it on a short screen. */
     max-height: 80vh;
     overflow-y: auto;
+    /* One column — there is no room to sit the buttons beside the words. */
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Back to auto-placement. The DOM order — copy, toggles, buttons — is already
+     the right stacking order here, and letting it flow means the empty toggle
+     row costs nothing while it is hidden. Pinning the buttons to row 3 instead
+     would leave an empty row 2 and pay the row-gap twice. */
+  .ps-consent__copy,
+  .ps-consent__rows,
+  .ps-consent__actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .ps-consent__actions {
+    flex-wrap: wrap;
   }
 
   .ps-consent__actions>.ps-consent__btn {
