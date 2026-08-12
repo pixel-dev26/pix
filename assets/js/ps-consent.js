@@ -271,7 +271,11 @@
 
   window.psConsent = {
     open: function () { render((read() || {}).grants); },
-    get: function () { return (read() || {}).grants || null; }
+    get: function () { return (read() || {}).grants || null; },
+    // Forget the stored choice, so the notice comes back on the next load exactly
+    // as a first-time visitor sees it. Returns nothing on purpose — callers should
+    // reload rather than assume anything about the current page's state.
+    reset: function () { try { window.localStorage.removeItem(STORE); } catch (e) { } }
   };
 
   // "Cookie preferences" anywhere on the page reopens the notice. Delegated, so the
@@ -297,10 +301,41 @@
     apply(denied);
   } else {
     apply({ necessary: true, analytics: false, recording: false });
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function () { render(null); });
-    } else {
-      render(null);
-    }
+    whenReady(function () { render(null); });
+  }
+
+  /* ------------------------------------------------------ ?consent= override */
+
+  /* Once a visitor has chosen, the notice never auto-shows again — that is the
+     whole point of storing the choice, and it is why the bar is invisible on a
+     browser that has used the site before. That makes it awkward to look at
+     while working on it, since the only ways back were the footer link or
+     clearing localStorage by hand.
+
+     ?consent=show    opens the notice over the current page. The stored choice
+                      is NOT touched: the real grants are still applied above,
+                      and the toggles come up reflecting them, so this shows the
+                      component exactly as a returning visitor would see it via
+                      "Cookie preferences".
+     ?consent=reset   forgets the choice and reloads, so the page comes up as a
+                      genuine first visit. The param is stripped from the URL
+                      first, or the reload would loop.
+
+     Safe to ship. Neither branch grants anything or bypasses a decision — the
+     panel it opens is the same one the footer link already opens on every page,
+     and nothing here runs without the query string being typed deliberately. */
+  var mode = (/[?&]consent=([a-z]+)/i.exec(window.location.search) || [])[1];
+
+  if (mode === 'reset') {
+    window.psConsent.reset();
+    var clean = window.location.href.replace(/([?&])consent=[a-z]+&?/i, '$1').replace(/[?&]$/, '');
+    window.location.replace(clean);
+  } else if (mode === 'show') {
+    whenReady(function () { window.psConsent.open(); });
+  }
+
+  function whenReady(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
   }
 })();

@@ -427,3 +427,41 @@
     transform: translate(-50%, -50%)
   }
 }
+/* --------------------------------------------------------------------- B9 --
+   Homepage showreel: the grown video's bottom corners were being painted over,
+   so the 20px border-radius vanished along the bottom edge.
+
+   .video-container grows on scroll — an inline --video-scale written per frame
+   by the script at the foot of index.html, applied as transform:scale() with
+   transform-origin:center. Scaling from the centre pushes the box out by
+   (grownHeight - naturalHeight) / 2 at BOTH ends, but the box only reserves
+   50px of room below it (section.video-banner padding-bottom, main.css:7888).
+   Past that it runs into .client-logo, which has an opaque white background and
+   comes later in the document, so it paints on top — clipping the rounded
+   corners off square.
+
+   Measured overflow past the section's own bottom edge, at peak scale:
+       1500 x 900   35px      <- reported
+       1700 x 900   16px      <- same defect, just smaller
+
+   This is the mirror of a bug already fixed at the TOP of this section, where
+   the same growth was overlapping .brand-slider by ~15px at 1599px and
+   padding-top was raised to 141px (responsive.css:2152). The bottom never got
+   the same treatment.
+
+   15vh, not a flat pixel value, because the overflow scales with the viewport.
+   Below 1600 responsive.css:1933 sets .video-container{height:70vh}, so the
+   peak scale is capped by height and the overflow works out to exactly
+   0.15 x vh - 50px; adding back the 50px design gap makes the required padding
+   0.15 x vh. That also covers the shallower >1600 case, where the height comes
+   from aspect-ratio instead. max() keeps the original 50px as a floor on short
+   viewports.
+
+   Scoped to >=992px because the growth is gated to desktop — isDesktop() in
+   that script forces --video-scale to 1 below 992, so there is no overflow to
+   clear and phones keep their existing 50px. */
+@media (min-width: 992px) {
+  section.video-banner {
+    padding-bottom: max(50px, 15vh)
+  }
+}
