@@ -1052,8 +1052,9 @@ textarea:focus-visible,
   color:rgba(255,255,255,.62);margin:0 0 var(--psb-s6);   /* 5.4:1 — AA */
 }
 .ps-lead__cta{
-  background:#FFFFFF;font-size:15px;padding:15px 30px;
+  background:#FFFFFF;font-size:15px;padding:5px 20px;
   border-color:#FFFFFF;box-shadow:none;
+  text-transform: uppercase;
 }
 .ps-lead:hover .ps-lead__cta{background:var(--psb-yellow);border-color:var(--psb-yellow);gap:16px}
 @media (max-width:991px){
@@ -1086,7 +1087,7 @@ textarea:focus-visible,
   color:var(--psb-muted);                      /* 6.25:1 — AA  */
   background:#fff;
   border:2px solid var(--psb-line-strong);
-  padding:11px 18px 11px 15px;
+  padding:4px 18px 4px 15px;
   display:inline-flex;align-items:center;gap:9px;
   transition:color var(--psb-fast) linear,border-color var(--psb-fast) linear,
              background-color var(--psb-fast) linear,transform var(--psb-fast) var(--psb-ease),
@@ -1128,7 +1129,7 @@ textarea:focus-visible,
 .ps-count:empty{margin:0}
 
 /* -------------------------------------------------------------- card grid */
-.ps-grid{gap:var(--psb-s7) var(--psb-s6)}
+.ps-grid{gap:var(--psb-s6) var(--psb-s6)}
 /* Restated after the unconditional rule above, which is later in the file than
    the @media block at line 463 and beat it at equal specificity -- so the mobile
    gap was 52px, not the 26px intended, costing ~26px of dead scroll per card
