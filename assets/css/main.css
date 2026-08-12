@@ -6422,6 +6422,11 @@ ul.creative-pointers li::marker {
     line-height: 1.2
 }
 
+
+.main-title .textture-text {
+    font-size: 60px;
+}
+
 .textture-text-1,
 .textture-text-2 {
     background: url(../images/dflighdf.png);
@@ -15493,10 +15498,10 @@ a.faq-tab .faq-tab-1 p {
 
 .psWhy__title {
     margin: 0 0 12px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     line-height: 1.32;
-    letter-spacing: 1px;
+    letter-spacing: normal;
     color: #000;
 }
 
