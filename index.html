@@ -3806,19 +3806,30 @@
                                      .mh-card-box:hover in main.css). It is sized for up to
                                      eight: 474px resting, 600px hovered, inside a 700px card.
 
-                                     FIVE of the eight are here. assets/images/ holds exactly
-                                     h1-h5 in this cut-out treatment and nothing else — the
-                                     other three faces have no artwork yet. Drop h6/h7/h8.png
-                                     in beside these and add three more <img> lines; no CSS
-                                     change is needed, the row already has the room. -->
+                                     SEVEN of the eight are here — h1-h7, every face that
+                                     exists in this cut-out treatment. An eighth still fits
+                                     (474px resting / 600px hovered inside the 700px card);
+                                     drop h8.png in beside these and add one more <img>.
+
+                                     IF YOU DO, add a `.mh-section.mh-anim .mh-avatars >
+                                     :nth-child(8)` delay in main.css alongside 1-7. Those
+                                     delays are written out one child at a time, so a face
+                                     with no rule of its own gets delay 0 and pops in ahead
+                                     of the staggered row instead of after it. -->
                                 <div class="mh-avatars">
                                     <img src="assets/images/h1.png" alt="" loading="lazy" width="56" height="56"
                                         decoding="async">
                                     <img src="assets/images/h2.png" alt="" loading="lazy" width="56" height="56"
                                         decoding="async">
+                                    <img src="assets/images/h3.png" alt="" loading="lazy" width="56" height="56"
+                                        decoding="async">
                                     <img src="assets/images/h4.png" alt="" loading="lazy" width="56" height="56"
                                         decoding="async">
                                     <img src="assets/images/h5.png" alt="" loading="lazy" width="56" height="56"
+                                        decoding="async">
+                                    <img src="assets/images/h6.png" alt="" loading="lazy" width="56" height="56"
+                                        decoding="async">
+                                    <img src="assets/images/h7.png" alt="" loading="lazy" width="56" height="56"
                                         decoding="async">
                                 </div>
 
@@ -3836,74 +3847,108 @@
                                      clipped off to the right, so lazy loading never fires for
                                      them — the boxes reserve correctly and the pictures stay
                                      blank, which reads as the loop being cut off after the
-                                     first few faces. Costs nothing extra: only four distinct
+                                     first few faces. Costs nothing extra: only seven distinct
                                      files are referenced here however many times they appear,
-                                     and below 991px this strip is the only copy on the page. -->
+                                     and below 991px this strip is the only copy on the page.
+
+                                     SIX sets of seven faces, and the count is not free to
+                                     change. The loop slides the track by -50%, so the two
+                                     halves have to be identical — an ODD number of sets puts
+                                     a seam mid-set and the faces jump. Three sets per half
+                                     is also the floor: at 64px + 10px each, a set is 518px,
+                                     and one half has to cover the widest this strip ever
+                                     gets — 991px of viewport plus 2 x 28px of negative
+                                     margin bleeding it past the card, so 1047px. Two sets
+                                     (1036px) is 11px short of that and drags a gap into
+                                     view; three (1554px) clears it. Change the set count
+                                     and the 105s duration in main.css moves with it. -->
                                 <div class="mh-avatars-marquee" aria-hidden="true">
                                     <div class="mh-avatars-marquee__track">
+                                        <!-- half one: sets 1-3 -->
                                         <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h3.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
-                                        <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
+                                        <img src="assets/images/h6.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
-                                        <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
-                                            decoding="async">
-                                        <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
-                                            decoding="async">
-                                        <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
+                                        <img src="assets/images/h7.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
+                                        <img src="assets/images/h3.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
                                         <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h6.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h7.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
+                                        <img src="assets/images/h3.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
                                         <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h6.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h7.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <!-- half two: identical to half one, so -50% lands seamlessly -->
+                                        <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h3.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h6.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h7.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
+                                        <img src="assets/images/h3.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
                                         <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h6.png" alt="" loading="eager" width="56" height="56"
+                                            decoding="async">
+                                        <img src="assets/images/h7.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
-                                        <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
-                                            decoding="async">
-                                        <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
-                                            decoding="async">
-                                        <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
-                                            decoding="async">
-                                        <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
+                                        <img src="assets/images/h3.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                         <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
-                                        <img src="assets/images/h1.png" alt="" loading="eager" width="56" height="56"
+                                        <img src="assets/images/h6.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
-                                        <img src="assets/images/h2.png" alt="" loading="eager" width="56" height="56"
-                                            decoding="async">
-                                        <img src="assets/images/h4.png" alt="" loading="eager" width="56" height="56"
-                                            decoding="async">
-                                        <img src="assets/images/h5.png" alt="" loading="eager" width="56" height="56"
+                                        <img src="assets/images/h7.png" alt="" loading="eager" width="56" height="56"
                                             decoding="async">
                                     </div>
                                 </div>
