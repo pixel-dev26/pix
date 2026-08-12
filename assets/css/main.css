@@ -1240,6 +1240,41 @@ h3.bgText {
     transform: translateX(-40px)
 }
 
+/* No hover response below 992px, by request. Three behaviours are switched off
+   together, because they are one effect: the marquee pausing under the pointer,
+   the hovered logo scaling to 1.12, and its neighbours sliding 40px out of its
+   way.
+
+   One query, not two, covers "below 991 and below 767" — max-width:991px already
+   contains every width below 767, and the effect is either on or off, so a
+   second block at 767 would have nothing left to say.
+
+   Worth knowing: on a touchscreen :hover does not simply go unused. A tap sets
+   the hover state and it STICKS until the next tap elsewhere, so on a phone the
+   old rules left a logo frozen mid-scale with the row parked and its neighbours
+   shoved aside. Turning them off here is what stops that, which is why
+   animation-play-state is forced back to `running` rather than just left alone —
+   the :hover selector still matches after a tap, so the paused value has to be
+   actively overridden.
+
+   Everything is reset in one rule: transform:none undoes the scale and both
+   neighbour shifts, transition:none stops any of it animating on the way out.
+   The marquee's own scroll animation is untouched. */
+@media (max-width: 991px) {
+    .logo-marquee-row:hover .logo-marquee-track {
+        animation-play-state: running
+    }
+
+    .logo-marquee-track .compny-logo,
+    .logo-marquee-track .compny-logo:hover,
+    .logo-marquee-track .compny-logo:hover~.compny-logo,
+    .logo-marquee-track .compny-logo:has(~ .compny-logo:hover) {
+        transform: none;
+        transition: none;
+        z-index: 1
+    }
+}
+
 .logo-marquee-track .compny-logo img.client-logo-img.logo-lg {
     max-height: 76px
 }
