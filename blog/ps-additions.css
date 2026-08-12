@@ -2079,7 +2079,7 @@ textarea:focus-visible,
    clamped to three lines. Clamping is visual only — the full title stays in the
    DOM, so the link's accessible name and the crawler's view are unchanged. */
 .ps-lead__title {
-  font-size: clamp(24px, calc(17px + 1.6vw), 38px);
+  font-size: 30px;
   line-height: 1.14;
   letter-spacing: -.02em;
   margin: 0 0 var(--psb-s4);

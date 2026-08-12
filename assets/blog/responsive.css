@@ -1389,6 +1389,31 @@
     font-size: 50px;
   }
 
+  .ps-lead__body {
+    padding: 30px !important;
+  }
+
+  .ps-lead__cta {
+    padding: 13px 40px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .ps-lead__meta {
+    margin: 0 0 30px !important;
+  }
+
+  .ps-lead__blurb {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, .78);
+    margin: 0 0 var(--psb-s5);
+    max-width: 100% !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   .team-img img {
     min-width: unset;
     /* width: 100%; */
