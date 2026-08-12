@@ -255,13 +255,44 @@
   height: auto;
 }
 
+/* Reordered to copyright, logo, links.
+   ---------------------------------------------------------------------------
+   Done in CSS rather than by moving the markup, and that is deliberate on two
+   counts.
+
+   1. Reach. 169 pages carry this bar and all of them load this file, so one
+      rule reorders every one of them. Editing the markup would be 169 identical
+      hand-edits with 169 chances to miss one or typo it.
+
+   2. Focus order. Reordering with `order` normally breaks WCAG 2.4.3, because
+      tab order follows the DOM while the eye follows the visual order. That
+      does not apply here, and only because of WHICH element moves: .psf__copy
+      is a <p> and cannot be focused. The two focusable things in this bar — the
+      logo link and the three legal links — keep their DOM order relative to
+      each other, so tabbing still runs left to right exactly as it looks.
+      If the logo or the nav ever needs to move instead, reorder the MARKUP;
+      do not extend this trick to them.
+
+   The grid is `auto 1fr auto` and auto-placement fills it in order, so with the
+   copy pulled first the tracks now read: copy in auto, logo in 1fr, nav in
+   auto. text-align:center was doing the centring while the copy sat in the
+   flexible middle track; now that the logo lives there, justify-self on the
+   brand does that job and the copy goes left. */
+.psf__legal .psf__copy {
+  order: -1;
+}
+
+.psf .psf__brand {
+  justify-self: center;
+}
+
 .psf .psf__copy {
   margin: 0;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
   color: var(--psf-muted);
-  text-align: center;
+  text-align: left;
 }
 
 .psf .psf__legal-nav ul {
@@ -377,13 +408,22 @@
     padding-top: 24px;
   }
 
+  /* The stack follows the same copyright, logo, links order as the wide bar, so
+     the footer does not reshuffle itself as the screen narrows. It used to run
+     logo, links, copyright — the two explicit `order` values that produced that
+     are gone, which lets the base order:-1 on the copy through and returns the
+     nav to source order behind the logo.
+
+     justify-self is reset to start because the base rule centres the brand in
+     the flexible middle track of the wide layout. Here the grid is a single 1fr
+     column with justify-items:start, so an inherited `center` would leave the
+     logo floating in the middle of an otherwise left-aligned stack. */
   .psf .psf__copy {
     text-align: left;
-    order: 3;
   }
 
-  .psf .psf__legal-nav {
-    order: 2;
+  .psf .psf__brand {
+    justify-self: start;
   }
 
   .psf .psf__brand img {

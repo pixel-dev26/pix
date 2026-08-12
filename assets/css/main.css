@@ -1193,10 +1193,31 @@ h3.bgText {
     width: 100%
 }
 
+/* The three compositing hints below are for iOS Safari specifically, where this
+   strip and the two in the AI-First section were reported as not animating at
+   all on real iPads and iPhones while running fine on desktop.
+
+   translate3d in the keyframes (rather than translateX) is the part that
+   usually does it: a 2D transform can be handled on the main thread, and iOS
+   drops or never starts such animations when the element sits inside an
+   overflow:hidden box within a non-root scroll container — which is exactly
+   this site, where <body> owns the scroll rather than the document element.
+   Naming the z axis forces the element onto its own compositor layer, so the
+   animation runs on the compositor thread where iOS will not stall it.
+
+   backface-visibility:hidden keeps iOS from folding that layer back into the
+   main one, which it will otherwise do for a purely 2D transform and take the
+   animation down with it. The -webkit- prefix is still required on iOS.
+
+   will-change asks for the layer up front instead of reactively at the first
+   frame — without it the first loop can visibly stutter on a phone. */
 .logo-marquee-track {
     display: flex;
     align-items: center;
     width: max-content;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
     animation: logoMarqueeScroll 36s linear infinite
 }
 
@@ -1208,13 +1229,16 @@ h3.bgText {
     animation-play-state: paused
 }
 
+/* translate3d, not translateX — see the note on .logo-marquee-track. The -50%
+   still resolves against this element's own border-box width, so the maths is
+   unchanged and the loop stays seamless; only the compositing path differs. */
 @keyframes logoMarqueeScroll {
     from {
-        transform: translateX(0)
+        transform: translate3d(0, 0, 0)
     }
 
     to {
-        transform: translateX(-50%)
+        transform: translate3d(-50%, 0, 0)
     }
 }
 
@@ -12056,18 +12080,43 @@ a.faq-tab .faq-tab-1 p {
         padding: 70px 0 0
     }
 
+    /* Pin and step come down so the card can be taller.
+       These two are what the height has to be subtracted from: the deepest card
+       parks at --svc-pin + 3 x --svc-step, and everything below that point is
+       the only room a card has. 82 + 3x14 = 124px was being reserved; 72 + 3x10
+       = 102px reserves 22px less, which goes straight into card height without
+       the stack losing its stepped edge. */
     .svc-stack {
-        --svc-pin: 82px;
-        --svc-step: 14px;
+        --svc-pin: 72px;
+        --svc-step: 10px;
         --svc-gap: 24px;
         --svc-radius: 22px;
-        /* svh, not vh: the small-viewport unit is measured with the browser
-           chrome showing, so the card is guaranteed to fit on screen even at
-           the moment a mobile address bar is expanded. The vh line above it is
-           the fallback for engines that do not know svh — an unknown unit
-           invalidates the whole declaration, so the earlier one survives. */
-        --svc-card-h: clamp(440px, 62vh, 580px);
-        --svc-card-h: clamp(440px, 62svh, 580px)
+    }
+
+    /* Height set here on the card itself, NOT as --svc-card-h on .svc-stack.
+       Same result, one less indirection: .svc-card's base rule is
+       `height: var(--svc-card-h)` at (0,1,0), and this selector is identical
+       specificity but later in the file, so it simply wins. The variable is
+       left defining the desktop height only.
+
+       Near-full-height, which is the point of the change. 100svh - 110px is the
+       deepest pin (102) plus 8px of air, so on any screen in this band the
+       assembled deck reaches almost exactly to the bottom of the viewport
+       rather than stopping short of it:
+           800px tall  ->  690px card, deck bottom 792
+          1024px tall  ->  914px card, deck bottom 1016
+           600px tall  ->  490px card, deck bottom 592
+       clamp's floor is 440 so a very short window still fits, and the 820 cap
+       stops a tall tablet from making a card nothing but empty artwork.
+
+       svh, not vh: the small-viewport unit is measured with the browser chrome
+       showing, so the card still fits at the moment a mobile address bar is
+       expanded. The vh line above is the fallback for engines that do not know
+       svh — an unknown unit invalidates the whole declaration, so the earlier
+       one survives. */
+    .svc-card {
+        height: clamp(440px, calc(100vh - 110px), 820px);
+        height: clamp(440px, calc(100svh - 110px), 820px)
     }
 
     /* The Video Studio band, widened. Below 992px the copy is bottom-aligned on
@@ -12100,20 +12149,30 @@ a.faq-tab .faq-tab-1 p {
         gap: 10px
     }
 
-    /* No film below 992px — moved up from the 767 block, and that move is what
-       makes the tablet artwork visible at all. The <video> sits at z-index 1,
-       directly over the <picture> at z-index 0, so while it rendered at
-       768-991 it covered the card's tablet crop completely and the new
-       <source> would have been downloaded and never seen.
+    /* The film plays at every width, by request.
+       ------------------------------------------------------------------
+       This element was display:none below 992 — first at 767, then raised to
+       991 so the card's tablet still would be visible. Both are reverted: the
+       clip now renders here, and because the observer at the foot of
+       index.html keys off intersection, un-hiding it is the whole fix. A
+       display:none element has no box, so it never reported as intersecting,
+       which is why no src was ever assigned and nothing played.
 
-       Two things follow from hiding it here rather than at 767:
-       - Tablets get the still, which is the point of giving this card its own
-         768-991 image in the first place.
-       - Tablets also stop downloading a 26MB clip. The observer at the foot of
-         index.html only assigns src once the element reports as intersecting,
-         and a display:none element has no box, so it never does. */
+       What that costs, so it is a known trade rather than a surprise:
+       - The <picture> crops for <=767 and <=991 (video-mb.webp,
+         video-tab.webp) now sit UNDER the video at z-index 0 and are not seen
+         while it plays. They remain the poster/no-JS/reduced-motion fallback,
+         so they are still worth having, but they are no longer the normal
+         mobile view.
+       - Phones now download the clip. The observer still defers it until the
+         card is actually on screen, so it is not on the critical path, but it
+         is mobile data that was previously never spent.
+       - The footage is a 1580x524 banner (3:1) and these cards are portrait,
+         so object-fit:cover crops it hard to a centre strip. That shape
+         mismatch is why it was stills-only originally. A portrait re-cut of
+         the same footage would fix it properly. */
     .svc-card__video {
-        display: none
+        display: block
     }
 }
 
@@ -12124,12 +12183,22 @@ a.faq-tab .faq-tab-1 p {
     }
 
     .svc-stack {
-        --svc-pin: 76px;
-        --svc-step: 12px;
+        --svc-pin: 68px;
+        --svc-step: 9px;
         --svc-gap: 20px;
         --svc-radius: 20px;
-        --svc-card-h: clamp(420px, 66vh, 560px);
-        --svc-card-h: clamp(420px, 66svh, 560px)
+    }
+
+    /* Phones, same approach as the 991 band with this band's own numbers.
+       Deepest pin here is 68 + 3x9 = 95px, so 100svh - 103px leaves the same
+       8px of air under the assembled deck:
+           812px tall  ->  709px card, deck bottom 804
+           667px tall  ->  564px card, deck bottom 659
+           568px tall  ->  465px card, deck bottom 560
+       Set on .svc-card rather than via --svc-card-h, matching the band above. */
+    .svc-card {
+        height: clamp(430px, calc(100vh - 103px), 800px);
+        height: clamp(430px, calc(100svh - 103px), 800px)
     }
 
     .svc-stack__head {
@@ -12141,7 +12210,8 @@ a.faq-tab .faq-tab-1 p {
     }
 
     .svc-card__title {
-        margin-bottom: 16px
+        margin-bottom: 16px;
+        font-size: 25px;
     }
 
     /* The single column is the base rule now; only the gap tightens here. */
@@ -12169,17 +12239,24 @@ a.faq-tab .faq-tab-1 p {
 @media (max-width: 991px) and (orientation: landscape) and (max-height: 620px) {
 
     .svc-stack {
-        --svc-pin: 72px;
-        --svc-step: 10px;
+        --svc-pin: 62px;
+        --svc-step: 8px;
         --svc-gap: 18px;
-        /* Room-based, not a percentage. A percentage does not know about the
-           pin: 76svh of a 360px-tall viewport is 274px, which parks the last
-           card's bottom edge 16px BELOW the fold — measured at 740x360. The
-           subtrahend is the deepest pin (72 + 3 x 10 = 102) plus 18px of
-           breathing room, so the whole assembled deck fits at any height this
-           query can see. */
-        --svc-card-h: clamp(230px, calc(100vh - 120px), 400px);
-        --svc-card-h: clamp(230px, calc(100svh - 120px), 400px)
+    }
+
+    /* Room-based, not a percentage. A percentage does not know about the pin:
+       76svh of a 360px-tall viewport is 274px, which parks the last card's
+       bottom edge 16px BELOW the fold — measured at 740x360. Deepest pin here is
+       62 + 3x8 = 86px, so 100svh - 100px keeps the whole assembled deck on
+       screen at any height this query can see.
+
+       This MUST be a direct height like the two bands above it. Those now set
+       `height` on .svc-card, so a --svc-card-h here would be ignored entirely
+       and a sideways phone would inherit the 767 band's near-full-height card —
+       roughly twice the room a 360px-tall viewport has. */
+    .svc-card {
+        height: clamp(210px, calc(100vh - 100px), 400px);
+        height: clamp(210px, calc(100svh - 100px), 400px)
     }
 
     .svc-card__body {
@@ -13129,23 +13206,124 @@ a.faq-tab .faq-tab-1 p {
     display: none;
 }
 
+/* Off above 992px, where the two .mh-card-box--media panels do this job as
+   static pictures. Turned on in the 991 block below. */
+.mh-section .mh-photo-marquee {
+    display: none;
+}
+
+/* translate3d, not translateX. Same reason as the client-logo strip near the
+   top of this file: on iOS a 2D transform can be left on the main thread and
+   the animation then never starts inside an overflow:hidden box within a
+   non-root scroll container. Naming the z axis forces a compositor layer.
+   -50% still resolves against the track's own width, so the loop maths and its
+   seamlessness are untouched. */
 @keyframes mh-marquee-loop {
     from {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
 @media (max-width: 991px) {
 
-    /* Only the static headshot row stands down; its loop takes over. The two
-       picture panels stay as they are — the photo loop that used to replace them
-       here has been removed, so one marquee runs in this band, not two. */
+    /* Two things stand down here and are replaced by loops: the static headshot
+       row inside the middle card, and the pair of picture panels either side of
+       it. So there ARE two marquees running in this band — the photo loop was
+       removed once for that reason and has been put back by request. They sit in
+       different cards and move at the same pace, which is what keeps it from
+       reading as busy; if it ever needs to go back to one, delete
+       .mh-photo-marquee's display:block below and the panels return. */
     .mh-section .mh-avatars {
         display: none;
+    }
+
+    .mh-section .mh-card-box--media {
+        display: none;
+    }
+
+    .mh-section .mh-photo-marquee {
+        display: block;
+        /* Span every column, however many the grid ends up with.
+           Setting grid-template-columns to a single track from here does NOT
+           work — a later rule in this band puts the grid back to two tracks
+           (measured 428.5px 428.5px at a 940px viewport), so the strip landed in
+           one cell 485px wide inside a 933px card and simply stopped halfway
+           across. 1 / -1 is immune to how many tracks exist, which is the same
+           thing .mh-card-box--doctor already does. */
+        grid-column: 1 / -1;
+        /* Same min-width:0 chain as the headshot strip: a grid item's automatic
+           minimum size is its content, and the track is deliberately max-content
+           wide, so without this the whole section refuses to go narrower than the
+           strip and the page overflows instead of the strip clipping. */
+        min-width: 0;
+        overflow: hidden;
+        /* Bleed to the card's edges. Not max-width:100% — clamping to the parent
+           holds the right edge while the left one moves and the strip sits
+           lopsided. */
+        max-width: none;
+        width: auto;
+        margin: 28px calc(-1 * var(--mh-card-pad)) 0;
+    }
+
+    .mh-section .mh-photo-marquee__track {
+        display: flex;
+        align-items: center;
+        /* max-content so the track is both copies laid end to end. That width is
+           what the -50% in mh-marquee-loop is a percentage OF — constrain it to
+           the viewport and the translate stops matching a copy's width. */
+        width: max-content;
+        /* iOS compositing hints — see the note on .logo-marquee-track. */
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: transform;
+        /* One copy is 6.83 x the row height (the four natural aspect ratios added
+           up), so at 340px that is 2322px; 155s holds the ~15px per second the
+           headshot strip runs at. Matching SPEED rather than duration is what
+           makes two loops of different lengths read as one system — which is why
+           the phone band below restates both together. */
+        animation: mh-marquee-loop 155s linear infinite;
+    }
+
+    /* Butted edge to edge at natural aspect ratio: no gap, no radius, no
+       cropping. These files are collage strips, not standalone photos — ai-3 is
+       4856x1781 (2.73:1) against ai-2 and ai1 at ~1.36:1 — so a fixed box with
+       object-fit:cover was showing a small centre crop of each one and the
+       content inside was unreadable. Driving off height with width:auto lets
+       each image render whole and lets the differing widths sit side by side,
+       which is what turns the row into one continuous band rather than a line of
+       separate tiles.
+       max-width:none overrides the blanket `img{max-width:100%}` near the top of
+       this file, which would otherwise fight the natural width inside a
+       max-content track. */
+    .mh-section .mh-photo-marquee__track img {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+        height: 340px;
+        margin-right: 0;
+        border-radius: 0;
+    }
+
+    /* Phones. 340px of row height is most of the fold on a 375px screen, so the
+       band comes down to 240 — still more than the 190 it started at, and the
+       images are whole now rather than centre-cropped, so more is actually
+       legible at the smaller size.
+       The duration has to come down WITH it. One copy is 6.83 x the height, so
+       240px makes it 1639px against 340px's 2322px; leaving 155s here would run
+       the phone strip at 10.6px/s while the tablet ran at 15, and the two loops
+       in this section would visibly disagree. 109s keeps both at ~15px/s. */
+    @media (max-width: 767px) {
+        .mh-section .mh-photo-marquee__track {
+            animation-duration: 109s;
+        }
+
+        .mh-section .mh-photo-marquee__track img {
+            height: 240px;
+        }
     }
 
     /* The chain that stops the max-content track from inflating everything above
@@ -13194,6 +13372,10 @@ a.faq-tab .faq-tab-1 p {
            instead of being squeezed into the viewport — that width is what -50%
            is a percentage OF. */
         width: max-content;
+        /* iOS compositing hints — see the note on .logo-marquee-track. */
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: transform;
         /* HOW MANY COPIES, and why the duration looks long.
            A strip only reads as endless while ONE copy of its list is at least as
            wide as the viewport — the moment it is narrower, translating by -50%
@@ -13221,7 +13403,8 @@ a.faq-tab .faq-tab-1 p {
    half-scrolled position, so the strip still reads as a row of faces. */
 @media (prefers-reduced-motion: reduce) {
 
-    .mh-section .mh-avatars-marquee__track {
+    .mh-section .mh-avatars-marquee__track,
+    .mh-section .mh-photo-marquee__track {
         animation: none !important;
     }
 }
@@ -13461,7 +13644,7 @@ a.faq-tab .faq-tab-1 p {
     }
 
     .mh-section .mh-title {
-        font-size: 34px;
+        font-size: 37px;
         letter-spacing: -.3px;
     }
 
@@ -13842,6 +14025,30 @@ a.faq-tab .faq-tab-1 p {
     .mh-section .mh-phone {
         font-size: 13px;
         padding: 8px 13px;
+    }
+}
+
+/* KPI strip goes 2x2 below 500px.
+   ---------------------------------------------------------------------------
+   Above this it is four abreast — a grid at 991 and below, a flex row with
+   hairline separators above that. Four tracks in ~470px of card leaves each
+   number about 100px, which is where "Faster Turnaround" and "Industries
+   Served" start wrapping to three lines and the row stops reading as a set of
+   figures.
+
+   Only the track count changes. The separators are already display:none from
+   the 991 block — they divide a row and have nothing to divide in a 2x2 — and
+   the column gap comes up from 0 to 14px because at four-wide the tracks were
+   far enough apart on their own.
+
+   499.98 rather than 500 so it cannot both match and not match at exactly
+   500px on a fractional-DPI viewport. Placed after the 575 block so it wins on
+   source order at equal specificity; the 429 and 374 blocks below touch the
+   photo card and the AI rail, not this. */
+@media (max-width: 499.98px) {
+    .mh-section .mh-kpi {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 14px;
     }
 }
 

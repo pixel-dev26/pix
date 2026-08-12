@@ -3586,10 +3586,10 @@
 
                                 <!-- Below 992px this card shows a still, not the film. The
                                      footage is a 1580x524 banner; a tablet or portrait phone
-                                     card would crop it to a sliver, and it is not worth a
-                                     video download on mobile data either. main.css hides
-                                     .svc-card__video at that width so these stills are what
-                                     actually renders.
+                                     card crops it to a centre strip. The film now plays at
+                                     every width by request, so these stills are the
+                                     poster/no-JS/reduced-motion fallback rather than the
+                                     normal mobile view — they sit under the <video>.
 
                                      PLACEHOLDER ARTWORK - video-tab.webp and video-mb.webp are
                                      both copies of mobile-dm-img.webp, dropped in so the
@@ -3600,6 +3600,15 @@
                                        video-mb.webp   ~1000x1900  (tall portrait, <=767px)
                                      If you supply a different format, update the srcset
                                      extension here to match. -->
+                                <!-- These three MUST be still images. They were briefly pointed
+                                     at Avanza-Blades-Intro.mp4, which cannot work: <img> and
+                                     srcset decode images only, so a video file renders as a
+                                     broken image — and the browser still downloads all 43MB
+                                     before failing, on mobile data. With the <video> also
+                                     hidden below 992 at the time, that left the card blank at
+                                     tablet and phone, which is what "the video was not
+                                     playing" actually was. The film is played by the <video>
+                                     element below, never by this <picture>. -->
                                 <picture class="svc-card__media">
                                     <source media="(max-width: 767px)" srcset="assets/images/video-mb.webp">
                                     <source media="(max-width: 991px)" srcset="assets/images/video-tab.webp">
@@ -3616,7 +3625,9 @@
                                      if scripting is off) the poster stands in, which is the
                                      same frame the <picture> underneath is showing. -->
                                 <video class="svc-card__video" poster="assets/images/video-studio-poster.jpg"
-                                    data-src="assets/images/Avanza-Blades-Intro.mp4" muted loop playsinline
+                                    data-src="assets/images/Avanza-Blades-Intro-web.mp4"
+                                    data-src-tablet="assets/images/video-studio-mobile.mp4"
+                                    data-src-mobile="assets/images/video-studio-portrait.mp4" muted loop playsinline
                                     preload="none" aria-hidden="true"></video>
 
                                 <div class="svc-card__body">
@@ -3905,7 +3916,59 @@
                                 decoding="async">
                         </article>
 
+                        <!-- Below 992px the two picture panels above stand down and this
+                             loops in their place. It is the photo marquee that used to be
+                             here, rebuilt on the same pattern as the headshot strip inside
+                             the middle card.
 
+                             EIGHT images, four distinct files listed TWICE. A strip only
+                             reads as endless while ONE copy of its list is at least as wide
+                             as the viewport — translate it by -50% while a copy is narrower
+                             and empty space is dragged into view as a visible gap. One copy
+                             here is 4 x 276px = 1104px, clear of the 991px ceiling of the
+                             band it runs in. The order also matters: the last item of a copy
+                             and the first of the next sit next to each other at the seam, so
+                             the list ends on ai1 and starts on ai-2 rather than repeating a
+                             file across the join.
+
+                             loading="eager", NOT lazy, for the same reason the headshot loop
+                             uses it: these sit in an overflow-hidden strip with most of them
+                             clipped off to the right, so the lazy heuristic never fires for
+                             them and they stay blank — which reads as the loop running out
+                             of pictures. Only four files are fetched however many times they
+                             appear.
+
+                             Decorative: aria-hidden, empty alts. The panels it replaces are
+                             decorative too, so nothing leaves the accessibility tree. -->
+                        <div class="mh-photo-marquee" aria-hidden="true">
+                            <div class="mh-photo-marquee__track">
+
+                                <!-- copy 1 of 2 — these four and the four below MUST stay
+                                     identical and in the same order. -50% lands copy 2
+                                     exactly where copy 1 began; if the two lists differ by
+                                     so much as one file the picture under the playhead
+                                     changes at that instant and the loop visibly jumps. -->
+                                <img src="assets/images/ai-2.webp" alt="" loading="eager" width="2428" height="1780"
+                                    decoding="async">
+                                <img src="assets/images/ai1.webp" alt="" loading="eager" width="2428" height="1767"
+                                    decoding="async">
+                                <img src="assets/images/ai-3.webp" alt="" loading="eager" width="4855" height="1780"
+                                    decoding="async">
+                                <img src="assets/images/ai1.webp" alt="" loading="eager" width="2428" height="1767"
+                                    decoding="async">
+
+                                <!-- copy 2 of 2 -->
+                                <img src="assets/images/ai-2.webp" alt="" loading="eager" width="2428" height="1780"
+                                    decoding="async">
+                                <img src="assets/images/ai1.webp" alt="" loading="eager" width="2428" height="1767"
+                                    decoding="async">
+                                <img src="assets/images/ai-3.webp" alt="" loading="eager" width="4855" height="1780"
+                                    decoding="async">
+                                <img src="assets/images/ai1.webp" alt="" loading="eager" width="2428" height="1767"
+                                    decoding="async">
+
+                            </div>
+                        </div>
 
                     </div>
 
@@ -5475,29 +5538,82 @@
             // Video Studio card, the fourth in the image stack.
             //
             // The clip is held in data-src and only fetched once the card is
-            // actually on screen, then paused again the moment it leaves. The
-            // markup this replaces had `autoplay` and a real src, so every
-            // visitor downloaded it during page load whether or not they ever
-            // scrolled that far — and it listed the same file twice, so it was
-            // requested more than once.
+            // actually on screen, then paused again the moment it leaves, so a
+            // visitor who never scrolls this far never downloads it.
             //
-            // Phones never load it at all: main.css hides .svc-card__video below
-            // 768px, and an element with display:none has no box, so it can
-            // never report as intersecting. The <picture> underneath carries the
-            // phone crop, and the poster attribute covers both the reduced-motion
-            // case and the no-JS one.
+            // WHY THERE ARE TWO FILES. The original Avanza-Blades-Intro.mp4 is
+            // 43MB at 8.7Mbps, and — the part that actually broke playback — its
+            // moov atom sits AFTER mdat, so it is not web-optimised: a browser
+            // has to finish the whole 43MB before it can decode a single frame.
+            // Broadband hides that; a phone does not, which is why the card sat
+            // on its poster on mobile and looked like the video was dead.
+            //   data-src         Avanza-Blades-Intro-web.mp4  42MB, remuxed
+            //                    losslessly with +faststart (moov first) and the
+            //                    unused audio track dropped. Same picture.
+            //   data-src-tablet  video-studio-mobile.mp4       2.0MB, 960x540 at
+            //                    413kbps, faststart, silent. 95% smaller.
+            //   data-src-mobile  video-studio-portrait.mp4     2.0MB, 540x960.
+            //
+            // WHY THE PHONE GETS A DIFFERENT CUT, not just a smaller file. The
+            // card is portrait on a phone (351x672, ratio 0.52) and the footage
+            // is 16:9, so object-fit:cover drew it 1195px wide into a 351px box
+            // — a 29% centre slice of the frame — and the legibility band dims
+            // and blurs the first 56% of that. Only about a quarter of the card
+            // showed unobscured picture, which is why it read as not playing
+            // even while it was decoding fine. The portrait file is the same
+            // footage cropped 9:16 so it fills that card properly.
+            // The tablet card is 928x650 (ratio 1.43) and already shows ~80% of
+            // a 16:9 frame, so it keeps the landscape cut.
+            //
+            // If the subject sits off-centre in the portrait crop, re-cut with a
+            // different x offset — the 656 below is the centred value:
+            //   ffmpeg -i Avanza-Blades-Intro.mp4 -vf "crop=608:1080:656:0,scale=540:-2" \
+            //     -c:v libx264 -crf 30 -an -movflags +faststart video-studio-portrait.mp4
             const video = document.querySelector('.svc-card__video');
             if (!video || !('IntersectionObserver' in window)) return;
 
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+            const isPhone = window.matchMedia('(max-width: 767px)');
+            const isTablet = window.matchMedia('(max-width: 991px)');
+
+            function pickSrc(v) {
+                if (isPhone.matches && v.dataset.srcMobile) return v.dataset.srcMobile;
+                if (isTablet.matches && v.dataset.srcTablet) return v.dataset.srcTablet;
+                return v.dataset.src;
+            }
+
+            function start(v) {
+                if (!v.getAttribute('src')) {
+                    v.setAttribute('src', pickSrc(v));
+                    // Explicit load(). Setting src does invoke the media load
+                    // algorithm on its own, but with preload="none" nothing is
+                    // fetched until something asks for it, and calling play()
+                    // in the same tick can land before the element has selected
+                    // its resource. This makes the order deterministic.
+                    v.load();
+                }
+                const p = v.play();
+                if (p && p.catch) {
+                    p.catch(() => {
+                        // Not necessarily the autoplay policy — with preload="none"
+                        // there is often simply no data yet at the moment play() is
+                        // called, and that rejection is final unless it is retried.
+                        // One retry, once the browser says it has enough to start.
+                        v.addEventListener('canplay', function once() {
+                            v.removeEventListener('canplay', once);
+                            const again = v.play();
+                            if (again && again.catch) again.catch(() => { });
+                        }, { once: true });
+                    });
+                }
+            }
+
             new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     const v = entry.target;
                     if (entry.isIntersecting) {
-                        if (!v.getAttribute('src')) v.setAttribute('src', v.dataset.src);
-                        const p = v.play();
-                        if (p && p.catch) p.catch(() => { });   // autoplay policy, not an error
+                        start(v);
                     } else if (!v.paused) {
                         v.pause();
                     }

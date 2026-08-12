@@ -7191,7 +7191,7 @@
 
     .heading .textture-text-1,
     .textture-text {
-        font-size: 41px
+        font-size: 37px
     }
 
     .button-container {
@@ -8349,7 +8349,7 @@
         line-height: 1.8;
         padding-right: 0;
         padding-left: 0;
-        font-size: 26px;
+        font-size: 18px;
         text-align: center
     }
 
@@ -8440,7 +8440,6 @@
     .testimonial-Talk {
         position: relative;
         text-align: center;
-        margin-top: -50px;
         padding-left: 0
     }
 
@@ -8482,7 +8481,7 @@
     .testimonial-img img {
         width: 100%;
         margin-bottom: 0;
-        height: 470px;
+        height: 300px;
         object-fit: contain
     }
 
@@ -8560,6 +8559,10 @@
 @media (max-width:767px) {
     .iti__country-list {
         width: 322px !important;
+    }
+
+    .section.ourWork {
+        padding-bottom: 90px;
     }
 
     .aboutbanSlider .swiper-pagination,
@@ -9321,7 +9324,7 @@
     .text,
     .textture-text,
     .tyTitle {
-        font-size: 40px
+        font-size: 28px
     }
 
     .policyContent h1.heading-1,
@@ -10654,9 +10657,9 @@
 
     .testimonial-img img {
         width: 100%;
-        margin-bottom: 0;
-        height: 330px;
-        object-fit: contain
+        margin-bottom: 20px;
+        height: auto;
+        object-fit: contain;
     }
 
     .ourWork .swiper-button-next::after {
@@ -11984,7 +11987,7 @@
     }
 
     .section.connecting-section.mh-section {
-        padding: 40px 0 90px;
+        padding: 40px 0 40px;
     }
 
     .case-study-listing .casestudy-Bx .case-img img.case-hlm {
