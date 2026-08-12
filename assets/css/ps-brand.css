@@ -1,0 +1,274 @@
+/* ============================================================================
+   Pixel Street — brand foundation
+
+   GENERATED FROM data/brand.json BY scripts/build-brand.mjs — DO NOT EDIT.
+   Change the JSON and run `npm run brand`.
+
+   Load order matters and is counter-intuitive: this comes AFTER the theme
+   bundle, not before. Custom properties at equal specificity resolve by source
+   order, and the theme declares --color-1 in its own :root — so a brand layer
+   loaded first would simply be overwritten by it. Loading last is what lets one
+   line here re-point every theme rule that already uses a variable.
+
+   It defines the vocabulary — colour, type, space, radius, motion, controls —
+   and binds the type scale to h1-h6 and the button pattern to .ps-btn.
+
+   It does not restyle the vendored theme. See BRAND.md.
+   ========================================================================== */
+
+:root {
+  /* ---- colour: brand ---- */
+  --ps-yellow: #FDB914;
+  --ps-yellow-ink: #6B4A00;
+  --ps-red: #EE3D41;
+
+  /* ---- colour: ink (all contrast ratios measured on #FFFFFF) ---- */
+  --ps-ink-strongest: #0B0D10;   /* 19.4:1 */
+  --ps-ink-default: #16181D;   /* 17.4:1 */
+  --ps-ink-muted: #4A4F57;   /* 8.3:1 */
+  --ps-ink-subtle: #63686F;   /* 5.2:1 */
+
+  /* ---- colour: surface ---- */
+  --ps-surface-page: #FFFFFF;
+  --ps-surface-raised: #FBFBFC;
+  --ps-surface-sunken: #EEF1F4;
+  --ps-surface-inverse: #0B0D10;
+
+  /* ---- colour: line ---- */
+  --ps-line-hairline: rgba(7, 11, 16, 0.11);
+  --ps-line-strong: rgba(7, 11, 16, 0.24);
+  --ps-line-on-inverse: rgba(255, 255, 255, 0.16);
+  --ps-line-control: #6E747C;
+
+  /* ---- colour: feedback (never the brand red — see brand.json) ---- */
+  --ps-error: #B3261E;   /* 7.4:1 */
+  --ps-success: #1B6E3C;   /* 6.3:1 */
+  --ps-warning: #8A5A00;   /* 6.1:1 */
+
+  /* ---- type: families ---- */
+  --ps-font-display: 'Bebas Neue', sans-serif;
+  --ps-font-body: 'Poppins', sans-serif;
+  --ps-font-mono: ui-monospace, 'SF Mono', SFMono-Regular, 'JetBrains Mono', 'IBM Plex Mono', Menlo, Consolas, monospace;
+
+  /* ---- type: fluid scale. rem min/max so it honours the reader's own
+     browser font-size; the vw term adds viewport-fluidity on top. ---- */
+  --ps-text-h1: clamp(1.5625rem, calc(1.075rem + 2.08vw), 3.25rem);   /* 25 → 52px */
+  --ps-text-h1-weight: 700;
+  --ps-text-h1-leading: 1.08;
+  --ps-text-h1-tracking: -0.02em;
+  --ps-text-h2: clamp(1.4375rem, calc(1.1075rem + 1.408vw), 2.375rem);   /* 23 → 38px */
+  --ps-text-h2-weight: 700;
+  --ps-text-h2-leading: 1.15;
+  --ps-text-h2-tracking: -0.01em;
+  --ps-text-h3: clamp(1.21875rem, calc(1.031875rem + 0.798vw), 1.75rem);   /* 19.5 → 28px */
+  --ps-text-h3-weight: 700;
+  --ps-text-h3-leading: 1.25;
+  --ps-text-h3-tracking: -0.005em;
+  --ps-text-h4: clamp(1.09375rem, calc(1.016875rem + 0.329vw), 1.3125rem);   /* 17.5 → 21px */
+  --ps-text-h4-weight: 600;
+  --ps-text-h4-leading: 1.35;
+  --ps-text-h4-tracking: 0;
+  --ps-text-h5: clamp(1.0625rem, calc(1.0075rem + 0.235vw), 1.21875rem);   /* 17 → 19.5px */
+  --ps-text-h5-weight: 600;
+  --ps-text-h5-leading: 1.4;
+  --ps-text-h5-tracking: 0;
+  --ps-text-h6: clamp(1rem, calc(0.98rem + 0.1vw), 1.0625rem);   /* 16 → 17px */
+  --ps-text-h6-weight: 600;
+  --ps-text-h6-leading: 1.45;
+  --ps-text-h6-tracking: 0;
+  --ps-text-body: clamp(1rem, calc(0.95625rem + 0.188vw), 1.125rem);   /* 16 → 18px */
+  --ps-text-body-weight: 400;
+  --ps-text-body-leading: 1.8;
+  --ps-text-body-tracking: 0;
+  --ps-text-small: clamp(0.875rem, calc(0.855rem + 0.1vw), 0.9375rem);   /* 14 → 15px */
+  --ps-text-small-weight: 400;
+  --ps-text-small-leading: 1.6;
+  --ps-text-small-tracking: 0;
+  --ps-text-label: 0.75rem;   /* 12px */
+  --ps-text-label-weight: 600;
+  --ps-text-label-leading: 1.2;
+  --ps-text-label-tracking: 0.12em;
+
+  /* ---- space: 4px base ---- */
+  --ps-space-0: 0;
+  --ps-space-1: 0.25rem;
+  --ps-space-2: 0.5rem;
+  --ps-space-3: 0.75rem;
+  --ps-space-4: 1rem;
+  --ps-space-5: 1.5rem;
+  --ps-space-6: 2rem;
+  --ps-space-7: 2.5rem;
+  --ps-space-8: 3rem;
+  --ps-space-9: 4rem;
+  --ps-space-10: 5rem;
+  --ps-space-11: 6.5rem;
+  --ps-space-12: 8rem;
+
+  /* ---- radius ---- */
+  --ps-radius-none: 0;
+  --ps-radius-sm: 0.25rem;
+  --ps-radius-md: 0.5rem;
+  --ps-radius-lg: 0.875rem;
+  --ps-radius-xl: 1.375rem;
+  --ps-radius-pill: 999px;
+
+  /* ---- shadow ---- */
+  --ps-shadow-none: none;
+  --ps-shadow-sm: 0 1px 2px rgba(11, 13, 16, 0.06);
+  --ps-shadow-md: 0 6px 16px rgba(11, 13, 16, 0.08);
+  --ps-shadow-lg: 0 14px 30px rgba(11, 13, 16, 0.09);
+
+  /* ---- motion ---- */
+  --ps-motion-fast: 0.15s;
+  --ps-motion-base: 0.25s;
+  --ps-motion-slow: 0.7s;
+  --ps-motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- controls ---- */
+  --ps-target-min: 2.75rem;   /* 44px. WCAG 2.2 sets 24px as the floor for a pointer target; 44px is what a thumb actually needs and is the site standard. */
+  --ps-focus-width: 3px;
+  --ps-focus-offset: 2px;
+  --ps-focus-colour: #FDB914;
+
+  /* ---- compatibility with the vendored theme ----
+     The theme reads --color-1 and --font-primary/--font-secondary from its own
+     :root. Re-pointing them here means every existing rule that already uses a
+     variable follows the brand automatically, with no theme edit at all. This is
+     the single highest-leverage line in this file. */
+  --color-1: var(--ps-yellow);
+  --font-primary: var(--ps-font-display);
+  --font-secondary: var(--ps-font-body);
+}
+
+/* ---------------------------------------------------------------- headings
+   Bound to the scale so a heading can never be sized ad hoc. The theme sets its
+   own h1-h6 sizes later in the cascade and still wins where it does; those are
+   listed in BRAND.md as the migration list. */
+.ps-h1, .ps-scope h1 {
+  font-family: var(--ps-font-body);
+  font-size: var(--ps-text-h1);
+  font-weight: var(--ps-text-h1-weight);
+  line-height: var(--ps-text-h1-leading);
+  letter-spacing: var(--ps-text-h1-tracking);
+}
+.ps-h2, .ps-scope h2 {
+  font-family: var(--ps-font-body);
+  font-size: var(--ps-text-h2);
+  font-weight: var(--ps-text-h2-weight);
+  line-height: var(--ps-text-h2-leading);
+  letter-spacing: var(--ps-text-h2-tracking);
+}
+.ps-h3, .ps-scope h3 {
+  font-family: var(--ps-font-body);
+  font-size: var(--ps-text-h3);
+  font-weight: var(--ps-text-h3-weight);
+  line-height: var(--ps-text-h3-leading);
+  letter-spacing: var(--ps-text-h3-tracking);
+}
+.ps-h4, .ps-scope h4 {
+  font-family: var(--ps-font-body);
+  font-size: var(--ps-text-h4);
+  font-weight: var(--ps-text-h4-weight);
+  line-height: var(--ps-text-h4-leading);
+  letter-spacing: var(--ps-text-h4-tracking);
+}
+.ps-h5, .ps-scope h5 {
+  font-family: var(--ps-font-body);
+  font-size: var(--ps-text-h5);
+  font-weight: var(--ps-text-h5-weight);
+  line-height: var(--ps-text-h5-leading);
+  letter-spacing: var(--ps-text-h5-tracking);
+}
+.ps-h6, .ps-scope h6 {
+  font-family: var(--ps-font-body);
+  font-size: var(--ps-text-h6);
+  font-weight: var(--ps-text-h6-weight);
+  line-height: var(--ps-text-h6-leading);
+  letter-spacing: var(--ps-text-h6-tracking);
+}
+
+/* ------------------------------------------------------------------ button
+   One pattern, three intents, two sizes. The audit found buttons built ad hoc in
+   at least six places, each with its own padding, radius and hover colour. */
+.ps-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ps-space-2);
+  min-height: var(--ps-target-min);
+  padding: 0.875rem 1.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--ps-radius-pill);
+  font-family: var(--ps-font-body);
+  font-size: var(--ps-text-small);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--ps-motion-fast) var(--ps-motion-ease),
+              color var(--ps-motion-fast) var(--ps-motion-ease),
+              border-color var(--ps-motion-fast) var(--ps-motion-ease);
+}
+
+.ps-btn--sm { padding: 0.625rem 1.125rem; }
+
+.ps-btn--primary {
+  background: #0B0D10;
+  color: #FFFFFF;
+}
+.ps-btn--primary:hover,
+.ps-btn--primary:focus-visible {
+  background: #FDB914;
+  color: #0B0D10;
+}
+.ps-btn--secondary {
+  background: transparent;
+  color: #16181D;
+  border-color: rgba(7, 11, 16, 0.24);
+}
+.ps-btn--secondary:hover,
+.ps-btn--secondary:focus-visible {
+  background: #FDB914;
+  color: #0B0D10;
+  border-color: #FDB914;
+}
+.ps-btn--ghost {
+  background: transparent;
+  color: #16181D;
+}
+.ps-btn--ghost:hover,
+.ps-btn--ghost:focus-visible {
+  background: rgba(253, 185, 20, 0.32);
+  color: #0B0D10;
+}
+
+/* ------------------------------------------------------------- focus ring
+   Yellow alone is 1.73:1 on white and would be an invisible focus indicator — a 2.4.7 and 1.4.11 failure. On light surfaces the ring is drawn in ink with the yellow riding outside it. The generated CSS implements both halves. */
+.ps-btn:focus-visible,
+.ps-focusable:focus-visible {
+  outline: var(--ps-focus-width) solid var(--ps-ink-strongest);
+  outline-offset: var(--ps-focus-offset);
+  box-shadow: 0 0 0 6px var(--ps-focus-colour);
+}
+
+/* On a dark surface the ink ring disappears, so the two swap roles. */
+.ps-on-inverse .ps-btn:focus-visible,
+.ps-on-inverse .ps-focusable:focus-visible {
+  outline-color: var(--ps-focus-colour);
+  box-shadow: 0 0 0 6px rgba(11, 13, 16, 0.9);
+}
+
+/* --------------------------------------------------------- reduced motion
+   Global and unconditional. Any animation added anywhere is covered by this
+   without the author having to remember. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

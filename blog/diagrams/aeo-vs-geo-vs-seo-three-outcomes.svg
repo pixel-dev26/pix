@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">SEO, AEO and GEO: three outcomes on one shared foundation</title>
+  <desc id="d">Three columns — SEO gets a page ranked, AEO gets it quoted, GEO gets it cited — all resting on a single band labelled one technical foundation, not three retainers.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THREE ACRONYMS, THREE OUTCOMES</text>
+
+  <!-- SEO -->
+  <rect x="14" y="46" width="246" height="196" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="40" width="246" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="62" width="62" height="26" rx="999" fill="#0F1115"/>
+  <text x="59" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">SEO</text>
+  <text x="28" y="118" font-size="18" font-weight="700" fill="#0F1115">Gets you<tspan x="28" dy="1.3em">ranked</tspan></text>
+  <text x="28" y="184" font-size="14" fill="#5C6167">In the list of blue links<tspan x="28" dy="1.4em">a human then clicks.</tspan></text>
+
+  <!-- AEO -->
+  <rect x="283" y="46" width="246" height="196" rx="16" fill="#FDB914"/>
+  <rect x="277" y="40" width="246" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="297" y="62" width="62" height="26" rx="999" fill="#0F1115"/>
+  <text x="328" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">AEO</text>
+  <text x="297" y="118" font-size="18" font-weight="700" fill="#0F1115">Gets you<tspan x="297" dy="1.3em">quoted</tspan></text>
+  <text x="297" y="184" font-size="14" fill="#5C6167">Lifted into the answer<tspan x="297" dy="1.4em">shown above the list.</tspan></text>
+
+  <!-- GEO -->
+  <rect x="552" y="46" width="246" height="196" rx="16" fill="#5FBFA8"/>
+  <rect x="546" y="40" width="246" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="566" y="62" width="62" height="26" rx="999" fill="#0F1115"/>
+  <text x="597" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">GEO</text>
+  <text x="566" y="118" font-size="18" font-weight="700" fill="#0F1115">Gets you<tspan x="566" dy="1.3em">cited</tspan></text>
+  <text x="566" y="184" font-size="14" fill="#5C6167">Named as a source inside<tspan x="566" dy="1.4em">a generated response.</tspan></text>
+
+  <!-- the shared foundation -->
+  <path d="M131 244 L131 270 M400 244 L400 270 M669 244 L669 270" stroke="#8E959D" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <rect x="14" y="288" width="778" height="112" rx="16" fill="#FDB914"/>
+  <rect x="8" y="282" width="778" height="112" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="320" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">ALL THREE STAND ON</text>
+  <text x="34" y="350" font-size="19" font-weight="700" fill="#0F1115">One crawlable, fast, well-structured site that the web vouches for</text>
+  <text x="34" y="376" font-size="14" fill="#5C6167">Google, 15 May 2026: optimising for generative AI search is optimising for search.</text>
+
+  <text x="8" y="424" font-size="14" font-weight="700" fill="#0F1115">One strategy with a structural layer on top &#8212; not three retainers.</text>
+</svg>

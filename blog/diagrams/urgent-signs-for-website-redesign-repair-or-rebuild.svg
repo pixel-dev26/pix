@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 382" width="800" height="382" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Four repairs on one side, a rebuild on the other</title>
+  <desc id="d">Two columns. Repair covers slow pages, copy a competitor could also write, a broken or buried contact route, and a brand the site no longer matches. Rebuild covers routine edits that cost developer time, templates that cannot express what the business now does, and overdue security updates nobody dares apply.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">REPAIR OR REBUILD</text>
+
+  <!-- repair -->
+  <rect x="14" y="50" width="378" height="292" rx="16" fill="#FDB914"/>
+  <rect x="8" y="44" width="378" height="292" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="64" width="80" height="28" rx="14" ry="14" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="68" y="83" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">REPAIR</text>
+  <text x="28" y="120" font-size="15" font-weight="700" fill="#0F1115">Fix one at a time, and measure each</text>
+  <path d="M28 142 L366 142" stroke="#E7E9EC" stroke-width="2"/>
+
+  <circle cx="36" cy="169" r="4" fill="#0F1115"/>
+  <text x="50" y="174" font-size="14" fill="#5C6167">The pages are slow.</text>
+  <circle cx="36" cy="215" r="4" fill="#0F1115"/>
+  <text x="50" y="220" font-size="14" fill="#5C6167">The copy says nothing a competitor<tspan x="50" dy="1.3em">could not say.</tspan></text>
+  <circle cx="36" cy="261" r="4" fill="#0F1115"/>
+  <text x="50" y="266" font-size="14" fill="#5C6167">The contact route is broken or buried.</text>
+  <circle cx="36" cy="307" r="4" fill="#0F1115"/>
+  <text x="50" y="312" font-size="14" fill="#5C6167">The brand moved on and the site did not.</text>
+
+  <!-- rebuild -->
+  <rect x="420" y="50" width="378" height="292" rx="16" fill="#EE3D41"/>
+  <rect x="414" y="44" width="378" height="292" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="434" y="64" width="88" height="28" rx="14" ry="14" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="478" y="83" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">REBUILD</text>
+  <text x="434" y="120" font-size="15" font-weight="700" fill="#0F1115">The structure is fighting you</text>
+  <path d="M434 142 L772 142" stroke="#E7E9EC" stroke-width="2"/>
+
+  <circle cx="442" cy="169" r="4" fill="#0F1115"/>
+  <text x="456" y="174" font-size="14" fill="#5C6167">Routine edits cost developer time.</text>
+  <circle cx="442" cy="227" r="4" fill="#0F1115"/>
+  <text x="456" y="232" font-size="14" fill="#5C6167">The templates cannot express what the<tspan x="456" dy="1.3em">business now does.</tspan></text>
+  <circle cx="442" cy="285" r="4" fill="#0F1115"/>
+  <text x="456" y="290" font-size="14" fill="#5C6167">Security updates are overdue because<tspan x="456" dy="1.3em">nobody dares touch it.</tspan></text>
+
+  <text x="8" y="370" font-size="14" fill="#5C6167">Each repair can be measured on its own. A rebuild that changes everything at once cannot.</text>
+</svg>

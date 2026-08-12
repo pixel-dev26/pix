@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 336" width="800" height="336" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">On a Shopify Basic store in India, the plan fee is dwarfed by transaction costs</title>
+  <desc id="d">Two bars to scale. The Shopify Basic plan fee of 1,499 rupees a month is a sliver beside about 43,600 rupees of transaction costs on a month of 10,00,000 rupees in sales: 20,000 to Shopify at 2 percent, 20,000 to the gateway at 2 percent, and 3,600 of GST on the gateway fee.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">ONE MONTH AT &#8377;10,00,000 IN SALES &#8212; SHOPIFY BASIC, INDIA</text>
+
+  <rect x="14" y="46" width="784" height="210" rx="16" fill="#FDB914"/>
+  <rect x="8" y="40" width="784" height="210" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+
+  <text x="32" y="84" font-size="15" font-weight="700" fill="#0F1115">The plan fee, Shopify Basic billed yearly</text>
+  <rect x="32" y="96" width="19" height="28" rx="6" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <text x="64" y="116" font-size="17" font-weight="700" fill="#0F1115">&#8377;1,499</text>
+
+  <text x="32" y="160" font-size="15" font-weight="700" fill="#0F1115">What the same month costs in transaction fees</text>
+  <rect x="32" y="172" width="253" height="28" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <rect x="285" y="172" width="253" height="28" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <rect x="538" y="172" width="46" height="28" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="598" y="192" font-size="17" font-weight="700" fill="#0F1115">&#8377;43,600</text>
+
+  <rect x="32" y="216" width="14" height="14" rx="4" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="54" y="228" font-size="13" fill="#5C6167">Shopify fee, 2% &#8212; &#8377;20,000</text>
+  <rect x="250" y="216" width="14" height="14" rx="4" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="272" y="228" font-size="13" fill="#5C6167">Razorpay, 2% &#8212; &#8377;20,000</text>
+  <rect x="468" y="216" width="14" height="14" rx="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="490" y="228" font-size="13" fill="#5C6167">18% GST on the gateway fee &#8212; &#8377;3,600</text>
+
+  <text x="8" y="292" font-size="15" font-weight="700" fill="#0F1115">The subscription was never the expensive part.</text>
+  <text x="8" y="318" font-size="14" fill="#5C6167">Shopify Payments is not offered in India, so an Indian merchant is in that column permanently.</text>
+</svg>

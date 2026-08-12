@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 562" width="380" height="562" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Personal branding is two different jobs, and most people pick the wrong one</title>
+  <desc id="d">Job one is deepening trust with a known, small audience: the few dozen people in a position to send you work. Job two is building reach with an unknown, large audience. Almost everyone needs the first and spends their effort on the second.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">TWO JOBS UNDER ONE NAME</text>
+
+  <rect x="13" y="39" width="359" height="166" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="34" width="359" height="166" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="52" width="104" height="28" rx="14" fill="#0F1115"/>
+  <text x="80" y="71" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">JOB ONE</text>
+  <text x="28" y="110" font-size="17" font-weight="700" fill="#0F1115">Deepen trust with a<tspan x="28" dy="1.3em">known, small audience</tspan></text>
+  <text x="28" y="164" font-size="14" fill="#5C6167">The few dozen people in a<tspan x="28" dy="1.4em">position to send you work.</tspan></text>
+
+  <rect x="13" y="221" width="359" height="166" rx="16" fill="#D098F9"/>
+  <rect x="8" y="216" width="359" height="166" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="234" width="104" height="28" rx="14" fill="#0F1115"/>
+  <text x="80" y="253" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">JOB TWO</text>
+  <text x="28" y="292" font-size="17" font-weight="700" fill="#0F1115">Build reach with an<tspan x="28" dy="1.3em">unknown, large audience</tspan></text>
+  <text x="28" y="346" font-size="14" fill="#5C6167">A large audience of strangers,<tspan x="28" dy="1.4em">rarely the same list.</tspan></text>
+
+  <path d="M190 391 L190 407" stroke="#8E959D" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <rect x="13" y="422" width="359" height="96" rx="16" fill="#FDB914"/>
+  <rect x="8" y="417" width="359" height="96" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="443" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE COMMON MISTAKE</text>
+  <text x="28" y="469" font-size="16" font-weight="700" fill="#0F1115">Almost everyone needs the<tspan x="28" dy="1.3em">first and works on the second.</tspan></text>
+
+  <text x="8" y="548" font-size="14" fill="#5C6167">Can twenty people describe what you do?</text>
+</svg>

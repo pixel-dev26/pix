@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Every trend that lasted turned into a browser capability</title>
+  <desc id="d">Four trends and the CSS or browser feature that absorbed each one: micro-interactions became the View Transitions API, scroll animation became animation-timeline, dark mode became prefers-color-scheme, and 3D in the browser became WebGPU.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE TREND &#8212; THE VISIBLE PART</text>
+
+  <rect x="14" y="36" width="181" height="56" rx="16" fill="#FDB914"/>
+  <rect x="8" y="30" width="181" height="56" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="98" y="64" font-size="15" font-weight="700" fill="#0F1115" text-anchor="middle">Micro-interactions</text>
+
+  <rect x="215" y="36" width="181" height="56" rx="16" fill="#FDB914"/>
+  <rect x="209" y="30" width="181" height="56" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="299" y="64" font-size="15" font-weight="700" fill="#0F1115" text-anchor="middle">Scroll animation</text>
+
+  <rect x="416" y="36" width="181" height="56" rx="16" fill="#FDB914"/>
+  <rect x="410" y="30" width="181" height="56" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="500" y="64" font-size="15" font-weight="700" fill="#0F1115" text-anchor="middle">Dark mode</text>
+
+  <rect x="617" y="36" width="181" height="56" rx="16" fill="#FDB914"/>
+  <rect x="611" y="30" width="181" height="56" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="701" y="64" font-size="15" font-weight="700" fill="#0F1115" text-anchor="middle">3D in the browser</text>
+
+  <path d="M98 92 L98 116" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M299 92 L299 116" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M500 92 L500 116" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M701 92 L701 116" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <text x="8" y="136" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE CAPABILITY UNDERNEATH &#8212; NOW PLAIN CSS</text>
+
+  <rect x="14" y="154" width="181" height="104" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="148" width="181" height="104" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="182" font-size="15" font-weight="700" fill="#0F1115">View Transitions<tspan x="28" dy="1.3em">API</tspan></text>
+  <rect x="28" y="212" width="80" height="26" rx="13" fill="#FDB914"/>
+  <text x="68" y="230" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">88.46%</text>
+
+  <rect x="215" y="154" width="181" height="104" rx="16" fill="#4A90C7"/>
+  <rect x="209" y="148" width="181" height="104" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="229" y="182" font-size="15" font-weight="700" fill="#0F1115">animation-<tspan x="229" dy="1.3em">timeline</tspan></text>
+  <rect x="229" y="212" width="80" height="26" rx="13" fill="#FDB914"/>
+  <text x="269" y="230" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">83.66%</text>
+
+  <rect x="416" y="154" width="181" height="104" rx="16" fill="#4A90C7"/>
+  <rect x="410" y="148" width="181" height="104" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="430" y="182" font-size="15" font-weight="700" fill="#0F1115">prefers-color-<tspan x="430" dy="1.3em">scheme</tspan></text>
+  <rect x="430" y="212" width="80" height="26" rx="13" fill="#FDB914"/>
+  <text x="470" y="230" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">94.25%</text>
+
+  <rect x="617" y="154" width="181" height="104" rx="16" fill="#4A90C7"/>
+  <rect x="611" y="148" width="181" height="104" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="631" y="182" font-size="15" font-weight="700" fill="#0F1115">WebGPU</text>
+  <rect x="631" y="212" width="80" height="26" rx="13" fill="#FDB914"/>
+  <text x="671" y="230" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">83.63%</text>
+
+  <text x="8" y="286" font-size="14" fill="#5C6167">Global support from Can I use, 30 July 2026. The trend was the visible part; the capability is what made it cheap.</text>
+</svg>

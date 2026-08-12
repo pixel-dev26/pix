@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 636" width="380" height="636" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">What Midjourney is for in a studio, and where it stops</title>
+  <desc id="d">Midjourney is good at imagery nobody has shot yet: hero photography that does not exist, textures and backgrounds, brand-adjacent visuals, mood boards, eight directions in the time for one. It is bad at anything with structure: type that is not type, buttons no thumb can hit, meaningless navigation, a grid that will not cut into parts.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE DIVISION OF LABOUR</text>
+
+  <!-- good at -->
+  <rect x="13" y="39" width="359" height="230" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="34" width="359" height="230" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="52" width="98" height="26" rx="999" fill="#0F1115"/>
+  <text x="75" y="70" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">GOOD AT</text>
+  <text x="26" y="104" font-size="17" font-weight="700" fill="#0F1115">Imagery nobody has shot yet</text>
+  <path d="M26 120 L349 120" stroke="#E7E9EC" stroke-width="2"/>
+  <circle cx="32" cy="139" r="3" fill="#8E959D"/>
+  <text x="46" y="144" font-size="14" fill="#5C6167">Hero photography that does not exist</text>
+  <circle cx="32" cy="165" r="3" fill="#8E959D"/>
+  <text x="46" y="170" font-size="14" fill="#5C6167">Textures and backgrounds</text>
+  <circle cx="32" cy="191" r="3" fill="#8E959D"/>
+  <text x="46" y="196" font-size="14" fill="#5C6167">Abstract, brand-adjacent visuals</text>
+  <circle cx="32" cy="217" r="3" fill="#8E959D"/>
+  <text x="46" y="222" font-size="14" fill="#5C6167">Mood boards a client can point at</text>
+  <circle cx="32" cy="243" r="3" fill="#8E959D"/>
+  <text x="46" y="248" font-size="14" fill="#5C6167">Eight directions in the time for one</text>
+
+  <!-- bad at -->
+  <rect x="13" y="293" width="359" height="230" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="288" width="359" height="230" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="306" width="90" height="26" rx="999" fill="#0F1115"/>
+  <text x="71" y="324" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">BAD AT</text>
+  <text x="26" y="358" font-size="17" font-weight="700" fill="#0F1115">Anything with structure</text>
+  <path d="M26 374 L349 374" stroke="#E7E9EC" stroke-width="2"/>
+  <circle cx="32" cy="393" r="3" fill="#8E959D"/>
+  <text x="46" y="398" font-size="14" fill="#5C6167">Type that is not type</text>
+  <circle cx="32" cy="419" r="3" fill="#8E959D"/>
+  <text x="46" y="424" font-size="14" fill="#5C6167">Buttons no thumb can hit</text>
+  <circle cx="32" cy="445" r="3" fill="#8E959D"/>
+  <text x="46" y="450" font-size="14" fill="#5C6167">Navigation that means nothing</text>
+  <circle cx="32" cy="471" r="3" fill="#8E959D"/>
+  <text x="46" y="476" font-size="14" fill="#5C6167">A grid that will not cut into parts</text>
+  <text x="26" y="506" font-size="14" font-weight="700" fill="#0F1115">Pixels, not a layout system.</text>
+
+  <!-- the handover -->
+  <rect x="13" y="551" width="359" height="76" rx="16" fill="#FDB914"/>
+  <rect x="8" y="546" width="359" height="76" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="574" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE HANDOVER</text>
+  <text x="26" y="600" font-size="15" font-weight="700" fill="#0F1115">Then the work restarts from a grid.</text>
+</svg>

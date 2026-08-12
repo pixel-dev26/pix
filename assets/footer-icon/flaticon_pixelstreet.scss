@@ -1,0 +1,37 @@
+$flaticon_pixelstreet-font: "flaticon_pixelstreet";
+
+@font-face {
+    font-family: $flaticon_pixelstreet-font;
+    src: url("./flaticon_pixelstreet.woff2?3c552ed63d8fb8ffaba959844bca0c45") format("woff2"),
+url("./flaticon_pixelstreet.woff?3c552ed63d8fb8ffaba959844bca0c45") format("woff"),
+url("./flaticon_pixelstreet.eot?3c552ed63d8fb8ffaba959844bca0c45#iefix") format("embedded-opentype"),
+url("./flaticon_pixelstreet.ttf?3c552ed63d8fb8ffaba959844bca0c45") format("truetype"),
+url("./flaticon_pixelstreet.svg?3c552ed63d8fb8ffaba959844bca0c45#flaticon_pixelstreet") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_pixelstreet !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_pixelstreet-map: (
+    "iphone": "\f101",
+    "mail": "\f102",
+    "map": "\f103",
+);
+
+.flaticon-iphone:before {
+    content: map-get($flaticon_pixelstreet-map, "iphone");
+}
+.flaticon-mail:before {
+    content: map-get($flaticon_pixelstreet-map, "mail");
+}
+.flaticon-map:before {
+    content: map-get($flaticon_pixelstreet-map, "map");
+}

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 604" width="380" height="604" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Retrieval and citation are two separate filters</title>
+  <desc id="d">A prompt is broken into smaller search queries, live web pages are retrieved, and an answer is synthesised naming a few brands and citing a handful of sources. Being retrieved means your content was found; being cited means it was trusted enough to shape the answer. Clearing the first filter does not clear the second.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHEN SOMEBODY ASKS FOR A NAME</text>
+
+  <!-- 1 -->
+  <rect x="13" y="45" width="359" height="104" rx="16" fill="#FDB914"/>
+  <rect x="8" y="40" width="359" height="104" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="34" cy="68" r="14" fill="#0F1115"/>
+  <text x="34" y="73" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="60" y="74" font-size="17" font-weight="700" fill="#0F1115">Breaks the question down</text>
+  <text x="20" y="104" font-size="14" fill="#5C6167">One prompt becomes several<tspan x="20" dy="1.35em">smaller search queries.</tspan></text>
+
+  <!-- 2 -->
+  <rect x="13" y="161" width="359" height="104" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="156" width="359" height="104" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="34" cy="184" r="14" fill="#0F1115"/>
+  <text x="34" y="189" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="60" y="190" font-size="17" font-weight="700" fill="#0F1115">Retrieves live web pages</text>
+  <text x="20" y="220" font-size="14" fill="#5C6167">Fetched at that moment, not<tspan x="20" dy="1.35em">recalled from memory.</tspan></text>
+
+  <!-- 3 -->
+  <rect x="13" y="277" width="359" height="104" rx="16" fill="#FDB914"/>
+  <rect x="8" y="272" width="359" height="104" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="34" cy="300" r="14" fill="#0F1115"/>
+  <text x="34" y="305" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="60" y="306" font-size="17" font-weight="700" fill="#0F1115">Synthesises an answer</text>
+  <text x="20" y="336" font-size="14" fill="#5C6167">Names a few brands, cites a<tspan x="20" dy="1.35em">handful of sources.</tspan></text>
+
+  <path d="M190 383 L190 401" stroke="#8E959D" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <!-- the two filters -->
+  <rect x="13" y="415" width="359" height="140" rx="16" fill="#FDB914"/>
+  <rect x="8" y="410" width="359" height="140" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="436" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">TWO SEPARATE FILTERS</text>
+
+  <rect x="26" y="450" width="200" height="26" rx="999" fill="#4A90C7"/>
+  <text x="126" y="468" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">FILTER 1: RETRIEVED</text>
+  <text x="26" y="494" font-size="13" fill="#5C6167">Your content was found.</text>
+
+  <rect x="26" y="506" width="200" height="26" rx="999" fill="#FDB914"/>
+  <text x="126" y="524" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">FILTER 2: CITED</text>
+  <text x="26" y="544" font-size="13" fill="#5C6167">Trusted enough to shape it.</text>
+
+  <text x="8" y="584" font-size="14" font-weight="700" fill="#0F1115">Clearing one does not clear the other.</text>
+</svg>

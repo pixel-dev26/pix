@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 556" width="380" height="556" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The advertised $5 gig costs the buyer $8.78 and pays the seller $4</title>
+  <desc id="d">Three figures stacked. The listing says 5 dollars. The buyer pays about 8.78 dollars once the 5.5 percent plus 3.50 dollar small-order fee is applied, a 75 percent markup. The seller receives 4 dollars, because Fiverr takes 20 percent of the order.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE $5 GIG, PRICED HONESTLY</text>
+
+  <rect x="13" y="39" width="359" height="100" rx="16" fill="#E7E9EC"/>
+  <rect x="8" y="34" width="359" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="62" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">ADVERTISED</text>
+  <text x="26" y="106" font-size="32" font-weight="700" fill="#0F1115">$5</text>
+  <text x="140" y="94" font-size="13" fill="#5C6167">What the listing says.</text>
+
+  <rect x="13" y="155" width="359" height="100" rx="16" fill="#FA6B45"/>
+  <rect x="8" y="150" width="359" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="178" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE BUYER PAYS</text>
+  <text x="26" y="222" font-size="32" font-weight="700" fill="#0F1115">$8.78</text>
+  <text x="140" y="210" font-size="13" fill="#5C6167">5.5% plus $3.50 under<tspan x="140" dy="1.45em">$200. A 75% markup.</tspan></text>
+
+  <rect x="13" y="271" width="359" height="100" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="266" width="359" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="294" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">YOU RECEIVE</text>
+  <text x="26" y="338" font-size="32" font-weight="700" fill="#0F1115">$4</text>
+  <text x="140" y="326" font-size="13" fill="#5C6167">Fiverr takes 20%; the<tspan x="140" dy="1.45em">seller earns 80%.</tspan></text>
+
+  <rect x="13" y="397" width="359" height="110" rx="16" fill="#FDB914"/>
+  <rect x="8" y="392" width="359" height="110" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="420" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">AND IN THE SEC FILING</text>
+  <text x="26" y="446" font-size="13" fill="#5C6167">Fiverr's Form 20-F reports annual spend<tspan x="26" dy="1.45em">per buyer of $342, and 66% of revenue</tspan><tspan x="26" dy="1.45em">from buyers spending over $500.</tspan></text>
+
+  <text x="8" y="540" font-size="14" font-weight="700" fill="#0F1115">The $5 floor is a doorway, not a price.</text>
+</svg>

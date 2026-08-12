@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 586" width="380" height="586" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">How long an ASCI disclosure label has to stay on screen</title>
+  <desc id="d">Three video lengths and the share of each that must carry the label: three seconds minimum on a video of fifteen seconds or less, one third of the length between fifteen seconds and two minutes, and the entire brand section on anything two minutes or longer.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">HOW LONG THE LABEL MUST STAY UP</text>
+
+  <text x="8" y="48" font-size="15" font-weight="700" fill="#0F1115">15 seconds or less</text>
+  <rect x="8" y="58" width="359" height="36" rx="8" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <rect x="11" y="61" width="71" height="30" rx="6" fill="#FDB914"/>
+  <text x="46" y="81" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">3 s</text>
+  <text x="8" y="116" font-size="13" fill="#5C6167">On screen for a minimum of three<tspan x="8" dy="1.3em">seconds.</tspan></text>
+
+  <text x="8" y="164" font-size="15" font-weight="700" fill="#0F1115">Over 15 s, under 2 min</text>
+  <rect x="8" y="174" width="359" height="36" rx="8" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <rect x="11" y="177" width="118" height="30" rx="6" fill="#FDB914"/>
+  <text x="70" y="197" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">one third</text>
+  <text x="8" y="232" font-size="13" fill="#5C6167">One third of the length of the<tspan x="8" dy="1.3em">video.</tspan></text>
+
+  <text x="8" y="280" font-size="15" font-weight="700" fill="#0F1115">2 minutes or more</text>
+  <rect x="8" y="290" width="359" height="36" rx="8" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <rect x="140" y="293" width="120" height="30" rx="6" fill="#FDB914"/>
+  <text x="200" y="313" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">brand section</text>
+  <text x="8" y="348" font-size="13" fill="#5C6167">The entire section in which the<tspan x="8" dy="1.3em">brand is mentioned.</tspan></text>
+
+  <rect x="13" y="395" width="359" height="180" rx="16" fill="#FDB914"/>
+  <rect x="8" y="390" width="359" height="180" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="416" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHEN IT IS NOT A VIDEO</text>
+
+  <text x="28" y="442" font-size="14" font-weight="700" fill="#0F1115">Audio and podcasts</text>
+  <text x="28" y="460" font-size="13" fill="#5C6167">Start, end and either side of every break.</text>
+
+  <text x="28" y="488" font-size="14" font-weight="700" fill="#0F1115">Live streams</text>
+  <text x="28" y="506" font-size="13" fill="#5C6167">At the beginning and at the end.</text>
+
+  <text x="28" y="534" font-size="14" font-weight="700" fill="#0F1115">Stories and images</text>
+  <text x="28" y="552" font-size="13" fill="#5C6167">Superimposed on the image itself.</text>
+</svg>

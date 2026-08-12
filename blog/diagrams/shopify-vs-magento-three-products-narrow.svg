@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 500" width="380" height="500" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Shopify versus Magento is really three separate products</title>
+  <desc id="d">Three stacked cards. Shopify is hosted with a published plan grid and can be run by a non-technical person. Adobe Commerce is licensed with no published price, quoted against your gross merchandise value, and sold to enterprises with procurement departments. Magento Open Source is free code with no licence fee, billed in hosting and engineering, and assumes a developer is available.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">ONE QUESTION, THREE PRODUCTS</text>
+
+  <!-- Shopify -->
+  <rect x="13" y="39" width="359" height="118" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="34" width="359" height="118" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="52" width="76" height="25" rx="999" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="64" y="70" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">HOSTED</text>
+  <text x="116" y="71" font-size="17" font-weight="700" fill="#0F1115">Shopify</text>
+  <text x="26" y="104" font-size="13" fill="#5C6167"><tspan font-weight="700" fill="#0F1115">Price. </tspan>Subscription, published grid.</text>
+  <text x="26" y="128" font-size="13" fill="#5C6167"><tspan font-weight="700" fill="#0F1115">Runs it. </tspan>A non-technical person.</text>
+
+  <!-- Adobe Commerce -->
+  <rect x="13" y="179" width="359" height="118" rx="16" fill="#D098F9"/>
+  <rect x="8" y="174" width="359" height="118" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="192" width="92" height="25" rx="999" fill="#D098F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="72" y="210" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">LICENSED</text>
+  <text x="132" y="211" font-size="17" font-weight="700" fill="#0F1115">Adobe Commerce</text>
+  <text x="26" y="244" font-size="13" fill="#5C6167"><tspan font-weight="700" fill="#0F1115">Price. </tspan>Not published; quoted on GMV.</text>
+  <text x="26" y="268" font-size="13" fill="#5C6167"><tspan font-weight="700" fill="#0F1115">Runs it. </tspan>Enterprise procurement.</text>
+
+  <!-- Magento Open Source -->
+  <rect x="13" y="319" width="359" height="118" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="314" width="359" height="118" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="332" width="100" height="25" rx="999" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="76" y="350" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">FREE CODE</text>
+  <text x="140" y="351" font-size="17" font-weight="700" fill="#0F1115">Magento Open Source</text>
+  <text x="26" y="384" font-size="13" fill="#5C6167"><tspan font-weight="700" fill="#0F1115">Price. </tspan>No licence fee; you staff it.</text>
+  <text x="26" y="408" font-size="13" fill="#5C6167"><tspan font-weight="700" fill="#0F1115">Runs it. </tspan>It assumes a developer.</text>
+
+  <text x="8" y="470" font-size="14" font-weight="700" fill="#0F1115">Magento Commerce became Adobe<tspan x="8" dy="1.35em">Commerce in April 2021.</tspan></text>
+</svg>

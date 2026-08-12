@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 428" width="800" height="428" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Fund the half of the project where the risk sits</title>
+  <desc id="d">One question splits into two branches. If the risk is that nobody uses it — the site's job is to be found, read and enquired with — fund front-end and design first, with a thin content back-end behind it. If the risk is that it loses data or falls over — the site's job is to run a process that belongs to you — fund back-end engineering first and accept a plainer interface for one release.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHICH HALF DO YOU STAFF FIRST</text>
+
+  <rect x="215" y="46" width="382" height="60" rx="16" fill="#FDB914"/>
+  <rect x="209" y="40" width="382" height="60" rx="16" fill="#0F1115"/>
+  <text x="400" y="78" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">Which failure would hurt more?</text>
+
+  <path d="M400 106 L400 128 M199 128 L601 128" fill="none" stroke="#0F1115" stroke-width="2"/>
+  <path d="M199 128 L199 154" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M601 128 L601 154" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- branch A -->
+  <rect x="14" y="166" width="382" height="222" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="160" width="382" height="222" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="190" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">IF THE RISK IS</text>
+  <text x="28" y="220" font-size="18" font-weight="700" fill="#0F1115">Nobody uses it</text>
+  <text x="28" y="246" font-size="14" fill="#5C6167">The site&#8217;s job is to be found,<tspan x="28" dy="1.35em">read and enquired with.</tspan></text>
+  <path d="M28 284 L370 284" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="28" y="310" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THEN FUND FIRST</text>
+  <text x="28" y="338" font-size="17" font-weight="700" fill="#0F1115">Front-end and design</text>
+  <text x="28" y="364" font-size="14" fill="#5C6167">A thin content back-end behind it.</text>
+
+  <!-- branch B -->
+  <rect x="416" y="166" width="382" height="222" rx="16" fill="#5FBFA8"/>
+  <rect x="410" y="160" width="382" height="222" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="430" y="190" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">IF THE RISK IS</text>
+  <text x="430" y="220" font-size="18" font-weight="700" fill="#0F1115">It loses data or falls over</text>
+  <text x="430" y="246" font-size="14" fill="#5C6167">The site&#8217;s job is to run a process<tspan x="430" dy="1.35em">that belongs to you.</tspan></text>
+  <path d="M430 284 L772 284" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="430" y="310" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THEN FUND FIRST</text>
+  <text x="430" y="338" font-size="17" font-weight="700" fill="#0F1115">Back-end engineering</text>
+  <text x="430" y="364" font-size="14" fill="#5C6167">Accept a plainer interface for one release.</text>
+
+  <text x="8" y="416" font-size="14" font-weight="700" fill="#0F1115">Get that call right and both halves are ordinary engineering.</text>
+</svg>

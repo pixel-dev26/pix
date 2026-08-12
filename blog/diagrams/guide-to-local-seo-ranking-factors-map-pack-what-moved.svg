@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 392" width="800" height="392" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">What Google removed from the Business Profile, and what now does the work</title>
+  <desc id="d">Removed or automated since 2024: websites built from Business Profiles, chat and call history, and the My Business Q and A API. Now doing more work: your reviews, links to your business, what your own website says, and your photos, because that is what Gemini reads when it answers a question about your place.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">SINCE 2024, THE PATTERN UNDER EVERY CHANGE</text>
+
+  <!-- removed -->
+  <rect x="14" y="46" width="364" height="224" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="40" width="364" height="224" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="78" font-size="18" font-weight="700" fill="#0F1115">Removed or automated</text>
+  <circle cx="34" cy="107" r="4" fill="#0F1115"/>
+  <text x="50" y="112" font-size="13" fill="#5C6167">Websites built from Business Profiles</text>
+  <text x="50" y="131" font-size="12" fill="#6A6F75">March 2024</text>
+  <circle cx="34" cy="155" r="4" fill="#0F1115"/>
+  <text x="50" y="160" font-size="13" fill="#5C6167">Chat and call history</text>
+  <text x="50" y="179" font-size="12" fill="#6A6F75">31 July 2024</text>
+  <circle cx="34" cy="203" r="4" fill="#0F1115"/>
+  <text x="50" y="208" font-size="13" fill="#5C6167">The My Business Q&amp;A API</text>
+  <text x="50" y="227" font-size="12" fill="#6A6F75">3 November 2025</text>
+
+  <path d="M384 152 L418 152" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- now heavier -->
+  <rect x="434" y="46" width="364" height="224" rx="16" fill="#5FBFA8"/>
+  <rect x="428" y="40" width="364" height="224" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="448" y="78" font-size="18" font-weight="700" fill="#0F1115">Now doing more work</text>
+  <circle cx="454" cy="107" r="4" fill="#0F1115"/>
+  <text x="470" y="112" font-size="13" fill="#5C6167">Your reviews</text>
+  <circle cx="454" cy="137" r="4" fill="#0F1115"/>
+  <text x="470" y="142" font-size="13" fill="#5C6167">Links to your business</text>
+  <circle cx="454" cy="167" r="4" fill="#0F1115"/>
+  <text x="470" y="172" font-size="13" fill="#5C6167">What your own website says</text>
+  <circle cx="454" cy="197" r="4" fill="#0F1115"/>
+  <text x="470" y="202" font-size="13" fill="#5C6167">Your photos</text>
+  <text x="448" y="230" font-size="12" fill="#6A6F75">What Gemini reads when it answers<tspan x="448" dy="1.5em">a question about your place.</tspan></text>
+
+  <!-- the pattern -->
+  <rect x="14" y="290" width="784" height="90" rx="16" fill="#FDB914"/>
+  <rect x="8" y="284" width="784" height="90" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="312" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE PATTERN</text>
+  <text x="34" y="338" font-size="15" font-weight="700" fill="#0F1115">Every field you filled in by hand went away. Every signal from outside got heavier.</text>
+  <text x="34" y="362" font-size="14" fill="#5C6167">Optimising for generative AI is still SEO. There is no separate trick.</text>
+</svg>

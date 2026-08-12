@@ -1,0 +1,417 @@
+/* ============================================================================
+   Contact page
+
+   Loaded only by contact-us.html. Built from reports/contact-redesign-spec.md.
+   Every value is a token from data/brand.json.
+
+   Carries NO theme class names, so none of the 54,285 lines of vendored CSS can
+   reach it — the same isolation ps-footer.css uses.
+
+   Two decisions that are structural rather than cosmetic:
+
+   1. Source order is masthead → panel → details → map at EVERY width, and the
+      desktop two-column layout is done with explicit grid-column/grid-row, never
+      `order`. The page it replaces used Bootstrap `order-1`/`order-2`, which painted
+      the form BEFORE the <h1> on every screen under 992px — at 375 the form card
+      started at y=120 and the heading at y=761. A phone visitor met four grey
+      placeholder lines and a CAPTCHA with no heading. Using `order` also decouples
+      tab order from visual order, which is a 1.3.2 failure; grid placement does not.
+
+   2. Labels are visible and persistent. They were `.visually-hidden`, leaving
+      placeholders as the only labels — 3.95:1, and gone the moment you type.
+   ========================================================================== */
+
+.ps-contact {
+  /* space-11 top, matching ps-legal: the header is fixed and ~100px tall. */
+  padding: var(--ps-space-11) 0 var(--ps-space-9);
+  background: var(--ps-surface-page);
+  font-family: var(--ps-font-body);
+  color: var(--ps-ink-default);
+}
+
+.ps-contact__inner {
+  width: min(100% - 2 * var(--ps-space-4), 75rem);
+  margin-inline: auto;
+}
+
+.ps-contact__grid {
+  display: grid;
+  gap: var(--ps-space-8);
+}
+
+/* ------------------------------------------------------------------ masthead */
+
+.ps-contact__masthead { max-width: 42rem; }
+
+.ps-contact__eyebrow {
+  margin: 0 0 var(--ps-space-3);
+  font-size: var(--ps-text-label);
+  font-weight: var(--ps-text-label-weight);
+  letter-spacing: var(--ps-text-label-tracking);
+  text-transform: uppercase;
+  color: var(--ps-ink-subtle);
+}
+
+.ps-contact__title {
+  margin: 0 0 var(--ps-space-4);
+  font-size: var(--ps-text-h1);
+  font-weight: var(--ps-text-h1-weight);
+  line-height: var(--ps-text-h1-leading);
+  letter-spacing: var(--ps-text-h1-tracking);
+  color: var(--ps-ink-strongest);
+}
+
+.ps-contact__lede {
+  margin: 0;
+  font-size: var(--ps-text-body);
+  line-height: var(--ps-text-body-leading);
+  color: var(--ps-ink-muted);
+}
+
+/* -------------------------------------------------------------------- panel */
+
+.ps-contact__panel {
+  padding: var(--ps-space-6);
+  border: 1px solid var(--ps-line-hairline);
+  border-radius: var(--ps-radius-xl);
+  background: var(--ps-surface-raised);
+}
+
+.ps-contact__panel-title {
+  margin: 0 0 var(--ps-space-2);
+  font-size: var(--ps-text-h3);
+  font-weight: var(--ps-text-h3-weight);
+  line-height: var(--ps-text-h3-leading);
+  color: var(--ps-ink-strongest);
+}
+
+.ps-contact__panel-note {
+  margin: 0 0 var(--ps-space-6);
+  font-size: var(--ps-text-small);
+  line-height: 1.6;
+  color: var(--ps-ink-muted);
+}
+
+.ps-contact__form { display: grid; gap: var(--ps-space-5); }
+
+.ps-contact__field { display: grid; gap: var(--ps-space-2); }
+
+.ps-contact__label {
+  font-size: var(--ps-text-small);
+  font-weight: 600;
+  color: var(--ps-ink-default);
+}
+
+/* Three of the four fields are required, so marking those would be noise. The one
+   OPTIONAL field is marked instead, in words — an asterisk needs a legend, and a
+   legend is one more thing to read. */
+.ps-contact__optional {
+  font-weight: 400;
+  color: var(--ps-ink-subtle);
+}
+
+.ps-contact__input,
+.ps-contact__textarea {
+  width: 100%;
+  min-height: var(--ps-target-min);
+  padding: var(--ps-space-3) var(--ps-space-4);
+  /* --ps-line-control, not hairline or strong. WCAG 1.4.11 wants 3:1 for a control
+     boundary; hairline is 1.2:1 and strong is 1.74:1. The underlines this replaces
+     composited to 1.53:1. See the token's own note in brand.json. */
+  border: 1px solid var(--ps-line-control);
+  border-radius: var(--ps-radius-md);
+  background: var(--ps-surface-page);
+  font-family: inherit;
+  /* Never below 16px. iOS zooms the viewport on focus under that and does not zoom
+     back — the P1 finding, which hit every form on both properties. */
+  font-size: var(--ps-text-body);
+  line-height: 1.5;
+  color: var(--ps-ink-default);
+  transition: border-color var(--ps-motion-fast) var(--ps-motion-ease),
+              box-shadow var(--ps-motion-fast) var(--ps-motion-ease);
+}
+
+.ps-contact__textarea { min-height: 8rem; resize: vertical; }
+
+.ps-contact__input::placeholder,
+.ps-contact__textarea::placeholder { color: var(--ps-ink-subtle); }
+
+.ps-contact__input:hover,
+.ps-contact__textarea:hover { border-color: var(--ps-ink-muted); }
+
+.ps-contact__input:focus-visible,
+.ps-contact__textarea:focus-visible {
+  outline: var(--ps-focus-width) solid var(--ps-ink-strongest);
+  outline-offset: var(--ps-focus-offset);
+  box-shadow: 0 0 0 6px var(--ps-focus-colour);
+  border-color: var(--ps-ink-strongest);
+}
+
+/* :user-invalid, not :invalid. :invalid matches an untouched empty required field,
+   so the form would be painted red before anyone typed a character. */
+.ps-contact__input:user-invalid,
+.ps-contact__textarea:user-invalid { border-color: var(--ps-error); }
+
+.ps-contact__error {
+  font-size: var(--ps-text-small);
+  color: var(--ps-error);
+}
+
+.ps-contact__error:empty { display: none; }
+
+/* The honeypot. Off-screen rather than display:none — a bot that skips hidden
+   fields is not caught by one it cannot see. Mirrors .enquiry-hp in main.css. */
+.ps-contact__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.ps-contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ps-space-4);
+}
+
+/* Submit is .ps-btn.ps-btn--primary from the foundation — 19.4:1, and 11.1:1 on the
+   yellow hover. It was yellow-on-white at 1.73:1. */
+.ps-contact__submit { flex: 0 0 auto; }
+
+.ps-contact__status {
+  margin: var(--ps-space-4) 0 0;
+  font-size: var(--ps-text-small);
+  line-height: 1.6;
+}
+
+.ps-contact__status:empty { display: none; }
+.ps-contact__status[data-state="error"] { color: var(--ps-error); }
+.ps-contact__status[data-state="ok"] { color: var(--ps-success); }
+
+.ps-contact__status:focus-visible {
+  outline: var(--ps-focus-width) solid var(--ps-ink-strongest);
+  outline-offset: var(--ps-focus-offset);
+}
+
+/* ------------------------------------------------------------------ details */
+
+.ps-contact__details-title {
+  margin: 0 0 var(--ps-space-5);
+  font-size: var(--ps-text-h3);
+  font-weight: var(--ps-text-h3-weight);
+  line-height: var(--ps-text-h3-leading);
+  color: var(--ps-ink-strongest);
+}
+
+/* A <dl>, not headings. The page had h2 Address → h3 Email → h4 Phone: three peer
+   labels at three descending levels, and "Address" collided with the footer's own
+   h2. A description list says "label / value" without claiming a hierarchy. */
+.ps-contact__list { margin: 0 0 var(--ps-space-8); }
+
+.ps-contact__list div + div { margin-top: var(--ps-space-5); }
+
+.ps-contact__term {
+  margin: 0 0 var(--ps-space-1);
+  font-size: var(--ps-text-label);
+  font-weight: var(--ps-text-label-weight);
+  letter-spacing: var(--ps-text-label-tracking);
+  text-transform: uppercase;
+  color: var(--ps-ink-subtle);
+}
+
+.ps-contact__def {
+  margin: 0;
+  font-size: var(--ps-text-body);
+  line-height: 1.6;
+  color: var(--ps-ink-default);
+}
+
+.ps-contact__link {
+  color: var(--ps-ink-default);
+  text-decoration: underline;
+  text-decoration-color: var(--ps-yellow);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.ps-contact__link:hover,
+.ps-contact__link:focus-visible { color: var(--ps-ink-strongest); }
+
+.ps-contact__link:focus-visible,
+.ps-contact__social-link:focus-visible {
+  outline: var(--ps-focus-width) solid var(--ps-ink-strongest);
+  outline-offset: var(--ps-focus-offset);
+  border-radius: var(--ps-radius-sm);
+}
+
+.ps-contact__social-title {
+  margin: 0 0 var(--ps-space-4);
+  font-size: var(--ps-text-h5);
+  font-weight: var(--ps-text-h5-weight);
+  color: var(--ps-ink-strongest);
+}
+
+.ps-contact__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ps-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ps-contact__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px, the site standard — the footer's icons use the same. */
+  width: var(--ps-target-min);
+  height: var(--ps-target-min);
+  border: 1px solid var(--ps-line-hairline);
+  border-radius: 50%;
+  font-size: 1.125rem;
+  color: var(--ps-ink-default);
+  text-decoration: none;
+  transition: background-color var(--ps-motion-fast) var(--ps-motion-ease),
+              border-color var(--ps-motion-fast) var(--ps-motion-ease);
+}
+
+.ps-contact__social-link:hover,
+.ps-contact__social-link:focus-visible {
+  background: var(--ps-yellow);
+  border-color: var(--ps-yellow);
+  color: var(--ps-ink-strongest);
+}
+
+/* ---------------------------------------------------------------------- map */
+
+.ps-contact__map-section {
+  padding: 0 0 var(--ps-space-10);
+  background: var(--ps-surface-page);
+}
+
+.ps-contact__map-title {
+  margin: 0 0 var(--ps-space-5);
+  font-size: var(--ps-text-h3);
+  font-weight: var(--ps-text-h3-weight);
+  color: var(--ps-ink-strongest);
+}
+
+/* Click-to-load. The embed it replaces was an 800px iframe — 35% of desktop page
+   height — loading Google Maps and its cookies on every visit for a control almost
+   nobody uses. Same pattern as the video reel and the footer's directions capsule. */
+.ps-contact__map {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  min-height: 14rem;
+  border: 1px solid var(--ps-line-hairline);
+  border-radius: var(--ps-radius-xl);
+  background: var(--ps-surface-sunken);
+  overflow: hidden;
+}
+
+.ps-contact__map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.ps-contact__map-cta {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ps-space-3);
+  width: 100%;
+  padding: var(--ps-space-6);
+  border: 0;
+  background: var(--ps-surface-sunken);
+  font-family: inherit;
+  font-size: var(--ps-text-body);
+  color: var(--ps-ink-default);
+  text-align: center;
+  cursor: pointer;
+}
+
+.ps-contact__map-cta:focus-visible {
+  outline: var(--ps-focus-width) solid var(--ps-ink-strongest);
+  outline-offset: calc(-1 * var(--ps-focus-width));
+}
+
+.ps-contact__map-hint {
+  font-size: var(--ps-text-small);
+  color: var(--ps-ink-subtle);
+}
+
+.ps-contact__map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ps-space-3);
+  margin-top: var(--ps-space-4);
+}
+
+/* ============================================================== breakpoints */
+
+/* Two columns from 62rem. Explicit placement, never `order` — see the file header.
+   The form leads because it is why the page exists; the details sit beside it so a
+   visitor who would rather phone does not have to scroll past a form to find out. */
+@media (min-width: 62rem) {
+  .ps-contact__grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    column-gap: var(--ps-space-9);
+    row-gap: var(--ps-space-8);
+  }
+  .ps-contact__masthead { grid-column: 1 / -1; grid-row: 1; }
+  .ps-contact__panel    { grid-column: 1;      grid-row: 2; }
+  .ps-contact__details  { grid-column: 2;      grid-row: 2; }
+
+  .ps-contact__panel { padding: var(--ps-space-7); }
+}
+
+/* Name and phone share a row once there is room for both to stay legible. */
+@media (min-width: 30rem) {
+  .ps-contact__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ps-space-5);
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .ps-contact { padding: var(--ps-space-8) 0 var(--ps-space-7); }
+  .ps-contact__panel { padding: var(--ps-space-5); }
+  /* Full-width submit on a phone: a thumb should not have to aim. */
+  .ps-contact__actions > .ps-contact__submit { flex: 1 1 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-contact__input,
+  .ps-contact__textarea,
+  .ps-contact__social-link { transition: none; }
+}
+
+/* ------------------------------------------------------------------ reCAPTCHA
+
+   Google renders a fixed 304px widget inside a cross-origin iframe, so its width is
+   not ours to set — a transform is the only lever, and unlike `zoom` it scales the
+   hit areas with the artwork.
+
+   ps-fixes.css already scales it below 360px for the theme's own forms. This panel
+   is narrower than the layout it replaced, so the widget starts overflowing earlier:
+   usable width here is `100vw - 32px (inner gutter) - 32px (panel padding)`, which
+   drops under 304 at 384px. Measured at 375: 18px of horizontal scroll.
+
+   0.82 with the tighter padding below clears it at both ends of the range —
+   249px against 311px available at 375, and against 256px at 320. */
+@media (max-width: 23.999rem) {
+  .ps-contact__panel { padding: var(--ps-space-4); }
+
+  .ps-contact .g-recaptcha {
+    transform: scale(0.82);
+    transform-origin: 0 0;
+    /* The layout box does not shrink with the transform; reclaim the gap. */
+    margin-bottom: -0.875rem;
+  }
+}

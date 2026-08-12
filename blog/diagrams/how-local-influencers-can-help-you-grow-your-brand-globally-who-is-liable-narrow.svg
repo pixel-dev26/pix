@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 618" width="380" height="618" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">In India the influencer and the brand are both liable</title>
+  <desc id="d">The influencer must make the disclosure and the advertiser must ensure the posted advertisement complies. The CCPA penalties reach manufacturers, advertisers and endorsers alike: up to ten lakh rupees, up to fifty lakh for a repeat, and a ban on endorsing for up to one year, three on repeat.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHO CARRIES THE LIABILITY</text>
+
+  <rect x="13" y="39" width="359" height="148" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="34" width="359" height="148" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="52" width="158" height="28" rx="14" fill="#0F1115"/>
+  <text x="107" y="71" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">THE INFLUENCER</text>
+  <text x="28" y="112" font-size="17" font-weight="700" fill="#0F1115">Must make the disclosure</text>
+  <text x="28" y="140" font-size="14" fill="#5C6167">Upfront and prominent, not<tspan x="28" dy="1.4em">buried in a hashtag block.</tspan></text>
+
+  <rect x="13" y="203" width="359" height="148" rx="16" fill="#FA6B45"/>
+  <rect x="8" y="198" width="359" height="148" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="216" width="132" height="28" rx="14" fill="#0F1115"/>
+  <text x="94" y="235" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">THE ADVERTISER</text>
+  <text x="28" y="276" font-size="17" font-weight="700" fill="#0F1115">Must ensure it complies</text>
+  <text x="28" y="304" font-size="14" fill="#5C6167">Including calling on the creator<tspan x="28" dy="1.4em">to edit or delete the post.</tspan></text>
+
+  <rect x="13" y="383" width="359" height="200" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="378" width="359" height="200" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="404" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">CCPA PENALTIES, ON BOTH</text>
+
+  <rect x="26" y="418" width="323" height="42" rx="21" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="46" y="445" font-size="15" font-weight="700" fill="#0F1115">Up to &#8377;10 lakh</text>
+
+  <rect x="26" y="468" width="323" height="42" rx="21" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="46" y="495" font-size="15" font-weight="700" fill="#0F1115">Up to &#8377;50 lakh if repeated</text>
+
+  <rect x="26" y="518" width="323" height="42" rx="21" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="46" y="545" font-size="15" font-weight="700" fill="#0F1115">No endorsing, up to 3 years</text>
+
+  <text x="8" y="604" font-size="13" fill="#5C6167">ASCI from 14 June 2021; CCPA from 9 June 2022.</text>
+</svg>

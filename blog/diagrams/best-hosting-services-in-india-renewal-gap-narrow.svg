@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 428" width="380" height="428" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">What you pay to join a host, and what you pay to stay</title>
+  <desc id="d">Hostinger Single joins at 69 rupees a month and renews at 289. MilesWeb Starter joins at 69 and says on its own page that the same price applies at renewal. BigRock Standard joins at 69 and renews at 409, roughly six times. HostPapa Essentials joins at 149.95 and renews at 449.99, about three times.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE SECOND INVOICE</text>
+
+  <rect x="13" y="39" width="359" height="350" rx="16" fill="#FDB914"/>
+  <rect x="8" y="34" width="359" height="350" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+
+  <text x="24" y="62" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">JOINING, THEN RENEWAL</text>
+  <path d="M24 76 L351 76" stroke="#E7E9EC" stroke-width="2"/>
+
+  <text x="24" y="96" font-size="14" font-weight="700" fill="#0F1115">Hostinger Single</text>
+  <text x="351" y="96" font-size="13" fill="#5C6167" text-anchor="end">printed on the page</text>
+  <rect x="24" y="108" width="96" height="32" rx="16" ry="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="72" y="129" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">&#8377;69/mo</text>
+  <path d="M126 124 L154 124" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="162" y="108" width="110" height="32" rx="16" ry="16" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="217" y="129" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">&#8377;289/mo</text>
+
+  <text x="24" y="172" font-size="14" font-weight="700" fill="#0F1115">MilesWeb Starter</text>
+  <text x="351" y="172" font-size="13" fill="#5C6167" text-anchor="end">their claim, not a test</text>
+  <rect x="24" y="184" width="96" height="32" rx="16" ry="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="72" y="205" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">&#8377;69/mo</text>
+  <path d="M126 200 L154 200" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="162" y="184" width="110" height="32" rx="16" ry="16" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="217" y="205" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">&#8377;69/mo</text>
+
+  <text x="24" y="248" font-size="14" font-weight="700" fill="#0F1115">BigRock Standard</text>
+  <text x="351" y="248" font-size="13" fill="#5C6167" text-anchor="end">roughly six times</text>
+  <rect x="24" y="260" width="96" height="32" rx="16" ry="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="72" y="281" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">&#8377;69/mo</text>
+  <path d="M126 276 L154 276" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="162" y="260" width="110" height="32" rx="16" ry="16" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="217" y="281" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">&#8377;409/mo</text>
+
+  <text x="24" y="324" font-size="14" font-weight="700" fill="#0F1115">HostPapa Essentials</text>
+  <text x="351" y="324" font-size="13" fill="#5C6167" text-anchor="end">about three times</text>
+  <rect x="24" y="336" width="96" height="32" rx="16" ry="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="72" y="357" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">&#8377;149.95</text>
+  <path d="M126 352 L154 352" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="162" y="336" width="110" height="32" rx="16" ry="16" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="217" y="357" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">&#8377;449.99</text>
+
+  <text x="8" y="416" font-size="14" fill="#5C6167">The renewal is the real price.</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 372" width="800" height="372" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Using ChatGPT and being named by ChatGPT are two separate jobs</title>
+  <desc id="d">Two panels. Using ChatGPT is an efficiency question: it affects your margin and your Tuesday afternoon, and it is decided by you and your team. Being named by ChatGPT is a demand question: it affects whether a buyer who asks an assistant ever hears about you, and it is decided by whether the wider web says specific, checkable things about you.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">TWO JOBS, TWO ANSWERS</text>
+
+  <!-- using it -->
+  <rect x="14" y="46" width="380" height="280" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="40" width="380" height="280" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="30" y="62" width="134" height="26" rx="999" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="97" y="80" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">USING CHATGPT</text>
+  <text x="30" y="126" font-size="19" font-weight="700" fill="#0F1115">An efficiency question</text>
+  <path d="M30 152 L366 152" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="30" y="180" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT IT AFFECTS</text>
+  <text x="30" y="204" font-size="14" fill="#5C6167">Your margin, and your Tuesday afternoon.</text>
+  <text x="30" y="256" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT DECIDES IT</text>
+  <text x="30" y="280" font-size="14" fill="#5C6167">You and your team.</text>
+
+  <!-- being named by it -->
+  <rect x="418" y="46" width="380" height="280" rx="16" fill="#FDB914"/>
+  <rect x="412" y="40" width="380" height="280" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="434" y="62" width="186" height="26" rx="999" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="527" y="80" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">BEING NAMED BY CHATGPT</text>
+  <text x="434" y="126" font-size="19" font-weight="700" fill="#0F1115">A demand question</text>
+  <path d="M434 152 L770 152" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="434" y="180" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT IT AFFECTS</text>
+  <text x="434" y="204" font-size="14" fill="#5C6167">Whether a buyer who asks an assistant for a<tspan x="434" dy="1.4em">shortlist ever hears about you.</tspan></text>
+  <text x="434" y="256" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT DECIDES IT</text>
+  <text x="434" y="280" font-size="14" fill="#5C6167">Whether the wider web says specific,<tspan x="434" dy="1.4em">checkable things about you.</tspan></text>
+
+  <text x="8" y="358" font-size="15" font-weight="700" fill="#0F1115">Your prompt library decides the first one. It has nothing to do with the second.</text>
+</svg>

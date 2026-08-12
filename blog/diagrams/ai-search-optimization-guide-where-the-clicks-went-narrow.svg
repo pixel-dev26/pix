@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 670" width="380" height="670" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Where the clicks went</title>
+  <desc id="d">Four measured findings show clicks leaving: 68 per cent of US Google searches ended without a click, Pew found an 8 per cent click rate with an AI summary against 15 per cent without, Seer found organic click-through on AI Overview queries fell from 1.76 to 0.61 per cent, and Chartbeat measured publishers down 60, 47 and 22 per cent. One number points the other way: pages cited inside the AI Overview saw organic click-through rise 35 per cent.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT WAS ACTUALLY MEASURED</text>
+
+  <rect x="13" y="39" width="359" height="356" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="34" width="359" height="356" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="70" font-size="17" font-weight="700" fill="#0F1115">The clicks are leaving</text>
+
+  <text x="26" y="106" font-size="14" fill="#5C6167">68% of US searches ended with<tspan x="26" dy="1.35em">no click, up from 60% in 2024</tspan></text>
+  <text x="26" y="150" font-size="13" fill="#6A6F75">SparkToro, first four months of 2026</text>
+
+  <text x="26" y="184" font-size="14" fill="#5C6167">8% clicked with an AI summary,<tspan x="26" dy="1.35em">15% without. 1% inside it.</tspan></text>
+  <text x="26" y="228" font-size="13" fill="#6A6F75">Pew, 68,879 real searches</text>
+
+  <text x="26" y="262" font-size="14" fill="#5C6167">Organic click-through on AI<tspan x="26" dy="1.35em">Overview queries: 1.76% to 0.61%</tspan></text>
+  <text x="26" y="306" font-size="13" fill="#6A6F75">Seer, June 2024 to September 2025</text>
+
+  <text x="26" y="340" font-size="14" fill="#5C6167">Publishers down 60% small,<tspan x="26" dy="1.35em">47% mid-size, 22% large</tspan></text>
+  <text x="26" y="384" font-size="13" fill="#6A6F75">Chartbeat, over two years</text>
+
+  <rect x="13" y="420" width="359" height="190" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="415" width="359" height="190" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="451" font-size="17" font-weight="700" fill="#0F1115">Except one number</text>
+  <text x="26" y="510" font-size="38" font-weight="700" fill="#0F1115">+35%</text>
+  <text x="26" y="542" font-size="14" fill="#5C6167">organic click-through for pages<tspan x="26" dy="1.35em">cited inside the AI Overview.</tspan></text>
+  <text x="26" y="592" font-size="13" fill="#6A6F75">Seer Interactive, same study</text>
+
+  <text x="8" y="638" font-size="14" fill="#5C6167">The click did not disappear. It moved<tspan x="8" dy="1.4em">to whoever the machine named.</tspan></text>
+</svg>

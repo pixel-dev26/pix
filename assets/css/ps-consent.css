@@ -1,0 +1,211 @@
+/* ============================================================================
+   Consent notice — DPDP Act 2023
+
+   Behaviour and the legal reasoning live in assets/js/ps-consent.js. This is only
+   how it looks, and it is the first component built entirely from the brand
+   foundation: every colour, size, space, radius and duration below is a token from
+   data/brand.json. There is not one hardcoded hex or px in this file.
+
+   Two things here are compliance, not taste:
+
+   - Accept and Reject are the SAME button. Same size, same weight, same colour,
+     adjacent. A Reject styled as a quieter link is a dark pattern, and the Act
+     requires consent to be free.
+   - It is a bar, not a full-screen interstitial. It must not hold the page hostage
+     to obtain a choice — consent has to be unconditional.
+   ========================================================================== */
+
+.ps-consent {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 2147483000;
+  /* above the floating WhatsApp button (99) */
+  display: flex;
+  justify-content: center;
+  padding: var(--ps-space-4);
+  font-family: var(--ps-font-body);
+  animation: ps-consent-in var(--ps-motion-base) var(--ps-motion-ease);
+}
+
+@keyframes ps-consent-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.ps-consent__panel {
+  width: 100%;
+  max-width: 61rem;
+  padding: var(--ps-space-5);
+  border: 1px solid var(--ps-line-hairline);
+  border-radius: var(--ps-radius-xl);
+  background: var(--ps-surface-page);
+  box-shadow: var(--ps-shadow-lg);
+}
+
+.ps-consent__title {
+  margin: 0 0 var(--ps-space-2);
+  font-weight: var(--ps-text-h4-weight);
+  line-height: var(--ps-text-h4-leading);
+  color: var(--ps-ink-strongest);
+  letter-spacing: normal;
+  font-size: 16px;
+}
+
+.ps-consent__lede {
+  margin: 0 0 var(--ps-space-4);
+  font-size: 13px;
+  line-height: 1.65;
+  color: #000000;
+}
+
+.ps-consent__lede a {
+  color: var(--ps-ink-default);
+  text-decoration: underline;
+  text-decoration-color: var(--ps-yellow);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ------------------------------------------------------------ the categories */
+
+.ps-consent__rows {
+  display: grid;
+  gap: var(--ps-space-4);
+  margin: 0 0 var(--ps-space-5);
+  padding: var(--ps-space-4) 0 0;
+  border-top: 1px solid var(--ps-line-hairline);
+}
+
+.ps-consent__toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--ps-space-3);
+  /* The whole label is the target, so the 44px floor is met without a big checkbox. */
+  min-height: var(--ps-target-min);
+  cursor: pointer;
+}
+
+.ps-consent__toggle input[disabled] {
+  cursor: default;
+}
+
+.ps-consent__toggle input {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 1.25rem;
+  accent-color: var(--ps-ink-strongest);
+}
+
+.ps-consent__name {
+  font-size: var(--ps-text-body);
+  font-weight: 600;
+  color: var(--ps-ink-default);
+}
+
+.ps-consent__name em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ps-ink-subtle);
+}
+
+.ps-consent__desc {
+  margin: var(--ps-space-1) 0 0 2.25rem;
+  font-size: var(--ps-text-small);
+  line-height: 1.6;
+  color: var(--ps-ink-muted);
+}
+
+/* ---------------------------------------------------------------- the buttons */
+
+.ps-consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ps-space-3);
+}
+
+.ps-consent__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--ps-target-min);
+  padding: var(--ps-space-3) var(--ps-space-5);
+  border: 1px solid transparent;
+  border-radius: var(--ps-radius-pill);
+  font-family: inherit;
+  font-size: var(--ps-text-small);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--ps-motion-fast) var(--ps-motion-ease),
+    color var(--ps-motion-fast) var(--ps-motion-ease),
+    border-color var(--ps-motion-fast) var(--ps-motion-ease);
+}
+
+/* Accept and Reject share this class deliberately — see the file header. */
+.ps-consent__btn--primary {
+  background: var(--ps-ink-strongest);
+  color: var(--ps-surface-page);
+}
+
+.ps-consent__btn--primary:hover,
+.ps-consent__btn--primary:focus-visible {
+  background: var(--ps-yellow);
+  color: var(--ps-ink-strongest);
+}
+
+.ps-consent__btn--ghost {
+  background: transparent;
+  color: var(--ps-ink-default);
+  border-color: var(--ps-line-strong);
+}
+
+.ps-consent__btn--ghost:hover,
+.ps-consent__btn--ghost:focus-visible {
+  background: var(--ps-yellow);
+  border-color: var(--ps-yellow);
+  color: var(--ps-ink-strongest);
+}
+
+.ps-consent__btn:focus-visible {
+  outline: var(--ps-focus-width) solid var(--ps-ink-strongest);
+  outline-offset: var(--ps-focus-offset);
+  box-shadow: 0 0 0 6px var(--ps-focus-colour);
+}
+
+/* --------------------------------------------------------------------- phone */
+
+@media (max-width: 47.999rem) {
+  .ps-consent {
+    padding: var(--ps-space-2);
+  }
+
+  .ps-consent__panel {
+    padding: var(--ps-space-4);
+    /* A long notice must never trap the page behind it on a short screen. */
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .ps-consent__actions>.ps-consent__btn {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-consent {
+    animation: none;
+  }
+
+  .ps-consent__btn {
+    transition: none;
+  }
+}

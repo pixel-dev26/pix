@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 700" width="380" height="700" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">How Adobe absorbs a plugin category</title>
+  <desc id="d">A plugin proves a feature is worth money, Adobe ships it in the base app, and the plugin becomes a rounding error. It has happened three times already: sky replacement, upscaling and compositing. What survives is a narrow, unglamorous job Adobe has no commercial reason to build, such as grids, noise, brushes and colour.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHY A PLUGIN LIST AGES BADLY</text>
+
+  <rect x="13" y="39" width="359" height="64" rx="14" fill="#FDB914"/>
+  <rect x="8" y="34" width="359" height="64" rx="14" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="66" r="15" fill="#0F1115"/>
+  <text x="36" y="71" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="62" y="71" font-size="14" font-weight="700" fill="#0F1115">A plugin proves a feature sells</text>
+
+  <path d="M187 104 L187 114" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="13" y="123" width="359" height="64" rx="14" fill="#FA6B45"/>
+  <rect x="8" y="118" width="359" height="64" rx="14" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="150" r="15" fill="#0F1115"/>
+  <text x="36" y="155" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="62" y="155" font-size="14" font-weight="700" fill="#0F1115">Adobe ships it in the base app</text>
+
+  <path d="M187 188 L187 198" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="13" y="207" width="359" height="64" rx="14" fill="#EE3D41"/>
+  <rect x="8" y="202" width="359" height="64" rx="14" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="234" r="15" fill="#0F1115"/>
+  <text x="36" y="239" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="62" y="239" font-size="14" font-weight="700" fill="#0F1115">The plugin is a rounding error</text>
+
+  <!-- worked examples -->
+  <rect x="13" y="291" width="359" height="250" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="286" width="359" height="250" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="314" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">ALREADY HAPPENED THREE TIMES</text>
+  <text x="26" y="344" font-size="15" font-weight="700" fill="#0F1115">Sky replacement</text>
+  <text x="26" y="366" font-size="13" fill="#5C6167">Was Luminar AI&#8217;s headline feature.<tspan x="26" dy="1.4em">Photoshop shipped it in October 2020.</tspan></text>
+  <text x="26" y="418" font-size="15" font-weight="700" fill="#0F1115">Upscaling</text>
+  <text x="26" y="440" font-size="13" fill="#5C6167">Generative Upscale, October 2025,<tspan x="26" dy="1.4em">running Topaz Labs&#8217; models.</tspan></text>
+  <text x="26" y="492" font-size="15" font-weight="700" fill="#0F1115">Compositing</text>
+  <text x="26" y="514" font-size="13" fill="#5C6167">Harmonize, in the same release.</text>
+
+  <!-- what survives -->
+  <rect x="13" y="571" width="359" height="122" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="566" width="359" height="122" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="592" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT SURVIVES</text>
+  <text x="26" y="618" font-size="15" font-weight="700" fill="#0F1115">A narrow job Adobe has no<tspan x="26" dy="1.35em">commercial reason to build.</tspan></text>
+  <text x="26" y="671" font-size="14" fill="#5C6167">Grids. Noise. Brushes. Colour.</text>
+</svg>

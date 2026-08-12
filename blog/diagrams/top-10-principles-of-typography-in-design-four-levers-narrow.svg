@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 516" width="380" height="516" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Fix bad typography in this order: hierarchy, contrast, spacing, alignment</title>
+  <desc id="d">Four levers decide whether a layout works, attacked in that order. Typeface choice sits outside them: a branding decision wearing a legibility costume, and not where the damage happens.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">FIX A LAYOUT IN THIS ORDER</text>
+
+  <rect x="13" y="39" width="359" height="64" rx="16" fill="#FDB914"/>
+  <rect x="8" y="34" width="359" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="38" cy="66" r="14" fill="#0F1115"/>
+  <text x="38" y="71" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="68" y="62" font-size="17" font-weight="700" fill="#0F1115">Hierarchy</text>
+  <text x="68" y="84" font-size="13" fill="#5C6167">what gets read first</text>
+
+  <rect x="13" y="117" width="359" height="64" rx="16" fill="#FDB914"/>
+  <rect x="8" y="112" width="359" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="38" cy="144" r="14" fill="#0F1115"/>
+  <text x="38" y="149" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="68" y="140" font-size="17" font-weight="700" fill="#0F1115">Contrast</text>
+  <text x="68" y="162" font-size="13" fill="#5C6167">make it obvious</text>
+
+  <rect x="13" y="195" width="359" height="64" rx="16" fill="#FDB914"/>
+  <rect x="8" y="190" width="359" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="38" cy="222" r="14" fill="#0F1115"/>
+  <text x="38" y="227" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="68" y="218" font-size="17" font-weight="700" fill="#0F1115">Spacing</text>
+  <text x="68" y="240" font-size="13" fill="#5C6167">group by proximity</text>
+
+  <rect x="13" y="273" width="359" height="64" rx="16" fill="#FDB914"/>
+  <rect x="8" y="268" width="359" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="38" cy="300" r="14" fill="#0F1115"/>
+  <text x="38" y="305" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="68" y="296" font-size="17" font-weight="700" fill="#0F1115">Alignment</text>
+  <text x="68" y="318" font-size="13" fill="#5C6167">one edge, not four</text>
+
+  <rect x="8" y="360" width="359" height="118" rx="16" fill="#F7F8F9" stroke="#8E959D" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="28" y="386" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">SET THIS ONE ASIDE</text>
+  <text x="28" y="414" font-size="17" font-weight="700" fill="#0F1115">Typeface choice</text>
+  <text x="28" y="440" font-size="13" fill="#5C6167">A branding decision wearing a<tspan x="28" dy="1.35em">legibility costume.</tspan></text>
+
+  <text x="8" y="504" font-size="14" font-weight="700" fill="#0F1115">All four are free to fix.</text>
+</svg>

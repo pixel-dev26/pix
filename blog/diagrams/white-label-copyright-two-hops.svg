@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 392" width="800" height="392" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">In a white label chain, copyright has to be assigned twice</title>
+  <desc id="d">Partner to agency to client. The partner wrote the code and is first owner under Section 17; paying does not move the copyright. The first hop is the one arrangements forget. Section 19 requires an assignment in writing, signed by the assignor, identifying the work and stating rights, duration and territory; with no period stated it is deemed five years, and with no territory stated it is presumed to cover India only.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">COPYRIGHT HAS TO TRAVEL TWO HOPS, NOT ONE</text>
+
+  <rect x="14" y="46" width="220" height="112" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="40" width="220" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="30" y="78" font-size="18" font-weight="700" fill="#0F1115">Partner</text>
+  <text x="30" y="112" font-size="14" fill="#5C6167">Wrote the code, so<tspan x="30" dy="1.4em">first owner, Section 17.</tspan></text>
+
+  <rect x="296" y="46" width="220" height="112" rx="16" fill="#FDB914"/>
+  <rect x="290" y="40" width="220" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="312" y="78" font-size="18" font-weight="700" fill="#0F1115">You, the agency</text>
+  <text x="312" y="112" font-size="14" fill="#5C6167">Sell the work and carry<tspan x="312" dy="1.4em">the relationship.</tspan></text>
+
+  <rect x="578" y="46" width="220" height="112" rx="16" fill="#5FBFA8"/>
+  <rect x="572" y="40" width="220" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="594" y="78" font-size="18" font-weight="700" fill="#0F1115">Your client</text>
+  <text x="594" y="112" font-size="14" fill="#5C6167">Paid for it. Paying does<tspan x="594" dy="1.4em">not move copyright.</tspan></text>
+
+  <path d="M232 96 L284 96" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M514 96 L566 96" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="159" y="172" width="200" height="28" rx="999" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="259" y="191" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">HOP 1 &#8212; USUALLY FORGOTTEN</text>
+  <rect x="453" y="172" width="176" height="28" rx="999" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="541" y="191" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">HOP 2 &#8212; USUALLY DONE</text>
+
+  <rect x="14" y="234" width="784" height="142" rx="16" fill="#FDB914"/>
+  <rect x="8" y="228" width="784" height="142" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="256" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">SECTION 19 &#8212; WHAT AN ASSIGNMENT MUST DO</text>
+
+  <rect x="34" y="272" width="100" height="30" rx="999" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="84" y="292" font-size="13" fill="#0F1115" text-anchor="middle">In writing</text>
+  <rect x="146" y="272" width="180" height="30" rx="999" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="236" y="292" font-size="13" fill="#0F1115" text-anchor="middle">Signed by the assignor</text>
+  <rect x="338" y="272" width="160" height="30" rx="999" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="418" y="292" font-size="13" fill="#0F1115" text-anchor="middle">Identifies the work</text>
+  <rect x="510" y="272" width="254" height="30" rx="999" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="637" y="292" font-size="13" fill="#0F1115" text-anchor="middle">States rights, duration, territory</text>
+
+  <circle cx="40" cy="339" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="56" y="344" font-size="15" fill="#0F1115">No period stated? Deemed five years.</text>
+  <circle cx="420" cy="339" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="436" y="344" font-size="15" fill="#0F1115">No territory stated? Presumed India only.</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 438" width="380" height="438" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Search access and training access are separate permissions</title>
+  <desc id="d">OpenAI splits its crawlers into OAI-SearchBot, which surfaces websites in ChatGPT's search features, and GPTBot, which crawls content that may be used to train foundation models. Anthropic splits the same way, with Claude-SearchBot improving search result quality and ClaudeBot collecting training content.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">FOUR CRAWLERS, TWO PERMISSIONS</text>
+
+  <text x="8" y="50" font-size="16" font-weight="700" fill="#0F1115">OpenAI</text>
+
+  <rect x="13" y="65" width="172" height="120" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="60" width="172" height="120" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="22" y="76" width="134" height="24" rx="999" fill="#4A90C7"/>
+  <text x="89" y="93" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">SEARCH ACCESS</text>
+  <text x="22" y="126" font-size="15" font-weight="700" fill="#0F1115">OAI-SearchBot</text>
+  <text x="22" y="150" font-size="13" fill="#5C6167">Surfaces sites in<tspan x="22" dy="1.3em">ChatGPT search.</tspan></text>
+
+  <rect x="205" y="65" width="172" height="120" rx="16" fill="#FDB914"/>
+  <rect x="200" y="60" width="172" height="120" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="214" y="76" width="134" height="24" rx="999" fill="#FDB914"/>
+  <text x="281" y="93" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">TRAINING ACCESS</text>
+  <text x="214" y="126" font-size="15" font-weight="700" fill="#0F1115">GPTBot</text>
+  <text x="214" y="150" font-size="13" fill="#5C6167">Crawls content that<tspan x="214" dy="1.3em">may train models.</tspan></text>
+
+  <text x="8" y="216" font-size="16" font-weight="700" fill="#0F1115">Anthropic</text>
+
+  <rect x="13" y="231" width="172" height="120" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="226" width="172" height="120" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="22" y="242" width="134" height="24" rx="999" fill="#4A90C7"/>
+  <text x="89" y="259" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">SEARCH ACCESS</text>
+  <text x="22" y="292" font-size="15" font-weight="700" fill="#0F1115">Claude-SearchBot</text>
+  <text x="22" y="316" font-size="13" fill="#5C6167">Improves search<tspan x="22" dy="1.3em">result quality.</tspan></text>
+
+  <rect x="205" y="231" width="172" height="120" rx="16" fill="#FDB914"/>
+  <rect x="200" y="226" width="172" height="120" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="214" y="242" width="134" height="24" rx="999" fill="#FDB914"/>
+  <text x="281" y="259" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">TRAINING ACCESS</text>
+  <text x="214" y="292" font-size="15" font-weight="700" fill="#0F1115">ClaudeBot</text>
+  <text x="214" y="316" font-size="13" fill="#5C6167">Collects training<tspan x="214" dy="1.3em">content.</tspan></text>
+
+  <text x="8" y="386" font-size="14" font-weight="700" fill="#0F1115">A default robots.txt can lock you out<tspan x="8" dy="1.35em">of AI answers while you believe you</tspan><tspan x="8" dy="1.35em">only opted out of training.</tspan></text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 338" width="800" height="338" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The three things that actually kill a web design company</title>
+  <desc id="d">Cash: design work is delivered before it is paid, so a company can be profitable on paper and dead in the bank on the same Tuesday. Concentration: one client at 60 percent of revenue is an employer who can fire you without notice or severance. Dependence: leads, portfolio and client relationships should not live inside a platform that can change its rules.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">NOT COMPETITION &#8212; THESE THREE</text>
+
+  <rect x="14" y="46" width="246" height="222" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="40" width="246" height="222" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="45" cy="76" r="15" fill="#0F1115"/>
+  <text x="45" y="82" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="30" y="126" font-size="19" font-weight="700" fill="#0F1115">Cash</text>
+  <path d="M30 150 L232 150" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="30" y="178" font-size="14" fill="#5C6167">Design work is delivered<tspan x="30" dy="1.4em">before it is paid. Profitable</tspan><tspan x="30" dy="1.4em">on paper and dead in the</tspan><tspan x="30" dy="1.4em">bank on the same Tuesday.</tspan></text>
+
+  <rect x="283" y="46" width="246" height="222" rx="16" fill="#FA6B45"/>
+  <rect x="277" y="40" width="246" height="222" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="314" cy="76" r="15" fill="#0F1115"/>
+  <text x="314" y="82" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="299" y="126" font-size="19" font-weight="700" fill="#0F1115">Concentration</text>
+  <path d="M299 150 L501 150" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="299" y="178" font-size="14" fill="#5C6167">One client at 60% of<tspan x="299" dy="1.4em">revenue is an employer</tspan><tspan x="299" dy="1.4em">who can fire you without</tspan><tspan x="299" dy="1.4em">notice or severance.</tspan></text>
+
+  <rect x="552" y="46" width="246" height="222" rx="16" fill="#FDB914"/>
+  <rect x="546" y="40" width="246" height="222" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="583" cy="76" r="15" fill="#0F1115"/>
+  <text x="583" y="82" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="568" y="126" font-size="19" font-weight="700" fill="#0F1115">Dependence</text>
+  <path d="M568 150 L770 150" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="568" y="178" font-size="14" fill="#5C6167">Leads, portfolio and client<tspan x="568" dy="1.4em">relationships should not</tspan><tspan x="568" dy="1.4em">live inside a platform that</tspan><tspan x="568" dy="1.4em">changes its rules.</tspan></text>
+
+  <text x="8" y="304" font-size="15" font-weight="700" fill="#0F1115">None of the three is a design problem.</text>
+  <text x="8" y="328" font-size="14" fill="#5C6167">Nobody has ever lost a web design company because their kerning was poor.</text>
+</svg>

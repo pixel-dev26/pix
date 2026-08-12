@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 386" width="800" height="386" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Retrieval and citation are two separate filters</title>
+  <desc id="d">A prompt is broken into smaller search queries, live web pages are retrieved, and an answer is synthesised naming a few brands and citing a handful of sources. Being retrieved means your content was found; being cited means it was trusted enough to shape the answer. Clearing the first filter does not clear the second.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT HAPPENS WHEN SOMEBODY ASKS FOR A RECOMMENDATION</text>
+
+  <!-- 1 -->
+  <rect x="14" y="48" width="246" height="170" rx="16" fill="#FDB914"/>
+  <rect x="8" y="42" width="246" height="170" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="38" cy="72" r="15" fill="#0F1115"/>
+  <text x="38" y="78" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="28" y="118" font-size="18" font-weight="700" fill="#0F1115">Breaks the<tspan x="28" dy="1.25em">question down</tspan></text>
+  <text x="28" y="170" font-size="14" fill="#5C6167">One prompt becomes several<tspan x="28" dy="1.4em">smaller search queries.</tspan></text>
+
+  <!-- 2 -->
+  <rect x="283" y="48" width="246" height="170" rx="16" fill="#4A90C7"/>
+  <rect x="277" y="42" width="246" height="170" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="307" cy="72" r="15" fill="#0F1115"/>
+  <text x="307" y="78" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="297" y="118" font-size="18" font-weight="700" fill="#0F1115">Retrieves live<tspan x="297" dy="1.25em">web pages</tspan></text>
+  <text x="297" y="170" font-size="14" fill="#5C6167">Fetched at that moment,<tspan x="297" dy="1.4em">not recalled from memory.</tspan></text>
+
+  <!-- 3 -->
+  <rect x="552" y="48" width="246" height="170" rx="16" fill="#FDB914"/>
+  <rect x="546" y="42" width="246" height="170" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="576" cy="72" r="15" fill="#0F1115"/>
+  <text x="576" y="78" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="566" y="118" font-size="18" font-weight="700" fill="#0F1115">Synthesises<tspan x="566" dy="1.25em">an answer</tspan></text>
+  <text x="566" y="170" font-size="14" fill="#5C6167">Names a few brands, cites a<tspan x="566" dy="1.4em">handful of sources.</tspan></text>
+
+  <path d="M258 127 L272 127" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M527 127 L541 127" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <path d="M400 212 L400 236 M669 212 L669 236" stroke="#8E959D" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <!-- the two filters -->
+  <rect x="14" y="246" width="784" height="100" rx="16" fill="#FDB914"/>
+  <rect x="8" y="240" width="784" height="100" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+
+  <text x="34" y="268" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">TWO SEPARATE FILTERS</text>
+  <text x="34" y="294" font-size="15" font-weight="700" fill="#0F1115">Clearing one does not<tspan x="34" dy="1.35em">clear the other.</tspan></text>
+
+  <rect x="297" y="256" width="206" height="30" rx="999" fill="#4A90C7"/>
+  <text x="400" y="276" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">FILTER 1: RETRIEVED</text>
+  <text x="297" y="312" font-size="14" fill="#5C6167">Your content was found.</text>
+
+  <rect x="566" y="256" width="206" height="30" rx="999" fill="#FDB914"/>
+  <text x="669" y="276" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">FILTER 2: CITED</text>
+  <text x="566" y="312" font-size="14" fill="#5C6167">Trusted enough to shape it.</text>
+
+  <text x="8" y="374" font-size="14" font-weight="700" fill="#0F1115">Retrieval gets your CV on the desk. Citation gets you the interview.</text>
+</svg>

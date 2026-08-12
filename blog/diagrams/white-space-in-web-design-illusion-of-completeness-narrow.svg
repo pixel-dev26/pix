@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 516" width="380" height="516" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Too much space in one place reads as the end of the page</title>
+  <desc id="d">A page column with two sections, then a gap large enough that visitors stop scrolling, leaving the remaining sections below it unread. Nielsen Norman Group documented this in January 2016: a large enough gap can signal the end of a page.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">SPACE IS A BUDGET, NOT A VIRTUE</text>
+
+  <rect x="110" y="34" width="160" height="256" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="126" y="50" width="128" height="30" rx="8" fill="#FDB914"/>
+  <text x="190" y="70" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">section</text>
+  <rect x="126" y="94" width="128" height="30" rx="8" fill="#FDB914"/>
+  <text x="190" y="114" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">section</text>
+  <rect x="126" y="206" width="128" height="30" rx="8" fill="#E7E9EC"/>
+  <text x="190" y="226" font-size="13" fill="#5C6167" text-anchor="middle">section</text>
+  <rect x="126" y="246" width="128" height="30" rx="8" fill="#E7E9EC"/>
+  <text x="190" y="266" font-size="13" fill="#5C6167" text-anchor="middle">section</text>
+
+  <path d="M70 160 L310 160" stroke="#EE3D41" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="190" y="184" font-size="13" font-weight="700" fill="#EE3D41" text-anchor="middle">they stop here</text>
+
+  <text x="8" y="322" font-size="14" font-weight="700" fill="#0F1115">Above the gap: two sections.</text>
+  <text x="8" y="346" font-size="14" fill="#5C6167">Below it: the rest of the page, never reached.</text>
+
+  <rect x="13" y="381" width="359" height="96" rx="16" fill="#FDB914"/>
+  <rect x="8" y="376" width="359" height="96" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="402" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">NN/G, JANUARY 2016</text>
+  <text x="28" y="428" font-size="16" font-weight="700" fill="#0F1115">A large gap can &#8220;signal<tspan x="28" dy="1.3em">the end of a page&#8221;.</tspan></text>
+
+  <text x="8" y="504" font-size="13" fill="#5C6167">Spend space on what needs separating.</text>
+</svg>

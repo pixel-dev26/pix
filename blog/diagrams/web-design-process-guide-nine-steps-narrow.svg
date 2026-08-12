@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 618" width="380" height="618" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The nine-step web design process, with the loop the neat diagrams leave out</title>
+  <desc id="d">Goals, platform, scope, design creation, visual design, content, accessibility, testing and launch. Content arrives late and re-opens the design, which is the arrow published processes never draw. Steps one and six decide the outcome.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">NINE STEPS, IN ORDER</text>
+
+  <rect x="13" y="39" width="172" height="80" rx="16" fill="#0F1115"/>
+  <rect x="8" y="34" width="172" height="80" rx="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="60" r="13" fill="#0F1115"/>
+  <text x="36" y="65" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="24" y="92" font-size="14" font-weight="700" fill="#0F1115">Goal<tspan x="24" dy="1.2em">identification</tspan></text>
+
+  <rect x="205" y="39" width="172" height="80" rx="16" fill="#4A90C7"/>
+  <rect x="200" y="34" width="172" height="80" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="228" cy="60" r="13" fill="#0F1115"/>
+  <text x="228" y="65" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="216" y="92" font-size="14" font-weight="700" fill="#0F1115">Platform<tspan x="216" dy="1.2em">choice</tspan></text>
+
+  <rect x="13" y="131" width="172" height="80" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="126" width="172" height="80" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="152" r="13" fill="#0F1115"/>
+  <text x="36" y="157" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="24" y="184" font-size="14" font-weight="700" fill="#0F1115">Scope</text>
+
+  <rect x="205" y="131" width="172" height="80" rx="16" fill="#4A90C7"/>
+  <rect x="200" y="126" width="172" height="80" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="228" cy="152" r="13" fill="#0F1115"/>
+  <text x="228" y="157" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="216" y="184" font-size="14" font-weight="700" fill="#0F1115">Design<tspan x="216" dy="1.2em">creation</tspan></text>
+
+  <rect x="13" y="223" width="172" height="80" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="218" width="172" height="80" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="244" r="13" fill="#0F1115"/>
+  <text x="36" y="249" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="24" y="276" font-size="14" font-weight="700" fill="#0F1115">Visual<tspan x="24" dy="1.2em">design</tspan></text>
+
+  <rect x="205" y="223" width="172" height="80" rx="16" fill="#0F1115"/>
+  <rect x="200" y="218" width="172" height="80" rx="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="228" cy="244" r="13" fill="#0F1115"/>
+  <text x="228" y="249" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+  <text x="216" y="276" font-size="14" font-weight="700" fill="#0F1115">Content</text>
+
+  <rect x="13" y="315" width="172" height="80" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="310" width="172" height="80" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="336" r="13" fill="#0F1115"/>
+  <text x="36" y="341" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text>
+  <text x="24" y="368" font-size="14" font-weight="700" fill="#0F1115">Accessibility</text>
+
+  <rect x="205" y="315" width="172" height="80" rx="16" fill="#5FBFA8"/>
+  <rect x="200" y="310" width="172" height="80" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="228" cy="336" r="13" fill="#0F1115"/>
+  <text x="228" y="341" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">8</text>
+  <text x="216" y="368" font-size="14" font-weight="700" fill="#0F1115">Testing</text>
+
+  <rect x="13" y="407" width="172" height="80" rx="16" fill="#0F1115"/>
+  <rect x="8" y="402" width="172" height="80" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="428" r="13" fill="#0F1115"/>
+  <text x="36" y="433" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">9</text>
+  <text x="24" y="460" font-size="14" font-weight="700" fill="#0F1115">Launch, then<tspan x="24" dy="1.2em">maintenance</tspan></text>
+
+  <rect x="8" y="502" width="359" height="76" rx="16" fill="#FFFFFF" stroke="#EE3D41" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="28" y="528" font-size="13" font-weight="700" letter-spacing="1" fill="#EE3D41">REAL PROJECTS LOOP</text>
+  <text x="28" y="556" font-size="14" fill="#5C6167">Late content re-opens the design.</text>
+
+  <text x="8" y="604" font-size="14" font-weight="700" fill="#0F1115">Steps 1 and 6 decide the outcome.</text>
+</svg>

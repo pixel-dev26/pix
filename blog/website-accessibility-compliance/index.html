@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<!-- lang is a single attribute here; the theme emitted lang="zxx" lang="en-US",
+     and the first one won, declaring the whole blog to have no linguistic content. --><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <title>A Guide to Website Accessibility Compliance and Best Practices</title>
+  <meta name="description" content="A practical guide to website accessibility compliance with tips, tools, and standards to create inclusive digital experiences for all users.">
+  <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+  <link rel="canonical" href="https://pixelstreet.in/blog/website-accessibility-compliance/">
+
+  
+  <link rel="alternate" type="text/markdown" href="../../blog/website-accessibility-compliance.md" title="Markdown source">
+  <link rel="alternate" type="text/plain" href="../../blog/llms-full.txt" title="Full blog corpus as plain text">
+
+  <meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="A Guide to Website Accessibility Compliance and Best Practices"><meta property="og:description" content="A practical guide to website accessibility compliance with tips, tools, and standards to create inclusive digital experiences for all users."><meta property="og:url" content="https://pixelstreet.in/blog/website-accessibility-compliance/"><meta property="og:site_name" content="Pixel Street"><meta property="article:section" content="WEB DEVELOPMENT"><meta property="og:updated_time" content="2025-04-23T09:43:30+00:00"><meta property="og:image" content="https://pixelstreet.in/blog/media/2025/01/11.Guide-to-Website-Accessibility-Compliance.png"><meta property="og:image:secure_url" content="https://pixelstreet.in/blog/media/2025/01/11.Guide-to-Website-Accessibility-Compliance.png"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="533"><meta property="og:image:alt" content="Website Accessibility compliance"><meta property="og:image:type" content="image/png"><meta property="article:published_time" content="2025-01-24T11:45:50+00:00"><meta property="article:modified_time" content="2025-04-23T09:43:30+00:00">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="A Guide to Website Accessibility Compliance and Best Practices"><meta name="twitter:description" content="A practical guide to website accessibility compliance with tips, tools, and standards to create inclusive digital experiences for all users."><meta name="twitter:image" content="https://pixelstreet.in/blog/media/2025/01/11.Guide-to-Website-Accessibility-Compliance.png"><meta name="twitter:label1" content="Written by"><meta name="twitter:data1" content="Khurshid Alam"><meta name="twitter:label2" content="Time to read"><meta name="twitter:data2" content="15 minutes">
+
+  <link rel="icon" href="https://pixelstreet.in/blog/media/2025/04/cropped-favicon.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="Pixelstreet Blog" href="https://pixelstreet.in/blog/feed.xml">
+
+  <meta name="google-site-verification" content="F1gXt-9n39M0QxL04HWK_w51YLXhJmCwpBC-aPVyvuk">
+
+  <link rel="stylesheet" href="../../assets/blog/style.css" media="all"><link rel="stylesheet" href="../../assets/css/bootstrap.min.css"><link rel="stylesheet" href="../../assets/remix/fonts/remixicon.css"><link rel="stylesheet" href="../../assets/pixel-cusom-font/font/flaticon_pixelstreet-set-1.css"><link rel="stylesheet" href="../../assets/footer-icon/flaticon_pixelstreet-set-2.css"><link rel="stylesheet" href="../../assets/css/new.css"><link rel="stylesheet" href="../../assets/slick-slider/slick/slick.css"><link rel="stylesheet" href="../../assets/blog/main.css"><link rel="stylesheet" href="../../assets/blog/responsive.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-brand.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-footer.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-fixes.css">
+  <link rel="stylesheet" href="../../assets/css/ps-consent.css">
+  <link rel="stylesheet" href="../../blog/ps-additions.css">
+  <script src="../../assets/js/ps-consent.js"></script>
+  <style>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+
+
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+
+
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+
+
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+
+
+/* Selectors double the block class — `.hm-toggle .hm-toggle__opt` rather than
+   `.hm-toggle__opt`. This control is dropped into two themed footers whose own
+   rules reach it at things like `footer .container a`, and inheritance loses to
+   any direct rule: the first version came out at 16px in a 48px-tall pill because
+   the theme set a font-size and a padding on footer links. Every property those
+   rules touch is restated here at a specificity they cannot reach. */
+.hm-toggle {
+  display: inline-flex;
+  align-items: stretch;
+  vertical-align: middle;
+  padding: 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(7, 11, 16, 0.16);
+  background: transparent;
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono",
+               "IBM Plex Mono", Menlo, Consolas, monospace;
+  line-height: 1;
+}
+.hm-toggle .hm-toggle__label {
+  align-self: center;
+  margin: 0;
+  padding: 0 0.7ch 0 1ch;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.45);
+  text-transform: uppercase;
+}
+.hm-toggle .hm-toggle__opt {
+  display: block;
+  margin: 0;
+  padding: 6px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.55);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.hm-toggle a.hm-toggle__opt:hover,
+.hm-toggle a.hm-toggle__opt:focus-visible {
+  color: #070b10;
+  background: rgba(253, 185, 20, 0.32);
+}
+.hm-toggle .hm-toggle__opt[aria-current="true"] {
+  background: #0b0d10;
+  color: #fdb914;
+  font-weight: 700;
+}
+.hm-toggle a.hm-toggle__opt:focus-visible { outline: 2px solid #fdb914; outline-offset: 2px; }
+
+/* Dark skin, for the machine views' own footer. Inert on human pages, which
+   never carry .machine on <html>. */
+html.machine .hm-toggle { border-color: rgba(253, 185, 20, 0.32); }
+html.machine .hm-toggle .hm-toggle__label { color: #a08a4e; }
+html.machine .hm-toggle .hm-toggle__opt { color: #b9b3a5; }
+html.machine .hm-toggle a.hm-toggle__opt:hover,
+html.machine .hm-toggle a.hm-toggle__opt:focus-visible { color: #0b0d10; background: #fdb914; }
+html.machine .hm-toggle .hm-toggle__opt[aria-current="true"] { background: #fdb914; color: #0b0d10; }
+
+/* Where it sits is not decided here any more. On the human pages the footer gives
+   it a row of its own — `.psf__view` in assets/css/ps-footer.css — under the link
+   columns and above the legal rule. This file styles the control; the footer
+   places it. The earlier version did both, and the placement half assumed a
+   footer that no longer exists.
+
+   The two things placement must keep avoiding, recorded because both were shipped
+   once: the Terms/Privacy <ul>, whose `.footer__menu nav ul li a` rules outrank
+   anything a single class can say and rendered the pill 48px tall with an
+   invisible label; and the bottom-right corner, where the floating WhatsApp
+   button covers roughly the last 84px of the page. */
+
+@media print { .hm-toggle { display: none; } }</style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://pixelstreet.in/#organization","name":"Pixel Street","alternateName":["Pixelstreet","Pixel Street Agency"],"legalName":"Pixel Street","url":"https://pixelstreet.in/","logo":{"@id":"https://pixelstreet.in/#logo"},"image":{"@id":"https://pixelstreet.in/#logo"},"description":"Pixel Street is a creative and digital agency in Salt Lake, Kolkata. It works across brand identity, web design and development, digital marketing and video production for FMCG, D2C, education, manufacturing and corporate clients in India and abroad.","slogan":"Chasing attention is yesterday's game.","foundingDate":"2020","founder":{"@id":"https://pixelstreet.in/#khurshid-alam"},"telephone":"+919007295096","email":"info@pixelstreet.in","priceRange":"₹₹₹","contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+919007295096","email":"info@pixelstreet.in","areaServed":["India","Worldwide"],"availableLanguage":["en"]}],"address":{"@type":"PostalAddress","streetAddress":"Martin Burn Business Park, Office #900B, 9th Floor, BP Block, Sector V, Bidhannagar","addressLocality":"Kolkata","addressRegion":"West Bengal","postalCode":"700091","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":22.5726,"longitude":88.4339},"hasMap":"https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"21:00"}],"areaServed":[{"@type":"Place","name":"India"},{"@type":"Place","name":"Worldwide"}],"currenciesAccepted":"INR","knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","https://www.linkedin.com/company/pixelstreet-in/","https://www.instagram.com/pixelstreet.in/","https://www.facebook.com/offpixelstreet/","https://www.behance.net/pixelstreet_in","https://dribbble.com/pixelstreetagency"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Branding and Creative Retainer","serviceType":"Brand identity and creative retainer","url":"https://pixelstreet.in/branding-agency-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Design, Website and eCommerce","serviceType":"Web design and development","url":"https://pixelstreet.in/web-design-company-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Digital Marketing and Social Campaigns","serviceType":"Digital marketing","url":"https://pixelstreet.in/digital-marketing-agency-kolkata"}}]}},{"@type":"ImageObject","@id":"https://pixelstreet.in/#logo","url":"https://pixelstreet.in/assets/images/logo1.svg","caption":"Pixel Street"},{"@type":"WebSite","@id":"https://pixelstreet.in/#website","url":"https://pixelstreet.in/","name":"Pixel Street","publisher":{"@id":"https://pixelstreet.in/#organization"}},{"@type":"Person","@id":"https://pixelstreet.in/#khurshid-alam","name":"Khurshid Alam","jobTitle":"Founder","url":"https://pixelstreet.in/blog/author/khurshid-alam/","image":{"@type":"ImageObject","url":"https://pixelstreet.in/blog/media/2024/12/author-img-1.png"},"worksFor":{"@id":"https://pixelstreet.in/#organization"},"founderOf":{"@id":"https://pixelstreet.in/#organization"},"knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.linkedin.com/company/pixelstreet-in/"]},{"@type":"ImageObject","@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#primaryimage","url":"https://pixelstreet.in/blog/media/2025/01/11.Guide-to-Website-Accessibility-Compliance.png","inLanguage":"en-US","width":1600,"height":533},{"@type":"BreadcrumbList","@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pixelstreet.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://pixelstreet.in/blog/"},{"@type":"ListItem","position":3,"name":"WEB DEVELOPMENT","item":"https://pixelstreet.in/blog/category/web-development/"},{"@type":"ListItem","position":4,"name":"Guide to Website Accessibility Compliance","item":"https://pixelstreet.in/blog/website-accessibility-compliance/"}]},{"@type":"WebPage","@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#webpage","url":"https://pixelstreet.in/blog/website-accessibility-compliance/","name":"A Guide to Website Accessibility Compliance and Best Practices","datePublished":"2023-07-06T00:00:00+00:00","dateModified":"2025-04-23T09:43:30","isPartOf":{"@id":"https://pixelstreet.in/#website"},"breadcrumb":{"@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#primaryimage"},"description":"My own rule is simpler than the table: build to WCAG 2.2 Level AA and you have satisfied every row of it with room to spare. Building to the strictest applicable standard once is cheaper than maintaining a different standard per market, and it is the only version of this work that survives a change of law without a re-audit."},{"@type":"BlogPosting","@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#article","isPartOf":{"@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#webpage"},"mainEntityOfPage":{"@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#webpage"},"headline":"Guide to Website Accessibility Compliance","description":"A practical guide to website accessibility compliance with tips, tools, and standards to create inclusive digital experiences for all users.","datePublished":"2023-07-06T00:00:00+00:00","dateModified":"2025-04-23T09:43:30","author":{"@id":"https://pixelstreet.in/#khurshid-alam"},"publisher":{"@id":"https://pixelstreet.in/#organization"},"wordCount":3354,"inLanguage":"en-US","image":{"@id":"https://pixelstreet.in/blog/website-accessibility-compliance/#primaryimage"},"articleSection":["WEB DEVELOPMENT"],"abstract":"My own rule is simpler than the table: build to WCAG 2.2 Level AA and you have satisfied every row of it with room to spare. Building to the strictest applicable standard once is cheaper than maintaining a different standard per market, and it is the only version of this work that survives a change of law without a re-audit."}]}</script>
+
+  
+  <script type="text/plain" data-ps-consent="analytics" async src="https://www.googletagmanager.com/gtag/js?id=GT-PJSBPDH"></script>
+  <script type="text/plain" data-ps-consent="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'linker', { domains: ['pixelstreet.in'] });
+    gtag('config', 'GT-PJSBPDH');
+  </script>
+</head>
+<body>
+  <div class="container">
+        <div class="nav-group">
+            <div class="navbar">
+                <a href="../../" class="navlogo-full-wrap w-inline-block">
+                    <div class="navlogo-full-mask"><img src="../../assets/images/logo1.svg" loading="eager" alt="Logo Pixelstreet" class="navlogo-full"></div><img src="../../assets/images/fav-logo.svg" loading="eager" alt="" class="navlogo-mark">
+                </a>
+                <!-- <img src="assets/images/663b5857daab4d22293b72bf_nav-connection-shape.svg" loading="lazy" width="219"
+                    alt="" class="navbar-connector" /> -->
+                <div class="navbar-menu">
+                    <div class="navbar-menu-inner">
+                        <!-- Four empty <a href="javascript:void(0);"> elements used to sit here,
+                             one before this div and three nested inside the dropdown. They came
+                             from the captured theme markup, where an unclosed anchor was
+                             auto-closed by the parser. Each was focusable with no accessible
+                             name, so every page opened with four unnamed link stops ahead of
+                             the real navigation (2.4.4 / 4.1.2), and two of them were <a>
+                             children of <ul>, which is not a valid content model. -->
+                        <div class="navbar-link-text position-relative hover-mnu-reveal"><a href="javascript:void(0);" class="navbar-link-item w-inline-block">Services
+                                </a><div class="dropdown"><ul class="list-unstyled"><li><a href="../../branding-agency-kolkata">Creative Retainer</a>
+                                        </li>
+                                        <li> <a href="../../web-design-company-kolkata">Website &amp; eCommerce</a>
+                                        </li>
+                                        <li> <a href="../../digital-marketing-agency-kolkata">Social Campaigns</a>
+                                        </li>
+                                        <li> <a href="../../video-studio-kolkata">Video Studio</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        <a href="../../our-work" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Our Work</div>
+                        </a>
+                        <a href="../../about" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Team</div>
+                        </a>
+                        <a href="../../blog/" aria-current="page" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Blog</div>
+                        </a>
+                        <a href="../../careers" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text careers-highlight">Careers<span class="careers-hiring-badge">Hiring</span></div>
+                        </a>
+                    </div><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-wrap greentowhite nav-btn w-inline-block">
+                        <div class="btn-inner navbnt">
+                            <div class="btn-main greentowhite nav-ani">
+                                <div class="btn-text">DISCUSS A PROJECT
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-mobile">
+
+                    <div class="navbody">
+                        <a data-w-id="c81135b2-e306-3de0-cea8-a4d8f2746292" href="../../" class="nav-menu-logo-link w-inline-block"><img src="../../assets/images/logo.svg" loading="lazy" alt="Logomark Pixelstreet" class="nav-menu-logo">
+                        </a>
+
+
+                        <div role="button" tabindex="0" aria-label="Close menu" data-w-id="bfc164ca-3c26-14ba-d6b1-6177cde85246" class="nav-close"><img src="../../assets/images/close-m.svg" loading="lazy" alt="Icon Close X" class="navclose-icon">
+                        </div>
+
+                        <div class="nav-item-link mobile-drop w-inline-block">
+                            <div class="nav-item-text">
+                                Services
+                                <span class="dropdown-icon"><i class="ri-add-line"></i></span>
+                                <span class="dropdown-icon"><i class="ri-subtract-fill"></i></span>
+                                <!-- Icon beside "Services" -->
+                            </div>
+                            <div class="dropdown-mob">
+                                <ul class="list-unstyled">
+                                    <li><a href="../../branding-agency-kolkata">Creative Retainer</a></li>
+                                    <li><a href="../../web-design-company-kolkata">Website &amp; eCommerce</a></li>
+                                    <li><a href="../../digital-marketing-agency-kolkata">Social Campaigns</a></li>
+                                    <li><a href="../../video-studio-kolkata">Video Studio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <a href="../../our-work" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Our Work
+                            </div>
+                        </a><a href="../../about" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Team</div>
+                        </a>
+                        <a href="../../blog/" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Blog</div>
+                        </a>
+                        <a href="../../careers" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text careers-highlight">Careers<span class="careers-hiring-badge">Hiring</span></div>
+                        </a>
+                    
+                        <!-- P4: below 992px the desktop bar's "Discuss a project"
+                             button is gone and .navbar-menu is display:none, so the
+                             only conversion route left above the footer was the
+                             floating WhatsApp button. -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                           class="nav-cta">Discuss a project</a>
+</div>
+                    <div role="button" tabindex="0" aria-label="Open menu" data-w-id="3381c287-9947-e365-7067-fd4935256394" class="navbtn-wrap mobile-tab-none">
+                        <img src="../../assets/images/menu.svg" loading="lazy" alt="" class="navbtn-icon">
+                    </div>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                       aria-label="Open the enquiry form" class="nav-enquiry">
+<div data-w-id="3381c287-9947-e365-7067-fd4935256394" class="navbtn-wrap dk-show">
+
+                            <svg class="navbtn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" width="24" height="24">
+                            <path d="M4 4.75A1.75 1.75 0 0 1 5.75 3h8.5L20 8.75v10.5A1.75 1.75 0 0 1 18.25 21H5.75A1.75 1.75 0 0 1 4 19.25V4.75Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                            <path d="M14 3v6h6M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+        <div data-w-id="50ab8146-de5b-2d73-65a6-48e823c948ec" class="topmarker"></div>
+    </div>
+
+
+  <main id="scrollsmoother-container">
+    <div class="ps-progress" aria-hidden="true"><span class="ps-progress__bar"></span></div>
+
+  <section class="section blogInnerDetails">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="blog-inner-banner">
+            <img src="../../blog/media/2025/01/11.Guide-to-Website-Accessibility-Compliance.png" alt="Guide to Website Accessibility Compliance" width="1600" height="533" fetchpriority="high" decoding="async">
+            <div class="overlap-title">
+              <h1 style="--h1-scale:1.000">Guide to Website Accessibility Compliance</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row ctsom-blog-pad">
+        <div class="col-lg-3 col-12 stuck-socila position-relative">
+          <nav class="ps-toc" aria-label="On this page">
+            
+            <details open>
+              <summary>On this page</summary>
+              <p class="ps-toc__title">On this page</p>
+              <ol>
+                <li class="lvl-2"><a href="#the-short-answer-what-binds-you-and-by-when">The short answer: what binds you, and by when</a></li><li class="lvl-2"><a href="#understanding-website-accessibility">Understanding Website Accessibility</a></li><li class="lvl-2"><a href="#wcag-22-is-the-standard-wcag-30-is-not-your-problem-yet">WCAG 2.2 is the standard. WCAG 3.0 is not your problem yet</a></li><li class="lvl-2"><a href="#why-web-accessibility-is-important-and-why-should-you-care">Why Web Accessibility is Important &amp; Why Should You Care About It?</a></li><li class="lvl-2"><a href="#defining-features-of-an-accessible-website">Defining Features of an Accessible Website!</a></li><li class="lvl-2"><a href="#what-is-accessibility-compliance">What Is Accessibility Compliance?</a></li><li class="lvl-2"><a href="#what-are-the-benefits-of-wcag-compliance">What Are The Benefits Of WCAG Compliance?</a></li><li class="lvl-2"><a href="#the-law-jurisdiction-by-jurisdiction">The law, jurisdiction by jurisdiction</a></li><li class="lvl-2"><a href="#accessible-design-vs-inclusive-design">Accessible Design Vs Inclusive Design</a></li><li class="lvl-2"><a href="#accessible-web-design-tools">Accessible Web Design Tools</a></li><li class="lvl-2"><a href="#web-accessibility-examples">Web Accessibility Examples</a></li><li class="lvl-2"><a href="#comprehensive-accessibility-checklist">Comprehensive Accessibility Checklist</a></li><li class="lvl-2"><a href="#frequently-asked-questions">Frequently asked questions</a></li><li class="lvl-2"><a href="#where-i-would-start-if-this-were-my-site">Where I would start if this were my site</a></li>
+              </ol>
+            </details>
+          </nav>
+        </div>
+
+        <div class="col-lg-9 col-12">
+          
+          <div class="blog-content">
+            <div class="author_date">
+              <div class="author-bx">
+                <div class="author">
+                  <img class="author-img" src="../../blog/media/2024/12/author-img-1.png" alt="" width="60" height="60">
+                  <p class="author-name">Khurshid Alam</p>
+                </div>
+                <div class="datebx">
+                  <p class="date"><time datetime="2023-07-06T00:00:00+00:00">July 6, 2023</time></p>
+                </div>
+              </div>
+            </div>
+            <span id="similarities" class="ps-anchor-alias" aria-hidden="true"></span><span id="difference" class="ps-anchor-alias" aria-hidden="true"></span><span id="what-i-deleted-from-this-article-and-why" class="ps-anchor-alias" aria-hidden="true"></span><!-- <h2>Guide to Website Accessibility Compliance</h2> -->
+
+ <p>I run a web design studio in Salt Lake, Kolkata. For most of the years I have been doing this, accessibility arrived as an afterthought: a line item added after launch, if at all, and argued for on goodwill. That argument is finished. Accessibility now has dates attached to it, and several of the dates have already gone past.</p>
+<p>Here is the part almost every guide written for an Indian audience leaves out. If you sell to consumers in the European Union from a shop in Kolkata, the European Accessibility Act has applied to your checkout since 28 June 2025. It does not ask where your servers sit or where you are registered for GST. Closer to home, the Supreme Court held on 30 April 2025 that digital access is part of the right to life under Article 21, and SEBI put digital accessibility on a mandatory compliance footing for every entity it regulates on 31 July 2025.</p>
+<p>So I have organised this the way I would brief a client: what actually binds you first, then what to build. The technical standard is WCAG. The obligations are local, and they are more specific than most people expect. Every date and figure below links to the document it came from, so you can check me rather than trust me.</p>
+<h2 id="the-short-answer-what-binds-you-and-by-when">The short answer: what binds you, and by when</h2>
+<div class="table-wrap" role="region" aria-label="Table, scrollable" tabindex="0"><table>
+<tbody><tr>
+<th>If this describes you</th>
+<th>What applies</th>
+<th>Effective</th>
+<th>What to build to</th>
+</tr>
+<tr>
+<td>You sell to consumers in the EU: e-commerce, e-books, consumer banking, passenger transport, e-readers</td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882">European Accessibility Act, Directive (EU) 2019/882</a></td>
+<td>Member States apply the measures from 28 June 2025</td>
+<td>The accessibility requirements in Annex I of the directive, as transposed by each Member State</td>
+</tr>
+<tr>
+<td>You run an Indian government website, portal or app</td>
+<td><a href="https://guidelines.india.gov.in/">GIGW 3.0</a>, with STQC certification</td>
+<td>Current version</td>
+<td>WCAG 2.1 Level AA</td>
+</tr>
+<tr>
+<td>You are a SEBI regulated entity</td>
+<td><a href="https://www.sebi.gov.in/legal/circulars/sep-2025/compliance-guidelines-for-digital-accessibility-circular-rights-of-persons-with-disabilities-act-2016-and-rules-made-thereunder-mandatory-compliance-by-all-regulated-entities-dated-july-31-2025-_96862.html">SEBI circular SEBI/HO/ITD-1/ITD_VIAP/P/CIR/2025/111</a></td>
+<td>31 July 2025</td>
+<td>Mandatory compliance under the RPwD Act 2016 and its rules</td>
+</tr>
+<tr>
+<td>You are an establishment covered by India's RPwD Act</td>
+<td>Section 40, read with <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=1942363">Rule 15(1)(c)(iii) of the RPwD Rules</a></td>
+<td>Notified 2023</td>
+<td>Accessibility for ICT Products and Services, Parts I and II</td>
+</tr>
+<tr>
+<td>You run a US state or local government site</td>
+<td><a href="https://www.ada.gov/resources/2024-03-08-web-rule/">DOJ ADA Title II web rule</a></td>
+<td>26 April 2027 for populations of 50,000 and above; 26 April 2028 for smaller entities and special districts</td>
+<td>WCAG 2.1 Level AA</td>
+</tr>
+<tr>
+<td>You are a private business in the US</td>
+<td>No federal web standard. The DOJ rule covers state and local government only</td>
+<td>Not applicable</td>
+<td>WCAG 2.2 Level AA, as a matter of judgement rather than regulation</td>
+</tr>
+</tbody></table></div>
+<div class="answer-box"><p>My own rule is simpler than the table: build to <strong>WCAG 2.2 Level AA</strong> and you have satisfied every row of it with room to spare. Building to the strictest applicable standard once is cheaper than maintaining a different standard per market, and it is the only version of this work that survives a change of law without a re-audit.</p></div>
+<h2 id="understanding-website-accessibility">Understanding Website Accessibility</h2>
+<p><img class="alignnone size-full wp-image-7563 aligncenter" src="../../blog/media/2023/07/Website-Accessibility.png" sizes="(max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/07/Website-Accessibility.png 1000w, ../../blog/media/2023/07/Website-Accessibility-300x189.png 300w, ../../blog/media/2023/07/Website-Accessibility-768x483.png 768w" alt="Website Accessibility" width="1000" height="629"></p>
+<p>Website accessibility means people can use your site regardless of how they perceive it, operate it or understand it. That covers more people than the phrase usually suggests. The World Health Organization estimated in its March 2023 fact sheet that 1.3 billion people, about 16% of the world's population, experience significant disability.</p>
+<p>The disabilities that shape web design decisions are the ordinary ones:</p>
+<ul>
+<li>People who are blind or have low vision, who reach your site through a screen reader or heavy magnification</li>
+<li>People who are deaf or hard of hearing, who need captions and transcripts rather than audio</li>
+<li>People with motor impairments, who use a keyboard, a switch or voice control instead of a mouse</li>
+<li>People with cognitive or learning differences, for whom a cluttered page is a wall</li>
+</ul>
+<p>Two things I would add from doing this work. First, most of the population moves in and out of these categories: a broken wrist, a bright afternoon, a noisy train. Second, accessibility failures are rarely exotic. They are missing alt text, unlabelled form fields and grey-on-grey body copy shipped by a team that never tabbed through its own page.</p>
+<h3 id="difference-between-accessibility-usability-and-inclusion">Difference Between Accessibility, Usability &amp; Inclusion!</h3>
+<p>These three get used interchangeably and they are not the same thing.</p>
+<h4 id="accessibility">Accessibility</h4>
+<p>Accessibility is whether a product can be used by people with disabilities at all. It is a floor, and it is testable. Either the button has an accessible name or it does not.</p>
+<h4 id="usability">Usability</h4>
+<p>Usability is whether a product is efficient and pleasant to use once it can be used. A form can be perfectly accessible and still be miserable. Accessibility does not guarantee usability, and a site that clears WCAG but takes eleven steps to check out has solved the legal problem and not the human one.</p>
+<h4 id="inclusion">Inclusion</h4>
+<p>Inclusion is wider again: language, literacy, connection speed, the age of the device in someone's hand. In India that last one is not a footnote. A page that only behaves on a flagship phone over fibre is excluding people whether or not it passes an automated audit.</p>
+<p>Accessibility is the foundation of the other two. You cannot make something usable for a person who cannot reach it.</p>
+<h3 id="who-manages-web-accessibility-on-the-internet">Who Manages Web Accessibility on the Internet?</h3>
+<p>The Web Accessibility Initiative (WAI), part of the World Wide Web Consortium (W3C), develops and publishes the Web Content Accessibility Guidelines. Everything else in this article is a government or a regulator pointing at WCAG and adding a deadline.</p>
+<h2 id="wcag-22-is-the-standard-wcag-30-is-not-your-problem-yet">WCAG 2.2 is the standard. WCAG 3.0 is not your problem yet</h2>
+<p>This is where most accessibility articles are quietly out of date, and it matters, because a business that thinks it is compliant against an old version is not compliant.</p>
+<p><strong>WCAG 2.2 is a W3C Recommendation dated 12 December 2024.</strong> It adds nine success criteria to WCAG 2.1 and removes one, Success Criterion 4.1.1 Parsing, which is now marked obsolete. The nine additions are worth knowing by name because they are the ones your existing site has probably never been tested against:</p>
+<ul>
+<li><strong>2.4.11 Focus Not Obscured (Minimum)</strong>, Level AA: your sticky header must not hide the element the user just tabbed to</li>
+<li><strong>2.5.7 Dragging Movements</strong>, Level AA: anything you can drag must also work without dragging</li>
+<li><strong>2.5.8 Target Size (Minimum)</strong>, Level AA: pointer targets of at least 24 by 24 CSS pixels, with exceptions for spacing, inline links and browser defaults</li>
+<li><strong>3.2.6 Consistent Help</strong>, Level A: if help exists, it sits in the same place on every page</li>
+<li><strong>3.3.7 Redundant Entry</strong>, Level A: stop asking for the same information twice in one process</li>
+<li><strong>3.3.8 Accessible Authentication (Minimum)</strong>, Level AA: no cognitive function test, such as transcribing a puzzle, without an alternative</li>
+<li>Plus 2.4.12 Focus Not Obscured (Enhanced), 2.4.13 Focus Appearance and 3.3.9 Accessible Authentication (Enhanced), all Level AAA</li>
+</ul>
+<p>Read that list next to a typical Indian e-commerce checkout and you will see the problem immediately. Redundant Entry and Accessible Authentication are aimed squarely at OTP-and-retype flows.</p>
+<p><strong>WCAG 3.0 is still a Working Draft</strong>, dated 3 March 2026, and the W3C says of it that it is "inappropriate to cite this document as other than a work in progress". Treat any proposal that defers work until WCAG 3.0 arrives as a proposal to miss a deadline. Nothing in a draft relieves you of an obligation that has already commenced.</p>
+<h2 id="why-web-accessibility-is-important-and-why-should-you-care">Why Web Accessibility is Important &amp; Why Should You Care About It?</h2>
+<p><img class="size-full wp-image-4799 aligncenter" src="../../blog/media/2022/06/Web-Accessibility.png" sizes="(max-width: 650px) 100vw, 650px" srcset="../../blog/media/2022/06/Web-Accessibility.png 650w, ../../blog/media/2022/06/Web-Accessibility-300x185.png 300w" alt="Web Accessibility" width="650" height="400"></p>
+<p>I am going to argue this with WebAIM's data rather than with sentiment. WebAIM tests the home pages of the top one million sites every year. Its February 2026 edition found that <strong>95.9% of home pages had detected WCAG 2 failures</strong>, up from 94.8% a year earlier, at an average of 56.1 errors per page. Six error types account for 96% of everything detected: low contrast text on 83.9% of pages, missing image alt text on 53.1%, missing form input labels on 51%, empty links on 46.3%, empty buttons on 30.6% and a missing document language on 13.5%.</p>
+<p><picture><source media="(max-width: 700px)" srcset="../../blog/diagrams/website-accessibility-compliance-six-failures-narrow.svg" width="380" height="512"><img src="../../blog/diagrams/website-accessibility-compliance-six-failures.svg" alt="WebAIM's February 2026 test of the top million home pages: 95.9% carried detected WCAG 2 failures, and six error types account for 96% of everything found. Low contrast text 83.9%, missing image alt text 53.1%, missing form input labels 51%, empty links 46.3%, empty buttons 30.6%, missing document language 13.5%." width="800" height="410" loading="lazy" decoding="async"></picture></p>
+<p>Two conclusions follow, and they point in opposite directions.</p>
+<p>The pessimistic one is that the web is getting worse, not better, in the year the compliance deadlines landed. The optimistic one is that the failures are boring. Contrast, alt text and form labels are not research problems. They are a fortnight of unglamorous work by a developer who has been told to do it, and they will move you further than any overlay widget on the market.</p>
+<p>Beyond the audit, the arguments that actually move a budget decision:</p>
+<p><strong>Legal exposure is now dated, not theoretical.</strong> The obligations set out further down this page have commencement dates in the past.</p>
+<p><strong>Accessible markup is better markup.</strong> Real headings, real labels, real link text and a sane document outline are the same things a search crawler and a language model use to understand a page. This overlaps heavily with the structural work in our <a href="../../blog/web-design-process-guide/">web design process guide</a>.</p>
+<p><strong>It fixes the site for everyone.</strong> Captions get watched on mute in an office. Keyboard support gets used by power users. Contrast gets appreciated by anyone outdoors in a Kolkata April.</p>
+<p><strong>It is a procurement gate.</strong> Enterprise and government buyers increasingly ask for an accessibility position before they ask for a quote, which is why it belongs on the list of <a href="../../blog/questions-before-hiring-web-design-agency/">questions to ask before hiring a web design agency</a>.</p>
+<p><strong>It is the right thing to do.</strong> I have put this last deliberately. It is true, and it is also the argument that has historically failed to get budget approved. The deadlines are what get budget approved.</p>
+<h2 id="defining-features-of-an-accessible-website">Defining Features of an Accessible Website!</h2>
+<p><img class="size-full wp-image-7559 aligncenter" src="../../blog/media/2023/07/Parts-of-a-Website-Important-for-Accessibility.png" sizes="(max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/07/Parts-of-a-Website-Important-for-Accessibility.png 1000w, ../../blog/media/2023/07/Parts-of-a-Website-Important-for-Accessibility-300x189.png 300w, ../../blog/media/2023/07/Parts-of-a-Website-Important-for-Accessibility-768x483.png 768w" alt="Parts of a Website Important for Accessibility" width="1000" height="629"></p>
+<p>The barriers people hit are consistent, and they map almost one for one onto the WebAIM failure list above:</p>
+<ul>
+<li>Missing or useless alt text, including the decorative image that gets described in full and the informative one that gets nothing</li>
+<li>Controls that cannot be reached or operated from a keyboard</li>
+<li>Text and background colours too close together to separate</li>
+<li>Link text that says nothing out of context</li>
+<li>Video and audio without captions or transcripts</li>
+</ul>
+<p>An accessible site, then, is one where:</p>
+<ul>
+<li>Text resizes without content or function being lost</li>
+<li>Every interactive element is reachable and operable by keyboard, with a visible focus indicator that is not hidden behind a sticky bar</li>
+<li>Contrast between text and background clears the WCAG ratio</li>
+<li>Images carry alt text that says what the image is for, not what it looks like</li>
+<li>Form fields have programmatic labels, and errors are announced rather than shown only in red</li>
+<li>Video is captioned and audio is transcribed</li>
+<li>Language is plain enough to be understood on one reading</li>
+</ul>
+<h2 id="what-is-accessibility-compliance"><strong>What Is Accessibility Compliance?</strong></h2>
+<p>Accessibility compliance means a site meets a named standard at a named level, and can be shown to. The named standard is almost always WCAG, and the named level is almost always AA. AAA is not a realistic target for a whole site and the W3C has never suggested it should be.</p>
+<h3 id="what-exactly-is-wcag">What exactly is WCAG?</h3>
+<p>WCAG is the international standard for web accessibility, published by the W3C. It is organised into four principles, and every success criterion sits under one of them. The current version is 2.2, a W3C Recommendation since 12 December 2024. If a proposal, an audit or a compliance report you are handed still refers to WCAG 2.0 as the current standard, that document is two versions behind and I would question what else in it is stale.</p>
+<p>The four principles are usually shortened to POUR:</p>
+<p><picture><source media="(max-width: 700px)" srcset="../../blog/diagrams/website-accessibility-compliance-pour-narrow.svg" width="380" height="586"><img src="../../blog/diagrams/website-accessibility-compliance-pour.svg" alt="Perceivable fails on images with no alt text and copy that vanishes in daylight; Operable on click-here links and hover-only menus; Understandable on undefined jargon and errors shown only as a red border; Robust on custom controls built from unlabelled generic elements. Each row pairs the failure with what to do instead." width="800" height="440" loading="lazy" decoding="async"></picture></p>
+<p><img class="alignnone size-full wp-image-7566 aligncenter" src="../../blog/media/2023/07/How-to-apply-WCAG-Accessibility-Standards.png" sizes="auto, (max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/07/How-to-apply-WCAG-Accessibility-Standards.png 1000w, ../../blog/media/2023/07/How-to-apply-WCAG-Accessibility-Standards-300x189.png 300w, ../../blog/media/2023/07/How-to-apply-WCAG-Accessibility-Standards-768x483.png 768w" alt="How to apply WCAG Accessibility Standards" width="1000" height="629"></p>
+<h3 id="perceivable"><strong>Perceivable</strong></h3>
+<p><strong>What goes wrong:</strong></p>
+<ul>
+<li>An image carries information that exists nowhere else on the page, and has no alt text, so a screen reader user simply never receives it</li>
+<li>Body text sits at a contrast ratio that looks refined on the designer's calibrated monitor and disappears on a phone in daylight</li>
+</ul>
+<p><strong>What to do:</strong></p>
+<ul>
+<li>Text alternatives: provide text alternatives for non-text content, so it can be rendered as large print, braille or speech</li>
+<li>Time-based media: provide alternatives for audio and video</li>
+<li>Adaptable: content must survive being presented in a different layout without losing information or structure</li>
+<li>Distinguishable: make it easier to see and hear content, starting with contrast</li>
+</ul>
+<h3 id="operable"><strong>Operable</strong></h3>
+<p><strong>What goes wrong:</strong></p>
+<ul>
+<li>A link that reads "click here" tells a screen reader user nothing. Screen readers can list every link on a page, and a page of "click here" is a page of nothing</li>
+<li>A drop-down that only opens on hover cannot be opened by a keyboard or a touchscreen</li>
+</ul>
+<p><strong>What to do:</strong></p>
+<ul>
+<li>Keyboard accessible: every function available from a keyboard</li>
+<li>Enough time: give users enough time to read and act, and let them extend it</li>
+<li>Navigable: skip links, meaningful page titles, a visible focus indicator that is not obscured</li>
+<li>Seizures: nothing that flashes in the range known to trigger them</li>
+<li>Input modalities: pointer targets that meet the 24 by 24 CSS pixel minimum, and no function that requires dragging without an alternative</li>
+</ul>
+<h3 id="understandable"><strong>Understandable</strong></h3>
+<p><strong>What goes wrong:</strong></p>
+<ul>
+<li>Jargon and undefined acronyms, which exclude far more people than the ones the criterion was written for</li>
+<li>A form that rejects a submission and shows the error only as a red border, with no text and no announcement</li>
+</ul>
+<p><strong>What to do:</strong></p>
+<ul>
+<li>Readable: plain language, and a declared document language so the screen reader uses the right voice</li>
+<li>Predictable: pages behave consistently, and help sits in the same place every time</li>
+<li>Input assistance: label fields, describe errors in words, and do not make people re-enter what they have already given you</li>
+</ul>
+<h3 id="robust"><strong>Robust:</strong></h3>
+<p><strong>What goes wrong:</strong></p>
+<ul>
+<li>A custom component built out of unlabelled generic elements, so assistive technology has no idea it is a control</li>
+<li>A feature that depends on one browser engine, with no fallback for anything else</li>
+</ul>
+<p><strong>What to do:</strong></p>
+<ul>
+<li>Compatible: use native elements where they exist, and correct roles, names and values where they do not, so current and future assistive technologies can interpret the page</li>
+</ul>
+<h2 id="what-are-the-benefits-of-wcag-compliance"><strong>What Are The Benefits Of WCAG Compliance?</strong></h2>
+<p><img class="alignnone size-full" src="https://i0.wp.com/sonix.ai/resources/wp-content/uploads/2022/11/wcag-standards-at-a-glance.jpg?w=1388&amp;ssl=1" alt="WCAG Compliance: Principles &amp; Requirements" width="1388" height="900"></p>
+<p class="aligncenter">Source:&nbsp;<a href="https://sonix.ai/resources/wcag-compliance/">sonix.ai</a></p>
+<p>The honest list is short:</p>
+<ul>
+<li>People with disabilities can use the site, which was the point</li>
+<li>The structural work that accessibility forces (real headings, real labels, descriptive links, a declared language) is the same work good technical SEO asks for</li>
+<li>You satisfy the regulations set out below instead of discovering them during a procurement review</li>
+<li>You have something defensible to say when an enterprise buyer asks about accessibility, rather than an improvised answer</li>
+</ul>
+<p>Traffic and conversion uplift are missing from that list on purpose. They are sold as benefits of WCAG compliance constantly, and I could not find a study behind the numbers that I would put my name to. A figure that sounds right is worse than no figure.</p>
+<h2 id="the-law-jurisdiction-by-jurisdiction">The law, jurisdiction by jurisdiction</h2>
+<p>This is the section that dates fastest and the one most guides get wrong, so each claim below is linked to the document it comes from.</p>
+<h3 id="india-four-obligations-most-accessibility-guides-omit">India: four obligations most accessibility guides omit</h3>
+<p>India is usually written up as having no digital accessibility law. That is wrong, and it has been wrong for years.</p>
+<p><strong>The RPwD Act 2016 and its rules.</strong> Section 40 of the Rights of Persons with Disabilities Act 2016 empowers the Central Government to lay down standards of accessibility for information and communication, including appropriate technologies. Under Rule 15 of the RPwD Rules, the government has notified <em>Accessibility for the ICT Products and Services, Parts I and II</em> at Rule 15(1)(c)(iii). This is not guidance addressed to the technology industry. It is a standard notified under a statute.</p>
+<p><strong>GIGW 3.0.</strong> The Guidelines for Indian Government Websites are developed jointly by the National Informatics Centre, the STQC Directorate and CERT-In. Version 3.0 is current, and it "ensures conformity with Level AA of WCAG 2.1", an upgrade from GIGW 2.0, which sat on WCAG 2.0. Government bodies are expected to assess their sites against GIGW 3.0 and obtain STQC certification. If you build for a ministry, a state department or a PSU, this is your specification and WCAG 2.1 AA is your floor.</p>
+<p><strong>The Supreme Court, 30 April 2025.</strong> In <em>Pragya Prasun</em> and <em>Amar Jain</em>, a bench of Justices J.B. Pardiwala and R. Mahadevan held that the right to digital access is part of Article 21, and issued directions to make eKYC accessible to people with visual impairments and to acid-attack survivors with facial disfigurement. Digital accessibility in India is now a constitutional question, not a procurement preference.</p>
+<p><strong>SEBI, 31 July 2025.</strong> SEBI issued circular SEBI/HO/ITD-1/ITD_VIAP/P/CIR/2025/111, titled <em>Rights of Persons with Disabilities Act, 2016 and rules made thereunder — mandatory compliance by all Regulated Entities</em>, and followed it with compliance guidelines in September 2025. If you build for a broker, an AMC, an investment adviser or a research analyst, accessibility is a regulatory obligation with a reporting trail, not a nice-to-have.</p>
+<p>Four separate obligations, none of them obscure, and almost no Indian web design brief mentions any of them. That gap is the whole reason this section exists.</p>
+<h3 id="european-union-the-act-that-already-applies-to-your-checkout">European Union: the Act that already applies to your checkout</h3>
+<p>The European Accessibility Act is Directive (EU) 2019/882. Article 31 required Member States to adopt implementing law by 28 June 2022 and to <strong>apply those measures from 28 June 2025</strong>. That date has passed.</p>
+<p>Article 2(2) lists the services in scope for consumers after 28 June 2025, and the list ends with <strong>e-commerce services</strong>. Article 3 defines those as "services provided at a distance, through websites and mobile device-based services by electronic means and at the individual request of a consumer with a view to concluding a consumer contract". That is an online shop, described precisely.</p>
+<p>The point Indian exporters keep missing is the definition of a service provider. Article 3 defines one as "any natural or legal person who provides a service on the Union market or makes offers to provide such a service to consumers in the Union". Being established in Kolkata is not an exemption. Offering to sell to a consumer in Dublin or Düsseldorf is what puts you in scope.</p>
+<p>There are two limits worth knowing:</p>
+<ul>
+<li><strong>Microenterprises providing services are exempt</strong> under Article 4(5). Article 3 defines a microenterprise as one employing fewer than 10 people with an annual turnover, or balance sheet total, not exceeding EUR 2 million. Plenty of Indian D2C exporters sit above that line without ever having checked, which puts them squarely in scope rather than out of it.</li>
+<li><strong>Article 32 provides a transitional period ending 28 June 2030</strong>, during which service providers may continue to use products lawfully in use before the application date. It is a runway for hardware and legacy contracts, not a general extension for your website.</li>
+</ul>
+<h3 id="united-states-the-rule-covers-government-not-your-shop">United States: the rule covers government, not your shop</h3>
+<p>The Americans with Disabilities Act is cited constantly in accessibility marketing, usually with the implication that it sets a web standard for every business. It does not.</p>
+<p>The Department of Justice published a web accessibility rule in the Federal Register on 24 April 2024. It requires <strong>WCAG 2.1 Level AA</strong>, and it applies to state and local government entities: agencies, public schools and universities, transit agencies, libraries, courts and special districts. The DOJ's own fact sheet is explicit that the rule does not address Title III, which is the part of the ADA covering private businesses.</p>
+<p>An Interim Final Rule published on 20 April 2026 extended the compliance dates. Entities serving populations of 50,000 or more now have until <strong>26 April 2027</strong>; smaller entities and special district governments have until <strong>26 April 2028</strong>. The DOJ's stated reason was that it had overestimated how far the tooling and the staffing had come.</p>
+<p>For a private business selling into the US, there is no federal web accessibility regulation to comply with. What there is instead is litigation risk under Title III, which is a different kind of problem and one I am not qualified to size. There is no lawsuit count or settlement figure on this page, because those numbers circulate constantly and almost always trace back to a vendor with an overlay to sell.</p>
+<h2 id="accessible-design-vs-inclusive-design"><strong>Accessible Design Vs Inclusive Design</strong></h2>
+<p>Accessible design is the deliberate design of products, services and environments so they can be used by people with disabilities. Inclusive design considers the full range of human difference: ability, language, culture, gender, age, income, device.</p>
+<p>Both aim to widen who can use a thing, and both start by considering people the design team is not. The difference is scope. Accessible design has a testable standard behind it. Inclusive design does not, and that is its strength and its weakness at once.</p>
+<h3 id="where-do-they-meet"><strong>Where do they meet?</strong></h3>
+<p>They meet in process, which is the part teams skip. Barriers are created early, in the sketch, by designers who unconsciously design for themselves. No amount of remediation later is as cheap as one accessibility review during design.</p>
+<ul>
+<li><strong>Define</strong>: name the goals, the users and the tasks, including the users who will not be using a mouse</li>
+<li><strong>Research</strong>: talk to people who use assistive technology, rather than simulating them</li>
+<li><strong>Ideate and prototype</strong>: check contrast, focus order and target size while it is still cheap to change</li>
+<li><strong>Test</strong>: with real assistive technology and real users, not only with an automated scanner</li>
+<li><strong>Iterate and launch</strong>: and then keep testing, because accessibility regresses the moment someone ships a new component</li>
+</ul>
+<h2 id="accessible-web-design-tools"><strong>Accessible Web Design Tools</strong></h2>
+<p><img class="alignnone size-full wp-image-7568 aligncenter" src="../../blog/media/2023/07/Top-Web-Accessibility-Tools.png" sizes="auto, (max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/07/Top-Web-Accessibility-Tools.png 1000w, ../../blog/media/2023/07/Top-Web-Accessibility-Tools-300x189.png 300w, ../../blog/media/2023/07/Top-Web-Accessibility-Tools-768x483.png 768w" alt="Top Web Accessibility Tools" width="1000" height="629"></p>
+<p>One caveat before the list. Automated tools find the mechanical failures: contrast, missing alt, missing labels, empty controls. Those are exactly the six categories that WebAIM says account for 96% of detected errors, so the tools are genuinely worth running. They cannot tell you whether your alt text is meaningful, whether your focus order makes sense or whether your error message helps. That part is manual, and there is no product that removes it.</p>
+<h3 id="wave"><strong>WAVE</strong></h3>
+<p>WAVE by WebAIM is the fastest way to get a first read on a page. Enter a URL and it overlays errors, alerts and structure directly on the rendered page, which makes it easy to show a client what is actually wrong rather than handing over a report.</p>
+<h3 id="axe"><strong>axe</strong></h3>
+<p>axe by Deque is the engine most other tools are built on, and the browser extension is the one I keep open during development. It is deliberately conservative: it reports issues it can prove, which means a clean axe run is a floor and not a pass.</p>
+<h3 id="google-lighthouse"><strong>Google Lighthouse</strong></h3>
+<p>Lighthouse ships inside Chrome DevTools and runs an accessibility category alongside performance and SEO. Treat the accessibility score as a smoke alarm rather than a certificate. A perfect score on a page nobody can navigate by keyboard is a common and misleading outcome.</p>
+<h3 id="chrome-devtools-vision-deficiency-emulation"><strong>Chrome DevTools vision deficiency emulation</strong></h3>
+<p>If you have seen NoCoffee recommended for this, its Chrome Web Store listing no longer resolves and returns "This item is not available". The capability moved into the browser itself: the Rendering tab in Chrome DevTools emulates blurred vision, reduced contrast, protanopia, deuteranopia, tritanopia and achromatopsia, with nothing to install.</p>
+<h3 id="webaim-contrast-checker"><strong>WebAIM Contrast Checker</strong></h3>
+<p>The A11Y Color Contrast Accessibility Validator, still widely linked, now redirects to AudioEye's contrast checker, the product having changed hands. WebAIM's own contrast checker is the one I use: paste two colours, get the ratio and the AA and AAA verdicts for normal and large text.</p>
+<h3 id="inclusive-components"><strong>Inclusive Components</strong></h3>
+<p>Heydon Pickering's pattern library, still online and still the best free explanation of why a custom component behaves the way it does. Read the tabs and menu-button chapters before you build either.</p>
+<h3 id="sortsite"><strong>SortSite</strong></h3>
+<p>SortSite by PowerMapper crawls a whole site rather than a page, checking accessibility against WCAG and Section 508 alongside broken links, browser compatibility, SEO and standards. PowerMapper states it runs 1300 rules on each page.</p>
+<h3 id="dyno-mapper"><strong>DYNO Mapper</strong></h3>
+<p>DYNO Mapper is a visual sitemap and content-inventory tool with web and PDF accessibility checking attached. It is useful when the problem is scale and you need to know which of nine hundred pages to look at first, rather than what is wrong with one.</p>
+<h2 id="web-accessibility-examples">Web Accessibility Examples</h2>
+<p>Accessibility roundups routinely assert that a named organisation conforms to WCAG at Level AA. What follows instead is what each of these three actually publishes, which is a different thing. A conformance claim is only worth what the accessibility statement behind it says, and for two of the three below I could not find a statement at all.</p>
+<h3 id="bbc-website"><strong>BBC Website</strong></h3>
+<p><img class="alignnone size-full wp-image-7560 aligncenter" src="../../blog/media/2023/07/BBC-website.png" sizes="auto, (max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/07/BBC-website.png 1000w, ../../blog/media/2023/07/BBC-website-300x189.png 300w, ../../blog/media/2023/07/BBC-website-768x483.png 768w" alt="BBC website" width="1000" height="629"></p>
+<p class="aligncenter">Source:&nbsp;<a href="https://www.bbc.com/">bbc.com</a></p>
+<p>The BBC is the example worth copying, not because its pages are flawless but because it publishes its standard. Its accessibility site states plainly that "All BBC websites and apps must conform to the Mobile Accessibility Guidelines", and it publishes those guidelines, a Guide to Accessible HTML Documents, subtitle guidelines and design guidance in the open. Anyone can hold the BBC to a document the BBC wrote. That is what an accessibility commitment looks like when it is real.</p>
+<h3 id="obama-foundation-website"><strong>Obama Foundation Website</strong></h3>
+<p><img class="size-full wp-image-7561 aligncenter" src="../../blog/media/2023/07/Obama-Foundation-Website.png" sizes="auto, (max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/07/Obama-Foundation-Website.png 1000w, ../../blog/media/2023/07/Obama-Foundation-Website-300x189.png 300w, ../../blog/media/2023/07/Obama-Foundation-Website-768x483.png 768w" alt="Obama Foundation Website" width="1000" height="629"></p>
+<p class="aligncenter">Source:&nbsp;<a href="https://www.obama.org/">obama.org</a></p>
+<p>A clean, high-contrast editorial layout with generous type and a restrained palette, which is most of the visual half of the job. I could not find a published accessibility statement or conformance claim on the site, so I am not making one on its behalf. Take the design as the lesson and check the statement yourself before citing it in a pitch.</p>
+<h3 id="unilever-website">Unilever Website</h3>
+<p><img class="alignnone size-full wp-image-7562 aligncenter" src="../../blog/media/2023/07/Unilever-website.png" sizes="auto, (max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/07/Unilever-website.png 1000w, ../../blog/media/2023/07/Unilever-website-300x189.png 300w, ../../blog/media/2023/07/Unilever-website-768x483.png 768w" alt="Unilever website" width="1000" height="629"></p>
+<p class="aligncenter">Source:&nbsp;<a href="https://www.unilever.com/">unilever.com</a></p>
+<p>A large corporate site with a heavy brand portfolio behind it, which is the hard version of this problem: many teams, many templates, one standard to hold them all to. Brand counts get quoted for Unilever freely; its own brands page states no number, so there is none here.</p>
+<h2 id="comprehensive-accessibility-checklist">Comprehensive Accessibility Checklist</h2>
+<p>Updated for WCAG 2.2. The items marked new are the ones added in 2.2, which is where most circulating checklists stop short.</p>
+<h3 id="use-of-color-and-contrast">Use of Color and Contrast</h3>
+<ul>
+<li>Never use colour alone to carry meaning, including in charts, form validation and status badges</li>
+<li>Check contrast for body text, link text, placeholder text and the focus indicator</li>
+<li>Test the palette against the real background image, not against white</li>
+</ul>
+<h3 id="links">Links</h3>
+<ul>
+<li>Links must be distinguishable from surrounding text by something other than colour</li>
+<li>Link text must make sense read on its own, out of order, with no surrounding sentence</li>
+<li>Provide a skip link so keyboard users can jump past navigation</li>
+</ul>
+<h3 id="keyboard-and-focus">Keyboard and Focus</h3>
+<ul>
+<li>Every interactive element reachable and operable by keyboard, in an order that matches the visual layout</li>
+<li>A visible focus indicator on every focusable element</li>
+<li><strong>New in 2.2:</strong> the focused element must not be hidden behind a sticky header, footer or cookie bar (2.4.11)</li>
+</ul>
+<h3 id="pointer-touch-and-dragging">Pointer, Touch and Dragging</h3>
+<ul>
+<li><strong>New in 2.2:</strong> pointer targets at least 24 by 24 CSS pixels, or spaced far enough apart to satisfy the exception (2.5.8)</li>
+<li><strong>New in 2.2:</strong> anything operated by dragging must have a single-pointer alternative, such as tap-to-select then tap-to-place (2.5.7)</li>
+</ul>
+<h3 id="content-structure-and-semantics">Content Structure &amp; Semantics</h3>
+<ul>
+<li>One page title per page, and a heading hierarchy that does not skip levels</li>
+<li>Landmarks for header, navigation, main and footer</li>
+<li>Iframes carry a meaningful title attribute</li>
+<li>A declared document language, which 13.5% of tested home pages still lack</li>
+</ul>
+<h3 id="images-and-media">Images &amp; Media</h3>
+<ul>
+<li>Informative images have alt text that conveys their purpose; decorative images have empty alt</li>
+<li>Image links describe the destination, not the picture</li>
+<li>Captions and transcripts for video and audio</li>
+</ul>
+<h3 id="forms-errors-and-authentication">Forms, Errors and Authentication</h3>
+<ul>
+<li>Every field has a programmatic label; a placeholder is not a label</li>
+<li>Errors are described in text, associated with the field, and announced</li>
+<li><strong>New in 2.2:</strong> do not ask for information the user has already entered in the same process (3.3.7)</li>
+<li><strong>New in 2.2:</strong> no cognitive function test in authentication without an alternative, which affects puzzle-style CAPTCHAs and retype-the-OTP flows (3.3.8)</li>
+</ul>
+<h3 id="help-and-consistency">Help and Consistency</h3>
+<ul>
+<li><strong>New in 2.2:</strong> if help exists (contact link, chat, self-help), it appears in the same relative order on every page (3.2.6)</li>
+</ul>
+<h3 id="documents">Documents</h3>
+<ul>
+<li>PDF, presentation and word-processing files linked from the site must be accessible too, which in practice means tagged PDFs rather than scans</li>
+<li>Where a document exists only as a scan, publish an accessible HTML equivalent</li>
+</ul>
+<h3 id="testing-and-validation">Testing and Validation</h3>
+<ul>
+<li>Run axe or WAVE on every template, not every page</li>
+<li>Tab through each template with no mouse attached, then again with a screen reader</li>
+<li>Re-test after every component change, because this is the point at which accessibility silently regresses</li>
+</ul>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="does-the-european-accessibility-act-really-apply-to-an">Does the European Accessibility Act really apply to an Indian company?</h3>
+<p>If you offer e-commerce to consumers in the EU, yes. The directive defines a service provider as any person who provides a service on the Union market or offers to provide one to consumers in the Union. Where you are established is not the test. The one broad escape is the microenterprise exemption in Article 4(5): fewer than 10 employees and turnover or balance sheet total not exceeding EUR 2 million.</p>
+<h3 id="should-i-build-to-wcag-21-or-22">Should I build to WCAG 2.1 or 2.2?</h3>
+<p>2.2, at Level AA. Several regulations still name 2.1, including GIGW 3.0 and the DOJ's Title II rule, but 2.2 is backwards compatible in the direction that matters: satisfying 2.2 AA satisfies 2.1 AA. Building to the older version to save nine success criteria means paying for the gap twice.</p>
+<h3 id="do-accessibility-overlay-widgets-make-a-site-compliant">Do accessibility overlay widgets make a site compliant?</h3>
+<p>No, and I would not put one on a site I was responsible for. An overlay is a script that modifies a page after it loads. It cannot fix a missing label it cannot infer, it cannot write meaningful alt text, and it cannot repair a focus order. It also cannot help with the six failure categories WebAIM found, because those are properties of the underlying markup. Fix the markup.</p>
+<h3 id="how-much-of-an-audit-can-be-automated">How much of an audit can be automated?</h3>
+<p>Enough to be worth doing and nowhere near enough to finish. Automated tools reliably catch contrast, missing alt, missing labels and empty controls. They cannot judge whether alt text is useful, whether a heading structure reflects the content, or whether an error message tells a person what to do next. Budget for a manual pass with a keyboard and a screen reader.</p>
+<h3 id="where-should-a-small-indian-business-start-on-monday-morning">Where should a small Indian business start on Monday morning?</h3>
+<p>Run axe or WAVE over your five most important templates, fix contrast and form labels first because they are the two commonest failures, then tab through a checkout with the mouse unplugged. That sequence costs almost nothing and removes the majority of what an audit would report. Everything after that is worth doing properly, with a design process that treats accessibility as a constraint rather than a review gate.</p>
+<span id="conclusion" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="where-i-would-start-if-this-were-my-site">Where I would start if this were my site</h2>
+<p>Accessibility work fails when it is scheduled as a project. It succeeds when it becomes a property of your templates and your component library, because then it is inherited by every page anyone builds afterwards. That is a design-system decision, not a compliance decision, and it belongs alongside the other structural choices in <a href="../../blog/12-popular-web-design-trends/">how modern web design is actually built</a>.</p>
+<p>At Pixel Street we design and build for brands including Coca-Cola, ITC and Marico, from an office in Salt Lake, Kolkata. The reason I have written this with citations rather than reassurance is that accessibility advice which is out of date is worse than none: it tells a business it is safe when the deadline has already gone past. Check the primary sources linked above against the date you are reading this, and if the law has moved again, believe the law and not the article.</p>
+
+          </div>
+
+          
+          <p class="ps-facts">
+            <span class="ps-facts__item"><i class="ri-time-line" aria-hidden="true"></i> 15 min read</span>
+            <span class="ps-facts__item"><i class="ri-links-line" aria-hidden="true"></i> 34 cited sources</span>
+            <a class="ps-facts__item ps-facts__cat" href="../../blog/category/web-development/">WEB DEVELOPMENT</a>
+          </p>
+
+
+          <div class="ps-share">
+            <p class="ps-share__label">Share</p>
+            <ul class="ps-share__list">
+              <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwebsite-accessibility-compliance%2F" rel="noopener" target="_blank" aria-label="Share on Facebook"><i class="ri-facebook-fill"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?text=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwebsite-accessibility-compliance%2F" rel="noopener" target="_blank" aria-label="Share on WhatsApp"><i class="ri-whatsapp-fill"></i></a></li>
+              <li><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwebsite-accessibility-compliance%2F" rel="noopener" target="_blank" aria-label="Share on LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+              <li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwebsite-accessibility-compliance%2F&text=Guide%20to%20Website%20Accessibility%20Compliance" rel="noopener" target="_blank" aria-label="Share on X"><i class="ri-twitter-x-fill"></i></a></li>
+              <li><a href="mailto:?subject=Guide%20to%20Website%20Accessibility%20Compliance&#38;body=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwebsite-accessibility-compliance%2F" aria-label="Share by email"><i class="ri-mail-line"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="quote">
+            <div class="quote-img"><img src="../../blog/media/2024/12/author-img-1.png" alt="" width="120" height="120" loading="lazy"></div>
+            <div class="quote-text">
+              
+              <h2 class="founder-title">Khurshid Alam</h2>
+              <p class="desg">Author</p>
+              <p class="bio">Khurshid Alam is the founder of Pixel Street, an AI-native design &amp; development studio. Design thinking on weekdays and spreadsheets on weekends.</p>
+              <p class="bio">He writes about growth, design, and AI, mostly because someone has to say the quiet parts out loud.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps-related" aria-labelledby="ps-related-h">
+      <div class="container">
+        <h2 class="ps-related__head" id="ps-related-h">Keep reading</h2>
+        <div class="ps-grid ps-grid--related">
+          <article class="ps-card  all web-development ui-ux-design" data-title="ai website builders vs custom development: where the shiny tools actually break" data-blurb="ai website builders are fast, but are they right for your business? discover where they excel, where they fail, and when custom development is the smarter choice." data-cat="web-development ui-ux-design">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-300x104.png 300w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-768x265.png 768w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-1024x354.png 1024w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">WEB DEVELOPMENT</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/ai-website-builders-vs-custom-development/">AI Website Builders vs Custom Development: Where the Shiny Tools Actually Break</a>
+    </h3>
+
+    <p class="ps-card__blurb">AI website builders are fast, but are they right for your business? Discover where they excel, where they fail, and when custom development is the…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-29T00:00:00+00:00">July 29, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>6 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all seo web-development" data-title="aeo vs geo vs seo: what actually matters in 2026 (and what is just noise)" data-blurb="learn about aeo vs geo vs seo. discover what changed with ai search, what still matters, and how to optimize for google ai overviews, chatgpt, and traditional search in 2026." data-cat="seo web-development">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/AEOvsGEOvsSEO-V2.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/AEOvsGEOvsSEO-V2-300x104.png 300w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2-768x265.png 768w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2-1024x354.png 1024w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">Digital Marketing</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/aeo-vs-geo-vs-seo/">AEO vs GEO vs SEO: What Actually Matters in 2026 (And What Is Just Noise)</a>
+    </h3>
+
+    <p class="ps-card__blurb">Learn about AEO vs GEO vs SEO. Discover what changed with AI search, what still matters, and how to optimize for Google AI Overviews, ChatGPT, and…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-27T00:00:00+00:00">July 27, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>10 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all seo web-development" data-title="how to get your brand mentioned by chatgpt: the ultimate india playbook (2026)" data-blurb="want chatgpt to recommend your brand? learn how ai chooses businesses, where citations come from, and practical ways to increase your visibility." data-cat="seo web-development">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-300x104.png 300w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-768x265.png 768w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-1024x354.png 1024w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">Digital Marketing</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/how-to-get-mentioned-by-chatgpt/">How to Get Your Brand Mentioned by ChatGPT: The Ultimate India Playbook (2026)</a>
+    </h3>
+
+    <p class="ps-card__blurb">Want ChatGPT to recommend your brand? Learn how AI chooses businesses, where citations come from, and practical ways to increase your visibility.</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-22T00:00:00+00:00">July 22, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>9 min read</span>
+    </p>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer class="psf psf--rule">
+    <div class="container">
+
+        <div class="psf__grid">
+
+            <div class="psf__col psf__contact">
+                <div class="psf__block">
+                    <h2 class="psf__heading">Address</h2>
+                    <p class="psf__text">Martin Burn Business Park, #900B, Salt Lake, Sector - V, Kolkata - 700091</p>
+                </div>
+                <div class="psf__block">
+                    <h2 class="psf__heading">Phone</h2>
+                    <p class="psf__text"><a class="psf__link" href="tel:+919007295096">+91 90072 95096</a></p>
+                </div>
+                <div class="psf__block">
+                    <h2 class="psf__heading">Email</h2>
+                    <p class="psf__text"><a class="psf__link" href="mailto:info@pixelstreet.in">info@pixelstreet.in</a></p>
+                </div>
+            </div>
+
+            <nav class="psf__col" aria-labelledby="psf-quick">
+                <h2 class="psf__heading" id="psf-quick">Quick Links</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../our-work">Our Work</a></li>
+                    <li><a class="psf__link" href="../../about">Team</a></li>
+                    <li><a class="psf__link" href="../../blog/">Blog</a></li>
+                    <li><a class="psf__link" href="../../contact-us">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <nav class="psf__col" aria-labelledby="psf-services">
+                <h2 class="psf__heading" id="psf-services">Services</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../branding-agency-kolkata">Creative Retainer</a></li>
+                    <li><a class="psf__link" href="../../web-design-company-kolkata">Website &amp; eCommerce</a></li>
+                    <li><a class="psf__link" href="../../digital-marketing-agency-kolkata">Social Campaigns</a></li>
+                    <li><a class="psf__link" href="../../video-studio-kolkata">Video Studio</a></li>
+                </ul>
+            </nav>
+
+            <nav class="psf__col" aria-labelledby="psf-cases">
+                <h2 class="psf__heading" id="psf-cases">Case Study</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../case-studies/mangaldeep-3in1">Mangaldeep</a></li>
+                    <li><a class="psf__link" href="../../case-studies/shipzip">Shipzip</a></li>
+                    <li><a class="psf__link" href="../../case-studies/the-hindu-group">The Hindu</a></li>
+                    <li><a class="psf__link" href="../../case-studies/marico">Marico</a></li>
+                </ul>
+            </nav>
+
+            <div class="psf__col psf__social-col">
+                <h2 class="psf__heading">Social Media</h2>
+                <ul class="psf__social">
+                    <li><a class="psf__icon" href="https://www.linkedin.com/company/pixelstreet-in/" target="_blank" rel="noopener" aria-label="Pixel Street on LinkedIn"><i class="ri-linkedin-fill" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.instagram.com/pixelstreet.in/" target="_blank" rel="noopener" aria-label="Pixel Street on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8?source=g.page.m.we._" target="_blank" rel="noopener" aria-label="Pixel Street on Google Business Profile"><i class="flaticon-my-business" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.behance.net/pixelstreet_in" target="_blank" rel="noopener" aria-label="Pixel Street on Behance"><i class="ri-behance-fill" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://dribbble.com/pixelstreetagency" target="_blank" rel="noopener" aria-label="Pixel Street on Dribbble"><i class="ri-dribbble-line" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a class="psf__map" href="https://maps.app.goo.gl/omW92ohh4aHYCapa9"
+                   target="_blank" rel="noopener"
+                   aria-label="Get directions to Pixel Street, Salt Lake Sector V, Kolkata (opens Google Maps)">
+                    <span class="psf__map__thumb" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" focusable="false">
+                            <rect width="48" height="48" rx="8" fill="#EEF1F4"/>
+                            <path d="M0 30h48M0 19h48M15 0v48M33 0v48" stroke="#D7DCE2" stroke-width="2"/>
+                            <path d="M0 8h48" stroke="#D7DCE2" stroke-width="1.5"/>
+                            <path d="M24 13c-4 0-7.2 3.2-7.2 7.2 0 5.4 7.2 13.3 7.2 13.3s7.2-7.9 7.2-13.3c0-4-3.2-7.2-7.2-7.2Z" fill="#16181D"/>
+                            <circle cx="24" cy="20" r="2.6" fill="#FDB914"/>
+                        </svg>
+                    </span>
+                    <span class="psf__map__text">Get Directions</span>
+                    <span class="psf__map__arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" focusable="false">
+                            <path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" stroke-width="1.7"
+                                  stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="psf__view"><nav class="hm-toggle" aria-label="Page format"><span class="hm-toggle__label">View</span><span class="hm-toggle__opt" aria-current="true">Human</span><a class="hm-toggle__opt" href="../../blog/ai/website-accessibility-compliance/" data-hm="machine">Machine</a></nav></div>
+
+        <div class="psf__legal">
+            <a class="psf__brand" href="../../">
+                <img src="../../assets/images/logo1.svg" alt="Pixel Street" width="253" height="59" loading="lazy" decoding="async">
+            </a>
+            <p class="psf__copy">©2026 Pixel Street. All Rights Reserved.</p>
+            <nav class="psf__legal-nav" aria-label="Legal">
+                <ul>
+                    <li><a class="psf__link" href="../../terms">Terms</a></li>
+                    <li><a class="psf__link" href="../../privacy-policy">Privacy</a></li>
+                    <li><a class="psf__link" href="../../privacy-policy" data-ps-consent-open>Cookie preferences</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</footer>
+  <div class="modal fade modalRefer" id="exampleModal" tabindex="-1" aria-label="Discuss a project" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line" aria-hidden="true"></i></button>
+            <div class="modal-body">
+                <div class="border-wrap">
+                    <div class="contact__wrapper">
+                        <div class="row">
+                            <div class="col-xl-12">
+
+                                <div class="formHeader">
+                                    <img src="../../assets/images/contact-1.png" alt="Contact Form Element">
+                                </div>
+
+                                <!-- <h4 class="form-name">Request A Free Quote</h4> -->
+                                <div class="contact__form mt-20">
+                                    <form action="../../assets/email-php/home-contact.php" method="post">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label data-number="01" class="ps-visually-hidden" for="lead-name">Your name</label>
+                                                    <input id="lead-name" type="text" name="name" pattern="^[a-zA-Z\s]{2,50}$" placeholder="What's your name?">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 mt-30">
+                                                <div class="form-group">
+                                                    <label data-number="02" class="ps-visually-hidden" for="lead-phone">Your phone number</label>
+
+                                                    <input id="lead-phone" type="tel" name="phone" required="" pattern="[6789][0-9]{9}" onkeypress="return (event.charCode !=8 &amp;&amp; event.charCode ==0 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57))" placeholder="What's your phone number?">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 mt-30">
+                                                <div class="form-group">
+                                                    <label data-number="03" class="ps-visually-hidden" for="lead-email">Your email address</label>
+                                                    <input id="lead-email" type="email" name="email" required="" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="What's your email?">
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="col-xl-12 col-lg-12 mt-30">
+                                                        <div class="form-group">
+                                                            <label data-number="04" for=""></label>
+
+                                                            <textarea name="message" id="message"
+                                                                placeholder="Enter Your Message"></textarea>
+                                                        </div>
+                                                    </div> -->
+                                            <div class="g-recaptcha mt-3" data-sitekey="6LeqDd4mAAAAAMZZ7uZD9XzsVL5MJu4xRZznSsc7"></div>
+
+                                            <div class="col-xl-12 col-lg-12 mt-20">
+                                                <button type="submit" name="submit" class="submit-site-btn">DISCUSS A PROJECT
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="https://wa.me/+919007295096" target="_blank" class=" position-fixed whatsapp-link"><img src="../../assets/images/whatsapp.png" alt="Whatsapp Button"></a>
+
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.bundle.min.js"></script><script src="../../assets/js/imagesloaded.pkgd.min.js"></script><script src="../../assets/js/pix-js.js"></script><script src="../../assets/js/main.js"></script>
+  <script src="../../blog/ps-behaviours.js"></script>
+  
+  <script src="../../assets/js/ps-nav-a11y.js" defer></script>
+  <script>(function(){try{
+var t=document.querySelector('.hm-toggle');if(!t)return;
+t.addEventListener('click',function(e){var a=e.target.closest('[data-hm]');
+if(a)try{localStorage.setItem('ps-view',a.getAttribute('data-hm'))}catch(_){}},{passive:true});
+}catch(_){}})();</script>
+
+  
+  <script src="../../assets/js/lead-source.js" defer></script>
+<script src="../../assets/js/local-links.js" defer></script>
+</body>
+</html>

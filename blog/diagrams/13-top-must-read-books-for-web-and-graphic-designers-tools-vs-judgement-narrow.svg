@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 634" width="380" height="634" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Books about tools rot; books about judgement do not</title>
+  <desc id="d">Books about tools carry a dateable expiry: Duckett's HTML and CSS from 2011 started expiring the day CSS grid shipped, and Building Progressive Web Apps from 2017 turned on a platform question iOS 16.4 answered in 2023. Books about judgement do not expire: Grid Systems in Graphic Design from 1981 and Design Systems from 2017 are both still in print.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE SPLIT IS NOT RANDOM</text>
+
+  <!-- tools -->
+  <rect x="13" y="45" width="359" height="250" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="40" width="359" height="250" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="60" width="200" height="28" rx="999" fill="#EE3D41"/>
+  <text x="124" y="79" font-size="13" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">BOOKS ABOUT TOOLS</text>
+  <text x="24" y="116" font-size="18" font-weight="700" fill="#0F1115">They rot, and on a date</text>
+  <path d="M24 134 L354 134" stroke="#E7E9EC" stroke-width="2"/>
+
+  <text x="24" y="164" font-size="15" font-weight="700" fill="#0F1115">HTML and CSS &#8212; 2011</text>
+  <text x="24" y="186" font-size="13" fill="#5C6167">Started expiring the day CSS grid shipped.</text>
+
+  <text x="24" y="232" font-size="15" font-weight="700" fill="#0F1115">Building Progressive Web Apps &#8212; 2017</text>
+  <text x="24" y="254" font-size="13" fill="#5C6167">The platform question it hangs on was<tspan x="24" dy="1.3em">answered by iOS 16.4, six years later.</tspan></text>
+
+  <!-- judgement -->
+  <rect x="13" y="321" width="359" height="250" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="316" width="359" height="250" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="336" width="240" height="28" rx="999" fill="#5FBFA8"/>
+  <text x="144" y="355" font-size="13" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">BOOKS ABOUT JUDGEMENT</text>
+  <text x="24" y="392" font-size="18" font-weight="700" fill="#0F1115">They do not</text>
+  <path d="M24 410 L354 410" stroke="#E7E9EC" stroke-width="2"/>
+
+  <text x="24" y="440" font-size="15" font-weight="700" fill="#0F1115">Grid Systems in Graphic Design &#8212; 1981</text>
+  <text x="24" y="462" font-size="13" fill="#5C6167">Forty-five years old, still in print, and<tspan x="24" dy="1.3em">nothing in it has expired.</tspan></text>
+
+  <text x="24" y="508" font-size="15" font-weight="700" fill="#0F1115">Design Systems &#8212; 2017</text>
+  <text x="24" y="530" font-size="13" fill="#5C6167">Never revised, while every tool it might<tspan x="24" dy="1.3em">have named has been replaced.</tspan></text>
+
+  <text x="8" y="602" font-size="14" font-weight="700" fill="#0F1115">Before buying, ask: a syntax, or a way<tspan x="8" dy="1.35em">of deciding?</tspan></text>
+</svg>

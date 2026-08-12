@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 632" width="380" height="632" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">What Google removed from the Business Profile, and what now does the work</title>
+  <desc id="d">Removed or automated since 2024: websites built from Business Profiles, chat and call history, and the My Business Q and A API. Now doing more work: your reviews, links to your business, what your own website says, and your photos, because that is what Gemini reads when it answers a question about your place.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">SINCE 2024, THE PATTERN</text>
+
+  <!-- removed -->
+  <rect x="13" y="39" width="359" height="200" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="34" width="359" height="200" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="70" font-size="17" font-weight="700" fill="#0F1115">Removed or automated</text>
+  <circle cx="30" cy="95" r="4" fill="#0F1115"/>
+  <text x="44" y="100" font-size="14" fill="#5C6167">Websites built from Profiles</text>
+  <text x="44" y="120" font-size="13" fill="#6A6F75">March 2024</text>
+  <circle cx="30" cy="141" r="4" fill="#0F1115"/>
+  <text x="44" y="146" font-size="14" fill="#5C6167">Chat and call history</text>
+  <text x="44" y="166" font-size="13" fill="#6A6F75">31 July 2024</text>
+  <circle cx="30" cy="187" r="4" fill="#0F1115"/>
+  <text x="44" y="192" font-size="14" fill="#5C6167">The My Business Q&amp;A API</text>
+  <text x="44" y="212" font-size="13" fill="#6A6F75">3 November 2025</text>
+
+  <path d="M190 248 L190 268" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- now heavier -->
+  <rect x="13" y="283" width="359" height="190" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="278" width="359" height="190" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="314" font-size="17" font-weight="700" fill="#0F1115">Now doing more work</text>
+  <circle cx="30" cy="339" r="4" fill="#0F1115"/>
+  <text x="44" y="344" font-size="14" fill="#5C6167">Your reviews</text>
+  <circle cx="30" cy="367" r="4" fill="#0F1115"/>
+  <text x="44" y="372" font-size="14" fill="#5C6167">Links to your business</text>
+  <circle cx="30" cy="395" r="4" fill="#0F1115"/>
+  <text x="44" y="400" font-size="14" fill="#5C6167">What your own website says</text>
+  <circle cx="30" cy="423" r="4" fill="#0F1115"/>
+  <text x="44" y="428" font-size="14" fill="#5C6167">Your photos</text>
+  <text x="26" y="456" font-size="13" fill="#6A6F75">What Gemini reads to answer about you.</text>
+
+  <!-- the pattern -->
+  <rect x="13" y="493" width="359" height="130" rx="16" fill="#FDB914"/>
+  <rect x="8" y="488" width="359" height="130" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="514" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE PATTERN</text>
+  <text x="26" y="540" font-size="15" font-weight="700" fill="#0F1115">Every field you filled in by<tspan x="26" dy="1.35em">hand went away.</tspan></text>
+  <text x="26" y="592" font-size="14" fill="#5C6167">Every signal from outside<tspan x="26" dy="1.4em">the profile got heavier.</tspan></text>
+</svg>

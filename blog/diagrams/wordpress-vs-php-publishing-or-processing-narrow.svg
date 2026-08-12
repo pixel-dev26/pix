@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 664" width="380" height="664" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Publishing points at WordPress, processing at a framework</title>
+  <desc id="d">Three answers. If the job is publishing — pages, posts, case studies, landing pages, a contact form — use WordPress. If it is processing — bookings, quotes, logins, dashboards, rules only your business has — use Laravel or Symfony. If it is both, keep WordPress as the content store and serve the pages over its REST API.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">PUBLISHING, OR PROCESSING?</text>
+
+  <!-- publishing -->
+  <rect x="13" y="39" width="359" height="142" rx="16" fill="#FDB914"/>
+  <rect x="8" y="34" width="359" height="142" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="52" width="122" height="26" rx="999" fill="#0F1115"/>
+  <text x="87" y="70" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">PUBLISHING</text>
+  <text x="162" y="72" font-size="17" font-weight="700" fill="#0F1115">WordPress</text>
+  <text x="26" y="106" font-size="14" fill="#5C6167">Pages, posts, case studies, landing<tspan x="26" dy="1.3em">pages, a contact form.</tspan></text>
+  <text x="26" y="152" font-size="14" fill="#5C6167">Spend what you saved on maintenance.</text>
+
+  <!-- processing -->
+  <rect x="13" y="201" width="359" height="142" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="196" width="359" height="142" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="214" width="126" height="26" rx="999" fill="#0F1115"/>
+  <text x="89" y="232" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROCESSING</text>
+  <text x="166" y="234" font-size="17" font-weight="700" fill="#0F1115">Laravel or Symfony</text>
+  <text x="26" y="268" font-size="14" fill="#5C6167">Bookings, quotes, logins, dashboards,<tspan x="26" dy="1.3em">and rules only your business has.</tspan></text>
+  <text x="26" y="314" font-size="14" font-weight="700" fill="#0F1115">Not hand-written PHP.</text>
+
+  <!-- both -->
+  <rect x="13" y="363" width="359" height="142" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="358" width="359" height="142" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="376" width="80" height="26" rx="999" fill="#0F1115"/>
+  <text x="66" y="394" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">BOTH</text>
+  <text x="124" y="396" font-size="17" font-weight="700" fill="#0F1115">Headless WordPress</text>
+  <text x="26" y="430" font-size="14" fill="#5C6167">WordPress stays the content store;<tspan x="26" dy="1.3em">something else serves the pages</tspan><tspan x="26" dy="1.3em">over its REST API.</tspan></text>
+
+  <!-- the override -->
+  <rect x="13" y="531" width="359" height="124" rx="16" fill="#0F1115"/>
+  <rect x="8" y="526" width="359" height="124" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="554" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE OVERRIDING QUESTION</text>
+  <text x="26" y="580" font-size="15" font-weight="700" fill="#0F1115">Who edits it on a Tuesday<tspan x="26" dy="1.4em">afternoon?</tspan></text>
+  <text x="26" y="630" font-size="13" fill="#5C6167">If not a developer, WordPress.</text>
+</svg>

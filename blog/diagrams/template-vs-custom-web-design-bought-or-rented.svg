@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 392" width="800" height="392" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Template means two different commercial arrangements</title>
+  <desc id="d">A WordPress theme is a purchase you keep, roughly 19 to 99 dollars on ThemeForest, paid once. A Wix or Squarespace template is included with a subscription of 17 to 159 dollars a month on yearly billing, over 200 dollars a year indefinitely, and it stops being yours the day you stop paying.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">ONE WORD, TWO COMMERCIAL ARRANGEMENTS</text>
+
+  <!-- bought -->
+  <rect x="14" y="46" width="380" height="222" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="40" width="380" height="222" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="62" width="96" height="26" rx="999" fill="#0F1115"/>
+  <text x="76" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">BOUGHT</text>
+  <text x="28" y="118" font-size="18" font-weight="700" fill="#0F1115">A WordPress theme</text>
+  <path d="M28 140 L368 140" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="28" y="178" font-size="22" font-weight="700" fill="#0F1115">$19 to $99</text>
+  <text x="28" y="202" font-size="14" fill="#5C6167">on ThemeForest today, paid once</text>
+  <text x="28" y="230" font-size="14" fill="#5C6167">A purchase you keep. It stays<tspan x="28" dy="1.35em">yours whatever you do next.</tspan></text>
+
+  <!-- rented -->
+  <rect x="418" y="46" width="380" height="222" rx="16" fill="#FA6B45"/>
+  <rect x="412" y="40" width="380" height="222" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="432" y="62" width="94" height="26" rx="999" fill="#0F1115"/>
+  <text x="479" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">RENTED</text>
+  <text x="432" y="118" font-size="18" font-weight="700" fill="#0F1115">A Wix or Squarespace template</text>
+  <path d="M432 140 L772 140" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="432" y="178" font-size="22" font-weight="700" fill="#0F1115">$17 to $159 a month</text>
+  <text x="432" y="202" font-size="14" fill="#5C6167">on yearly billing, so over $200 a year</text>
+  <text x="432" y="230" font-size="14" fill="#5C6167">Included with the subscription. Stop<tspan x="432" dy="1.35em">paying and it stops being yours.</tspan></text>
+
+  <!-- the distinction -->
+  <rect x="14" y="300" width="784" height="84" rx="16" fill="#FDB914"/>
+  <rect x="8" y="294" width="784" height="84" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="324" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE DISTINCTION ALMOST NOBODY DRAWS</text>
+  <text x="34" y="350" font-size="17" font-weight="700" fill="#0F1115">Cheap and rented are not the same word.</text>
+  <text x="34" y="370" font-size="14" fill="#5C6167">Only one of them appears in the sales copy.</text>
+</svg>

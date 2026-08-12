@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<!-- lang is a single attribute here; the theme emitted lang="zxx" lang="en-US",
+     and the first one won, declaring the whole blog to have no linguistic content. --><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <title>The Web Design Process: How We Actually Run a Project</title>
+  <meta name="description" content="The web design process as it actually runs, including accessibility before it gets expensive — and the widely repeated web design statistics that turn out to have no traceable source.">
+  <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+  <link rel="canonical" href="https://pixelstreet.in/blog/web-design-process-guide/">
+
+  
+  <link rel="alternate" type="text/markdown" href="../../blog/web-design-process-guide.md" title="Markdown source">
+  <link rel="alternate" type="text/plain" href="../../blog/llms-full.txt" title="Full blog corpus as plain text">
+
+  <meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="The Web Design Process: How We Actually Run a Project"><meta property="og:description" content="The web design process as it actually runs, including accessibility before it gets expensive — and the widely repeated web design statistics that turn out to have no traceable source."><meta property="og:url" content="https://pixelstreet.in/blog/web-design-process-guide/"><meta property="og:site_name" content="Pixel Street"><meta property="article:section" content="WEB DEVELOPMENT"><meta property="og:updated_time" content="2025-04-23T10:43:59+00:00"><meta property="og:image" content="https://pixelstreet.in/blog/media/2025/01/10.Exploring-the-Web-Design-Process.png"><meta property="og:image:secure_url" content="https://pixelstreet.in/blog/media/2025/01/10.Exploring-the-Web-Design-Process.png"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="533"><meta property="og:image:alt" content="Web Design Process"><meta property="og:image:type" content="image/png"><meta property="article:published_time" content="2025-01-24T12:18:40+00:00"><meta property="article:modified_time" content="2025-04-23T10:43:59+00:00">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The Web Design Process: How We Actually Run a Project"><meta name="twitter:description" content="The web design process as it actually runs, including accessibility before it gets expensive — and the widely repeated web design statistics that turn out to have no traceable source."><meta name="twitter:image" content="https://pixelstreet.in/blog/media/2025/01/10.Exploring-the-Web-Design-Process.png"><meta name="twitter:label1" content="Written by"><meta name="twitter:data1" content="Khurshid Alam"><meta name="twitter:label2" content="Time to read"><meta name="twitter:data2" content="13 minutes">
+
+  <link rel="icon" href="https://pixelstreet.in/blog/media/2025/04/cropped-favicon.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="Pixelstreet Blog" href="https://pixelstreet.in/blog/feed.xml">
+
+  <meta name="google-site-verification" content="F1gXt-9n39M0QxL04HWK_w51YLXhJmCwpBC-aPVyvuk">
+
+  <link rel="stylesheet" href="../../assets/blog/style.css" media="all"><link rel="stylesheet" href="../../assets/css/bootstrap.min.css"><link rel="stylesheet" href="../../assets/remix/fonts/remixicon.css"><link rel="stylesheet" href="../../assets/pixel-cusom-font/font/flaticon_pixelstreet-set-1.css"><link rel="stylesheet" href="../../assets/footer-icon/flaticon_pixelstreet-set-2.css"><link rel="stylesheet" href="../../assets/css/new.css"><link rel="stylesheet" href="../../assets/slick-slider/slick/slick.css"><link rel="stylesheet" href="../../assets/blog/main.css"><link rel="stylesheet" href="../../assets/blog/responsive.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-brand.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-footer.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-fixes.css">
+  <link rel="stylesheet" href="../../assets/css/ps-consent.css">
+  <link rel="stylesheet" href="../../blog/ps-additions.css">
+  <script src="../../assets/js/ps-consent.js"></script>
+  <style>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+
+
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+
+
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+
+
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+
+
+/* Selectors double the block class — `.hm-toggle .hm-toggle__opt` rather than
+   `.hm-toggle__opt`. This control is dropped into two themed footers whose own
+   rules reach it at things like `footer .container a`, and inheritance loses to
+   any direct rule: the first version came out at 16px in a 48px-tall pill because
+   the theme set a font-size and a padding on footer links. Every property those
+   rules touch is restated here at a specificity they cannot reach. */
+.hm-toggle {
+  display: inline-flex;
+  align-items: stretch;
+  vertical-align: middle;
+  padding: 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(7, 11, 16, 0.16);
+  background: transparent;
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono",
+               "IBM Plex Mono", Menlo, Consolas, monospace;
+  line-height: 1;
+}
+.hm-toggle .hm-toggle__label {
+  align-self: center;
+  margin: 0;
+  padding: 0 0.7ch 0 1ch;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.45);
+  text-transform: uppercase;
+}
+.hm-toggle .hm-toggle__opt {
+  display: block;
+  margin: 0;
+  padding: 6px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.55);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.hm-toggle a.hm-toggle__opt:hover,
+.hm-toggle a.hm-toggle__opt:focus-visible {
+  color: #070b10;
+  background: rgba(253, 185, 20, 0.32);
+}
+.hm-toggle .hm-toggle__opt[aria-current="true"] {
+  background: #0b0d10;
+  color: #fdb914;
+  font-weight: 700;
+}
+.hm-toggle a.hm-toggle__opt:focus-visible { outline: 2px solid #fdb914; outline-offset: 2px; }
+
+/* Dark skin, for the machine views' own footer. Inert on human pages, which
+   never carry .machine on <html>. */
+html.machine .hm-toggle { border-color: rgba(253, 185, 20, 0.32); }
+html.machine .hm-toggle .hm-toggle__label { color: #a08a4e; }
+html.machine .hm-toggle .hm-toggle__opt { color: #b9b3a5; }
+html.machine .hm-toggle a.hm-toggle__opt:hover,
+html.machine .hm-toggle a.hm-toggle__opt:focus-visible { color: #0b0d10; background: #fdb914; }
+html.machine .hm-toggle .hm-toggle__opt[aria-current="true"] { background: #fdb914; color: #0b0d10; }
+
+/* Where it sits is not decided here any more. On the human pages the footer gives
+   it a row of its own — `.psf__view` in assets/css/ps-footer.css — under the link
+   columns and above the legal rule. This file styles the control; the footer
+   places it. The earlier version did both, and the placement half assumed a
+   footer that no longer exists.
+
+   The two things placement must keep avoiding, recorded because both were shipped
+   once: the Terms/Privacy <ul>, whose `.footer__menu nav ul li a` rules outrank
+   anything a single class can say and rendered the pill 48px tall with an
+   invisible label; and the bottom-right corner, where the floating WhatsApp
+   button covers roughly the last 84px of the page. */
+
+@media print { .hm-toggle { display: none; } }</style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://pixelstreet.in/#organization","name":"Pixel Street","alternateName":["Pixelstreet","Pixel Street Agency"],"legalName":"Pixel Street","url":"https://pixelstreet.in/","logo":{"@id":"https://pixelstreet.in/#logo"},"image":{"@id":"https://pixelstreet.in/#logo"},"description":"Pixel Street is a creative and digital agency in Salt Lake, Kolkata. It works across brand identity, web design and development, digital marketing and video production for FMCG, D2C, education, manufacturing and corporate clients in India and abroad.","slogan":"Chasing attention is yesterday's game.","foundingDate":"2020","founder":{"@id":"https://pixelstreet.in/#khurshid-alam"},"telephone":"+919007295096","email":"info@pixelstreet.in","priceRange":"₹₹₹","contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+919007295096","email":"info@pixelstreet.in","areaServed":["India","Worldwide"],"availableLanguage":["en"]}],"address":{"@type":"PostalAddress","streetAddress":"Martin Burn Business Park, Office #900B, 9th Floor, BP Block, Sector V, Bidhannagar","addressLocality":"Kolkata","addressRegion":"West Bengal","postalCode":"700091","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":22.5726,"longitude":88.4339},"hasMap":"https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"21:00"}],"areaServed":[{"@type":"Place","name":"India"},{"@type":"Place","name":"Worldwide"}],"currenciesAccepted":"INR","knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","https://www.linkedin.com/company/pixelstreet-in/","https://www.instagram.com/pixelstreet.in/","https://www.facebook.com/offpixelstreet/","https://www.behance.net/pixelstreet_in","https://dribbble.com/pixelstreetagency"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Branding and Creative Retainer","serviceType":"Brand identity and creative retainer","url":"https://pixelstreet.in/branding-agency-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Design, Website and eCommerce","serviceType":"Web design and development","url":"https://pixelstreet.in/web-design-company-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Digital Marketing and Social Campaigns","serviceType":"Digital marketing","url":"https://pixelstreet.in/digital-marketing-agency-kolkata"}}]}},{"@type":"ImageObject","@id":"https://pixelstreet.in/#logo","url":"https://pixelstreet.in/assets/images/logo1.svg","caption":"Pixel Street"},{"@type":"WebSite","@id":"https://pixelstreet.in/#website","url":"https://pixelstreet.in/","name":"Pixel Street","publisher":{"@id":"https://pixelstreet.in/#organization"}},{"@type":"Person","@id":"https://pixelstreet.in/#khurshid-alam","name":"Khurshid Alam","jobTitle":"Founder","url":"https://pixelstreet.in/blog/author/khurshid-alam/","image":{"@type":"ImageObject","url":"https://pixelstreet.in/blog/media/2024/12/author-img-1.png"},"worksFor":{"@id":"https://pixelstreet.in/#organization"},"founderOf":{"@id":"https://pixelstreet.in/#organization"},"knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.linkedin.com/company/pixelstreet-in/"]},{"@type":"ImageObject","@id":"https://pixelstreet.in/blog/web-design-process-guide/#primaryimage","url":"https://pixelstreet.in/blog/media/2025/01/10.Exploring-the-Web-Design-Process.png","inLanguage":"en-US","width":1600,"height":533},{"@type":"BreadcrumbList","@id":"https://pixelstreet.in/blog/web-design-process-guide/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pixelstreet.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://pixelstreet.in/blog/"},{"@type":"ListItem","position":3,"name":"WEB DEVELOPMENT","item":"https://pixelstreet.in/blog/category/web-development/"},{"@type":"ListItem","position":4,"name":"From Vision to Reality: Exploring the Web Design Process","item":"https://pixelstreet.in/blog/web-design-process-guide/"}]},{"@type":"WebPage","@id":"https://pixelstreet.in/blog/web-design-process-guide/#webpage","url":"https://pixelstreet.in/blog/web-design-process-guide/","name":"The Web Design Process: How We Actually Run a Project","datePublished":"2023-07-06T00:00:00+00:00","dateModified":"2025-04-23T10:43:59","isPartOf":{"@id":"https://pixelstreet.in/#website"},"breadcrumb":{"@id":"https://pixelstreet.in/blog/web-design-process-guide/#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://pixelstreet.in/blog/web-design-process-guide/#primaryimage"},"description":"The web design process as it actually runs, including accessibility before it gets expensive — and the widely repeated web design statistics that turn out to have no traceable source."},{"@type":"BlogPosting","@id":"https://pixelstreet.in/blog/web-design-process-guide/#article","isPartOf":{"@id":"https://pixelstreet.in/blog/web-design-process-guide/#webpage"},"mainEntityOfPage":{"@id":"https://pixelstreet.in/blog/web-design-process-guide/#webpage"},"headline":"From Vision to Reality: Exploring the Web Design Process","description":"The web design process as it actually runs, including accessibility before it gets expensive — and the widely repeated web design statistics that turn out to have no traceable source.","datePublished":"2023-07-06T00:00:00+00:00","dateModified":"2025-04-23T10:43:59","author":{"@id":"https://pixelstreet.in/#khurshid-alam"},"publisher":{"@id":"https://pixelstreet.in/#organization"},"wordCount":2771,"inLanguage":"en-US","image":{"@id":"https://pixelstreet.in/blog/web-design-process-guide/#primaryimage"},"articleSection":["WEB DEVELOPMENT"]}]}</script>
+
+  
+  <script type="text/plain" data-ps-consent="analytics" async src="https://www.googletagmanager.com/gtag/js?id=GT-PJSBPDH"></script>
+  <script type="text/plain" data-ps-consent="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'linker', { domains: ['pixelstreet.in'] });
+    gtag('config', 'GT-PJSBPDH');
+  </script>
+</head>
+<body>
+  <div class="container">
+        <div class="nav-group">
+            <div class="navbar">
+                <a href="../../" class="navlogo-full-wrap w-inline-block">
+                    <div class="navlogo-full-mask"><img src="../../assets/images/logo1.svg" loading="eager" alt="Logo Pixelstreet" class="navlogo-full"></div><img src="../../assets/images/fav-logo.svg" loading="eager" alt="" class="navlogo-mark">
+                </a>
+                <!-- <img src="assets/images/663b5857daab4d22293b72bf_nav-connection-shape.svg" loading="lazy" width="219"
+                    alt="" class="navbar-connector" /> -->
+                <div class="navbar-menu">
+                    <div class="navbar-menu-inner">
+                        <!-- Four empty <a href="javascript:void(0);"> elements used to sit here,
+                             one before this div and three nested inside the dropdown. They came
+                             from the captured theme markup, where an unclosed anchor was
+                             auto-closed by the parser. Each was focusable with no accessible
+                             name, so every page opened with four unnamed link stops ahead of
+                             the real navigation (2.4.4 / 4.1.2), and two of them were <a>
+                             children of <ul>, which is not a valid content model. -->
+                        <div class="navbar-link-text position-relative hover-mnu-reveal"><a href="javascript:void(0);" class="navbar-link-item w-inline-block">Services
+                                </a><div class="dropdown"><ul class="list-unstyled"><li><a href="../../branding-agency-kolkata">Creative Retainer</a>
+                                        </li>
+                                        <li> <a href="../../web-design-company-kolkata">Website &amp; eCommerce</a>
+                                        </li>
+                                        <li> <a href="../../digital-marketing-agency-kolkata">Social Campaigns</a>
+                                        </li>
+                                        <li> <a href="../../video-studio-kolkata">Video Studio</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        <a href="../../our-work" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Our Work</div>
+                        </a>
+                        <a href="../../about" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Team</div>
+                        </a>
+                        <a href="../../blog/" aria-current="page" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Blog</div>
+                        </a>
+                        <a href="../../careers" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text careers-highlight">Careers<span class="careers-hiring-badge">Hiring</span></div>
+                        </a>
+                    </div><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-wrap greentowhite nav-btn w-inline-block">
+                        <div class="btn-inner navbnt">
+                            <div class="btn-main greentowhite nav-ani">
+                                <div class="btn-text">DISCUSS A PROJECT
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-mobile">
+
+                    <div class="navbody">
+                        <a data-w-id="c81135b2-e306-3de0-cea8-a4d8f2746292" href="../../" class="nav-menu-logo-link w-inline-block"><img src="../../assets/images/logo.svg" loading="lazy" alt="Logomark Pixelstreet" class="nav-menu-logo">
+                        </a>
+
+
+                        <div role="button" tabindex="0" aria-label="Close menu" data-w-id="bfc164ca-3c26-14ba-d6b1-6177cde85246" class="nav-close"><img src="../../assets/images/close-m.svg" loading="lazy" alt="Icon Close X" class="navclose-icon">
+                        </div>
+
+                        <div class="nav-item-link mobile-drop w-inline-block">
+                            <div class="nav-item-text">
+                                Services
+                                <span class="dropdown-icon"><i class="ri-add-line"></i></span>
+                                <span class="dropdown-icon"><i class="ri-subtract-fill"></i></span>
+                                <!-- Icon beside "Services" -->
+                            </div>
+                            <div class="dropdown-mob">
+                                <ul class="list-unstyled">
+                                    <li><a href="../../branding-agency-kolkata">Creative Retainer</a></li>
+                                    <li><a href="../../web-design-company-kolkata">Website &amp; eCommerce</a></li>
+                                    <li><a href="../../digital-marketing-agency-kolkata">Social Campaigns</a></li>
+                                    <li><a href="../../video-studio-kolkata">Video Studio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <a href="../../our-work" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Our Work
+                            </div>
+                        </a><a href="../../about" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Team</div>
+                        </a>
+                        <a href="../../blog/" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Blog</div>
+                        </a>
+                        <a href="../../careers" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text careers-highlight">Careers<span class="careers-hiring-badge">Hiring</span></div>
+                        </a>
+                    
+                        <!-- P4: below 992px the desktop bar's "Discuss a project"
+                             button is gone and .navbar-menu is display:none, so the
+                             only conversion route left above the footer was the
+                             floating WhatsApp button. -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                           class="nav-cta">Discuss a project</a>
+</div>
+                    <div role="button" tabindex="0" aria-label="Open menu" data-w-id="3381c287-9947-e365-7067-fd4935256394" class="navbtn-wrap mobile-tab-none">
+                        <img src="../../assets/images/menu.svg" loading="lazy" alt="" class="navbtn-icon">
+                    </div>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                       aria-label="Open the enquiry form" class="nav-enquiry">
+<div data-w-id="3381c287-9947-e365-7067-fd4935256394" class="navbtn-wrap dk-show">
+
+                            <svg class="navbtn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" width="24" height="24">
+                            <path d="M4 4.75A1.75 1.75 0 0 1 5.75 3h8.5L20 8.75v10.5A1.75 1.75 0 0 1 18.25 21H5.75A1.75 1.75 0 0 1 4 19.25V4.75Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                            <path d="M14 3v6h6M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+        <div data-w-id="50ab8146-de5b-2d73-65a6-48e823c948ec" class="topmarker"></div>
+    </div>
+
+
+  <main id="scrollsmoother-container">
+    <div class="ps-progress" aria-hidden="true"><span class="ps-progress__bar"></span></div>
+
+  <section class="section blogInnerDetails">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="blog-inner-banner">
+            <img src="../../blog/media/2025/01/10.Exploring-the-Web-Design-Process.png" alt="From Vision to Reality: Exploring the Web Design Process" width="1600" height="533" fetchpriority="high" decoding="async">
+            <div class="overlap-title">
+              <h1 style="--h1-scale:1.000">From Vision to Reality: Exploring the Web Design Process</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row ctsom-blog-pad">
+        <div class="col-lg-3 col-12 stuck-socila position-relative">
+          <nav class="ps-toc" aria-label="On this page">
+            
+            <details open>
+              <summary>On this page</summary>
+              <p class="ps-toc__title">On this page</p>
+              <ol>
+                <li class="lvl-2"><a href="#the-process-in-short">The process in short</a></li><li class="lvl-2"><a href="#key-elements-of-web-design-2">Key elements of web design</a></li><li class="lvl-3"><a href="#visual-elements">Visual elements</a></li><li class="lvl-3"><a href="#functional-elements">Functional elements</a></li><li class="lvl-2"><a href="#key-advantages-of-having-a-good-web-design">Key advantages of having a good web design</a></li><li class="lvl-3"><a href="#reduced-bounce-rates">Reduced bounce rates</a></li><li class="lvl-3"><a href="#consistency-of-brand">Consistency of brand</a></li><li class="lvl-3"><a href="#improved-google-rankings">Improved Google rankings</a></li><li class="lvl-3"><a href="#a-powerful-first-impression">A powerful first impression</a></li><li class="lvl-3"><a href="#responsive-websites">Responsive websites</a></li><li class="lvl-2"><a href="#the-process-of-web-design-from-discovery-to-launch-2">The process of web design, from discovery to launch</a></li><li class="lvl-3"><a href="#1-goal-identification">1. Goal identification</a></li><li class="lvl-3"><a href="#2-choose-the-right-platform">2. Choose the right platform</a></li><li class="lvl-3"><a href="#3-scope-of-the-design-project">3. Scope of the design project</a></li><li class="lvl-3"><a href="#4-design-creation">4. Design creation</a></li><li class="lvl-3"><a href="#5-elements-of-design-and-visual-appeal">5. Elements of design and visual appeal</a></li><li class="lvl-3"><a href="#6-content-creation">6. Content creation</a></li><li class="lvl-3"><a href="#7-accessibility-before-it-becomes-expensive">7. Accessibility, before it becomes expensive</a></li><li class="lvl-3"><a href="#8-before-launching-test-the-design">8. Before launching, test the design</a></li><li class="lvl-3"><a href="#9-go-live">9. Go live</a></li><li class="lvl-2"><a href="#post-launch-work-on-the-site">Post-launch work on the site</a></li><li class="lvl-3"><a href="#maintain-your-website">Maintain your website</a></li><li class="lvl-3"><a href="#continue-to-add-and-create-content">Continue to add and create content</a></li><li class="lvl-2"><a href="#what-tools-can-help-you-improve-your-website-design">What tools can help you improve your website design?</a></li><li class="lvl-2"><a href="#the-web-design-statistics-you-should-not-repeat">The web design statistics you should not repeat</a></li><li class="lvl-2"><a href="#frequently-asked-questions">Frequently asked questions</a></li><li class="lvl-3"><a href="#how-long-does-a-web-design-project-take">How long does a web design project take?</a></li><li class="lvl-3"><a href="#does-the-process-change-if-ai-writes-the-first-draft">Does the process change if AI writes the first draft?</a></li><li class="lvl-3"><a href="#do-indian-businesses-need-to-follow-wcag">Do Indian businesses need to follow WCAG?</a></li><li class="lvl-3"><a href="#can-i-run-this-process-myself">Can I run this process myself?</a></li><li class="lvl-3"><a href="#what-is-the-difference-between-web-design-and-web-2">What is the difference between web design and web development?</a></li><li class="lvl-2"><a href="#what-i-would-do-first">What I would do first</a></li>
+              </ol>
+            </details>
+          </nav>
+        </div>
+
+        <div class="col-lg-9 col-12">
+          
+          <div class="blog-content">
+            <div class="author_date">
+              <div class="author-bx">
+                <div class="author">
+                  <img class="author-img" src="../../blog/media/2024/12/author-img-1.png" alt="" width="60" height="60">
+                  <p class="author-name">Khurshid Alam</p>
+                </div>
+                <div class="datebx">
+                  <p class="date"><time datetime="2023-07-06T00:00:00+00:00">July 6, 2023</time></p>
+                </div>
+              </div>
+            </div>
+            <span id="done" class="ps-anchor-alias" aria-hidden="true"></span><span id="the-statistics-i-deleted-from-this-post" class="ps-anchor-alias" aria-hidden="true"></span><!-- <h2>The Web Design Process: How We Actually Run a Project</h2> -->
+
+ <p>Every published web design process I have read draws the same picture: discovery, wireframe, design, build, test, launch. Neat boxes, arrows pointing one way, nothing ever going backwards. I run a studio in Kolkata that designs and builds for brands including Coca-Cola, ITC and Marico, and I have never seen a project move like that.</p>
+<p>Real projects loop. A stakeholder who missed the kickoff turns up in week six with opinions. Content that was promised in week two arrives after the design is locked. A layout that looked considered on a 27-inch monitor falls apart on a phone, which is where two thirds of Indian web traffic actually comes from.</p>
+<p>So this is the process we run, in the order we run it, with the places it stalls marked rather than hidden. Two of the nine steps decide whether the project succeeds, and neither of them is the step where the design gets made.</p>
+<h2 id="the-process-in-short"><strong>The process in short</strong></h2>
+<ol>
+<li><strong>Goal identification.</strong> Agree what the website is for and how you will know whether it worked.</li>
+<li><strong>Platform choice.</strong> Decide from the content model and from who updates the site, not from habit.</li>
+<li><strong>Scope.</strong> Write down what is included, what is not, and how many rounds of revision the price covers.</li>
+<li><strong>Design creation.</strong> Sitemap, wireframes, key page templates.</li>
+<li><strong>Visual design.</strong> Colour, typography, imagery, restraint.</li>
+<li><strong>Content.</strong> The step that breaks more timelines than everything else combined.</li>
+<li><strong>Accessibility.</strong> Inside the build, not bolted on after launch.</li>
+<li><strong>Testing.</strong> Forms, links, real phones, real browsers, consent notices.</li>
+<li><strong>Launch, then maintenance.</strong> A website is not a delivery, it is a commitment.</li>
+</ol>
+<p>Steps 1 and 6 decide the outcome. A project with clear goals and finished content survives a mediocre designer. A project with vague goals and placeholder copy will not be rescued by a brilliant one, and I have watched people try.</p>
+<p><picture><source media="(max-width: 700px)" srcset="../../blog/diagrams/web-design-process-guide-nine-steps-narrow.svg" width="380" height="618"><img src="../../blog/diagrams/web-design-process-guide-nine-steps.svg" alt="The nine steps run from goal identification to launch and maintenance, with steps 1 and 6 marked as the two that decide the outcome, and a loop drawn back from content to design creation because content arrives late and re-opens the design." width="800" height="372" loading="lazy" decoding="async"></picture></p>
+<span id="key-elements-of-web-design" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="key-elements-of-web-design-2"><strong>Key elements of web design</strong></h2>
+<p>A website has two layers: the layer people see, and the layer that works. Most briefs I receive describe the first in detail and assume the second happens by itself.</p>
+<h3 id="visual-elements"><strong>Visual elements</strong></h3>
+<ul>
+<li><strong>Typography.</strong> Pick a pairing you can live with at every size, then check it on a phone before you fall in love with it on a laptop.</li>
+<li><strong>Layout.</strong> Arrange content around what the visitor came to do. If a page has four equally weighted calls to action, it has none.</li>
+<li><strong>Colour.</strong> Choose for contrast before you choose for mood. WCAG success criterion 1.4.3 requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text at level AA (<a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html" rel="noopener">W3C</a>). If the brand's pale grey on white fails that, the brand loses the argument, not the reader.</li>
+<li><strong>Imagery and icons.</strong> Stock photography is fine when it is specific and terrible when it is a handshake in a boardroom. If you can swap the picture for a competitor's without anyone noticing, it is not doing work.</li>
+</ul>
+<h3 id="functional-elements"><strong>Functional elements</strong></h3>
+<ul>
+<li><strong>Navigation.</strong> A visitor should be able to say where they are and what else exists without thinking about it.</li>
+<li><strong>User interaction.</strong> No interstitials over the content someone just clicked to read, no autoplay with sound, no newsletter popup before the first paragraph.</li>
+<li><strong>Speed.</strong> Core Web Vitals changed under a lot of people: Interaction to Next Paint replaced First Input Delay as a Core Web Vital on <strong>12 March 2024</strong>, and a good INP is under 200 milliseconds for at least 75% of visits (<a href="https://web.dev/blog/inp-cwv-launch" rel="noopener">Google, web.dev</a>). If your speed audit still reports FID, it is two years out of date.</li>
+<li><strong>Structure.</strong> URL patterns, internal linking and a sitemap that reflects how the business is actually organised.</li>
+<li><strong>Device compatibility.</strong> Test on real hardware, not only on a resized browser window. The details are in our guide to <a href="../../blog/responsive-web-design/">responsive web design</a>.</li>
+</ul>
+<h2 id="key-advantages-of-having-a-good-web-design"><strong>Key advantages of having a good web design</strong></h2>
+<p>Design does not sell anything by itself. What it does is remove the reasons people leave, and that is worth paying for. Here is what each of the usual claimed benefits is actually worth.</p>
+<h3 id="reduced-bounce-rates"><strong>Reduced bounce rates</strong></h3>
+<p>Worth knowing before you set this as a target: in GA4, bounce rate is the percentage of sessions that were <em>not</em> engaged, which makes it the exact opposite of engagement rate (<a href="https://support.google.com/analytics/answer/12195621" rel="noopener">Google Analytics Help</a>). It is not the old metric with the same name. Chasing it is chasing an inverse. Watch engaged sessions, scroll depth on the pages that matter, and the conversions you actually named in step 1.</p>
+<h3 id="consistency-of-brand"><strong>Consistency of brand</strong></h3>
+<p>Logo, palette, type and tone repeated across every page do more for recall than any single clever visual. This is where the website and the <a href="../../blog/complete-branding-process/">branding process</a> meet, and where a website built without a brand system quietly becomes five websites in a trench coat.</p>
+<h3 id="improved-google-rankings"><strong>Improved Google rankings</strong></h3>
+<p>Design is not a ranking factor. Design removes the reasons a page underperforms: slow templates, unreadable text, buried content, a mobile layout that hides the answer. Google's own generative-AI optimization guidance is blunt about where the leverage sits, saying that creating content people find "unique, compelling, and useful" will influence a site's presence in AI search "more than any of the other suggestions in this guide" (<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" rel="noopener">Google Search Central</a>). A beautiful page with commodity content still loses. Our <a href="../../blog/seo-checklist/">SEO checklist</a> covers the rest.</p>
+<h3 id="a-powerful-first-impression"><strong>A powerful first impression</strong></h3>
+<p>Skip the famous milliseconds statistic about how fast a visitor forms an impression. The practical test is better: open your homepage on a phone, and before scrolling, see whether a stranger could say what you sell, who you sell it to, and what to do next. Most homepages fail on the second one.</p>
+<h3 id="responsive-websites"><strong>Responsive websites</strong></h3>
+<p>In India this is not a nice-to-have. Statcounter put mobile at <strong>67.15%</strong> of web traffic in India in June 2026, against 32.29% for desktop (<a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/india" rel="noopener">Statcounter Global Stats</a>). Two thirds of your visitors are holding the site in one hand. Design there first.</p>
+<span id="the-process-of-web-design-from-discovery-to-launch" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="the-process-of-web-design-from-discovery-to-launch-2"><strong>The process of web design, from discovery to launch</strong></h2>
+<p>Before the steps, the table I wish more clients saw at kickoff. Every row has a prerequisite, and every project that ran late in my experience ran late because a prerequisite was skipped and everyone agreed to proceed anyway.</p>
+<div class="table-wrap" role="region" aria-label="Table, scrollable" tabindex="0"><table>
+<thead>
+<tr>
+<th scope="col">Stage</th>
+<th scope="col">What must exist before it starts</th>
+<th scope="col">Where it stalls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Goals</td>
+<td>One person who can decide</td>
+<td>A committee with no tiebreaker</td>
+</tr>
+<tr>
+<td>Platform</td>
+<td>The content model and the update cadence</td>
+<td>Choosing the tool the last agency used</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>A page list and a revision count in writing</td>
+<td>"Just one small change" in week seven</td>
+</tr>
+<tr>
+<td>Design</td>
+<td>Sitemap and real content structure</td>
+<td>Designing around placeholder text</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>A named author and a deadline</td>
+<td>Waiting on copy nobody was assigned</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>A target: WCAG version and level</td>
+<td>Discovering it during a client's legal review</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>A staging environment matching production</td>
+<td>Testing on the designer's laptop only</td>
+</tr>
+<tr>
+<td>Launch</td>
+<td>A redirect map from the old URLs</td>
+<td>Losing rankings nobody thought to protect</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="1-goal-identification"><strong>1. Goal identification</strong></h3>
+<p>The first working session is not about design. It is about agreeing what the site has to achieve and how you will know. The questions we ask:</p>
+<ul>
+<li>Who is the audience, and what do they already know before they arrive?</li>
+<li>What is the single most valuable action a visitor can take?</li>
+<li>What message has to land, in the visitor's words rather than the internal ones?</li>
+<li>What do the three closest competitors look like, and where can you be legitimately different?</li>
+<li>How will we measure this in ninety days?</li>
+<li>Who updates this site in six months, and what happens if that person leaves?</li>
+</ul>
+<p>That last question is the one most briefs skip and the one that most often predicts what the site looks like a year later. Write the answers down. A goal that lives only in a conversation is not a goal, it is a mood. If you are still choosing between studios, our list of <a href="../../blog/questions-before-hiring-web-design-agency/">questions to ask before hiring a web design agency</a> covers the same ground from the buyer's side.</p>
+<h3 id="2-choose-the-right-platform"><strong>2. Choose the right platform</strong></h3>
+<p>The version of this article that ran until today told you to pick WordPress and then listed WordPress's advantages. That is not a decision, that is a default with a justification attached.</p>
+<p>The decision follows two things: the content model, and who updates the site. WordPress remains the safe answer for content-heavy sites where a non-technical team publishes regularly, and it is still the platform most of the web runs on. W3Techs put it at <strong>41.2% of all websites</strong> and 59.1% of sites with a known CMS on 30 July 2026 (<a href="https://w3techs.com/technologies/details/cm-wordpress" rel="noopener">W3Techs</a>). That popularity buys you a hiring pool, a plugin for most problems, and a large attack surface that you are then responsible for maintaining.</p>
+<p>If the site is a store, the decision is a different one and we have argued it out in <a href="../../blog/shopify-vs-woocommerce/">Shopify vs WooCommerce</a>. If it is a marketing site that changes twice a year, a heavy CMS is overhead you will pay for monthly. If nobody in the business will ever open the admin panel, be honest about that before you buy a publishing system. The wider comparison sits in our guide to the <a href="../../blog/best-cms-platforms/">best CMS platforms</a>.</p>
+<h3 id="3-scope-of-the-design-project"><strong>3. Scope of the design project</strong></h3>
+<p>Scope is where a friendly project becomes an unfriendly one. Three things belong in writing before design starts:</p>
+<ul>
+<li><strong>Time.</strong> A schedule tied to dependencies, not to optimism. Write the milestones as "design starts when the content for the key pages is delivered", because a date with no prerequisite attached to it is a wish.</li>
+<li><strong>Cost.</strong> An estimate built from the page list and the integrations, with milestones attached to payments. What the components actually cost in this market is broken down in our guide to <a href="../../blog/web-designing-cost-in-kolkata/">web design cost in Kolkata</a>.</li>
+<li><strong>Revisions.</strong> Name the number of rounds the price covers and what a round means. Not to be difficult, but because "unlimited revisions" is a phrase that ends friendships. The client who knows they have a fixed number of rounds gives better, more consolidated feedback, which is better for the work.</li>
+</ul>
+<p>Scope creep is rarely one big change. It is eleven small ones, each individually reasonable, none of them costed.</p>
+<h3 id="4-design-creation"><strong>4. Design creation</strong></h3>
+<p>This is the step everyone thinks of as web design, and it is roughly a fifth of the work. It has three parts:</p>
+<ul>
+<li><strong>Structure.</strong> A sitemap that reflects how visitors think, not how the org chart is drawn.</li>
+<li><strong>Wireframes.</strong> Layout and hierarchy before colour, so that the argument about the layout does not become an argument about the shade of blue. If you want to see the range of fidelity these come in, look at our <a href="../../blog/top-20-wireframe-examples-for-web-design/">wireframe examples</a>.</li>
+<li><strong>Key templates.</strong> Not every page. The homepage, the main landing template, an article template, a form page. Everything else is a variation.</li>
+</ul>
+<p>Where AI genuinely changed this step: the blank page. Generating layout variations, first-pass moodboards and throwaway options costs almost nothing now, and Figma bundles AI credits into every plan including the free Starter tier (<a href="https://www.figma.com/pricing/" rel="noopener">Figma</a>). That is what it is good for: volume at the exploratory stage, where being wrong is cheap.</p>
+<p>Where it did not change anything: the decisions. And be careful about assuming the tools are making you faster. In a randomised controlled trial run by METR in 2025, sixteen experienced open-source developers working on 246 real issues took <strong>19% longer</strong> with AI tools than without, while believing the tools had sped them up by 20% (<a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" rel="noopener">METR</a>). The gap between felt speed and measured speed is the thing to watch. If AI is compressing your early phases, measure it rather than assume it.</p>
+<h3 id="5-elements-of-design-and-visual-appeal"><strong>5. Elements of design and visual appeal</strong></h3>
+<ul>
+<li><strong>Colour.</strong> Choose a palette with a genuine hierarchy: one dominant, one supporting, one for actions. If everything is emphasised, nothing is.</li>
+<li><strong>Typography.</strong> Two families is plenty. Set body text at a size you would read on a bus, then check line length on desktop where it tends to sprawl.</li>
+<li><strong>Graphics.</strong> Illustrations and icons carry brand personality cheaply. DrawKit publishes free and paid illustration sets in Figma, SVG and Lottie formats (<a href="https://www.drawkit.com/" rel="noopener">DrawKit</a>), and Unsplash's licence permits commercial use without permission or attribution (<a href="https://unsplash.com/license" rel="noopener">Unsplash</a>). Both need editing to look like yours.</li>
+<li><strong>Restraint.</strong> The most common mistake in small business design is not ugliness, it is volume.</li>
+</ul>
+<h3 id="6-content-creation"><strong>6. Content creation</strong></h3>
+<p>Here is the step that decides your timeline, and almost nobody plans for it. Design is a fixed amount of work. Content is an open-ended amount of work owned by someone whose actual job is something else.</p>
+<p>Content does two jobs. It moves people towards the action you named in step 1, and it is the thing search engines and AI assistants read. On the second point, Google's guidance is explicit and it cuts against most SEO advice from a few years ago: do not split content into fragments for machines, and do not write in a special style for AI systems. Write pages for people, and be non-commodity. Its own contrast is between an article titled "7 Tips for First-Time Homebuyers" and one titled "Why We Waived the Inspection &amp; Saved Money" (<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" rel="noopener">Google Search Central</a>). One of those could have been written by anyone.</p>
+<p>For keyword work, Google Keyword Planner is still the primary source for search volume, though it now requires you to complete Google Ads account setup including billing details (<a href="https://support.google.com/google-ads/answer/7337243" rel="noopener">Google Ads Help</a>), and <a href="https://trends.google.com/trends/" rel="noopener">Google Trends</a> is free and better for direction of travel. Put the target term in the title and the H1 because that is where a reader looks first, not because a machine demands it.</p>
+<p>The practical rule we work to: no page enters visual design until its content brief exists, even in rough form. Designing around placeholder text produces layouts that break the moment real sentences arrive.</p>
+<h3 id="7-accessibility-before-it-becomes-expensive"><strong>7. Accessibility, before it becomes expensive</strong></h3>
+<p>Most published web design processes have no step for this at all, and that omission is the biggest thing wrong with them. Accessibility is now both a design constraint and a legal one, and retrofitting it after launch costs several times what building it in costs.</p>
+<p>The standard to name in the contract is WCAG, which reached version 2.2 as a W3C Recommendation on <strong>12 December 2024</strong>, adding nine new success criteria covering focus visibility, dragging movements, target size, consistent help and accessible authentication (<a href="https://www.w3.org/TR/WCAG22/" rel="noopener">W3C</a>). "Accessible" on its own is not a testable requirement. A version and a conformance level are.</p>
+<p>The legal edge matters for Indian businesses that sell abroad. The European Accessibility Act applies as of <strong>28 June 2025</strong> and covers e-commerce platforms among its listed services (<a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/new-era-inclusion-begins-eaa-enters-force-2025-06-27_en" rel="noopener">AccessibleEU, European Commission</a>). A Kolkata exporter with a checkout serving EU consumers is inside that scope regardless of where the servers sit.</p>
+<p>What this means in practice, during design rather than after it: contrast checked as part of the palette, focus states designed rather than removed, forms with real labels, headings in a sensible order, and a keyboard-only pass on every template. The free axe DevTools browser extension catches the automated share of the problems (<a href="https://www.deque.com/axe/devtools/" rel="noopener">Deque</a>), and the rest needs a human with a keyboard and a screen reader. The full treatment is in our guide to <a href="../../blog/website-accessibility-compliance/">website accessibility compliance</a>.</p>
+<span id="7-before-launching-test-the-design" class="ps-anchor-alias" aria-hidden="true"></span><h3 id="8-before-launching-test-the-design"><strong>8. Before launching, test the design</strong></h3>
+<p>Launching and then discovering the contact form has been quietly dropping enquiries is a particular kind of misery. Test on a staging environment that matches production, because conflicts that never appear locally appear there.</p>
+<ul>
+<li><strong>Forms.</strong> Submit every one of them, from a phone, and confirm the message arrives at a mailbox someone reads.</li>
+<li><strong>Links.</strong> Crawl the site. Screaming Frog's SEO Spider crawls 500 URLs free, which covers most marketing sites, and is $279 a year beyond that (<a href="https://www.screamingfrog.co.uk/seo-spider/" rel="noopener">Screaming Frog</a>).</li>
+<li><strong>Real devices.</strong> A mid-range Android on a patchy connection is the honest test in this market, not a simulator on office wifi.</li>
+<li><strong>Browsers.</strong> You built it in one. Check it in the others, including the in-app browsers inside Instagram and WhatsApp, where a large share of Indian traffic arrives.</li>
+<li><strong>Consent and notices.</strong> This has changed at home. India notified the Digital Personal Data Protection Rules, 2025 on <strong>14 November 2025</strong>, with an eighteen-month period for phased compliance, and they require every data fiduciary to issue a separate consent notice that is clear and easy to understand and that explains the specific purpose for which personal data is collected (<a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf" rel="noopener">Press Information Bureau</a>). That reaches the innocuous contact form on the site you are about to launch, not only the large platforms.</li>
+</ul>
+<span id="8-go-live" class="ps-anchor-alias" aria-hidden="true"></span><h3 id="9-go-live"><strong>9. Go live</strong></h3>
+<p>Before the switch: a redirect map from every old URL to its new home, analytics and Search Console verified on the new property, and a rollback plan. Sites lose rankings at launch for one boring reason, which is that nobody mapped the old URLs. Configure measurement now rather than after, so the first month is not a blank.</p>
+<p>After the switch, expect a list. There is always a list. The first week after launch is part of the project, not a warranty claim, and pricing it that way keeps everyone honest.</p>
+<h2 id="post-launch-work-on-the-site"><strong>Post-launch work on the site</strong></h2>
+<p>Launching is not the end of the web design process. It is the point at which the site starts costing money in a different way, and the projects that go badly are usually the ones where nobody budgeted for this.</p>
+<h3 id="maintain-your-website"><strong>Maintain your website</strong></h3>
+<p>Security first. Nothing damages traffic, rankings and reputation faster than a compromise, and on WordPress the usual entry point is an abandoned plugin nobody has updated. Core and plugin updates on a schedule, backups you have actually restored once, and an activity log someone reads. If you want to understand what a real security assessment involves rather than a plugin's marketing claim, our <a href="../../blog/vapt-guide/">VAPT guide</a> covers it.</p>
+<h3 id="continue-to-add-and-create-content"><strong>Continue to add and create content</strong></h3>
+<p>A site that never changes stops earning attention. Publishing builds relevance for more queries and gives people a reason to trust the business. Decide at handover who does it, the client or us, and put that in the agreement rather than assuming.</p>
+<h2 id="what-tools-can-help-you-improve-your-website-design"><strong>What tools can help you improve your website design?</strong></h2>
+<p>A caution before the list. Tools die, and processes that were built around a tool die with it. Adobe XD, which a great many process guides still recommend, is in maintenance mode: Adobe has said it is "not investing in ongoing development or shipping new features" and that XD "is no longer being sold as a single application to new customers" (<a href="https://www.theregister.com/software/2024/01/31/adobe_no_plans_to_invest_in_xd_despite_its_figma_failure/1119427" rel="noopener">The Register, quoting Adobe</a>). InVision, once the default for prototype review, is gone entirely: invisionapp.com now returns a permanent redirect to Miro. Any article still building a workflow on either is describing a workflow that cannot be run.</p>
+<p>What I would build a process on today, chosen for the fact that the work survives the tool:</p>
+<ul>
+<li><strong>Design and prototyping.</strong> Figma, which has a free Starter plan and a $16 per month Professional seat (<a href="https://www.figma.com/pricing/" rel="noopener">Figma</a>). The important part is that the source files are yours and exportable, whatever the tool.</li>
+<li><strong>Crawling and pre-launch checks.</strong> Screaming Frog SEO Spider, free to 500 URLs.</li>
+<li><strong>Accessibility.</strong> The axe DevTools extension for the automated pass, then a keyboard and a screen reader for the part automation cannot do.</li>
+<li><strong>Illustration and imagery.</strong> DrawKit and Unsplash, both edited rather than dropped in raw.</li>
+</ul>
+<span id="web-design-statistics-of-2023" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="the-web-design-statistics-you-should-not-repeat"><strong>The web design statistics you should not repeat</strong></h2>
+<p>Four figures follow this subject everywhere: that 94% of first impressions relate to design, that the average website costs $3,200, that a basic site takes two months, and that 54.8% of traffic was mobile in 2021. I have tried to trace each of them to a primary study I could name and link, and every one leads to another agency blog citing another agency blog.</p>
+<p>Where a number genuinely helps, use one you fetched and dated: Statcounter for mobile share, W3Techs for platform share, W3C for contrast, Google for INP. For what a site costs in this market, we publish our own breakdown in the <a href="../../blog/web-designing-cost-in-kolkata/">Kolkata pricing guide</a> rather than quoting an American average. For timelines, say what drives them instead of inventing a number that sounds authoritative.</p>
+<h2 id="frequently-asked-questions"><strong>Frequently asked questions</strong></h2>
+<h3 id="how-long-does-a-web-design-project-take"><strong>How long does a web design project take?</strong></h3>
+<p>Longer than the design work justifies, and the reason is almost always content and approvals rather than production. The variables that move a schedule are the number of pages needing original copy, the number of people who can say no, the integrations, and whether photography has to be shot. Ask any studio to tie their schedule to those dependencies rather than to a flat number of weeks.</p>
+<h3 id="does-the-process-change-if-ai-writes-the-first-draft"><strong>Does the process change if AI writes the first draft?</strong></h3>
+<p>The early phases compress. Exploration, layout variants and first-pass copy are cheap now. The deciding phases do not compress, because they are decisions rather than production: what the site is for, what goes on the homepage, what gets cut. And measure the saving instead of assuming it, given that the METR trial found experienced developers were slower with AI while feeling faster.</p>
+<h3 id="do-indian-businesses-need-to-follow-wcag"><strong>Do Indian businesses need to follow WCAG?</strong></h3>
+<p>If you sell to consumers in the EU, the European Accessibility Act has applied since 28 June 2025 and covers e-commerce, regardless of where your business sits. Domestically the direction of travel is the same, and I set out the Indian rulings and regulator circulars in the <a href="../../blog/questions-before-hiring-web-design-agency/">agency hiring guide</a>. In either case WCAG 2.2 is the standard to name in a contract, because it is testable. <a href="../../blog/website-accessibility-compliance/">Our accessibility guide</a> has the detail.</p>
+<h3 id="can-i-run-this-process-myself"><strong>Can I run this process myself?</strong></h3>
+<p>For a small site, yes, and the honest walkthrough is in <a href="../../blog/designing-a-website/">how to design a website by yourself</a>. The step that does not survive DIY is the decision about what to leave out.</p>
+<span id="what-is-the-difference-between-web-design-and-web" class="ps-anchor-alias" aria-hidden="true"></span><h3 id="what-is-the-difference-between-web-design-and-web-2"><strong>What is the difference between web design and web development?</strong></h3>
+<p>Design decides what should exist and how it behaves. Development makes it work under load, with real data. On small projects the same people do both, which is where the confusion starts. We separate the two in <a href="../../blog/web-design-vs-web-development/">web design vs web development</a>.</p>
+<h2 id="what-i-would-do-first"><strong>What I would do first</strong></h2>
+<p>If you are about to start a website project, do not begin with a moodboard. Begin with one sentence describing what the site must achieve and one name of the person who decides. Then get the content for five pages written before anyone opens a design tool. Do those two things and the rest of this process gets easier and cheaper. Skip them and no amount of visual craft will save the schedule.</p>
+<p>That is the process we run at Pixel Street when we <a href="../../web-design-company-kolkata">design websites</a> for clients. Take it, adapt it, argue with the parts you disagree with. The one part I would not drop is step 1.</p>
+
+          </div>
+
+          
+          <p class="ps-facts">
+            <span class="ps-facts__item"><i class="ri-time-line" aria-hidden="true"></i> 13 min read</span>
+            <span class="ps-facts__item"><i class="ri-links-line" aria-hidden="true"></i> 28 cited sources</span>
+            <a class="ps-facts__item ps-facts__cat" href="../../blog/category/web-development/">WEB DEVELOPMENT</a>
+          </p>
+
+
+          <div class="ps-share">
+            <p class="ps-share__label">Share</p>
+            <ul class="ps-share__list">
+              <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fweb-design-process-guide%2F" rel="noopener" target="_blank" aria-label="Share on Facebook"><i class="ri-facebook-fill"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?text=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fweb-design-process-guide%2F" rel="noopener" target="_blank" aria-label="Share on WhatsApp"><i class="ri-whatsapp-fill"></i></a></li>
+              <li><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fweb-design-process-guide%2F" rel="noopener" target="_blank" aria-label="Share on LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+              <li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fweb-design-process-guide%2F&text=From%20Vision%20to%20Reality%3A%20Exploring%20the%20Web%20Design%20Process" rel="noopener" target="_blank" aria-label="Share on X"><i class="ri-twitter-x-fill"></i></a></li>
+              <li><a href="mailto:?subject=From%20Vision%20to%20Reality%3A%20Exploring%20the%20Web%20Design%20Process&#38;body=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fweb-design-process-guide%2F" aria-label="Share by email"><i class="ri-mail-line"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="quote">
+            <div class="quote-img"><img src="../../blog/media/2024/12/author-img-1.png" alt="" width="120" height="120" loading="lazy"></div>
+            <div class="quote-text">
+              
+              <h2 class="founder-title">Khurshid Alam</h2>
+              <p class="desg">Author</p>
+              <p class="bio">Khurshid Alam is the founder of Pixel Street, an AI-native design &amp; development studio. Design thinking on weekdays and spreadsheets on weekends.</p>
+              <p class="bio">He writes about growth, design, and AI, mostly because someone has to say the quiet parts out loud.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps-related" aria-labelledby="ps-related-h">
+      <div class="container">
+        <h2 class="ps-related__head" id="ps-related-h">Keep reading</h2>
+        <div class="ps-grid ps-grid--related">
+          <article class="ps-card  all web-development ui-ux-design" data-title="ai website builders vs custom development: where the shiny tools actually break" data-blurb="ai website builders are fast, but are they right for your business? discover where they excel, where they fail, and when custom development is the smarter choice." data-cat="web-development ui-ux-design">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-300x104.png 300w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-768x265.png 768w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-1024x354.png 1024w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">WEB DEVELOPMENT</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/ai-website-builders-vs-custom-development/">AI Website Builders vs Custom Development: Where the Shiny Tools Actually Break</a>
+    </h3>
+
+    <p class="ps-card__blurb">AI website builders are fast, but are they right for your business? Discover where they excel, where they fail, and when custom development is the…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-29T00:00:00+00:00">July 29, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>6 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all seo web-development" data-title="aeo vs geo vs seo: what actually matters in 2026 (and what is just noise)" data-blurb="learn about aeo vs geo vs seo. discover what changed with ai search, what still matters, and how to optimize for google ai overviews, chatgpt, and traditional search in 2026." data-cat="seo web-development">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/AEOvsGEOvsSEO-V2.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/AEOvsGEOvsSEO-V2-300x104.png 300w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2-768x265.png 768w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2-1024x354.png 1024w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">Digital Marketing</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/aeo-vs-geo-vs-seo/">AEO vs GEO vs SEO: What Actually Matters in 2026 (And What Is Just Noise)</a>
+    </h3>
+
+    <p class="ps-card__blurb">Learn about AEO vs GEO vs SEO. Discover what changed with AI search, what still matters, and how to optimize for Google AI Overviews, ChatGPT, and…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-27T00:00:00+00:00">July 27, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>10 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all seo web-development" data-title="how to get your brand mentioned by chatgpt: the ultimate india playbook (2026)" data-blurb="want chatgpt to recommend your brand? learn how ai chooses businesses, where citations come from, and practical ways to increase your visibility." data-cat="seo web-development">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-300x104.png 300w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-768x265.png 768w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-1024x354.png 1024w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">Digital Marketing</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/how-to-get-mentioned-by-chatgpt/">How to Get Your Brand Mentioned by ChatGPT: The Ultimate India Playbook (2026)</a>
+    </h3>
+
+    <p class="ps-card__blurb">Want ChatGPT to recommend your brand? Learn how AI chooses businesses, where citations come from, and practical ways to increase your visibility.</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-22T00:00:00+00:00">July 22, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>9 min read</span>
+    </p>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer class="psf psf--rule">
+    <div class="container">
+
+        <div class="psf__grid">
+
+            <div class="psf__col psf__contact">
+                <div class="psf__block">
+                    <h2 class="psf__heading">Address</h2>
+                    <p class="psf__text">Martin Burn Business Park, #900B, Salt Lake, Sector - V, Kolkata - 700091</p>
+                </div>
+                <div class="psf__block">
+                    <h2 class="psf__heading">Phone</h2>
+                    <p class="psf__text"><a class="psf__link" href="tel:+919007295096">+91 90072 95096</a></p>
+                </div>
+                <div class="psf__block">
+                    <h2 class="psf__heading">Email</h2>
+                    <p class="psf__text"><a class="psf__link" href="mailto:info@pixelstreet.in">info@pixelstreet.in</a></p>
+                </div>
+            </div>
+
+            <nav class="psf__col" aria-labelledby="psf-quick">
+                <h2 class="psf__heading" id="psf-quick">Quick Links</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../our-work">Our Work</a></li>
+                    <li><a class="psf__link" href="../../about">Team</a></li>
+                    <li><a class="psf__link" href="../../blog/">Blog</a></li>
+                    <li><a class="psf__link" href="../../contact-us">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <nav class="psf__col" aria-labelledby="psf-services">
+                <h2 class="psf__heading" id="psf-services">Services</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../branding-agency-kolkata">Creative Retainer</a></li>
+                    <li><a class="psf__link" href="../../web-design-company-kolkata">Website &amp; eCommerce</a></li>
+                    <li><a class="psf__link" href="../../digital-marketing-agency-kolkata">Social Campaigns</a></li>
+                    <li><a class="psf__link" href="../../video-studio-kolkata">Video Studio</a></li>
+                </ul>
+            </nav>
+
+            <nav class="psf__col" aria-labelledby="psf-cases">
+                <h2 class="psf__heading" id="psf-cases">Case Study</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../case-studies/mangaldeep-3in1">Mangaldeep</a></li>
+                    <li><a class="psf__link" href="../../case-studies/shipzip">Shipzip</a></li>
+                    <li><a class="psf__link" href="../../case-studies/the-hindu-group">The Hindu</a></li>
+                    <li><a class="psf__link" href="../../case-studies/marico">Marico</a></li>
+                </ul>
+            </nav>
+
+            <div class="psf__col psf__social-col">
+                <h2 class="psf__heading">Social Media</h2>
+                <ul class="psf__social">
+                    <li><a class="psf__icon" href="https://www.linkedin.com/company/pixelstreet-in/" target="_blank" rel="noopener" aria-label="Pixel Street on LinkedIn"><i class="ri-linkedin-fill" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.instagram.com/pixelstreet.in/" target="_blank" rel="noopener" aria-label="Pixel Street on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8?source=g.page.m.we._" target="_blank" rel="noopener" aria-label="Pixel Street on Google Business Profile"><i class="flaticon-my-business" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.behance.net/pixelstreet_in" target="_blank" rel="noopener" aria-label="Pixel Street on Behance"><i class="ri-behance-fill" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://dribbble.com/pixelstreetagency" target="_blank" rel="noopener" aria-label="Pixel Street on Dribbble"><i class="ri-dribbble-line" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a class="psf__map" href="https://maps.app.goo.gl/omW92ohh4aHYCapa9"
+                   target="_blank" rel="noopener"
+                   aria-label="Get directions to Pixel Street, Salt Lake Sector V, Kolkata (opens Google Maps)">
+                    <span class="psf__map__thumb" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" focusable="false">
+                            <rect width="48" height="48" rx="8" fill="#EEF1F4"/>
+                            <path d="M0 30h48M0 19h48M15 0v48M33 0v48" stroke="#D7DCE2" stroke-width="2"/>
+                            <path d="M0 8h48" stroke="#D7DCE2" stroke-width="1.5"/>
+                            <path d="M24 13c-4 0-7.2 3.2-7.2 7.2 0 5.4 7.2 13.3 7.2 13.3s7.2-7.9 7.2-13.3c0-4-3.2-7.2-7.2-7.2Z" fill="#16181D"/>
+                            <circle cx="24" cy="20" r="2.6" fill="#FDB914"/>
+                        </svg>
+                    </span>
+                    <span class="psf__map__text">Get Directions</span>
+                    <span class="psf__map__arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" focusable="false">
+                            <path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" stroke-width="1.7"
+                                  stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="psf__view"><nav class="hm-toggle" aria-label="Page format"><span class="hm-toggle__label">View</span><span class="hm-toggle__opt" aria-current="true">Human</span><a class="hm-toggle__opt" href="../../blog/ai/web-design-process-guide/" data-hm="machine">Machine</a></nav></div>
+
+        <div class="psf__legal">
+            <a class="psf__brand" href="../../">
+                <img src="../../assets/images/logo1.svg" alt="Pixel Street" width="253" height="59" loading="lazy" decoding="async">
+            </a>
+            <p class="psf__copy">©2026 Pixel Street. All Rights Reserved.</p>
+            <nav class="psf__legal-nav" aria-label="Legal">
+                <ul>
+                    <li><a class="psf__link" href="../../terms">Terms</a></li>
+                    <li><a class="psf__link" href="../../privacy-policy">Privacy</a></li>
+                    <li><a class="psf__link" href="../../privacy-policy" data-ps-consent-open>Cookie preferences</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</footer>
+  <div class="modal fade modalRefer" id="exampleModal" tabindex="-1" aria-label="Discuss a project" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line" aria-hidden="true"></i></button>
+            <div class="modal-body">
+                <div class="border-wrap">
+                    <div class="contact__wrapper">
+                        <div class="row">
+                            <div class="col-xl-12">
+
+                                <div class="formHeader">
+                                    <img src="../../assets/images/contact-1.png" alt="Contact Form Element">
+                                </div>
+
+                                <!-- <h4 class="form-name">Request A Free Quote</h4> -->
+                                <div class="contact__form mt-20">
+                                    <form action="../../assets/email-php/home-contact.php" method="post">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label data-number="01" class="ps-visually-hidden" for="lead-name">Your name</label>
+                                                    <input id="lead-name" type="text" name="name" pattern="^[a-zA-Z\s]{2,50}$" placeholder="What's your name?">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 mt-30">
+                                                <div class="form-group">
+                                                    <label data-number="02" class="ps-visually-hidden" for="lead-phone">Your phone number</label>
+
+                                                    <input id="lead-phone" type="tel" name="phone" required="" pattern="[6789][0-9]{9}" onkeypress="return (event.charCode !=8 &amp;&amp; event.charCode ==0 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57))" placeholder="What's your phone number?">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 mt-30">
+                                                <div class="form-group">
+                                                    <label data-number="03" class="ps-visually-hidden" for="lead-email">Your email address</label>
+                                                    <input id="lead-email" type="email" name="email" required="" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="What's your email?">
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="col-xl-12 col-lg-12 mt-30">
+                                                        <div class="form-group">
+                                                            <label data-number="04" for=""></label>
+
+                                                            <textarea name="message" id="message"
+                                                                placeholder="Enter Your Message"></textarea>
+                                                        </div>
+                                                    </div> -->
+                                            <div class="g-recaptcha mt-3" data-sitekey="6LeqDd4mAAAAAMZZ7uZD9XzsVL5MJu4xRZznSsc7"></div>
+
+                                            <div class="col-xl-12 col-lg-12 mt-20">
+                                                <button type="submit" name="submit" class="submit-site-btn">DISCUSS A PROJECT
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="https://wa.me/+919007295096" target="_blank" class=" position-fixed whatsapp-link"><img src="../../assets/images/whatsapp.png" alt="Whatsapp Button"></a>
+
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.bundle.min.js"></script><script src="../../assets/js/imagesloaded.pkgd.min.js"></script><script src="../../assets/js/pix-js.js"></script><script src="../../assets/js/main.js"></script>
+  <script src="../../blog/ps-behaviours.js"></script>
+  
+  <script src="../../assets/js/ps-nav-a11y.js" defer></script>
+  <script>(function(){try{
+var t=document.querySelector('.hm-toggle');if(!t)return;
+t.addEventListener('click',function(e){var a=e.target.closest('[data-hm]');
+if(a)try{localStorage.setItem('ps-view',a.getAttribute('data-hm'))}catch(_){}},{passive:true});
+}catch(_){}})();</script>
+
+  
+  <script src="../../assets/js/lead-source.js" defer></script>
+<script src="../../assets/js/local-links.js" defer></script>
+</body>
+</html>

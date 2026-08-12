@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 612" width="380" height="612" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Two cost shapes: Shopify grows with your sales, WooCommerce mostly does not</title>
+  <desc id="d">A schematic with no numbers on either axis. Shopify starts cheap and rises with every order because it charges a fee on any payment provider other than Shopify Payments, which is not offered in India. WooCommerce starts higher and stays roughly flat, taking no cut of sales. The two lines cross, and where they cross depends on your own volume.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">COST TO YOU, EACH MONTH</text>
+
+  <path d="M40 34 L40 210 L360 210" fill="none" stroke="#8E959D" stroke-width="2"/>
+  <path d="M40 186 L360 54" fill="none" stroke="#4A90C7" stroke-width="3"/>
+  <path d="M40 118 L360 94" fill="none" stroke="#5FBFA8" stroke-width="3"/>
+  <path d="M241 103 L241 210" stroke="#8E959D" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="241" cy="103" r="6" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+
+  <text x="8" y="232" font-size="13" fill="#6A6F75">MONTHLY SALES &#8594;</text>
+  <text x="252" y="232" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">they cross</text>
+
+  <rect x="8" y="252" width="22" height="10" rx="5" fill="#4A90C7"/>
+  <text x="40" y="262" font-size="14" font-weight="700" fill="#0F1115">SHOPIFY</text>
+  <text x="8" y="286" font-size="13" fill="#5C6167">Low fixed, plus a percentage of every<tspan x="8" dy="1.35em">order, permanently, in India.</tspan></text>
+
+  <rect x="8" y="326" width="22" height="10" rx="5" fill="#5FBFA8"/>
+  <text x="40" y="336" font-size="14" font-weight="700" fill="#0F1115">WOOCOMMERCE</text>
+  <text x="8" y="360" font-size="13" fill="#5C6167">Higher fixed, and no cut of your sales.</text>
+
+  <rect x="13" y="401" width="359" height="176" rx="16" fill="#FDB914"/>
+  <rect x="8" y="396" width="359" height="176" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="422" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE FEE ON EVERY ORDER</text>
+
+  <rect x="26" y="436" width="155" height="36" rx="12" fill="#4A90C7"/>
+  <text x="103" y="459" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">Basic 2%</text>
+  <rect x="194" y="436" width="155" height="36" rx="12" fill="#4A90C7"/>
+  <text x="271" y="459" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">Grow 1%</text>
+
+  <rect x="26" y="478" width="155" height="36" rx="12" fill="#4A90C7"/>
+  <text x="103" y="501" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">Advanced 0.6%</text>
+  <rect x="194" y="478" width="155" height="36" rx="12" fill="#4A90C7"/>
+  <text x="271" y="501" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">Plus 0.2%</text>
+
+  <rect x="26" y="520" width="323" height="36" rx="12" fill="#5FBFA8"/>
+  <text x="187" y="543" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">WooCommerce 0%</text>
+
+  <text x="8" y="598" font-size="13" fill="#5C6167">Shape, not scale. The axes carry no numbers.</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 494" width="800" height="494" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Too much space in one place reads as the end of the page</title>
+  <desc id="d">A page column with two sections, then a gap large enough that visitors stop scrolling, leaving the remaining sections below it unread. Nielsen Norman Group documented this in January 2016: a large enough gap can signal the end of a page.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">SPACE IS A BUDGET, NOT A VIRTUE</text>
+
+  <rect x="300" y="40" width="200" height="300" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="320" y="60" width="160" height="36" rx="8" fill="#FDB914"/>
+  <text x="400" y="83" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">section</text>
+  <rect x="320" y="110" width="160" height="36" rx="8" fill="#FDB914"/>
+  <text x="400" y="133" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">section</text>
+  <rect x="320" y="248" width="160" height="36" rx="8" fill="#E7E9EC"/>
+  <text x="400" y="271" font-size="12" fill="#5C6167" text-anchor="middle">section</text>
+  <rect x="320" y="294" width="160" height="36" rx="8" fill="#E7E9EC"/>
+  <text x="400" y="317" font-size="12" fill="#5C6167" text-anchor="middle">section</text>
+
+  <path d="M260 192 L540 192" stroke="#EE3D41" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="400" y="216" font-size="12" font-weight="700" fill="#EE3D41" text-anchor="middle">visitors stop scrolling here</text>
+
+  <text x="8" y="80" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT THE VISITOR SEES</text>
+  <text x="8" y="108" font-size="14" fill="#5C6167">Two sections, and then a gap<tspan x="8" dy="1.4em">wide enough to read as</tspan><tspan x="8" dy="1.4em">an ending.</tspan></text>
+
+  <text x="520" y="262" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT THEY NEVER REACH</text>
+  <text x="520" y="290" font-size="14" fill="#5C6167">The rest of the page, sitting<tspan x="520" dy="1.4em">below a gap they have</tspan><tspan x="520" dy="1.4em">already read as the end.</tspan></text>
+
+  <rect x="14" y="370" width="784" height="88" rx="16" fill="#FDB914"/>
+  <rect x="8" y="364" width="784" height="88" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="394" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">KIM FLAHERTY, NIELSEN NORMAN GROUP, JANUARY 2016</text>
+  <text x="34" y="426" font-size="18" font-weight="700" fill="#0F1115">A gap between sections can &#8220;signal the end of a page&#8221;.</text>
+
+  <text x="8" y="484" font-size="13" fill="#5C6167">Space is a budget you spend on the elements that need separating, not a virtue you accumulate.</text>
+</svg>

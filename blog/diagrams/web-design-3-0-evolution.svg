@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 384" width="800" height="384" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Web design 1.0 to 2.0 to 3.0, and what survives the label</title>
+  <desc id="d">A three-stage progression: 1.0 static HTML brochures, 2.0 CSS, Flash and content management systems, 3.0 personalised, responsive and AI-driven. A band underneath marks the claim: only VR and AR were genuinely era-specific to 3.0, and they did not arrive.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THREE STAGES, ONE LABEL WORTH MARKING</text>
+
+  <!-- 1.0 -->
+  <rect x="14" y="46" width="246" height="196" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="40" width="246" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="30" y="62" width="62" height="26" rx="999" fill="#0F1115"/>
+  <text x="61" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">1.0</text>
+  <text x="30" y="120" font-size="18" font-weight="700" fill="#0F1115">The Stone Age</text>
+  <text x="30" y="152" font-size="14" fill="#5C6167">Static HTML pages, hosted<tspan x="30" dy="1.4em">on the likes of GeoCities.</tspan><tspan x="30" dy="1.4em">Digital brochures with no</tspan><tspan x="30" dy="1.4em">interactivity.</tspan></text>
+
+  <!-- 2.0 -->
+  <rect x="283" y="46" width="246" height="196" rx="16" fill="#D098F9"/>
+  <rect x="277" y="40" width="246" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="299" y="62" width="62" height="26" rx="999" fill="#0F1115"/>
+  <text x="330" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">2.0</text>
+  <text x="299" y="120" font-size="18" font-weight="700" fill="#0F1115">The Renaissance</text>
+  <text x="299" y="152" font-size="14" fill="#5C6167">CSS split style from<tspan x="299" dy="1.4em">content. Flash brought</tspan><tspan x="299" dy="1.4em">animation. WordPress let</tspan><tspan x="299" dy="1.4em">non-coders edit.</tspan></text>
+
+  <!-- 3.0 -->
+  <rect x="552" y="46" width="246" height="196" rx="16" fill="#FDB914"/>
+  <rect x="546" y="40" width="246" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="568" y="62" width="62" height="26" rx="999" fill="#0F1115"/>
+  <text x="599" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">3.0</text>
+  <text x="568" y="120" font-size="18" font-weight="700" fill="#0F1115">The Age of<tspan x="568" dy="1.25em">Exploration</tspan></text>
+  <text x="568" y="176" font-size="14" fill="#5C6167">Personalised, responsive<tspan x="568" dy="1.4em">and interactive, driven by</tspan><tspan x="568" dy="1.4em">AI and machine learning.</tspan></text>
+
+  <path d="M258 138 L273 138" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M527 138 L542 138" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- the mark -->
+  <rect x="14" y="274" width="784" height="94" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="268" width="784" height="94" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="296" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">READ WITH 2026 EYES</text>
+  <text x="34" y="322" font-size="15" font-weight="700" fill="#0F1115">Only VR and AR were genuinely era-specific to 3.0 &#8212; and they did not arrive.</text>
+  <text x="34" y="346" font-size="15" fill="#5C6167">Everything else on the list describes competent web design in any year since about 2015.</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 612" width="380" height="612" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The order to work an SEO checklist in</title>
+  <desc id="d">Six stages stacked in sequence: access and measurement, technical crawlability, keyword and intent mapping, content, on-page polish, then links and local. Each stage gates the next, and content is the slowest and highest-return stage.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">SEVENTY BOXES, NOT EQUAL</text>
+
+  <!-- 1 -->
+  <rect x="13" y="39" width="359" height="78" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="34" width="359" height="78" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="61" r="14" fill="#0F1115"/>
+  <text x="36" y="66" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="62" y="67" font-size="17" font-weight="700" fill="#0F1115">Access and measurement</text>
+  <text x="22" y="96" font-size="14" fill="#5C6167">Roughly an hour. Everything else needs it.</text>
+
+  <!-- 2 -->
+  <rect x="13" y="131" width="359" height="78" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="126" width="359" height="78" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="153" r="14" fill="#0F1115"/>
+  <text x="36" y="158" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="62" y="159" font-size="17" font-weight="700" fill="#0F1115">Technical crawlability</text>
+  <text x="22" y="188" font-size="14" fill="#5C6167">A page that cannot be fetched cannot rank.</text>
+
+  <!-- 3 -->
+  <rect x="13" y="223" width="359" height="78" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="218" width="359" height="78" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="245" r="14" fill="#0F1115"/>
+  <text x="36" y="250" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="62" y="251" font-size="17" font-weight="700" fill="#0F1115">Keyword and intent</text>
+  <text x="22" y="280" font-size="14" fill="#5C6167">Cheap to do, expensive to skip.</text>
+
+  <!-- 4 -->
+  <rect x="13" y="315" width="359" height="78" rx="16" fill="#0F1115"/>
+  <rect x="8" y="310" width="359" height="78" rx="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="337" r="14" fill="#0F1115"/>
+  <text x="36" y="342" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="62" y="343" font-size="17" font-weight="700" fill="#0F1115">Content</text>
+  <text x="22" y="372" font-size="14" fill="#0F1115">The slowest and highest-return stage.</text>
+
+  <!-- 5 -->
+  <rect x="13" y="407" width="359" height="78" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="402" width="359" height="78" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="429" r="14" fill="#0F1115"/>
+  <text x="36" y="434" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="62" y="435" font-size="17" font-weight="700" fill="#0F1115">On-page polish</text>
+  <text x="22" y="464" font-size="14" fill="#5C6167">Only on pages that deserve to rank.</text>
+
+  <!-- 6 -->
+  <rect x="13" y="499" width="359" height="78" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="494" width="359" height="78" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="36" cy="521" r="14" fill="#0F1115"/>
+  <text x="36" y="526" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+  <text x="62" y="527" font-size="17" font-weight="700" fill="#0F1115">Links and local</text>
+  <text x="22" y="556" font-size="14" fill="#5C6167">They compound on something good.</text>
+
+  <text x="8" y="600" font-size="14" fill="#5C6167">Stage 4 pays the most. The rest protect it.</text>
+</svg>

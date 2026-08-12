@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 566" width="380" height="566" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Delegate the SEO jobs where a wrong answer announces itself</title>
+  <desc id="d">One axis runs from a wrong answer showing in ten seconds to a wrong answer staying invisible for six months. Safe to hand over: regular expressions and redirect rules, sorting a keyword list by intent, small scripts, alt text and meta descriptions, arguing with your own draft. Keep: statistics and reference links, keyword research and volume, writing the article, producing pages at volume, rephrasing to dodge plagiarism.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8E959D"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">HOW FAST IS IT VISIBLY WRONG?</text>
+
+  <text x="8" y="44" font-size="13" font-weight="700" fill="#0F1115">Ten seconds</text>
+  <text x="250" y="44" font-size="13" font-weight="700" fill="#0F1115">Six months</text>
+  <path d="M8 58 L364 58" stroke="#8E959D" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- safe to hand over -->
+  <rect x="13" y="81" width="359" height="196" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="76" width="359" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="94" width="124" height="25" rx="999" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="88" y="112" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">HAND IT OVER</text>
+  <circle cx="32" cy="137" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="142" font-size="14" fill="#0F1115">Regular expressions, redirects</text>
+  <circle cx="32" cy="163" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="168" font-size="14" fill="#0F1115">Sorting a keyword list by intent</text>
+  <circle cx="32" cy="189" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="194" font-size="14" fill="#0F1115">Small scripts for repetitive jobs</text>
+  <circle cx="32" cy="215" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="220" font-size="14" fill="#0F1115">Alt text, meta descriptions</text>
+  <circle cx="32" cy="241" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="246" font-size="14" fill="#0F1115">Arguing with your own draft</text>
+
+  <!-- keep -->
+  <rect x="13" y="299" width="359" height="196" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="294" width="359" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="312" width="88" height="25" rx="999" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="70" y="330" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">KEEP IT</text>
+  <circle cx="32" cy="355" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="360" font-size="14" fill="#0F1115">Statistics and reference links</text>
+  <circle cx="32" cy="381" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="386" font-size="14" fill="#0F1115">Keyword research and volume</text>
+  <circle cx="32" cy="407" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="412" font-size="14" fill="#0F1115">Writing the article</text>
+  <circle cx="32" cy="433" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="438" font-size="14" fill="#0F1115">Producing pages at volume</text>
+  <circle cx="32" cy="459" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="48" y="464" font-size="14" fill="#0F1115">Rephrasing to dodge plagiarism</text>
+
+  <text x="8" y="530" font-size="14" font-weight="700" fill="#0F1115">Hand over what is visibly wrong.<tspan x="8" dy="1.4em">Keep what is invisibly wrong.</tspan></text>
+</svg>

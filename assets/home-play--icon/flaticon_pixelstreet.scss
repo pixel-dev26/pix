@@ -1,0 +1,33 @@
+$flaticon_pixelstreet-font: "flaticon_pixelstreet";
+
+@font-face {
+    font-family: $flaticon_pixelstreet-font;
+    src: url("./flaticon_pixelstreet.woff2?4c2cf2037dc3df2274bae10bea9ada6a") format("woff2"),
+url("./flaticon_pixelstreet.woff?4c2cf2037dc3df2274bae10bea9ada6a") format("woff"),
+url("./flaticon_pixelstreet.eot?4c2cf2037dc3df2274bae10bea9ada6a#iefix") format("embedded-opentype"),
+url("./flaticon_pixelstreet.ttf?4c2cf2037dc3df2274bae10bea9ada6a") format("truetype"),
+url("./flaticon_pixelstreet.svg?4c2cf2037dc3df2274bae10bea9ada6a#flaticon_pixelstreet") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_pixelstreet !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_pixelstreet-map: (
+    "pause": "\f101",
+    "play-button": "\f102",
+);
+
+.flaticon-pause:before {
+    content: map-get($flaticon_pixelstreet-map, "pause");
+}
+.flaticon-play-button:before {
+    content: map-get($flaticon_pixelstreet-map, "play-button");
+}

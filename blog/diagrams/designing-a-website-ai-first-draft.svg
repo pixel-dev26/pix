@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 318" width="800" height="318" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">What the AI pass gives you, and what you add after it</title>
+  <desc id="d">The generator produces a hero, an about section, three services and a testimonial slot in ninety seconds. What you add afterwards is your actual photographs, your actual prices, and the objection your customers really raise answered where they raise it.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE FIRST TEN MINUTES ARE NOW AI</text>
+
+  <!-- generated -->
+  <rect x="14" y="50" width="352" height="228" rx="16" fill="#8E959D"/>
+  <rect x="8" y="44" width="352" height="228" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="62" width="236" height="28" rx="14" ry="14" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <text x="146" y="81" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">GENERATED IN 90 SECONDS</text>
+  <path d="M28 102 L340 102" stroke="#E7E9EC" stroke-width="2"/>
+
+  <circle cx="36" cy="127" r="4" fill="#0F1115"/>
+  <text x="50" y="132" font-size="15" fill="#5C6167">A hero</text>
+  <circle cx="36" cy="167" r="4" fill="#0F1115"/>
+  <text x="50" y="172" font-size="15" fill="#5C6167">An about section</text>
+  <circle cx="36" cy="207" r="4" fill="#0F1115"/>
+  <text x="50" y="212" font-size="15" fill="#5C6167">Three services</text>
+  <circle cx="36" cy="247" r="4" fill="#0F1115"/>
+  <text x="50" y="252" font-size="15" fill="#5C6167">A testimonial slot</text>
+
+  <path d="M374 158 L428 158" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- what you add -->
+  <rect x="446" y="50" width="352" height="228" rx="16" fill="#FDB914"/>
+  <rect x="440" y="44" width="352" height="228" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="460" y="62" width="136" height="28" rx="14" ry="14" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="528" y="81" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">WHAT YOU ADD</text>
+  <path d="M460 102 L772 102" stroke="#E7E9EC" stroke-width="2"/>
+
+  <circle cx="468" cy="127" r="4" fill="#0F1115"/>
+  <text x="482" y="132" font-size="15" fill="#5C6167">Your actual photographs, not stock.</text>
+  <circle cx="468" cy="167" r="4" fill="#0F1115"/>
+  <text x="482" y="172" font-size="15" fill="#5C6167">Your actual prices.</text>
+  <circle cx="468" cy="207" r="4" fill="#0F1115"/>
+  <text x="482" y="212" font-size="15" fill="#5C6167">The objection your customers<tspan x="482" dy="1.35em">really raise, answered on the</tspan><tspan x="482" dy="1.35em">page where they raise it.</tspan></text>
+
+  <text x="8" y="306" font-size="14" fill="#5C6167">It looks finished. It is a filled-in template wearing your business name.</text>
+</svg>

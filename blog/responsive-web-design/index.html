@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<!-- lang is a single attribute here; the theme emitted lang="zxx" lang="en-US",
+     and the first one won, declaring the whole blog to have no linguistic content. --><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <title>Responsive Web Design Techniques in 2025: Ultimate Guide</title>
+  <meta name="description" content="Is your website mobile-friendly? Discover why responsive web design is crucial for boosting user experience and improving high SEO rankings.">
+  <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+  <link rel="canonical" href="https://pixelstreet.in/blog/responsive-web-design/">
+
+  
+  <link rel="alternate" type="text/markdown" href="../../blog/responsive-web-design.md" title="Markdown source">
+  <link rel="alternate" type="text/plain" href="../../blog/llms-full.txt" title="Full blog corpus as plain text">
+
+  <meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Responsive Web Design Techniques in 2025: Ultimate Guide"><meta property="og:description" content="Is your website mobile-friendly? Discover why responsive web design is crucial for boosting user experience and improving high SEO rankings."><meta property="og:url" content="https://pixelstreet.in/blog/responsive-web-design/"><meta property="og:site_name" content="Pixel Street"><meta property="article:section" content="Web Design"><meta property="og:updated_time" content="2025-04-23T09:41:04+00:00"><meta property="og:image" content="https://pixelstreet.in/blog/media/2025/01/6.The-Ultimate-Guide-to-Responsive-Web-Design.png"><meta property="og:image:secure_url" content="https://pixelstreet.in/blog/media/2025/01/6.The-Ultimate-Guide-to-Responsive-Web-Design.png"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="553"><meta property="og:image:alt" content="responsive web design"><meta property="og:image:type" content="image/png"><meta property="article:published_time" content="2025-01-24T11:49:30+00:00"><meta property="article:modified_time" content="2025-04-23T09:41:04+00:00">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Responsive Web Design Techniques in 2025: Ultimate Guide"><meta name="twitter:description" content="Is your website mobile-friendly? Discover why responsive web design is crucial for boosting user experience and improving high SEO rankings."><meta name="twitter:image" content="https://pixelstreet.in/blog/media/2025/01/6.The-Ultimate-Guide-to-Responsive-Web-Design.png"><meta name="twitter:label1" content="Written by"><meta name="twitter:data1" content="Khurshid Alam"><meta name="twitter:label2" content="Time to read"><meta name="twitter:data2" content="14 minutes">
+
+  <link rel="icon" href="https://pixelstreet.in/blog/media/2025/04/cropped-favicon.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="Pixelstreet Blog" href="https://pixelstreet.in/blog/feed.xml">
+
+  <meta name="google-site-verification" content="F1gXt-9n39M0QxL04HWK_w51YLXhJmCwpBC-aPVyvuk">
+
+  <link rel="stylesheet" href="../../assets/blog/style.css" media="all"><link rel="stylesheet" href="../../assets/css/bootstrap.min.css"><link rel="stylesheet" href="../../assets/remix/fonts/remixicon.css"><link rel="stylesheet" href="../../assets/pixel-cusom-font/font/flaticon_pixelstreet-set-1.css"><link rel="stylesheet" href="../../assets/footer-icon/flaticon_pixelstreet-set-2.css"><link rel="stylesheet" href="../../assets/css/new.css"><link rel="stylesheet" href="../../assets/slick-slider/slick/slick.css"><link rel="stylesheet" href="../../assets/blog/main.css"><link rel="stylesheet" href="../../assets/blog/responsive.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-brand.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-footer.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-fixes.css">
+  <link rel="stylesheet" href="../../assets/css/ps-consent.css">
+  <link rel="stylesheet" href="../../blog/ps-additions.css">
+  <script src="../../assets/js/ps-consent.js"></script>
+  <style>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+
+
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+
+
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+
+
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+
+
+/* Selectors double the block class — `.hm-toggle .hm-toggle__opt` rather than
+   `.hm-toggle__opt`. This control is dropped into two themed footers whose own
+   rules reach it at things like `footer .container a`, and inheritance loses to
+   any direct rule: the first version came out at 16px in a 48px-tall pill because
+   the theme set a font-size and a padding on footer links. Every property those
+   rules touch is restated here at a specificity they cannot reach. */
+.hm-toggle {
+  display: inline-flex;
+  align-items: stretch;
+  vertical-align: middle;
+  padding: 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(7, 11, 16, 0.16);
+  background: transparent;
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono",
+               "IBM Plex Mono", Menlo, Consolas, monospace;
+  line-height: 1;
+}
+.hm-toggle .hm-toggle__label {
+  align-self: center;
+  margin: 0;
+  padding: 0 0.7ch 0 1ch;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.45);
+  text-transform: uppercase;
+}
+.hm-toggle .hm-toggle__opt {
+  display: block;
+  margin: 0;
+  padding: 6px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.55);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.hm-toggle a.hm-toggle__opt:hover,
+.hm-toggle a.hm-toggle__opt:focus-visible {
+  color: #070b10;
+  background: rgba(253, 185, 20, 0.32);
+}
+.hm-toggle .hm-toggle__opt[aria-current="true"] {
+  background: #0b0d10;
+  color: #fdb914;
+  font-weight: 700;
+}
+.hm-toggle a.hm-toggle__opt:focus-visible { outline: 2px solid #fdb914; outline-offset: 2px; }
+
+/* Dark skin, for the machine views' own footer. Inert on human pages, which
+   never carry .machine on <html>. */
+html.machine .hm-toggle { border-color: rgba(253, 185, 20, 0.32); }
+html.machine .hm-toggle .hm-toggle__label { color: #a08a4e; }
+html.machine .hm-toggle .hm-toggle__opt { color: #b9b3a5; }
+html.machine .hm-toggle a.hm-toggle__opt:hover,
+html.machine .hm-toggle a.hm-toggle__opt:focus-visible { color: #0b0d10; background: #fdb914; }
+html.machine .hm-toggle .hm-toggle__opt[aria-current="true"] { background: #fdb914; color: #0b0d10; }
+
+/* Where it sits is not decided here any more. On the human pages the footer gives
+   it a row of its own — `.psf__view` in assets/css/ps-footer.css — under the link
+   columns and above the legal rule. This file styles the control; the footer
+   places it. The earlier version did both, and the placement half assumed a
+   footer that no longer exists.
+
+   The two things placement must keep avoiding, recorded because both were shipped
+   once: the Terms/Privacy <ul>, whose `.footer__menu nav ul li a` rules outrank
+   anything a single class can say and rendered the pill 48px tall with an
+   invisible label; and the bottom-right corner, where the floating WhatsApp
+   button covers roughly the last 84px of the page. */
+
+@media print { .hm-toggle { display: none; } }</style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://pixelstreet.in/#organization","name":"Pixel Street","alternateName":["Pixelstreet","Pixel Street Agency"],"legalName":"Pixel Street","url":"https://pixelstreet.in/","logo":{"@id":"https://pixelstreet.in/#logo"},"image":{"@id":"https://pixelstreet.in/#logo"},"description":"Pixel Street is a creative and digital agency in Salt Lake, Kolkata. It works across brand identity, web design and development, digital marketing and video production for FMCG, D2C, education, manufacturing and corporate clients in India and abroad.","slogan":"Chasing attention is yesterday's game.","foundingDate":"2020","founder":{"@id":"https://pixelstreet.in/#khurshid-alam"},"telephone":"+919007295096","email":"info@pixelstreet.in","priceRange":"₹₹₹","contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+919007295096","email":"info@pixelstreet.in","areaServed":["India","Worldwide"],"availableLanguage":["en"]}],"address":{"@type":"PostalAddress","streetAddress":"Martin Burn Business Park, Office #900B, 9th Floor, BP Block, Sector V, Bidhannagar","addressLocality":"Kolkata","addressRegion":"West Bengal","postalCode":"700091","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":22.5726,"longitude":88.4339},"hasMap":"https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"21:00"}],"areaServed":[{"@type":"Place","name":"India"},{"@type":"Place","name":"Worldwide"}],"currenciesAccepted":"INR","knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","https://www.linkedin.com/company/pixelstreet-in/","https://www.instagram.com/pixelstreet.in/","https://www.facebook.com/offpixelstreet/","https://www.behance.net/pixelstreet_in","https://dribbble.com/pixelstreetagency"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Branding and Creative Retainer","serviceType":"Brand identity and creative retainer","url":"https://pixelstreet.in/branding-agency-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Design, Website and eCommerce","serviceType":"Web design and development","url":"https://pixelstreet.in/web-design-company-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Digital Marketing and Social Campaigns","serviceType":"Digital marketing","url":"https://pixelstreet.in/digital-marketing-agency-kolkata"}}]}},{"@type":"ImageObject","@id":"https://pixelstreet.in/#logo","url":"https://pixelstreet.in/assets/images/logo1.svg","caption":"Pixel Street"},{"@type":"WebSite","@id":"https://pixelstreet.in/#website","url":"https://pixelstreet.in/","name":"Pixel Street","publisher":{"@id":"https://pixelstreet.in/#organization"}},{"@type":"Person","@id":"https://pixelstreet.in/#khurshid-alam","name":"Khurshid Alam","jobTitle":"Founder","url":"https://pixelstreet.in/blog/author/khurshid-alam/","image":{"@type":"ImageObject","url":"https://pixelstreet.in/blog/media/2024/12/author-img-1.png"},"worksFor":{"@id":"https://pixelstreet.in/#organization"},"founderOf":{"@id":"https://pixelstreet.in/#organization"},"knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.linkedin.com/company/pixelstreet-in/"]},{"@type":"ImageObject","@id":"https://pixelstreet.in/blog/responsive-web-design/#primaryimage","url":"https://pixelstreet.in/blog/media/2025/01/6.The-Ultimate-Guide-to-Responsive-Web-Design.png","inLanguage":"en-US","width":1600,"height":553},{"@type":"BreadcrumbList","@id":"https://pixelstreet.in/blog/responsive-web-design/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pixelstreet.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://pixelstreet.in/blog/"},{"@type":"ListItem","position":3,"name":"Web Design","item":"https://pixelstreet.in/blog/category/ui-ux-design/"},{"@type":"ListItem","position":4,"name":"The Ultimate Guide to Responsive Web Design: Why It Matters & How to Implement It","item":"https://pixelstreet.in/blog/responsive-web-design/"}]},{"@type":"WebPage","@id":"https://pixelstreet.in/blog/responsive-web-design/#webpage","url":"https://pixelstreet.in/blog/responsive-web-design/","name":"Responsive Web Design Techniques in 2025: Ultimate Guide","datePublished":"2024-10-07T00:00:00+00:00","dateModified":"2025-04-23T09:41:04","isPartOf":{"@id":"https://pixelstreet.in/#website"},"breadcrumb":{"@id":"https://pixelstreet.in/blog/responsive-web-design/#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://pixelstreet.in/blog/responsive-web-design/#primaryimage"},"description":"Is your website mobile-friendly? Discover why responsive web design is crucial for boosting user experience and improving high SEO rankings."},{"@type":"BlogPosting","@id":"https://pixelstreet.in/blog/responsive-web-design/#article","isPartOf":{"@id":"https://pixelstreet.in/blog/responsive-web-design/#webpage"},"mainEntityOfPage":{"@id":"https://pixelstreet.in/blog/responsive-web-design/#webpage"},"headline":"The Ultimate Guide to Responsive Web Design: Why It Matters & How to Implement It","description":"Is your website mobile-friendly? Discover why responsive web design is crucial for boosting user experience and improving high SEO rankings.","datePublished":"2024-10-07T00:00:00+00:00","dateModified":"2025-04-23T09:41:04","author":{"@id":"https://pixelstreet.in/#khurshid-alam"},"publisher":{"@id":"https://pixelstreet.in/#organization"},"wordCount":3012,"inLanguage":"en-US","image":{"@id":"https://pixelstreet.in/blog/responsive-web-design/#primaryimage"},"articleSection":["Web Design"]}]}</script>
+
+  
+  <script type="text/plain" data-ps-consent="analytics" async src="https://www.googletagmanager.com/gtag/js?id=GT-PJSBPDH"></script>
+  <script type="text/plain" data-ps-consent="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'linker', { domains: ['pixelstreet.in'] });
+    gtag('config', 'GT-PJSBPDH');
+  </script>
+</head>
+<body>
+  <div class="container">
+        <div class="nav-group">
+            <div class="navbar">
+                <a href="../../" class="navlogo-full-wrap w-inline-block">
+                    <div class="navlogo-full-mask"><img src="../../assets/images/logo1.svg" loading="eager" alt="Logo Pixelstreet" class="navlogo-full"></div><img src="../../assets/images/fav-logo.svg" loading="eager" alt="" class="navlogo-mark">
+                </a>
+                <!-- <img src="assets/images/663b5857daab4d22293b72bf_nav-connection-shape.svg" loading="lazy" width="219"
+                    alt="" class="navbar-connector" /> -->
+                <div class="navbar-menu">
+                    <div class="navbar-menu-inner">
+                        <!-- Four empty <a href="javascript:void(0);"> elements used to sit here,
+                             one before this div and three nested inside the dropdown. They came
+                             from the captured theme markup, where an unclosed anchor was
+                             auto-closed by the parser. Each was focusable with no accessible
+                             name, so every page opened with four unnamed link stops ahead of
+                             the real navigation (2.4.4 / 4.1.2), and two of them were <a>
+                             children of <ul>, which is not a valid content model. -->
+                        <div class="navbar-link-text position-relative hover-mnu-reveal"><a href="javascript:void(0);" class="navbar-link-item w-inline-block">Services
+                                </a><div class="dropdown"><ul class="list-unstyled"><li><a href="../../branding-agency-kolkata">Creative Retainer</a>
+                                        </li>
+                                        <li> <a href="../../web-design-company-kolkata">Website &amp; eCommerce</a>
+                                        </li>
+                                        <li> <a href="../../digital-marketing-agency-kolkata">Social Campaigns</a>
+                                        </li>
+                                        <li> <a href="../../video-studio-kolkata">Video Studio</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        <a href="../../our-work" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Our Work</div>
+                        </a>
+                        <a href="../../about" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Team</div>
+                        </a>
+                        <a href="../../blog/" aria-current="page" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Blog</div>
+                        </a>
+                        <a href="../../careers" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text careers-highlight">Careers<span class="careers-hiring-badge">Hiring</span></div>
+                        </a>
+                    </div><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-wrap greentowhite nav-btn w-inline-block">
+                        <div class="btn-inner navbnt">
+                            <div class="btn-main greentowhite nav-ani">
+                                <div class="btn-text">DISCUSS A PROJECT
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-mobile">
+
+                    <div class="navbody">
+                        <a data-w-id="c81135b2-e306-3de0-cea8-a4d8f2746292" href="../../" class="nav-menu-logo-link w-inline-block"><img src="../../assets/images/logo.svg" loading="lazy" alt="Logomark Pixelstreet" class="nav-menu-logo">
+                        </a>
+
+
+                        <div role="button" tabindex="0" aria-label="Close menu" data-w-id="bfc164ca-3c26-14ba-d6b1-6177cde85246" class="nav-close"><img src="../../assets/images/close-m.svg" loading="lazy" alt="Icon Close X" class="navclose-icon">
+                        </div>
+
+                        <div class="nav-item-link mobile-drop w-inline-block">
+                            <div class="nav-item-text">
+                                Services
+                                <span class="dropdown-icon"><i class="ri-add-line"></i></span>
+                                <span class="dropdown-icon"><i class="ri-subtract-fill"></i></span>
+                                <!-- Icon beside "Services" -->
+                            </div>
+                            <div class="dropdown-mob">
+                                <ul class="list-unstyled">
+                                    <li><a href="../../branding-agency-kolkata">Creative Retainer</a></li>
+                                    <li><a href="../../web-design-company-kolkata">Website &amp; eCommerce</a></li>
+                                    <li><a href="../../digital-marketing-agency-kolkata">Social Campaigns</a></li>
+                                    <li><a href="../../video-studio-kolkata">Video Studio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <a href="../../our-work" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Our Work
+                            </div>
+                        </a><a href="../../about" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Team</div>
+                        </a>
+                        <a href="../../blog/" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Blog</div>
+                        </a>
+                        <a href="../../careers" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text careers-highlight">Careers<span class="careers-hiring-badge">Hiring</span></div>
+                        </a>
+                    
+                        <!-- P4: below 992px the desktop bar's "Discuss a project"
+                             button is gone and .navbar-menu is display:none, so the
+                             only conversion route left above the footer was the
+                             floating WhatsApp button. -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                           class="nav-cta">Discuss a project</a>
+</div>
+                    <div role="button" tabindex="0" aria-label="Open menu" data-w-id="3381c287-9947-e365-7067-fd4935256394" class="navbtn-wrap mobile-tab-none">
+                        <img src="../../assets/images/menu.svg" loading="lazy" alt="" class="navbtn-icon">
+                    </div>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                       aria-label="Open the enquiry form" class="nav-enquiry">
+<div data-w-id="3381c287-9947-e365-7067-fd4935256394" class="navbtn-wrap dk-show">
+
+                            <svg class="navbtn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" width="24" height="24">
+                            <path d="M4 4.75A1.75 1.75 0 0 1 5.75 3h8.5L20 8.75v10.5A1.75 1.75 0 0 1 18.25 21H5.75A1.75 1.75 0 0 1 4 19.25V4.75Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                            <path d="M14 3v6h6M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+        <div data-w-id="50ab8146-de5b-2d73-65a6-48e823c948ec" class="topmarker"></div>
+    </div>
+
+
+  <main id="scrollsmoother-container">
+    <div class="ps-progress" aria-hidden="true"><span class="ps-progress__bar"></span></div>
+
+  <section class="section blogInnerDetails">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="blog-inner-banner">
+            <img src="../../blog/media/2025/01/6.The-Ultimate-Guide-to-Responsive-Web-Design.png" alt="The Ultimate Guide to Responsive Web Design: Why It Matters &#38; How to Implement It" width="1600" height="553" fetchpriority="high" decoding="async">
+            <div class="overlap-title">
+              <h1 style="--h1-scale:0.827">The Ultimate Guide to Responsive Web Design: Why It Matters &amp; How to Implement It</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row ctsom-blog-pad">
+        <div class="col-lg-3 col-12 stuck-socila position-relative">
+          <nav class="ps-toc" aria-label="On this page">
+            
+            <details open>
+              <summary>On this page</summary>
+              <p class="ps-toc__title">On this page</p>
+              <ol>
+                <li class="lvl-2"><a href="#what-is-responsive-web-design">What is Responsive Web Design?</a></li><li class="lvl-2"><a href="#responsive-design-and-seo-minus-the-folklore">Responsive design and SEO, minus the folklore</a></li><li class="lvl-2"><a href="#responsive-vs-adaptive-design">Responsive vs. Adaptive Design</a></li><li class="lvl-2"><a href="#why-responsive-web-design-is-worth-the-work">Why responsive web design is worth the work</a></li><li class="lvl-2"><a href="#how-to-implement-responsive-web-design-step-by-step-guide">How to Implement Responsive Web Design (Step-by-Step Guide)</a></li><li class="lvl-2"><a href="#tools-and-frameworks-for-responsive-web-design">Tools and Frameworks for Responsive Web Design</a></li><li class="lvl-2"><a href="#common-mistakes-to-avoid">Common Mistakes to Avoid</a></li><li class="lvl-2"><a href="#what-i-changed-in-this-article-and-why">What I changed in this article, and why</a></li><li class="lvl-2"><a href="#frequently-asked-questions">Frequently asked questions</a></li><li class="lvl-2"><a href="#what-i-would-do-first">What I would do first</a></li>
+              </ol>
+            </details>
+          </nav>
+        </div>
+
+        <div class="col-lg-9 col-12">
+          
+          <div class="blog-content">
+            <div class="author_date">
+              <div class="author-bx">
+                <div class="author">
+                  <img class="author-img" src="../../blog/media/2024/12/author-img-1.png" alt="" width="60" height="60">
+                  <p class="author-name">Khurshid Alam</p>
+                </div>
+                <div class="datebx">
+                  <p class="date"><time datetime="2024-10-07T00:00:00+00:00">October 7, 2024</time></p>
+                </div>
+              </div>
+            </div>
+            <span id="looks-great-on-all-devices" class="ps-anchor-alias" aria-hidden="true"></span><span id="makes-users-happy" class="ps-anchor-alias" aria-hidden="true"></span><span id="google-loves-it" class="ps-anchor-alias" aria-hidden="true"></span><span id="saves-time-and-money" class="ps-anchor-alias" aria-hidden="true"></span><span id="improves-loading-speed" class="ps-anchor-alias" aria-hidden="true"></span><span id="better-for-seo" class="ps-anchor-alias" aria-hidden="true"></span><span id="adaptable-to-future-devices" class="ps-anchor-alias" aria-hidden="true"></span><span id="reduces-bounce-rate" class="ps-anchor-alias" aria-hidden="true"></span><span id="enhances-user-experience" class="ps-anchor-alias" aria-hidden="true"></span><span id="increases-social-sharing" class="ps-anchor-alias" aria-hidden="true"></span><span id="simplifies-website-management" class="ps-anchor-alias" aria-hidden="true"></span><span id="improves-accessibility" class="ps-anchor-alias" aria-hidden="true"></span><span id="future-proofing-your-website" class="ps-anchor-alias" aria-hidden="true"></span><!-- <h2>The Ultimate Guide to Responsive Web Design: Why It Matters & How to Implement It</h2> -->
+
+ <p>Responsive design stopped being a technique and became the floor about a decade ago. Nobody argues for it any more. What has not kept up is the advice about how to do it.</p>
+<p>Here is the claim I will defend for the rest of this page: <strong>the single stalest idea in responsive design is the fixed breakpoint list.</strong> If a guide tells you to break at 320px, 768px and 1024px, it is describing a device landscape rather than your content. Those are device widths. They were never a design principle, and in 2026 they are actively unhelpful, because the browser now gives you three better tools: container queries, which let a component respond to the space it is in rather than the width of the window; <code>clamp()</code>, which makes type and spacing fluid so most of your old breakpoints stop being necessary; and media queries in <code>em</code> rather than <code>px</code>, which respect a reader who has turned their font size up.</p>
+<p>I run a web design studio in Kolkata, and the pattern I keep meeting in inherited code is a stylesheet full of hard-coded pixel breakpoints and a sidebar that collapses at the wrong moment on everything released since. This guide covers what responsive design is, why it still matters, and how it is actually built now.</p>
+<span id="responsive-design-rule" class="ps-anchor-alias" aria-hidden="true"></span><span id="15-reasons-why-responsive-web-design-is-important" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="what-is-responsive-web-design"><strong>What is Responsive Web Design?</strong></h2>
+<p>Responsive web design means one set of HTML and CSS that adapts to whatever is rendering it, instead of separate sites for separate devices. The layout reflows, images scale, and type stays readable, from a 360-pixel-wide phone to an ultrawide monitor.</p>
+<p>Google's own documentation is unusually direct about this. On its mobile-first indexing guidance it states: "Google recommends Responsive Web Design because it's the easiest design pattern to implement and maintain." That is a recommendation about maintenance cost, not about ranking magic, and it is the honest reason to choose it.</p>
+<p>If you want to see the effect quickly, <a href="https://fireship.dev/amiresponsive">Am I Responsive</a> renders any URL across four device frames at once. (This tool used to live at ui.dev; that address now redirects.)</p>
+<h3 id="design-for-the-smallest-screen-first"><strong>Design for the smallest screen first</strong></h3>
+<p>Mobile-first is still the right default, and in India it is not close. Statcounter put mobile at 67.15% of Indian web traffic in June 2026 against 32.29% for desktop. The commonest mobile screen resolution in the country was 360x800, at 18.49%.</p>
+<p>Two things follow from that second number, and they are the ones people miss. A 360-pixel-wide viewport is your primary canvas, not your edge case. And no single resolution comes close to a majority, which is the argument against designing to device widths in the first place. You are not designing for the 360x800 phone. You are designing for a distribution.</p>
+<h2 id="responsive-design-and-seo-minus-the-folklore">Responsive design and SEO, minus the folklore</h2>
+<p>A lot of what circulates about responsive design and search rankings is either outdated or was never true. Here is what Google actually documents, and what I would drop.</p>
+<h3 id="mobile-first-indexing-is-finished-not-upcoming">Mobile-first indexing is finished, not upcoming</h3>
+<p>Google indexes the mobile version of your content, crawled with the smartphone agent. This is not a transition to prepare for; it completed. The practical consequence is content parity: Google's guidance says to "make sure that your mobile site contains the same content as your desktop site". If your mobile build hides sections to save space, those sections are effectively not on your site.</p>
+<h3 id="core-web-vitals-are-the-measurable-part">Core Web Vitals are the measurable part</h3>
+<p>Google's page experience documentation states that Core Web Vitals are used by its ranking systems, with the caveat that good scores do not guarantee top rankings. The three thresholds are Largest Contentful Paint within 2.5 seconds, Interaction to Next Paint of 200 milliseconds or less, and Cumulative Layout Shift of 0.1 or less. INP replaced First Input Delay as a stable Core Web Vital on 12 March 2024, so any performance advice still discussing FID predates that.</p>
+<p>Layout shift is the vital that responsive work touches most directly. Images without dimensions, fonts that swap late and ads injected above content are the usual culprits, and all three are layout problems rather than server problems.</p>
+<h3 id="bounce-rate-is-not-a-ranking-signal">Bounce rate is not a ranking signal</h3>
+<p>You will still read that a high bounce rate hurts SEO because search engines read it as irrelevance. Google has denied using analytics or bounce-rate data in ranking for a decade, and John Mueller repeated it in 2022, calling it a misconception. Responsive design improves the experience. The mechanism by which that helps you is people staying and buying, not a bounce-rate dial somewhere in Google.</p>
+<h3 id="there-is-no-duplicate-content-penalty">There is no duplicate content penalty</h3>
+<p>Separate m-dot and desktop sites create a canonicalisation problem, not a penalty. Google's spam policies do not list duplicate content as a violation at all. Responsive design still wins here, but the reason is that you maintain one template set instead of two, not that you have escaped a punishment.</p>
+<h3 id="crawl-budget-is-not-your-problem">Crawl budget is not your problem</h3>
+<p>Google's own crawl budget guide opens by telling most publishers to stop reading: "If your site doesn't have a large number of pages that change rapidly, or if your pages seem to be crawled the same day that they are published, you don't need to read this guide." Its rough thresholds are a million-plus pages changing weekly, or ten thousand-plus pages changing daily. An Indian SME site with two hundred pages is not in that conversation.</p>
+<h3 id="accessibility-is-the-seo-overlap-that-actually-exists">Accessibility is the SEO overlap that actually exists</h3>
+<p>The structural work responsive design forces — real headings, sane source order, controls that survive a reflow — is the same work accessibility asks for, and it is genuinely read by crawlers. That overlap is worth doing on purpose rather than by accident, and it is covered properly in our <a href="../../blog/website-accessibility-compliance/">guide to website accessibility compliance</a>.</p>
+<h2 id="responsive-vs-adaptive-design">Responsive vs. Adaptive Design</h2>
+<p>Both aim at the same outcome and get there differently.</p>
+<div class="table-wrap" role="region" aria-label="Table, scrollable" tabindex="0"><table>
+<tbody><tr>
+<th></th>
+<th>Responsive</th>
+<th>Adaptive</th>
+</tr>
+<tr>
+<td>How it works</td>
+<td>One fluid layout that reflows continuously</td>
+<td>Several fixed layouts served at set widths</td>
+</tr>
+<tr>
+<td>Number of layouts</td>
+<td>One</td>
+<td>Typically three to six</td>
+</tr>
+<tr>
+<td>New device appears</td>
+<td>Handled, because nothing was pinned to a device</td>
+<td>Falls back to the nearest layout, often badly</td>
+</tr>
+<tr>
+<td>Control over a specific screen</td>
+<td>Lower</td>
+<td>Higher, which is the whole point</td>
+</tr>
+<tr>
+<td>Build and maintenance cost</td>
+<td>Lower</td>
+<td>Higher, and it compounds</td>
+</tr>
+<tr>
+<td>Where it still makes sense</td>
+<td>Almost everything</td>
+<td>Heavily instrumented apps optimising two or three known contexts</td>
+</tr>
+</tbody></table></div>
+<p>My position is that adaptive design is a legacy answer to a problem the browser has since solved. Container queries give you component-level control without maintaining parallel layouts, which was adaptive design's only real advantage.</p>
+<h2 id="why-responsive-web-design-is-worth-the-work"><strong>Why responsive web design is worth the work</strong></h2>
+<p><a href="../../blog/media/2024/08/responsive-web-design-1.jpg"><img class=" wp-image-7957 alignnone" src="../../blog/media/2024/08/responsive-web-design-1.jpg" sizes="(max-width: 847px) 100vw, 847px" srcset="../../blog/media/2024/08/responsive-web-design-1.jpg 1000w, ../../blog/media/2024/08/responsive-web-design-1-300x300.jpg 300w, ../../blog/media/2024/08/responsive-web-design-1-150x150.jpg 150w, ../../blog/media/2024/08/responsive-web-design-1-768x768.jpg 768w" alt="Why is responsive web design important?" width="847" height="847"></a></p>
+<pre>Source:: <a href="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.primotech.com%2Fwhy-responsive-web-design-is-important-for-your-non-responsive-websites%2F&amp;psig=AOvVaw3VBKqo3cMdWytC8Ub-B8GQ&amp;ust=1724819417505000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBQQjRxqFwoTCPCQjJerlIgDFQAAAAAdAAAAABAE">Primotech</a></pre>
+<p>This section used to run to fifteen reasons. Several were the same reason wearing different clothes: "makes users happy" and "enhances user experience" are one item, and so are "adaptable to future devices" and "future-proofing your website". Here is the list with the duplicates merged.</p>
+<h3 id="one-codebase-instead-of-several"><strong>One codebase instead of several</strong></h3>
+<p>This is the reason that survives scrutiny. One set of templates, one deployment, one place to fix a bug. Every separate mobile build I have seen inherited eventually drifts out of sync with the desktop one, and the drift always shows up first in the content nobody remembers to copy across.</p>
+<h3 id="it-works-on-hardware-that-does-not-exist-yet"><strong>It works on hardware that does not exist yet</strong></h3>
+<p>A fluid layout has no opinion about what is rendering it. Foldables, in-car browsers and whatever comes next inherit a sensible result for free, provided you did not pin your CSS to a device width. If you did, every new form factor is a new ticket.</p>
+<span id="keeps-content-consistent" class="ps-anchor-alias" aria-hidden="true"></span><h3 id="consistent-content-which-is-now-a-ranking-requirement"><strong>Consistent content, which is now a ranking requirement</strong></h3>
+<p>Because there is one document, everyone gets the same content. That is the content parity Google's mobile-first documentation asks for, achieved structurally rather than by discipline.</p>
+<h3 id="faster-if-you-actually-do-the-work"><strong>Faster, if you actually do the work</strong></h3>
+<p>Responsive design does not make a site fast on its own. A responsive page that ships a 2MB hero image to a phone is slow, and calling it responsive changes nothing. What responsive technique gives you is the mechanism: <code>srcset</code> and <code>sizes</code> to send a smaller file to a smaller screen, and modern formats to make every file smaller. Use it or you get none of the benefit.</p>
+<span id="helps-with-analytics-and-reporting" class="ps-anchor-alias" aria-hidden="true"></span><h3 id="simpler-analytics-and-reporting"><strong>Simpler analytics and reporting</strong></h3>
+<p>One property, one set of URLs, one funnel. Comparing behaviour across a desktop site and an m-dot site is an exercise in reconciling two numbers that were never comparable.</p>
+<h3 id="better-accessibility-almost-by-accident"><strong>Better accessibility, almost by accident</strong></h3>
+<p>A layout that survives being squeezed to 320 pixels is usually a layout that survives being zoomed to 400%, which is a WCAG requirement in its own right. Reflow and accessibility are close relatives.</p>
+<h3 id="it-is-what-people-expect"><strong>It is what people expect</strong></h3>
+<p>With two-thirds of Indian web traffic arriving on a phone, a site that requires pinching and horizontal scrolling reads as abandoned. This is not a conversion-rate argument I can source; it is an argument about credibility, and credibility is the thing you cannot buy back.</p>
+<h2 id="how-to-implement-responsive-web-design-step-by-step-guide">How to Implement Responsive Web Design (Step-by-Step Guide)</h2>
+<p>This is where the published advice has aged worst, so it gets the most space here.</p>
+<h3 id="1-set-breakpoints-where-your-content-breaks">1. Set breakpoints where your content breaks</h3>
+<p>Open your page and drag the browser window slowly from wide to narrow. The point where a line of text gets uncomfortably long, or a card grid starts looking silly, is a breakpoint. That width is a property of your content and your typography. It has nothing to do with the dimensions of anyone's tablet.</p>
+<p>Two rules I would treat as non-negotiable:</p>
+<ul>
+<li><strong>Write media queries in <code>em</code>, not <code>px</code>.</strong> A query written in <code>em</code> scales with the reader's default font size, so someone who has set larger text gets the simpler layout at the point where they actually need it. A pixel query ignores them completely.</li>
+<li><strong>Start from the small layout and add complexity upward</strong>, using <code>min-width</code> queries. Mobile-first is not a slogan; it produces less CSS, because the narrow layout is usually the simple one.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>/* content-driven, in em, mobile-first */
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 46em) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}</code></pre>
+<h3 id="2-use-container-queries-for-components">2. Use container queries for components</h3>
+<p>This is the change that actually matters, and the one most responsive guides still do not mention.</p>
+<p>A media query asks how wide the <em>window</em> is. That is the wrong question for a component. The same card can appear in a wide main column and in a narrow sidebar on the same page at the same window width, and it should look different in each. Container queries let the component ask how much space <em>it</em> has been given.</p>
+<p><picture><source media="(max-width: 700px)" srcset="../../blog/diagrams/responsive-web-design-container-vs-media-query-narrow.svg" width="380" height="484"><img src="../../blog/diagrams/responsive-web-design-container-vs-media-query.svg" alt="One window at one width holds a wide main column and a narrow sidebar, with the same card in both. A media query knows only the window width, so both slots get the same answer; a container query lets the component ask how much space it has." width="800" height="422" loading="lazy" decoding="async"></picture></p>
+<p>Support is no longer the objection. Can I use puts CSS container queries at 92.60% globally, shipping in Chrome 106, Safari 16.0 and Firefox 110. That is better support than Flexbox had when everyone adopted Flexbox.</p>
+<p><strong>Example:</strong></p>
+<pre><code>.sidebar, .main { container-type: inline-size; }
+
+@container (min-width: 30em) {
+  .card { display: grid; grid-template-columns: 8rem 1fr; }
+}</code></pre>
+<p>Write a component once, drop it anywhere, and it adapts to its slot. That is the thing adaptive design was trying to buy you, without the parallel layouts.</p>
+<h3 id="3-make-type-and-space-fluid-with-clamp">3. Make type and space fluid with clamp()</h3>
+<p><code>clamp()</code> takes a minimum, a preferred value and a maximum, and interpolates smoothly between them. A heading sized with <code>clamp()</code> grows with the viewport instead of jumping at a breakpoint, which removes the need for most of the font-size overrides that used to live inside media queries.</p>
+<p><strong>Example:</strong></p>
+<pre><code>h2 {
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem);
+  line-height: 1.25;
+}</code></pre>
+<p>Apply the same idea to section padding and gutters and a surprising amount of your breakpoint CSS simply disappears.</p>
+<h3 id="4-build-layouts-with-grid-flexbox-and-subgrid">4. Build layouts with Grid, Flexbox and subgrid</h3>
+<p>Percentage-width floats are gone and should stay gone. CSS Grid handles two-dimensional layout, Flexbox handles a single row or column that needs to distribute space, and subgrid lets a child align to its parent's grid lines so that cards in a row share a baseline without hard-coded heights. Can I use puts subgrid at 90.49% globally and CSS nesting at 90.81%, so both are safe to use directly.</p>
+<p>Grid's <code>auto-fit</code> and <code>minmax()</code> give you a responsive card grid with no media query at all, which is worth internalising before you write another one.</p>
+<h3 id="5-make-images-responsive-properly">5. Make images responsive properly</h3>
+<p>Every responsive guide tells you to set <code>max-width: 100%</code> and <code>height: auto</code>, and that is correct as far as it goes. It stops images overflowing. It does not stop you sending a desktop-sized file to a phone on a patchy mobile connection, which is the part that costs you.</p>
+<p>The full answer is three things together: the CSS rule so images never overflow; <code>srcset</code> and <code>sizes</code> so the browser picks an appropriately sized file; and explicit <code>width</code> and <code>height</code> attributes so the browser reserves the space and your Cumulative Layout Shift stays where it should be.</p>
+<p><strong>Example:</strong></p>
+<pre><code>img { max-width: 100%; height: auto; }</code></pre>
+<h3 id="6-apply-media-queries-where-they-still-belong">6. Apply media queries where they still belong</h3>
+<p>Media queries have not been replaced. They have been narrowed to what they were always good at: page-level and environmental decisions. Number of columns in the overall page shell, print styles, and user preferences such as <code>prefers-reduced-motion</code> and <code>prefers-color-scheme</code>. Component-level decisions belong to container queries now.</p>
+<p><a href="../../blog/media/2024/09/Media-Queries.png"><img class="wp-image-8039 alignnone" src="../../blog/media/2024/09/Media-Queries.png" sizes="(max-width: 499px) 100vw, 499px" srcset="../../blog/media/2024/09/Media-Queries.png 900w, ../../blog/media/2024/09/Media-Queries-300x227.png 300w, ../../blog/media/2024/09/Media-Queries-768x580.png 768w" alt="A laptop, tablet and smartphone shown side by side, each captioned with the media query that targets it: min-width 1024px for desktop, min-width 768px and max-width 1023px for tablet, and max-width 767px for the phone." width="499" height="377"></a></p>
+<p><strong>Example:</strong></p>
+<pre><code>@media (max-width: 48em) {
+  .sidebar { display: none; }
+}</code></pre>
+<p>One warning about that specific example, because it gets copied around without one: hiding a sidebar on small screens is a content decision, not a layout decision. If anything in it matters, move it rather than hide it. Google's content-parity guidance and your own users both object to the disappearing-content approach.</p>
+<h3 id="7-get-touch-targets-right-and-use-the-real-number">7. Get touch targets right, and use the real number</h3>
+<p>The rule of thumb everyone quotes is 44 by 44 pixels. That figure is real but it is the <em>AAA</em> requirement. WCAG 2.2 Success Criterion 2.5.5 Target Size (Enhanced) asks for at least 44 by 44 CSS pixels at Level AAA. The requirement almost everyone is actually held to is Success Criterion 2.5.8 Target Size (Minimum), which asks for <strong>at least 24 by 24 CSS pixels at Level AA</strong>, with exceptions for adequately spaced targets, inline links and browser defaults.</p>
+<p>So: 24 by 24 is the compliance floor, 44 by 44 is the design target, and a row of 20-pixel social icons packed edge to edge fails both. Since WCAG 2.2 also added Success Criterion 2.5.7 Dragging Movements, anything a user can drag needs a tap-based alternative too. Carousels and range sliders are the usual offenders.</p>
+<p><picture><source media="(max-width: 700px)" srcset="../../blog/diagrams/responsive-web-design-touch-target-sizes-narrow.svg" width="380" height="404"><img src="../../blog/diagrams/responsive-web-design-touch-target-sizes.svg" alt="Three tap targets on one baseline: 24 by 24 CSS pixels is the Level AA compliance floor under SC 2.5.8, 44 by 44 is the Level AAA design target under SC 2.5.5, and a 20 by 20 icon packed edge to edge fails both." width="800" height="420" loading="lazy" decoding="async"></picture></p>
+<h3 id="8-handle-the-rest-of-touch">8. Handle the rest of touch</h3>
+<ul>
+<li><strong>No hover-only interactions.</strong> There is no hover on a touchscreen. A dropdown that only opens on hover does not open.</li>
+<li><strong>Navigation that fits a thumb.</strong> A hamburger menu is a reasonable answer on a phone and a lazy one on a tablet. Decide per breakpoint.</li>
+<li><strong>Respect safe areas.</strong> Rounded corners and home indicators eat the bottom of the viewport. Fixed bottom bars need padding for it.</li>
+</ul>
+<h3 id="9-test-on-the-distribution-not-on-your-phone">9. Test on the distribution, not on your phone</h3>
+<p>Chrome DevTools device mode is the fast loop: emulate a viewport, throttle the network, and check reflow at 400% zoom while you are there. BrowserStack gives you real devices and real browsers when emulation is not enough, which is usually when the bug involves a specific Android WebView or an older Safari.</p>
+<p>What to look for: text that stays readable without zooming, no horizontal scrolling at any width, images that scale without distorting, focus order that survives a column collapse, and tap targets you can hit while walking.</p>
+<h2 id="tools-and-frameworks-for-responsive-web-design"><strong>Tools and Frameworks for Responsive Web Design</strong></h2>
+<p>A note before the list. In 2026 the honest default is no framework at all. Grid, Flexbox, container queries and <code>clamp()</code> cover what Bootstrap was invented to work around, and they ship with the browser rather than with a stylesheet you did not write and cannot fully remove. Reach for a framework when you need a component library and a team convention, not when you need a grid.</p>
+<h3 id="1-the-browser">1. The browser</h3>
+<p>CSS Grid for two-dimensional layout, Flexbox for one, container queries for components, <code>clamp()</code> for fluid type and space, and native CSS nesting to keep it organised. This is the stack I would start any new project on.</p>
+<h3 id="2-bootstrap">2. Bootstrap</h3>
+<p>Still the most widely used front-end framework, currently at version 5.3.8. Its value now is the component library and the fact that any developer you hire already knows it, not the grid. Be aware that its breakpoints are pixel-based by default, which puts you back in the world this article opened by criticising.</p>
+<h3 id="3-foundation">3. Foundation</h3>
+<p>Foundation 6 remains available from ZURB and remains more customisable than Bootstrap out of the box. It is a reasonable choice for teams already invested in it. I would not start a new project on it in 2026.</p>
+<h3 id="4-testing-and-inspection-tools">4. Testing and inspection tools</h3>
+<p>Chrome DevTools for the fast loop, BrowserStack for real devices, and Lighthouse for a Core Web Vitals reading before you ship. Those three cover the ground the old "media query generator" recommendation was pointing at, and unlike a generator they tell you when you are wrong.</p>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="1-designing-to-device-widths">1. Designing to device widths</h3>
+<p>Breaking at 768px because that was an iPad is the mistake this whole article is arguing against. Break where your content breaks, in <code>em</code>, and let container queries handle the components.</p>
+<h3 id="2-ignoring-mobile-load-time">2. Ignoring mobile load time</h3>
+<p>A responsive layout over a 3MB payload is a slow site with a flexible layout. Serve appropriately sized images through <code>srcset</code>, lazy-load anything below the fold, and check the result against the Core Web Vitals thresholds rather than against your own connection.</p>
+<h3 id="3-hiding-content-on-small-screens">3. Hiding content on small screens</h3>
+<p>Using <code>display: none</code> to make a mobile layout tidy is the commonest way to lose both users and content parity. If it does not matter, remove it everywhere. If it matters, find it a home.</p>
+<h3 id="4-pixel-media-queries-that-ignore-user-font-size">4. Pixel media queries that ignore user font size</h3>
+<p>A reader who has increased their default font size is exactly the reader who most needs the simplified layout, and a pixel-based query is the one thing guaranteed not to give it to them.</p>
+<h3 id="5-testing-only-on-your-own-phone">5. Testing only on your own phone</h3>
+<p>With no single screen resolution close to a majority in India, your device is a sample of one. Emulate widths across the range, then verify on real hardware.</p>
+<h3 id="6-overcomplicating-the-small-layout">6. Overcomplicating the small layout</h3>
+<p>A desktop design with everything stacked vertically is not a mobile design, it is a desktop design falling over. Decide what the page is <em>for</em> at 360 pixels wide, and let that decision inform the wide layout rather than the other way round.</p>
+<h2 id="what-i-changed-in-this-article-and-why">What I changed in this article, and why</h2>
+<ul>
+<li><strong>Deleted:</strong> the claim that a high bounce rate hurts SEO because search engines read it as low-quality content. Google has said for years that it does not use bounce rate in ranking.</li>
+<li><strong>Deleted:</strong> the claim that separate mobile and desktop sites cause duplicate content problems that "hurt your rankings". Google's spam policies do not list duplicate content at all. The real cost is canonicalisation and double maintenance.</li>
+<li><strong>Corrected:</strong> the crawl budget section, which implied every site has a budget to protect. Google's guidance tells most publishers not to read that document.</li>
+<li><strong>Corrected:</strong> "make buttons at least 44px by 44px" presented as the rule. 44 by 44 CSS pixels is WCAG's Level AAA target; the Level AA requirement is 24 by 24.</li>
+<li><strong>Replaced:</strong> the fixed breakpoint list of 320px, 768px and 1024px, and the fluid-percentage grid advice, with content-driven breakpoints in <code>em</code>, container queries, <code>clamp()</code> and Grid.</li>
+<li><strong>Replaced:</strong> "media query generators" as a recommended tool category. Generators produce the device-width breakpoints this article is arguing against.</li>
+<li><strong>Merged:</strong> the fifteen reasons into seven. Six of the original items were restatements of two ideas.</li>
+<li><strong>Fixed:</strong> the outbound link to Am I Responsive, which had moved from ui.dev to fireship.dev.</li>
+</ul>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="do-container-queries-replace-media-queries">Do container queries replace media queries?</h3>
+<p>No, they divide the work. Container queries handle components, which is most of your CSS. Media queries handle the page shell, print, and user preferences such as reduced motion and colour scheme. Expect to write far fewer media queries, not zero.</p>
+<h3 id="what-breakpoints-should-i-use-then">What breakpoints should I use, then?</h3>
+<p>Whatever widths your own content breaks at. Resize the browser until the layout looks wrong and write the query there, in <code>em</code>. Most sites need two or three, not six. If you inherited a list of device widths, treat it as a starting guess and then move each one to where your content actually wants it.</p>
+<h3 id="is-bootstrap-still-worth-using-in-2026">Is Bootstrap still worth using in 2026?</h3>
+<p>For its components and its familiarity, sometimes. For its grid, no. Grid and Flexbox do that job natively with no download, and container queries do a job Bootstrap cannot do at all.</p>
+<h3 id="how-do-i-know-my-responsive-site-is-fast-enough">How do I know my responsive site is fast enough?</h3>
+<p>Measure against the Core Web Vitals thresholds: Largest Contentful Paint within 2.5 seconds, Interaction to Next Paint of 200 milliseconds or less, Cumulative Layout Shift of 0.1 or less. Ignore anyone quoting a 2.0-second LCP target; Google's own documentation says 2.5.</p>
+<h3 id="does-responsive-design-help-with-accessibility">Does responsive design help with accessibility?</h3>
+<p>Partly, and less automatically than people assume. A layout that reflows cleanly at 320 pixels usually reflows cleanly at 400% zoom, which is a real WCAG requirement. It does nothing for alt text, form labels or keyboard order. Those are separate work.</p>
+<span id="final-thoughts" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="what-i-would-do-first">What I would do first</h2>
+<p>If you have an existing site, do this in order. Open your stylesheet and find the hard-coded pixel breakpoints. Convert the ones you keep to <code>em</code>, delete the ones that exist only because a device once existed, and replace the component-level ones with container queries. Then put <code>clamp()</code> on your headings and section spacing. That sequence usually removes more CSS than it adds, and it is the difference between a site that adapts and a site that merely resizes.</p>
+<p>At Pixel Street we design and build for brands including Coca-Cola, ITC and Marico, from Salt Lake in Kolkata. If you are commissioning this work rather than doing it, the useful question to ask an agency is not whether the site will be responsive — everyone says yes — but which breakpoints they intend to use and why. The answer tells you immediately whether you are talking to someone working in 2026 or someone still copying a list from 2012. There are more questions worth asking in our guide to <a href="../../blog/questions-before-hiring-web-design-agency/">questions to ask before hiring a web design agency</a>, and the techniques above sit alongside the rest of the <a href="../../blog/12-popular-web-design-trends/">current web design trends</a> worth adopting.</p>
+
+          </div>
+
+          
+          <p class="ps-facts">
+            <span class="ps-facts__item"><i class="ri-time-line" aria-hidden="true"></i> 14 min read</span>
+            <span class="ps-facts__item"><i class="ri-links-line" aria-hidden="true"></i> 25 cited sources</span>
+            <a class="ps-facts__item ps-facts__cat" href="../../blog/category/ui-ux-design/">Web Design</a>
+          </p>
+
+
+          <div class="ps-share">
+            <p class="ps-share__label">Share</p>
+            <ul class="ps-share__list">
+              <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fresponsive-web-design%2F" rel="noopener" target="_blank" aria-label="Share on Facebook"><i class="ri-facebook-fill"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?text=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fresponsive-web-design%2F" rel="noopener" target="_blank" aria-label="Share on WhatsApp"><i class="ri-whatsapp-fill"></i></a></li>
+              <li><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fresponsive-web-design%2F" rel="noopener" target="_blank" aria-label="Share on LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+              <li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fresponsive-web-design%2F&text=The%20Ultimate%20Guide%20to%20Responsive%20Web%20Design%3A%20Why%20It%20Matters%20%26%20How%20to%20Implement%20It" rel="noopener" target="_blank" aria-label="Share on X"><i class="ri-twitter-x-fill"></i></a></li>
+              <li><a href="mailto:?subject=The%20Ultimate%20Guide%20to%20Responsive%20Web%20Design%3A%20Why%20It%20Matters%20%26%20How%20to%20Implement%20It&#38;body=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fresponsive-web-design%2F" aria-label="Share by email"><i class="ri-mail-line"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="quote">
+            <div class="quote-img"><img src="../../blog/media/2024/12/author-img-1.png" alt="" width="120" height="120" loading="lazy"></div>
+            <div class="quote-text">
+              
+              <h2 class="founder-title">Khurshid Alam</h2>
+              <p class="desg">Author</p>
+              <p class="bio">Khurshid Alam is the founder of Pixel Street, an AI-native design &amp; development studio. Design thinking on weekdays and spreadsheets on weekends.</p>
+              <p class="bio">He writes about growth, design, and AI, mostly because someone has to say the quiet parts out loud.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps-related" aria-labelledby="ps-related-h">
+      <div class="container">
+        <h2 class="ps-related__head" id="ps-related-h">Keep reading</h2>
+        <div class="ps-grid ps-grid--related">
+          <article class="ps-card  all web-development ui-ux-design" data-title="ai website builders vs custom development: where the shiny tools actually break" data-blurb="ai website builders are fast, but are they right for your business? discover where they excel, where they fail, and when custom development is the smarter choice." data-cat="web-development ui-ux-design">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-300x104.png 300w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-768x265.png 768w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-1024x354.png 1024w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">WEB DEVELOPMENT</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/ai-website-builders-vs-custom-development/">AI Website Builders vs Custom Development: Where the Shiny Tools Actually Break</a>
+    </h3>
+
+    <p class="ps-card__blurb">AI website builders are fast, but are they right for your business? Discover where they excel, where they fail, and when custom development is the…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-29T00:00:00+00:00">July 29, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>6 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all ui-ux-design web-development" data-title="do you still need a website in 2026? your guide to ai search optimization" data-blurb="a client asked me this on a call last month: “khurshid, everyone just asks chatgpt now. do we even need a website anymore?” he runs a business doing serious revenue. he was not being lazy. he was looking at the same data everyone is looking at. small publishers lost 60% of their search traffic in … continue reading “do you still need a website in 2026? your guide to ai search optimization”" data-cat="ui-ux-design web-development">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2-300x104.png 300w, ../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2-768x265.png 768w, ../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2-1024x354.png 1024w, ../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">Web Design</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/ai-search-optimization-guide/">Do You Still Need a Website in 2026? Your Guide to AI Search Optimization</a>
+    </h3>
+
+    <p class="ps-card__blurb">A client asked me this on a call last month: “Khurshid, everyone just asks ChatGPT now. Do we even need a website anymore?” He runs a business doing…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-20T00:00:00+00:00">July 20, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>9 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all branding ui-ux-design" data-title="13 top must-read books for web and graphic designers" data-blurb="from small-time gigs to booming creative industries, web and graphic designers have taken centre stage. whether you’re a rookie or a design virtuoso, there’s always something new to learn." data-cat="branding ui-ux-design">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2025/04/13-Books-1.jpg" alt="" width="1526" height="533" loading="lazy" decoding="async" srcset="../../blog/media/2025/04/13-Books-1-300x105.jpg 300w, ../../blog/media/2025/04/13-Books-1-768x268.jpg 768w, ../../blog/media/2025/04/13-Books-1-1024x358.jpg 1024w, ../../blog/media/2025/04/13-Books-1.jpg 1526w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">Branding</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/13-top-must-read-books-for-web-and-graphic-designers/">13 Top Must-Read Books for Web and Graphic Designers</a>
+    </h3>
+
+    <p class="ps-card__blurb">From small-time gigs to booming creative industries, web and graphic designers have taken centre stage. Whether you’re a rookie or a design virtuoso…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2025-04-22T00:00:00+00:00">April 22, 2025</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>8 min read</span>
+    </p>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer class="psf psf--rule">
+    <div class="container">
+
+        <div class="psf__grid">
+
+            <div class="psf__col psf__contact">
+                <div class="psf__block">
+                    <h2 class="psf__heading">Address</h2>
+                    <p class="psf__text">Martin Burn Business Park, #900B, Salt Lake, Sector - V, Kolkata - 700091</p>
+                </div>
+                <div class="psf__block">
+                    <h2 class="psf__heading">Phone</h2>
+                    <p class="psf__text"><a class="psf__link" href="tel:+919007295096">+91 90072 95096</a></p>
+                </div>
+                <div class="psf__block">
+                    <h2 class="psf__heading">Email</h2>
+                    <p class="psf__text"><a class="psf__link" href="mailto:info@pixelstreet.in">info@pixelstreet.in</a></p>
+                </div>
+            </div>
+
+            <nav class="psf__col" aria-labelledby="psf-quick">
+                <h2 class="psf__heading" id="psf-quick">Quick Links</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../our-work">Our Work</a></li>
+                    <li><a class="psf__link" href="../../about">Team</a></li>
+                    <li><a class="psf__link" href="../../blog/">Blog</a></li>
+                    <li><a class="psf__link" href="../../contact-us">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <nav class="psf__col" aria-labelledby="psf-services">
+                <h2 class="psf__heading" id="psf-services">Services</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../branding-agency-kolkata">Creative Retainer</a></li>
+                    <li><a class="psf__link" href="../../web-design-company-kolkata">Website &amp; eCommerce</a></li>
+                    <li><a class="psf__link" href="../../digital-marketing-agency-kolkata">Social Campaigns</a></li>
+                    <li><a class="psf__link" href="../../video-studio-kolkata">Video Studio</a></li>
+                </ul>
+            </nav>
+
+            <nav class="psf__col" aria-labelledby="psf-cases">
+                <h2 class="psf__heading" id="psf-cases">Case Study</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../case-studies/mangaldeep-3in1">Mangaldeep</a></li>
+                    <li><a class="psf__link" href="../../case-studies/shipzip">Shipzip</a></li>
+                    <li><a class="psf__link" href="../../case-studies/the-hindu-group">The Hindu</a></li>
+                    <li><a class="psf__link" href="../../case-studies/marico">Marico</a></li>
+                </ul>
+            </nav>
+
+            <div class="psf__col psf__social-col">
+                <h2 class="psf__heading">Social Media</h2>
+                <ul class="psf__social">
+                    <li><a class="psf__icon" href="https://www.linkedin.com/company/pixelstreet-in/" target="_blank" rel="noopener" aria-label="Pixel Street on LinkedIn"><i class="ri-linkedin-fill" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.instagram.com/pixelstreet.in/" target="_blank" rel="noopener" aria-label="Pixel Street on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8?source=g.page.m.we._" target="_blank" rel="noopener" aria-label="Pixel Street on Google Business Profile"><i class="flaticon-my-business" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.behance.net/pixelstreet_in" target="_blank" rel="noopener" aria-label="Pixel Street on Behance"><i class="ri-behance-fill" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://dribbble.com/pixelstreetagency" target="_blank" rel="noopener" aria-label="Pixel Street on Dribbble"><i class="ri-dribbble-line" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a class="psf__map" href="https://maps.app.goo.gl/omW92ohh4aHYCapa9"
+                   target="_blank" rel="noopener"
+                   aria-label="Get directions to Pixel Street, Salt Lake Sector V, Kolkata (opens Google Maps)">
+                    <span class="psf__map__thumb" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" focusable="false">
+                            <rect width="48" height="48" rx="8" fill="#EEF1F4"/>
+                            <path d="M0 30h48M0 19h48M15 0v48M33 0v48" stroke="#D7DCE2" stroke-width="2"/>
+                            <path d="M0 8h48" stroke="#D7DCE2" stroke-width="1.5"/>
+                            <path d="M24 13c-4 0-7.2 3.2-7.2 7.2 0 5.4 7.2 13.3 7.2 13.3s7.2-7.9 7.2-13.3c0-4-3.2-7.2-7.2-7.2Z" fill="#16181D"/>
+                            <circle cx="24" cy="20" r="2.6" fill="#FDB914"/>
+                        </svg>
+                    </span>
+                    <span class="psf__map__text">Get Directions</span>
+                    <span class="psf__map__arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" focusable="false">
+                            <path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" stroke-width="1.7"
+                                  stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="psf__view"><nav class="hm-toggle" aria-label="Page format"><span class="hm-toggle__label">View</span><span class="hm-toggle__opt" aria-current="true">Human</span><a class="hm-toggle__opt" href="../../blog/ai/responsive-web-design/" data-hm="machine">Machine</a></nav></div>
+
+        <div class="psf__legal">
+            <a class="psf__brand" href="../../">
+                <img src="../../assets/images/logo1.svg" alt="Pixel Street" width="253" height="59" loading="lazy" decoding="async">
+            </a>
+            <p class="psf__copy">©2026 Pixel Street. All Rights Reserved.</p>
+            <nav class="psf__legal-nav" aria-label="Legal">
+                <ul>
+                    <li><a class="psf__link" href="../../terms">Terms</a></li>
+                    <li><a class="psf__link" href="../../privacy-policy">Privacy</a></li>
+                    <li><a class="psf__link" href="../../privacy-policy" data-ps-consent-open>Cookie preferences</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</footer>
+  <div class="modal fade modalRefer" id="exampleModal" tabindex="-1" aria-label="Discuss a project" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line" aria-hidden="true"></i></button>
+            <div class="modal-body">
+                <div class="border-wrap">
+                    <div class="contact__wrapper">
+                        <div class="row">
+                            <div class="col-xl-12">
+
+                                <div class="formHeader">
+                                    <img src="../../assets/images/contact-1.png" alt="Contact Form Element">
+                                </div>
+
+                                <!-- <h4 class="form-name">Request A Free Quote</h4> -->
+                                <div class="contact__form mt-20">
+                                    <form action="../../assets/email-php/home-contact.php" method="post">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label data-number="01" class="ps-visually-hidden" for="lead-name">Your name</label>
+                                                    <input id="lead-name" type="text" name="name" pattern="^[a-zA-Z\s]{2,50}$" placeholder="What's your name?">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 mt-30">
+                                                <div class="form-group">
+                                                    <label data-number="02" class="ps-visually-hidden" for="lead-phone">Your phone number</label>
+
+                                                    <input id="lead-phone" type="tel" name="phone" required="" pattern="[6789][0-9]{9}" onkeypress="return (event.charCode !=8 &amp;&amp; event.charCode ==0 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57))" placeholder="What's your phone number?">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 mt-30">
+                                                <div class="form-group">
+                                                    <label data-number="03" class="ps-visually-hidden" for="lead-email">Your email address</label>
+                                                    <input id="lead-email" type="email" name="email" required="" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="What's your email?">
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="col-xl-12 col-lg-12 mt-30">
+                                                        <div class="form-group">
+                                                            <label data-number="04" for=""></label>
+
+                                                            <textarea name="message" id="message"
+                                                                placeholder="Enter Your Message"></textarea>
+                                                        </div>
+                                                    </div> -->
+                                            <div class="g-recaptcha mt-3" data-sitekey="6LeqDd4mAAAAAMZZ7uZD9XzsVL5MJu4xRZznSsc7"></div>
+
+                                            <div class="col-xl-12 col-lg-12 mt-20">
+                                                <button type="submit" name="submit" class="submit-site-btn">DISCUSS A PROJECT
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="https://wa.me/+919007295096" target="_blank" class=" position-fixed whatsapp-link"><img src="../../assets/images/whatsapp.png" alt="Whatsapp Button"></a>
+
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.bundle.min.js"></script><script src="../../assets/js/imagesloaded.pkgd.min.js"></script><script src="../../assets/js/pix-js.js"></script><script src="../../assets/js/main.js"></script>
+  <script src="../../blog/ps-behaviours.js"></script>
+  
+  <script src="../../assets/js/ps-nav-a11y.js" defer></script>
+  <script>(function(){try{
+var t=document.querySelector('.hm-toggle');if(!t)return;
+t.addEventListener('click',function(e){var a=e.target.closest('[data-hm]');
+if(a)try{localStorage.setItem('ps-view',a.getAttribute('data-hm'))}catch(_){}},{passive:true});
+}catch(_){}})();</script>
+
+  
+  <script src="../../assets/js/lead-source.js" defer></script>
+<script src="../../assets/js/local-links.js" defer></script>
+</body>
+</html>
