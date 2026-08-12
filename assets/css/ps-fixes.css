@@ -243,7 +243,6 @@
 
 .psv-reel {
   --psv-gap: 28px;
-  padding-bottom: 40px;
   font-family: var(--font-secondary, 'Poppins', sans-serif);
 }
 
@@ -427,6 +426,7 @@
     transform: translate(-50%, -50%)
   }
 }
+
 /* --------------------------------------------------------------------- B9 --
    Homepage showreel: the grown video's bottom corners were being painted over,
    so the 20px border-radius vanished along the bottom edge.
