@@ -3653,9 +3653,16 @@
                             <!-- One continuous bracket: left edge, up, across under the
                                  KPI strip at y=620, down, out to the right edge. The two
                                  bottom verticals used to be separate paths with free-
-                                 floating top ends; this joins them. -->
+                                 floating top ends; this joins them.
+
+                                 The verticals sit at x=420/780 so they land in the gutter
+                                 between the middle card and the picture panels either side
+                                 of it. They were at 370/830, which is outside that gutter
+                                 now the panels are wider — the line ran behind the pictures
+                                 instead of beside them. If the .mh-cards column split in
+                                 main.css moves again, these two follow it. -->
                             <path
-                                d="M0,985 H340 q30,0 30,-30 V630 q0,-30 30,-30 H800 q30,0 30,30 V955 q0,30 30,30 H1200" />
+                                d="M0,985 H390 q30,0 30,-30 V630 q0,-30 30,-30 H750 q30,0 30,30 V955 q0,30 30,30 H1200" />
                         </g>
                         <g class="mh-lines__flow">
                             <path pathLength="100" style="animation-delay:.2s" d="M178,0 V596 q0,30 -30,30 H0" />
@@ -3663,9 +3670,9 @@
                             <!-- Two packets run the bracket from opposite ends and meet
                                  in the middle (x=604). -->
                             <path pathLength="100" style="animation-delay:3s"
-                                d="M0,985 H340 q30,0 30,-30 V630 q0,-30 30,-30 H604" />
+                                d="M0,985 H390 q30,0 30,-30 V630 q0,-30 30,-30 H604" />
                             <path pathLength="100" style="animation-delay:4.4s"
-                                d="M1200,985 H860 q-30,0 -30,-30 V630 q0,-30 -30,-30 H604" />
+                                d="M1200,985 H810 q-30,0 -30,-30 V630 q0,-30 -30,-30 H604" />
                         </g>
                     </svg>
 
@@ -3760,7 +3767,7 @@
                     <div class="mh-cards">
 
                         <article class="mh-card-box mh-card-box--media">
-                            <img src="assets/images/ai-2.webp" alt="" loading="lazy" width="494" height="550"
+                            <img src="assets/images/ai-2.webp" alt="" loading="lazy" width="2429" height="1781"
                                 decoding="async">
                         </article>
 
@@ -3926,7 +3933,7 @@
                         </article>
 
                         <article class="mh-card-box mh-card-box--media">
-                            <img src="assets/images/ai1.webp" alt="" loading="lazy" width="494" height="550"
+                            <img src="assets/images/ai1.webp" alt="" loading="lazy" width="2429" height="1768"
                                 decoding="async">
                         </article>
 
