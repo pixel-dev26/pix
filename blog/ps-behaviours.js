@@ -77,24 +77,34 @@
     sync();
   }
 
-  // --- TOC: stop pinning it when it does not fit ---------------------------
+  // --- TOC: which edge a too-tall panel pins to ----------------------------
   // The panel used to cap its own height and scroll inside itself, which is now
   // gone — it is as tall as its contents. That is fine while it fits, but these
-  // lists run long: the median post has 23 entries and the longest has 40, which
-  // is 2125px against a 690px slot on an 800px-tall window. A sticky element
-  // taller than its slot pins its top and leaves the rest below the fold with no
-  // way to reach it, since the page scroll no longer moves it.
+  // lists run long: the median post has 23 entries, 1264px of them at 1600x900
+  // against a 770px slot, and the longest has 40.
   //
-  // So measure, and give up the pinning when it cannot pay for itself: a tall
-  // TOC scrolls away with the article like any other block, and every entry is
-  // reachable. Nothing here runs below 992px, where the CSS already makes the
-  // panel static and collapsible.
+  // A sticky element taller than its slot pins its TOP and leaves the rest below
+  // the fold, unreachable now that there is no inner scrollbar. The class this
+  // sets swaps the pin to the BOTTOM instead (see .ps-toc.is-tall in
+  // ps-additions.css): the rail travels with the page until its last entry is on
+  // screen, then holds. It still follows the reader — which is the whole point of
+  // the rail — and nothing is stranded.
+  //
+  // Not "unstick it", which is what this did first: that reads as the sticky
+  // sidebar being broken on every window shorter than the list, i.e. most of
+  // them. Nothing here runs below 992px, where the CSS already makes the panel
+  // static and collapsible.
   var toc = document.querySelector('.ps-toc');
   if (toc) {
     var fitTimer = null;
+    var TOP = 104;   // the resting offset the desktop rail rule uses
+    var GAP = 20;    // breathing room under a tall panel's last entry
     var fitToc = function () {
-      // 130 = the 110px sticky offset plus a small breathing margin.
-      toc.classList.toggle('is-tall', toc.scrollHeight > window.innerHeight - 130);
+      // Negative for anything taller than the slot: -(overflow) puts the last
+      // entry GAP above the fold at the moment the panel pins. Never above TOP,
+      // so a short list is untouched.
+      var offset = Math.min(TOP, window.innerHeight - toc.scrollHeight - GAP);
+      toc.style.setProperty('--ps-toc-top', Math.round(offset) + 'px');
     };
     fitToc();
     window.addEventListener('resize', function () {

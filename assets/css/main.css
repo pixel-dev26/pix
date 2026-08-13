@@ -7376,6 +7376,7 @@ h4.proj-comp img {
     left: 0;
     width: 100%;
     height: 100%;
+    object-position: bottom;
     top: 0;
 }
 
@@ -12457,7 +12458,7 @@ a.faq-tab .faq-tab-1 p {
     object-fit: cover;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .mh-section .mh-card-box--media:first-child {
         margin-left: calc(-1 * var(--mh-card-pad));
     }
@@ -12466,6 +12467,7 @@ a.faq-tab .faq-tab-1 p {
         margin-right: calc(-1 * var(--mh-card-pad));
     }
 }
+
 
 .mh-section .mh-team-cta {
     margin: 24px auto 0;

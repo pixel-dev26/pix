@@ -2703,7 +2703,7 @@
 
     .pointersWork li,
     .tybtn {
-        font-size: 12px;
+        font-size: 14px;
         align-items: center;
     }
 
@@ -2723,9 +2723,9 @@
     }
 
     .ProjectCard h3 {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.3;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     .pointersWork li::before {
@@ -4111,9 +4111,6 @@
         right: 4rem
     }
 
-    .section.ourWork {
-        padding-bottom: 0;
-    }
 
     .aboutbanSlider .abtBan .rightSlider p {
         font-size: 16px;
@@ -4337,6 +4334,14 @@
     .case-content ul.casePointers,
     .headingLogo {
         display: block
+    }
+
+    .mh-section .mh-hero p.mh-subtitle {
+        max-width: 83%;
+    }
+
+    .section.home-service.services-section {
+        padding: 80px 0 0;
     }
 
     .team-img-full img {

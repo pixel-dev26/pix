@@ -227,20 +227,29 @@
    scrolls. See the note under `position` below for what that costs. */
 .ps-toc {
   position: sticky;
-  top: 110px;
+  top: var(--ps-toc-top, 110px);
   border-left: 2px solid #ececec;
   padding: 2px 0 2px 18px;
   margin: 0 0 28px;
   text-align: left
 }
 
-/* Set by ps-behaviours.js when the list is taller than the space a pinned panel
-   would have. Sticky only helps while the whole thing fits; past that it pins
-   the top and strands the rest below the fold, which is worse than not pinning
-   at all now that there is no inner scrollbar to reach it with. */
-.ps-toc.is-tall {
-  position: static
-}
+/* --ps-toc-top is set per post by ps-behaviours.js, because the right offset
+   depends on how tall the list is and that is content, not layout.
+
+   A panel that fits gets the 110px above and pins under the navbar as always.
+   One that does not — the median post is 1264px against a 770px slot at
+   1600x900 — gets a NEGATIVE offset, computed so its last entry lands 20px above
+   the fold. It then travels with the page until the whole list has been on
+   screen and pins from there, which keeps the rail following the reader without
+   stranding the tail past the fold, and without the inner scrollbar this panel
+   used to carry.
+
+   `position: sticky; bottom: 20px` is the obvious way to write that and it does
+   not work here: measured on this page at scroll 1400, a bottom-pinned rail
+   sailed straight past the fold (bottom at 462 against the 880 it should have
+   held), while the same element with a top offset pinned exactly. Hence the
+   computed top. */
 
 .ps-toc__title {
   font-size: 10px;
@@ -660,7 +669,7 @@
 .blog-content>h4,
 .blog-content>h5,
 .blog-content>.answer-box {
-  max-width: var(--ps-measure)
+  max-width: 100%
 }
 
 /* Nested paragraphs (inside the answer block) inherit the constraint from their
@@ -2986,7 +2995,11 @@ textarea:focus-visible,
    its own container, active marker included. */
 @media (min-width:992px) {
   .ps-toc {
-    top: 104px;
+    /* 104px is the resting offset; the variable only differs when the list is
+       taller than the viewport, and then it is negative. This rule is the one
+       that decides the pin — the base .ps-toc above it loses on source order —
+       so the variable has to be read here, not only there. */
+    top: var(--ps-toc-top, 104px);
     border-left: 2px solid var(--psb-line);
     padding-left: var(--psb-s5)
   }

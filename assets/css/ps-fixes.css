@@ -811,3 +811,29 @@
     color: #111;
   }
 }
+/* -------------------------------------------------------------------- B11 --
+   video-studio-kolkata, Our Work: the play tile inside a .ProjectCard.
+
+   The tile is the same component the Video Studio tab on our-work.html uses, so
+   it arrives with the two things that suited it there and not here:
+
+   - No radius of its own. There it sits flush inside .casestudy-Bx, which does
+     the clipping; here it is an inset block on a 20px-radius card with 35px of
+     padding around it, so nothing is clipping its corners and it needs its own.
+     overflow:hidden because the radius has to bite on the <img> inside it.
+   - Normal flow position. The cards are a fixed 661px and the copy rarely fills
+     them, so the tile floated wherever the text ended and sat at a different
+     height on every card. margin-top:auto in a column flex parent drops it to
+     the foot of the card, which lines the five tiles up across the carousel.
+   ========================================================================== */
+
+.ProjectCard.case-video {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProjectCard.case-video .case-video__play {
+  margin-top: auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
