@@ -12418,7 +12418,25 @@ a.faq-tab .faq-tab-1 p {
     z-index: 2;
     display: grid;
 
-    grid-template-columns: minmax(0, 212fr) minmax(0, 556fr) minmax(0, 212fr);
+    /* The two picture panels are sized by what is left over once the middle
+       card has what it needs, so they take the surplus on wide screens
+       instead of the middle column carrying it.
+
+       --mh-mid-min is that need. The headshot row inside the middle card
+       rests overlapped and fans out to edge-to-edge on hover — 7 x 75px =
+       525px here, 7 x 56px = 392px below 1400px where the faces shrink —
+       and .mh-avatars wraps, so a column any narrower than the fanned row
+       drops a face onto a second line the moment the card is hovered. The
+       floor tracks the avatar size, hence a value per breakpoint rather
+       than one figure.
+
+       Above that floor the fr split decides who gets the extra: 300/380/300
+       sends most of it sideways. Below it the middle track stops shrinking
+       and the sides absorb the difference, which is what keeps the panels
+       growing all the way down to 992px instead of collapsing with the
+       column. */
+    --mh-mid-min: 580px;
+    grid-template-columns: minmax(0, 300fr) minmax(var(--mh-mid-min), 380fr) minmax(0, 300fr);
     align-items: end;
     gap: 0px;
 
@@ -12863,6 +12881,8 @@ a.faq-tab .faq-tab-1 p {
     }
 
     .mh-section .mh-cards {
+        /* Faces are 56px from here down, so the fanned row is 392px. */
+        --mh-mid-min: 440px;
         gap: 36px;
         margin-top: 180px;
     }
@@ -12894,6 +12914,7 @@ a.faq-tab .faq-tab-1 p {
     }
 
     .mh-section .mh-cards {
+        --mh-mid-min: 430px;
         gap: 24px;
         margin-top: 175px;
     }
