@@ -7171,6 +7171,33 @@ h4.proj-comp img {
     background-color: #e61d2b
 }
 
+.opusWork {
+    background-color: #2495d2
+}
+
+.trailerWork {
+    background-color: #0f1115
+}
+
+.cellestaWork {
+    background-color: #173b54
+}
+
+.avanzaWork {
+    background-color: #1f6f5c
+}
+
+.ProjectCard .projectClient {
+    margin: 0 0 6px;
+    font-family: var(--font-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #fdb914
+}
+
 .itcWork {
     background-color: #14120f
 }
@@ -11593,7 +11620,7 @@ a.faq-tab .faq-tab-1 p {
     border-radius: var(--svc-radius);
     overflow: hidden;
     background-color: #0b0b0f;
-
+    border: 2px solid #fff;
     isolation: isolate
 }
 
@@ -14438,23 +14465,7 @@ a.faq-tab .faq-tab-1 p {
 
     .wokImg img.wdw-img-gts,
     .wokImg img.wdw-img-emm {
-        bottom: -65px;
-    }
-}
-
-@media only screen and (max-width:1400px) {
-
-    .wokImg img.wdw-img-gts,
-    .wokImg img.wdw-img-emm {
-        bottom: -61px;
-    }
-}
-
-@media only screen and (max-width:991px) {
-
-    .wokImg img.wdw-img-gts,
-    .wokImg img.wdw-img-emm {
-        bottom: -65px;
+        bottom: 0px;
     }
 }
 

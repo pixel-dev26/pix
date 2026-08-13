@@ -3450,7 +3450,7 @@
 
         <!-- Services Start -->
 
-        <section class="section services-section">
+        <section class="section home-service services-section">
 
             <div class="container">
 
@@ -3586,31 +3586,6 @@
                         <article class="svc-card svc-card--video">
                             <a class="svc-card__link" href="video-studio-kolkata.html">
 
-                                <!-- Below 992px this card shows a still, not the film. The
-                                     footage is a 1580x524 banner; a tablet or portrait phone
-                                     card crops it to a centre strip. The film now plays at
-                                     every width by request, so these stills are the
-                                     poster/no-JS/reduced-motion fallback rather than the
-                                     normal mobile view — they sit under the <video>.
-
-                                     PLACEHOLDER ARTWORK - video-tab.webp and video-mb.webp are
-                                     both copies of mobile-dm-img.webp, dropped in so the
-                                     markup is wired and nothing 404s. Replace the two FILES,
-                                     not this markup. Match the crops the other three cards
-                                     use, which is what the card shapes are built around:
-                                       video-tab.webp  ~2000x1800  (near-square, 768-991px)
-                                       video-mb.webp   ~1000x1900  (tall portrait, <=767px)
-                                     If you supply a different format, update the srcset
-                                     extension here to match. -->
-                                <!-- These three MUST be still images. They were briefly pointed
-                                     at Avanza-Blades-Intro.mp4, which cannot work: <img> and
-                                     srcset decode images only, so a video file renders as a
-                                     broken image — and the browser still downloads all 43MB
-                                     before failing, on mobile data. With the <video> also
-                                     hidden below 992 at the time, that left the card blank at
-                                     tablet and phone, which is what "the video was not
-                                     playing" actually was. The film is played by the <video>
-                                     element below, never by this <picture>. -->
                                 <picture class="svc-card__media">
                                     <source media="(max-width: 767px)" srcset="assets/images/video-mb.webp">
                                     <source media="(max-width: 1100px)" srcset="assets/images/video-tab.webp">
@@ -3618,18 +3593,10 @@
                                         loading="lazy" decoding="async">
                                 </picture>
 
-                                <!-- No src and preload="none" on purpose. The observer at the
-                                     foot of this file attaches data-src and plays it only once
-                                     the card is actually on screen, and pauses it again when it
-                                     is not — the old markup had autoplay plus a real src, so
-                                     every visitor downloaded the clip on page load whether or
-                                     not they ever scrolled this far. Until then (and forever,
-                                     if scripting is off) the poster stands in, which is the
-                                     same frame the <picture> underneath is showing. -->
                                 <video class="svc-card__video" poster="assets/images/video-studio-poster.jpg"
-                                    data-src="assets/images/Avanza-Blades-Intro-web.mp4"
-                                    data-src-tablet="assets/images/video-studio-mobile.mp4"
-                                    data-src-mobile="assets/images/video-studio-portrait.mp4" muted loop playsinline
+                                    data-src="assets/images/avanza-dk.mp4"
+                                    data-src-tablet="assets/images/avanza-md.mp4"
+                                    data-src-mobile="assets/images/avanza-mb.mp4" muted loop playsinline
                                     preload="none" aria-hidden="true"></video>
 
                                 <div class="svc-card__body">

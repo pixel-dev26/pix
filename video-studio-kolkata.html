@@ -297,54 +297,7 @@
             font-size: 1rem
         }
     </style>
-    <style id="vs-page-css">
-        /* ==========================================================================
-           Page-local styles for the "Our Work" video grid (.vsWork), which reuses
-           the .psv-* component defined in assets/css/ps-fixes.css. Every selector
-           here is scoped to .vsWork, so any other .psv-reel that gets added back to
-           this page is untouched, as is the case-study carousel still running on the
-           home, branding, web-design and digital-marketing pages.
-
-           The services copy that briefly lived in its own .vs-stack section now
-           runs through the .ps-arc panels further down the page, which is the
-           component the other three service pages already use for the same shape
-           of content, so it needs no styles of its own here.
-
-           This block sits after every stylesheet link in the head, so a plain
-           .vsWork rule already outranks ps-fixes.css at equal specificity.
-           ========================================================================== */
-
-        /* ---------- Our Work video grid ---------- */
-
-        /* Spacing is left to the section's own `pt-0` plus .section's 100px bottom,
-           which is the rhythm the .strat-dev section above it already keeps. Note a
-           `.vsWork { padding-top }` rule here would be dead on arrival: `pt-0` is a
-           Bootstrap utility and carries !important, so it wins regardless of where
-           this block sits. Change the class in the markup, not the padding here. */
-
-        /* The titles link out to the case studies, the way the carousel cards did.
-           .psv-card__title already sets the colour it should be, so the anchor just
-           inherits it rather than picking up the theme's link blue, and the
-           underline waits for hover — three underlined multi-line headings in a row
-           is a lot of rule for a grid this dense. */
-        .vsWork .psv-card__title a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .vsWork .psv-card__title a:hover,
-        .vsWork .psv-card__title a:focus-visible {
-            text-decoration: underline;
-        }
-
-        /* Posters here are case-study artwork, not video frames, so they are three
-           different aspect ratios (Schweppes is a 1000x1320 portrait key visual,
-           the other two are 493x380). object-position keeps the crop off the
-           bottom of the tall one, where the packshot sits. */
-        .vsWork .psv-card__poster {
-            object-position: 50% 35%;
-        }
-    </style><!-- ps:schema:start -->
+<!-- ps:schema:start -->
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -1378,90 +1331,180 @@
 
         <!-- Our Work Start -->
 
-        <section class="section psv-reel vsWork pt-0">
-            <div class="container">
-                <h2 class="psv-reel__heading">Our Work</h2>
-                <ul class="psv-grid">
+        <section class="section ourWork vsWork pt-0">
 
-                    <li class="psv-item">
-                        <div class="psv-card" data-psv="">
-                            <button type="button" class="psv-card__play"
-                                aria-label="Play the Schweppes film">
-                                <img class="psv-card__poster" src="assets/images/sch.webp" alt="" width="1000"
-                                    height="1320" loading="lazy" decoding="async">
-                                <span class="psv-card__icon" aria-hidden="true"></span>
-                            </button>
-                            <video class="psv-card__video" controls="" playsinline="" preload="none"
-                                poster="assets/images/sch.webp" hidden="">
-                                <source data-src="assets/videos/work-schweppes.mp4" type="video/mp4">
-                            </video>
-                            <div class="psv-card__meta">
-                                <h3 class="psv-card__title"><a href="case-studies/schweppes">Building a High-Impact
-                                        Creative System</a></h3>
-                                <p class="psv-card__client">Schweppes</p>
-                                <ul class="psv-card__tags">
-                                    <li>AI Video</li>
-                                    <li>Quick Commerce</li>
-                                    <li>Social Content</li>
-                                </ul>
-                            </div>
+            <div class="container position-relative">
+                <div class="row align-items-center cus-mar">
+                    <div class="col-xl-7 col-lg-6 col-md-5 col-12">
+                        <h2 class="custom-mar">Our Work</h2>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-md-7 col-12">
+
+                        <div
+                            class="arrowWrapper d-xl-flex d-lg-flex d-md-flex d-none align-items-center justify-content-end">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
                         </div>
-                    </li>
+                    </div>
+                </div>
 
-                    <li class="psv-item">
-                        <div class="psv-card" data-psv="">
-                            <button type="button" class="psv-card__play"
-                                aria-label="Play the Mangaldeep 3in1 film">
-                                <img class="psv-card__poster" src="assets/new-images/case-study/mangal-list.webp" alt=""
-                                    width="493" height="380" loading="lazy" decoding="async">
-                                <span class="psv-card__icon" aria-hidden="true"></span>
-                            </button>
-                            <video class="psv-card__video" controls="" playsinline="" preload="none"
-                                poster="assets/new-images/case-study/mangal-list.webp" hidden="">
-                                <source data-src="assets/videos/work-mangaldeep.mp4" type="video/mp4">
-                            </video>
-                            <div class="psv-card__meta">
-                                <h3 class="psv-card__title"><a href="case-studies/mangaldeep-3in1">Design-Driven Launch
-                                        for an Innovative Agarbatti Variant</a></h3>
-                                <p class="psv-card__client">Mangaldeep</p>
-                                <ul class="psv-card__tags">
-                                    <li>Promotional Films</li>
-                                    <li>Photoshoot</li>
-                                    <li>Key Visuals</li>
-                                </ul>
+                <div class="col-lg-12">
+                    <div class="ourProject">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+
+                                <div class="card ProjectCard opusWork">
+
+                                        <div class="compLogo">
+
+                                            <img src="assets/images/Birla-opus.webp" alt="Birla Opus Logo" loading="lazy"
+                                                width="280" height="120" decoding="async">
+
+                                        </div>
+
+                                        <p class="projectClient">Birla Opus – Contractor</p>
+
+                                        <h3>Turning a Contractor Loyalty Programme into a Story Worth Watching
+
+                                        </h3>
+
+                                        <ul class="pointersWork">
+
+                                            <li>Video Production</li>
+
+                                            <li>Motion Design</li>
+
+                                            <li>Audio Design</li>
+
+                                        </ul>
+
+                                </div>
+
                             </div>
-                        </div>
-                    </li>
 
-                    <li class="psv-item">
-                        <div class="psv-card" data-psv="">
-                            <button type="button" class="psv-card__play"
-                                aria-label="Play the Wining Looks film">
-                                <img class="psv-card__poster" src="assets/new-images/case-study/wining-look-case.webp"
-                                    alt="" width="493" height="380" loading="lazy" decoding="async">
-                                <span class="psv-card__icon" aria-hidden="true"></span>
-                            </button>
-                            <video class="psv-card__video" controls="" playsinline="" preload="none"
-                                poster="assets/new-images/case-study/wining-look-case.webp" hidden="">
-                                <source data-src="assets/videos/work-wining-looks.mp4" type="video/mp4">
-                            </video>
-                            <div class="psv-card__meta">
-                                <h3 class="psv-card__title"><a href="case-studies/wining-looks-digital-marketing">Boosting
-                                        Online Presence with Strategic Social Marketing</a></h3>
-                                <p class="psv-card__client">Wining Looks</p>
-                                <ul class="psv-card__tags">
-                                    <li>Video Shoot</li>
-                                    <li>Social Media</li>
-                                    <li>Influencer Marketing</li>
-                                </ul>
+                            <div class="swiper-slide">
+
+                                <div class="card ProjectCard quickcommWork">
+
+                                        <div class="compLogo">
+
+                                            <img src="assets/images/coke-new.png" alt="Coca-Cola Logo" loading="lazy"
+                                                width="300" height="94" decoding="async">
+
+                                        </div>
+
+                                        <p class="projectClient">QuickComm – Videos</p>
+
+                                        <h3>Bringing AI-Generated Motion to the Quick-Commerce Scroll
+
+                                        </h3>
+
+                                        <ul class="pointersWork">
+
+                                            <li>AI Video</li>
+
+                                            <li>Motion Design</li>
+
+                                        </ul>
+
+                                </div>
+
                             </div>
-                        </div>
-                    </li>
 
-                </ul>
+                            <div class="swiper-slide">
+
+                                <div class="card ProjectCard trailerWork">
+
+                                        <div class="compLogo">
+                                        </div>
+
+                                        <p class="projectClient">Movie Trailer</p>
+
+                                        <h3>Cutting a Trailer That Sells the Story in Under a Minute
+
+                                        </h3>
+
+                                        <ul class="pointersWork">
+
+                                            <li>Video Editing</li>
+
+                                            <li>Motion Design</li>
+
+                                            <li>Sound Design</li>
+
+                                        </ul>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="card ProjectCard cellestaWork">
+
+                                        <div class="compLogo">
+                                        </div>
+
+                                        <p class="projectClient">Cellesta</p>
+
+                                        <h3>Building an AI-Generated Video for a Real Estate Campaign
+
+                                        </h3>
+
+                                        <ul class="pointersWork">
+
+                                            <li>AI Video Generation</li>
+
+                                            <li>Video Editing</li>
+
+                                            <li>Sound Design</li>
+
+                                        </ul>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="card ProjectCard avanzaWork">
+
+                                        <div class="compLogo">
+                                        </div>
+
+                                        <p class="projectClient">Avanza</p>
+
+                                        <h3>Filming a Brand Story Precise Enough to Match the Product
+
+                                        </h3>
+
+                                        <ul class="pointersWork">
+
+                                            <li>Video Production</li>
+
+                                            <li>Shoot</li>
+
+                                            <li>Video Editing</li>
+
+                                            <li>Sound Design</li>
+
+                                        </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+
             </div>
-        </section>
 
+        </section>
         <!-- Our Work End -->
 
         <!-- Video Services Section Start -->
