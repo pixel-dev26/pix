@@ -6,13 +6,6 @@ html {
     overflow-x: hidden
 }
 
-/* Site-wide scroll reveal, applied by assets/js/section-reveal.js. The class
-   is added by JS, not present in markup, so a page still renders fully
-   visible if that script fails to load - opacity:0 is never the default.
-   .ai-hero-section and .process-section opt out at the JS level: both hold
-   a hand-rolled scroll-pin whose child switches to position:fixed, and a
-   transform on this same element would make it the containing block for
-   that fixed child, breaking the pin. */
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(40px);
@@ -49,8 +42,6 @@ html {
     transition: padding .25s ease, height .25s ease
 }
 
-/* logoSpin removed with its only user, .navlogo-mark, below. */
-
 .navlogo-full-wrap,
 .navbar-menu {
     border-color: rgba(17, 17, 17, .12);
@@ -62,28 +53,14 @@ html {
     z-index: 1000;
 }
 
-/* The wordmark must stay clipped by its mask: the scroll interaction shrinks
-   the logo to the icon by sliding the wordmark left, out of the mask's box
-   rather than resizing it, so only this clip keeps it from being painted over
-   the icon. It is also why the wordmark carries no scale animation — anything
-   over scale(1) would be cut off by the very same clip. */
 .navlogo-full-mask {
     overflow: hidden;
 }
 
-/* The mark used to spin continuously (logoSpin, 8s linear infinite). It was never
-   communicating anything — the logo is not a loading state — and a permanent rotation
-   in the fixed header sits in the corner of the eye on every page, competing with the
-   content for attention. It is also an accessibility problem: WCAG 2.2.2 covers moving
-   content that starts automatically and runs longer than five seconds, and this had no
-   pause control and did not honour prefers-reduced-motion. Static now. */
 .navlogo-mark {
     transform-origin: center;
 }
 
-/* The CTA button's own padding inside the pill only tightens up once the
-   page is scrolled — at the top of the page the original, roomier spacing
-   stays as-is. */
 body.is-nav-scrolled .navbar-menu {
     padding-right: 0
 }
@@ -1132,7 +1109,8 @@ h3.bgText {
     .tech-logos-static .compny-logo {
         flex: 0 0 auto;
         max-width: none;
-        width: 45%
+        width: 45%;
+        text-align: center;
     }
 }
 
@@ -1193,24 +1171,6 @@ h3.bgText {
     width: 100%
 }
 
-/* The three compositing hints below are for iOS Safari specifically, where this
-   strip and the two in the AI-First section were reported as not animating at
-   all on real iPads and iPhones while running fine on desktop.
-
-   translate3d in the keyframes (rather than translateX) is the part that
-   usually does it: a 2D transform can be handled on the main thread, and iOS
-   drops or never starts such animations when the element sits inside an
-   overflow:hidden box within a non-root scroll container — which is exactly
-   this site, where <body> owns the scroll rather than the document element.
-   Naming the z axis forces the element onto its own compositor layer, so the
-   animation runs on the compositor thread where iOS will not stall it.
-
-   backface-visibility:hidden keeps iOS from folding that layer back into the
-   main one, which it will otherwise do for a purely 2D transform and take the
-   animation down with it. The -webkit- prefix is still required on iOS.
-
-   will-change asks for the layer up front instead of reactively at the first
-   frame — without it the first loop can visibly stutter on a phone. */
 .logo-marquee-track {
     display: flex;
     align-items: center;
@@ -1229,9 +1189,6 @@ h3.bgText {
     animation-play-state: paused
 }
 
-/* translate3d, not translateX — see the note on .logo-marquee-track. The -50%
-   still resolves against this element's own border-box width, so the maths is
-   unchanged and the loop stays seamless; only the compositing path differs. */
 @keyframes logoMarqueeScroll {
     from {
         transform: translate3d(0, 0, 0)
@@ -1264,26 +1221,6 @@ h3.bgText {
     transform: translateX(-40px)
 }
 
-/* No hover response below 992px, by request. Three behaviours are switched off
-   together, because they are one effect: the marquee pausing under the pointer,
-   the hovered logo scaling to 1.12, and its neighbours sliding 40px out of its
-   way.
-
-   One query, not two, covers "below 991 and below 767" — max-width:991px already
-   contains every width below 767, and the effect is either on or off, so a
-   second block at 767 would have nothing left to say.
-
-   Worth knowing: on a touchscreen :hover does not simply go unused. A tap sets
-   the hover state and it STICKS until the next tap elsewhere, so on a phone the
-   old rules left a logo frozen mid-scale with the row parked and its neighbours
-   shoved aside. Turning them off here is what stops that, which is why
-   animation-play-state is forced back to `running` rather than just left alone —
-   the :hover selector still matches after a tap, so the paused value has to be
-   actively overridden.
-
-   Everything is reset in one rule: transform:none undoes the scale and both
-   neighbour shifts, transition:none stops any of it animating on the way out.
-   The marquee's own scroll animation is untouched. */
 @media (max-width: 991px) {
     .logo-marquee-row:hover .logo-marquee-track {
         animation-play-state: running
@@ -2317,10 +2254,6 @@ a.pxp-results-card-1 {
     padding: 100px 0 50px 0
 }
 
-/* Restored heading (was commented out in the markup on all 5 pages that use
-   this section) - brand yellow rather than the original text-white so it
-   reads clearly against .bg-img-new's dark photo background while still
-   standing apart from the white testimonial copy below it. */
 .testimonialWrapper .section-title {
     color: #ee3d41;
     margin-bottom: 20px;
@@ -3606,18 +3539,38 @@ img.bottom-icon {
     padding-right: 7%
 }
 
-/* .new-age-strat's inline script sets .left-img's height in JS to exactly
-   match its sibling .strategy-dev text column, overriding the fixed
-   per-breakpoint pixel heights .start-img otherwise gets in responsive.css
-   (flexbox align-items:stretch can't do this directly here: .start-img's
-   own height:100% base rule gives it an aspect-ratio-based hypothetical
-   size, which - via the normal flex sizing algorithm - would end up
-   dictating the row's cross size instead of following the text content,
-   the opposite of what's needed). .start-img's existing height:100% rule
-   fills whatever height JS assigns here. */
 .new-age-strat .start-img {
     height: 100%;
     object-fit: cover;
+}
+
+@media (min-width: 992px) {
+
+    .strat-dev .row {
+        align-items: stretch !important
+    }
+
+    .strat-dev .row > * {
+        display: flex;
+        flex-direction: column
+    }
+
+    .strat-dev .left-img {
+        position: relative;
+        flex: 1 1 auto;
+        min-height: 0;
+        padding-right: 0;
+        margin-right: 7%
+    }
+
+    .strat-dev .left-img .start-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
 }
 
 .bordered {
@@ -6012,9 +5965,6 @@ h4.proj-comp {
     opacity: 1
 }
 
-/* This overlay is not decoration - it contains the only link to each reel. With no
-   hover there was no affordance at all: four images that happened to be tappable, and
-   a focusable link that stayed invisible when tabbed to. */
 @media (hover: none) {
 
     .informedBx .overlayM {
@@ -6422,7 +6372,6 @@ ul.creative-pointers li::marker {
     margin-bottom: 0;
     line-height: 1.2
 }
-
 
 .main-title .textture-text {
     font-size: 60px;
@@ -7138,10 +7087,6 @@ h4.proj-comp img {
     background-color: #d99723
 }
 
-/* .maisonYellow {
-    background-color: #ad8418
-} */
-
 .croftlifeGreen {
     background-color: #295227
 }
@@ -7154,9 +7099,6 @@ h4.proj-comp img {
     background-color: #496141
 }
 
-/* .milleteryell {
-    background-color: #ecaa00
-} */
 .schweppesWork {
     background-color: #fff;
     border: 2px solid #f0f0f0;
@@ -7165,14 +7107,6 @@ h4.proj-comp img {
 .thyBlk {
     background-color: #191919
 }
-
-/* .crizacOrg {
-    background-color: #ff6525
-} */
-
-/* .nouRed {
-    background-color: #4c0602
-} */
 
 .dtcBgBlue {
     background-color: #1289cb
@@ -7224,11 +7158,6 @@ h4.proj-comp img {
     height: 20px;
     width: auto
 }
-
-/* .compLogo img.bamalwaLogo {
-    height: 40px;
-    width: auto
-} */
 
 .compLogo img.shiplogo {
     width: 149px
@@ -7638,13 +7567,6 @@ h4.proj-comp img {
     right: 60px
 }
 
-/* .bgImgwork {
-    background-image: url(../new-images/ball.webp);
-    background-position: 98% 15%;
-    background-repeat: no-repeat;
-    background-color: #9c1d22
-} */
-
 .bgImgworkDTC,
 .bgImgworkNCB,
 .bgImgworkOpus,
@@ -8023,7 +7945,6 @@ section.video-banner {
     --bs-gutter-y: 2rem
 }
 
-/* Brand Process (scroll-linked stepper + crossfading image) */
 .process-header {
     margin-bottom: 28px
 }
@@ -8209,16 +8130,6 @@ section.video-banner {
     border-radius: 20px;
 }
 
-/* Below 1200px there isn't room for the desktop 3-column row (stepper
-   220px + content up to 610px + image 460px + two 48px gaps needs ~1386px
-   of container width before it even starts being comfortable), and this
-   used to only kick in below 992px - leaving 992-1199px rendering the raw
-   desktop flex row squeezed into not enough space. Bumped to 1199px, and
-   redesigned: the step indicator moves to a centered row on top, with
-   content and image as two columns below it. The scroll-linked pin is off
-   entirely in this range (see the "no on-scroll effect" comment in each
-   page's process-track script) - steps auto-advance on a timer instead,
-   so which step is "active" here has nothing to do with scroll position. */
 @media (max-width: 1199px) {
     .process-track {
         height: auto !important
@@ -8249,9 +8160,6 @@ section.video-banner {
         gap: 20px
     }
 
-    /* Each step becomes a small column (number over label) instead of the
-       desktop's number-beside-label row, so a horizontal, centered stepper
-       stays compact regardless of label length. */
     .process-step {
         flex-direction: column;
         gap: 8px;
@@ -8266,10 +8174,7 @@ section.video-banner {
         width: 110px;
         height: 2px;
         align-self: center;
-        /* Was aligned to the number's vertical center via a fixed
-           margin-top in the desktop column layout; the stepper is a row of
-           columns now, so nudge the connector up to the number's height
-           instead. */
+
         margin-top: -22px
     }
 
@@ -8323,10 +8228,6 @@ section.video-banner {
     }
 }
 
-/* True phone widths: two columns of body copy + a photo next to each other
-   only has room to be legible down to roughly tablet width. Below that,
-   stack content above image (both still full-width) rather than force the
-   2-column layout described above into a slice too narrow to read. */
 @media (max-width: 599px) {
     .process-row {
         grid-template-columns: 1fr;
@@ -8351,7 +8252,6 @@ section.video-banner {
         transition: none
     }
 }
-
 
 .c-logos-container {
     overflow: hidden;
@@ -8599,8 +8499,7 @@ span.typed-cursor {
     border-radius: 100px;
     padding: 10px 20px 10px 10px;
     background-color: #fff;
-    /* Was 1s on the -webkit- line and 1.5s on the standard one - one animation
-       declared at two speeds. Unified. */
+
     -webkit-animation: 1.5s infinite alternate floatbtn;
     animation: 1.5s infinite alternate floatbtn;
     position: absolute;
@@ -8642,8 +8541,6 @@ span.typed-cursor {
     }
 }
 
-/* Infinite, auto-starting, no pause control - the two faults this file already cites
-   when it removed the spinning logo a few hundred lines up. */
 @media (prefers-reduced-motion: reduce) {
 
     .button-container {
@@ -8651,7 +8548,6 @@ span.typed-cursor {
         animation: none
     }
 }
-
 
 .banner-four-element {
     display: flex;
@@ -8670,7 +8566,6 @@ span.typed-cursor {
 .banner-four-element .third-ele img {
     width: 280px
 }
-
 
 .btn-----9:hover span,
 .btn----8:hover span,
@@ -8808,21 +8703,9 @@ p.address-text {
     position: relative;
     background-color: #000;
     overflow: hidden;
-    /* Was height:98%, which - depending on the flex/auto-height chain
-       above it (.row > .col-lg-12 > .container) - could resolve to a
-       definite pixel height well above the video's real 16:9 ratio
-       (measured 783px against a 629px true 16:9 height at one width).
-       That inflated rest-state height left almost no headroom for the
-       scroll-grow effect below, since the height cap in the scroll
-       script is based on this box's own measured height. aspect-ratio
-       keeps the box's height deterministic and tied to its actual
-       content (poster/video are both native 16:9) at every width. */
+
     aspect-ratio: 16 / 9;
-    /* On wide screens the bootstrap column is already ~90% of the
-       viewport at rest, leaving almost no room to grow within the
-       50px-edge cap (scale stuck around 1.03x). Capping the rest-state
-       width to a smaller, viewport-relative fraction guarantees real
-       growing room at every breakpoint, not just narrow ones. */
+
     max-width: min(100%, 70vw);
     margin-left: auto;
     margin-right: auto;
@@ -8899,18 +8782,11 @@ p.address-text {
 
 @media (max-width: 767px) {
 
-    /* .video-banner already carries 50px of its own padding, but the
-       Bootstrap .container inside it adds another 12px on top, pushing the
-       real gap to 62px. Zero that inner layer out so 50px is the true,
-       final gap on all 4 sides. */
     .video-banner .container {
         padding-left: 0;
         padding-right: 0
     }
 
-    /* The 70vw cap exists to leave headroom for the desktop scroll-scale
-       animation; on mobile it fights the 50px-edge-gap requirement instead,
-       so let the box use the full width its padded parent already gives it. */
     .video-container {
         max-width: 100%
     }
@@ -8927,10 +8803,6 @@ p.address-text {
         font-size: 6px
     }
 
-    /* padding-left is a fixed nudge to visually center the play-triangle
-       glyph, tuned for the desktop 26px/10px icon. At this much smaller
-       size the same fixed value overshoots and pushes the glyph
-       off-center, so it needs to shrink along with the icon. */
     .showreel-btn-icon i {
         padding-left: 1px
     }
@@ -9263,7 +9135,6 @@ p.address-text {
     padding: 0 70px;
 }
 
-
 .contactPageWrapper .contact__form {
     padding: 0;
 }
@@ -9410,12 +9281,6 @@ p.address-text {
     box-shadow: rgba(0, 0, 0, .1) 0 10px 50px
 }
 
-/* Staggered card-in animation on our-work.html when a portfolio filter tab
-   changes (see the tab-reveal script near the end of that page). Visible
-   (opacity:1, no offset) is the default with no JS involved, matching this
-   site's convention elsewhere of never defaulting to opacity:0 - the JS
-   only adds .card-reveal-hidden for a moment to animate FROM, so a broken
-   or slow script just leaves cards visible instead of stuck invisible. */
 .casestudy-Bx {
     opacity: 1;
     transform: none;
@@ -10420,10 +10285,6 @@ span.hotspot.dots-container-7 {
     }
 }
 
-/* .nav-pills .nav-link (bootstrap.min.css) is two class selectors -
-   higher specificity than "ul li button", so these need ".nav-pills
-   .nav-link" in the selector itself to actually win, not just be
-   scoped under ".tabdesign". */
 .tabdesign .nav-pills .nav-link {
     list-style: none;
     cursor: pointer;
@@ -10609,10 +10470,6 @@ span.hotspot.dots-container-7 {
     filter: grayscale(0)
 }
 
-/* `color:#000` is the forced-colors safety net, but -webkit-text-fill-color overrides
-   it and is NOT in the forced-colors reset list — in Windows High Contrast the texture
-   is stripped and the fill stays transparent, so "AI First" disappears. Restoring the
-   fill under forced-colors keeps the words. */
 .creative-bg {
     position: relative;
     display: inline-block;
@@ -10634,11 +10491,6 @@ span.hotspot.dots-container-7 {
     }
 }
 
-/* The section's one theatrical beat. A flat poster stroke wipes in beneath the two
-   words the section is named for — hard-edged, brand yellow, drawn left to right like
-   a marker. It is on ARRIVAL and it never repeats, which is the house rule: playful on
-   arrival and in the pointer, flat in between. Deliberately not on the body copy —
-   animating the paragraphs is what made this section unreadable in the first place. */
 .ai-hero-section .creative-bg::after {
     content: "";
     position: absolute;
@@ -10648,8 +10500,7 @@ span.hotspot.dots-container-7 {
     height: .26em;
     background: #FDB914;
     z-index: -1;
-    /* a touch off-square, so it reads as a stroke someone put there rather than an
-       underline the browser drew */
+
     transform: scaleX(0) rotate(-.6deg);
     transform-origin: left center;
     transition: transform .5s cubic-bezier(.34, 1.15, .64, 1) .15s
@@ -10659,8 +10510,6 @@ span.hotspot.dots-container-7 {
     transform: scaleX(1) rotate(-.6deg)
 }
 
-/* Three paragraphs used to arrive as one undifferentiated block. Same .08s beat the
-   rest of the page uses, so they land as three thoughts rather than a wall. */
 .ai-hero-copy.is-armed p {
     opacity: 0;
     transform: translateY(14px);
@@ -10841,7 +10690,6 @@ span.hotspot.dots-container-7 {
     transform: rotate(136deg);
 }
 
-/* AI-First Creative Agency: scattered collage hero */
 .ai-hero-section {
     overflow: hidden
 }
@@ -10855,9 +10703,6 @@ span.hotspot.dots-container-7 {
     align-items: flex-start
 }
 
-/* user-select:none is gone. It existed so you could drag physics tiles without
-   selecting the text on top of them - the previous design traded away selectable copy
-   to make the toy work. The toy has been deleted; the text should be copyable. */
 .ai-hero-collage {
     position: relative;
     width: 100%
@@ -10871,11 +10716,6 @@ span.hotspot.dots-container-7 {
     text-align: center
 }
 
-/* Visible by default. The old rule was opacity:0 with a per-frame loop writing an
-   inline opacity back every frame — so if that script failed, the whole positioning
-   statement was invisible. JS now ARMS the hidden state only once it is confirmed
-   running, which is the pattern section-reveal.js already uses. `will-change` is gone
-   too: it was permanent, for a one-shot .6s transition. */
 .ai-hero-copy {
     max-width: 720px;
     margin: 0 auto;
@@ -10907,7 +10747,6 @@ span.hotspot.dots-container-7 {
         transition: none
     }
 
-    /* the stroke still lands, it just does not travel */
     .ai-hero-section .creative-bg::after,
     .ai-hero-section.is-in .creative-bg::after {
         transform: scaleX(1);
@@ -10928,17 +10767,7 @@ span.hotspot.dots-container-7 {
     margin-bottom: 20px
 }
 
-/* Desktop: the copy sits inside the falling-tiles collage instead of below
-   it, anchored at dead center. Centering is done via flex on the collage
-   (not a transform on the copy itself) because updateCopyReveal() drives the
-   copy's own enter/exit slide through inline style.transform every frame -
-   an inline transform always wins over a stylesheet one, so a centering
-   transform declared here would just get clobbered by that slide each frame.
-   z-index still applies to a flex item even though it isn't positioned, so
-   this stays layered above the absolutely-positioned tiles (z-index up to 5)
-   without needing position:absolute here. */
 @media (min-width: 992px) {
-
 
     .ai-hero-collage .ai-hero-copy {
         position: relative;
@@ -10958,19 +10787,6 @@ span.hotspot.dots-container-7 {
     }
 }
 
-/* The unlit stop was rgba(17,17,17,.28) - rgb(188,188,188) over white, a measured
-   1.9:1 against the 4.5:1 that WCAG 1.4.3 requires for 17px body copy. Because the
-   sweep is reversible that failing state is reachable on purpose: scroll back up and
-   120 words of positioning copy return to unreadable. .6 measures 4.95:1 and passes,
-   which turns the effect from unreadable -> readable into readable -> emphasised.
-   Nothing about the mechanic changes; it just stops gating comprehension.
-
-   .8s -> .32s because a scroll-triggered text animation over ~500ms reads as lag
-   rather than emphasis.
-
-   `color: transparent` is deliberate over -webkit-text-fill-color: the latter is not
-   in the forced-colors reset list, so Windows High Contrast would strip the gradient
-   and leave the fill transparent - invisible text. `color` gets force-overridden. */
 .reveal-line {
     background-image: linear-gradient(to right, #111 50%, rgba(17, 17, 17, .6) 50%);
     background-size: 200% 100%;
@@ -10981,7 +10797,6 @@ span.hotspot.dots-container-7 {
     transition: background-position .32s ease-out
 }
 
-/* Without background-clip support the copy would render fully transparent. */
 @supports not ((background-clip: text) or (-webkit-background-clip: text)) {
 
     .reveal-line {
@@ -10993,10 +10808,6 @@ span.hotspot.dots-container-7 {
     background-position: 0 0
 }
 
-/* Was a flat pill with a colour swap and no focus state whatsoever. It now carries the
-   same hard offset shadow the services tiles use, so the two sections speak the same
-   language, and it presses INTO that shadow under the pointer rather than just changing
-   colour. Every hover state below has a :focus-visible twin. */
 .ai-hero-cta {
     display: inline-flex;
     align-items: center;
@@ -11044,7 +10855,6 @@ span.hotspot.dots-container-7 {
 
 @media (max-width: 999px) {
 
-
     .ai-hero-track {
         height: auto !important
     }
@@ -11055,8 +10865,6 @@ span.hotspot.dots-container-7 {
         display: block
     }
 
-    /* The tile collage and its mobile marquee substitute were both removed with
-       the Matter.js rig; only the copy block remains here. */
     .ai-hero-collage {
         height: auto;
         display: flex;
@@ -11066,13 +10874,6 @@ span.hotspot.dots-container-7 {
         padding: 20px 0 30px
     }
 
-    /* NOTE: this used to say the copy slides in from the side as the section
-       scrolls into view, off an .in-view class added by the reveal observer at
-       the foot of index.html. There is no rule anywhere in this file matching
-       .ai-hero-collage.in-view, so it has not done that for some time — the
-       observer still runs and still adds the class, it simply styles nothing.
-       Left as a plain layout rule rather than reinstating an animation nobody
-       has missed. */
     .ai-hero-collage .ai-hero-copy {
         width: 100%;
         padding-top: 10px
@@ -11577,13 +11378,9 @@ a.faq-tab .faq-tab-1 p {
     background-color: rgb(0 0 0 / 0%) !important;
 }
 
-
-
-
 .iti__selected-dial-code {
     color: #fff;
 }
-
 
 .iti__country-list {
     border-radius: 18px 18px 18px 18px;
@@ -11612,7 +11409,6 @@ a.faq-tab .faq-tab-1 p {
     font-size: 13px;
 }
 
-/* Careers nav highlight */
 .careers-highlight {
     color: #FDB914 !important;
     font-weight: 700;
@@ -11651,131 +11447,36 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ==========================================================================
-   WHAT WE DO AT PIXEL STREET — sticky image stack
-   --------------------------------------------------------------------------
-   Markup: index.html, .svc-stack.
-
-   This replaces TWO parallel implementations of the same section:
-
-     - Desktop: a hover accordion. Four 220px bands, one open at 553px, every
-       state living on :hover. Dead on touch, and keyboard-dead everywhere —
-       four focusable <a>s, not one :focus rule, and the bullet lists sat at
-       max-height:0, so a keyboard user could reach every link and read none of
-       them. It also animated `height` on panels carrying background-images, a
-       playing <video> and a backdrop-filter: layout work on every pointer move,
-       the most expensive combination in the section.
-
-     - Mobile: a hand-rolled scroll pin. ~190 lines of JS running an ungated
-       requestAnimationFrame loop that measured the track and rewrote inline
-       transforms on all four cards every frame, for ever, on every page view.
-       That second animation clock is where the judder came from — it re-read
-       geometry that a mobile address-bar show/hide changes mid-gesture, so the
-       stack jumped whenever the browser chrome moved, and any moment the loop
-       was throttled (backgrounded tab, low-power mode) all four cards collapsed
-       into one box.
-
-   Both are gone, and so is the split: one markup structure, one behaviour, on
-   every device. The four cards are position:sticky, each pinned lower than the
-   one before (--svc-step), so as you scroll each card slides up and parks over
-   the last while a strip of every earlier card stays on screen — above 992px
-   that strip is deep enough to hold the card's own title, so the deck assembles
-   into a run of labelled bars; below it, a thin edge. The browser composites that on its own scroll thread — nothing to
-   keep in sync, nothing to throttle, no listener to debounce — which is what
-   makes it smooth on a phone and not just on a desktop. It is also correct with
-   JavaScript switched off entirely.
-
-   position:sticky is safe here despite this site's html+body double-scroller
-   (body is the real scroll container: overflow-y:auto, height:100%, scrollHeight
-   9079 against a clientHeight of 720). Verified in-page with a sticky probe,
-   which pinned exactly at its `top` offset; and no ancestor between .svc-card
-   and <body> sets overflow, transform, filter or contain, which are the four
-   things that would break it. Keep it that way — adding overflow:hidden
-   anywhere up that chain silently turns this back into a plain list.
-   ========================================================================== */
-
 .services-section {
     background-color: #fff;
     padding: 100px 0 0
 }
 
 .svc-stack {
-    /* Where card 1 parks. The navbar is fixed at top:16px and is 65px tall on
-       desktop, 50px on phones, so its lower edge is 81px / 66px — every value
-       of --svc-pin below clears that plus a margin. */
+
     --svc-pin: 96px;
 
-    /* How much lower each following card parks than the one before it, which
-       makes this value the visible strip of every already-covered card.
-
-       94px is not a round number by accident. .svc-card__body opens with 44px
-       of padding and .svc-card__title is a 37.8px line box, so the title ends
-       82px into the card and 94 leaves 12px of air under it. A covered card
-       therefore keeps its own title bar on screen — Creative Retainer's yellow
-       band sitting above Website & eCommerce's red one — instead of the 16px
-       sliver of bare artwork this used to be. Move the body padding or the
-       title size and this has to move with them, or the strip cuts the text.
-
-       Desktop only. Below 992px .svc-card__body is bottom-aligned (the art is
-       portrait there), so a top strip would show no title whatever its height,
-       and those cards are already near-full-height with nothing to give up.
-       Both narrow bands keep their slivers. */
     --svc-step: 94px;
 
-    /* Flow gap between cards. Doubles as each card's scroll travel. */
     --svc-gap: 30px;
 
     --svc-radius: 26px;
 
-    /* Whatever is left under the deepest pin — which is what the old
-       clamp(400px, 54vh, 500px) can no longer be. Three 94px strips reserve
-       282px, and a fixed 400px card on top of that overruns a 720px viewport
-       by 58. So the card takes the remaining room and the assembled deck ends
-       16px above the fold, the same "fit the viewport" rule the <=991 band
-       already follows, with this band's numbers:
-            720px tall  ->  326px card, deck bottom 704
-            800px tall  ->  406px card, deck bottom 784
-           1080px tall  ->  500px card (the cap), deck bottom 878
-       The 300px floor clears the tallest card content (271px: title, four
-       bullets, both paddings) by 29px, and is only reached below a ~690px
-       viewport — where the rule under this one has already dropped the strips
-       back to slivers anyway. */
     --svc-card-h: clamp(300px, calc(100vh - var(--svc-pin) - var(--svc-step) * 3 - 16px), 500px);
 
-    /* Fallback only; each card overrides it with its own accent below. */
     --svc-accent: #FDB914
 }
 
-/* Short desktop windows. A 1366x768 laptop is ~640px of viewport once the
-   browser chrome is off, and three title bars plus a card tall enough to read
-   needs ~676px. Under that the strips go back to the old sliver rather than
-   shrinking to some height that slices the titles in half — binary on purpose:
-   a title bar either shows completely or it does not show at all. */
 @media (min-width: 992px) and (max-height: 689px) {
     .svc-stack {
         --svc-step: 16px
     }
 }
 
-/* ------------------------------------------------------------------ heading */
-
 .svc-stack__head {
     margin-bottom: 34px
 }
 
-/* The "SERVICES" eyebrow that sat above the heading — a small caps label with a
-   yellow rule before it — was removed by request, markup and styles both.
-
-   font-family, font-size and max-width are deliberately absent from the rule
-   below, also by request. What that means in practice:
-     - family and size now come from whatever governs h2 elsewhere in the
-       cascade rather than being set here, so this heading tracks the rest of
-       the site instead of holding its own scale;
-     - with no max-width the heading runs the full width of the container and
-       wraps only where it runs out of room, instead of being forced to break
-       after "at".
-   Do not reinstate them without checking the heading against the other section
-   headings on the page first. */
 .services-heading {
     line-height: 1.1;
     font-weight: 700;
@@ -11784,60 +11485,27 @@ a.faq-tab .faq-tab-1 p {
     margin: 0
 }
 
-/* --------------------------------------------------------------------- deck */
-
 .svc-stack__deck {
     position: relative
 }
 
-/* A tail on the end of the deck. Sticky releases the instant its container
-   ends, and card 4 is the last thing in it — without this the final card is
-   shoved straight off the top by the next section the moment it arrives,
-   instead of holding its pin for a beat like the three before it.
-
-   Sized by measurement, not taste. Cards 1-3 each hold the frame for the length
-   of one card plus one gap (356px at a 1280x720 desktop) before the next one
-   covers them. Card 4 has nothing after it, so its hold is exactly the tail
-   minus the run at the end where all four converge and leave together. At 12vh
-   that came to 150px — the last card was gone almost as soon as it landed. 34vh
-   gives it ~220px, which is one comfortable flick: long enough to read as an
-   ending rather than an interruption. Nothing is hidden during it; the assembled
-   deck is pinned on screen for the whole tail.
-
-   The convergence does NOT come out of that hold, which is worth knowing before
-   anyone adjusts this. Every card unpins when the container's bottom reaches its
-   own pin plus its height, and card 4 has the deepest pin, so card 4 always goes
-   first and the four stay exactly assembled for the full length of the tail —
-   measured at 530px of scroll against a 540px tail. The collapse runs 3 x
-   --svc-step AFTER that, one card unpinning every --svc-step, so raising the
-   step to 94px above 992px lengthened the exit from 48px to 282px of scroll but
-   took nothing off the hold. That is why this stayed at 34vh. */
 .svc-stack__deck::after {
     content: "";
     display: block;
     height: clamp(120px, 34vh, 320px)
 }
 
-/* --------------------------------------------------------------------- card */
-
 .svc-card {
     position: sticky;
     top: var(--svc-pin);
     display: block;
     height: var(--svc-card-h);
-    /* Same pair of declarations as the <=991 band, for the same reason: svh is
-       measured with the browser chrome showing, and an unknown unit invalidates
-       only its own declaration, so the vh line above (via --svc-card-h) is the
-       fallback for engines that do not know it. */
+
     height: clamp(300px, calc(100svh - var(--svc-pin) - var(--svc-step) * 3 - 16px), 500px);
     border-radius: var(--svc-radius);
     overflow: hidden;
     background-color: #0b0b0f;
-    /* No box-shadow, by request. The cards used to carry two — an upward one so
-       a card read as resting ON the one it was covering, and a downward one to
-       lift the deck off the white page. The accent bar that took over that job
-       has since been removed too, so nothing now draws the seam between a card
-       and the one beneath it; see the note further down. */
+
     isolation: isolate
 }
 
@@ -11857,15 +11525,6 @@ a.faq-tab .faq-tab-1 p {
     top: calc(var(--svc-pin) + var(--svc-step) * 3)
 }
 
-/* One accent per card, in the order the hero's four shapes use them. Set on the
-   card, not by :nth-child, so reordering the deck cannot silently swap a
-   service's colour.
-
-   These now drive ONE thing: the keyboard focus ring on .svc-card__link. The
-   deck edge, the index number and the bullet discs all used to read from them
-   and have each since been removed or hardcoded to the brand pair. Kept rather
-   than inlined into the focus rule because they are the obvious hook for
-   anything per-card that comes back. */
 .svc-card--creative {
     --svc-accent: #FDB914
 }
@@ -11882,19 +11541,6 @@ a.faq-tab .faq-tab-1 p {
     --svc-accent: #5FBFA8
 }
 
-/* The 4px accent bar that used to run along each card's top edge
-   (.svc-card::after) was removed by request. Nothing marks the boundary between
-   a card and the one it is covering now — the box-shadows went earlier, and
-   that bar was what replaced them. It matters less than it did: above 992px
-   what is left of a covered card is a --svc-step strip carrying that card's own
-   title, so the seam is read from the type rather than from a tone change.
-   Below 992px the strip is still bare artwork butting against the next card's
-   artwork, and there the stack only reads if the two images differ in tone
-   where they meet.
-
-   z-index 4 is now unused; the layers in play are media 0, video 1, the Video
-   Studio band 2, and .svc-card__body 3. */
-
 .svc-card__link {
     position: relative;
     display: block;
@@ -11903,14 +11549,11 @@ a.faq-tab .faq-tab-1 p {
     text-decoration: none
 }
 
-/* The old panels had four focusable links and no focus style at all. */
 .svc-card__link:focus-visible {
     outline: 3px solid var(--svc-accent);
     outline-offset: -7px;
     border-radius: var(--svc-radius)
 }
-
-/* -------------------------------------------------------------------- media */
 
 .svc-card__media,
 .svc-card__video {
@@ -11930,12 +11573,10 @@ a.faq-tab .faq-tab-1 p {
 }
 
 .svc-card__media img {
-    /* Beats the blanket `img{transition:.3s ease-out}` near the top of this
-       file — a push-in this large wants a longer, softer curve. */
+
     transition: transform .7s cubic-bezier(.22, .61, .36, 1)
 }
 
-/* Above the still. */
 .svc-card__video {
     z-index: 1
 }
@@ -11944,54 +11585,8 @@ a.faq-tab .faq-tab-1 p {
     transform: scale(1.05)
 }
 
-/* NO OVERLAY on cards 1-3, by request. There used to be a .svc-card__link::before
-   scrim on every card: a left-weighted gradient above 992px (the desktop crops
-   are 3:1 banners composed with their subject on the right, so the copy sat in
-   the emptier half) and a bottom-anchored one below it, where the art is
-   portrait. Those three cards now show their artwork completely unfiltered,
-   which is the point — but it also means the white copy on them is sitting
-   straight on a photograph, and nothing guarantees the pixels behind it are
-   dark. Measured against white: 1.75:1 on Creative Retainer and 3.43:1 on
-   Social Campaigns, against the 4.5:1 that body text needs.
-
-   Video Studio is the exception, below. */
-
-/* VIDEO STUDIO ONLY — a black, blurred band down the left edge, by request.
-
-   It is the one card whose artwork is moving: a bright, busy sunlit desk shot
-   that the white heading and checklist would otherwise sit directly on top of
-   and get lost in (1.88:1 measured). backdrop-filter blurs whatever is painted
-   behind the band, so the footage stays in motion underneath but stops
-   competing with the words.
-
-   Two things are load-bearing:
-
-   - z-index 2. This is the slot left vacant between the media/video layer
-     (0 and 1) and .svc-card__body (3), so the band covers the film and the copy
-     stays above the band.
-   - The mask is what makes it a BAND rather than a full-card wash: opaque to
-     --svc-band-solid, gone by --svc-band-end.
-
-   Those two stops are measured against where the copy actually ends, which is
-   NOT the same fraction at every width — above 992px the text sits in the left
-   of a wide 3:1 frame and stops at 24.5% of the card, but on a portrait phone
-   card it is bottom-aligned and runs to 54.4%. A single pair of percentages
-   cannot serve both: the desktop value leaves half the bullet list on bare
-   photo at 375px. Hence the variables, overridden at 991 below. Each pair
-   clears its measured extent with room to spare and then fades, so the right
-   of the frame stays clear and the video is still the hero.
-
-   The background-color does the darkening and the blur only softens the busy
-   detail under it; a browser without backdrop-filter support still gets a
-   perfectly readable card, just an unblurred one.
-
-   Targeted by the card's own modifier class, not :nth-child or an href match,
-   so reordering the deck cannot move this onto a different service. */
 .svc-card--video .svc-card__link::before {
-    /* The solid stop stays at 26%: the title's right edge is at 24.5% of this
-       card at desktop, so anything lower drops the end of the heading into the
-       fade. The END stop is what was pulled in — a steeper falloff means more
-       of the frame is completely untouched without uncovering any text. */
+
     --svc-band-solid: 26%;
     --svc-band-end: 42%;
     content: "";
@@ -11999,20 +11594,7 @@ a.faq-tab .faq-tab-1 p {
     inset: 0;
     z-index: 2;
     pointer-events: none;
-    /* .40, set deliberately BELOW the accessible threshold, on request and after
-       the trade-off was put in writing twice. The history, so nobody "fixes"
-       this by accident: .68 originally, reduced to .55, reduced again to .40.
 
-       .55 was the floor at which the white copy still cleared 4.5:1 against the
-       brightest pixel of this card's footage. At .40 the worst case measures
-       about 2.9:1 — under the 4.5:1 WCAG AA needs for body text and under the
-       3:1 for large text. The average across the copy is far healthier and the
-       blur lifts the real-world figure above this model's, so it reads better
-       than the number suggests, but on the brightest frames of the video the
-       bullets will be hard work.
-
-       This is a deliberate design call, not an oversight. Put it back to .55 to
-       return to a passing card. */
     background-color: rgba(0, 0, 0, .40);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
@@ -12020,11 +11602,6 @@ a.faq-tab .faq-tab-1 p {
     mask-image: linear-gradient(to right, #000 0%, #000 var(--svc-band-solid), transparent var(--svc-band-end))
 }
 
-/* ------------------------------------------------------------------ content */
-
-/* flex-start, by request: the copy sits at the top of the card rather than
-   being centred in it. Below 992px it is bottom-aligned instead — see the 991
-   block, which is unchanged. */
 .svc-card__body {
     position: relative;
     z-index: 3;
@@ -12037,10 +11614,6 @@ a.faq-tab .faq-tab-1 p {
     max-width: 620px
 }
 
-/* The 01-04 index numbers, each with a short accent rule after it, were removed
-   by request — markup and styles both. The title is now the first thing in the
-   card, which is why it carries no top margin. */
-
 .svc-card__title {
     font-family: var(--font-secondary), sans-serif;
     line-height: 1.08;
@@ -12051,15 +11624,6 @@ a.faq-tab .faq-tab-1 p {
     margin: 0 0 22px
 }
 
-/* One column at every width. This was a 2x2 grid above 767px; it is now a
-   single stacked column everywhere, so each card reads as one vertical run of
-   copy rather than a block of text. Only the row gap matters in one column,
-   hence a single-value `gap` rather than a row/column pair.
-
-   margin:0, not the 0 0 28px it used to carry: this list is the last thing in
-   the card now that the CTA is gone, and a trailing margin on a final child is
-   dead space — it pushes the block off centre above 992px, and simply adds to
-   the padding below it, where the body is bottom-aligned. */
 .svc-card__points {
     list-style: none;
     display: grid;
@@ -12078,16 +11642,6 @@ a.faq-tab .faq-tab-1 p {
     color: #fff
 }
 
-/* The tick-in-a-disc is this section's existing bullet idiom, kept.
-
-   The disc is brand yellow with a black tick on three of the four cards, and
-   inverted — black disc, yellow tick — on Creative Retainer. That inversion is
-   the same one the original markup carried as a `black-new` class on that card's
-   list items; it is now driven off the card's own modifier class instead, so the
-   pairing cannot come apart if the list is edited.
-
-   Deliberately NOT var(--svc-accent) — the tick is fixed to the two brand
-   colours regardless of which card it sits on. */
 .svc-card__points li::before {
     content: '\2713';
     position: absolute;
@@ -12106,16 +11660,10 @@ a.faq-tab .faq-tab-1 p {
     line-height: 1
 }
 
-/* (0,2,2) against the base rule's (0,1,2), so this wins wherever it applies. */
 .svc-card--creative .svc-card__points li::before {
     background-color: #000;
     color: #FDB914
 }
-
-/* NO CTA, by request. An "Explore →" pill used to close each card. Nothing is
-   lost in navigation terms — the whole card has always been the link, and the
-   pill was a <span> inside it, never a second target. The bullet list is now
-   the last thing in the card. */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -12128,24 +11676,12 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* -------------------------------------------------------- tablet and phone */
-
 @media (max-width: 991px) {
 
-    /* responsive.css carries a blanket ".section{padding:60px 0}" at both 991
-       and 1200 and it loads after this file, so a same-specificity
-       .services-section rule cannot beat it whichever breakpoint it sits in.
-       The element type is what wins the tie. */
     section.services-section {
         padding: 70px 0 0
     }
 
-    /* Pin and step come down so the card can be taller.
-       These two are what the height has to be subtracted from: the deepest card
-       parks at --svc-pin + 3 x --svc-step, and everything below that point is
-       the only room a card has. 82 + 3x14 = 124px was being reserved; 72 + 3x10
-       = 102px reserves 22px less, which goes straight into card height without
-       the stack losing its stepped edge. */
     .svc-stack {
         --svc-pin: 72px;
         --svc-step: 10px;
@@ -12153,52 +11689,11 @@ a.faq-tab .faq-tab-1 p {
         --svc-radius: 22px;
     }
 
-    /* Height set here on the card itself, NOT as --svc-card-h on .svc-stack.
-       Same result, one less indirection: .svc-card's base rule is
-       `height: var(--svc-card-h)` at (0,1,0), and this selector is identical
-       specificity but later in the file, so it simply wins. The variable is
-       left defining the desktop height only.
-
-       Near-full-height, which is the point of the change. 100svh - 110px is the
-       deepest pin (102) plus 8px of air, so on any screen in this band the
-       assembled deck reaches almost exactly to the bottom of the viewport
-       rather than stopping short of it:
-           800px tall  ->  690px card, deck bottom 792
-          1024px tall  ->  914px card, deck bottom 1016
-           600px tall  ->  490px card, deck bottom 592
-       clamp's floor is 440 so a very short window still fits, and the 820 cap
-       stops a tall tablet from making a card nothing but empty artwork.
-
-       svh, not vh: the small-viewport unit is measured with the browser chrome
-       showing, so the card still fits at the moment a mobile address bar is
-       expanded. The vh line above is the fallback for engines that do not know
-       svh — an unknown unit invalidates the whole declaration, so the earlier
-       one survives. */
     .svc-card {
         height: clamp(440px, calc(100vh - 110px), 820px);
         height: clamp(440px, calc(100svh - 110px), 820px)
     }
 
-    /* The Video Studio band turns through 90 degrees below 992px: it rises from
-       the bottom edge instead of running in from the left, because that is where
-       the copy went. The card is portrait in this band and .svc-card__body is
-       bottom-aligned, so a left-anchored band had to cover 56% of the width for
-       the FULL height of the frame to sit behind four bullets that only occupy
-       the bottom quarter of it — most of the picture dimmed to protect one
-       corner. Bottom-up covers the same copy and leaves the top of the frame,
-       which is the part of the footage anyone actually looks at, untouched.
-
-       The stops are px here, not the percentages the desktop band uses, and that
-       is the point of the override. What has to be covered is the copy block,
-       and that block is a fixed height whatever the card does: 207px in this
-       band (34px of padding, title, four bullets) and 177px in the 767 band
-       below. The card meanwhile ranges 440-820px tall in this band alone, so any
-       percentage that cleared the title on a 1024px-tall tablet would cut
-       straight through it on a 700px one. 230px of solid leaves ~23px above the
-       title and the fade is spent by 340px.
-
-       Everything else — the .40 black, the 6px blur, z-index 2 — is inherited
-       from the base rule unchanged. */
     .svc-card--video .svc-card__link::before {
         --svc-band-solid: 230px;
         --svc-band-end: 340px;
@@ -12210,8 +11705,6 @@ a.faq-tab .faq-tab-1 p {
         margin-bottom: 28px
     }
 
-    /* The art below 992 is portrait or square, so the copy no longer has an
-       empty half of the frame to sit in — it moves to the foot of the card. */
     .svc-card__body {
         justify-content: flex-end;
         max-width: 100%;
@@ -12226,28 +11719,6 @@ a.faq-tab .faq-tab-1 p {
         gap: 10px
     }
 
-    /* The film plays at every width, by request.
-       ------------------------------------------------------------------
-       This element was display:none below 992 — first at 767, then raised to
-       991 so the card's tablet still would be visible. Both are reverted: the
-       clip now renders here, and because the observer at the foot of
-       index.html keys off intersection, un-hiding it is the whole fix. A
-       display:none element has no box, so it never reported as intersecting,
-       which is why no src was ever assigned and nothing played.
-
-       What that costs, so it is a known trade rather than a surprise:
-       - The <picture> crops for <=767 and <=991 (video-mb.webp,
-         video-tab.webp) now sit UNDER the video at z-index 0 and are not seen
-         while it plays. They remain the poster/no-JS/reduced-motion fallback,
-         so they are still worth having, but they are no longer the normal
-         mobile view.
-       - Phones now download the clip. The observer still defers it until the
-         card is actually on screen, so it is not on the critical path, but it
-         is mobile data that was previously never spent.
-       - The footage is a 1580x524 banner (3:1) and these cards are portrait,
-         so object-fit:cover crops it hard to a centre strip. That shape
-         mismatch is why it was stills-only originally. A portrait re-cut of
-         the same footage would fix it properly. */
     .svc-card__video {
         display: block
     }
@@ -12266,13 +11737,6 @@ a.faq-tab .faq-tab-1 p {
         --svc-radius: 20px;
     }
 
-    /* Phones, same approach as the 991 band with this band's own numbers.
-       Deepest pin here is 68 + 3x9 = 95px, so 100svh - 103px leaves the same
-       8px of air under the assembled deck:
-           812px tall  ->  709px card, deck bottom 804
-           667px tall  ->  564px card, deck bottom 659
-           568px tall  ->  465px card, deck bottom 560
-       Set on .svc-card rather than via --svc-card-h, matching the band above. */
     .svc-card {
         height: clamp(430px, calc(100vh - 103px), 800px);
         height: clamp(430px, calc(100svh - 103px), 800px)
@@ -12286,13 +11750,6 @@ a.faq-tab .faq-tab-1 p {
         padding: 26px 24px
     }
 
-    /* Same bottom-up band as the 991 block, one size down, because everything
-       it has to cover shrank with it: 26px of padding instead of 34, a 25px
-       title instead of 32, 9px between bullets instead of 10. That puts the
-       copy block at 177px rather than 207, so 200px of solid keeps the same
-       ~23px of clearance above the title and the fade is spent by 300px. Only
-       the two stops are restated — the direction, the black and the blur all
-       come from the 991 rule, which still matches at this width. */
     .svc-card--video .svc-card__link::before {
         --svc-band-solid: 200px;
         --svc-band-end: 300px
@@ -12303,7 +11760,6 @@ a.faq-tab .faq-tab-1 p {
         font-size: 25px;
     }
 
-    /* The single column is the base rule now; only the gap tightens here. */
     .svc-card__points {
         gap: 9px
     }
@@ -12319,12 +11775,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* A phone or small tablet held sideways has the width for two bullet columns
-   and nowhere near the height for a 440px card — 66svh of a 360px-tall landscape
-   viewport is 238px. Everything here is a compaction, not a different design.
-   Scoped to <=991 so a short desktop window (a 1366x768 laptop can land at a
-   ~620px viewport) is never caught by it; the desktop clamp's 400px floor
-   already covers that case. */
 @media (max-width: 991px) and (orientation: landscape) and (max-height: 620px) {
 
     .svc-stack {
@@ -12333,16 +11783,6 @@ a.faq-tab .faq-tab-1 p {
         --svc-gap: 18px;
     }
 
-    /* Room-based, not a percentage. A percentage does not know about the pin:
-       76svh of a 360px-tall viewport is 274px, which parks the last card's
-       bottom edge 16px BELOW the fold — measured at 740x360. Deepest pin here is
-       62 + 3x8 = 86px, so 100svh - 100px keeps the whole assembled deck on
-       screen at any height this query can see.
-
-       This MUST be a direct height like the two bands above it. Those now set
-       `height` on .svc-card, so a --svc-card-h here would be ignored entirely
-       and a sideways phone would inherit the 767 band's near-full-height card —
-       roughly twice the room a 360px-tall viewport has. */
     .svc-card {
         height: clamp(210px, calc(100vh - 100px), 400px);
         height: clamp(210px, calc(100svh - 100px), 400px)
@@ -12373,32 +11813,10 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ================================================================================
-   Medical hero / "connecting-section" (homepage)
-   Moved here from an inline <style> in index.html. NOTE: responsive.css loads AFTER
-   this file, and it carries several legacy .connecting-section rules. Where the two
-   tie on specificity responsive.css now wins, so a few selectors below are
-   deliberately over-specified. Do not "simplify" them without re-checking.
-   ================================================================================ */
-/* ============================================================
-   Medical hero ("connecting-section")
-   Every rule is scoped under .mh-section so it out-specifies the
-   legacy .connecting-section p / h2 rules that live in main.css
-   and responsive.css.
-   ============================================================ */
-
-/* (0,3,0). A plain ".section.mh-section" ties with responsive.css's
-   ".section.connecting-section", and responsive.css loads after this file, so the
-   tie would be lost and the padding would revert to 100px/60px. */
 .section.connecting-section.mh-section {
     padding: 90px 0;
 }
 
-/* Full-bleed: this section opts out of the site-wide .container max-width so the
-   card runs the whole viewport. Scoped to a direct child so only this section's
-   own container is released — nested .container elements elsewhere in the tree
-   are untouched. The side padding replaces what the centred container used to
-   give the card. */
 .section.connecting-section.mh-section>.container {
     max-width: 100%;
     width: 100%;
@@ -12408,8 +11826,7 @@ a.faq-tab .faq-tab-1 p {
 
 .mh-section .mh-card {
     position: relative;
-    /* background: #f6f5f9;
-    border: 1px solid #ebe9f2; */
+
     border-radius: 28px;
     --mh-card-pad: 100px;
     padding: 78px var(--mh-card-pad) 78px;
@@ -12421,58 +11838,17 @@ a.faq-tab .faq-tab-1 p {
     background-repeat: no-repeat;
 }
 
-/* ---------- blueprint lines ---------- */
-
-/* Every "hidden until revealed" rule below is gated on .mh-anim, which the
-   inline script adds before it does anything else. Without JS the class
-   never lands and the whole section renders in its final state, exactly
-   like .reveal-on-scroll in main.css. Never make opacity:0 the static
-   default here — it hides real content from no-JS and crawler renders. */
-/* --mh-line-bleed: how far the SVG hangs off each side of the card.
-   ------------------------------------------------------------------------
-   The two dashed verticals live at x=178 and x=1022 of a 1200-wide viewBox with
-   preserveAspectRatio="none", so they are locked to 14.833% / 85.167% of
-   whatever box this element occupies. The copy beside them is a fixed 970px
-   block, centred — so as the card narrows, the text's edges march outward
-   faster than the lines do and the two collide. Measured: +48px of clearance at
-   a 1599px viewport, -22px at 1400, -92px at 1200, -134px at 1024.
-
-   Stretching this element wider than the card and pulling it back by the same
-   amount moves both verticals outward while leaving the midpoint exactly on
-   centre, which is what keeps the bracket and its centre badge aligned. The
-   card's overflow:hidden clips the overhang, and the lines already ran to the
-   card edges by design, so nothing new is visible at the sides.
-
-   A vertical ends up at  14.833% - 0.70334 x bleed  of the card. That constant
-   is 2 x 14.833% - 1, i.e. it falls straight out of the stretch, and it is why
-   the badge rules below carry the same expression — they have to track the line
-   they sit on. Change one, change the other.
-
-   Zero here; the bands below 1600 set it. */
 .mh-section .mh-lines {
     position: absolute;
     top: 0;
     bottom: 0;
     left: calc(-1 * var(--mh-line-bleed, 0%));
-    /* An explicit width, NOT `right` + `width:auto`. <svg> is a replaced element
-       with an intrinsic ratio from its viewBox, so `auto` resolves to
-       height x 1200/1020 and ignores the insets entirely — measured 1052px
-       inside a 1493px card, which put the right-hand vertical at 53% instead of
-       90%. Percentages here resolve against the card, which is what we want. */
+
     width: calc(100% + 2 * var(--mh-line-bleed, 0%));
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    /* The two verticals start at y=0, so .mh-card's overflow:hidden sliced them
-       off square against the card's top edge — a hard stub with nothing above it.
-       This fades them out over the top 130px instead, so they read as emerging
-       from the background rather than being cut. 130px lands just below the
-       top badges (top:84px + a 54px box), so the badges themselves stay solid
-       while the line behind them softens away.
-       A fixed length, not a %, so the fade is the same depth whatever height the
-       card takes at a given breakpoint. Composes with the .mh-anim clip-path
-       reveal — different properties, so the wipe still runs underneath.
-       Unsupported browsers simply get the previous hard edge. */
+
     -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 130px);
     mask-image: linear-gradient(to bottom, transparent 0, #000 130px);
 }
@@ -12485,7 +11861,6 @@ a.faq-tab .faq-tab-1 p {
 .mh-section.is-in .mh-lines {
     clip-path: inset(0 0 0 0);
 }
-
 
 .mh-section .mh-lines__base path {
     fill: none;
@@ -12502,16 +11877,10 @@ a.faq-tab .faq-tab-1 p {
     stroke-dasharray: 9 100;
     stroke-dashoffset: 109;
     opacity: 0;
-    /* Same reason as the base paths: preserveAspectRatio="none" scales x and y by
-       different factors, so without this the packet visibly fattens and thins as it
-       rounds each corner. The dash maths is already immune — pathLength="100"
-       normalises it independently of the transform. */
+
     vector-effect: non-scaling-stroke;
 }
 
-/* One brand colour per trail, in the order the packets fire. Source order matches
-   the paths in the markup: top-left hook, top-right hook, bracket left->centre,
-   bracket right->centre. */
 .mh-section .mh-lines__flow path:nth-child(1) {
     stroke: #FDB914;
 }
@@ -12546,19 +11915,11 @@ a.faq-tab .faq-tab-1 p {
         opacity: 1;
     }
 
-    /* Stops at 9, not 0: the pattern is "9 on / 100 off" over a
-       pathLength of 100, so at offset 0 the NEXT dash in the repeat has
-       already crept onto the start of the path — a purple stub that
-       flashed at the top of every line each cycle. At 9 the travelling
-       dash sits just past the end and the next one just before the
-       start, so the wrap to 109 is seamless. */
     100% {
         stroke-dashoffset: 9;
         opacity: 0;
     }
 }
-
-/* ---------- floating icon badges ---------- */
 
 .mh-section .mh-badge {
     position: absolute;
@@ -12576,15 +11937,6 @@ a.faq-tab .faq-tab-1 p {
     transform: scale(1);
 }
 
-/* All four badges are centred on a dashed vertical. The lines live in an
-   SVG with viewBox 0 0 1200 1020 and preserveAspectRatio="none", so their
-   x positions are pure percentages of the card: 178/1200 = 14.833% for the
-   left pair, 1022/1200 = 85.167% (= 14.833% from the right) for the right pair —
-   the two verticals are mirrored, so both insets are the same number.
-   The negative margin backs off half a badge so the BOX centre — not
-   its edge — lands on the line, and it stays correct at any card width.
-   Do not swap it for translateX(-50%): .mh-badge's transform is already
-   driven by the pop-in. */
 .mh-section .mh-badge--tl,
 .mh-section .mh-badge--ml {
     left: calc(14.833% - 0.70334 * var(--mh-line-bleed, 0%));
@@ -12621,10 +11973,6 @@ a.faq-tab .faq-tab-1 p {
     transition-delay: .6s;
 }
 
-/* Centred on the bracket's horizontal bar, the same way --ml/--mr sit on the
-   verticals. 58.824% = the bar's 600/1020 viewBox y; the margins back off half a
-   badge on both axes so the box centre lands on the line. Keep this in step with
-   the bar's y in the SVG path in index.html — nothing enforces it. */
 .mh-section .mh-badge--bc {
     left: 50%;
     margin-left: -27px;
@@ -12645,11 +11993,9 @@ a.faq-tab .faq-tab-1 p {
     box-shadow: 0 10px 26px rgba(23, 17, 61, .09);
     font-size: 23px;
     line-height: 1;
-    /* Per-badge brand colour, set on the modifier below. The pulse ring picks this
-       up via currentColor, so a badge and its ring never disagree. */
+
     color: var(--psb-ink);
 }
-
 
 .mh-badge__box img {
     width: 35px;
@@ -12674,9 +12020,6 @@ a.faq-tab .faq-tab-1 p {
     color: #44BDAD;
 }
 
-/* Pixel Street's own chip. Brand yellow rather than the default --psb-ink, so
-   the centre badge's pulse reads as ours and not as a fifth tool. Keep in step
-   with .mh-rail__item--brand, the phone rail's copy of this chip. */
 .mh-section .mh-badge--bc .mh-badge__box {
     color: var(--psb-yellow);
 }
@@ -12760,16 +12103,9 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ---------- phone-only AI rail ----------
-   Off everywhere by default. This is the <=767px stand-in for .mh-lines plus
-   the five .mh-badge icons, all of which are laid out for a card several times
-   wider than a phone. Everything that actually draws it lives in the
-   max-width:767px block further down. */
 .mh-section .mh-rail {
     display: none;
 }
-
-/* ---------- hero copy ---------- */
 
 .mh-section .mh-hero {
     position: relative;
@@ -12798,14 +12134,6 @@ a.faq-tab .faq-tab-1 p {
     transform: translateY(0);
 }
 
-/* Entrance stagger. transition-delay belongs to the ELEMENT, not to one
-   state change, so while these are live they also delay the hover
-   transitions on the same elements — in BOTH directions, since the
-   pointer-leave transition reads the delay off the resting style. The
-   .mh-settled class (added by JS once the entrance has finished) zeroes
-   them again. Scoping the delays to .mh-anim alone is not enough: the
-   entrance reads its delay from the .is-in style, so it has to survive
-   that far. */
 .mh-section.mh-anim .mh-subtitle {
     transition-delay: .12s;
 }
@@ -12830,9 +12158,6 @@ a.faq-tab .faq-tab-1 p {
     transition-delay: .72s;
 }
 
-/* The :nth-child stagger rules above are (0,4,0), so this reset carries
-   .mh-anim too and re-states :nth-child(n) — otherwise it lands at
-   (0,3,0) and silently loses to the very rules it exists to cancel. */
 .mh-section.mh-anim.mh-settled .mh-subtitle,
 .mh-section.mh-anim.mh-settled .mh-cta,
 .mh-section.mh-anim.mh-settled .mh-kpi,
@@ -12841,19 +12166,10 @@ a.faq-tab .faq-tab-1 p {
     transition-delay: 0s;
 }
 
-/* The CTA is the site-wide .ps-more__btn, not .mh-cta, so it is not in the lists
-   above and was the one element that never hid or revealed. It cannot simply be
-   added to them: those rules set `transform` and `transition`, both at (0,4,0),
-   which would outrank .ps-more__btn:hover (0,2,0) and kill the button's own lift
-   and its .18s easing. An animation with fill-mode BACKWARDS avoids the fight —
-   it paints the from-state during the delay, then stops applying entirely once
-   it ends, handing transform back to the hover rule. */
 .mh-section.mh-anim .mh-team-cta {
     opacity: 0;
 }
 
-/* Later delay than when this sat in the hero: the CTA now lives in the cards
-   row, so it should arrive with those rather than with the title above it. */
 .mh-section.is-in .mh-team-cta {
     opacity: 1;
     animation: mh-btn-rise .8s cubic-bezier(.22, .61, .36, 1) .55s backwards;
@@ -12879,10 +12195,6 @@ a.faq-tab .faq-tab-1 p {
     margin: 0 0 18px;
 }
 
-/* (0,3,1). Legacy ".connecting-section p:not(:last-child)" is (0,2,1) and exists in
-   BOTH this file and responsive.css. The .mh-hero ancestor is what puts this above
-   the responsive.css copy — without it the tie is lost and the bottom margin drops
-   to 20px (15px on mobile). */
 .mh-section .mh-hero p.mh-subtitle {
     font-size: 18px;
     font-weight: 600;
@@ -12915,8 +12227,6 @@ a.faq-tab .faq-tab-1 p {
     box-shadow: 0 16px 32px rgba(15, 17, 21, .24);
 }
 
-/* ---------- KPI counters ---------- */
-
 .mh-section .mh-kpi {
     position: relative;
     z-index: 2;
@@ -12930,6 +12240,7 @@ a.faq-tab .faq-tab-1 p {
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 20px 45px rgba(23, 17, 61, .07);
+    border: 2px solid #00000012;
 }
 
 .mh-section .mh-kpi__item {
@@ -12978,42 +12289,22 @@ a.faq-tab .faq-tab-1 p {
     color: #6f6c7c;
 }
 
-/* ---------- bottom cards ---------- */
-
-/* Grid, not flex: fr units split the row by the exact 358:290:360
-   ratio of the reference. flex-grow gets pulled off-ratio by the
-   cards' intrinsic min-content widths. */
 .mh-section .mh-cards {
     position: relative;
     z-index: 2;
     display: grid;
-    /* Middle track carries most of the width: the headshot row needs room to sit
-       un-overlapped (see .mh-avatars img below), and the two picture boxes read
-       fine narrower. Was 320/368/320 when the middle card still had a heading and
-       its own panel background.
-       minmax(0, …) matters here. A bare `Nfr` track will not shrink below its
-       content's min-content width, and eight 76px portraits in a row are 678px of
-       min-content — so the middle track sized itself and the fr ratio was doing
-       nothing. minmax(0, …) lets these numbers actually govern. */
+
     grid-template-columns: minmax(0, 212fr) minmax(0, 556fr) minmax(0, 212fr);
     align-items: end;
     gap: 0px;
-    /* 152px, not 66px: the bracket bar runs through the middle of this gap and now
-       carries a 54px badge that floats +/-9px and pulses a ring 16px past its edge.
-       At 66px the badge overlapped the KPI strip; at 112px the gap above the badge
-       (kpi-bottom -> badge-top) was a tight 26px resting / 17px at float peak. */
+
     margin-top: 0;
 }
-
 
 .mh-section.is-in .mh-card-box:hover {
     transform: translateY(-8px);
 }
 
-/* The headshot card has no panel of its own: no white background, no shadow and
-   no padding, so the portraits sit directly on the section. It keeps the
-   .mh-card-box class only for the shared entrance animation and hover, both of
-   which are neutralised just below. */
 .mh-section .mh-card-box--doctor {
     display: flex;
     flex-direction: column;
@@ -13025,15 +12316,11 @@ a.faq-tab .faq-tab-1 p {
     box-shadow: none;
 }
 
-/* Without this the shared .mh-card-box:hover lift and shadow would still fire on
-   a card that no longer has a panel to lift. */
 .mh-section.is-in .mh-card-box--doctor:hover {
     transform: none;
     box-shadow: none;
 }
 
-/* Picture box — the two that flank the Meet the Team card. No padding: the
-   image is the whole card, clipped to the shared 22px radius by overflow. */
 .mh-section .mh-card-box--media {
     padding: 0;
     overflow: hidden;
@@ -13047,31 +12334,16 @@ a.faq-tab .faq-tab-1 p {
     object-fit: cover;
 }
 
-/* Pushed out to the card's edges. The negative margin is exactly the card's own
-   horizontal padding — hence --mh-card-pad rather than a literal, so the two stay
-   in step at every breakpoint — which both slides each picture outward and makes
-   it that much wider. .mh-card's overflow:hidden trims them to its 28px radius,
-   so they stop flush with the corner instead of spilling.
-   Only from 1200px up: below that the grid restacks and the pictures pair up
-   under the copy, where a bleed would just push them off the card. */
 @media (min-width: 1200px) {
     .mh-section .mh-card-box--media:first-child {
         margin-left: calc(-1 * var(--mh-card-pad));
     }
 
-    /* :last-of-type, not :last-child. The phone photo marquee is a <div> that now
-       sits after these three <article>s, so the right-hand picture stopped being
-       the last CHILD and silently lost its bleed — it went 100px narrower than its
-       twin on the left. Matching on the last <article> instead is immune to
-       anything non-article being appended after it. */
     .mh-section .mh-card-box--media:last-of-type {
         margin-right: calc(-1 * var(--mh-card-pad));
     }
 }
 
-/* The CTA sits under the headshots now. .ps-more__btn is inline-flex, so it
-   already shrinks to its own text and starts on a new line after the avatars
-   block — only the gap above it needs stating. */
 .mh-section .mh-team-cta {
     margin: 24px auto 0;
     display: flex;
@@ -13139,10 +12411,6 @@ a.faq-tab .faq-tab-1 p {
     transform: translate(2px, -2px);
 }
 
-/* Wraps rather than overflowing. Now that the portraits sit open instead of
-   overlapped, eight of them are wider than the middle track at some widths;
-   without this they would push out of the card (or, with a bare fr track, drag
-   the whole grid wider). row-gap keeps a second row off the first. */
 .mh-section .mh-avatars {
     display: flex;
     align-items: center;
@@ -13155,31 +12423,18 @@ a.faq-tab .faq-tab-1 p {
     margin-top: 22px;
 }
 
-/* An overlapped stack again, so there is slack for the row to open into on hover.
-   RESTING WIDTH is 75 + (n-1) x 57. HOVER WIDTH is n x 75, because the hover rule
-   further down takes margin-left to 0 and the portraits land edge to edge.
-   The row's container (.mh-card-box__foot) has no width of its own — it is a flex
-   item that sizes to this row — so the ceiling is the middle card, 700px:
-     5 portraits: 303px resting, 375px hovered
-     8 portraits: 474px resting, 600px hovered
-   Both fit. A ninth would not (675px hovered is inside 700, but the tenth is not),
-   so revisit the width here if the row ever grows past eight. */
 .mh-section .mh-avatars img {
     flex: 0 0 auto;
     width: 75px;
     height: 75px;
-    /* border-radius: 50%; */
-    /* border: 3px solid #fff; */
-    /* box-shadow: 0 4px 12px rgba(23, 17, 61, .12); */
+
     margin-left: -18px;
     object-fit: contain;
     transition: margin-left .35s ease;
 }
 
 .mh-section .mh-avatars__count {
-    /* flex-shrink:0 is load-bearing: without it the stack is squeezed
-       below its 56px basis in a narrow card and border-radius:50% on a
-       non-square box renders an ellipse, not a circle. */
+
     flex: 0 0 auto;
     width: 56px;
     height: 56px;
@@ -13192,9 +12447,7 @@ a.faq-tab .faq-tab-1 p {
 }
 
 .mh-section .mh-avatars img.img-1 {
-    /* flex-shrink:0 is load-bearing: without it the stack is squeezed
-       below its 56px basis in a narrow card and border-radius:50% on a
-       non-square box renders an ellipse, not a circle. */
+
     flex: 0 0 auto;
     width: 48px;
     height: 48px;
@@ -13243,11 +12496,6 @@ a.faq-tab .faq-tab-1 p {
     transition-delay: 1.02s;
 }
 
-/* 6 and 7 continue the same 100ms step. Written out per child rather than
-   computed, like the four above — a face with no rule of its own falls back to
-   delay 0 and arrives BEFORE the staggered row instead of after it, which is
-   what the last two headshots did until these were added. Add an :nth-child(8)
-   here at 1.32s if the eighth face ever lands. */
 .mh-section.mh-anim .mh-avatars> :nth-child(6) {
     transition-delay: 1.12s;
 }
@@ -13262,8 +12510,6 @@ a.faq-tab .faq-tab-1 p {
     height: 48px;
 }
 
-/* Client marks, not faces: contain + padding so the logo is never cropped
-   by the circle, on white so dark marks stay legible. */
 .mh-section .mh-avatars--logo img {
     object-fit: contain;
     background: #fff;
@@ -13280,53 +12526,18 @@ a.faq-tab .faq-tab-1 p {
     font-weight: 600;
 }
 
-/* The fan-out. Hovering the card opens the -18px overlap to 0, so the portraits
-   slide apart to sit edge to edge and each one reads in full; leaving closes it
-   again. The .35s ease that carries it is on the portraits themselves, above.
-   Zero rather than a positive gap on purpose: at eight portraits, edge to edge is
-   already 600px of the middle card's 700px, and any gap on top of that would spill
-   past the card and wrap the last face onto a second row for as long as the
-   pointer stayed put. */
 .mh-section.is-in .mh-card-box:hover .mh-avatars> :not(:first-child) {
     margin-left: 0;
 }
 
-/* ---------- tablet and phone headshot marquee (<=991px) ----------
-   ONE looping strip below 991px: the headshots. A second strip looped the two
-   picture panels here and has been removed on request, so the panels themselves
-   now run the full width range and this band carries a single marquee.
-
-   It is a separate element in the markup rather than an animated .mh-avatars,
-   because a seamless loop needs its contents listed twice over and .mh-avatars is
-   counted by a :nth-child guard that a duplicate set would trip.
-
-   Mechanic: the track holds copies of the list end to end and slides from 0 to
-   -50%, so the moment the first half leaves, the second is sitting where it began
-   and the seam never shows. The viewport clips with overflow:hidden; the edges are
-   a straight cut, no mask.
-
-   The breakpoint is 991, not the 767 this started at, so the whole band where the
-   grid has already restacked gets the same treatment. --mh-card-pad is 28px across
-   both halves of that band, so the negative margins that bleed the strip to the
-   card edge need no per-band value.
-
-   Off by default so it costs nothing above the breakpoint. */
 .mh-section .mh-avatars-marquee {
     display: none;
 }
 
-/* Off above 992px, where the two .mh-card-box--media panels do this job as
-   static pictures. Turned on in the 991 block below. */
 .mh-section .mh-photo-marquee {
     display: none;
 }
 
-/* translate3d, not translateX. Same reason as the client-logo strip near the
-   top of this file: on iOS a 2D transform can be left on the main thread and
-   the animation then never starts inside an overflow:hidden box within a
-   non-root scroll container. Naming the z axis forces a compositor layer.
-   -50% still resolves against the track's own width, so the loop maths and its
-   seamlessness are untouched. */
 @keyframes mh-marquee-loop {
     from {
         transform: translate3d(0, 0, 0);
@@ -13339,13 +12550,6 @@ a.faq-tab .faq-tab-1 p {
 
 @media (max-width: 991px) {
 
-    /* Two things stand down here and are replaced by loops: the static headshot
-       row inside the middle card, and the pair of picture panels either side of
-       it. So there ARE two marquees running in this band — the photo loop was
-       removed once for that reason and has been put back by request. They sit in
-       different cards and move at the same pace, which is what keeps it from
-       reading as busy; if it ever needs to go back to one, delete
-       .mh-photo-marquee's display:block below and the panels return. */
     .mh-section .mh-avatars {
         display: none;
     }
@@ -13356,23 +12560,12 @@ a.faq-tab .faq-tab-1 p {
 
     .mh-section .mh-photo-marquee {
         display: block;
-        /* Span every column, however many the grid ends up with.
-           Setting grid-template-columns to a single track from here does NOT
-           work — a later rule in this band puts the grid back to two tracks
-           (measured 428.5px 428.5px at a 940px viewport), so the strip landed in
-           one cell 485px wide inside a 933px card and simply stopped halfway
-           across. 1 / -1 is immune to how many tracks exist, which is the same
-           thing .mh-card-box--doctor already does. */
+
         grid-column: 1 / -1;
-        /* Same min-width:0 chain as the headshot strip: a grid item's automatic
-           minimum size is its content, and the track is deliberately max-content
-           wide, so without this the whole section refuses to go narrower than the
-           strip and the page overflows instead of the strip clipping. */
+
         min-width: 0;
         overflow: hidden;
-        /* Bleed to the card's edges. Not max-width:100% — clamping to the parent
-           holds the right edge while the left one moves and the strip sits
-           lopsided. */
+
         max-width: none;
         width: auto;
         margin: 28px calc(-1 * var(--mh-card-pad)) 0;
@@ -13381,33 +12574,16 @@ a.faq-tab .faq-tab-1 p {
     .mh-section .mh-photo-marquee__track {
         display: flex;
         align-items: center;
-        /* max-content so the track is both copies laid end to end. That width is
-           what the -50% in mh-marquee-loop is a percentage OF — constrain it to
-           the viewport and the translate stops matching a copy's width. */
+
         width: max-content;
-        /* iOS compositing hints — see the note on .logo-marquee-track. */
+
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         will-change: transform;
-        /* One copy is 6.83 x the row height (the four natural aspect ratios added
-           up), so at 340px that is 2322px; 155s holds the ~15px per second the
-           headshot strip runs at. Matching SPEED rather than duration is what
-           makes two loops of different lengths read as one system — which is why
-           the phone band below restates both together. */
+
         animation: mh-marquee-loop 155s linear infinite;
     }
 
-    /* Butted edge to edge at natural aspect ratio: no gap, no radius, no
-       cropping. These files are collage strips, not standalone photos — ai-3 is
-       4856x1781 (2.73:1) against ai-2 and ai1 at ~1.36:1 — so a fixed box with
-       object-fit:cover was showing a small centre crop of each one and the
-       content inside was unreadable. Driving off height with width:auto lets
-       each image render whole and lets the differing widths sit side by side,
-       which is what turns the row into one continuous band rather than a line of
-       separate tiles.
-       max-width:none overrides the blanket `img{max-width:100%}` near the top of
-       this file, which would otherwise fight the natural width inside a
-       max-content track. */
     .mh-section .mh-photo-marquee__track img {
         flex: 0 0 auto;
         width: auto;
@@ -13417,14 +12593,6 @@ a.faq-tab .faq-tab-1 p {
         border-radius: 0;
     }
 
-    /* Phones. 340px of row height is most of the fold on a 375px screen, so the
-       band comes down to 240 — still more than the 190 it started at, and the
-       images are whole now rather than centre-cropped, so more is actually
-       legible at the smaller size.
-       The duration has to come down WITH it. One copy is 6.83 x the height, so
-       240px makes it 1639px against 340px's 2322px; leaving 155s here would run
-       the phone strip at 10.6px/s while the tablet ran at 15, and the two loops
-       in this section would visibly disagree. 109s keeps both at ~15px/s. */
     @media (max-width: 767px) {
         .mh-section .mh-photo-marquee__track {
             animation-duration: 109s;
@@ -13435,13 +12603,6 @@ a.faq-tab .faq-tab-1 p {
         }
     }
 
-    /* The chain that stops the max-content track from inflating everything above
-       it. A grid or flex item's automatic minimum size is its CONTENT, and the
-       looping track is deliberately max-content wide (both copies end to end), so
-       each ancestor in turn refused to go narrower than ~740px on a 375px screen —
-       the strip, then the foot, then the card, then the grid track itself.
-       min-width:0 at every level is what lets the viewport shrink to the phone and
-       actually clip; miss one and the whole section overflows instead. */
     .mh-section .mh-card-box,
     .mh-section .mh-card-box--doctor {
         min-width: 0;
@@ -13454,22 +12615,13 @@ a.faq-tab .faq-tab-1 p {
 
     .mh-section .mh-avatars-marquee {
         display: block;
-        /* Same reason. A grid and flex item's automatic minimum size is its
-           content, which for a max-content track is the whole strip; min-width:0
-           lets the viewport shrink to the screen and actually clip. Without it
-           there is nothing to scroll past. */
+
         min-width: 0;
-        /* NOT max-width:100%. This bleeds out to the card's edges with negative
-           margins below, and clamping to the parent's width holds the right edge
-           in while the left one moves — the strip ends up sitting lopsided. */
+
         max-width: none;
-        /* The edges are a straight clip. A mask-image fading the first and last
-           10% was here and has been removed on request — put it back with
-           `mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%,
-           transparent 100%)` (plus the -webkit- prefix for older iOS Safari). */
+
         overflow: hidden;
-        /* Full bleed past the card's padding, so the strip runs off both edges of
-           the screen rather than sitting in a box. */
+
         width: auto;
         margin: 0 calc(-1 * var(--mh-card-pad));
     }
@@ -13477,29 +12629,13 @@ a.faq-tab .faq-tab-1 p {
     .mh-section .mh-avatars-marquee__track {
         display: flex;
         align-items: center;
-        /* max-content, so the track is as wide as every copy laid end to end
-           instead of being squeezed into the viewport — that width is what -50%
-           is a percentage OF. */
+
         width: max-content;
-        /* iOS compositing hints — see the note on .logo-marquee-track. */
+
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         will-change: transform;
-        /* HOW MANY COPIES, and why the duration looks long.
-           A strip only reads as endless while ONE copy of its list is at least as
-           wide as the viewport — the moment it is narrower, translating by -50%
-           drags empty space into view and the loop shows a gap. At 375px two
-           copies were enough; raising the breakpoint to 991 was not just a number
-           change, because those same two left a 300px hole at tablet width.
-           So the track carries SIX sets of seven faces: one copy is three sets,
-           1554px, clear of the widest this strip gets. Note that ceiling is 1047px,
-           not 991px — .mh-avatars-marquee bleeds itself past the card with
-           `margin: 0 calc(-1 * var(--mh-card-pad))`, so the visible strip is the
-           viewport plus 2 x 28px. Two sets (1036px) would miss it by 11px.
-           Duration is then copy-width / speed. 105s lands at ~15px per second, the
-           pace the shorter track ran at — which is why a longer strip needs a much
-           longer duration to look identical rather than faster. (Was 80s for a
-           1184px copy of four faces; same 14.8px/s.) */
+
         animation: mh-marquee-loop 105s linear infinite;
     }
 
@@ -13512,8 +12648,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* Motion off means motion off: the loop holds still rather than resetting to a
-   half-scrolled position, so the strip still reads as a row of faces. */
 @media (prefers-reduced-motion: reduce) {
 
     .mh-section .mh-avatars-marquee__track,
@@ -13531,9 +12665,6 @@ a.faq-tab .faq-tab-1 p {
     padding-right: 0;
 }
 
-/* The photo is taken out of flow (absolute inside a relative box) so its
-   intrinsic height can never drive the card's height — otherwise a wide
-   card at tablet width blows the row up to the image's natural aspect. */
 .mh-section .mh-photo {
     position: relative;
     flex: 0 0 46%;
@@ -13565,9 +12696,6 @@ a.faq-tab .faq-tab-1 p {
     padding: 12px 0;
 }
 
-/* (0,3,1) — beats legacy ".connecting-section p:not(:last-child)" (0,2,1), which
-   was adding 20px/15px under .mh-hours. The earlier ".mh-section .mh-photo-meta p"
-   was only (0,2,1) and lost the tie to the responsive.css copy. */
 .mh-section .mh-card-box--photo .mh-photo-meta p {
     margin: 0;
 }
@@ -13581,11 +12709,6 @@ a.faq-tab .faq-tab-1 p {
     padding-right: 0;
 }
 
-/* Pill. align-self keeps it shrink-wrapped — as a stretched flex item it
-   would run the full column width. Deliberately NOT white-space:nowrap:
-   .mh-card clips overflow, so a pill too wide for the meta column would
-   lose its last digits silently. The per-breakpoint photo widths below
-   keep it on one line everywhere; wrapping is the fallback, not the norm. */
 .mh-section .mh-phone {
     align-self: flex-start;
     margin: 0;
@@ -13600,15 +12723,6 @@ a.faq-tab .faq-tab-1 p {
     color: #14121f;
 }
 
-/* ---------- responsive ---------- */
-
-/* The dashed verticals move outward from here down. See the --mh-line-bleed
-   note on .mh-lines for the mechanism; these are just the per-band amounts,
-   each one the largest shift that still keeps the 54px badge inside the card.
-
-   1400-1599: bleed 6.87% puts a vertical at 10% of the card. Worst case in the
-   band is a 1393px card, where the copy starts at 212px — the badge then runs
-   112-166, clearing the text by 46px. */
 @media (max-width: 1599px) {
     .mh-section .mh-card {
         --mh-line-bleed: 6.87%;
@@ -13620,24 +12734,14 @@ a.faq-tab .faq-tab-1 p {
         --mh-card-pad: 70px;
         padding: 130px var(--mh-card-pad) 66px;
 
-        /* Vertical to 5% of the card. At the band's narrowest (1193px card) the
-           copy starts at 112px and the badge runs 27-81, a 31px gap; the card
-           padding is 70px here, so the badge sits in the gutter rather than on
-           the text. */
         --mh-line-bleed: 13.98%;
     }
 
-    /* The bracket bar (and the badge riding it) is placed as a FRACTION of the card
-       height, because the SVG uses preserveAspectRatio="none". The card gets shorter
-       or taller at each breakpoint while the KPI strip does not move with it, so the
-       gap has to be re-opened here or the badge ends up touching the KPI box. */
     .mh-section .mh-cards {
         gap: 36px;
         margin-top: 180px;
     }
 
-    /* The middle track narrows with the card, so the portraits step down too and
-       the row of eight stays on one line instead of orphaning the last one. */
     .mh-section .mh-avatars img {
         width: 56px;
         height: 56px;
@@ -13657,13 +12761,6 @@ a.faq-tab .faq-tab-1 p {
         --mh-card-pad: 44px;
         padding: 118px var(--mh-card-pad) 56px;
 
-        /* Vertical to 3.5%, which is as far out as it goes: at a 985px card
-           that is 34px, and the 54px badge then runs 7-61 — 7px clear of the
-           card edge, with nowhere left to go. This band is genuinely tight,
-           the copy runs the full content width and the gutter is only 44px,
-           so the badges sit at the very start of the text rather than beside
-           it. Below 992 the lines and the middle badges are hidden outright,
-           which is the existing answer to the same problem. */
         --mh-line-bleed: 16.11%;
     }
 
@@ -13688,13 +12785,6 @@ a.faq-tab .faq-tab-1 p {
         font-size: 13px;
     }
 
-    /* Badge left/right are NOT overridden in this band — the dashed
-       verticals are still on screen here, so the badges have to stay
-       locked to them. Only below 992px, where .mh-lines is hidden, do
-       they move to the card corners. */
-
-    /* Narrower photo so the number pill still fits beside it once the
-       three-card row is squeezed. */
     .mh-section .mh-photo {
         flex: 0 0 40%;
     }
@@ -13726,9 +12816,6 @@ a.faq-tab .faq-tab-1 p {
         display: none;
     }
 
-    /* The lines are hidden here, so the badges move to the card corners —
-       and the -27px line-centring margin MUST be cleared, or they sit 3px
-       outside the panel. */
     .mh-section .mh-badge--tl {
         top: 34px;
         left: 24px;
@@ -13741,10 +12828,6 @@ a.faq-tab .faq-tab-1 p {
         margin-right: 0;
     }
 
-    /* No fan-out below 992px: this is touch territory, where a "hover" is a
-       sticky artefact of the last tap rather than a deliberate gesture, and the
-       card is narrow enough here that opening the stack would push the last
-       portraits past its edge. Holds them at the resting overlap instead. */
     .mh-section.is-in .mh-card-box:hover .mh-avatars> :not(:first-child) {
         margin-left: -18px;
     }
@@ -13761,14 +12844,10 @@ a.faq-tab .faq-tab-1 p {
         letter-spacing: -.3px;
     }
 
-    /* Must mirror the base rule's (0,3,1) — a plain ".mh-section .mh-subtitle" is
-       (0,2,0) and loses to it, so this font-size silently never applied. */
     .mh-section .mh-hero p.mh-subtitle {
         font-size: 16px;
     }
 
-    /* 2x2 grid rather than a wrapped flex row: wrapping staggered the
-       four items and stranded the 1px dividers mid-row. */
     .mh-section .mh-kpi {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -13787,10 +12866,6 @@ a.faq-tab .faq-tab-1 p {
         margin-top: 40px;
     }
 
-    /* Two columns here, three boxes. The copy card takes the full width and
-       moves to the top (order, not DOM reordering — the markup keeps the
-       picture-copy-picture reading order that desktop needs), and the two
-       picture boxes pair up beneath it. */
     .mh-section .mh-card-box--doctor {
         grid-column: 1 / -1;
         order: -1;
@@ -13805,17 +12880,12 @@ a.faq-tab .faq-tab-1 p {
         min-height: 200px;
     }
 
-    /* 48px, not 56px: in the 576-767px band the doctor card is only
-       ~224px wide, and a 56px stack spread by :hover (56 + 3x48 = 200px)
-       would spill past the card's rounded edge. At 48px the hover state
-       is 168px and stays inside. */
     .mh-section .mh-avatars img,
     .mh-section .mh-avatars__count {
         width: 48px;
         height: 48px;
     }
 
-    /* The photo card spans the full row here, so there is room again. */
     .mh-section .mh-photo {
         flex: 0 0 32%;
     }
@@ -13826,40 +12896,18 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* Tablet and phone AI rail. Rebuilds the desktop line-and-logos idea that gets
-   lost when .mh-lines and three of the five badges switch off at 992px, flattened
-   into a single horizontal run under the CTA. Deliberately placed between the
-   991px and 575px blocks so the cascade still reads widest-to-narrowest.
-
-   The breakpoint is 991, not the 767 this started at: .mh-lines is already gone
-   across the whole 768-991 band, so that band was left with two corner badges and
-   no line — the rail is what that idea is supposed to look like once the blueprint
-   SVG is off, and it now covers the full band. */
 @media (max-width: 991px) {
 
-    /* The last two floating badges go too: the rail below carries all five logos,
-       so leaving these pinned to the card corners just shows Claude and Gemini
-       twice. They used to survive in the 768-991 band because the rail stopped at
-       767 and they were the only logos left there; now the rail reaches them. */
     .mh-section .mh-badge--tl,
     .mh-section .mh-badge--tr {
         display: none;
     }
 
-    /* The 104px top padding set higher up existed purely to clear those two
-       badges (top:34px + a 46px box). With them gone across this whole band it is
-       dead space above the title, so it comes back to a normal edge — which is
-       why this rule moves down to 991 along with the rail rather than being left
-       behind at 767. */
     .mh-section .mh-card {
         --mh-card-pad: 28px;
         padding: 0px var(--mh-card-pad) 0px;
     }
 
-    /* fit-content so the rail is exactly as wide as its logos - the dashed line
-       is width:100% of this box, so it starts and ends flush with the first and
-       last chip instead of running out past them once the row stops being
-       full-width. max-width keeps it from ever overflowing a narrow card. */
     .mh-section .mh-rail {
         display: block;
         position: relative;
@@ -13868,9 +12916,6 @@ a.faq-tab .faq-tab-1 p {
         margin: 34px auto 0;
     }
 
-    /* Centred behind the logo row rather than given a row of its own, so the
-       boxes straddle the line the same way the badges straddle the dashed
-       verticals on desktop. */
     .mh-section .mh-rail__svg {
         position: absolute;
         top: 50%;
@@ -13882,8 +12927,6 @@ a.faq-tab .faq-tab-1 p {
         pointer-events: none;
     }
 
-    /* Same dash and stroke language as .mh-lines__base, so the desktop
-       blueprint and this phone version read as one system. */
     .mh-section .mh-rail__base {
         fill: none;
         stroke: #d6d3e0;
@@ -13899,9 +12942,7 @@ a.faq-tab .faq-tab-1 p {
         stroke-dasharray: 9 100;
         stroke-dashoffset: 109;
         opacity: 0;
-        /* preserveAspectRatio="none" on a 320x2 viewBox scales y far harder
-           than x; without this the packet renders as a fat smear instead of a
-           2.5px dash. */
+
         vector-effect: non-scaling-stroke;
     }
 
@@ -13913,35 +12954,23 @@ a.faq-tab .faq-tab-1 p {
         stroke: #2495D2;
     }
 
-    /* Reuses the desktop packet keyframes as-is: pathLength="100" normalises
-       the dash maths, so the same 109->9 sweep works on a straight 320-unit
-       run exactly as it does on the cornered desktop paths. */
     .mh-section.is-in .mh-rail__flow {
         animation: mh-packet 5.6s linear infinite;
     }
 
-    /* center + a fixed gap rather than space-between: the row no longer stretches
-       to the card width, so the chips sit as a tight cluster and the line under
-       them is only as long as the cluster. */
     .mh-section .mh-rail__row {
         position: relative;
         z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        /* The row has a hard ceiling: four 38px chips + the 52px brand chip +
-           four gaps must clear the ~315px of card interior a 375px phone leaves
-           (the narrowest width in this band). That totals 300px at a 24px gap.
-           Still well clear of the 15.6px the widest pulse ring grows past its
-           chip edge (52 x 1.6), so neighbouring rings never cross into each
-           other's chip. */
+
         gap: 24px;
         margin: 0;
         padding: 0;
         list-style: none;
     }
 
-    /* position:relative is what the ::after pulse ring anchors to. */
     .mh-section .mh-rail__item {
         position: relative;
         display: flex;
@@ -13955,13 +12984,6 @@ a.faq-tab .faq-tab-1 p {
         box-shadow: 0 10px 26px rgba(23, 17, 61, .09);
     }
 
-    /* Pixel Street's chip runs larger than the four third-party ones, so the
-       brand anchors the row rather than reading as one more tool in the set.
-       Keyed off a modifier class, not :nth-child, so reordering the logos cannot
-       silently move the emphasis. MUST stay after the base rule above — same
-       (0,2,0) specificity, so it wins on source order alone. The row is
-       align-items:center, so the taller chip stays centred on the line with the
-       rest. (Its pulse colour is set further down, with the other four.) */
     .mh-section .mh-rail__item--brand {
         flex: 0 0 52px;
         width: 52px;
@@ -13976,19 +12998,11 @@ a.faq-tab .faq-tab-1 p {
         border-radius: 5px;
     }
 
-    /* 34 in a 52 chip leaves the same ~9px breathing room as 20 in a 38 chip, so
-       the brand mark reads bigger without looking crammed into its box. */
     .mh-section .mh-rail__item--brand img {
         width: 34px;
         height: 34px;
     }
 
-    /* ---- pulse ring ----
-       The same expanding outline the desktop badges carry: identical mh-ring
-       keyframes, identical 3.4s ease-out loop, so the phone rail pulses exactly
-       like .mh-badge__box does above 992px. Colour comes from currentColor, so
-       the per-logo `color` below sets ring and chip together and the two can
-       never disagree. */
     .mh-section .mh-rail__item::after {
         content: "";
         position: absolute;
@@ -14003,9 +13017,6 @@ a.faq-tab .faq-tab-1 p {
         animation: mh-ring 3.4s ease-out infinite;
     }
 
-    /* Same five brand colours the desktop badges use, mapped to the same logos.
-       The .85s steps run left to right along the rail (rather than desktop's
-       corner order) so the pulse reads as one wave travelling the line. */
     .mh-section .mh-rail__item--claude {
         color: #FDB914;
     }
@@ -14018,12 +13029,6 @@ a.faq-tab .faq-tab-1 p {
         color: var(--psb-yellow);
     }
 
-    /* Flow is the one chip with a black background: flow.png is a solid black
-       tile (unlike the other four, which are transparent SVGs or a white-backed
-       PNG), so on the default white chip its artwork read as a black square
-       floating inside a white box. Matching the chip to the tile makes the two
-       merge. `color` is untouched — it drives the pulse ring, which still needs
-       to be the blue that belongs to this step. */
     .mh-section .mh-rail__item--flow {
         color: #2495D2;
         background: #000;
@@ -14033,11 +13038,6 @@ a.faq-tab .faq-tab-1 p {
         color: #44BDAD;
     }
 
-    /* These MUST carry .is-in and sit after the rule above. That rule uses the
-       `animation` shorthand, which resets animation-delay to 0, and at (0,3,1)
-       it outranks a plain `.mh-section .mh-rail__item--x::after` (0,2,1) — the
-       stagger would silently never apply. Same shape as the desktop badge
-       delays, which clear the same trap for the same reason. */
     .mh-section.is-in .mh-rail__item--gemini::after {
         animation-delay: .85s;
     }
@@ -14054,9 +13054,6 @@ a.faq-tab .faq-tab-1 p {
         animation-delay: 3.4s;
     }
 
-    /* One step behind the .ps-more__btn entrance (.24s) so the rail lands
-       after the button rather than alongside it. Gated on .mh-anim like every
-       other hidden-until-revealed rule here, so a no-JS render still shows it. */
     .mh-section.mh-anim .mh-rail {
         opacity: 0;
         transform: translateY(28px);
@@ -14075,9 +13072,6 @@ a.faq-tab .faq-tab-1 p {
         padding: 55px 0;
     }
 
-    /* Top value tracks the 767px block: the corner badges this used to clear
-       are hidden by then, so re-stating the shorthand here must not
-       reintroduce the 92px gap above the title. */
     .mh-section .mh-card {
         --mh-card-pad: 18px;
         padding: 40px var(--mh-card-pad) 32px;
@@ -14106,12 +13100,6 @@ a.faq-tab .faq-tab-1 p {
         height: 68px;
     }
 
-    /* 68px carries five portraits here (268px resting in a ~339px card) but not
-       the eight the row is built for: eight would be 418px and wrap onto a second
-       line. :has() steps the size down only once a sixth portrait actually exists,
-       so the five on the page today keep their size and the row survives h6-h8
-       being dropped in without anyone having to remember this block. At 52px,
-       eight rest at 290px. */
     .mh-section .mh-avatars:has(> :nth-child(6)) img {
         width: 52px;
         height: 52px;
@@ -14141,23 +13129,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* KPI strip goes 2x2 below 500px.
-   ---------------------------------------------------------------------------
-   Above this it is four abreast — a grid at 991 and below, a flex row with
-   hairline separators above that. Four tracks in ~470px of card leaves each
-   number about 100px, which is where "Faster Turnaround" and "Industries
-   Served" start wrapping to three lines and the row stops reading as a set of
-   figures.
-
-   Only the track count changes. The separators are already display:none from
-   the 991 block — they divide a row and have nothing to divide in a 2x2 — and
-   the column gap comes up from 0 to 14px because at four-wide the tracks were
-   far enough apart on their own.
-
-   499.98 rather than 500 so it cannot both match and not match at exactly
-   500px on a fractional-DPI viewport. Placed after the 575 block so it wins on
-   source order at equal specificity; the 429 and 374 blocks below touch the
-   photo card and the AI rail, not this. */
 @media (max-width: 499.98px) {
     .mh-section .mh-kpi {
         grid-template-columns: 1fr 1fr;
@@ -14165,9 +13136,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* On phones the photo card cannot hold a photo plus the number pill side
-   by side: by 430px the photo is down to ~100px, and by 375px the pill
-   wraps to two lines. Stack them instead — full-width photo, meta below. */
 @media (max-width: 429px) {
     .mh-section .mh-card-box--photo {
         flex-direction: column;
@@ -14188,13 +13156,6 @@ a.faq-tab .faq-tab-1 p {
 
 }
 
-/* Rail step-down, at 374px rather than the 429px breakpoint above. The full-size
-   row (four 38px chips + the 52px brand chip + four 24px gaps) is 300px, which
-   fits the ~315px of card interior a 375px phone leaves but not the ~300px a
-   360px one does — so the cut sits just under 375. Here the row is 240px,
-   clearing even a 320px screen's ~260px. Gap still beats the widest ring's
-   13.2px overshoot (44px x 1.6), so the pulses stay out of each other's chips at
-   this size too. */
 @media (max-width: 374px) {
     .mh-section .mh-rail__row {
         gap: 17px;
@@ -14225,8 +13186,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ---------- motion opt-out ---------- */
-
 @media (prefers-reduced-motion: reduce) {
 
     .mh-section .mh-lines,
@@ -14245,9 +13204,6 @@ a.faq-tab .faq-tab-1 p {
         transition: none !important;
     }
 
-    /* display, not animation:none — a different property, so this lands
-       regardless of the (0,3,1) .is-in rule that starts the packets. The line
-       itself stays; only the travelling dashes go. */
     .mh-section .mh-lines__flow,
     .mh-section .mh-rail__flow {
         display: none;
@@ -14262,10 +13218,6 @@ a.faq-tab .faq-tab-1 p {
         animation: none !important;
     }
 
-    /* Catch-all so no hover/focus motion is missed as this section grows —
-       the photo zoom and the arrow-icon nudge both slipped past the
-       explicit list above. Not `transition: none`, which would also kill
-       colour changes that carry meaning (e.g. the arrow's focus state). */
     .mh-section *,
     .mh-section *::before,
     .mh-section *::after {
@@ -14283,58 +13235,39 @@ a.faq-tab .faq-tab-1 p {
 }
 
 :root {
-    /* --- brand ------------------------------------------------------------ */
+
     --psb-yellow: #FDB914;
     --psb-red: #EE3D41;
     --psb-ink: #0F1115;
     --psb-paper: #FFFFFF;
 
-    /* Text greys, all re-checked. The old #8B9096 card meta was 3.22:1 and
-     failed 1.4.3 for small text; #6A6F75 is the smallest step that clears
-     4.5:1 while still reading as "secondary". */
     --psb-muted: #5C6167;
-    /* 6.25:1 on white — AA  */
+
     --psb-muted-2: #6A6F75;
-    /* 5.07:1 on white — AA  */
+
     --psb-line: #E7E9EC;
-    /* Was #C9CDD2, annotated "1.9:1" but measured 1.60:1. This token is the resting
-     border of the search field and the filter chips -- real interactive controls,
-     so 1.4.11 wants 3:1, not decoration contrast. #8E959D is 3.03:1 on white, the
-     lightest neutral that clears it. --psb-line stays as it is: it only ever draws
-     dividers, which the criterion does not cover. */
+
     --psb-line-strong: #8E959D;
-    /* 3.03:1 on white — AA (1.4.11) */
+
     --psb-wash: #F7F8F9;
 
-    /* --- shape ------------------------------------------------------------ */
     --psb-r-card: 16px;
-    /* the brand's card radius               */
+
     --psb-r-lg: 28px;
-    /* the brand's big-panel radius          */
+
     --psb-r-pill: 999px;
 
-    /* --- elevation --------------------------------------------------------
-     The brand does not use soft photographic shadows; its cards are flat with
-     hard edges. A 4px offset hard shadow in ink is the closest CSS equivalent
-     of that poster-print feel, and unlike a blur it stays crisp at any zoom. */
-    /* --- motion -----------------------------------------------------------
-     These two were referenced by .ps-more__btn / .ps-lead__cta / .ps-empty__reset
-     but never actually declared. An undefined custom property makes the whole
-     `transition` shorthand invalid at computed-value time, so it fell back to
-     `all 0s` and every one of those buttons snapped on hover instead of easing. */
     --psb-fast: .18s;
     --psb-ease: cubic-bezier(.2, .7, .3, 1);
 
-    /* --- elevation, continued -------------------------------------------- */
     --psb-hard: 4px 4px 0 var(--psb-ink);
     --psb-hard-sm: 3px 3px 0 var(--psb-ink);
     --psb-soft: 0 1px 2px rgba(15, 17, 21, .04), 0 10px 28px rgba(15, 17, 21, .07);
     --psb-soft-lift: 0 2px 4px rgba(15, 17, 21, .05), 0 20px 44px rgba(15, 17, 21, .13);
 
-    /* --- default accent, overridden per category in section 2 ------------- */
     --psb-cat: var(--psb-yellow);
     --psb-cat-ink: #926701;
-    /* 5.04:1 on white */
+
     --psb-cat-wash: #FFF6E0;
 }
 
@@ -14378,62 +13311,21 @@ a.faq-tab .faq-tab-1 p {
     box-shadow: 0 0 0 var(--psb-ink)
 }
 
-
-
-
-
-
-
-/* ================================================================================
-   Process arc — the .process-section on the four service pages
-   (branding / digital-marketing / video-studio / web-design).
-
-   Layout is deliberately full-bleed rather than .container-bound: the dial hangs off
-   the left edge of the viewport and the object sits hard right, which is what gives
-   the composition its width. Percentages below are taken from the reference design
-   at 1920x1080.
-
-   The dial is a plain circle with the step numbers laid around its right-hand arc.
-   Each number is placed by `rotate(--a) translateX(radius)`, so --a is BOTH its
-   resting position on the arc and its tilt — that is what makes them read as
-   tangential. The ring they sit in is then spun as a whole by --ps-arc-rot, written
-   per frame from scroll position by ps-arc.js, so whichever number the rotation
-   brings to 0deg ends up upright at the marker with no counter-rotation needed.
-   The red marker lives inside that same ring, so it travels with the numbers, and
-   its own --ps-arc-marker-a is eased from step to step.
-
-   --ps-arc-r is the circle's radius, so it sets the circle's HEIGHT (diameter) as
-   well as its width. .ps-arc__body's margin-left is derived from it —
-   --ps-arc-cx + --ps-arc-r + --ps-arc-gap + 29 + ~62px of clearance — so if you
-   change the radius, move that margin by the same amount or the copy will drift
-   into the numbers.
-   ================================================================================ */
-
 .section.process-section.ps-arc {
     --ps-arc-r: 370px;
-    /* circle radius */
+
     --ps-arc-cx: 81px;
-    /* circle centre, from the left edge of the viewport */
+
     --ps-arc-gap: 36px;
-    /* how far the numbers sit outside the ring */
+
     --ps-arc-rot: 0deg;
-    /* ring rotation; ps-arc.js overwrites this per frame from scroll progress */
+
     --ps-arc-aspread: 1;
-    /* Multiplier on every angle in the dial — each number's resting --a, the
-       scroll-driven --ps-arc-rot and the marker's --ps-arc-marker-a all get
-       scaled by it together, so the arc keeps working as one piece. 1 is the
-       design as authored; the mobile blocks drop it below 1 to flatten the same
-       circle into a shallow curve without having to rewrite the per-number --a
-       values in four HTML files. */
 
     position: relative;
     padding: 0;
     background: #F2F1EF;
-    /* NOT overflow:hidden. That would make this element a scroll container, and
-       .ps-arc__stage's position:sticky would then stick to it instead of the
-       viewport — i.e. no pinning at all. The dial hangs off the left edge, but
-       .ps-arc__stage already clips it, and clipping on the sticky element itself
-       is harmless. */
+
     overflow: visible;
 }
 
@@ -14444,8 +13336,6 @@ a.faq-tab .faq-tab-1 p {
     min-height: 760px;
     padding: 110px 0;
 }
-
-/* ---------- dial ---------- */
 
 .ps-arc__dial {
     position: absolute;
@@ -14464,13 +13354,6 @@ a.faq-tab .faq-tab-1 p {
     border-radius: 50%;
 }
 
-/* The mark at the dial's centre. It is a sibling of .ps-arc__ring rather than a
-   child of .ps-arc__nums on purpose: the numbers ring is re-rotated every frame
-   from scroll position, so anything inside it spins. Sitting here instead, the
-   logo stays upright while the numbers travel around it.
-   The centre is only --ps-arc-cx (81px) from the left edge of the viewport, so
-   the mark reads as anchored to that edge — that is the intended position, not
-   a layout accident. */
 .ps-arc__logo {
     position: absolute;
     left: 65%;
@@ -14485,12 +13368,6 @@ a.faq-tab .faq-tab-1 p {
     height: auto;
 }
 
-/* The marker lives INSIDE .ps-arc__nums, so it inherits the ring's rotation and
-   travels with the numbers frame by frame. Its own angle, --ps-arc-marker-a, is the
-   active step's resting angle, written by ps-arc.js — so when the active step
-   changes the dot eases around the arc to it rather than jumping. Two motions
-   compose: the ring's (instant, per-frame, scroll-linked) and the dot's own
-   (transitioned, step to step). */
 .ps-arc__marker {
     position: absolute;
     left: 50%;
@@ -14499,12 +13376,9 @@ a.faq-tab .faq-tab-1 p {
     height: 10px;
     margin: -5px 0 0 -5px;
     border-radius: 50%;
-    /* --ps-arc-step-color/-rgb are written per step by ps-arc.js's setActive(), so
-       the dot (fill + halo) recolours to match whichever step is active. Fallback
-       values are the original red, in case JS hasn't run yet. */
+
     background: var(--ps-arc-step-color, #EE2B1F);
-    /* Soft halo, layered rather than a single shadow: a tight ring for definition,
-       then two progressively wider, fainter blurs for the glow. */
+
     box-shadow:
         0 0 0 3px rgba(var(--ps-arc-step-rgb, 238, 43, 31), .18),
         0 0 10px 3px rgba(var(--ps-arc-step-rgb, 238, 43, 31), .40),
@@ -14513,10 +13387,6 @@ a.faq-tab .faq-tab-1 p {
     transition: transform .7s cubic-bezier(.65, 0, .35, 1), background-color .4s ease, box-shadow .4s ease;
 }
 
-/* The ring of numbers. ps-arc.js writes --ps-arc-rot straight from scroll progress
-   every frame, so this rotates continuously rather than snapping between steps.
-   No transition here on purpose: a transition would fight the per-frame updates and
-   make it lag behind the scroll. */
 .ps-arc__nums {
     position: absolute;
     inset: 0;
@@ -14538,23 +13408,14 @@ a.faq-tab .faq-tab-1 p {
     line-height: 1;
     letter-spacing: .02em;
     color: #C0BDB6;
-    /* --a is the resting angle. Because the parent ring is what spins, this single
-       rotate() gives the number both its place on the arc AND its tilt, and whichever
-       number the ring brings to 0deg is upright at the marker automatically — no
-       counter-rotation needed. */
+
     transform: rotate(calc(var(--a) * var(--ps-arc-aspread))) translateX(calc(var(--ps-arc-r) + var(--ps-arc-gap)));
 }
 
-/* Only the colour marks the active step now; being upright falls out of the ring's
-   rotation. */
 .ps-arc__num.is-active {
     color: #14120F;
 }
 
-/* Each step gets its own colour, keyed off the button's own data-index — this is
-   static per step and does not depend on scroll state, so it needs no JS. Higher
-   specificity than the rule above (class+attribute vs class) so it wins without
-   relying on source order. */
 .ps-arc__num[data-index="0"].is-active {
     color: #EE3D41;
 }
@@ -14571,30 +13432,17 @@ a.faq-tab .faq-tab-1 p {
     color: #FCB814;
 }
 
-/* White, not the #000000 this was: the stage sits on a dark background image, so
-   black made step 05 the one number in the arc that vanished when it went active.
-   Only the branding page has a fifth step, so this rule reaches nothing else. */
 .ps-arc__num[data-index="4"].is-active {
     color: #ffffff;
 }
 
-/* ---------- centre copy ---------- */
-
-/* Every .ps-arc__panel is position:absolute so the panels can cross-fade, which
-   leaves this box with no in-flow content — on `width:auto` it collapsed to 0 and
-   the copy was squeezed into a zero-width column. `flex: 1 1 0` makes it take all
-   the room between the dial and the object instead, so the copy is as wide as the
-   layout allows at every breakpoint with no per-width tuning.
-   margin-left is in PIXELS, not %, because what it has to clear is the dial, whose
-   radius is a pixel value: the outermost number sits at
-   --ps-arc-cx + --ps-arc-r + --ps-arc-gap + half a button. */
 .ps-arc__body {
     position: relative;
     z-index: 2;
     flex: 1 1 0;
     min-width: 0;
     margin-left: 578px;
-    /* Breathing room before the object; without it the copy runs straight into it. */
+
     margin-right: 56px;
     max-width: 720px;
 }
@@ -14608,8 +13456,7 @@ a.faq-tab .faq-tab-1 p {
 }
 
 .section.process-section.ps-arc .ps-arc__title {
-    /* No serif is loaded anywhere on this site, so this is a system stack. Swap the
-       first family for a webfont if one is ever added. */
+
     font-family: var(--font-secondary);
     font-size: 48px;
     font-weight: 700;
@@ -14619,10 +13466,6 @@ a.faq-tab .faq-tab-1 p {
     margin: 0 0 22px;
 }
 
-/* Same per-step palette as the arc numbers, keyed off the parent panel's own
-   data-index — static per step, so plain CSS is enough, no scroll-state needed.
-   Prefixed with the same .section.process-section.ps-arc ancestor chain as the
-   base rule above so specificity wins regardless of source order. */
 .section.process-section.ps-arc .ps-arc__panel[data-index="0"] .ps-arc__title {
     color: #EE3D41;
 }
@@ -14639,8 +13482,6 @@ a.faq-tab .faq-tab-1 p {
     color: #FCB814;
 }
 
-/* Same fix as the number above, for the same reason: step 05's title was #000000
-   on a dark stage. */
 .section.process-section.ps-arc .ps-arc__panel[data-index="4"] .ps-arc__title {
     color: #ffffff;
 }
@@ -14675,12 +13516,6 @@ a.faq-tab .faq-tab-1 p {
     color: #14120F;
 }
 
-/* ---------- checklist (tick points) ----------
-   Placeholder content until real per-step copy is supplied — see the panels in the
-   markup. Pill chips, same visual language as .ps-arc__tags above, just with the
-   tick icon in place of plain text. flex-wrap rather than a grid because pills
-   size to their own content — a grid column would either clip long ones or leave
-   short ones stranded in a lot of empty space. */
 .section.process-section.ps-arc .ps-arc__checklist {
     display: flex;
     flex-wrap: wrap;
@@ -14711,35 +13546,6 @@ a.faq-tab .faq-tab-1 p {
     height: 16px;
 }
 
-/* ---------- object (image marquee) ----------
-   Hidden by default; switched on per breakpoint below. Above 1200px it is a
-   SINGLE column running full-height down the right of the pinned stage. Below
-   1200px the same markup lies down into two horizontal rows under the copy (see
-   the max-width:1199px block at the end of this file).
-
-   Purely decorative — aria-hidden, no unique content — so it carries no meaning
-   that is lost when a breakpoint hides part of it.
-
-   Centering math (desktop): .ps-arc__inner is exactly 100vh (height:100% of the
-   100vh stage) and centres .ps-arc__object within it, so the object's own
-   vertical centre IS the stage's. Anchoring the marquee at top:50% of that box,
-   sizing it height:100vh, then pulling it back by translateY(-50%) of its OWN
-   height lands its top edge exactly at the stage's top and its bottom exactly at
-   the stage's bottom, with no per-breakpoint tuning. .ps-arc__stage's
-   overflow:hidden is what clips it flush.
-
-   Image height is in vh, not px, so one full pass of the list is always taller
-   than the 100vh it must cover whatever the visitor's screen height:
-   5 images * 26vh + 4 * 1.5vh margin-bottom = 136vh per copy, ~36% more than
-   needed — that margin is what stops a gap flashing at the seam on tall
-   viewports.
-
-   Loop mechanic: the image list appears twice in the markup back to back, so
-   animating translateY(0) -> translateY(-50%) moves exactly one full copy off
-   screen and the second copy is already sitting where the first started — no
-   visible seam. Spacing lives on each image as margin-bottom rather than as
-   `gap` on the track: with `gap`, half the doubled list lands a half-gap short
-   of the seam every cycle and the loop visibly snaps. */
 .ps-arc__object {
     display: none;
 }
@@ -14771,9 +13577,6 @@ a.faq-tab .faq-tab-1 p {
         overflow: hidden;
     }
 
-    /* One column on desktop. The second is hidden rather than deleted from the
-       markup because the mobile layout still uses both — they are its two
-       horizontal rows. */
     .ps-vmarquee__col--down {
         display: none;
     }
@@ -14831,8 +13634,6 @@ a.faq-tab .faq-tab-1 p {
     padding-bottom: 150px;
 }
 
-/* ---------- responsive ---------- */
-
 @media (max-width: 1599px) {
     .section.process-section.ps-arc {
         --ps-arc-r: 320px;
@@ -14842,14 +13643,10 @@ a.faq-tab .faq-tab-1 p {
         font-size: 54px;
     }
 
-    /* --ps-arc-r drops to 340 here, so the outermost number moves in to
-       81 + 340 + 36 + 29 = 486. Clear it by ~60px. */
     .ps-arc__body {
         margin-left: 528px;
     }
 
-    /* Single column, so these are roughly half the widths the old two-column
-       version used at the same breakpoints. */
     .ps-arc__object {
         flex-basis: 210px;
         width: 210px;
@@ -14865,33 +13662,12 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ---------- below 1200px: the arc lies down ----------
-   The dial no longer collapses into a plain row. The same circle is re-centred
-   far ABOVE the stage and spun a quarter turn, so what shows inside the 100vh
-   stage is the shallow bottom of the arc running across the top of the screen,
-   numbers riding it, the active step upright at its lowest point and the marker
-   dot on the line just above. Copy is centred underneath; the marquee lies flat
-   along the bottom (horizontal marquee rules further down).
-
-   Geometry: numbers sit --ps-arc-gap outside a circle of radius --ps-arc-r, so
-   the lowest one lands --ps-arc-apex below the top of the stage when the circle
-   centre is at apex - (r + gap). The dial box is 2r square with the circle
-   inscribed, hence the extra -r in its `top`. Everything off-screen is clipped
-   by .ps-arc__stage's overflow:hidden.
-
-   --ps-arc-aspread flattens the arc: at 1 the five steps span 124deg, which at
-   this radius would throw the outer numbers hundreds of pixels off-screen. */
 @media (max-width: 1199px) {
     .section.process-section.ps-arc {
         --ps-arc-r: 520px;
         --ps-arc-gap: 30px;
         --ps-arc-apex: 132px;
-        /* NEGATIVE on purpose. The desktop arc runs top-to-bottom down the right
-           of the circle, so laid flat it would read right-to-left — step 05 off
-           the left edge. Negating mirrors it so the steps run left-to-right like
-           the design. It has to be the sign of the shared multiplier, not a flip
-           on one rule, so the numbers, the ring rotation and the marker all
-           mirror together and stay in agreement. */
+
         --ps-arc-aspread: -.55;
     }
 
@@ -14910,20 +13686,10 @@ a.faq-tab .faq-tab-1 p {
         pointer-events: auto;
     }
 
-    /* +90deg moves a=0 from the circle's right-hand side to its BOTTOM — that
-       single quarter turn is what stands the desktop arc on its side. The
-       spread multiplier is applied to --ps-arc-rot here (and to --a and the
-       marker angle elsewhere) so all three stay in agreement; ps-arc.js keeps
-       writing --ps-arc-rot exactly as it does on desktop. */
     .ps-arc__nums {
         transform: rotate(calc(var(--ps-arc-rot, 0deg) * var(--ps-arc-aspread) + 90deg));
     }
 
-    /* The trailing rotate(-90deg) is applied AFTER the translate, so it spins
-       each glyph about its own centre without moving it off the arc: position
-       comes from the +90deg above, but the active number still reads upright at
-       the marker exactly as on desktop. Without it every number lies on its
-       side. */
     .ps-arc__num {
         font-size: 21px;
         transform: rotate(calc(var(--a) * var(--ps-arc-aspread))) translateX(calc(var(--ps-arc-r) + var(--ps-arc-gap))) rotate(-90deg);
@@ -14933,8 +13699,6 @@ a.faq-tab .faq-tab-1 p {
         font-size: 30px;
     }
 
-    /* The circle's centre is far above the viewport, so there is nowhere for the
-       centred mark to sit. Ring and marker stay — they ARE the visible arc. */
     .ps-arc__logo {
         display: none;
     }
@@ -14944,9 +13708,6 @@ a.faq-tab .faq-tab-1 p {
         display: block;
     }
 
-    /* margin-top, not padding-top: the panels inside are absolutely positioned
-       against this box, so padding would shift their 50% centring by half the
-       padding instead of moving the box itself clear of the arc. */
     .ps-arc__body {
         flex: 1 1 auto;
         width: 100%;
@@ -15030,16 +13791,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ================================================================================
-   Process arc — scroll-driven stepping.
-
-   The track is a tall runway; the stage pins inside it with position:sticky, and
-   ps-arc.js maps scroll progress through the track onto a step index. Sticky is
-   used rather than the old hand-rolled position:fixed pin because it needs no
-   body-height maths and cannot desync from the scrollbar. Note it also means an
-   ancestor transform is harmless here, unlike with fixed.
-   ================================================================================ */
-
 .section.process-section.ps-arc {
     --ps-arc-steps: 3;
     --ps-arc-slot: 100vh;
@@ -15066,8 +13817,6 @@ a.faq-tab .faq-tab-1 p {
     padding: 0;
 }
 
-/* ---------- number buttons ---------- */
-
 .section.process-section.ps-arc .ps-arc__num {
     appearance: none;
     -webkit-appearance: none;
@@ -15076,9 +13825,7 @@ a.faq-tab .faq-tab-1 p {
     padding: 0;
     cursor: pointer;
     font-family: inherit;
-    /* Colour only. The numbers no longer transition their transform: the ring above
-       them is rotated per frame from scroll position, so any transform transition
-       here would lag a frame behind the scroll and read as rubber-banding. */
+
     transition: color .45s ease;
 }
 
@@ -15088,12 +13835,6 @@ a.faq-tab .faq-tab-1 p {
     border-radius: 4px;
 }
 
-/* No transition: the marker is stationary at 0deg now — the ring rotates past it. */
-
-/* ---------- panels cross-fade ---------- */
-
-/* Panels are stacked rather than display:none-swapped so one can fade out while the
-   next fades in, and so the stage never changes height mid-transition. */
 .section.process-section.ps-arc .ps-arc__body {
     position: relative;
 }
@@ -15115,14 +13856,6 @@ a.faq-tab .faq-tab-1 p {
     visibility: visible;
 }
 
-/* The pin used to be released below 1200px, where the dial collapsed to a plain
-   row and the numbers became tap-only. It now runs at every width: the mobile
-   block earlier in this file re-lays the dial as a horizontal arc that fits a
-   phone, so the stage can stay sticky and the steps stay scroll-driven — the
-   same 100vh-stage-in-a-tall-track mechanic the reference design uses on mobile.
-   The number buttons still work as a tap shortcut; ps-arc.js scrolls to the
-   matching step instead of switching instantly. */
-
 @media (prefers-reduced-motion: reduce) {
 
     .ps-arc__marker,
@@ -15132,15 +13865,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ---------- below 1200px: the marquee lies down too ----------
-   Same two tracks, turned through 90 degrees and stacked as two rows under the
-   copy: the --up column runs right-to-left, --down runs left-to-right, so they
-   drift against each other exactly as the columns do on desktop. The list is
-   still doubled in the markup, so translateX(-50%) moves precisely one full copy
-   and the loop has no seam — the same trick the vertical version uses, and the
-   same reason spacing lives on each image as margin-right rather than as `gap`
-   on the track (a gap would leave the halfway point a half-gap short and the
-   loop would visibly jump). */
 @media (max-width: 1199px) {
     .ps-arc__object {
         display: block;
@@ -15163,20 +13887,10 @@ a.faq-tab .faq-tab-1 p {
         overflow: hidden;
     }
 
-    /* One row here too, not two. This band used to lay the marquee out as a pair
-       of opposed rows — the second running in reverse underneath the first — and
-       that second row is now off at every width, matching the single column the
-       desktop layout has always shown.
-       It is hidden rather than deleted because the markup lives in four service
-       pages; with the mobile layout no longer using it, that markup is dead and
-       can come out whenever those pages are next touched. */
     .ps-vmarquee__col--down {
         display: none;
     }
 
-    /* max-content so the row is as wide as its images instead of being squeezed
-       into the column — without it the flex children would shrink and the
-       translateX maths would no longer line up with one copy of the list. */
     .ps-vmarquee__track {
         display: flex;
         flex-direction: row;
@@ -15188,24 +13902,6 @@ a.faq-tab .faq-tab-1 p {
         animation: ps-hmarquee-shift 26s linear infinite;
     }
 
-    /* Three across, at any width.
-       Sized off the viewport rather than in pixels because "three visible" is a
-       ratio, not a measurement: a fixed width that shows three at 1100px shows one
-       and a half at 375px. Each image is a third of the screen minus its own
-       gutter, so image + gutter is exactly 33.333vw and three of them fill the
-       strip whatever the device.
-
-       This also settles the loop for free. The track holds two copies of a
-       five-image list and slides -50%, so ONE copy has to be at least as wide as
-       the strip or blank space walks into view — a copy here is 5 x 33.333vw =
-       167vw, permanently clear of the 100vw it has to cover. The old fixed 116px
-       made a copy 630px against a viewport of up to 1199, which left a 442px hole
-       at 1100px.
-
-       aspect-ratio rather than a matching height: it holds the original 116:74
-       proportion (so object-fit:cover crops these 714x574 sources exactly as
-       before) AND reserves the right box before these lazy images arrive, instead
-       of collapsing to nothing and snapping open on load. */
     .ps-vmarquee__track img {
         display: block;
         width: calc(33.333vw - 12px);
@@ -15223,34 +13919,8 @@ a.faq-tab .faq-tab-1 p {
         margin-bottom: 24px;
     }
 
-    /* No phone-specific size any more. The 33.333vw rule above already scales to
-       three-across on every screen, and a fixed px override here would put four or
-       five back on a phone — which is what it used to do. */
 }
 
-/* ================================================================================
-   Process arc — tuning pass, applied to all four pages that carry .ps-arc
-   (branding, digital-marketing, video-studio, web-design). Nothing else on the
-   site uses the component, so the blast radius of everything below is those four
-   sections and nothing more.
-
-   It sits at the end of the file, after every rule it revises, so equal-specificity
-   declarations win on source order. All of it is prefixed
-   `.section.process-section.ps-arc` to match the specificity the blocks above use.
-
-   Five changes, in order below:
-     1. active step reads bolder, inactive steps dim back
-     2. the pill list stops overflowing its column
-     3. panels stop being clipped by the 100vh stage on short viewports
-     4. the marquee images stop being cropped
-     5. the dial is smaller, and the marquee wider and further left
-   ================================================================================ */
-
-/* ---------- 1. number states ----------
-   Only the INACTIVE numbers are recoloured. The active one's colour is set per step
-   by `.ps-arc__num[data-index="N"].is-active` higher up (#EE3D41 / #44BDAD /
-   #2694D1 / #FCB814 / #000) and has to keep winning, so :not() keeps this rule off
-   the active number entirely, and the weight rule sets weight only — never colour. */
 .section.process-section.ps-arc .ps-arc__num:not(.is-active) {
     color: rgba(255, 255, 255, .34);
 }
@@ -15259,31 +13929,10 @@ a.faq-tab .faq-tab-1 p {
     font-weight: 700;
 }
 
-/* ---------- 2. checklist width ----------
-   .ps-arc__checklist above declares a hard `width: 680px`, but the column it sits in
-   is only as wide as the layout leaves it — .ps-arc__body is flex:1 between the dial
-   and the marquee, which is 589px at 1440 and less below that. The pills therefore
-   spilled ~91px past the column and over the marquee on every one of the four pages.
-   max-width pins them to the column when it is narrower and leaves the authored
-   680px alone on wide screens where the column reaches its 720px max. */
 .section.process-section.ps-arc .ps-arc__checklist {
     max-width: 100%;
 }
 
-/* ---------- 3. panels vs. the 100vh stage ----------
-   .ps-arc__stage is exactly 100vh with overflow:hidden, and each panel is centred in
-   it with top:50%/translateY(-50%) — so a panel taller than the viewport loses equal
-   slices off its TOP AND BOTTOM at once: the title and the last row of pills both
-   disappear, with nothing on screen to say they were ever there.
-
-   Panels carrying two paragraphs and 5-7 pills reach 685px at 1280 wide, which fits
-   a 720px-tall window with 17px to spare and clips at 640px. The blocks below buy
-   back roughly 150px on desktop and 100px on phones by tightening type and spacing
-   where there is no room, and leave the authored sizes alone where there is.
-
-   The 1200-1399 band is in there on width alone rather than height: that is where
-   the copy column is narrowest (383px at exactly 1200px, because .ps-arc__body still
-   reserves room for the dial), which stacks the pills five rows deep. */
 @media (min-width: 1200px) and (max-height: 860px),
 (min-width: 1200px) and (max-width: 1399px) {
     .section.process-section.ps-arc .ps-arc__title {
@@ -15313,12 +13962,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* One tier tighter, for desktop windows under 740px tall. The block above gets the
-   worst panel (two paragraphs and seven pills, on the video-studio page) to 668px,
-   which leaves only 16px of clearance in a 700px stage — one browser toolbar away
-   from clipping. This takes it to ~585px. It is deliberately the last resort rather
-   than the default: these sizes are tight enough to be worth avoiding wherever the
-   window can afford the ones above. */
 @media (min-width: 1200px) and (max-height: 740px) {
     .section.process-section.ps-arc .ps-arc__title {
         font-size: 34px;
@@ -15347,12 +13990,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* Tablet and down, where .ps-arc__inner is a flex column: the dial lies down above
-   the copy and the marquee below it, and .ps-arc__body gets only the space those two
-   leave — 268px at 1024x768. Panels are centred in that box, so anything taller
-   spills equally above and below. Only line-height is touched at every width; the
-   rest is held to the tablet band so the <=767px and <=479px blocks above keep
-   owning phone sizes. */
 @media (max-width: 1199px) {
     .section.process-section.ps-arc .ps-arc__desc {
         line-height: 1.65;
@@ -15386,10 +14023,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* Short phones — same clipping mechanism, phone shape of it. The tallest panel is
-   620px, which clears a 375x667 iPhone SE by 29px and a 360x640 Android by 10px, so
-   anything shorter (including a phone with its browser toolbar showing) starts
-   eating the title and the last pills. Taller phones stay on the sizes above. */
 @media (max-width: 767px) and (max-height: 720px) {
     .section.process-section.ps-arc .ps-arc__title {
         font-size: 24px;
@@ -15418,53 +14051,28 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ---------- 4 & 5. dial size and marquee ----------
-   Desktop only. Below 1200px the dial lies down as a shallow horizontal arc and the
-   marquee becomes two flat rows under the copy — a different composition that none
-   of these numbers fit.
-
-   THE RULE THIS SECTION HAS: --ps-arc-r is the circle's radius, and .ps-arc__body's
-   margin-left is what keeps the copy clear of the numbers riding --ps-arc-gap
-   outside that circle. Shrink the radius without moving that margin by the same
-   amount and the copy drifts back into the numbers. Every band below therefore
-   changes both, by the same figure: 370->300 / 578->508 above 1600, and
-   320->260 / 528->468 from 1200 to 1599.
-
-   The marquee's eight source images, across all four pages, are every one of them
-   714x574 — landscape. The rules above rendered them into a ~210x234 PORTRAIT box
-   with object-fit:cover, which cut the sides off. height:auto lets each keep its own
-   aspect at full column width, so nothing is cropped.
-
-   Loop maths, which height:auto has to respect: the image list appears twice in the
-   markup and the animation moves it -50%, so ONE copy must be taller than the 100vh
-   stage or a gap flashes at the seam. A copy is 5 * (column width * 0.804 +
-   margin-bottom) — 1537px at a 360px column against a 900px viewport, 1778px at 420
-   against 1080. The duration is up from 14s only to hold the travel speed near the
-   86-101 px/s it was before, now that a copy is longer.
-
-   Column widths are 420 / 360 / 290 across the three bands. They come out of the
-   copy column, which is flex:1 in whatever the dial and the marquee leave: pushing
-   them wider narrows the copy and eventually wraps the pills onto more rows, which
-   is what caps them here rather than the layout running out of room. */
 @media (min-width: 1200px) {
     .section.process-section.ps-arc .ps-vmarquee__track img {
         height: auto;
-        /* Load-bearing, not decoration. These <img>s carry no width/height attributes
-           and are loading="lazy", so with height:auto and nothing else the browser
-           has no intrinsic ratio to work from and reserves a ZERO-height box — the
-           marquee is invisible until the bytes arrive, then snaps to full height. The
-           fixed `height: 26vh` above was what hid that. Stating the ratio reserves the
-           right box from first paint.
-           Swapping in an image of a different shape: update this ratio, or put
-           width/height attributes on the <img> and drop this line — object-fit:contain
-           below means a mismatch letterboxes rather than going back to cropping. */
         aspect-ratio: 600 /650;
         object-fit: cover;
         margin-bottom: 4vh;
+        border: 2px solid #ffffff4d;
     }
 
     .section.process-section.ps-arc .ps-vmarquee__col--up .ps-vmarquee__track {
         animation-duration: 16s;
+    }
+}
+
+.ps-vmarquee--wide .ps-vmarquee__track img {
+    aspect-ratio: 800 / 500;
+    height: auto;
+}
+
+@media (min-width: 1200px) {
+    .section.process-section.ps-arc .ps-vmarquee--wide .ps-vmarquee__track img {
+        aspect-ratio: 800 / 500;
     }
 }
 
@@ -15500,9 +14108,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* 1200-1399 is the squeezed band: the copy column is already the narrowest it ever
-   gets here, so the marquee only takes the width the shorter radius frees up rather
-   than the full step the wider bands get. */
 @media (min-width: 1200px) and (max-width: 1399px) {
     .section.process-section.ps-arc {
         --ps-arc-r: 260px;
@@ -15518,27 +14123,6 @@ a.faq-tab .faq-tab-1 p {
         margin-right: 3.5%;
     }
 }
-
-/* ================================================================================
-   "Strategy-Driven ..." — the three-card strip that follows the process arc on all
-   four service pages. .psWhy* classes, used on those four pages and nowhere else.
-
-   The card is the BLOG card, rebuilt. blog/ps-additions.css is not loaded outside
-   /blog, so .ps-card cannot be reused — the values below are copied from it.
-
-   Copied from the RIGHT rules, which is worth stating: that stylesheet declares
-   .ps-card twice. The first block (1px #ECECEC border, a soft 40px-blur lift,
-   22/24/26 padding, 1.34 title, 1.62 #6B7076 blurb) is superseded ~600 lines later
-   by a re-cut that is what actually renders — a 2px #E7E9EC border, a flat hard
-   7px offset shadow in brand yellow instead of the soft blur, even 24px padding,
-   a 1.32/-.012em title and a 1.65 #5C6167 blurb. Measured off the live card to be
-   sure. Tokens are literals here because --psb-* live in that stylesheet.
-
-   One deliberate departure: .ps-card__media is `object-fit: cover` on a photo,
-   which would crop these illustrations. They are line art with their own margins,
-   so the media box is `contain` on white instead of cover on grey. Everything
-   else is the blog card.
-   ================================================================================ */
 
 .psWhy__heading {
     text-align: center;
@@ -15564,10 +14148,6 @@ a.faq-tab .faq-tab-1 p {
         border-color .34s linear;
 }
 
-/* The blog's "flat hard lift" — a 7px offset block of colour rather than a blur,
-   which is what keeps the poster feel. On the blog that colour is the post's
-   category (--psb-cat); with no category here it takes that variable's own
-   default, brand yellow. */
 .psWhy__card:hover {
     transform: translate(-3px, -3px);
     border-color: #0F1115;
@@ -15637,8 +14217,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* Hover is a pointer idea. On touch the lift sticks after a tap and the card sits
-   raised until something else is tapped, so it is held flat there. */
 @media (hover: none) {
 
     .psWhy__card:hover {
@@ -15652,25 +14230,6 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-/* ================================================================================
-   Our Work — the two cards on the web-design page that follow the Shipzip one:
-   Global Talent Mobility (-gts) and Lifting & Rigging (-emm). Moved here from an
-   inline block on that page; the .wdw-* classes exist on that page and nowhere
-   else, so this is the whole blast radius.
-
-   Both cards were duplicated from the Shipzip slide, so they arrived wearing its
-   .shipBGRed / .shiplogo / .home-ship — which meant restyling either one moved the
-   Shipzip card with it, and the home page's cards too, since .home-ship and
-   .shipBGRed are used there as well. Their own classes below fix that: every value
-   is per-card and changes nothing else.
-
-   The .wokImg and .compLogo rules keep those ancestors in the selector on purpose.
-   This file declares `.wokImg img` and `.compLogo img` at (0,1,1), and
-   responsive.css — which loads AFTER this file — redeclares `.wokImg img` at the
-   same weight. Dropping the ancestor would make these (0,1,0) and lose to both.
-   ================================================================================ */
-
-/* Card background. Transparent, so the artwork below is the whole card. */
 .wdw-card-gts {
     background-color: transparent;
 }
@@ -15679,8 +14238,6 @@ a.faq-tab .faq-tab-1 p {
     background-color: transparent;
 }
 
-/* Logo. Both cards still carry the Shipzip wordmark — when the real marks arrive,
-   size each one here. */
 .compLogo img.wdw-logo-img {
     width: 149px;
     object-fit: contain;
@@ -15704,7 +14261,6 @@ a.faq-tab .faq-tab-1 p {
     border-radius: 5px;
 }
 
-/* Artwork: full-bleed, filling the card. */
 .wokImg img.wdw-img-gts,
 .wokImg img.wdw-img-emm {
     position: absolute;
@@ -15714,16 +14270,6 @@ a.faq-tab .faq-tab-1 p {
     height: 100%;
 }
 
-/* The ladder below came across from .home-ship, whose vertical offset is retuned at
-   fourteen breakpoints in responsive.css — every one of them written for the Shipzip
-   artwork and its `bottom: -75px` + scale(1.1) treatment. It is kept verbatim so
-   this move changed nothing.
-
-   NOTE it no longer agrees with the rule above. Against a full-bleed `bottom: 0;
-   height: 100%` image, a negative `bottom` pushes the whole box below the card:
-   at 1440 the artwork sits 42px low, leaving a strip of empty card along the top
-   and clipping 42px off the artwork's bottom. If the full-bleed fill is the
-   intention at every width, delete every block from here to the end of this file. */
 @media only screen and (max-width:1800px) {
 
     .wokImg img.wdw-img-gts,

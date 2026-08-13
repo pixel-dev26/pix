@@ -1293,7 +1293,6 @@
         margin-right: 0
     }
 
-
     .navbar {
         width: 93%
     }
@@ -1926,11 +1925,6 @@
         font-size: 80px
     }
 
-    /* Was 87vh, which left almost no headroom for the scroll-grow effect
-       in index.html (its rest-state height was already ~87% of the
-       viewport, so the height-based scale cap came out to ~1.02x - a
-       basically invisible amount of growth). 70vh leaves real room to
-       grow while still keeping the video prominent at rest. */
     .video-container {
         height: 70vh
     }
@@ -2145,11 +2139,6 @@
         right: 901px
     }
 
-    /* Was 50px. That's not enough clearance above the section for the
-       scroll-grow effect's peak scale to not visually overlap
-       .brand-slider right above it - measured a real ~15px overlap at
-       1599px width. 100px (matching the desktop default) gives the same
-       breathing room desktop already has. */
     section.video-banner {
         padding-top: 141px
     }
@@ -2898,8 +2887,6 @@
         line-height: 1.3
     }
 
-    /* Same reasoning as the 1600px breakpoint above: 78vh left the
-       scroll-grow effect almost no room to work with. */
     .video-container {
         height: 65vh
     }
@@ -6349,7 +6336,6 @@
 
 @media only screen and (max-width:991px) {
 
-
     .bg-pattern-abt .main-title,
     .case-study-overview .hero__content_Inner h1.main-title {
         text-align: center !important
@@ -8562,6 +8548,10 @@
         width: 322px !important;
     }
 
+    .main-title .textture-text {
+        font-size: 40px;
+    }
+
     .section.ourWork {
         padding-bottom: 90px;
     }
@@ -8658,7 +8648,7 @@
     .padding-none,
     .section.testimonialWrapper,
     .strat-dev {
-        /* padding-top: 0 */
+
     }
 
     .contactPageWrapper {
@@ -10318,13 +10308,6 @@
         width: 83px
     }
 
-    /* Testimonial byline stacks on phones: name, then role, then the client
-       logo on a line of its own. .pix-holder is a flex row everywhere else
-       (main.css), which puts the logo alongside "... Manager at" — fine at
-       width, tight here once the longer roles are in play ("Senior Product
-       Manager at" is 231px of the ~308px column before the logo starts). The
-       name above is left-aligned, so flex-start keeps all three flush left
-       rather than leaving the logo centred under the text. */
     .pix-holder {
         flex-direction: column;
         align-items: center;

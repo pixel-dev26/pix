@@ -427,6 +427,162 @@
   }
 }
 
+/* --------------------------------------------------------------------- B8b --
+   our-work.html, Video Studio tab — the case-study card with a film where the
+   still normally goes.
+
+   The card keeps .casestudy-Bx, so it lands in the same grid with the same
+   background, clipping and content padding as the cards in the other four tabs.
+   It adds .psv-card + data-psv, which is what ps-video-reel.js binds to, so the
+   play/stop behaviour, the one-at-a-time rule and the deferred download are the
+   reel's, not a second implementation. our-work.html already loaded that script.
+
+   Only two things need saying here, and they are the two places the components
+   disagree:
+
+   - Shape. .psv-card__play/__video are 16:9 for the Video Studio reel. The case
+     cards are 493x380 stills, so the tile takes that ratio instead and drops the
+     reel's 14px radius, which .casestudy-Bx is already doing on the outside.
+   - The affordance. The reel is a bare circle; this is a pill carrying the word
+     Play, per the brief. currentColor on the triangle means the hover state only
+     has to change the pill.
+   ========================================================================== */
+
+.case-video .psv-card__play {
+  aspect-ratio: 493 / 380;
+  border-radius: 0;
+}
+
+.case-video__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: #000;
+  color: #fdb914;
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  border: 2px solid #ffffff57;
+  box-shadow: 0 0 3px #fdb914, 0 0 20px #fdb914, 0 0 40px #fdb914;
+}
+
+/* The mark is an inline <svg> whose path is fill:currentColor, so the pill's
+   `color` drives the label and the triangle together and the hover state only
+   has to change one property. 14px against a 13px label: the glyph reads as
+   optically level with the cap height rather than sitting proud of it. */
+.case-video__icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+  color: inherit;
+}
+
+.case-video__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Size, leading and colour are restated here rather than inherited from the
+   pill, because the theme carries blanket `li, p, span` rules — `font-size:
+   18px; line-height: 2` with three responsive overrides, and `color: #000` —
+   and a type selector beats inheritance however specific the parent is. Left
+   alone this label came out 18px/36px, which made a 60px pill instead of 39px,
+   and black, which on a black pill is nothing at all. `inherit` rather than a
+   literal so the hover inversion keeps working from one place. */
+.case-video__label {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: inherit;
+}
+
+/* Hover inverts the pill rather than tinting it: the same two colours, swapped,
+   so the hovered state is unmistakable without introducing a third. */
+.case-video .psv-card__play:hover .case-video__cta,
+.case-video .psv-card__play:focus-visible .case-video__cta {
+  background: #fdb914;
+  color: #000;
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+/* ---- the popup ----
+   Bootstrap's .modal-content is a white sheet with a border and radius, which is
+   a frame around a film rather than a film. This strips it to the video itself,
+   with the close control outside the top-right corner. */
+.psvm__content {
+  position: relative;
+  background: transparent;
+  border: 0;
+}
+
+.psvm__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  background: #000;
+}
+
+.psvm__close {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #000;
+  color: #fdb914;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.psvm__close:hover,
+.psvm__close:focus-visible {
+  background: #fdb914;
+  color: #000;
+}
+
+/* Under ~430px the control has nowhere to sit above the dialog once Bootstrap's
+   own margin is accounted for, so it moves inside the frame. */
+@media (max-width: 429.98px) {
+  .psvm__close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-video__cta {
+    transition: none
+  }
+
+  .case-video .psv-card__play:hover .case-video__cta,
+  .case-video .psv-card__play:focus-visible .case-video__cta {
+    transform: translate(-50%, -50%)
+  }
+}
+
 /* --------------------------------------------------------------------- B9 --
    Homepage showreel: the grown video's bottom corners were being painted over,
    so the 20px border-radius vanished along the bottom edge.
