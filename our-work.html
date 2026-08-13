@@ -2038,18 +2038,28 @@
                                                              one video element and zero bytes of film downloaded until
                                                              somebody actually clicks Play.
 
-                                                             PLACEHOLDER ASSETS. The three posters all point at
-                                                             video-studio-poster.jpg and the three data-src paths name
-                                                             files that do not exist yet. Swap in the real thumbnail per
-                                                             card and upload the three .mp4s to the server — they are
-                                                             gitignored like every other video here, so they will never
-                                                             arrive via a push. -->
+                                                             PLACEHOLDER ASSETS, all three cards. The posters point at
+                                                             video-studio-poster.jpg, and data-ps-video points at
+                                                             showreel-teaser.mp4 — a stand-in, deliberately the same
+                                                             file on all three, so it cannot be mistaken for finished
+                                                             work. It was chosen because it is small (656K) and index
+                                                             .html already ships it, so it is the one film known to be
+                                                             on the server.
+
+                                                             The intended files, per card, are named in the commit and
+                                                             below:
+                                                               1  work-contractor-loyalty.mp4
+                                                               2  work-ai-quick-commerce.mp4
+                                                               3  work-trailer-cut.mp4
+                                                             Videos are gitignored here, so those three have to be
+                                                             uploaded to the server by hand — a push will never carry
+                                                             them. Point data-ps-video at each one as it lands. -->
                                                         <div class="row custom-padding-case-1">
                                                             <div class="col-xl-4 col-lg-6 col-md-6 all video">
                                                                 <div class="casestudy-Bx case-video">
                                                                     <button type="button"
                                                                         class="psv-card__play case-video__play"
-                                                                        data-ps-video="assets/videos/work-contractor-loyalty.mp4"
+                                                                        data-ps-video="assets/videos/showreel-teaser.mp4"
                                                                         data-ps-poster="assets/images/video-studio-poster.jpg"
                                                                         data-ps-title="Turning a Contractor Loyalty Programme into a Story Worth Watching"
                                                                         aria-label="Play: Turning a Contractor Loyalty Programme into a Story Worth Watching">
@@ -2094,7 +2104,7 @@
                                                                 <div class="casestudy-Bx case-video">
                                                                     <button type="button"
                                                                         class="psv-card__play case-video__play"
-                                                                        data-ps-video="assets/videos/work-ai-quick-commerce.mp4"
+                                                                        data-ps-video="assets/videos/showreel-teaser.mp4"
                                                                         data-ps-poster="assets/images/video-studio-poster.jpg"
                                                                         data-ps-title="Bringing AI-Generated Motion to the Quick-Commerce Scroll"
                                                                         aria-label="Play: Bringing AI-Generated Motion to the Quick-Commerce Scroll">
@@ -2129,7 +2139,7 @@
                                                                 <div class="casestudy-Bx case-video">
                                                                     <button type="button"
                                                                         class="psv-card__play case-video__play"
-                                                                        data-ps-video="assets/videos/work-trailer-cut.mp4"
+                                                                        data-ps-video="assets/videos/showreel-teaser.mp4"
                                                                         data-ps-poster="assets/images/video-studio-poster.jpg"
                                                                         data-ps-title="Cutting a Trailer That Sells the Story in Under a Minute"
                                                                         aria-label="Play: Cutting a Trailer That Sells the Story in Under a Minute">
@@ -2196,6 +2206,12 @@
                     </button>
                     <h2 class="visually-hidden" id="psWorkVideoTitle">Video</h2>
                     <video class="psvm__video" controls="" playsinline="" preload="none"></video>
+                    <!-- Shown by ps-work-video.js only when the element reports an
+                         error. A film that 404s otherwise opens a black rectangle
+                         with working controls and no explanation, which reads as
+                         "the site is broken" rather than "this file is not on the
+                         server yet". -->
+                    <p class="psvm__error" hidden="">This film is not available yet.</p>
                 </div>
             </div>
         </div>

@@ -6341,6 +6341,16 @@
         text-align: center !important
     }
 
+    .mh-section .mh-card {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../images/home-ban-texture.png);
+        background-size: cover;
+        width: 100%;
+        background-position: 30% 39%;
+        background-repeat: no-repeat;
+    }
+
     .service-panel {
         align-items: flex-end;
     }
@@ -8647,9 +8657,7 @@
 
     .padding-none,
     .section.testimonialWrapper,
-    .strat-dev {
-
-    }
+    .strat-dev {}
 
     .contactPageWrapper {
         padding: 120px 0 60px

@@ -25,13 +25,29 @@
 
   var video = modalEl.querySelector('.psvm__video');
   var title = modalEl.querySelector('#psWorkVideoTitle');
+  var failed = modalEl.querySelector('.psvm__error');
   var modal = new window.bootstrap.Modal(modalEl);
+
+  // A missing file is the failure mode this feature actually has — the films are
+  // gitignored and uploaded by hand, so a card can easily point at something the
+  // server has not been given yet. Left alone the element renders a black
+  // rectangle with working controls and says nothing, which is indistinguishable
+  // from a broken site. Say which it is.
+  video.addEventListener('error', function () {
+    if (failed) failed.hidden = false;
+    video.hidden = true;
+  });
 
   for (var i = 0; i < triggers.length; i++) {
     triggers[i].addEventListener('click', function (event) {
       var button = event.currentTarget;
       var src = button.getAttribute('data-ps-video');
       if (!src) return;
+
+      // Clear the previous open's failure before showing this one, or one dead
+      // card leaves the message up over every card opened after it.
+      if (failed) failed.hidden = true;
+      video.hidden = false;
 
       video.setAttribute('src', src);
       var poster = button.getAttribute('data-ps-poster');
