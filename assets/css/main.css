@@ -2322,7 +2322,7 @@ a.pxp-results-card-1 {
    reads clearly against .bg-img-new's dark photo background while still
    standing apart from the white testimonial copy below it. */
 .testimonialWrapper .section-title {
-    color: var(--color-1);
+    color: #ee3d41;
     margin-bottom: 20px;
 }
 
@@ -11675,10 +11675,11 @@ a.faq-tab .faq-tab-1 p {
        into one box.
 
    Both are gone, and so is the split: one markup structure, one behaviour, on
-   every device. The four cards are position:sticky, each pinned a little lower
-   than the one before (--svc-step), so as you scroll each card slides up and
-   parks over the last while a thin accented edge of every earlier card stays on
-   screen. The browser composites that on its own scroll thread — nothing to
+   every device. The four cards are position:sticky, each pinned lower than the
+   one before (--svc-step), so as you scroll each card slides up and parks over
+   the last while a strip of every earlier card stays on screen — above 992px
+   that strip is deep enough to hold the card's own title, so the deck assembles
+   into a run of labelled bars; below it, a thin edge. The browser composites that on its own scroll thread — nothing to
    keep in sync, nothing to throttle, no listener to debounce — which is what
    makes it smooth on a phone and not just on a desktop. It is also correct with
    JavaScript switched off entirely.
@@ -11703,20 +11704,56 @@ a.faq-tab .faq-tab-1 p {
        of --svc-pin below clears that plus a margin. */
     --svc-pin: 96px;
 
-    /* How much lower each following card parks than the one before it. This
-       value IS the visible stacked edge: 16px of card 1 shows above card 2,
-       16px more above card 3, and so on — which is how you can see, at a
-       glance, how many cards are behind the one you are reading. */
-    --svc-step: 16px;
+    /* How much lower each following card parks than the one before it, which
+       makes this value the visible strip of every already-covered card.
+
+       94px is not a round number by accident. .svc-card__body opens with 44px
+       of padding and .svc-card__title is a 37.8px line box, so the title ends
+       82px into the card and 94 leaves 12px of air under it. A covered card
+       therefore keeps its own title bar on screen — Creative Retainer's yellow
+       band sitting above Website & eCommerce's red one — instead of the 16px
+       sliver of bare artwork this used to be. Move the body padding or the
+       title size and this has to move with them, or the strip cuts the text.
+
+       Desktop only. Below 992px .svc-card__body is bottom-aligned (the art is
+       portrait there), so a top strip would show no title whatever its height,
+       and those cards are already near-full-height with nothing to give up.
+       Both narrow bands keep their slivers. */
+    --svc-step: 94px;
 
     /* Flow gap between cards. Doubles as each card's scroll travel. */
     --svc-gap: 30px;
 
     --svc-radius: 26px;
-    --svc-card-h: clamp(400px, 54vh, 500px);
+
+    /* Whatever is left under the deepest pin — which is what the old
+       clamp(400px, 54vh, 500px) can no longer be. Three 94px strips reserve
+       282px, and a fixed 400px card on top of that overruns a 720px viewport
+       by 58. So the card takes the remaining room and the assembled deck ends
+       16px above the fold, the same "fit the viewport" rule the <=991 band
+       already follows, with this band's numbers:
+            720px tall  ->  326px card, deck bottom 704
+            800px tall  ->  406px card, deck bottom 784
+           1080px tall  ->  500px card (the cap), deck bottom 878
+       The 300px floor clears the tallest card content (271px: title, four
+       bullets, both paddings) by 29px, and is only reached below a ~690px
+       viewport — where the rule under this one has already dropped the strips
+       back to slivers anyway. */
+    --svc-card-h: clamp(300px, calc(100vh - var(--svc-pin) - var(--svc-step) * 3 - 16px), 500px);
 
     /* Fallback only; each card overrides it with its own accent below. */
     --svc-accent: #FDB914
+}
+
+/* Short desktop windows. A 1366x768 laptop is ~640px of viewport once the
+   browser chrome is off, and three title bars plus a card tall enough to read
+   needs ~676px. Under that the strips go back to the old sliver rather than
+   shrinking to some height that slices the titles in half — binary on purpose:
+   a title bar either shows completely or it does not show at all. */
+@media (min-width: 992px) and (max-height: 689px) {
+    .svc-stack {
+        --svc-step: 16px
+    }
 }
 
 /* ------------------------------------------------------------------ heading */
@@ -11758,13 +11795,22 @@ a.faq-tab .faq-tab-1 p {
    instead of holding its pin for a beat like the three before it.
 
    Sized by measurement, not taste. Cards 1-3 each hold the frame for the length
-   of one card plus one gap (430px at a 1280x720 desktop) before the next one
+   of one card plus one gap (356px at a 1280x720 desktop) before the next one
    covers them. Card 4 has nothing after it, so its hold is exactly the tail
-   minus the ~48px at the end where all four converge and leave together. At
-   12vh that came to 150px — the last card was gone almost as soon as it landed.
-   34vh gives it ~220px, which is one comfortable flick: long enough to read as
-   an ending rather than an interruption. Nothing is hidden during it; the
-   assembled deck is pinned on screen for the whole tail. */
+   minus the run at the end where all four converge and leave together. At 12vh
+   that came to 150px — the last card was gone almost as soon as it landed. 34vh
+   gives it ~220px, which is one comfortable flick: long enough to read as an
+   ending rather than an interruption. Nothing is hidden during it; the assembled
+   deck is pinned on screen for the whole tail.
+
+   The convergence does NOT come out of that hold, which is worth knowing before
+   anyone adjusts this. Every card unpins when the container's bottom reaches its
+   own pin plus its height, and card 4 has the deepest pin, so card 4 always goes
+   first and the four stay exactly assembled for the full length of the tail —
+   measured at 530px of scroll against a 540px tail. The collapse runs 3 x
+   --svc-step AFTER that, one card unpinning every --svc-step, so raising the
+   step to 94px above 992px lengthened the exit from 48px to 282px of scroll but
+   took nothing off the hold. That is why this stayed at 34vh. */
 .svc-stack__deck::after {
     content: "";
     display: block;
@@ -11778,6 +11824,11 @@ a.faq-tab .faq-tab-1 p {
     top: var(--svc-pin);
     display: block;
     height: var(--svc-card-h);
+    /* Same pair of declarations as the <=991 band, for the same reason: svh is
+       measured with the browser chrome showing, and an unknown unit invalidates
+       only its own declaration, so the vh line above (via --svc-card-h) is the
+       fallback for engines that do not know it. */
+    height: clamp(300px, calc(100svh - var(--svc-pin) - var(--svc-step) * 3 - 16px), 500px);
     border-radius: var(--svc-radius);
     overflow: hidden;
     background-color: #0b0b0f;
@@ -11833,10 +11884,12 @@ a.faq-tab .faq-tab-1 p {
 /* The 4px accent bar that used to run along each card's top edge
    (.svc-card::after) was removed by request. Nothing marks the boundary between
    a card and the one it is covering now — the box-shadows went earlier, and
-   that bar was what replaced them. What is left of an already-covered card is a
-   --svc-step strip of its own artwork butting straight against the next card's
-   artwork, so how well the stack reads depends entirely on the two images
-   having different tones where they meet.
+   that bar was what replaced them. It matters less than it did: above 992px
+   what is left of a covered card is a --svc-step strip carrying that card's own
+   title, so the seam is read from the type rather than from a tone change.
+   Below 992px the strip is still bare artwork butting against the next card's
+   artwork, and there the stack only reads if the two images differ in tone
+   where they meet.
 
    z-index 4 is now unused; the layers in play are media 0, video 1, the Video
    Studio band 2, and .svc-card__body 3. */
@@ -12589,6 +12642,13 @@ a.faq-tab .faq-tab-1 p {
 
 .mh-section .mh-badge--mr .mh-badge__box {
     color: #44BDAD;
+}
+
+/* Pixel Street's own chip. Brand yellow rather than the default --psb-ink, so
+   the centre badge's pulse reads as ours and not as a fifth tool. Keep in step
+   with .mh-rail__item--brand, the phone rail's copy of this chip. */
+.mh-section .mh-badge--bc .mh-badge__box {
+    color: var(--psb-yellow);
 }
 
 .mh-section.is-in .mh-badge__box {
@@ -13925,7 +13985,7 @@ a.faq-tab .faq-tab-1 p {
     }
 
     .mh-section .mh-rail__item--brand {
-        color: var(--psb-ink);
+        color: var(--psb-yellow);
     }
 
     /* Flow is the one chip with a black background: flow.png is a solid black

@@ -255,44 +255,28 @@
   height: auto;
 }
 
-/* Reordered to copyright, logo, links.
+/* Bar order: logo, copyright, links.
    ---------------------------------------------------------------------------
-   Done in CSS rather than by moving the markup, and that is deliberate on two
-   counts.
+   That is the source order of the three children on all 169 pages that carry
+   this bar (verified), so there is nothing to reorder — the `order:-1` that
+   used to pull the copyright in front of the logo is gone, and with it the
+   `justify-self:center` that centred the logo while it sat in the flexible
+   middle track. Do not reintroduce either: visual order now matches DOM order,
+   which is what keeps tab order honest under WCAG 2.4.3 for free.
 
-   1. Reach. 169 pages carry this bar and all of them load this file, so one
-      rule reorders every one of them. Editing the markup would be 169 identical
-      hand-edits with 169 chances to miss one or typo it.
-
-   2. Focus order. Reordering with `order` normally breaks WCAG 2.4.3, because
-      tab order follows the DOM while the eye follows the visual order. That
-      does not apply here, and only because of WHICH element moves: .psf__copy
-      is a <p> and cannot be focused. The two focusable things in this bar — the
-      logo link and the three legal links — keep their DOM order relative to
-      each other, so tabbing still runs left to right exactly as it looks.
-      If the logo or the nav ever needs to move instead, reorder the MARKUP;
-      do not extend this trick to them.
-
-   The grid is `auto 1fr auto` and auto-placement fills it in order, so with the
-   copy pulled first the tracks now read: copy in auto, logo in 1fr, nav in
-   auto. text-align:center was doing the centring while the copy sat in the
-   flexible middle track; now that the logo lives there, justify-self on the
-   brand does that job and the copy goes left. */
-.psf__legal .psf__copy {
-  order: -1;
-}
-
-.psf .psf__brand {
-  justify-self: center;
-}
-
+   The grid is `auto 1fr auto` filled in source order, so the tracks read: logo
+   in auto, copyright in the flexible 1fr, nav in auto. The copy is centred in
+   that middle track by text-align below — the same job justify-self was doing
+   for the logo before — so the bar reads logo left, copyright centred, links
+   right. If the copyright should instead sit tight against the logo, the one
+   change is text-align:left here. */
 .psf .psf__copy {
   margin: 0;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
   color: var(--psf-muted);
-  text-align: left;
+  text-align: center;
 }
 
 .psf .psf__legal-nav ul {
@@ -408,22 +392,18 @@
     padding-top: 24px;
   }
 
-  /* The stack follows the same copyright, logo, links order as the wide bar, so
-     the footer does not reshuffle itself as the screen narrows. It used to run
-     logo, links, copyright — the two explicit `order` values that produced that
-     are gone, which lets the base order:-1 on the copy through and returns the
-     nav to source order behind the logo.
+  /* The stack follows the same logo, copyright, links order as the wide bar, so
+     the footer does not reshuffle itself as the screen narrows. No `order`
+     values anywhere in this bar now — source order carries both layouts.
 
-     justify-self is reset to start because the base rule centres the brand in
-     the flexible middle track of the wide layout. Here the grid is a single 1fr
-     column with justify-items:start, so an inherited `center` would leave the
-     logo floating in the middle of an otherwise left-aligned stack. */
+     text-align is the one thing that does differ: centred is right for the wide
+     bar, where the copyright sits in a flexible track between two anchored
+     items, and wrong here, where it would be the only centred line in a
+     left-aligned column. (The brand needs no justify-self reset — the base rule
+     that centred it is gone, and this grid is a single 1fr column with
+     justify-items:start.) */
   .psf .psf__copy {
     text-align: left;
-  }
-
-  .psf .psf__brand {
-    justify-self: start;
   }
 
   .psf .psf__brand img {
