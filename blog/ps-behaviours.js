@@ -77,6 +77,32 @@
     sync();
   }
 
+  // --- TOC: stop pinning it when it does not fit ---------------------------
+  // The panel used to cap its own height and scroll inside itself, which is now
+  // gone — it is as tall as its contents. That is fine while it fits, but these
+  // lists run long: the median post has 23 entries and the longest has 40, which
+  // is 2125px against a 690px slot on an 800px-tall window. A sticky element
+  // taller than its slot pins its top and leaves the rest below the fold with no
+  // way to reach it, since the page scroll no longer moves it.
+  //
+  // So measure, and give up the pinning when it cannot pay for itself: a tall
+  // TOC scrolls away with the article like any other block, and every entry is
+  // reachable. Nothing here runs below 992px, where the CSS already makes the
+  // panel static and collapsible.
+  var toc = document.querySelector('.ps-toc');
+  if (toc) {
+    var fitTimer = null;
+    var fitToc = function () {
+      // 130 = the 110px sticky offset plus a small breathing margin.
+      toc.classList.toggle('is-tall', toc.scrollHeight > window.innerHeight - 130);
+    };
+    fitToc();
+    window.addEventListener('resize', function () {
+      if (fitTimer) clearTimeout(fitTimer);
+      fitTimer = setTimeout(fitToc, 150);
+    }, { passive: true });
+  }
+
   // --- mobile Services accordion -------------------------------------------
   var drops = document.querySelectorAll('.nav-item-link.mobile-drop');
   Array.prototype.forEach.call(drops, function (el) {

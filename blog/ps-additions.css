@@ -41,8 +41,7 @@
   font-size: clamp(23px, calc(17.72px + 1.408vw), 38px);
   line-height: 1.24;
   letter-spacing: -0.02em;
-  margin: 2.6em 0 0.68em;
-  /* 3.82:1 — was 2/0.55 = 3.64:1 */
+  margin: 1.6em 0 0.68em;
 }
 
 .blog-content h3 {
@@ -71,7 +70,7 @@
 
 .blog-content p,
 .blog-content li {
-  font-size: clamp(16px, calc(15.3px + 0.188vw), 18px);
+  font-size: clamp(16px, calc(15.3px + 0.188vw), 16px);
   line-height: 1.8;
   /* was a fixed 40px on 16px copy — 2.5, far too loose */
   letter-spacing: 0;
@@ -132,7 +131,8 @@
 .blog-content img {
   max-width: 100%;
   height: auto;
-  margin: .5em 0 1.5em
+  margin: .5em 0 1.5em;
+  width: 100%;
 }
 
 .blog-content h2+*,
@@ -203,6 +203,10 @@
     margin-bottom: 16px
   }
 
+  .ps-related {
+    padding: 0 0 60px;
+  }
+
   .ps-crumbs__current {
     max-width: 18ch
   }
@@ -211,25 +215,31 @@
 /* ------------------------------------------------------------------------ TOC
    Left-aligned and tight. The theme's rail centres its contents, which turned
    every entry into a ragged three-line block. */
+/* No inner scroll. This used to cap at calc(100vh - 170px) with overflow-y:auto,
+   which made the panel a scroll container of its own: on the longest post that is
+   2125px of contents behind a 630px window, 1495px of it reachable only by
+   scrolling inside the box. overscroll-behavior:contain then made it worse than
+   a second scrollbar — a wheel over the panel would not fall through to the page
+   once the list hit its end, so the reader had to move the pointer off the TOC
+   to carry on reading.
+
+   The panel is now as tall as its contents and the page is the only thing that
+   scrolls. See the note under `position` below for what that costs. */
 .ps-toc {
   position: sticky;
   top: 110px;
   border-left: 2px solid #ececec;
   padding: 2px 0 2px 18px;
   margin: 0 0 28px;
-  text-align: left;
-  max-height: calc(100vh - 170px);
-  overflow-y: auto;
-  overscroll-behavior: contain
+  text-align: left
 }
 
-.ps-toc::-webkit-scrollbar {
-  width: 3px
-}
-
-.ps-toc::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
-  border-radius: 3px
+/* Set by ps-behaviours.js when the list is taller than the space a pinned panel
+   would have. Sticky only helps while the whole thing fits; past that it pins
+   the top and strands the rest below the fold, which is worse than not pinning
+   at all now that there is no inner scrollbar to reach it with. */
+.ps-toc.is-tall {
+  position: static
 }
 
 .ps-toc__title {
@@ -458,14 +468,16 @@
   }
 
   .ps-toc summary {
-    display: block;
+    display: flex;
     cursor: pointer;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: #777;
-    list-style: none
+    color: #000;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .ps-toc summary::-webkit-details-marker {
@@ -1571,6 +1583,20 @@
   gap: 26px
 }
 
+/* Keep reading carries four cards in the markup but shows three above 992px.
+   The grid is auto-fill over minmax(280px, 1fr), so the column count follows the
+   container: 3 across at desktop (measured 348px each in a 1116px grid) and 2
+   across below 992. Three cards therefore sat as a tidy row at desktop and as
+   2 + 1, with a hole, on a tablet or phone — which is what the fourth card is
+   for. Showing it at desktop would move the hole rather than close it: four
+   cards in a three-column grid is 3 + 1. So the card ships on every page and
+   this hides it exactly where it would orphan. */
+@media (min-width:992px) {
+  .ps-grid--related .ps-card:nth-child(4) {
+    display: none
+  }
+}
+
 @media (max-width:575px) {
   .ps-grid--related {
     grid-template-columns: 1fr
@@ -1762,7 +1788,7 @@
 :root:has(.ps-facts__cat[href*="/category/seo/"]) {
   --psb-cat: #FDB914;
   /* ink on fill 10.91:1 — AAA  */
-  --psb-cat-ink: #926701;
+  --psb-cat-ink: #fdb914;
   /* on white     5.04:1 — AA   */
   --psb-cat-wash: #FFF5DE;
   /* ink on wash 17.43:1 — AAA  */
@@ -1773,7 +1799,7 @@
 :root:has(.ps-facts__cat[href*="/category/ui-ux-design/"]) {
   --psb-cat: #4A90C7;
   /* ink on fill  5.49:1 — AA   */
-  --psb-cat-ink: #3574A5;
+  --psb-cat-ink: #4A90C7;
   /* on white     5.01:1 — AA   */
   --psb-cat-wash: #E0F0F9;
   /* ink on wash 16.20:1 — AAA  */
@@ -1784,7 +1810,7 @@
 :root:has(.ps-facts__cat[href*="/category/web-development/"]) {
   --psb-cat: #5FBFA8;
   /* ink on fill  8.55:1 — AAA  */
-  --psb-cat-ink: #387A6A;
+  --psb-cat-ink: #5fbfa8;
   /* on white     5.05:1 — AA   */
   --psb-cat-wash: #E5F6F4;
   /* ink on wash 16.94:1 — AAA  */
@@ -2491,7 +2517,7 @@ textarea:focus-visible,
   .ctsom-blog-pad {
     display: grid;
     grid-template-columns: clamp(200px, 23%, 264px) minmax(0, 1fr);
-    column-gap: clamp(40px, 4.6vw, 72px);
+    column-gap: clamp(40px, 4.6vw, 50px);
     margin-left: 0;
     margin-right: 0;
     /* cancel .row's -12px gutters */
@@ -3209,7 +3235,7 @@ textarea:focus-visible,
 
 /* ----------------------------------------------------------------- related */
 .ps-related {
-  padding: var(--psb-s8) 0 var(--psb-s9)
+  padding: 0 0 100px
 }
 
 .ps-related__head {
@@ -3232,7 +3258,8 @@ textarea:focus-visible,
 }
 
 .ps-grid--related {
-  gap: var(--psb-s6)
+  gap: var(--psb-s6);
+  margin-bottom: 0;
 }
 
 
@@ -3607,6 +3634,7 @@ textarea:focus-visible,
   padding-left: 44px;
   font-size: 12.5px;
   color: var(--psb-muted-2, #9a9a9a);
+  padding-right: 24px;
 }
 
 .ps-toc li.lvl-4 a::before {
@@ -3765,7 +3793,7 @@ textarea:focus-visible,
    that does not depend on the button's own styling. */
 @media (max-width: 991px) {
   .ps-toc {
-    padding-right: 64px
+    padding-right: 0
   }
 }
 

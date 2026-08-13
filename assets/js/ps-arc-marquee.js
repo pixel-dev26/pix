@@ -1,6 +1,14 @@
 /**
- * Service pages, process section — below 992px the checklist pills run as one
- * edge-to-edge marquee instead of wrapping onto three or four rows.
+ * Two strips that run as edge-to-edge marquees on narrow screens instead of
+ * wrapping onto several rows:
+ *
+ *   .ps-arc__checklist   process-section pills, all four service pages, <992px
+ *   .tech-logos-static   "Technologies We Use" logos, web design page, <768px
+ *
+ * The widths at which each one switches are CSS's business, not this file's —
+ * both get the same wrapper and the same cloned track at every width, and the
+ * media queries in main.css decide where the marquee behaviour is turned on and
+ * where the clones are hidden again.
  *
  * The markup carries one set of pills, and one set cannot loop: the moment the
  * last pill clears the left edge there is nothing behind it. So each list is
@@ -28,7 +36,7 @@
 
   var PIXELS_PER_SECOND = 55;
 
-  var lists = document.querySelectorAll('.ps-arc__checklist');
+  var lists = document.querySelectorAll('.ps-arc__checklist, .tech-logos-static');
   if (!lists.length) return;
 
   publishViewportWidth();
@@ -47,13 +55,13 @@
   }
 
   function build(list) {
-    if (list.parentElement && list.parentElement.classList.contains('ps-arc__marquee')) return;
+    if (list.parentElement && list.parentElement.classList.contains('ps-marquee')) return;
 
     var originals = list.children;
     if (!originals.length) return;
 
     var wrapper = document.createElement('div');
-    wrapper.className = 'ps-arc__marquee';
+    wrapper.className = 'ps-marquee';
     list.parentNode.insertBefore(wrapper, list);
     wrapper.appendChild(list);
 

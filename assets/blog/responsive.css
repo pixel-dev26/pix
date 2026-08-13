@@ -6664,6 +6664,21 @@
     padding-left: 0;
   }
 
+  .ps-related__head {
+    margin: 0 0 var(--psb-s6)!important;
+  }
+
+  .blog-content>p,
+  .blog-content>ul,
+  .blog-content>ol,
+  .blog-content>h2,
+  .blog-content>h3,
+  .blog-content>h4,
+  .blog-content>h5,
+  .blog-content>.answer-box {
+    max-width: 100% !important;
+  }
+
   .featuredBlk .featureContent h1 {
     margin-bottom: 0;
     color: #fff;
@@ -7566,7 +7581,7 @@
 
   .section.blogInnerDetails {
     padding-top: 104px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
   }
 
   .blog-content h2 {

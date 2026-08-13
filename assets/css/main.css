@@ -1051,7 +1051,7 @@ h3.bgText {
 }
 
 .tech-logos {
-    padding: 50px 0 100px
+    padding: 0px 0 100px
 }
 
 .tech-logos-static {
@@ -1100,17 +1100,80 @@ h3.bgText {
     height: auto
 }
 
-@media (max-width: 767px) {
+.tech-logos img.nextjs-logo {
+    width: 85%;
+    height: auto
+}
+
+.tech-logos img.sqsp-logo {
+    width: 100%;
+    height: auto
+}
+
+@media (min-width: 992px) {
+
+    .tech-logos-static .compny-logo[data-ps-clone],
+    .tech-logos .ps-marquee .tech-logos-static .compny-logo[data-ps-clone] {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
     .tech-logos-static {
         flex-wrap: wrap;
-        gap: 30px
+        gap: 36px 30px;
     }
 
     .tech-logos-static .compny-logo {
         flex: 0 0 auto;
         max-width: none;
-        width: 45%;
+        width: calc((100% - 60px) / 3);
         text-align: center;
+    }
+
+    .tech-logos-static .compny-logo[data-ps-clone] {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .tech-logos .ps-marquee {
+        width: var(--ps-vw, 100vw);
+        max-width: var(--ps-vw, 100vw);
+        margin-left: calc(50% - var(--ps-vw, 100vw) / 2);
+        overflow: hidden;
+    }
+
+    .tech-logos .ps-marquee .tech-logos-static {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        width: max-content;
+        gap: 0;
+        margin-top: 10px;
+        animation: ps-hmarquee-shift var(--ps-arc-marquee-dur, 22s) linear infinite;
+    }
+
+
+    .tech-logos .ps-marquee .tech-logos-static .compny-logo {
+        flex: 0 0 auto;
+        width: 130px;
+        max-width: none;
+        margin-right: 38px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+    .tech-logos .ps-marquee {
+        overflow-x: auto;
+    }
+
+    .tech-logos .ps-marquee .tech-logos-static {
+        animation: none;
+    }
+
+    .tech-logos .ps-marquee .tech-logos-static .compny-logo[data-ps-clone] {
+        display: none;
     }
 }
 
@@ -3737,10 +3800,10 @@ img.bottom-icon {
 }
 
 .custom-accord .accordion-body p {
-    line-height: 36px;
+    line-height: 29px;
     color: #222;
-    font-size: 18px;
-    padding: 0 20px
+    font-size: 16px;
+    padding: 0 0px;
 }
 
 .custom-accord .accordion-body h5 {
@@ -7164,6 +7227,19 @@ h4.proj-comp img {
 .compLogo img {
     height: 63px;
     width: auto
+}
+
+.quickcommWork .compLogo img {
+    height: 39px;
+    width: auto
+}
+
+.uplWork .compLogo img {
+    width: 79px;
+    height: 63px;
+    background-color: #fff;
+    padding: 11px;
+    border-radius: 5px;
 }
 
 .compLogo img.maisonLogoWork {
@@ -11479,7 +11555,7 @@ a.faq-tab .faq-tab-1 p {
     --svc-accent: #FDB914
 }
 
-@media (min-width: 992px) and (max-height: 689px) {
+@media (min-width: 1101px) and (max-height: 689px) {
     .svc-stack {
         --svc-step: 16px
     }
@@ -11688,7 +11764,7 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
 
     section.services-section {
         padding: 70px 0 0
@@ -11737,7 +11813,7 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1100px) {
     .svc-card__points {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         column-gap: 28px
@@ -11795,7 +11871,7 @@ a.faq-tab .faq-tab-1 p {
     }
 }
 
-@media (max-width: 991px) and (orientation: landscape) and (max-height: 620px) {
+@media (max-width: 1100px) and (orientation: landscape) and (max-height: 620px) {
 
     .svc-stack {
         --svc-pin: 62px;
@@ -13659,14 +13735,14 @@ a.faq-tab .faq-tab-1 p {
 }
 
 @media (max-width: 991px) {
-    .section.process-section.ps-arc .ps-arc__marquee {
+    .section.process-section.ps-arc .ps-marquee {
         width: var(--ps-vw, 100vw);
         max-width: var(--ps-vw, 100vw);
         margin-left: calc(50% - var(--ps-vw, 100vw) / 2);
         overflow: hidden;
     }
 
-    .section.process-section.ps-arc .ps-arc__marquee .ps-arc__checklist {
+    .section.process-section.ps-arc .ps-marquee .ps-arc__checklist {
         flex-wrap: nowrap;
         width: max-content;
         max-width: none;
@@ -13674,7 +13750,7 @@ a.faq-tab .faq-tab-1 p {
         animation: ps-hmarquee-shift var(--ps-arc-marquee-dur, 24s) linear infinite;
     }
 
-    .section.process-section.ps-arc .ps-arc__marquee .ps-arc__checklist li {
+    .section.process-section.ps-arc .ps-marquee .ps-arc__checklist li {
         flex: 0 0 auto;
         margin-right: 10px;
         white-space: nowrap;
@@ -13682,15 +13758,15 @@ a.faq-tab .faq-tab-1 p {
 }
 
 @media (max-width: 991px) and (prefers-reduced-motion: reduce) {
-    .section.process-section.ps-arc .ps-arc__marquee {
+    .section.process-section.ps-arc .ps-marquee {
         overflow-x: auto;
     }
 
-    .section.process-section.ps-arc .ps-arc__marquee .ps-arc__checklist {
+    .section.process-section.ps-arc .ps-marquee .ps-arc__checklist {
         animation: none;
     }
 
-    .section.process-section.ps-arc .ps-arc__marquee .ps-arc__checklist li[data-ps-clone] {
+    .section.process-section.ps-arc .ps-marquee .ps-arc__checklist li[data-ps-clone] {
         display: none;
     }
 }
@@ -13950,6 +14026,7 @@ a.faq-tab .faq-tab-1 p {
     .ps-vmarquee__col {
         width: 100%;
         overflow: hidden;
+        margin-top: 32px;
     }
 
     .ps-vmarquee__col--down {
@@ -13969,7 +14046,7 @@ a.faq-tab .faq-tab-1 p {
 
     .ps-vmarquee__track img {
         display: block;
-        width: calc(33.333vw - 12px);
+        width: calc(45.333vw - 12px);
         height: auto;
         aspect-ratio: 116 / 74;
         margin: 0 12px 0 0;
@@ -13981,7 +14058,12 @@ a.faq-tab .faq-tab-1 p {
 
 @media (max-width: 767px) {
     .ps-arc__object {
+        margin-top: 28px;
         margin-bottom: 24px;
+    }
+
+    .ps-vmarquee__track img {
+        width: calc(64vw - 12px);
     }
 
 }
@@ -14058,6 +14140,7 @@ a.faq-tab .faq-tab-1 p {
 @media (max-width: 1199px) {
     .section.process-section.ps-arc .ps-arc__desc {
         line-height: 1.65;
+        padding: 0 12px;
     }
 }
 
@@ -14444,4 +14527,8 @@ a.faq-tab .faq-tab-1 p {
 
 span.tabselect__value {
     color: #fdb914;
+}
+
+.home-client-logo {
+    padding-top: 0;
 }

@@ -2647,7 +2647,7 @@
     }
 
     .custom-accord .accordion-body {
-        padding: 10px 0 30px
+        padding: 15px 33px 20px 33px
     }
 }
 
@@ -4096,6 +4096,10 @@
 @media only screen and (max-width:1300px) {
     .navbtn-wrap {
         right: 4rem
+    }
+
+    .section.ourWork {
+        padding-bottom: 0;
     }
 
     .aboutbanSlider .abtBan .rightSlider p {
@@ -6086,6 +6090,10 @@
         padding-top: 14%
     }
 
+    .section.ourWork {
+        padding-bottom: 0;
+    }
+
     .navbtn-wrap {
         right: 46px
     }
@@ -6422,7 +6430,7 @@
     }
 
     .FaqWrapper {
-        padding: 120px 0 80px
+        padding: 60px 0 60px
     }
 
     .playbtn {
@@ -8602,8 +8610,16 @@
         font-size: 40px;
     }
 
+    .tech-logos {
+        padding: 0px 0 60px;
+    }
+
     .section.ourWork {
         padding-bottom: 90px;
+    }
+
+    .swiper-scrollbar {
+        display: block;
     }
 
     .aboutbanSlider .swiper-pagination,
