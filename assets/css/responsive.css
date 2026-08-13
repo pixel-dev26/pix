@@ -1293,6 +1293,10 @@
         margin-right: 0
     }
 
+    .section.ourWork {
+        padding-bottom: 100px;
+    }
+
     .navbar {
         width: 93%
     }
@@ -2723,7 +2727,7 @@
     .ProjectCard {
         border-radius: 20px;
         padding: 20px;
-        height: 540px;
+        height: 600px;
         overflow: hidden;
     }
 }
@@ -8539,6 +8543,19 @@
         width: 113px
     }
 
+    /* Testimonial byline stacks from here down, not just on phones: name, then
+       role, then the client logo on a line of its own. .pix-holder is a flex row
+       in main.css, which sets the logo beside "... Manager at" — that fits at
+       width, but by 991 the column has narrowed enough that the longer roles
+       ("Senior Product Manager at") leave the logo almost no room. Moved up from
+       the 767 block, which it used to sit in; that block covers everything this
+       one does, so it only needed to be in one place. */
+    .pix-holder {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px
+    }
+
     .start-img {
         position: unset;
         left: -80px;
@@ -10383,12 +10400,6 @@
 
     .logo-review-icon {
         width: 83px
-    }
-
-    .pix-holder {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px
     }
 
     .mediaWrapper p {

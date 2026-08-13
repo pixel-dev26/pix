@@ -228,7 +228,7 @@
 				spaceBetween: 30,
 			},
 			1440: {
-				slidesPerView: 3.2,
+				slidesPerView: 2.8,
 				spaceBetween: 40,
 			},
 			1660: {
@@ -351,9 +351,16 @@
 	// JavaScript for dropdown functionality
 	document.addEventListener("DOMContentLoaded", () => {
 		const navItemLink = document.querySelector(".nav-item-link");
+		if (!navItemLink) return;
 
 		// Toggle dropdown on click
 		navItemLink.addEventListener("click", (e) => {
+			// The submenu lives INSIDE .nav-item-link, so a tap on one of its links
+			// bubbles up to here and toggled the panel shut on the way out — the
+			// item never got to navigate, and all the reader saw was the dropdown
+			// snapping closed. Clicks that start inside .dropdown-mob are the
+			// submenu's own; leave them alone.
+			if (e.target.closest(".dropdown-mob")) return;
 			e.stopPropagation(); // Prevent event bubbling
 			navItemLink.classList.toggle("active");
 		});

@@ -97,8 +97,37 @@
 
   var wasOpen = null;
 
+  // Collapsed submenus keep their links focusable for the same reason the panel
+  // does: max-height:0 with overflow:hidden hides them from the eye only. So they
+  // get `inert` too — but `inert` also removes a subtree from HIT-TESTING, which
+  // makes when it is applied a correctness question rather than a nicety.
+  //
+  // This used to live inside sync(), below its early return, and that was the bug
+  // behind "the dropdown items do not work and the menu shuts instead": opening
+  // Services does not change the panel's open state, sync() returned early, and
+  // the submenu kept the `inert` it was given while collapsed. The links were
+  // visible and unclickable, and the click fell through them to the accordion
+  // header underneath, which toggled the submenu shut again.
+  //
+  // Two things keep it honest now. It runs on every sync, before any early
+  // return. And it only touches the attribute when the value actually changes —
+  // these are attribute writes inside the subtree the observer below watches, so
+  // writing unconditionally would schedule the next sync from inside this one.
+  function syncSubmenus(open) {
+    var subs = panel.querySelectorAll('.dropdown-mob');
+    for (var i = 0; i < subs.length; i++) {
+      var sub = subs[i];
+      var shown = sub.getBoundingClientRect().height > 1;
+      var wantInert = !(open && shown);
+      if (wantInert === sub.hasAttribute('inert')) continue;
+      if (wantInert) sub.setAttribute('inert', '');
+      else sub.removeAttribute('inert');
+    }
+  }
+
   function sync() {
     var open = isOpen();
+    syncSubmenus(open);
     if (open === wasOpen) return;
     wasOpen = open;
 
@@ -113,16 +142,6 @@
     } else {
       panel.setAttribute('inert', '');
       panel.setAttribute('aria-hidden', 'true');
-    }
-
-    // Collapsed submenus keep their links focusable for the same reason the panel
-    // does. max-height:0 with overflow:hidden hides them from the eye only.
-    var subs = panel.querySelectorAll('.dropdown-mob');
-    for (var i = 0; i < subs.length; i++) {
-      var sub = subs[i];
-      var shown = sub.getBoundingClientRect().height > 1;
-      if (open && shown) { sub.removeAttribute('inert'); }
-      else { sub.setAttribute('inert', ''); }
     }
 
     if (open) {
@@ -154,8 +173,19 @@
     }
   }
 
+  // subtree, not just the panel: the Services accordion is a class toggled on a
+  // .nav-item-link inside it, and that is the moment a submenu stops being
+  // collapsed. Watching only the panel meant nothing re-ran while the menu was
+  // open, which is what left the expanded submenu inert.
   new MutationObserver(schedule)
-    .observe(panel, { attributes: true, attributeFilter: ['style', 'class'] });
+    .observe(panel, { attributes: true, attributeFilter: ['style', 'class'], subtree: true });
+
+  // The submenu opens over 0.3s (max-height + opacity). schedule() settles on the
+  // next frame and again at 150ms, both of which can land while it is still under
+  // a pixel tall; this is the event that fires when it has finished arriving.
+  panel.addEventListener('transitionend', function (e) {
+    if (e.target && e.target.classList && e.target.classList.contains('dropdown-mob')) schedule();
+  });
 
   window.addEventListener('resize', schedule, { passive: true });
   if (openBtn) openBtn.addEventListener('click', function () { setTimeout(schedule, 0); });

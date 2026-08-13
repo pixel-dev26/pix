@@ -107,6 +107,10 @@
   var drops = document.querySelectorAll('.nav-item-link.mobile-drop');
   Array.prototype.forEach.call(drops, function (el) {
     el.addEventListener('click', function (e) {
+      // The submenu is inside .nav-item-link, so a tap on one of its links
+      // bubbles here and toggled the dropdown shut before the link could act on
+      // it. Clicks originating in .dropdown-mob belong to the submenu.
+      if (e.target.closest('.dropdown-mob')) return;
       e.stopPropagation();
       el.classList.toggle('active');
     });
