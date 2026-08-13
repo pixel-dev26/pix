@@ -3550,7 +3550,7 @@ img.bottom-icon {
         align-items: stretch !important
     }
 
-    .strat-dev .row > * {
+    .strat-dev .row>* {
         display: flex;
         flex-direction: column
     }
@@ -13631,7 +13631,7 @@ a.faq-tab .faq-tab-1 p {
 }
 
 .section.ourWork {
-    padding-bottom: 150px;
+    padding-bottom: 100px;
 }
 
 @media (max-width: 1599px) {
@@ -14376,3 +14376,4 @@ a.faq-tab .faq-tab-1 p {
         bottom: -6px;
     }
 }
+
