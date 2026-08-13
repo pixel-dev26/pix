@@ -10318,6 +10318,19 @@
         width: 83px
     }
 
+    /* Testimonial byline stacks on phones: name, then role, then the client
+       logo on a line of its own. .pix-holder is a flex row everywhere else
+       (main.css), which puts the logo alongside "... Manager at" — fine at
+       width, tight here once the longer roles are in play ("Senior Product
+       Manager at" is 231px of the ~308px column before the logo starts). The
+       name above is left-aligned, so flex-start keeps all three flush left
+       rather than leaving the logo centred under the text. */
+    .pix-holder {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px
+    }
+
     .mediaWrapper p {
         padding: 10px 0
     }

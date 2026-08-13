@@ -2427,7 +2427,7 @@ a.pxp-results-card-1 {
 .testi h4 {
     color: #fff;
     margin-bottom: 8px;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 29px;
     font-family: var(--font-secondary);
@@ -11355,7 +11355,8 @@ span.hotspot.dots-container-7 {
 }
 
 .whatsapp-link img {
-    max-width: 55px
+    max-width: 55px;
+    object-fit: contain;
 }
 
 .whatsapp-link {
@@ -12178,14 +12179,31 @@ a.faq-tab .faq-tab-1 p {
         height: clamp(440px, calc(100svh - 110px), 820px)
     }
 
-    /* The Video Studio band, widened. Below 992px the copy is bottom-aligned on
-       a much narrower card, so it runs to 54.4% of the width at 375px instead
-       of the 24.5% it occupies at 1280 — the desktop stops would leave the back
-       half of every bullet on bare artwork. Still a left-anchored band, just
-       one scaled to the card it is actually on. */
+    /* The Video Studio band turns through 90 degrees below 992px: it rises from
+       the bottom edge instead of running in from the left, because that is where
+       the copy went. The card is portrait in this band and .svc-card__body is
+       bottom-aligned, so a left-anchored band had to cover 56% of the width for
+       the FULL height of the frame to sit behind four bullets that only occupy
+       the bottom quarter of it — most of the picture dimmed to protect one
+       corner. Bottom-up covers the same copy and leaves the top of the frame,
+       which is the part of the footage anyone actually looks at, untouched.
+
+       The stops are px here, not the percentages the desktop band uses, and that
+       is the point of the override. What has to be covered is the copy block,
+       and that block is a fixed height whatever the card does: 207px in this
+       band (34px of padding, title, four bullets) and 177px in the 767 band
+       below. The card meanwhile ranges 440-820px tall in this band alone, so any
+       percentage that cleared the title on a 1024px-tall tablet would cut
+       straight through it on a 700px one. 230px of solid leaves ~23px above the
+       title and the fade is spent by 340px.
+
+       Everything else — the .40 black, the 6px blur, z-index 2 — is inherited
+       from the base rule unchanged. */
     .svc-card--video .svc-card__link::before {
-        --svc-band-solid: 56%;
-        --svc-band-end: 76%
+        --svc-band-solid: 230px;
+        --svc-band-end: 340px;
+        -webkit-mask-image: linear-gradient(to top, #000 0, #000 var(--svc-band-solid), transparent var(--svc-band-end));
+        mask-image: linear-gradient(to top, #000 0, #000 var(--svc-band-solid), transparent var(--svc-band-end))
     }
 
     .svc-stack__head {
@@ -12266,6 +12284,18 @@ a.faq-tab .faq-tab-1 p {
 
     .svc-card__body {
         padding: 26px 24px
+    }
+
+    /* Same bottom-up band as the 991 block, one size down, because everything
+       it has to cover shrank with it: 26px of padding instead of 34, a 25px
+       title instead of 32, 9px between bullets instead of 10. That puts the
+       copy block at 177px rather than 207, so 200px of solid keeps the same
+       ~23px of clearance above the title and the fade is spent by 300px. Only
+       the two stops are restated — the direction, the black and the blur all
+       come from the 991 rule, which still matches at this width. */
+    .svc-card--video .svc-card__link::before {
+        --svc-band-solid: 200px;
+        --svc-band-end: 300px
     }
 
     .svc-card__title {
@@ -15428,9 +15458,9 @@ a.faq-tab .faq-tab-1 p {
            Swapping in an image of a different shape: update this ratio, or put
            width/height attributes on the <img> and drop this line — object-fit:contain
            below means a mismatch letterboxes rather than going back to cropping. */
-        aspect-ratio: 714 / 574;
-        object-fit: contain;
-        margin-bottom: 2vh;
+        aspect-ratio: 600 /650;
+        object-fit: cover;
+        margin-bottom: 4vh;
     }
 
     .section.process-section.ps-arc .ps-vmarquee__col--up .ps-vmarquee__track {
