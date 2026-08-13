@@ -722,6 +722,55 @@
                                                             </button>
                                                         </li>
                                                     </ul>
+
+                                                    <!-- Below 992px the pill bar is swapped for this, not restyled
+                                                         into something pill-shaped: five uppercase labels cannot sit
+                                                         on one line on a phone at any type size worth reading.
+
+                                                         This was a native <select> first, and the open state is why it
+                                                         is not one any more — the option list is drawn by the OS, so a
+                                                         black-and-yellow control dropped a white list with a system-blue
+                                                         highlight underneath it, and no amount of CSS reaches inside.
+                                                         Bootstrap's dropdown is already on this page for the header, and
+                                                         it brings the toggle, outside-click, Escape and arrow-key
+                                                         handling with it, so the only thing left to author is the look.
+
+                                                         data-ps-tab on each item is the tab button's id.
+                                                         assets/js/ps-work-tabs.js activates that tab and keeps the
+                                                         toggle's label in step, in both directions. With the script
+                                                         absent the pills above still work and this is inert. -->
+                                                    <div class="tabselect dropdown">
+                                                        <button class="tabselect__toggle" type="button"
+                                                            id="pills-tab-toggle" data-bs-toggle="dropdown"
+                                                            aria-expanded="false" aria-label="Filter work by service">
+                                                            <span class="tabselect__value">All</span>
+                                                            <span class="tabselect__caret" aria-hidden="true"><svg
+                                                                    viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"
+                                                                    focusable="false">
+                                                                    <path d="M1 1l5 5 5-5" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                                </svg></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu tabselect__menu"
+                                                            aria-labelledby="pills-tab-toggle">
+                                                            <li><button type="button" class="tabselect__item"
+                                                                    data-ps-tab="pills-all-tab"
+                                                                    aria-current="true">All</button></li>
+                                                            <li><button type="button" class="tabselect__item"
+                                                                    data-ps-tab="pills-branding-tab">Creative
+                                                                    Retainer</button></li>
+                                                            <li><button type="button" class="tabselect__item"
+                                                                    data-ps-tab="pills-web-design-tab">Website &amp;
+                                                                    ECommerce</button></li>
+                                                            <li><button type="button" class="tabselect__item"
+                                                                    data-ps-tab="pills-dm-tab">Social
+                                                                    Campaigns</button></li>
+                                                            <li><button type="button" class="tabselect__item"
+                                                                    data-ps-tab="pills-video-tab">Video
+                                                                    Studio</button></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
 
                                                 <div class="tab-content" id="pills-tabContent-2">
@@ -2609,6 +2658,7 @@
 
     <script id="ps-video-reel" src="assets/js/ps-video-reel.js" defer=""></script>
     <script id="ps-work-video" src="assets/js/ps-work-video.js" defer=""></script>
+    <script id="ps-work-tabs" src="assets/js/ps-work-tabs.js" defer=""></script>
     <script id="ps-nav-a11y" src="assets/js/ps-nav-a11y.js" defer=""></script>
     <script id="ps-lead-source" src="assets/js/lead-source.js" defer=""></script>
     <script id="ps-machine-js">(function () {

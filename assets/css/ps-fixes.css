@@ -635,3 +635,179 @@
     padding-bottom: max(50px, 15vh)
   }
 }
+
+/* -------------------------------------------------------------------- B10 --
+   our-work.html work filter: one line from 992 to 1199, a dropdown below.
+
+   The bar is five uppercase labels in a pill, and at its base size they come to
+   more than the container gives them under 1200px — main.css lets the <ul> wrap,
+   so "Video Studio" dropped to a second line and the pill grew into a two-row
+   lozenge. Between 992 and 1199 the type and the horizontal padding come down
+   just enough to fit the row, with nowrap on the list so it cannot break again
+   and nowrap on each link so a label cannot break inside itself.
+
+   Below 992 there is no size that helps: five labels of this length will not sit
+   on one phone line at any type size worth reading, and the ~767 band's existing
+   answer — flex-nowrap plus overflow-x — hides options off the edge of a bar
+   that gives no sign it scrolls. So the pills are dropped there and the native
+   <select> in the markup takes over, which is the platform's own control: a
+   thumb-sized, scrollable, already-accessible picker. Both are always in the
+   DOM; this only chooses which one is shown, and ps-work-tabs.js keeps them
+   pointing at the same tab.
+   ========================================================================== */
+
+.tabselect {
+  display: none;
+}
+
+/* Padding is what comes down, not the type. The bar keeps the site's 14px so it
+   stays the same component it is above 1200 rather than shrinking into a smaller
+   one; only the desktop's 22px of lead-in gives way, which is what was pushing
+   the row to 910px against an 888px container and dropping "Video Studio" onto a
+   second line.
+
+   14px, measured at 992 — the tightest point of the band — with the webfont on
+   AND off, because the bar is one line by force here (flex-nowrap) and a row too
+   wide does not wrap to tell you, it just runs out past the pill and clips the
+   last item. The stack is 'Poppins', sans-serif, so the fallback is whatever the
+   platform calls sans-serif: Arial and its cousins, never anything as wide as
+   Verdana. Poppins comes to 825px against an 888px track and Arial to 853, both
+   with scrollWidth equal to clientWidth — nothing over the edge. 16px of padding
+   was the first attempt and it clears Poppins comfortably, which is exactly why
+   it is not the test worth running. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .tabdesign ul.nav.nav-pills {
+    flex-wrap: nowrap;
+  }
+
+  .tabdesign .nav-pills .nav-link {
+    padding: 5px 14px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tabdesign ul.nav.nav-pills {
+    display: none;
+  }
+
+  .tabselect {
+    display: block;
+    width: 100%;
+    margin: 0 auto 40px auto;
+  }
+
+  /* The toggle is styled as the ACTIVE PILL, not as a form field: black fill,
+     brand-yellow label, 999px radius, the same 22px of lead-in .nav-link uses
+     above 1200. It is showing what the black pill shows on desktop — the filter
+     you are on — so it should look like it, and a solid dark block on a white
+     page reads as pressable in a way a grey outlined input does not. */
+  .tabselect__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding: 15px 22px;
+    border: 0;
+    border-radius: 999px;
+    background-color: #111;
+    color: #fdb914;
+    font-family: var(--font-secondary, 'Poppins', sans-serif);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+
+  .tabselect__toggle:hover {
+    background-color: #1d1d20;
+  }
+
+  /* Offset so the ring sits on the white page rather than on the black fill,
+     where yellow on yellow-on-black would be the third yellow thing in 40px. */
+  .tabselect__toggle:focus-visible {
+    outline: 3px solid #fdb914;
+    outline-offset: 3px;
+  }
+
+  .tabselect__caret {
+    display: block;
+    flex: 0 0 12px;
+    width: 12px;
+    height: 8px;
+    transition: transform 0.25s ease;
+    color: #fdb914;
+  }
+
+  .tabselect__caret svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* The caret turning over is the whole open/closed signal — the toggle keeps
+     its fill, so without it nothing on screen distinguishes the two states. */
+  .tabselect__toggle[aria-expanded="true"] .tabselect__caret {
+    transform: rotate(180deg);
+  }
+
+  /* The menu, which is the reason this stopped being a <select>. Bootstrap's
+     .dropdown-menu ships white with a hairline border and 8px corners; all of
+     that is replaced. Full width of the toggle, the same ink as the toggle so
+     the pair reads as one object, and 20px corners against the toggle's 999 so
+     the panel reads as a surface rather than a second pill. */
+  .tabselect__menu.dropdown-menu {
+    width: 100%;
+    min-width: 0;
+    margin-top: 8px;
+    padding: 8px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #111;
+    box-shadow: 0 18px 40px rgba(17, 17, 17, 0.22);
+  }
+
+  .tabselect__item {
+    display: block;
+    width: 100%;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 14px;
+    background-color: transparent;
+    color: #fff;
+    font-family: var(--font-secondary, 'Poppins', sans-serif);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .tabselect__item:hover,
+  .tabselect__item:focus-visible {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fdb914;
+    outline: 0;
+  }
+
+  /* The filter you are already on: yellow, and given the row rather than a tick,
+     so the state is legible at a glance without adding a glyph column that the
+     other four rows would have to leave empty. */
+  .tabselect__item[aria-current="true"] {
+    background-color: #fdb914;
+    color: #111;
+  }
+
+  .tabselect__item[aria-current="true"]:hover {
+    background-color: #fdb914;
+    color: #111;
+  }
+}
