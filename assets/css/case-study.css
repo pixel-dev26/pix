@@ -104,7 +104,15 @@
    The previous shell (max-width 1350 + clamp(20px,5vw,60px) gutters) put content
    at x=102 on a 1440 viewport while every other element on the same page started
    at x=50-54. That 48px step is the single loudest "this is a different site"
-   signal on the page, and it is invisible until you scroll past the footer. */
+   signal on the page, and it is invisible until you scroll past the footer.
+
+   The ladder now stops at 1200. Bootstrap keeps climbing — the theme carries the
+   header, footer and /our-work out to 1600 — so above a 1400px viewport the case
+   study reads narrower than the furniture around it, and the left edges no longer
+   line up. That is deliberate: a case study is one column of prose between full
+   width plates, and past ~1200px the measure gets long enough to hurt more than
+   the alignment does. Only .cs-page is affected; every other page keeps the full
+   ladder. */
 .cs-page .cs-shell {
   width: 100%;
   margin-inline: auto;
@@ -135,31 +143,13 @@
   }
 }
 
-@media (min-width: 1400px) {
-  .cs-page .cs-shell {
-    max-width: 1350px
-  }
-}
-
-@media (min-width: 1600px) {
-  .cs-page .cs-shell {
-    max-width: 1500px
-  }
-}
-
-@media (min-width: 1800px) {
-  .cs-page .cs-shell {
-    max-width: 1600px
-  }
-}
-
 /* Defensive: if the SEO pass ever puts the crumb outside .cs-hero, it still
-   lands on the shell rather than on Bootstrap's own container. */
+   lands on the shell rather than on Bootstrap's own container. Capped with it. */
 .cs-page>.ps-crumbs-wrap {
   width: 100%;
   margin-inline: auto;
   padding-inline: 12px;
-  max-width: 1350px;
+  max-width: 1200px;
 }
 
 /* ------------------------------------------------------------------ rhythm
@@ -548,7 +538,8 @@
    The radius goes on the <img>, not on the <figure>, so a figcaption can never
    be clipped by the same overflow:hidden. */
 .cs-page .cs-hero__figure img,
-.cs-page .cs-band img {
+.cs-page .cs-band img,
+.cs-page .cs-band video {
   display: block;
   width: 100%;
   object-fit: cover;
@@ -1178,6 +1169,52 @@
 
 @media (max-width: 767.98px) {
   .cs-page .cs-band-4 .cs-gallery__grid {
+    grid-template-columns: 1fr
+  }
+}
+
+/* The paired plates: two verticals side by side, used twice between the prose
+   blocks on the web case studies.
+
+   Same argument as the triptych above — the row is always exactly two and reads
+   as one spread, so auto-fit is wrong for it: at the 280px minimum track it holds
+   two only down to ~600px and then drops the second one to its own line, which
+   breaks the pairing at exactly the widths where the pair is the point.
+
+   Two 760x936 verticals in the 800px shell at 768 come out 388px each, which is
+   comfortably legible. They stack below 768 for the same reason the triptych
+   does: side by side on a phone leaves each one too narrow to read. */
+@media (min-width: 768px) {
+  .cs-page .cs-gallery--pair .cs-gallery__grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cs-page .cs-gallery--pair .cs-gallery__grid {
+    grid-template-columns: 1fr
+  }
+}
+
+/* .cs-gallery--trio is the triptych rule above, addressed by what the row is
+   rather than by where it happens to sit in the page.
+
+   The .cs-band-4 selector was accurate when every case study had exactly one
+   gallery and it was always the fourth band. The rebuilt pages have two, and the
+   triptych is band 3, 4 or 5 depending on the sequence — so on those it fell back
+   to the auto-fit track and broke to 2 + 1 at the shell widths between about 800
+   and 1000px. Measured on Coca-Cola: three panels, two rows, at 927px.
+
+   Both selectors are kept: --trio for the rebuilt pages, .cs-band-4 for the ones
+   still on the original single-gallery layout. */
+@media (min-width: 768px) {
+  .cs-page .cs-gallery--trio .cs-gallery__grid {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cs-page .cs-gallery--trio .cs-gallery__grid {
     grid-template-columns: 1fr
   }
 }

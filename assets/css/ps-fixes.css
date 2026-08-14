@@ -530,10 +530,24 @@
   border: 0;
 }
 
+/* The frame is the film's shape, published by ps-work-video.js once metadata
+   lands (--psvm-ar as a ratio, --psvm-ar-num as the same thing as a number).
+   16/9 is the fallback for the moment before that and for a film that never
+   reports a size.
+
+   Width has to come off the height, not the other way round. A vertical film in
+   a dialog that is 1140px wide would be 2027px tall, so the cap is the viewport:
+   82vh of height, and the dialog is however wide that height makes it at the
+   film's ratio. min() keeps it inside modal-xl on wide screens, where a 16:9 cut
+   would otherwise want 1312px. */
+.psvm .modal-dialog {
+  max-width: min(100%, calc(82vh * var(--psvm-ar-num, 1.7778)));
+}
+
 .psvm__video {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--psvm-ar, 16 / 9);
   border-radius: 14px;
   background: #000;
 }

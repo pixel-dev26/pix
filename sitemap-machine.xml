@@ -198,4 +198,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.30</priority>
   </url>
+  <url>
+    <loc>https://pixelstreet.in/ai/case-studies/ncb-jewellers</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://pixelstreet.in/ai/case-studies/emm-corp</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://pixelstreet.in/ai/case-studies/global-talent-square</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.30</priority>
+  </url>
 </urlset>
