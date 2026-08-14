@@ -12906,7 +12906,14 @@ a.faq-tab .faq-tab-1 p {
         --mh-card-pad: 44px;
         padding: 118px var(--mh-card-pad) 56px;
 
-        --mh-line-bleed: 16.11%;
+        /* The bleed widens .mh-lines past the card and so decides where the
+           two long verticals land: 14.833% - 0.70334 x bleed of the card's
+           width, the same expression .mh-badge--tl/tr/ml/mr are pinned to, so
+           the logos ride the line they sit on. At 16.11% that worked out to
+           3.5% — 41px in on a 1160px card, with a 54px badge centred on it
+           starting 14px off the edge. 9.7% puts the line at 8% instead, far
+           enough in to clear the card padding with the logo inside it. */
+        --mh-line-bleed: 9.7%;
     }
 
     .mh-section .mh-title {
