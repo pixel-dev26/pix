@@ -1,0 +1,842 @@
+<!doctype html>
+<html class="machine" lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The VAPT Guide for 2026 — machine view | Pixel Street</title>
+  <meta name="description" content="Plain-text mirror of &quot;The VAPT Guide for 2026&quot; — the full article, 26 cited sources, structured metadata, no page furniture. Vulnerability assessment and penetration testing in 2026: OWASP Top 10:2025, PCI DSS v4.0.1, CERT-In six-hour reporting and the DPDP Rules,">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://pixelstreet.in/blog/ai/vapt-guide/">
+  <link rel="alternate" type="text/html" href="../../../blog/vapt-guide/" title="Human view">
+  <link rel="alternate" type="text/markdown" href="../../../blog/vapt-guide.md" title="Markdown source">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The VAPT Guide for 2026 — machine view | Pixel Street">
+  <meta property="og:description" content="Plain-text mirror of &quot;The VAPT Guide for 2026&quot; — the full article, 26 cited sources, structured metadata, no page furniture. Vulnerability assessment and penetration testing in 2026: OWASP Top 10:2025, PCI DSS v4.0.1, CERT-In six-hour reporting and the DPDP Rules,">
+  <meta property="og:url" content="https://pixelstreet.in/blog/ai/vapt-guide/">
+  <meta property="og:image" content="https://pixelstreet.in/blog/media/2025/01/VAPT.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="color-scheme" content="dark">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://pixelstreet.in/#organization","name":"Pixel Street","alternateName":["Pixelstreet","Pixel Street Agency"],"legalName":"Pixel Street","url":"https://pixelstreet.in/","logo":{"@id":"https://pixelstreet.in/#logo"},"image":{"@id":"https://pixelstreet.in/#logo"},"description":"Pixel Street is a creative and digital agency in Salt Lake, Kolkata. It works across brand identity, web design and development, digital marketing and video production for FMCG, D2C, education, manufacturing and corporate clients in India and abroad.","slogan":"Chasing attention is yesterday's game.","foundingDate":"2020","founder":{"@id":"https://pixelstreet.in/#khurshid-alam"},"telephone":"+919007295096","email":"info@pixelstreet.in","priceRange":"₹₹₹","contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+919007295096","email":"info@pixelstreet.in","areaServed":["India","Worldwide"],"availableLanguage":["en"]}],"address":{"@type":"PostalAddress","streetAddress":"Martin Burn Business Park, Office #900B, 9th Floor, BP Block, Sector V, Bidhannagar","addressLocality":"Kolkata","addressRegion":"West Bengal","postalCode":"700091","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":22.5726,"longitude":88.4339},"hasMap":"https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"21:00"}],"areaServed":[{"@type":"Place","name":"India"},{"@type":"Place","name":"Worldwide"}],"currenciesAccepted":"INR","knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","https://www.linkedin.com/company/pixelstreet-in/","https://www.instagram.com/pixelstreet.in/","https://www.facebook.com/offpixelstreet/","https://www.behance.net/pixelstreet_in","https://dribbble.com/pixelstreetagency"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Branding and Creative Retainer","serviceType":"Brand identity and creative retainer","url":"https://pixelstreet.in/branding-agency-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Design, Website and eCommerce","serviceType":"Web design and development","url":"https://pixelstreet.in/web-design-company-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Digital Marketing and Social Campaigns","serviceType":"Digital marketing","url":"https://pixelstreet.in/digital-marketing-agency-kolkata"}}]}},{"@type":"ImageObject","@id":"https://pixelstreet.in/#logo","url":"https://pixelstreet.in/assets/images/logo1.svg","caption":"Pixel Street"},{"@type":"WebSite","@id":"https://pixelstreet.in/#website","url":"https://pixelstreet.in/","name":"Pixel Street","publisher":{"@id":"https://pixelstreet.in/#organization"}},{"@type":"Person","@id":"https://pixelstreet.in/#khurshid-alam","name":"Khurshid Alam","jobTitle":"Founder","url":"https://pixelstreet.in/blog/author/khurshid-alam/","image":{"@type":"ImageObject","url":"https://pixelstreet.in/blog/media/2024/12/author-img-1.png"},"worksFor":{"@id":"https://pixelstreet.in/#organization"},"founderOf":{"@id":"https://pixelstreet.in/#organization"},"knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.linkedin.com/company/pixelstreet-in/"]},{"@type":"ImageObject","@id":"https://pixelstreet.in/blog/vapt-guide/#primaryimage","url":"https://pixelstreet.in/blog/media/2025/01/VAPT.jpg","inLanguage":"en-US","width":1526,"height":533},{"@type":"BreadcrumbList","@id":"https://pixelstreet.in/blog/vapt-guide/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pixelstreet.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://pixelstreet.in/blog/"},{"@type":"ListItem","position":3,"name":"WEB DEVELOPMENT","item":"https://pixelstreet.in/blog/category/web-development/"},{"@type":"ListItem","position":4,"name":"The VAPT Guide for 2026","item":"https://pixelstreet.in/blog/vapt-guide/"}]},{"@type":"WebPage","@id":"https://pixelstreet.in/blog/vapt-guide/#webpage","url":"https://pixelstreet.in/blog/vapt-guide/","name":"VAPT Guide 2026: Standards, India Compliance and Practices","datePublished":"2023-01-10T00:00:00+00:00","dateModified":"2025-04-23T13:54:46","isPartOf":{"@id":"https://pixelstreet.in/#website"},"breadcrumb":{"@id":"https://pixelstreet.in/blog/vapt-guide/#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://pixelstreet.in/blog/vapt-guide/#primaryimage"},"description":"Vulnerability assessment and penetration testing in 2026: OWASP Top 10:2025, PCI DSS v4.0.1, CERT-In six-hour reporting and the DPDP Rules, with tool ownership corrected."},{"@type":"BlogPosting","@id":"https://pixelstreet.in/blog/vapt-guide/#article","isPartOf":{"@id":"https://pixelstreet.in/blog/vapt-guide/#webpage"},"mainEntityOfPage":{"@id":"https://pixelstreet.in/blog/vapt-guide/#webpage"},"headline":"The VAPT Guide for 2026","description":"Vulnerability assessment and penetration testing in 2026: OWASP Top 10:2025, PCI DSS v4.0.1, CERT-In six-hour reporting and the DPDP Rules, with tool ownership corrected.","datePublished":"2023-01-10T00:00:00+00:00","dateModified":"2025-04-23T13:54:46","author":{"@id":"https://pixelstreet.in/#khurshid-alam"},"publisher":{"@id":"https://pixelstreet.in/#organization"},"wordCount":4334,"inLanguage":"en-US","image":{"@id":"https://pixelstreet.in/blog/vapt-guide/#primaryimage"},"articleSection":["WEB DEVELOPMENT"],"keywords":["Ultimate VAPT Guide","VAPT Guide","web design agency in kolkata","web design agency kolkata"]},{"@type":"WebPage","@id":"https://pixelstreet.in/blog/ai/vapt-guide/#webpage","url":"https://pixelstreet.in/blog/ai/vapt-guide/","name":"The VAPT Guide for 2026 — machine view","description":"Vulnerability assessment and penetration testing in 2026: OWASP Top 10:2025, PCI DSS v4.0.1, CERT-In six-hour reporting and the DPDP Rules, with tool ownership corrected.","isPartOf":{"@id":"https://pixelstreet.in/#website"},"breadcrumb":{"@id":"https://pixelstreet.in/blog/vapt-guide/#breadcrumb"},"mainEntity":{"@id":"https://pixelstreet.in/blog/vapt-guide/#article"},"isBasedOn":"https://pixelstreet.in/blog/vapt-guide/","encodingFormat":"text/plain","inLanguage":"en-US"}]}</script>
+  <style>/* ---------------------------------------------------------------------------
+   Machine view — the plain-text mirror of pixelstreet.in.
+   Canonical source. Inlined into every machine page at build time (one request,
+   no render-blocking link) and copied to the main site for the toggle on human
+   pages. Edit here, never in the generated copies.
+
+   Colour comes from the brand, not from the terminal cliche: amber #FDB914 is
+   Pixel Street's primary, and it lands at 11.6:1 on #0B0D10 — the structure is
+   readable to the same standard as the prose, which matters because in this view
+   the structure IS most of the page.
+
+   Type is uppercased only on chrome: keys, section rules, nav. Article prose
+   stays sentence case. Uppercasing 3,000 words costs a reader roughly a fifth of
+   their reading speed, and these pages carry whole articles.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --m-bg: #0b0d10;
+  --m-fg: #e8e4da;          /* prose            15.4:1 on --m-bg */
+  --m-accent: #fdb914;      /* headings, keys   11.6:1 */
+  --m-dim: #a08a4e;         /* labels, leaders   5.4:1 */
+  --m-rule: #3a3421;        /* dividers */
+  --m-hot: #ee3d41;         /* second brand colour, used for emphasis only */
+  --m-link: #fdb914;
+  --m-mono: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono",
+            "IBM Plex Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --m-measure: 96ch;
+}
+
+html.machine {
+  background: var(--m-bg);
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+html.machine body {
+  margin: 0;
+  background: var(--m-bg);
+  color: var(--m-fg);
+  font-family: var(--m-mono);
+  font-size: clamp(13px, 0.55rem + 0.45vw, 15px);
+  line-height: 1.65;
+  font-variant-ligatures: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* A CRT hint, not a CRT costume: 3% amber scanlines, fixed so they do not
+   parallax against the text. Removed entirely when the reader has asked for
+   less, and when the page is printed. */
+html.machine body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(253, 185, 20, 0.035) 0 1px,
+    transparent 1px 3px
+  );
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  html.machine body::before { display: none; }
+}
+
+.m-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--m-measure);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 2.75rem) clamp(1rem, 4vw, 2rem) 7rem;
+}
+
+/* Every link, not just the ones inside .m-body. The record blocks are mostly
+   links, and the UA default renders them blue-on-black at 2.3:1 — unreadable,
+   and worse after they are visited. One rule, no exceptions. */
+.m-wrap a,
+.m-wrap a:visited { color: var(--m-link); }
+.m-wrap a:hover,
+.m-wrap a:focus-visible { color: var(--m-hot); }
+.m-wrap a:focus-visible { outline: 2px solid var(--m-accent); outline-offset: 2px; }
+
+/* ------------------------------------------------------------------ masthead */
+
+.m-logo {
+  margin: 0 0 0.35rem;
+  color: var(--m-accent);
+  font-size: clamp(4px, 1.55vw, 11px);
+  line-height: 1.05;
+  white-space: pre;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.m-logo::-webkit-scrollbar { display: none; }
+
+.m-masthead {
+  margin: 0 0 1.35rem;
+  color: var(--m-fg);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.m-lede {
+  margin: 0 0 1.6rem;
+  max-width: 78ch;
+  color: var(--m-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* ----------------------------------------------------------------------- nav */
+
+.m-nav {
+  margin: 0 0 2.25rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5ch;
+}
+.m-nav a {
+  color: var(--m-link);
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.m-nav a[aria-current="page"] {
+  color: var(--m-bg);
+  background: var(--m-accent);
+  text-decoration: none;
+  padding: 0 0.5ch;
+}
+
+/* ------------------------------------------------------------------- section */
+
+.m-rule {
+  display: flex;
+  align-items: center;
+  gap: 1.25ch;
+  margin: 2.5rem 0 1rem;
+  color: var(--m-accent);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.m-rule::before { content: "──"; color: var(--m-rule); }
+.m-rule::after {
+  content: "";
+  flex: 1 1 auto;
+  border-top: 1px solid var(--m-rule);
+}
+
+/* ------------------------------------------------------- key / value records */
+
+.m-kv {
+  margin: 0 0 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, max-content) minmax(0, 1fr);
+  gap: 0 1.5ch;
+}
+.m-kv dt {
+  color: var(--m-dim);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 34ch;
+}
+/* Dot leaders. Long enough for the longest key in the corpus; the overflow
+   clips the rest, which is what makes every value column-align. */
+.m-kv dt::after {
+  content: " ........................................";
+}
+.m-kv dd {
+  margin: 0 0 0.1rem;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+@media (max-width: 34rem) {
+  .m-kv { grid-template-columns: minmax(0, 1fr); }
+  .m-kv dt { max-width: none; }
+  .m-kv dt::after { content: ""; }
+  .m-kv dd { margin-bottom: 0.6rem; }
+}
+
+/* ------------------------------------------------------------------- content */
+
+.m-body > * { max-width: 88ch; }
+
+.m-body p { margin: 0 0 1.15rem; }
+
+.m-body h2,
+.m-body h3,
+.m-body h4,
+.m-body h5 {
+  margin: 2rem 0 0.75rem;
+  color: var(--m-accent);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.m-body h2::before { content: "## "; color: var(--m-rule); }
+.m-body h3::before { content: "### "; color: var(--m-rule); }
+.m-body h4::before { content: "#### "; color: var(--m-rule); }
+.m-body h5::before { content: "##### "; color: var(--m-rule); }
+
+.m-body ul,
+.m-body ol { margin: 0 0 1.15rem; padding-left: 3ch; }
+.m-body li { margin: 0 0 0.3rem; }
+.m-body ul { list-style: none; padding-left: 0; }
+.m-body ul > li { padding-left: 3ch; text-indent: -3ch; }
+.m-body ul > li::before { content: "-  "; color: var(--m-dim); }
+
+.m-body a { color: var(--m-link); text-underline-offset: 3px; }
+
+.m-body blockquote {
+  margin: 0 0 1.15rem;
+  padding-left: 2ch;
+  border-left: 1px solid var(--m-rule);
+  color: var(--m-dim);
+}
+
+.m-body strong { color: var(--m-accent); font-weight: 400; }
+.m-body em { font-style: normal; color: var(--m-hot); }
+
+.m-body hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--m-rule);
+}
+
+.m-body table {
+  width: 100%;
+  margin: 0 0 1.15rem;
+  border-collapse: collapse;
+  font-size: 0.94em;
+}
+.m-body th,
+.m-body td {
+  padding: 0.3rem 1ch;
+  border: 1px solid var(--m-rule);
+  text-align: left;
+  vertical-align: top;
+}
+.m-body th { color: var(--m-accent); font-weight: 400; text-transform: uppercase; }
+
+/* Tables are the one thing that cannot be reflowed honestly, so they scroll
+   inside their own box rather than pushing the page sideways. */
+.m-scroll { overflow-x: auto; margin: 0 0 1.15rem; }
+.m-scroll table { margin: 0; }
+
+/* ---------------------------------------------------------------- list rows */
+
+.m-list { margin: 0 0 1.25rem; padding: 0; list-style: none; }
+.m-list > li { margin: 0 0 0.35rem; }
+.m-list a { color: var(--m-link); text-underline-offset: 3px; }
+.m-list .m-date { color: var(--m-dim); }
+.m-list .m-tag { color: var(--m-dim); text-transform: uppercase; white-space: nowrap; }
+
+.m-note { color: var(--m-dim); }
+.m-hot { color: var(--m-hot); }
+
+/* ------------------------------------------------------------------- toggle */
+/* @toggle:start — everything between these two markers is lifted verbatim into
+   the HUMAN pages of both properties, so it must not reference a custom property
+   declared elsewhere in this file. Hardcoded values below are deliberate.
+
+   In flow, not fixed. A floating pill follows the reader down 6,000px of article
+   and sits on top of the prose the whole way; this is a format switch, used once
+   or never, and page furniture that is used once belongs in the footer. It ships
+   in two skins because it lands on two backgrounds: the footers of both human
+   properties are white, and the machine views are near-black. */
+
+/* Selectors double the block class — `.hm-toggle .hm-toggle__opt` rather than
+   `.hm-toggle__opt`. This control is dropped into two themed footers whose own
+   rules reach it at things like `footer .container a`, and inheritance loses to
+   any direct rule: the first version came out at 16px in a 48px-tall pill because
+   the theme set a font-size and a padding on footer links. Every property those
+   rules touch is restated here at a specificity they cannot reach. */
+.hm-toggle {
+  display: inline-flex;
+  align-items: stretch;
+  vertical-align: middle;
+  padding: 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(7, 11, 16, 0.16);
+  background: transparent;
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono",
+               "IBM Plex Mono", Menlo, Consolas, monospace;
+  line-height: 1;
+}
+.hm-toggle .hm-toggle__label {
+  align-self: center;
+  margin: 0;
+  padding: 0 0.7ch 0 1ch;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.45);
+  text-transform: uppercase;
+}
+.hm-toggle .hm-toggle__opt {
+  display: block;
+  margin: 0;
+  padding: 6px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.55);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.hm-toggle a.hm-toggle__opt:hover,
+.hm-toggle a.hm-toggle__opt:focus-visible {
+  color: #070b10;
+  background: rgba(253, 185, 20, 0.32);
+}
+.hm-toggle .hm-toggle__opt[aria-current="true"] {
+  background: #0b0d10;
+  color: #fdb914;
+  font-weight: 700;
+}
+.hm-toggle a.hm-toggle__opt:focus-visible { outline: 2px solid #fdb914; outline-offset: 2px; }
+
+/* Dark skin, for the machine views' own footer. Inert on human pages, which
+   never carry .machine on <html>. */
+html.machine .hm-toggle { border-color: rgba(253, 185, 20, 0.32); }
+html.machine .hm-toggle .hm-toggle__label { color: #a08a4e; }
+html.machine .hm-toggle .hm-toggle__opt { color: #b9b3a5; }
+html.machine .hm-toggle a.hm-toggle__opt:hover,
+html.machine .hm-toggle a.hm-toggle__opt:focus-visible { color: #0b0d10; background: #fdb914; }
+html.machine .hm-toggle .hm-toggle__opt[aria-current="true"] { background: #fdb914; color: #0b0d10; }
+
+/* Where it sits is not decided here any more. On the human pages the footer gives
+   it a row of its own — `.psf__view` in assets/css/ps-footer.css — under the link
+   columns and above the legal rule. This file styles the control; the footer
+   places it. The earlier version did both, and the placement half assumed a
+   footer that no longer exists.
+
+   The two things placement must keep avoiding, recorded because both were shipped
+   once: the Terms/Privacy <ul>, whose `.footer__menu nav ul li a` rules outrank
+   anything a single class can say and rendered the pill 48px tall with an
+   invisible label; and the bottom-right corner, where the floating WhatsApp
+   button covers roughly the last 84px of the page. */
+
+@media print { .hm-toggle { display: none; } }
+/* @toggle:end */
+
+/* --------------------------------------------------------------------- foot */
+
+.m-foot {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--m-rule);
+  color: var(--m-dim);
+}
+.m-foot a { color: var(--m-link); }
+.m-foot__switch { margin: 1rem 0 0; }
+
+/* --------------------------------------------------------------------- print */
+
+@media print {
+  html.machine, html.machine body { background: #fff; color: #111; }
+  html.machine body::before { display: none; }
+  .m-logo, .m-rule, .m-body h2, .m-body h3, .m-body h4, .m-body h5,
+  .m-body strong { color: #111; }
+  .m-kv dt, .m-note, .m-foot { color: #555; }
+  .m-wrap { max-width: none; padding: 0; }
+}
+</style>
+</head>
+<body>
+<div class="m-wrap">
+  <pre class="m-logo" role="img" aria-label="Pixel Street">██████╗ ██╗██╗  ██╗███████╗██╗     
+██╔══██╗██║╚██╗██╔╝██╔════╝██║     
+██████╔╝██║ ╚███╔╝ █████╗  ██║     
+██╔═══╝ ██║ ██╔██╗ ██╔══╝  ██║     
+██║     ██║██╔╝ ██╗███████╗███████╗
+╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
+███████╗████████╗██████╗ ███████╗███████╗████████╗
+██╔════╝╚══██╔══╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝
+███████╗   ██║   ██████╔╝█████╗  █████╗     ██║   
+╚════██║   ██║   ██╔══██╗██╔══╝  ██╔══╝     ██║   
+███████║   ██║   ██║  ██║███████╗███████╗   ██║   
+╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   </pre>
+  <h1 class="m-masthead">Pixel Street :: The VAPT Guide for 2026</h1>
+  <p class="m-lede"># Plain-text mirror. Same words as the human page, minus everything a browser needed.</p>
+  <ul class="m-nav"><li><a href="../../../ai/">/ai</a></li><li><a href="../../../blog/ai/">/blog/ai</a></li><li><a href="../../../blog/vapt-guide/">human view</a></li><li><a href="../../../blog/vapt-guide.md">.md</a></li></ul>
+<h2 class="m-rule">record</h2>
+<dl class="m-kv"><dt>Title</dt><dd>The VAPT Guide for 2026</dd><dt>URL</dt><dd><a href="../../../blog/vapt-guide/">https://pixelstreet.in/blog/vapt-guide/</a></dd><dt>Markdown</dt><dd><a href="../../../blog/vapt-guide.md">https://pixelstreet.in/blog/vapt-guide.md</a></dd><dt>Author</dt><dd>Khurshid Alam</dd><dt>Published</dt><dd>2023-01-10</dd><dt>Updated</dt><dd>2025-04-23</dd><dt>Categories</dt><dd>[WEB DEVELOPMENT]</dd><dt>Tags</dt><dd>[Ultimate VAPT Guide] [VAPT Guide] [web design agency in kolkata] [web design agency kolkata]</dd><dt>Words</dt><dd>4,334</dd><dt>Read time</dt><dd>20 min</dd><dt>Cited sources</dt><dd>26</dd><dt>Publisher</dt><dd>Pixel Street, Kolkata, India</dd></dl>
+<h2 class="m-rule">summary</h2>
+<div class="m-body"><p>Vulnerability assessment and penetration testing in 2026: OWASP Top 10:2025, PCI DSS v4.0.1, CERT-In six-hour reporting and the DPDP Rules, with tool ownership corrected.</p></div>
+<h2 class="m-rule">contents</h2>
+<ul class="m-list"><li><a href="#the-short-answer">The Short Answer</a></li><li><a href="#the-india-compliance-clock">The India Compliance Clock</a></li><li>&nbsp;&nbsp;<a href="#cert-in-six-hours-and-180-days-of-logs-held-in-india">CERT-In: six hours, and 180 days of logs held in India</a></li><li>&nbsp;&nbsp;<a href="#dpdp-act-2023-and-the-dpdp-rules-2025">DPDP Act 2023 and the DPDP Rules 2025</a></li><li>&nbsp;&nbsp;<a href="#pci-dss-v401-only-and-every-requirement-is-live">PCI DSS: v4.0.1 only, and every requirement is live</a></li><li>&nbsp;&nbsp;<a href="#isoiec-270012022-the-transition-is-over">ISO/IEC 27001:2022: the transition is over</a></li><li><a href="#vulnerability-assessment-finding-what-is-weak">Vulnerability Assessment: Finding What Is Weak</a></li><li>&nbsp;&nbsp;<a href="#the-four-types-worth-naming">The four types worth naming</a></li><li>&nbsp;&nbsp;<a href="#the-lifecycle">The lifecycle</a></li><li><a href="#penetration-testing-finding-what-is-exploitable">Penetration Testing: Finding What Is Exploitable</a></li><li>&nbsp;&nbsp;<a href="#black-white-and-grey-box">Black, white and grey box</a></li><li>&nbsp;&nbsp;<a href="#the-methodology">The methodology</a></li><li><a href="#va-vs-pt-the-difference-that-costs-money">VA vs PT: The Difference That Costs Money</a></li><li><a href="#the-standard-your-tester-should-be-testing-against">The Standard Your Tester Should Be Testing Against</a></li><li><a href="#the-tools-with-their-2026-names">The Tools, With Their 2026 Names</a></li><li><a href="#static-and-dynamic-internal-and-external">Static and Dynamic, Internal and External</a></li><li><a href="#why-the-testing-is-worth-the-money">Why the Testing Is Worth the Money</a></li><li><a href="#establishing-a-vapt-programme">Establishing a VAPT Programme</a></li><li><a href="#what-you-should-get-back">What You Should Get Back</a></li><li><a href="#legal-and-ethical-ground-rules">Legal and Ethical Ground Rules</a></li><li><a href="#what-i-would-ask-a-vendor-before-signing">What I Would Ask a Vendor Before Signing</a></li><li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li><li>&nbsp;&nbsp;<a href="#how-often-should-we-run-vapt">How often should we run VAPT?</a></li><li>&nbsp;&nbsp;<a href="#is-a-vulnerability-scan-enough-on-its-own">Is a vulnerability scan enough on its own?</a></li><li>&nbsp;&nbsp;<a href="#do-the-cert-in-directions-apply-to-a-small-company">Do the CERT-In directions apply to a small company?</a></li><li>&nbsp;&nbsp;<a href="#what-does-vapt-cost-in-india">What does VAPT cost in India?</a></li><li>&nbsp;&nbsp;<a href="#does-the-dpdp-act-require-penetration-testing">Does the DPDP Act require penetration testing?</a></li><li>&nbsp;&nbsp;<a href="#our-website-is-on-wordpress-where-do-we-start">Our website is on WordPress. Where do we start?</a></li><li><a href="#where-this-leaves-you">Where This Leaves You</a></li></ul>
+<h2 class="m-rule">article</h2>
+<div class="m-body"><!-- <h2>VAPT in 2026: The Compliance Clock Indian Businesses Are Running Against</h2> -->
+
+<p>Most VAPT guides are glossaries. They define vulnerability assessment, define penetration testing, list some tools, and tell you attackers are getting craftier. All true. None of it tells an Indian business owner the thing that actually decides what they do on Monday morning, which is that if you notice a breach in India, you have six hours to tell the government about it.</p>
+
+<p>I run Pixel Street, a design and branding studio in Salt Lake, Kolkata. We design and build for brands like Coca-Cola, ITC and Marico. I am not a penetration tester and this post will not turn you into one. What I can do is tell you which standards actually apply in 2026, which of the tool names still in circulation are already wrong, and what a business here is legally on the hook for, with the primary documents linked so you can check me.</p>
+
+<p>My position: for most Indian businesses the deadline that changes behaviour is not the attacker. It is the regulator. Security testing has stopped being a maturity badge and become a paperwork obligation with a rupee figure attached to failure.</p>
+
+<h2 id="the-short-answer">The Short Answer</h2>
+
+<p><p class="m-note">[IMG: VAPT]</p></p>
+
+<p>VAPT is two different jobs sold under one acronym. A vulnerability assessment is broad, mostly automated, and answers "what is weak here". A penetration test is narrow, human-led, and answers "can someone actually get in, and how far". You need both, on different schedules, and you should never accept one when you paid for the other.</p>
+
+<p>Three dates set the clock for an Indian business:</p>
+
+<ul>
+<li><strong>Six hours.</strong> CERT-In's directions under section 70B of the IT Act require entities to report the incident types listed in Annexure I "within 6 hours of noticing such incidents" (<a href="https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf">CERT-In, 28 April 2022</a>).</li>
+<li><strong>₹250 crore.</strong> Under the DPDP Act, the highest penalty applies to a Data Fiduciary that fails to maintain reasonable security safeguards (<a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf">Press Information Bureau, 17 November 2025</a>).</li>
+<li><strong>Eighteen months.</strong> The DPDP Rules were notified on 14 November 2025 with an eighteen-month phased compliance period, which runs out in May 2027 (same PIB source).</li>
+</ul>
+
+<p>And one number for the size of the loss you are testing against. IBM's Cost of a Data Breach Report 2026 puts the global average at USD 4.99 million, a 12% rise and a record, with the India average at USD 2.79 million (<a href="https://www.ibm.com/reports/data-breach">IBM, 29 July 2026</a>). Read the methodology before you quote that at anyone; I do so below, because the headline is more careful than it looks.</p>
+
+<h2 id="the-india-compliance-clock">The India Compliance Clock</h2>
+
+<p>This is the section that should shape your scope, your schedule and your budget. Work through it before you talk to a vendor, not after.</p>
+
+<h3 id="cert-in-six-hours-and-180-days-of-logs-held-in-india">CERT-In: six hours, and 180 days of logs held in India</h3>
+
+<p>On 28 April 2022 CERT-In issued directions under sub-section (6) of section 70B of the Information Technology Act, 2000. They became effective 60 days after issue, and CERT-In published an extension of timelines on 27 June 2022 covering MSMEs and certain validation requirements for data centres, VPS, cloud and VPN providers (<a href="https://www.cert-in.org.in/Directions70B.jsp">CERT-In directions under section 70B</a>). As of July 2026 that page still lists the 2022 directions, the FAQ and the extension, with nothing superseding them.</p>
+
+<p>Two clauses drive the work:</p>
+
+<ul>
+<li><strong>Reporting.</strong> Service providers, intermediaries, data centres, body corporates and government organisations "shall mandatorily report cyber incidents as mentioned in Annexure I to CERT-In within 6 hours of noticing such incidents or being brought to notice about such incidents".</li>
+<li><strong>Logs.</strong> The same entities "shall mandatorily enable logs of all their ICT systems and maintain them securely for a rolling period of 180 days and the same shall be maintained within the Indian jurisdiction".</li>
+</ul>
+
+<p>That log clause is a hosting decision as much as a security one. If your stack ships logs to a region outside India by default, you have a problem that no penetration test will find for you, and it is worth checking against your provider before you sign anything. Our guide to <a href="https://pixelstreet.in/blog/best-hosting-services-in-india/">hosting services in India</a> is a reasonable starting point for that conversation.</p>
+
+<p>Annexure I is worth reading in full, because it is broader than most people assume. It lists twenty categories, including targeted scanning or probing of critical networks and systems, unauthorised access of IT systems or data, website defacement, attacks on servers, identity theft and phishing, denial of service, data breach, data leak, attacks on IoT devices, attacks affecting digital payment systems, fake mobile apps, and attacks affecting systems related to artificial intelligence and machine learning.</p>
+
+<p>Note the first item. Targeted scanning or probing of critical networks is itself a reportable incident. That is precisely what a vulnerability assessment looks like from the inside of a monitoring stack, which is why written authorisation is not a formality and why your security team needs to know the test window in advance.</p>
+
+<p>If you need an auditor with standing, CERT-In maintains a public list of <a href="https://www.cert-in.org.in/PDF/Empanel_org.pdf">empanelled information security auditing organisations</a>, currently running past 230 firms with addresses and named contacts. For regulated work in India, empanelment is usually the first filter applied to a shortlist.</p>
+
+<h3 id="dpdp-act-2023-and-the-dpdp-rules-2025">DPDP Act 2023 and the DPDP Rules 2025</h3>
+
+<p>Parliament enacted the Digital Personal Data Protection Act on 11 August 2023. The operative machinery arrived much later: the Government notified the DPDP Rules, 2025 on 14 November 2025, after a consultation that drew 6,915 inputs (<a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf">Press Information Bureau, 17 November 2025</a>).</p>
+
+<p>Three things from that document matter for security testing:</p>
+
+<ol>
+<li>The Rules introduce an eighteen-month period for phased compliance. Counted from the November 2025 notification, that lands in May 2027. It is a runway, not a reprieve.</li>
+<li>The highest penalty under the Act, up to ₹250 crore, attaches to a Data Fiduciary's failure to maintain reasonable security safeguards. Failure to notify the Data Protection Board or affected individuals of a personal data breach can attract up to ₹200 crore, and any other violation up to ₹50 crore.</li>
+<li>On a breach, the Data Fiduciary must inform every affected individual without delay, in plain language, covering what happened, the likely impact, the steps taken, and where to get help.</li>
+</ol>
+
+<p>"Reasonable security safeguards" is the phrase to sit with. The Act does not hand you a checklist, which means the evidence you produce after an incident is the argument. Dated test reports, a remediation log and a retest are the cheapest form of that evidence I know of. Significant Data Fiduciaries carry more: independent audits and data protection impact assessments.</p>
+
+<p><source media="(max-width: 700px)" srcset="../../../blog/diagrams/vapt-guide-the-clock-narrow.svg" width="380" height="666"><p class="m-note">[IMG: CERT-In gives you six hours to report a listed incident from the moment you notice it, and requires 180 days of ICT logs held inside Indian jurisdiction. The DPDP Act's maximum penalties are 250 crore rupees for failing to maintain reasonable security safeguards, 200 crore for failing to notify a breach, and 50 crore for any other violation.]</p></p>
+
+<h3 id="pci-dss-v401-only-and-every-requirement-is-live">PCI DSS: v4.0.1 only, and every requirement is live</h3>
+
+<p>If you take card payments, the version history is short and the deadline has already passed. PCI DSS v3.2.1 was retired on 31 March 2024. Of the 64 new requirements introduced in v4.0, 51 were future-dated and became mandatory on 31 March 2025 (<a href="https://blog.pcisecuritystandards.org/now-is-the-time-for-organizations-to-adopt-the-future-dated-requirements-of-pci-dss-v4-x">PCI Security Standards Council, 20 August 2024</a>). PCI DSS v4.0 itself was retired on 31 December 2024, leaving v4.0.1 as the only active version (<a href="https://blog.pcisecuritystandards.org/just-published-pci-dss-v4-0-1">PCI SSC, 11 June 2024</a>).</p>
+
+<p>The Council states directly that external vulnerability scans under Requirement 11.3.2 must be run at least once every three months by a PCI SSC Approved Scanning Vendor (<a href="https://blog.pcisecuritystandards.org/resource-guide-vulnerability-scans-and-approved-scanning-vendors">PCI SSC, 10 July 2024</a>). The standard itself sits behind an agreement, so for the neighbouring cadences I am relying on a QSA's published summary rather than the PDF: internal scans under 11.3.1 at least once every three months, and internal and external penetration testing under 11.4.2 and 11.4.3 at least once every 12 months and after significant changes (<a href="https://www.compliancepoint.com/assurance/pci-dss-v4-0-vuln-pen-requirements/">CompliancePoint, authorised QSA, 8 April 2024</a>). Confirm those against your own QSA before you build a calendar on them.</p>
+
+<h3 id="isoiec-270012022-the-transition-is-over">ISO/IEC 27001:2022: the transition is over</h3>
+
+<p>IAF MD 26:2023 set a three-year transition to ISO/IEC 27001:2022, requiring certification bodies to complete transitions of certified clients within 36 months of the last day of the publication month, which the document states as 31 October 2025 (<a href="https://iaf.nu/iaf_system/uploads/documents/IAF_MD26_Issue_2_15012023.pdf">International Accreditation Forum, 15 February 2023</a>).</p>
+
+<p>The practical consequence in 2026 is a vendor-diligence one. If a supplier sends you a certificate that says ISO/IEC 27001:2013, the transition window for it closed. Ask for the 2022 certificate.</p>
+
+<h2 id="vulnerability-assessment-finding-what-is-weak">Vulnerability Assessment: Finding What Is Weak</h2>
+
+<p>A vulnerability assessment works through your systems and networks to identify, evaluate and report security weaknesses. It leans on automation, it covers a lot of ground, and it produces a list. That list is the input to everything else.</p>
+
+<h3 id="the-four-types-worth-naming">The four types worth naming</h3>
+
+<ul>
+<li><strong>Network-based:</strong> the security of your network infrastructure.</li>
+<li><strong>Host-based:</strong> individual devices, servers and workstations.</li>
+<li><strong>Application-based:</strong> specific software applications, which for most of the businesses we work with means the website and whatever sits behind it.</li>
+<li><strong>Wireless-based:</strong> the security of your wireless networks.</li>
+</ul>
+
+<h3 id="the-lifecycle">The lifecycle</h3>
+
+<p><p class="m-note">[IMG: Vulnerability Management Cycle]</p></p>
+
+<p>Vulnerability management is continuous, and the loop only closes on step four:</p>
+
+<ol>
+<li><strong>Identification:</strong> discovering vulnerabilities in your systems and networks.</li>
+<li><strong>Evaluation:</strong> assessing severity and likely impact.</li>
+<li><strong>Remediation:</strong> patches or other countermeasures.</li>
+<li><strong>Verification:</strong> confirming the fix actually worked.</li>
+<li><strong>Monitoring:</strong> watching for what appears next.</li>
+</ol>
+
+<p>The step that gets skipped is verification, and skipping it is how a company ends up with three annual reports listing the same finding. If your engagement does not include a retest, you have bought a list, not an improvement.</p>
+
+<h2 id="penetration-testing-finding-what-is-exploitable">Penetration Testing: Finding What Is Exploitable</h2>
+
+<p>A penetration test is an authorised, simulated attack. It is scoped tighter than an assessment, it is led by a person rather than a scanner, and its output is a narrative of what someone was able to do.</p>
+
+<h3 id="black-white-and-grey-box">Black, white and grey box</h3>
+
+<ol>
+<li><strong>Black-box:</strong> the tester has no prior knowledge of the target system.</li>
+<li><strong>White-box:</strong> the tester has full knowledge, including source code and architecture.</li>
+<li><strong>Grey-box:</strong> limited knowledge, often modelling a privileged insider.</li>
+</ol>
+
+<p>Black-box tests feel more realistic and usually buy you less. A determined attacker has unlimited time; your tester has a fortnight. Giving them architecture and credentials spends that fortnight on depth instead of on reconnaissance you could have handed over on day one.</p>
+
+<h3 id="the-methodology">The methodology</h3>
+
+<ol>
+<li><strong>Pre-engagement:</strong> scope, goals, rules of engagement and written authorisation, agreed before anything is touched.</li>
+<li><strong>Intelligence gathering:</strong> collecting information about the target system, network or application to map the attack surface.</li>
+<li><strong>Threat modelling:</strong> ranking what was found by likelihood and impact so effort goes where the risk is.</li>
+<li><strong>Vulnerability analysis:</strong> scanning and reviewing for known weaknesses.</li>
+<li><strong>Exploitation:</strong> actively attempting to exploit what was found, to gain access, escalate privilege or disrupt a service.</li>
+<li><strong>Post-exploitation:</strong> establishing how far the compromise reaches and what an attacker could have taken.</li>
+<li><strong>Reporting:</strong> findings, risks, evidence and prioritised remediation.</li>
+</ol>
+
+<p>Step five is the line between the two disciplines. If nothing was attempted, nothing was penetration tested.</p>
+
+<h2 id="va-vs-pt-the-difference-that-costs-money">VA vs PT: The Difference That Costs Money</h2>
+
+<p><p class="m-note">[IMG: VA &amp; PT Differences &amp; Similarity]</p></p>
+<p>Source:&nbsp;<a href="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2018/01/Vulnerbility-Assessment-and-Penetration-Testing.jpg">softwaretestinghelp.com</a></p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Vulnerability assessment</th>
+<th>Penetration test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Question answered</td>
+<td>What is weak here?</td>
+<td>Can it be exploited, and how far does it go?</td>
+</tr>
+<tr>
+<td>Breadth</td>
+<td>Wide, across the environment</td>
+<td>Narrow, against agreed targets</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Mostly automated scanning</td>
+<td>Automated tooling plus manual exploitation</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>A ranked list of findings</td>
+<td>A narrative of attack paths, with evidence</td>
+</tr>
+<tr>
+<td>Typical PCI DSS cadence</td>
+<td>Every three months (11.3.1, 11.3.2)</td>
+<td>Every 12 months and after significant change (11.4.2, 11.4.3)</td>
+</tr>
+<tr>
+<td>What a bad vendor delivers</td>
+<td>A scanner export with a cover page</td>
+<td>The same scanner export, priced as a penetration test</td>
+</tr>
+</tbody>
+</table>
+
+<p>That last row is the practical reason to care about the distinction. Both deliverables look like a PDF full of CVEs. Only one of them cost a human two weeks.</p>
+
+<h2 id="the-standard-your-tester-should-be-testing-against">The Standard Your Tester Should Be Testing Against</h2>
+
+<p>OWASP's project page states that "the most current released version is the OWASP Top Ten 2025" (<a href="https://owasp.org/www-project-top-ten/">OWASP Foundation</a>). The 2021 edition stood for four years, so a great deal of published guidance was written against a list that has now moved.</p>
+
+<p>The 2025 order is Broken Access Control, Security Misconfiguration, Software Supply Chain Failures, Cryptographic Failures, Injection, Insecure Design, Authentication Failures, Software or Data Integrity Failures, Security Logging and Alerting Failures, and Mishandling of Exceptional Conditions (<a href="https://owasp.org/Top10/2025/0x00_2025-Introduction/">OWASP Top 10:2025</a>).</p>
+
+<p><source media="(max-width: 700px)" srcset="../../../blog/diagrams/vapt-guide-owasp-top-ten-2025-narrow.svg" width="380" height="696"><p class="m-note">[IMG: The OWASP Top 10:2025 in rank order, with the three moves that matter marked: server-side request forgery merged into Broken Access Control at one, Security Misconfiguration now second, Software Supply Chain Failures third in place of Vulnerable and Outdated Components, and Mishandling of Exceptional Conditions new at ten.]</p></p>
+
+<p>Three shifts are worth your attention when you scope a test:</p>
+
+<ul>
+<li><strong>Supply chain moved to third place</strong> and got broader. The old "Vulnerable and Outdated Components" category became Software Supply Chain Failures. For anyone running a plugin-heavy CMS, that is the category your site most likely fails, and it is not fixed by a firewall.</li>
+<li><strong>Security Misconfiguration is now second.</strong> Default credentials, verbose errors, open storage buckets, permissive CORS. Cheap to find and cheap to fix, which is exactly why it is embarrassing to be breached through one.</li>
+<li><strong>Server-side request forgery was merged into Broken Access Control</strong>, and a new tenth category, Mishandling of Exceptional Conditions, covers what your application does when something unexpected happens.</li>
+</ul>
+
+<p>Ask any vendor which edition their methodology maps to. If the proposal says OWASP Top 10 2021, or just "OWASP", you are buying last generation's checklist.</p>
+
+<h2 id="the-tools-with-their-2026-names">The Tools, With Their 2026 Names</h2>
+
+<p>Tool names rot faster than technique. Here is the current list, with what each is and what it actually costs to start.</p>
+
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Who owns it now</th>
+<th>What to know in 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ZAP</td>
+<td>ZAP Core Team, sponsored by Checkmarx</td>
+<td>Free, Apache 2.0. It left OWASP in 2023, so "OWASP ZAP" now dates a document rather than naming a product.</td>
+</tr>
+<tr>
+<td>Nessus</td>
+<td>Tenable</td>
+<td>Still the default commercial scanner. The free Essentials tier was cut from 16 targets to 5 with export disabled in Nessus 10.11.0 (20 November 2025).</td>
+</tr>
+<tr>
+<td>OpenVAS</td>
+<td>Greenbone AG</td>
+<td>Free community edition, plus paid appliances. Greenbone rebranded its whole portfolio around the OPENVAS name in July 2025, so the community-edition naming you may remember is the part that is stale.</td>
+</tr>
+<tr>
+<td>Nexpose</td>
+<td>Rapid7</td>
+<td>Release notes stopped on 23 May 2025 and moved to the Command Platform. InsightVM is where Rapid7 points new work.</td>
+</tr>
+<tr>
+<td>Burp Suite</td>
+<td>PortSwigger</td>
+<td>Community Edition is still free but is a manual toolkit with no automated scanner. Enterprise Edition was renamed Burp Suite DAST on 15 April 2025.</td>
+</tr>
+<tr>
+<td>Metasploit</td>
+<td>Rapid7</td>
+<td>Framework is still free and open source under a BSD-style licence, actively developed, currently on the 6.5 line.</td>
+</tr>
+<tr>
+<td>Nmap</td>
+<td>The Nmap Project</td>
+<td>Free and open source, but under the Nmap Public Source License rather than the GPL. Worth knowing if you redistribute it.</td>
+</tr>
+<tr>
+<td>Kali Linux</td>
+<td>OffSec</td>
+<td>Free, quarterly releases, currently 2026.2.</td>
+</tr>
+<tr>
+<td>Acunetix</td>
+<td>Invicti Security</td>
+<td>Still sold under the Acunetix name, alongside Invicti (formerly Netsparker). Commercial only.</td>
+</tr>
+<tr>
+<td>Fortify</td>
+<td>OpenText</td>
+<td>Micro Focus was acquired by OpenText on 31 January 2023. The products are being renamed to OpenText Static and Dynamic Application Security Testing.</td>
+</tr>
+<tr>
+<td>AppScan Source</td>
+<td>HCL Software</td>
+<td>Not IBM. IBM divested AppScan to HCL effective 1 July 2019.</td>
+</tr>
+<tr>
+<td>Checkmarx, Veracode</td>
+<td>Checkmarx Ltd, Veracode</td>
+<td>Both active, both commercial, both now positioned as platforms rather than single scanners.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The tool list is the least important part of a proposal. Anyone can run Nessus. What you are buying is the judgement applied to its output, which is why I would rather see a named methodology than a logo grid.</p>
+
+<h2 id="static-and-dynamic-internal-and-external">Static and Dynamic, Internal and External</h2>
+
+<p>VAPT gets sliced two ways, and both slices are useful when you write scope.</p>
+
+<ul>
+<li><strong>Static testing</strong> reviews the code without running it, looking for classes of defect such as injection flaws and unsafe memory handling. Typical tools: OpenText Fortify Static Code Analyzer, Checkmarx, Veracode, HCL AppScan Source.</li>
+<li><strong>Dynamic testing</strong> runs the application and attacks it, observing behaviour rather than reading source. Typical tools: Nessus, Nmap, Metasploit, Burp Suite, ZAP.</li>
+</ul>
+
+<p>And by vantage point:</p>
+
+<ul>
+<li><strong>External VAPT</strong> targets what faces the internet: the website, the web applications, the exposed services.</li>
+<li><strong>Internal VAPT</strong> targets the network and servers behind the perimeter, modelling an attacker who is already inside or an employee who should not be.</li>
+</ul>
+
+<h2 id="why-the-testing-is-worth-the-money">Why the Testing Is Worth the Money</h2>
+
+<p><p class="m-note">[IMG: Why we need VAPT]</p></p>
+<p>Source:&nbsp;<a href="https://yotta.com/product-service/vulnerability-assessment-penetration-testing/">yotta.com</a></p>
+
+<p>The honest case is narrower than the marketing case, so here is the honest one.</p>
+
+<p>IBM's 2026 report associates offensive security testing, defined in the report as red teaming, penetration testing or vulnerability testing, with a breach cost USD 211,339 below the global average. IBM is explicit that it examined 30 contributing factors and measured each in isolation against the mean, so treat that as a correlation in a benchmark, not a return on investment you can bank (<a href="https://www.ibm.com/downloads/documents/us-en/16dd90a741c46c2c">IBM Cost of a Data Breach Report 2026</a>).</p>
+
+<p>The methodology deserves a paragraph, because this report is quoted more often than it is read. It is conducted by the Ponemon Institute and sponsored by IBM. The 2026 edition studied 602 organisations breached between March 2025 and February 2026 across 17 industries and 16 countries, interviewing 3,558 people with firsthand knowledge. Critically, it excludes very small and very large breaches: the incidents studied ranged from 2,590 to 115,380 compromised records. So it is a self-reported benchmark of mid-sized breaches, not a census, and not a study of the mega-breaches that make the news. The India average in that sample is USD 2.79 million, up from USD 2.51 million.</p>
+
+<p>Beyond the money, a testing programme does four things that hold up in a room with lawyers in it:</p>
+
+<ol>
+<li>Finds and closes gaps before somebody else finds them.</li>
+<li>Produces dated evidence that you took reasonable security safeguards, which is the standard the DPDP Act sets.</li>
+<li>Ranks severity, so a small team fixes the three findings that matter instead of forty that do not.</li>
+<li>Satisfies the scan and test cadences your acquirer, auditor or enterprise client already asks about.</li>
+</ol>
+
+<h2 id="establishing-a-vapt-programme">Establishing a VAPT Programme</h2>
+
+<p><p class="m-note">[IMG: VAPT Process]</p></p>
+<p>Source:&nbsp;<a href="https://www.nuox.io/blog/what-is-vulnerability-assessment-penetration-testing">nuox.io</a></p>
+
+<ol>
+<li><strong>Assess what you actually have.</strong> List the internet-facing assets first. Most organisations discover something they forgot they were running, and forgotten systems are where the unpatched software lives.</li>
+<li><strong>Write the policy against your obligations.</strong> Scope, frequency and severity thresholds should map to CERT-In, DPDP and, if cards are involved, PCI DSS v4.0.1. Do not invent a cadence when a regulator has already given you one.</li>
+<li><strong>Decide who does the work.</strong> For regulated or contractual testing in India, CERT-In empanelment is the usual filter. For everything else, judge the methodology and the sample report.</li>
+<li><strong>Schedule it, including the retest.</strong> A finding with no owner and no retest date is decoration.</li>
+</ol>
+
+<h2 id="what-you-should-get-back">What You Should Get Back</h2>
+
+<p>A report that earns its fee contains all six of these. If a sample report is missing three, keep looking.</p>
+
+<ol>
+<li><strong>Executive summary:</strong> what was tested, what was found, what the business risk is, in language a non-technical director can act on.</li>
+<li><strong>Detailed findings:</strong> each issue described well enough that an engineer can reproduce it.</li>
+<li><strong>Remediation guidance:</strong> specific to your stack, accounting for what is realistic with your resources.</li>
+<li><strong>Prioritisation:</strong> ordered by risk, not by scanner severity score.</li>
+<li><strong>Supporting evidence:</strong> requests, logs and screenshots. Evidence is what separates a finding from an opinion.</li>
+<li><strong>Retest:</strong> a follow-up confirming the fixes worked. This is the deliverable most often quietly dropped from a quote.</li>
+</ol>
+
+<h2 id="legal-and-ethical-ground-rules">Legal and Ethical Ground Rules</h2>
+
+<p>Testing without permission is an offence, not a favour. Five rules to keep to:</p>
+
+<ol>
+<li><strong>Get written authorisation</strong> from someone with authority to give it, before any activity begins, with the scope and the test window named. Remember that CERT-In's Annexure I treats targeted scanning of critical networks as a reportable incident, so your own monitoring team needs to know too.</li>
+<li><strong>Know which laws apply to you.</strong> In India that means the IT Act and the CERT-In directions, plus the DPDP Act and Rules. If you serve customers abroad, GDPR and sector regimes such as HIPAA or PCI DSS may also apply.</li>
+<li><strong>Respect third-party boundaries.</strong> If the scope touches a hosting provider, a payment gateway or a SaaS platform, you need their authorisation as well as your own. Most publish a policy on this.</li>
+<li><strong>Protect the findings.</strong> A penetration test report is a working exploitation guide for your systems. Treat its distribution accordingly.</li>
+<li><strong>Document everything.</strong> Authorisation letters, test plans, findings, fixes, retests. This file is your evidence of reasonable safeguards if you ever have to produce it.</li>
+</ol>
+
+<h2 id="what-i-would-ask-a-vendor-before-signing">What I Would Ask a Vendor Before Signing</h2>
+
+<p>This is my own list, formed from watching how these engagements are sold rather than from running them.</p>
+
+<ul>
+<li>Which OWASP Top 10 edition does your methodology map to? The answer should be 2025.</li>
+<li>What proportion of this engagement is manual? If the answer is vague, the deliverable will be a scanner export.</li>
+<li>Is the retest included in this price, or quoted separately?</li>
+<li>Can I see a redacted sample report, specifically a finding written up in full?</li>
+<li>Where will the test data and our logs be stored, and is that inside Indian jurisdiction?</li>
+<li>Are you CERT-In empanelled, and if not, why is that acceptable for our use case?</li>
+</ul>
+
+<p>One more thing, aimed at the smaller businesses we mostly talk to. The recurring failure I see is not the absence of a test. It is a site built, launched, and then never patched, with a certificate that quietly expires and a CMS three major versions behind. If that is you, a penetration test is the wrong first purchase. Fix patching and <a href="https://pixelstreet.in/blog/comprehensive-guide-to-ssl/">your SSL setup</a> first, then test. Testing a system nobody maintains only tells you what you already suspect.</p>
+
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+
+<h3 id="how-often-should-we-run-vapt">How often should we run VAPT?</h3>
+
+<p>If PCI DSS applies, the cadence is set for you: scans every three months, penetration tests at least every 12 months and after significant change. If it does not, annual penetration testing with quarterly scanning is a defensible baseline, and "after every significant change" matters more than the calendar. A major release deserves a test regardless of when the last one ran.</p>
+
+<h3 id="is-a-vulnerability-scan-enough-on-its-own">Is a vulnerability scan enough on its own?</h3>
+
+<p>For some obligations, yes. For a claim that you took reasonable security safeguards, it is weak on its own, because a scan reports theoretical exposure while a penetration test demonstrates what an attacker could actually reach. The pairing is the point of the acronym.</p>
+
+<h3 id="do-the-cert-in-directions-apply-to-a-small-company">Do the CERT-In directions apply to a small company?</h3>
+
+<p>The directions are addressed to service providers, intermediaries, data centres, body corporates and government organisations, which is broad. CERT-In did publish an extension of timelines on 27 June 2022 giving relief to MSMEs on parts of it. If you are unsure where your organisation sits, that is a question for a lawyer rather than a blog post, and it is worth asking before an incident rather than during one.</p>
+
+<h3 id="what-does-vapt-cost-in-india">What does VAPT cost in India?</h3>
+
+<p>I am not going to quote a range, because I could not verify one against a published source and an invented figure would only help you get quoted badly. What I can tell you is what the price is made of: scope size, whether testing is manual or automated, tester seniority, whether a retest is included, and whether the vendor is CERT-In empanelled. Get three quotes with identical written scope and the spread will explain itself.</p>
+
+<h3 id="does-the-dpdp-act-require-penetration-testing">Does the DPDP Act require penetration testing?</h3>
+
+<p>Not by name. It requires reasonable security safeguards, and the Rules add audit and impact-assessment duties for Significant Data Fiduciaries. Testing is one of the most legible ways to show you met that standard, which is a different claim from saying the statute names it.</p>
+
+<h3 id="our-website-is-on-wordpress-where-do-we-start">Our website is on WordPress. Where do we start?</h3>
+
+<p>With the supply chain, because that is where the OWASP 2025 list now points. Inventory every plugin and theme, remove what you do not use, and get on a patching schedule before you commission a test. Then look at the boring compliance surface around the site, including <a href="https://pixelstreet.in/blog/website-accessibility-compliance/">accessibility obligations</a>, which land on the same team and get neglected for the same reason.</p>
+
+<h2 id="where-this-leaves-you">Where This Leaves You</h2>
+
+<p>The technical content of this post has a shelf life. Tools get renamed, the OWASP list moves every few years, and a new version of PCI DSS will land eventually. The structural point does not move: in India the reporting clock is six hours, the logs have to sit here for 180 days, and the maximum penalty for failing to keep reasonable security safeguards is ₹250 crore with an eighteen-month runway that ends in May 2027.</p>
+
+<p>Test against that, not against a vendor's fear slide. And if you are choosing who does the work, our list of <a href="https://pixelstreet.in/blog/questions-before-hiring-web-design-agency/">questions to ask before hiring an agency</a> transfers almost intact to security vendors, because the failure mode is the same one: a confident proposal, a vague scope, and no way to tell afterwards whether you got what you paid for.</p>
+
+<p>I will date this post honestly. It was written on 30 July 2026, against the standards and directions linked above. If you are reading it well after that, check the versions before you trust the numbers, which is the same advice I would give about any security guide, including this one. As a <strong><a href="https://pixelstreet.in/web-design-company-kolkata">web design company</a></strong>, the sites we hand over are the assets these rules attach to, so this is not a detached interest.</p></div>
+<h2 class="m-rule">sources</h2>
+<p class="m-note">Every figure in this article traces to one of the following.
+      Publisher and publication date are recorded so a claim can be checked against
+      its origin, and re-checked when the origin changes.</p>
+<ul class="m-list"><li><a href="https://www.cert-in.org.in/Directions70B.jsp">CERT-In, Government of India</a> <span class="m-date">2022-06-27</span><br><span class="m-note">   cited for: CERT-In&#39;s section 70B page lists only the 28.04.2022 directions, the May 2022 FAQ, and the 27.06.2022 extension of timelines (MSME relief plus validation requirements for data centres, VPS, cloud and VPN providers). No superseding direction is listed as of 30 July 2026.</span></li><li><a href="https://www.cert-in.org.in/PDF/Empanel_org.pdf">CERT-In, Government of India</a> <span class="m-date">2026</span><br><span class="m-note">   cited for: CERT-In publishes and maintains an up-to-date list of empanelled information security auditing organisations; the current list runs past 230 numbered organisations (highest numbered entry seen: 237)</span></li><li><a href="https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf">CERT-In, Ministry of Electronics and Information Technology, Government of India</a> <span class="m-date">2022-04-28</span><br><span class="m-note">   cited for: CERT-In direction (ii): entities &#39;shall mandatorily report cyber incidents as mentioned in Annexure I to CERT-In within 6 hours of noticing such incidents or being brought to notice about such incidents&#39;. Direction (iv): entities &#39;shall mandatorily enable logs of all their ICT systems and maintain them securely for a rolling period of 180 days and the same shall be maintained within the Indian jurisdiction&#39;. The direction becomes effective 60 days after issue. Annexure I lists 20 reportable categories including targeted scanning/probing of critical networks, unauthorised access of IT systems/data, data breach, data leak, and attacks affecting AI/ML systems.</span></li><li><a href="https://www.compliancepoint.com/assurance/pci-dss-v4-0-vuln-pen-requirements/">CompliancePoint, Inc. (authorised QSA)</a> <span class="m-date">2024-04-08</span><br><span class="m-note">   cited for: PCI DSS v4.x cadences: 11.3.1 internal vulnerability scans at least once every three months; 11.4.2 internal and 11.4.3 external penetration testing at least once every 12 months and after significant changes. SECONDARY SOURCE, flagged in the post itself: the PCI DSS v4.0.1 PDF is gated on docs-prv.pcisecuritystandards.org and returned HTTP 403 to fetch. CompliancePoint is an authorised QSA and the cadences are consistent across multiple QSA publications.</span></li><li><a href="https://www.greenbone.net/en/blog/openvas-the-new-name-for-proven-greenbone-security/">Greenbone AG</a> <span class="m-date">2025-07-30</span><br><span class="m-note">   cited for: Greenbone rebranded its entire portfolio around the OPENVAS name; the free edition is OPENVAS COMMUNITY EDITION</span></li><li><a href="https://www.ibm.com/investor/news/ibm-to-divest-select-software-products-to-hcl">IBM</a> <span class="m-date">2019-07-01</span><br><span class="m-note">   cited for: AppScan is an HCL product, not IBM: IBM divested select software products including AppScan to HCL, effective 1 July 2019</span></li><li><a href="https://www.ibm.com/reports/data-breach">IBM / Ponemon Institute</a> <span class="m-date">2026-07-29</span><br><span class="m-note">   cited for: IBM Cost of a Data Breach Report 2026: global average breach cost USD 4.99 million, a 12% increase over the prior year and a record high, IBM Cost of a Data Breach Report 2026 associates offensive security testing (red teaming, penetration testing or vulnerability testing) with a breach cost USD 211,339 below the global average; IBM examined 30 contributing factors and measured each in isolation against the mean</span></li><li><a href="https://www.ibm.com/downloads/documents/us-en/16dd90a741c46c2c">IBM / Ponemon Institute</a> <span class="m-date">2026-07-29</span><br><span class="m-note">   cited for: IBM 2026 methodology: research conducted by Ponemon Institute and sponsored by IBM; 602 organisations breached March 2025 to February 2026; 17 industries; 16 countries and regions; 3,558 interviewees; very small and very large breaches excluded, with studied breaches ranging from 2,590 to 115,380 compromised records, IBM 2026 Figure 32: &#39;Offensive security testing (red teaming, pen or vulnerability testing) -211,339&#39; as a cost difference from the USD 4.99M average; IBM examined 30 contributing factors and measured each in isolation against the global average, IBM 2026 Figure 2: India average breach cost USD 2.79 million, up from USD 2.51 million; India is 9% of the study sample</span></li><li><a href="https://iaf.nu/iaf_system/uploads/documents/IAF_MD26_Issue_2_15012023.pdf">International Accreditation Forum</a> <span class="m-date">2023-02-15</span><br><span class="m-note">   cited for: IAF MD 26:2023 sets the ISO/IEC 27001:2022 transition period at 3 years (36 months), with CAB transitions of certified clients to be completed 36 months from the last day of the publication month, stated in the document as 31 October 2025</span></li><li><a href="https://www.invicti.com/vulnerability-scanner-comparison/invicti-vs-acunetix">Invicti Security Corp</a> <span class="m-date">2026</span><br><span class="m-note">   cited for: Acunetix is still a current product name, sold by Invicti Security Corp alongside Invicti (formerly Netsparker); commercial only</span></li><li>Khurshid Alam (own recommendation) <span class="m-note">(first-hand, Pixel Street)</span> <span class="m-date">2026-07-30</span><br><span class="m-note">   cited for: Khurshid&#39;s judgement: for an Indian business the deadline that changes behaviour is regulatory, not technical, so a VAPT programme should be scoped against CERT-In and DPDP obligations before anything else, Khurshid&#39;s judgement: if the deliverable is a scanner export with a cover page, you bought a vulnerability assessment priced as a penetration test; step five (exploitation) is the line between the two, Khurshid&#39;s judgement: black-box testing usually buys less than grey-box, because a fortnight spent on reconnaissance is a fortnight not spent on depth, Khurshid&#39;s judgement: the six questions to ask a VAPT vendor before signing (OWASP edition, manual proportion, retest included, sample report, data and log jurisdiction, CERT-In empanelment), Khurshid&#39;s judgement: the common failure he sees is not the absence of a test but a site launched and never patched, with an expired certificate and a CMS several versions behind; fix patching and SSL before commissioning a test, Khurshid&#39;s judgement: a finding with no owner and no retest date is decoration; verification is the step most often skipped</span></li><li><a href="https://www.kali.org/releases/">OffSec Services Limited</a> <span class="m-date">2026-06-29</span><br><span class="m-note">   cited for: Kali Linux is free and maintained by OffSec; current release 2026.2, 29 June 2026</span></li><li><a href="https://community.opentext.com/cybersec/fortify/w/tips/53815/opentext-application-security-content-fortify-update-26-2">OpenText</a> <span class="m-date">2023-01-31</span><br><span class="m-note">   cited for: Fortify is an OpenText product: &#39;As of January 31, 2023, the Material is now offered by OpenText&#39;; Fortify products are being renamed to OpenText Core / Static / Dynamic Application Security Testing</span></li><li><a href="https://owasp.org/Top10/2025/0x00_2025-Introduction/">OWASP Foundation</a> <span class="m-date">2025-11</span><br><span class="m-note">   cited for: OWASP Top 10:2025 categories in order: A01 Broken Access Control, A02 Security Misconfiguration, A03 Software Supply Chain Failures, A04 Cryptographic Failures, A05 Injection, A06 Insecure Design, A07 Authentication Failures, A08 Software or Data Integrity Failures, A09 Security Logging &amp; Alerting Failures, A10 Mishandling of Exceptional Conditions; SSRF merged into Broken Access Control; 8th installment of the list</span></li><li><a href="https://owasp.org/www-project-top-ten/">OWASP Foundation</a> <span class="m-date">2026</span><br><span class="m-note">   cited for: OWASP states &#39;the most current released version is the OWASP Top Ten 2025&#39;</span></li><li><a href="https://blog.pcisecuritystandards.org/just-published-pci-dss-v4-0-1">PCI Security Standards Council</a> <span class="m-date">2024-06-11</span><br><span class="m-note">   cited for: PCI DSS v4.0.1 published as a limited revision; v4.0 retired 31 December 2024, after which v4.0.1 is the only active version; the limited revision did not change the effective date of the new requirements</span></li><li><a href="https://blog.pcisecuritystandards.org/now-is-the-time-for-organizations-to-adopt-the-future-dated-requirements-of-pci-dss-v4-x">PCI Security Standards Council</a> <span class="m-date">2024-08-20</span><br><span class="m-note">   cited for: PCI DSS v3.2.1 retired 31 March 2024; of the 64 new requirements in v4.0, 51 were future-dated and became mandatory on 31 March 2025</span></li><li><a href="https://blog.pcisecuritystandards.org/resource-guide-vulnerability-scans-and-approved-scanning-vendors">PCI Security Standards Council</a> <span class="m-date">2024-07-10</span><br><span class="m-note">   cited for: PCI DSS Requirement 11.3.2 requires external vulnerability scans by a PCI SSC Approved Scanning Vendor at least once every three months</span></li><li><a href="https://portswigger.net/blog/meet-burp-suite-dast-a-clearer-name-for-the-industrys-leading-dast-solution">PortSwigger</a> <span class="m-date">2025-04-15</span><br><span class="m-note">   cited for: Burp Suite Enterprise Edition renamed Burp Suite DAST</span></li><li><a href="https://portswigger.net/burp/communitydownload">PortSwigger</a> <span class="m-date">2026</span><br><span class="m-note">   cited for: Burp Suite Community Edition is still free and is a manual toolkit without the automated scanner</span></li><li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf">Press Information Bureau, Government of India</a> <span class="m-date">2025-11-17</span><br><span class="m-note">   cited for: DPDP Rules 2025 notified 14 November 2025 after a consultation drawing 6,915 inputs; the Digital Personal Data Protection Act was enacted by Parliament on 11 August 2023; the Rules introduce an eighteen-month period for phased compliance; the highest penalty, up to INR 250 crore, applies to a Data Fiduciary&#39;s failure to maintain reasonable security safeguards; failure to notify the Board or affected individuals of a personal data breach and child-data violations can each attract up to INR 200 crore; any other violation up to INR 50 crore; on a breach the Data Fiduciary must inform affected individuals without delay in plain language covering what happened, likely impact, steps taken and contact details; Significant Data Fiduciaries must conduct independent audits and impact assessments</span></li><li><a href="https://docs.rapid7.com/release-notes/nexpose/">Rapid7</a> <span class="m-date">2025-05-23</span><br><span class="m-note">   cited for: Nexpose release notes state the document is no longer updated as of 23 May 2025, with new release notes moving to the Rapid7 Command Platform; InsightVM is the successor product</span></li><li><a href="https://github.com/rapid7/metasploit-framework/tags">Rapid7</a> <span class="m-date">2026-07-30</span><br><span class="m-note">   cited for: Metasploit Framework is actively maintained and open source under a BSD-style licence; current release line 6.5 (6.5.0 tagged 30 July 2026); there is no Metasploit 7</span></li><li><a href="https://docs.tenable.com/release-notes/Content/nessus/2025.htm">Tenable, Inc.</a> <span class="m-date">2025-11-20</span><br><span class="m-note">   cited for: Nessus 10.11.0 release note: &#39;Updated Tenable Nessus Essentials with new functional limits: Reduced scannable targets from 16 to 5. Disabled reporting and exporting. Updated the subscription to a monthly term.&#39;</span></li><li><a href="https://nmap.org/changelog.html">The Nmap Project / Insecure.Com LLC</a> <span class="m-date">2026-03-26</span><br><span class="m-note">   cited for: Nmap is free and open source under the Nmap Public Source License, not the GPL; current version 7.99 dated 2026-03-26</span></li><li><a href="https://www.zaproxy.org/docs/zap-ownership/">ZAP Dev Team</a> <span class="m-date">2024-09-24</span><br><span class="m-note">   cited for: ZAP left OWASP (announced 1 August 2023, joining the Software Security Project) and is now controlled by the ZAP Core Team and supported by Checkmarx (announced 24 September 2024); still Apache 2.0; the project&#39;s own ownership page flags references to &#39;OWASP ZAP&#39; as outdated</span></li></ul>
+<h2 class="m-rule">related</h2>
+<ul class="m-list"><li><a href="../../../blog/ai/ai-website-builders-vs-custom-development/">AI Website Builders vs Custom Development: Where the Shiny Tools Actually Break</a></li><li><a href="../../../blog/ai/aeo-vs-geo-vs-seo/">AEO vs GEO vs SEO: What Actually Matters in 2026 (And What Is Just Noise)</a></li><li><a href="../../../blog/ai/how-to-get-mentioned-by-chatgpt/">How to Get Your Brand Mentioned by ChatGPT: The Ultimate India Playbook (2026)</a></li><li><a href="../../../blog/ai/ai-search-optimization-guide/">Do You Still Need a Website in 2026? Your Guide to AI Search Optimization</a></li><li><a href="../../../blog/ai/web-development-framework/">Web Development Framework: Top Tips for Making the Right Choice</a></li></ul>
+  <footer class="m-foot">
+    Machine view of <a href="../../../blog/vapt-guide/">https://pixelstreet.in/blog/vapt-guide/</a>. <a href="../../../blog/ai/">All articles</a> &middot; <a href="../../../ai/">Site index</a> &middot; <a href="../../../llms.txt">llms.txt</a>
+    <p class="m-foot__switch"><nav class="hm-toggle" aria-label="Page format"><span class="hm-toggle__label">View</span><a class="hm-toggle__opt" href="../../../blog/vapt-guide/" data-hm="human">Human</a><span class="hm-toggle__opt" aria-current="true">Machine</span></nav></p>
+  </footer>
+</div>
+<script>(function(){try{
+var t=document.querySelector('.hm-toggle');if(!t)return;
+t.addEventListener('click',function(e){var a=e.target.closest('[data-hm]');
+if(a)try{localStorage.setItem('ps-view',a.getAttribute('data-hm'))}catch(_){}},{passive:true});
+}catch(_){}})();</script>
+<script src="../../../assets/js/local-links.js" defer></script>
+</body>
+</html>

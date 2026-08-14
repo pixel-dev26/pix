@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 372" width="800" height="372" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">AI shows up in web design in three separate places</title>
+  <desc id="d">Three columns: production assistance generates layouts and code, runtime intelligence ships inside the site itself, and the third is the audience, because language models now read your website. Most articles cover only the first, which is the layer that gets replaced.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">ONE WORD, THREE DIFFERENT THINGS</text>
+
+  <rect x="14" y="46" width="246" height="200" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="40" width="246" height="200" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="48" cy="76" r="15" fill="#0F1115"/>
+  <text x="48" y="82" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="28" y="126" font-size="18" font-weight="700" fill="#0F1115">Production<tspan x="28" dy="1.3em">assistance</tspan></text>
+  <text x="28" y="182" font-size="14" fill="#5C6167">Layouts, components, copy<tspan x="28" dy="1.4em">drafts, images and code.</tspan><tspan x="28" dy="1.4em">Replaced every year.</tspan></text>
+
+  <rect x="283" y="46" width="246" height="200" rx="16" fill="#5FBFA8"/>
+  <rect x="277" y="40" width="246" height="200" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="317" cy="76" r="15" fill="#0F1115"/>
+  <text x="317" y="82" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="297" y="126" font-size="18" font-weight="700" fill="#0F1115">Runtime<tspan x="297" dy="1.3em">intelligence</tspan></text>
+  <text x="297" y="182" font-size="14" fill="#5C6167">Recommendations, chat,<tspan x="297" dy="1.4em">personalisation, translation.</tspan><tspan x="297" dy="1.4em">Older, quietly worth more.</tspan></text>
+
+  <rect x="552" y="46" width="246" height="200" rx="16" fill="#D098F9"/>
+  <rect x="546" y="40" width="246" height="200" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="586" cy="76" r="15" fill="#0F1115"/>
+  <text x="586" y="82" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="566" y="126" font-size="18" font-weight="700" fill="#0F1115">The audience</text>
+  <text x="566" y="182" font-size="14" fill="#5C6167">Language models now read<tspan x="566" dy="1.4em">your site, not only write it.</tspan><tspan x="566" dy="1.4em">That changes the build.</tspan></text>
+
+  <path d="M131 248 L131 262 M400 248 L400 262 M669 248 L669 262" stroke="#8E959D" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <rect x="14" y="278" width="778" height="80" rx="16" fill="#FDB914"/>
+  <rect x="8" y="272" width="778" height="80" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="304" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHY MOST ARTICLES ON THIS SUBJECT AGE BADLY</text>
+  <text x="34" y="332" font-size="19" font-weight="700" fill="#0F1115">They cover only the first, which is the layer that gets replaced.</text>
+</svg>

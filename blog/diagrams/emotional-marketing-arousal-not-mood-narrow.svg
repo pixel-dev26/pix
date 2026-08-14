@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 612" width="380" height="612" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Arousal, not mood, is what gets content shared</title>
+  <desc id="d">High-arousal emotions get shared whether they are negative, such as anger and anxiety, or positive, such as awe. Low-arousal emotions do not: Berger and Milkman name sadness as deactivating and found content evoking it less viral, not more, and calm agreeable work is the least likely thing to move.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">BERGER AND MILKMAN, 2012</text>
+
+  <rect x="13" y="39" width="359" height="118" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="34" width="359" height="118" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="68" font-size="18" font-weight="700" fill="#0F1115">Anger. Anxiety.</text>
+  <rect x="244" y="50" width="106" height="24" rx="999" fill="#0F1115"/>
+  <text x="297" y="67" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">GETS SHARED</text>
+  <text x="26" y="92" font-size="13" fill="#6A6F75">High arousal, negative</text>
+  <text x="26" y="116" font-size="13" fill="#5C6167">Arousal is what drives sharing,<tspan x="26" dy="1.4em">not whether a feeling is nice.</tspan></text>
+
+  <rect x="13" y="169" width="359" height="118" rx="16" fill="#FDB914"/>
+  <rect x="8" y="164" width="359" height="118" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="198" font-size="18" font-weight="700" fill="#0F1115">Awe.</text>
+  <rect x="244" y="180" width="106" height="24" rx="999" fill="#0F1115"/>
+  <text x="297" y="197" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">GETS SHARED</text>
+  <text x="26" y="222" font-size="13" fill="#6A6F75">High arousal, positive</text>
+  <text x="26" y="246" font-size="13" fill="#5C6167">The same mechanism, pleasant<tspan x="26" dy="1.4em">instead of unpleasant.</tspan></text>
+
+  <rect x="13" y="299" width="359" height="118" rx="16" fill="#8E959D"/>
+  <rect x="8" y="294" width="359" height="118" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="328" font-size="18" font-weight="700" fill="#0F1115">Sadness.</text>
+  <rect x="252" y="310" width="98" height="24" rx="999" fill="#8E959D"/>
+  <text x="301" y="327" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">DOES NOT</text>
+  <text x="26" y="352" font-size="13" fill="#6A6F75">Low arousal, negative</text>
+  <text x="26" y="376" font-size="13" fill="#5C6167">Deactivating. Content that evokes<tspan x="26" dy="1.4em">it is less viral, not more.</tspan></text>
+
+  <rect x="13" y="429" width="359" height="118" rx="16" fill="#8E959D"/>
+  <rect x="8" y="424" width="359" height="118" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="458" font-size="18" font-weight="700" fill="#0F1115">Calm and agreeable.</text>
+  <rect x="252" y="440" width="98" height="24" rx="999" fill="#8E959D"/>
+  <text x="301" y="457" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">DOES NOT</text>
+  <text x="26" y="482" font-size="13" fill="#6A6F75">Low arousal, positive</text>
+  <text x="26" y="506" font-size="13" fill="#5C6167">The least likely piece of work<tspan x="26" dy="1.4em">to move anywhere.</tspan></text>
+
+  <text x="8" y="578" font-size="14" fill="#5C6167">Positive beats negative overall, but<tspan x="8" dy="1.4em">valence alone predicts very little.</tspan></text>
+</svg>

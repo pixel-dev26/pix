@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" width="800" height="390" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The competitive frame, written as three lines</title>
+  <desc id="d">Three lines make a position: instead of what, naming the real alternative including doing nothing; better on which single axis, only one; and worse on what, naming the trade you are asking a customer to accept. The third line is the one that does the work.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">POSITIONING IS COMPARATIVE, OR IT IS NOTHING</text>
+
+  <rect x="14" y="50" width="784" height="88" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="44" width="784" height="88" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="46" cy="88" r="18" fill="#0F1115"/>
+  <text x="46" y="94" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="80" y="82" font-size="18" font-weight="700" fill="#0F1115">Instead of what</text>
+  <text x="80" y="110" font-size="14" fill="#5C6167">Name the real alternative, including doing nothing and the incumbent they already use.</text>
+
+  <rect x="14" y="154" width="784" height="88" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="148" width="784" height="88" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="46" cy="192" r="18" fill="#0F1115"/>
+  <text x="46" y="198" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="80" y="186" font-size="18" font-weight="700" fill="#0F1115">Better on which single axis</text>
+  <text x="80" y="214" font-size="14" fill="#5C6167">One. Claim three and you have claimed none, because the reader keeps the one they believed.</text>
+
+  <rect x="14" y="258" width="784" height="88" rx="16" fill="#0F1115"/>
+  <rect x="8" y="252" width="784" height="88" rx="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="46" cy="296" r="18" fill="#0F1115"/>
+  <text x="46" y="302" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="80" y="290" font-size="18" font-weight="700" fill="#0F1115">Worse on what</text>
+  <text x="80" y="318" font-size="14" fill="#0F1115">Name the trade you are asking a customer to accept, or you have written a wish.</text>
+
+  <text x="8" y="378" font-size="14" fill="#5C6167">The third line is the one clients argue about, and the one that does the work.</text>
+</svg>

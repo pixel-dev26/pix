@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 404" width="800" height="404" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">CMS share of all websites, W3Techs, 30 July 2026</title>
+  <desc id="d">Horizontal bars of each platform's share of all websites: WordPress 41.2 per cent, sites running no CMS W3Techs tracks 30.4 per cent, Shopify 5.3, Wix 4.3, Squarespace 2.5, Joomla 1.2, Webflow 0.8, Drupal 0.7, Adobe Commerce 0.3 and BigCommerce 0.1 per cent.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">SHARE OF ALL WEBSITES &#8212; W3TECHS, 30 JULY 2026</text>
+
+  <rect x="14" y="38" width="784" height="316" rx="16" fill="#FDB914"/>
+  <rect x="8" y="32" width="784" height="316" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+
+  <text x="182" y="67" font-size="13" fill="#5C6167" text-anchor="end">WordPress</text>
+  <rect x="196" y="52" width="520" height="20" rx="8" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="724" y="67" font-size="13" font-weight="700" fill="#0F1115">41.2%</text>
+
+  <text x="182" y="96" font-size="13" fill="#5C6167" text-anchor="end">No CMS W3Techs tracks</text>
+  <rect x="196" y="81" width="384" height="20" rx="8" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <text x="588" y="96" font-size="13" font-weight="700" fill="#0F1115">30.4%</text>
+
+  <text x="182" y="125" font-size="13" fill="#5C6167" text-anchor="end">Shopify</text>
+  <rect x="196" y="110" width="67" height="20" rx="8" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="271" y="125" font-size="13" font-weight="700" fill="#0F1115">5.3%</text>
+
+  <text x="182" y="154" font-size="13" fill="#5C6167" text-anchor="end">Wix</text>
+  <rect x="196" y="139" width="54" height="20" rx="8" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="258" y="154" font-size="13" font-weight="700" fill="#0F1115">4.3%</text>
+
+  <text x="182" y="183" font-size="13" fill="#5C6167" text-anchor="end">Squarespace</text>
+  <rect x="196" y="168" width="32" height="20" rx="8" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="236" y="183" font-size="13" font-weight="700" fill="#0F1115">2.5%</text>
+
+  <text x="182" y="212" font-size="13" fill="#5C6167" text-anchor="end">Joomla</text>
+  <rect x="196" y="197" width="15" height="20" rx="7" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="219" y="212" font-size="13" font-weight="700" fill="#0F1115">1.2%</text>
+
+  <text x="182" y="241" font-size="13" fill="#5C6167" text-anchor="end">Webflow</text>
+  <rect x="196" y="226" width="10" height="20" rx="5" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="214" y="241" font-size="13" font-weight="700" fill="#0F1115">0.8%</text>
+
+  <text x="182" y="270" font-size="13" fill="#5C6167" text-anchor="end">Drupal</text>
+  <rect x="196" y="255" width="9" height="20" rx="4" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="213" y="270" font-size="13" font-weight="700" fill="#0F1115">0.7%</text>
+
+  <text x="182" y="299" font-size="13" fill="#5C6167" text-anchor="end">Adobe Commerce</text>
+  <rect x="196" y="284" width="4" height="20" rx="2" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="208" y="299" font-size="13" font-weight="700" fill="#0F1115">0.3%</text>
+
+  <text x="182" y="328" font-size="13" fill="#5C6167" text-anchor="end">BigCommerce</text>
+  <rect x="196" y="313" width="3" height="20" rx="1" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="207" y="328" font-size="13" font-weight="700" fill="#0F1115">0.1%</text>
+
+  <text x="8" y="376" font-size="14" font-weight="700" fill="#0F1115">WordPress is about eight times the size of the platform in second place.</text>
+  <text x="8" y="396" font-size="14" fill="#5C6167">And the 30.4% running no tracked CMS is bigger than everything below WordPress put together.</text>
+</svg>

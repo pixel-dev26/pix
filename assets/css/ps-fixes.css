@@ -1,0 +1,839 @@
+/* ============================================================================
+   Corrections to the vendored theme — pixelstreet.in and pixelstreet.in/blog
+
+   Findings from the responsive audit of 8 August 2026 that live in the theme's
+   own CSS rather than in anything this project authored. Loaded by both
+   properties after the theme bundle, for the same reason ps-footer.css is: the
+   theme's four stylesheets are 27,000 vendored lines that the site depends on
+   verbatim, and editing them in place makes every future diff unreadable and
+   every upstream refresh a merge.
+
+   Everything here is an override of a specific, measured defect. Each block says
+   which rule it is beating and what the measurement was, so that when the theme is
+   eventually rebuilt these can be checked off and deleted rather than inherited
+   forever.
+
+   Blog-only corrections live in the blog's own ps-additions.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------- B3 --
+   The process module on /web-design-company-kolkata was cut off and unreachable
+   on phones: 175.7px past the viewport at 320, 120.7px at 375.
+
+   At <=599px (main.css:8156) .process-row becomes `grid-template-columns: 1fr`.
+   A `1fr` track is `minmax(auto, 1fr)`, and its `auto` minimum is the largest
+   item's min-content. .process-stepper is a nowrap flex row (main.css:8070), so
+   its min-content is the full unwrapped width of every step — 483.7px. That drags
+   the track and everything in it past the screen edge.
+
+   There is no clipping ancestor below <body>, so the excess was absorbed by
+   `body{overflow-x:clip}` — which is worse than a scrollbar, because the content
+   is silently cut with no way to scroll to it. On a 320px phone more than a third
+   of the module was invisible.
+
+   minmax(0,1fr) returns the track to 351px. flex-wrap is then needed so the steps
+   reflow onto multiple lines rather than being crushed inside the correct track. */
+@media (max-width: 599px) {
+  .process-row {
+    grid-template-columns: minmax(0, 1fr)
+  }
+
+  .process-stepper {
+    flex-wrap: wrap
+  }
+}
+
+/* --------------------------------------------------------------------- B4 --
+   /contact-us at 320px was the one place on the site where `overflow-x:clip` did
+   not hold: document.scrollWidth 360 against clientWidth 320, a real sideways
+   scroll. The offender is the social icon row — a 348px nowrap <ul> inside a 296px
+   column, with the last icon running from 308.8 to 360.
+
+   The knock-on was the more visible symptom: the overflow widened the layout
+   viewport, so innerWidth became 360 while clientWidth stayed 320, and the fixed
+   navbar (left:1em; right:1em) computed to 334.797px with a negative right margin.
+   The navbar is not independently broken; letting the icons wrap fixes both. */
+.contactDetails .socialMedia ul {
+  flex-wrap: wrap
+}
+
+/* --------------------------------------------------------------- B4 / M3 --
+   Letting the icons wrap removed one offender and revealed the one underneath:
+   the reCAPTCHA. Google renders a fixed 304px widget, and at 320px the
+   .g-recaptcha container has 236px of usable width, so it ran from x=42 to x=346
+   and kept the page 26px wider than the screen.
+
+   The widget's width is not ours to set — it is inside a cross-origin iframe. A
+   transform is the only lever that does not break it, and unlike `zoom` it scales
+   the hit areas with the artwork, so the checkbox stays where it looks like it is.
+
+   236/304 = 0.776. Below 360px only: at 375 the container is already wide enough,
+   and scaling a captcha is a readability cost worth paying only where it buys
+   removing a horizontal scroll. */
+@media (max-width: 359.98px) {
+  .g-recaptcha {
+    transform: scale(0.77);
+    transform-origin: 0 0;
+    /* The layout box does not shrink with the transform, so reclaim the gap the
+       scaled-down widget leaves behind rather than leaving 18px of dead space. */
+    margin-bottom: -18px;
+  }
+}
+
+/* --------------------------------------------------------------------- P1 --
+   Lead-form inputs computed 14px on phones — responsive.css:10744-10748 inside
+   @media (max-width:767px), overriding main.css:2892 and responsive.css:5919,
+   which both correctly say 16px.
+
+   Mobile Safari zooms the viewport whenever a focused input is under 16px and does
+   not zoom back out. The reader lands mid-form at ~1.14x with the page now
+   horizontally scrollable. The form is in the shared #exampleModal, so this was
+   every page of both properties. Padding and border-radius from that rule stand. */
+@media (max-width: 767px) {
+
+  .contact__form input,
+  .contact__form textarea,
+  .contact__form select {
+    font-size: 16px
+  }
+}
+
+/* --------------------------------------------------------------------- P5 --
+   The mobile menu's close control measured 17x17px against a 44px minimum, and
+   worse, the X you see is not the target you tap: .navclose-icon carries an inline
+   transform: translate3d(15px,0,0) that pushes the glyph right, leaving the drawn
+   icon and its hit area overlapping over only ~5px. Aiming at the centre of the
+   visible X missed the handler entirely.
+
+   !important on the transform because it is set inline on the element.
+
+   The icon needs an explicit size, and this is not cosmetic — without it the X does
+   not render at all. close-m.svg carries only a viewBox, no width/height, so the
+   <img> has an intrinsic ratio but no intrinsic size. Under the old
+   `display:flex` the image stretched to the 17px line and was visible by accident.
+   As a grid item under `place-items:center` its width resolves to fit-content,
+   which for a size-less replaced element is 0 — a 0x0 image inside a correctly
+   sized 44px tap target. The control still worked; there was simply nothing drawn
+   in it. Sizing the glyph is what restores the visible X. */
+.nav-close {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-close .navclose-icon {
+  width: 18px;
+  height: 18px;
+  transform: none !important
+}
+
+/* --------------------------------------------------------------------- P6 --
+   With the panel closed, .navbody is not display:none — it is a full-size fixed
+   panel translated off-screen. Its links keep their layout boxes and stay
+   focusable, so tabbing through any page on a phone walked through 9 invisible
+   links, plus 4 more inside .dropdown-mob, which is collapsed with max-height:0
+   and overflow:hidden but still focusable. 13 in total, none of them visible.
+
+   This is NOT done in CSS. The obvious rule — `.navbody{visibility:hidden}` with
+   an `.is-open` escape hatch — assumes the theme toggles a class when the panel
+   opens. It does not: the panel is driven by a Webflow IX2 interaction that
+   animates an inline `transform`, so there is no class to key off, and a CSS rule
+   guessing at one would leave the menu permanently invisible. That is a far worse
+   failure than the problem it fixes.
+
+   assets/js/ps-nav-a11y.js applies the `inert` attribute instead, watching the
+   panel's actual inline style rather than guessing at its state. `inert` removes a
+   subtree from the tab order AND from hit-testing, and if that script fails to
+   load nothing breaks — the menu behaves exactly as it does today.
+
+   The only CSS part is making `inert` visually inert too, for browsers that
+   support the attribute but not its default styling. */
+[inert] {
+  pointer-events: none
+}
+
+/* --------------------------------------------------------------- P3 / M6 --
+   The floating WhatsApp button is `bottom:3%; right:2%` (main.css:11177). A
+   percentage inset shrinks as the viewport shrinks, which is backwards: measured
+   25.6px at desktop, 15.2px at 768 and 7.5px at 320, so the button crowds the
+   corner hardest exactly where the screen is smallest. On the blog it covered
+   table-of-contents links; on /faq it covered a full-width accordion button.
+
+   Fixed px, and slightly smaller on phones. The blog additionally reserves the
+   corner inside .ps-toc — see ps-additions.css. */
+.whatsapp-link {
+  bottom: 20px;
+  right: 76px
+}
+
+@media (max-width: 767px) {
+  .whatsapp-link {
+    bottom: 16px;
+    right: 12px
+  }
+
+  .whatsapp-link img,
+  .whatsapp-link svg {
+    width: 48px;
+    height: 48px
+  }
+}
+
+/* --------------------------------------------------------------------- B1 --
+   The hamburger and the close control were <div>s with tabIndex -1 and no role,
+   and below 992px .navbar-menu is display:none — so a keyboard or switch user had
+   no route to site navigation at all, on 170 pages. Escape did not close the panel
+   either.
+
+   They stay <div>s. The Webflow interaction that actually opens the menu is bound
+   through `data-w-id`, and swapping the tag to <button> risks breaking the only
+   working way in for every user in order to fix it for some. `role="button"` plus
+   `tabindex="0"` plus an Enter/Space handler is the conformant equivalent and is
+   purely additive — see assets/js/ps-nav-a11y.js, which also owns Escape and the
+   aria-expanded state.
+
+   All that is needed here is the focus ring, since a div gets none for free. */
+.navbtn-wrap {
+  cursor: pointer
+}
+
+.navbtn-wrap:focus-visible,
+.nav-close:focus-visible {
+  outline: 0px solid #fdb914;
+  outline-offset: 0px;
+  border-radius: 50px;
+}
+
+/* --------------------------------------------------------------------- P4 --
+   The mobile panel dropped the primary CTA: below 992px the only conversion route
+   above the footer was the floating WhatsApp button. The markup adds it back; this
+   is its styling inside the panel, which has no .nav-btn rules of its own. */
+.navbody .nav-cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  background: #0b0d10;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navbody .nav-cta:hover,
+.navbody .nav-cta:focus-visible {
+  background: #fdb914;
+  color: #0b0d10
+}
+
+/* ============================================================================
+   The Video Studio reel
+
+   Six self-hosted videos on one page, played inline. Replaces the case-study
+   carousel that page used to carry, which described five video projects that do
+   not exist — cloned from the branding page and relabelled, linking to packaging
+   and identity case studies.
+
+   Markup is generated by scripts/build-site-seo.mjs from data/video-studio-reel.json.
+   Namespaced .psv so none of the theme's .ourWork / .ProjectCard rules reach it.
+   ========================================================================== */
+
+.psv-reel {
+  --psv-gap: 28px;
+  font-family: var(--font-secondary, 'Poppins', sans-serif);
+}
+
+.psv-reel__heading {
+  margin: 0 0 32px;
+  font-size: clamp(28px, calc(20px + 1.6vw), 44px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.psv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--psv-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.psv-item {
+  margin: 0;
+  padding: 0;
+  min-width: 0
+}
+
+/* 16:9 reserved up front, on the card rather than the media, so the tile does not
+   change height when the poster is replaced by the video element. */
+.psv-card__play,
+.psv-card__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  background: #0b0d10;
+}
+
+.psv-card__play {
+  position: relative;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.psv-card__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* The play affordance. Drawn in CSS rather than shipped as an icon: it is one
+   triangle, and an extra request for it on a page already asking for six posters
+   is a poor trade. */
+.psv-card__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(11, 13, 16, 0.62);
+  backdrop-filter: blur(2px);
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.psv-card__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.psv-card__play:hover .psv-card__icon,
+.psv-card__play:focus-visible .psv-card__icon {
+  background: var(--psv-accent, #fdb914);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.psv-card__play:hover .psv-card__icon::after,
+.psv-card__play:focus-visible .psv-card__icon::after {
+  border-left-color: #0b0d10;
+}
+
+.psv-card__play:focus-visible {
+  outline: 3px solid #fdb914;
+  outline-offset: 3px;
+}
+
+.psv-card__video:focus-visible {
+  outline: 3px solid #fdb914;
+  outline-offset: 3px;
+}
+
+.psv-card__meta {
+  padding: 16px 2px 0
+}
+
+.psv-card__title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #16181d;
+}
+
+.psv-card__client {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #63686f;
+}
+
+.psv-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.psv-card__tags li {
+  margin: 0;
+  padding: 5px 11px;
+  border: 1px solid rgba(7, 11, 16, 0.12);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4a4f57;
+}
+
+.psv-empty {
+  margin: 0;
+  font-size: 16px;
+  color: #63686f;
+}
+
+/* Tablet — two up. Three at 768 gives each tile a 232px-wide video, which is
+   below the point where anything in a brand film is legible. */
+@media (max-width: 1199.98px) {
+  .psv-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --psv-gap: 24px
+  }
+}
+
+/* Phone — one up, and the tile is the full column. A 16:9 video at 351px is
+   197px tall, which is already at the floor of watchable. */
+@media (max-width: 767.98px) {
+  .psv-grid {
+    grid-template-columns: minmax(0, 1fr);
+    --psv-gap: 28px
+  }
+
+  .psv-reel__heading {
+    margin-bottom: 24px
+  }
+
+  .psv-card__icon {
+    width: 56px;
+    height: 56px
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .psv-card__icon {
+    transition: none
+  }
+
+  .psv-card__play:hover .psv-card__icon,
+  .psv-card__play:focus-visible .psv-card__icon {
+    transform: translate(-50%, -50%)
+  }
+}
+
+/* --------------------------------------------------------------------- B8b --
+   our-work.html, Video Studio tab — the case-study card with a film where the
+   still normally goes.
+
+   The card keeps .casestudy-Bx, so it lands in the same grid with the same
+   background, clipping and content padding as the cards in the other four tabs.
+   It adds .psv-card + data-psv, which is what ps-video-reel.js binds to, so the
+   play/stop behaviour, the one-at-a-time rule and the deferred download are the
+   reel's, not a second implementation. our-work.html already loaded that script.
+
+   Only two things need saying here, and they are the two places the components
+   disagree:
+
+   - Shape. .psv-card__play/__video are 16:9 for the Video Studio reel. The case
+     cards are 493x380 stills, so the tile takes that ratio instead and drops the
+     reel's 14px radius, which .casestudy-Bx is already doing on the outside.
+   - The affordance. The reel is a bare circle; this is a pill carrying the word
+     Play, per the brief. currentColor on the triangle means the hover state only
+     has to change the pill.
+   ========================================================================== */
+
+.case-video .psv-card__play {
+  aspect-ratio: 493 / 380;
+  border-radius: 0;
+}
+
+.case-video__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: #000;
+  color: #fdb914;
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  border: 2px solid #ffffff57;
+  box-shadow: 0 0 3px #fdb914, 0 0 20px #fdb914, 0 0 40px #fdb914;
+}
+
+/* The mark is an inline <svg> whose path is fill:currentColor, so the pill's
+   `color` drives the label and the triangle together and the hover state only
+   has to change one property. 14px against a 13px label: the glyph reads as
+   optically level with the cap height rather than sitting proud of it. */
+.case-video__icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+  color: inherit;
+}
+
+.case-video__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Size, leading and colour are restated here rather than inherited from the
+   pill, because the theme carries blanket `li, p, span` rules — `font-size:
+   18px; line-height: 2` with three responsive overrides, and `color: #000` —
+   and a type selector beats inheritance however specific the parent is. Left
+   alone this label came out 18px/36px, which made a 60px pill instead of 39px,
+   and black, which on a black pill is nothing at all. `inherit` rather than a
+   literal so the hover inversion keeps working from one place. */
+.case-video__label {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: inherit;
+}
+
+/* Hover inverts the pill rather than tinting it: the same two colours, swapped,
+   so the hovered state is unmistakable without introducing a third. */
+.case-video .psv-card__play:hover .case-video__cta,
+.case-video .psv-card__play:focus-visible .case-video__cta {
+  background: #fdb914;
+  color: #000;
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+/* ---- the popup ----
+   Bootstrap's .modal-content is a white sheet with a border and radius, which is
+   a frame around a film rather than a film. This strips it to the video itself,
+   with the close control outside the top-right corner. */
+.psvm__content {
+  position: relative;
+  background: transparent;
+  border: 0;
+}
+
+.psvm__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  background: #000;
+}
+
+.psvm__error {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  border-radius: 14px;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-secondary, 'Poppins', sans-serif);
+  font-size: 16px;
+  text-align: center;
+}
+
+.psvm__close {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #000;
+  color: #fdb914;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.psvm__close:hover,
+.psvm__close:focus-visible {
+  background: #fdb914;
+  color: #000;
+}
+
+/* Under ~430px the control has nowhere to sit above the dialog once Bootstrap's
+   own margin is accounted for, so it moves inside the frame. */
+@media (max-width: 429.98px) {
+  .psvm__close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-video__cta {
+    transition: none
+  }
+
+  .case-video .psv-card__play:hover .case-video__cta,
+  .case-video .psv-card__play:focus-visible .case-video__cta {
+    transform: translate(-50%, -50%)
+  }
+}
+
+/* --------------------------------------------------------------------- B9 --
+   Homepage showreel: the grown video's bottom corners were being painted over,
+   so the 20px border-radius vanished along the bottom edge.
+
+   .video-container grows on scroll — an inline --video-scale written per frame
+   by the script at the foot of index.html, applied as transform:scale() with
+   transform-origin:center. Scaling from the centre pushes the box out by
+   (grownHeight - naturalHeight) / 2 at BOTH ends, but the box only reserves
+   50px of room below it (section.video-banner padding-bottom, main.css:7888).
+   Past that it runs into .client-logo, which has an opaque white background and
+   comes later in the document, so it paints on top — clipping the rounded
+   corners off square.
+
+   Measured overflow past the section's own bottom edge, at peak scale:
+       1500 x 900   35px      <- reported
+       1700 x 900   16px      <- same defect, just smaller
+
+   This is the mirror of a bug already fixed at the TOP of this section, where
+   the same growth was overlapping .brand-slider by ~15px at 1599px and
+   padding-top was raised to 141px (responsive.css:2152). The bottom never got
+   the same treatment.
+
+   15vh, not a flat pixel value, because the overflow scales with the viewport.
+   Below 1600 responsive.css:1933 sets .video-container{height:70vh}, so the
+   peak scale is capped by height and the overflow works out to exactly
+   0.15 x vh - 50px; adding back the 50px design gap makes the required padding
+   0.15 x vh. That also covers the shallower >1600 case, where the height comes
+   from aspect-ratio instead. max() keeps the original 50px as a floor on short
+   viewports.
+
+   Scoped to >=992px because the growth is gated to desktop — isDesktop() in
+   that script forces --video-scale to 1 below 992, so there is no overflow to
+   clear and phones keep their existing 50px. */
+@media (min-width: 992px) {
+  section.video-banner {
+    padding-bottom: max(50px, 15vh)
+  }
+}
+
+/* -------------------------------------------------------------------- B10 --
+   our-work.html work filter: one line from 992 to 1199, a dropdown below.
+
+   The bar is five uppercase labels in a pill, and at its base size they come to
+   more than the container gives them under 1200px — main.css lets the <ul> wrap,
+   so "Video Studio" dropped to a second line and the pill grew into a two-row
+   lozenge. Between 992 and 1199 the type and the horizontal padding come down
+   just enough to fit the row, with nowrap on the list so it cannot break again
+   and nowrap on each link so a label cannot break inside itself.
+
+   Below 992 there is no size that helps: five labels of this length will not sit
+   on one phone line at any type size worth reading, and the ~767 band's existing
+   answer — flex-nowrap plus overflow-x — hides options off the edge of a bar
+   that gives no sign it scrolls. So the pills are dropped there and the native
+   <select> in the markup takes over, which is the platform's own control: a
+   thumb-sized, scrollable, already-accessible picker. Both are always in the
+   DOM; this only chooses which one is shown, and ps-work-tabs.js keeps them
+   pointing at the same tab.
+   ========================================================================== */
+
+.tabselect {
+  display: none;
+}
+
+/* Padding is what comes down, not the type. The bar keeps the site's 14px so it
+   stays the same component it is above 1200 rather than shrinking into a smaller
+   one; only the desktop's 22px of lead-in gives way, which is what was pushing
+   the row to 910px against an 888px container and dropping "Video Studio" onto a
+   second line.
+
+   14px, measured at 992 — the tightest point of the band — with the webfont on
+   AND off, because the bar is one line by force here (flex-nowrap) and a row too
+   wide does not wrap to tell you, it just runs out past the pill and clips the
+   last item. The stack is 'Poppins', sans-serif, so the fallback is whatever the
+   platform calls sans-serif: Arial and its cousins, never anything as wide as
+   Verdana. Poppins comes to 825px against an 888px track and Arial to 853, both
+   with scrollWidth equal to clientWidth — nothing over the edge. 16px of padding
+   was the first attempt and it clears Poppins comfortably, which is exactly why
+   it is not the test worth running. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .tabdesign ul.nav.nav-pills {
+    flex-wrap: nowrap;
+  }
+
+  .tabdesign .nav-pills .nav-link {
+    padding: 5px 14px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tabdesign ul.nav.nav-pills {
+    display: none;
+  }
+
+  .tabselect {
+    display: block;
+    width: 100%;
+    margin: 0 auto 40px auto;
+  }
+
+  /* The toggle is styled as the ACTIVE PILL, not as a form field: black fill,
+     brand-yellow label, 999px radius, the same 22px of lead-in .nav-link uses
+     above 1200. It is showing what the black pill shows on desktop — the filter
+     you are on — so it should look like it, and a solid dark block on a white
+     page reads as pressable in a way a grey outlined input does not. */
+  .tabselect__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding: 15px 22px;
+    border: 0;
+    border-radius: 999px;
+    background-color: #111;
+    color: #fdb914;
+    font-family: var(--font-secondary, 'Poppins', sans-serif);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+
+  .tabselect__toggle:hover {
+    background-color: #1d1d20;
+  }
+
+  /* Offset so the ring sits on the white page rather than on the black fill,
+     where yellow on yellow-on-black would be the third yellow thing in 40px. */
+  .tabselect__toggle:focus-visible {
+    outline: 3px solid #fdb914;
+    outline-offset: 3px;
+  }
+
+  .tabselect__caret {
+    display: block;
+    flex: 0 0 12px;
+    width: 12px;
+    height: 8px;
+    transition: transform 0.25s ease;
+    color: #fdb914;
+  }
+
+  .tabselect__caret svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* The caret turning over is the whole open/closed signal — the toggle keeps
+     its fill, so without it nothing on screen distinguishes the two states. */
+  .tabselect__toggle[aria-expanded="true"] .tabselect__caret {
+    transform: rotate(180deg);
+  }
+
+  /* The menu, which is the reason this stopped being a <select>. Bootstrap's
+     .dropdown-menu ships white with a hairline border and 8px corners; all of
+     that is replaced. Full width of the toggle, the same ink as the toggle so
+     the pair reads as one object, and 20px corners against the toggle's 999 so
+     the panel reads as a surface rather than a second pill. */
+  .tabselect__menu.dropdown-menu {
+    width: 100%;
+    min-width: 0;
+    margin-top: 8px;
+    padding: 8px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #111;
+    box-shadow: 0 18px 40px rgba(17, 17, 17, 0.22);
+  }
+
+  .tabselect__item {
+    display: block;
+    width: 100%;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 14px;
+    background-color: transparent;
+    color: #fff;
+    font-family: var(--font-secondary, 'Poppins', sans-serif);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .tabselect__item:hover,
+  .tabselect__item:focus-visible {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fdb914;
+    outline: 0;
+  }
+
+  /* The filter you are already on: yellow, and given the row rather than a tick,
+     so the state is legible at a glance without adding a glyph column that the
+     other four rows would have to leave empty. */
+  .tabselect__item[aria-current="true"] {
+    background-color: #fdb914;
+    color: #111;
+  }
+
+  .tabselect__item[aria-current="true"]:hover {
+    background-color: #fdb914;
+    color: #111;
+  }
+}
+/* -------------------------------------------------------------------- B11 --
+   video-studio-kolkata, Our Work: the play tile inside a .ProjectCard.
+
+   The tile is the same component the Video Studio tab on our-work.html uses, so
+   it arrives with the two things that suited it there and not here:
+
+   - No radius of its own. There it sits flush inside .casestudy-Bx, which does
+     the clipping; here it is an inset block on a 20px-radius card with 35px of
+     padding around it, so nothing is clipping its corners and it needs its own.
+     overflow:hidden because the radius has to bite on the <img> inside it.
+   - Normal flow position. The cards are a fixed 661px and the copy rarely fills
+     them, so the tile floated wherever the text ended and sat at a different
+     height on every card. margin-top:auto in a column flex parent drops it to
+     the foot of the card, which lines the five tiles up across the carousel.
+   ========================================================================== */
+
+.ProjectCard.case-video {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProjectCard.case-video .case-video__play {
+  margin-top: auto;
+  border-radius: 20px;
+  overflow: hidden;
+}

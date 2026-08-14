@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The advertised price against the renewal price</title>
+  <desc id="d">Prices read off each seller's own page on 30 July 2026. A .in domain is one rupee for the first year and 899 rupees to renew; .com is one rupee then 1,499; .online is 99 rupees then 3,489, a 35 times step. Entry shared hosting is 69 rupees a month, renewing at 289 with Hostinger and 409 with BigRock, while MilesWeb guarantees the same 69 rupees at renewal.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">READ OFF EACH SELLER&#8217;S OWN PAGE, 30 JULY 2026</text>
+
+  <rect x="14" y="46" width="784" height="316" rx="16" fill="#FDB914"/>
+  <rect x="8" y="40" width="784" height="316" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+
+  <rect x="28" y="300" width="744" height="40" fill="#F7F8F9"/>
+
+  <rect x="300" y="62" width="118" height="26" rx="999" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <text x="359" y="80" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">ADVERTISED</text>
+  <rect x="520" y="62" width="112" height="26" rx="999" fill="#0F1115"/>
+  <text x="576" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">RENEWS AT</text>
+
+  <path d="M28 100 L772 100 M28 140 L772 140 M28 180 L772 180 M28 220 L772 220 M28 260 L772 260 M28 300 L772 300 M28 340 L772 340" stroke="#E7E9EC" stroke-width="2"/>
+  <path d="M290 100 L290 340 M508 100 L508 340" stroke="#E7E9EC" stroke-width="2"/>
+
+  <text x="28" y="126" font-size="14" font-weight="700" fill="#0F1115">.in domain (Hostinger)</text>
+  <text x="300" y="126" font-size="15" fill="#5C6167">&#8377;1 first year</text>
+  <text x="520" y="126" font-size="15" font-weight="700" fill="#0F1115">&#8377;899</text>
+
+  <text x="28" y="166" font-size="14" font-weight="700" fill="#0F1115">.com domain (Hostinger)</text>
+  <text x="300" y="166" font-size="15" fill="#5C6167">&#8377;1 first year</text>
+  <text x="520" y="166" font-size="15" font-weight="700" fill="#0F1115">&#8377;1,499</text>
+
+  <text x="28" y="206" font-size="14" font-weight="700" fill="#0F1115">.online domain (Hostinger)</text>
+  <text x="300" y="206" font-size="15" fill="#5C6167">&#8377;99 first year</text>
+  <text x="520" y="206" font-size="15" font-weight="700" fill="#0F1115">&#8377;3,489 &#8212; a 35x step</text>
+
+  <text x="28" y="246" font-size="14" font-weight="700" fill="#0F1115">Shared hosting (Hostinger)</text>
+  <text x="300" y="246" font-size="15" fill="#5C6167">&#8377;69 a month</text>
+  <text x="520" y="246" font-size="15" font-weight="700" fill="#0F1115">&#8377;289 a month</text>
+
+  <text x="28" y="286" font-size="14" font-weight="700" fill="#0F1115">Shared hosting (BigRock)</text>
+  <text x="300" y="286" font-size="15" fill="#5C6167">&#8377;69 a month</text>
+  <text x="520" y="286" font-size="15" font-weight="700" fill="#0F1115">&#8377;409 a month</text>
+
+  <text x="28" y="326" font-size="14" font-weight="700" fill="#0F1115">Shared hosting (MilesWeb)</text>
+  <text x="300" y="326" font-size="15" fill="#5C6167">&#8377;69 a month</text>
+  <text x="520" y="326" font-size="15" font-weight="700" fill="#0F1115">&#8377;69 a month &#8212; guaranteed</text>
+
+  <text x="8" y="386" font-size="17" font-weight="700" fill="#0F1115">Budget the renewal, not the promotion.</text>
+  <text x="8" y="408" font-size="14" fill="#5C6167">You pay the first number once and the second one forever. The shaded row is the only host that does not do this.</text>
+</svg>

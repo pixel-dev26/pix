@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 546" width="380" height="546" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The serif-versus-sans readability rule has no study behind it</title>
+  <desc id="d">The rule everyone repeats has no measurement behind it: reading speed showed no effect of serifs at all. What the same body of work does show moves legibility is x-height, counter size, letter spacing and stroke width.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE MOST QUOTED RULE IN THE FIELD</text>
+
+  <rect x="13" y="39" width="359" height="176" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="34" width="359" height="176" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="52" width="154" height="28" rx="14" fill="#0F1115"/>
+  <text x="105" y="71" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">NOT MEASURED</text>
+  <text x="28" y="110" font-size="17" font-weight="700" fill="#0F1115">Serifs read better in<tspan x="28" dy="1.3em">print, sans on screen</tspan></text>
+  <text x="28" y="166" font-size="14" fill="#5C6167">Reading speed showed no effect<tspan x="28" dy="1.4em">of serifs at all. Arditi, 2005.</tspan></text>
+
+  <rect x="13" y="231" width="359" height="190" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="226" width="359" height="190" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="244" width="118" height="28" rx="14" fill="#0F1115"/>
+  <text x="87" y="263" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">MEASURED</text>
+  <text x="28" y="302" font-size="17" font-weight="700" fill="#0F1115">What actually moves legibility</text>
+
+  <rect x="26" y="318" width="153" height="38" rx="12" fill="#5FBFA8"/>
+  <text x="102" y="343" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">x-height</text>
+  <rect x="196" y="318" width="153" height="38" rx="12" fill="#5FBFA8"/>
+  <text x="272" y="343" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">counter size</text>
+  <rect x="26" y="362" width="153" height="38" rx="12" fill="#5FBFA8"/>
+  <text x="102" y="387" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">letter spacing</text>
+  <rect x="196" y="362" width="153" height="38" rx="12" fill="#5FBFA8"/>
+  <text x="272" y="387" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">stroke width</text>
+
+  <rect x="13" y="441" width="359" height="96" rx="16" fill="#FDB914"/>
+  <rect x="8" y="436" width="359" height="96" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="462" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">SO WHY PICK A SERIF</text>
+  <text x="28" y="488" font-size="16" font-weight="700" fill="#0F1115">For tone, which is a good<tspan x="28" dy="1.3em">reason. Not a readability one.</tspan></text>
+</svg>

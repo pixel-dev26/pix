@@ -1,0 +1,264 @@
+/* ============================================================================
+   Consent notice — DPDP Act 2023
+
+   Behaviour and the legal reasoning live in assets/js/ps-consent.js. This is only
+   how it looks, and it is the first component built entirely from the brand
+   foundation: every colour, size, space, radius and duration below is a token from
+   data/brand.json. There is not one hardcoded hex or px in this file.
+
+   Two things here are compliance, not taste:
+
+   - Accept and Reject are the SAME button. Same size, same weight, same colour,
+     adjacent. A Reject styled as a quieter link is a dark pattern, and the Act
+     requires consent to be free.
+   - It is a bar, not a full-screen interstitial. It must not hold the page hostage
+     to obtain a choice — consent has to be unconditional.
+   ========================================================================== */
+
+.ps-consent {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 2147483000;
+  /* above the floating WhatsApp button (99) */
+  display: flex;
+  justify-content: center;
+  padding: var(--ps-space-4);
+  font-family: var(--ps-font-body);
+  animation: ps-consent-in var(--ps-motion-base) var(--ps-motion-ease);
+}
+
+@keyframes ps-consent-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Two columns: the words on the left, the buttons on the right, vertically
+   centred against each other. The category toggles are the exception — they
+   span both columns on the row underneath, because they are a panel that opens
+   rather than a third thing sitting in the bar.
+
+   Placement is explicit rather than left to auto-flow, and that is not
+   decoration: the DOM order is copy -> rows -> actions, so auto-placement would
+   put the buttons on the row BELOW the toggles instead of up beside the title.
+   The order is deliberate — with the manage panel open, a keyboard user runs
+   through the toggles and arrives at Save, rather than tabbing past the buttons
+   to reach the switches they control.
+
+   `auto` on the second track, not a fixed width, so the column is exactly as
+   wide as the three buttons need and every remaining pixel goes to the text.
+   minmax(0, 1fr) on the first, so a long lede wraps instead of forcing the
+   grid wider than the panel. */
+.ps-consent__panel {
+  width: 100%;
+  max-width: 61rem;
+  padding: 1rem;
+  border: 1px solid var(--ps-line-hairline);
+  border-radius: var(--ps-radius-xl);
+  background: var(--ps-surface-page);
+  box-shadow: var(--ps-shadow-lg);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--ps-space-5);
+  row-gap: var(--ps-space-4);
+}
+
+.ps-consent__copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.ps-consent__title {
+  margin: 0 0 var(--ps-space-2);
+  font-weight: var(--ps-text-h4-weight);
+  line-height: var(--ps-text-h4-leading);
+  color: var(--ps-ink-strongest);
+  letter-spacing: normal;
+  font-size: 16px;
+}
+
+/* No bottom margin any more — the lede is the last thing in its column, and the
+   gap to the toggles below is the grid's row-gap. Leaving it would double up. */
+.ps-consent__lede {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.65;
+  color: #000000;
+}
+
+.ps-consent__lede a {
+  color: var(--ps-ink-default);
+  text-decoration: underline;
+  text-decoration-color: var(--ps-yellow);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ------------------------------------------------------------ the categories */
+
+/* Full width on the row under both columns. Bottom margin is gone — the space
+   below is the panel's own row-gap now, and keeping both stacked two gaps. */
+.ps-consent__rows {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  gap: var(--ps-space-4);
+  margin: 0;
+  padding: var(--ps-space-4) 0 0;
+  border-top: 1px solid var(--ps-line-hairline);
+}
+
+.ps-consent__toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--ps-space-3);
+  /* The whole label is the target, so the 44px floor is met without a big checkbox. */
+  min-height: var(--ps-target-min);
+  cursor: pointer;
+}
+
+.ps-consent__toggle input[disabled] {
+  cursor: default;
+}
+
+.ps-consent__toggle input {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 1.25rem;
+  accent-color: var(--ps-ink-strongest);
+}
+
+.ps-consent__name {
+  font-size: var(--ps-text-body);
+  font-weight: 600;
+  color: var(--ps-ink-default);
+}
+
+.ps-consent__name em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ps-ink-subtle);
+}
+
+.ps-consent__desc {
+  margin: var(--ps-space-1) 0 0 2.25rem;
+  font-size: var(--ps-text-small);
+  line-height: 1.6;
+  color: var(--ps-ink-muted);
+}
+
+/* ---------------------------------------------------------------- the buttons */
+
+/* Right column, same row as the copy. nowrap keeps the three side by side —
+   the track is sized `auto`, so it asks for exactly the width they need and
+   there is nothing for them to wrap onto. The phone block below puts wrapping
+   back, where they stack full width instead. */
+.ps-consent__actions {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--ps-space-3);
+}
+
+.ps-consent__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: auto;
+  padding: 7px 15px;
+  border: 1px solid transparent;
+  border-radius: var(--ps-radius-pill);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--ps-motion-fast) var(--ps-motion-ease), color var(--ps-motion-fast) var(--ps-motion-ease), border-color var(--ps-motion-fast) var(--ps-motion-ease);
+}
+
+/* Accept and Reject share this class deliberately — see the file header. */
+.ps-consent__btn--primary {
+  background: var(--ps-ink-strongest);
+  color: var(--ps-surface-page);
+}
+
+.ps-consent__btn--primary:hover,
+.ps-consent__btn--primary:focus-visible {
+  background: var(--ps-yellow);
+  color: var(--ps-ink-strongest);
+}
+
+.ps-consent__btn--ghost {
+  background: transparent;
+  color: var(--ps-ink-default);
+  border-color: var(--ps-line-strong);
+}
+
+.ps-consent__btn--ghost:hover,
+.ps-consent__btn--ghost:focus-visible {
+  background: var(--ps-yellow);
+  border-color: var(--ps-yellow);
+  color: var(--ps-ink-strongest);
+}
+
+.ps-consent__btn:focus-visible {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: 0;
+}
+
+/* --------------------------------------------------------------------- phone */
+
+@media (max-width: 47.999rem) {
+  .ps-consent {
+    padding: var(--ps-space-2);
+  }
+
+  .ps-consent__panel {
+    padding: var(--ps-space-4);
+    /* A long notice must never trap the page behind it on a short screen. */
+    max-height: 80vh;
+    overflow-y: auto;
+    /* One column — there is no room to sit the buttons beside the words. */
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Back to auto-placement. The DOM order — copy, toggles, buttons — is already
+     the right stacking order here, and letting it flow means the empty toggle
+     row costs nothing while it is hidden. Pinning the buttons to row 3 instead
+     would leave an empty row 2 and pay the row-gap twice. */
+  .ps-consent__copy,
+  .ps-consent__rows,
+  .ps-consent__actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .ps-consent__actions {
+    flex-wrap: wrap;
+  }
+
+  .ps-consent__actions>.ps-consent__btn {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-consent {
+    animation: none;
+  }
+
+  .ps-consent__btn {
+    transition: none;
+  }
+}

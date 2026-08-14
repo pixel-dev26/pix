@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 336" width="800" height="336" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The seven-step rebranding sequence</title>
+  <desc id="d">Seven numbered stages in three phases. Strategy: explain the why, research and analysis, then vision, mission and values. Identity: rebuild the identity. Rollout: execute across touchpoints, plan the launch, monitor brand sentiment.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">SEVEN STEPS, THREE PHASES</text>
+
+  <!-- row 1 -->
+  <rect x="14" y="54" width="181" height="100" rx="16" fill="#FDB914"/>
+  <rect x="8" y="48" width="181" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="38" cy="78" r="15" fill="#0F1115"/>
+  <text x="38" y="84" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="28" y="116" font-size="15" font-weight="700" fill="#0F1115">Explain<tspan x="28" dy="1.3em">the why</tspan></text>
+
+  <rect x="215" y="54" width="181" height="100" rx="16" fill="#FDB914"/>
+  <rect x="209" y="48" width="181" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="239" cy="78" r="15" fill="#0F1115"/>
+  <text x="239" y="84" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="229" y="116" font-size="15" font-weight="700" fill="#0F1115">Research and<tspan x="229" dy="1.3em">analysis</tspan></text>
+
+  <rect x="416" y="54" width="181" height="100" rx="16" fill="#FDB914"/>
+  <rect x="410" y="48" width="181" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="440" cy="78" r="15" fill="#0F1115"/>
+  <text x="440" y="84" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="430" y="116" font-size="15" font-weight="700" fill="#0F1115">Vision, mission<tspan x="430" dy="1.3em">and values</tspan></text>
+
+  <rect x="617" y="54" width="181" height="100" rx="16" fill="#D098F9"/>
+  <rect x="611" y="48" width="181" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="641" cy="78" r="15" fill="#0F1115"/>
+  <text x="641" y="84" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="631" y="116" font-size="15" font-weight="700" fill="#0F1115">Rebuild the<tspan x="631" dy="1.3em">identity</tspan></text>
+
+  <path d="M191 95 L205 95" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M392 95 L406 95" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M593 95 L607 95" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- row 2 -->
+  <rect x="14" y="196" width="181" height="100" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="190" width="181" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="38" cy="220" r="15" fill="#0F1115"/>
+  <text x="38" y="226" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="28" y="258" font-size="15" font-weight="700" fill="#0F1115">Execute across<tspan x="28" dy="1.3em">touchpoints</tspan></text>
+
+  <rect x="215" y="196" width="181" height="100" rx="16" fill="#4A90C7"/>
+  <rect x="209" y="190" width="181" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="239" cy="220" r="15" fill="#0F1115"/>
+  <text x="239" y="226" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+  <text x="229" y="258" font-size="15" font-weight="700" fill="#0F1115">Plan the<tspan x="229" dy="1.3em">launch</tspan></text>
+
+  <rect x="416" y="196" width="181" height="100" rx="16" fill="#4A90C7"/>
+  <rect x="410" y="190" width="181" height="100" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="440" cy="220" r="15" fill="#0F1115"/>
+  <text x="440" y="226" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text>
+  <text x="430" y="258" font-size="15" font-weight="700" fill="#0F1115">Monitor brand<tspan x="430" dy="1.3em">sentiment</tspan></text>
+
+  <path d="M191 237 L205 237" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M392 237 L406 237" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- phase key -->
+  <rect x="611" y="190" width="181" height="100" rx="16" fill="#F7F8F9" stroke="#8E959D" stroke-width="2"/>
+  <text x="631" y="214" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">PHASES</text>
+  <rect x="631" y="228" width="14" height="14" rx="4" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="653" y="240" font-size="13" fill="#5C6167">1&#8211;3 Strategy</text>
+  <rect x="631" y="250" width="14" height="14" rx="4" fill="#D098F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="653" y="262" font-size="13" fill="#5C6167">4 Identity</text>
+  <rect x="631" y="272" width="14" height="14" rx="4" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="653" y="284" font-size="13" fill="#5C6167">5&#8211;7 Rollout</text>
+
+  <text x="8" y="322" font-size="14" fill="#5C6167">Steps 1 to 3 decide what actually changes. Only step 4 draws anything.</text>
+</svg>

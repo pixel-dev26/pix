@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# Video
+#
+# The site's video lives on the server, not in git. This is not a preference —
+# assets/images/px-showreel.mp4 is 125MB and GitHub hard-rejects any push
+# containing a file over 100MB, so a commit that included it could never be
+# pushed at all. The five .mp4 files in the tree come to 232MB between them.
+#
+# CONSEQUENCE: a fresh clone will NOT have a working showreel. index.html and
+# thankyou.html both reference px-showreel.mp4, and index.html also references
+# Avanza-Blades-Intro.mp4 (the Video Studio card). Upload those to the server
+# separately, as you do now, or move them to Git LFS and delete this block.
+*.mp4
+*.mov
+
+# Server-side secrets. ps-config.php reads SMTP and reCAPTCHA credentials from
+# environment variables first and this file second; it is deliberately absent
+# from the working tree today (only ps-secrets.example.php ships). Listed here
+# so it can never be committed by accident if someone creates it later.
+assets/email-php/ps-secrets.php
+
+# OS and editor noise
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# Local tooling
+.claude/launch.json
+node_modules/

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 508" width="380" height="508" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The certificate lifetime staircase: 398, 200, 100, 47 days</title>
+  <desc id="d">Four dated steps. Until 14 March 2026 a publicly trusted TLS certificate could live 398 days. From 15 March 2026 the maximum is 200 days, from 15 March 2027 it is 100 days, and from 15 March 2029 it is 47 days.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">MAXIMUM LIFE OF A TLS CERTIFICATE</text>
+
+  <rect x="13" y="45" width="359" height="84" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="40" width="359" height="84" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="68" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">UNTIL</text>
+  <text x="26" y="96" font-size="17" font-weight="700" fill="#0F1115">14 Mar 2026</text>
+  <text x="344" y="88" font-size="30" font-weight="700" fill="#0F1115" text-anchor="end">398</text>
+  <text x="344" y="108" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75" text-anchor="end">DAYS</text>
+
+  <rect x="13" y="141" width="359" height="84" rx="16" fill="#FDB914"/>
+  <rect x="8" y="136" width="359" height="84" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="164" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">FROM</text>
+  <text x="26" y="192" font-size="17" font-weight="700" fill="#0F1115">15 Mar 2026</text>
+  <text x="344" y="184" font-size="30" font-weight="700" fill="#0F1115" text-anchor="end">200</text>
+  <text x="344" y="204" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75" text-anchor="end">DAYS</text>
+
+  <rect x="13" y="237" width="359" height="84" rx="16" fill="#FA6B45"/>
+  <rect x="8" y="232" width="359" height="84" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="260" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">FROM</text>
+  <text x="26" y="288" font-size="17" font-weight="700" fill="#0F1115">15 Mar 2027</text>
+  <text x="344" y="280" font-size="30" font-weight="700" fill="#0F1115" text-anchor="end">100</text>
+  <text x="344" y="300" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75" text-anchor="end">DAYS</text>
+
+  <rect x="13" y="333" width="359" height="84" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="328" width="359" height="84" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="356" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">FROM</text>
+  <text x="26" y="384" font-size="17" font-weight="700" fill="#0F1115">15 Mar 2029</text>
+  <text x="344" y="376" font-size="30" font-weight="700" fill="#0F1115" text-anchor="end">47</text>
+  <text x="344" y="396" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75" text-anchor="end">DAYS</text>
+
+  <text x="8" y="452" font-size="14" font-weight="700" fill="#0F1115">At 398 days a diary entry held.<tspan x="8" dy="1.35em">At 47 days it is eight renewals a year.</tspan></text>
+  <text x="8" y="498" font-size="13" fill="#6A6F75">CA/Browser Forum ballot SC-081v3.</text>
+</svg>

@@ -1,0 +1,44 @@
+/*!
+*    ______ _       _   _
+*    |  ____| |     | | (_)
+*    | |__  | | __ _| |_ _  ___ ___  _ __
+*    |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*    | |    | | (_| | |_| | (_| (_) | | | |
+*    |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*         https://www.flaticon.com
+*/
+
+@font-face {
+    font-family: "flaticon_pixelstreet-set2";
+    src: url("../footer-icon/flaticon_pixelstreet.woff2") format("woff2"),
+        url("../footer-icon/flaticon_pixelstreet.woff") format("woff"),
+        url("../footer-icon/flaticon_pixelstreet.eot") format("embedded-opentype"),
+        url("../footer-icon/flaticon_pixelstreet.ttf") format("truetype"),
+        url("../footer-icon/flaticon_pixelstreet.svg") format("svg")
+  font-display: swap;
+}
+
+i[class^="flaticon2-"]:before,
+i[class*=" flaticon2-"]:before {
+    font-family: flaticon_pixelstreet-set2 !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon2-iphone:before {
+    content: "\f101";
+}
+
+.flaticon2-mail:before {
+    content: "\f102";
+}
+
+.flaticon2-map:before {
+    content: "\f103";
+}

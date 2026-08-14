@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 376" width="800" height="376" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Three grades of no-code lock-in, and what leaving costs</title>
+  <desc id="d">Webflow offers code export but only on the Core Workspace plan at 19 dollars a month, so exporting is a subscription feature. Squarespace exports an .xml file for WordPress that leaves styles, custom CSS, store and portfolio pages behind. Bubble, Adalo, Glide and Softr run on the vendor's infrastructure, so there is no folder of code to take at all.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE FAILURE MODE IS THE EXIT, NOT THE BUILD</text>
+
+  <!-- paid export -->
+  <rect x="14" y="46" width="246" height="260" rx="16" fill="#FDB914"/>
+  <rect x="8" y="40" width="246" height="260" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="30" y="62" width="112" height="26" rx="999" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="86" y="80" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">PAID EXPORT</text>
+  <text x="30" y="126" font-size="18" font-weight="700" fill="#0F1115">Webflow</text>
+  <text x="30" y="180" font-size="14" fill="#5C6167">Code export exists, on<tspan x="30" dy="1.4em">the Core Workspace plan</tspan><tspan x="30" dy="1.4em">at $19 a month on top of</tspan><tspan x="30" dy="1.4em">your site plan.</tspan></text>
+  <path d="M30 254 L232 254" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="30" y="278" font-size="15" font-weight="700" fill="#0F1115">A subscription feature</text>
+
+  <!-- partial export -->
+  <rect x="283" y="46" width="246" height="260" rx="16" fill="#FA6B45"/>
+  <rect x="277" y="40" width="246" height="260" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="299" y="62" width="136" height="26" rx="999" fill="#FA6B45" stroke="#0F1115" stroke-width="2"/>
+  <text x="367" y="80" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">PARTIAL EXPORT</text>
+  <text x="299" y="126" font-size="18" font-weight="700" fill="#0F1115">Squarespace</text>
+  <text x="299" y="180" font-size="14" fill="#5C6167">An .xml file aimed at<tspan x="299" dy="1.4em">WordPress. Styles, custom</tspan><tspan x="299" dy="1.4em">CSS, store and portfolio</tspan><tspan x="299" dy="1.4em">pages stay behind.</tspan></text>
+  <path d="M299 254 L501 254" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="299" y="278" font-size="15" font-weight="700" fill="#0F1115">A rebuild, posts saved</text>
+
+  <!-- no export -->
+  <rect x="552" y="46" width="246" height="260" rx="16" fill="#EE3D41"/>
+  <rect x="546" y="40" width="246" height="260" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="568" y="62" width="102" height="26" rx="999" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="619" y="80" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">NO EXPORT</text>
+  <text x="568" y="126" font-size="18" font-weight="700" fill="#0F1115">App builders</text>
+  <text x="568" y="180" font-size="14" fill="#5C6167">Bubble, Adalo, Glide,<tspan x="568" dy="1.4em">Softr run on the vendor's</tspan><tspan x="568" dy="1.4em">own infrastructure. No</tspan><tspan x="568" dy="1.4em">folder of code to take.</tspan></text>
+  <path d="M568 254 L770 254" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="568" y="278" font-size="15" font-weight="700" fill="#0F1115">Accept, or start again</text>
+
+  <text x="8" y="338" font-size="15" font-weight="700" fill="#0F1115">The failure mode is never the build. It is the exit.</text>
+  <text x="8" y="362" font-size="14" fill="#5C6167">You are choosing a lease. That is fine, as long as you know the cost of moving out.</text>
+</svg>

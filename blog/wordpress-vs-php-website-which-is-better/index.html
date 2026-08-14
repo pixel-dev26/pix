@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<!-- lang is a single attribute here; the theme emitted lang="zxx" lang="en-US",
+     and the first one won, declaring the whole blog to have no linguistic content. --><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <title>WordPress vs PHP Website: Which One Is Better in 2026?</title>
+  <meta name="description" content="WordPress, headless WordPress or a PHP framework: the real 2026 comparison, with current versions, measured performance, and why the security verdict flipped.">
+  <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+  <link rel="canonical" href="https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/">
+
+  
+  <link rel="alternate" type="text/markdown" href="../../blog/wordpress-vs-php-website-which-is-better.md" title="Markdown source">
+  <link rel="alternate" type="text/plain" href="../../blog/llms-full.txt" title="Full blog corpus as plain text">
+
+  <meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="WordPress vs PHP Website: Which One Is Better in 2026?"><meta property="og:description" content="WordPress, headless WordPress or a PHP framework: the real 2026 comparison, with current versions, measured performance, and why the security verdict flipped."><meta property="og:url" content="https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/"><meta property="og:site_name" content="Pixel Street"><meta property="article:section" content="WEB DEVELOPMENT"><meta property="og:updated_time" content="2025-04-23T11:11:13+00:00"><meta property="og:image" content="https://pixelstreet.in/blog/media/2025/01/php-vs-wordpress.png"><meta property="og:image:secure_url" content="https://pixelstreet.in/blog/media/2025/01/php-vs-wordpress.png"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="680"><meta property="og:image:alt" content="WordPress vs PHP"><meta property="og:image:type" content="image/png"><meta property="article:published_time" content="2025-01-24T10:47:15+00:00"><meta property="article:modified_time" content="2025-04-23T11:11:13+00:00">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="WordPress vs PHP Website: Which One Is Better in 2026?"><meta name="twitter:description" content="WordPress, headless WordPress or a PHP framework: the real 2026 comparison, with current versions, measured performance, and why the security verdict flipped."><meta name="twitter:image" content="https://pixelstreet.in/blog/media/2025/01/php-vs-wordpress.png"><meta name="twitter:label1" content="Written by"><meta name="twitter:data1" content="Khurshid Alam"><meta name="twitter:label2" content="Time to read"><meta name="twitter:data2" content="16 minutes">
+
+  <link rel="icon" href="https://pixelstreet.in/blog/media/2025/04/cropped-favicon.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="Pixelstreet Blog" href="https://pixelstreet.in/blog/feed.xml">
+
+  <meta name="google-site-verification" content="F1gXt-9n39M0QxL04HWK_w51YLXhJmCwpBC-aPVyvuk">
+
+  <link rel="stylesheet" href="../../assets/blog/style.css" media="all"><link rel="stylesheet" href="../../assets/css/bootstrap.min.css"><link rel="stylesheet" href="../../assets/remix/fonts/remixicon.css"><link rel="stylesheet" href="../../assets/pixel-cusom-font/font/flaticon_pixelstreet-set-1.css"><link rel="stylesheet" href="../../assets/footer-icon/flaticon_pixelstreet-set-2.css"><link rel="stylesheet" href="../../assets/css/new.css"><link rel="stylesheet" href="../../assets/slick-slider/slick/slick.css"><link rel="stylesheet" href="../../assets/blog/main.css"><link rel="stylesheet" href="../../assets/blog/responsive.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-brand.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-footer.css">
+  
+  <link rel="stylesheet" href="../../assets/css/ps-fixes.css">
+  <link rel="stylesheet" href="../../assets/css/ps-consent.css">
+  <link rel="stylesheet" href="../../blog/ps-additions.css">
+  <script src="../../assets/js/ps-consent.js"></script>
+  <style>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+
+
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+
+
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+
+
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+
+
+/* Selectors double the block class — `.hm-toggle .hm-toggle__opt` rather than
+   `.hm-toggle__opt`. This control is dropped into two themed footers whose own
+   rules reach it at things like `footer .container a`, and inheritance loses to
+   any direct rule: the first version came out at 16px in a 48px-tall pill because
+   the theme set a font-size and a padding on footer links. Every property those
+   rules touch is restated here at a specificity they cannot reach. */
+.hm-toggle {
+  display: inline-flex;
+  align-items: stretch;
+  vertical-align: middle;
+  padding: 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(7, 11, 16, 0.16);
+  background: transparent;
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono",
+               "IBM Plex Mono", Menlo, Consolas, monospace;
+  line-height: 1;
+}
+.hm-toggle .hm-toggle__label {
+  align-self: center;
+  margin: 0;
+  padding: 0 0.7ch 0 1ch;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.45);
+  text-transform: uppercase;
+}
+.hm-toggle .hm-toggle__opt {
+  display: block;
+  margin: 0;
+  padding: 6px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: rgba(7, 11, 16, 0.55);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.hm-toggle a.hm-toggle__opt:hover,
+.hm-toggle a.hm-toggle__opt:focus-visible {
+  color: #070b10;
+  background: rgba(253, 185, 20, 0.32);
+}
+.hm-toggle .hm-toggle__opt[aria-current="true"] {
+  background: #0b0d10;
+  color: #fdb914;
+  font-weight: 700;
+}
+.hm-toggle a.hm-toggle__opt:focus-visible { outline: 2px solid #fdb914; outline-offset: 2px; }
+
+/* Dark skin, for the machine views' own footer. Inert on human pages, which
+   never carry .machine on <html>. */
+html.machine .hm-toggle { border-color: rgba(253, 185, 20, 0.32); }
+html.machine .hm-toggle .hm-toggle__label { color: #a08a4e; }
+html.machine .hm-toggle .hm-toggle__opt { color: #b9b3a5; }
+html.machine .hm-toggle a.hm-toggle__opt:hover,
+html.machine .hm-toggle a.hm-toggle__opt:focus-visible { color: #0b0d10; background: #fdb914; }
+html.machine .hm-toggle .hm-toggle__opt[aria-current="true"] { background: #fdb914; color: #0b0d10; }
+
+/* Where it sits is not decided here any more. On the human pages the footer gives
+   it a row of its own — `.psf__view` in assets/css/ps-footer.css — under the link
+   columns and above the legal rule. This file styles the control; the footer
+   places it. The earlier version did both, and the placement half assumed a
+   footer that no longer exists.
+
+   The two things placement must keep avoiding, recorded because both were shipped
+   once: the Terms/Privacy <ul>, whose `.footer__menu nav ul li a` rules outrank
+   anything a single class can say and rendered the pill 48px tall with an
+   invisible label; and the bottom-right corner, where the floating WhatsApp
+   button covers roughly the last 84px of the page. */
+
+@media print { .hm-toggle { display: none; } }</style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://pixelstreet.in/#organization","name":"Pixel Street","alternateName":["Pixelstreet","Pixel Street Agency"],"legalName":"Pixel Street","url":"https://pixelstreet.in/","logo":{"@id":"https://pixelstreet.in/#logo"},"image":{"@id":"https://pixelstreet.in/#logo"},"description":"Pixel Street is a creative and digital agency in Salt Lake, Kolkata. It works across brand identity, web design and development, digital marketing and video production for FMCG, D2C, education, manufacturing and corporate clients in India and abroad.","slogan":"Chasing attention is yesterday's game.","foundingDate":"2020","founder":{"@id":"https://pixelstreet.in/#khurshid-alam"},"telephone":"+919007295096","email":"info@pixelstreet.in","priceRange":"₹₹₹","contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+919007295096","email":"info@pixelstreet.in","areaServed":["India","Worldwide"],"availableLanguage":["en"]}],"address":{"@type":"PostalAddress","streetAddress":"Martin Burn Business Park, Office #900B, 9th Floor, BP Block, Sector V, Bidhannagar","addressLocality":"Kolkata","addressRegion":"West Bengal","postalCode":"700091","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":22.5726,"longitude":88.4339},"hasMap":"https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"21:00"}],"areaServed":[{"@type":"Place","name":"India"},{"@type":"Place","name":"Worldwide"}],"currenciesAccepted":"INR","knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8","https://www.linkedin.com/company/pixelstreet-in/","https://www.instagram.com/pixelstreet.in/","https://www.facebook.com/offpixelstreet/","https://www.behance.net/pixelstreet_in","https://dribbble.com/pixelstreetagency"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Branding and Creative Retainer","serviceType":"Brand identity and creative retainer","url":"https://pixelstreet.in/branding-agency-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Design, Website and eCommerce","serviceType":"Web design and development","url":"https://pixelstreet.in/web-design-company-kolkata"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Digital Marketing and Social Campaigns","serviceType":"Digital marketing","url":"https://pixelstreet.in/digital-marketing-agency-kolkata"}}]}},{"@type":"ImageObject","@id":"https://pixelstreet.in/#logo","url":"https://pixelstreet.in/assets/images/logo1.svg","caption":"Pixel Street"},{"@type":"WebSite","@id":"https://pixelstreet.in/#website","url":"https://pixelstreet.in/","name":"Pixel Street","publisher":{"@id":"https://pixelstreet.in/#organization"}},{"@type":"Person","@id":"https://pixelstreet.in/#khurshid-alam","name":"Khurshid Alam","jobTitle":"Founder","url":"https://pixelstreet.in/blog/author/khurshid-alam/","image":{"@type":"ImageObject","url":"https://pixelstreet.in/blog/media/2024/12/author-img-1.png"},"worksFor":{"@id":"https://pixelstreet.in/#organization"},"founderOf":{"@id":"https://pixelstreet.in/#organization"},"knowsAbout":["brand identity design","packaging design","key visual design","web design","eCommerce development","custom CMS development","digital marketing","social media campaigns","search engine optimisation","AI search optimisation","video production"],"sameAs":["https://www.linkedin.com/company/pixelstreet-in/"]},{"@type":"ImageObject","@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#primaryimage","url":"https://pixelstreet.in/blog/media/2025/01/php-vs-wordpress.png","inLanguage":"en-US","width":1600,"height":680},{"@type":"BreadcrumbList","@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pixelstreet.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://pixelstreet.in/blog/"},{"@type":"ListItem","position":3,"name":"WEB DEVELOPMENT","item":"https://pixelstreet.in/blog/category/web-development/"},{"@type":"ListItem","position":4,"name":"WordPress vs PHP Website: Which One Is Better in 2026?","item":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/"}]},{"@type":"WebPage","@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#webpage","url":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/","name":"WordPress vs PHP Website: Which One Is Better in 2026?","datePublished":"2023-01-10T00:00:00+00:00","dateModified":"2025-04-23T11:11:13","isPartOf":{"@id":"https://pixelstreet.in/#website"},"breadcrumb":{"@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#primaryimage"},"description":"If your website’s job is to publish things and collect enquiries, use WordPress, and spend what you saved on maintenance instead of on the build."},{"@type":"BlogPosting","@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#article","isPartOf":{"@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#webpage"},"mainEntityOfPage":{"@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#webpage"},"headline":"WordPress vs PHP Website: Which One Is Better in 2026?","description":"WordPress, headless WordPress or a PHP framework: the real 2026 comparison, with current versions, measured performance, and why the security verdict flipped.","datePublished":"2023-01-10T00:00:00+00:00","dateModified":"2025-04-23T11:11:13","author":{"@id":"https://pixelstreet.in/#khurshid-alam"},"publisher":{"@id":"https://pixelstreet.in/#organization"},"wordCount":3498,"inLanguage":"en-US","image":{"@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#primaryimage"},"articleSection":["WEB DEVELOPMENT"],"abstract":"If your website’s job is to publish things and collect enquiries, use WordPress, and spend what you saved on maintenance instead of on the build."},{"@type":"FAQPage","@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#faq","isPartOf":{"@id":"https://pixelstreet.in/blog/wordpress-vs-php-website-which-is-better/#webpage"},"mainEntity":[{"@type":"Question","name":"Is a custom PHP website faster than WordPress?","acceptedAnswer":{"@type":"Answer","text":"It can be, and usually for reasons that have nothing to do with PHP. A framework build ships only the code it needs, while a typical WordPress site loads a theme and a dozen plugins on every request. But the measured gap between PHP versions running WordPress itself is small: 139.06 requests per second on PHP 7.4 against 148.30 on PHP 8.5 in Kinsta’s December 2025 benchmark. Images, caching, database queries and hosting location move your Core Web Vitals far more than the platform choice does."}},{"@type":"Question","name":"Which PHP version should my site run in 2026?","acceptedAnswer":{"@type":"Answer","text":"PHP 8.4 or 8.5, since those are the only branches in active support per php.net. PHP 8.3 is fine and gets security fixes until 31 December 2027. PHP 8.2 loses security support on 31 December 2026, so treat it as a deadline. Anything on PHP 7 or 5 needs moving now, and that is 37.5% of PHP sites according to W3Techs on 30 July 2026."}},{"@type":"Question","name":"Is WordPress secure enough for a serious business site?","acceptedAnswer":{"@type":"Answer","text":"Yes, if somebody owns updates. Patchstack logged 11,334 ecosystem vulnerabilities in 2025 with 91% in plugins and six in core, and found the median time to first exploitation for heavily attacked bugs was five hours. That is a maintenance problem, not a platform verdict. Note also that core produced a remote code execution chain in July 2026, so “core is fine” is a probability, not a guarantee."}},{"@type":"Question","name":"Do I need headless WordPress?","acceptedAnswer":{"@type":"Answer","text":"Probably not. It suits content-heavy sites with a custom frontend, several output channels, or a genuine need to stop the plugin layer from touching the public site. It costs you preview, some plugin compatibility, and a second deployment pipeline. We are doing it to this blog because the archive keeps growing and a non-developer publishes to it. For a brochure site it is overhead with a nice name."}},{"@type":"Question","name":"Is WordPress better for SEO than a custom build?","acceptedAnswer":{"@type":"Answer","text":"WordPress makes competent SEO easier, mostly through plugins like Yoast or Rank Math handling titles, sitemaps and schema without a developer. Nothing about it is inherently more rankable. A framework build can do all of it, and often does it more cleanly, but only if someone specified it. The failure mode differs: WordPress sites get fat, custom sites forget the basics."}},{"@type":"Question","name":"What about WooCommerce, since it is a WordPress plugin?","acceptedAnswer":{"@type":"Answer","text":"Different question with a different answer, and the platform comparison there turns on payments, catalogue size and who runs the store day to day. I have set that out in Shopify vs WooCommerce rather than crowding it in here."}}]}]}</script>
+
+  
+  <script type="text/plain" data-ps-consent="analytics" async src="https://www.googletagmanager.com/gtag/js?id=GT-PJSBPDH"></script>
+  <script type="text/plain" data-ps-consent="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'linker', { domains: ['pixelstreet.in'] });
+    gtag('config', 'GT-PJSBPDH');
+  </script>
+</head>
+<body>
+  <div class="container">
+        <div class="nav-group">
+            <div class="navbar">
+                <a href="../../" class="navlogo-full-wrap w-inline-block">
+                    <div class="navlogo-full-mask"><img src="../../assets/images/logo1.svg" loading="eager" alt="Logo Pixelstreet" class="navlogo-full"></div><img src="../../assets/images/fav-logo.svg" loading="eager" alt="" class="navlogo-mark">
+                </a>
+                <!-- <img src="assets/images/663b5857daab4d22293b72bf_nav-connection-shape.svg" loading="lazy" width="219"
+                    alt="" class="navbar-connector" /> -->
+                <div class="navbar-menu">
+                    <div class="navbar-menu-inner">
+                        <!-- Four empty <a href="javascript:void(0);"> elements used to sit here,
+                             one before this div and three nested inside the dropdown. They came
+                             from the captured theme markup, where an unclosed anchor was
+                             auto-closed by the parser. Each was focusable with no accessible
+                             name, so every page opened with four unnamed link stops ahead of
+                             the real navigation (2.4.4 / 4.1.2), and two of them were <a>
+                             children of <ul>, which is not a valid content model. -->
+                        <div class="navbar-link-text position-relative hover-mnu-reveal"><a href="javascript:void(0);" class="navbar-link-item w-inline-block">Services
+                                </a><div class="dropdown"><ul class="list-unstyled"><li><a href="../../branding-agency-kolkata">Creative Retainer</a>
+                                        </li>
+                                        <li> <a href="../../web-design-company-kolkata">Website &amp; eCommerce</a>
+                                        </li>
+                                        <li> <a href="../../digital-marketing-agency-kolkata">Social Campaigns</a>
+                                        </li>
+                                        <li> <a href="../../video-studio-kolkata">Video Studio</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        <a href="../../our-work" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Our Work</div>
+                        </a>
+                        <a href="../../about" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Team</div>
+                        </a>
+                        <a href="../../blog/" aria-current="page" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text">Blog</div>
+                        </a>
+                        <a href="../../careers" class="navbar-link-item w-inline-block ">
+                            <div class="navbar-link-text careers-highlight">Careers<span class="careers-hiring-badge">Hiring</span></div>
+                        </a>
+                    </div><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-wrap greentowhite nav-btn w-inline-block">
+                        <div class="btn-inner navbnt">
+                            <div class="btn-main greentowhite nav-ani">
+                                <div class="btn-text">DISCUSS A PROJECT
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-mobile">
+
+                    <div class="navbody">
+                        <a data-w-id="c81135b2-e306-3de0-cea8-a4d8f2746292" href="../../" class="nav-menu-logo-link w-inline-block"><img src="../../assets/images/logo.svg" loading="lazy" alt="Logomark Pixelstreet" class="nav-menu-logo">
+                        </a>
+
+
+                        <div role="button" tabindex="0" aria-label="Close menu" data-w-id="bfc164ca-3c26-14ba-d6b1-6177cde85246" class="nav-close"><img src="../../assets/images/close-m.svg" loading="lazy" alt="Icon Close X" class="navclose-icon">
+                        </div>
+
+                        <div class="nav-item-link mobile-drop w-inline-block">
+                            <div class="nav-item-text">
+                                Services
+                                <span class="dropdown-icon"><i class="ri-add-line"></i></span>
+                                <span class="dropdown-icon"><i class="ri-subtract-fill"></i></span>
+                                <!-- Icon beside "Services" -->
+                            </div>
+                            <div class="dropdown-mob">
+                                <ul class="list-unstyled">
+                                    <li><a href="../../branding-agency-kolkata">Creative Retainer</a></li>
+                                    <li><a href="../../web-design-company-kolkata">Website &amp; eCommerce</a></li>
+                                    <li><a href="../../digital-marketing-agency-kolkata">Social Campaigns</a></li>
+                                    <li><a href="../../video-studio-kolkata">Video Studio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <a href="../../our-work" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Our Work
+                            </div>
+                        </a><a href="../../about" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Team</div>
+                        </a>
+                        <a href="../../blog/" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text">Blog</div>
+                        </a>
+                        <a href="../../careers" class="nav-item-link w-inline-block">
+                            <div class="nav-item-text careers-highlight">Careers<span class="careers-hiring-badge">Hiring</span></div>
+                        </a>
+                    
+                        <!-- P4: below 992px the desktop bar's "Discuss a project"
+                             button is gone and .navbar-menu is display:none, so the
+                             only conversion route left above the footer was the
+                             floating WhatsApp button. -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                           class="nav-cta">Discuss a project</a>
+</div>
+                    <div role="button" tabindex="0" aria-label="Open menu" data-w-id="3381c287-9947-e365-7067-fd4935256394" class="navbtn-wrap mobile-tab-none">
+                        <img src="../../assets/images/menu.svg" loading="lazy" alt="" class="navbtn-icon">
+                    </div>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                       aria-label="Open the enquiry form" class="nav-enquiry">
+<div data-w-id="3381c287-9947-e365-7067-fd4935256394" class="navbtn-wrap dk-show">
+
+                            <svg class="navbtn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" width="24" height="24">
+                            <path d="M4 4.75A1.75 1.75 0 0 1 5.75 3h8.5L20 8.75v10.5A1.75 1.75 0 0 1 18.25 21H5.75A1.75 1.75 0 0 1 4 19.25V4.75Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                            <path d="M14 3v6h6M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+        <div data-w-id="50ab8146-de5b-2d73-65a6-48e823c948ec" class="topmarker"></div>
+    </div>
+
+
+  <main id="scrollsmoother-container">
+    <div class="ps-progress" aria-hidden="true"><span class="ps-progress__bar"></span></div>
+
+  <section class="section blogInnerDetails">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="blog-inner-banner">
+            <img src="../../blog/media/2025/01/php-vs-wordpress.png" alt="WordPress vs PHP Website: Which One Is Better in 2026?" width="1600" height="680" fetchpriority="high" decoding="async">
+            <div class="overlap-title">
+              <h1 style="--h1-scale:1.000">WordPress vs PHP Website: Which One Is Better in 2026?</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row ctsom-blog-pad">
+        <div class="col-lg-3 col-12 stuck-socila position-relative">
+          <nav class="ps-toc" aria-label="On this page">
+            
+            <details open>
+              <summary>On this page</summary>
+              <p class="ps-toc__title">On this page</p>
+              <ol>
+                <li class="lvl-2"><a href="#the-short-answer">The short answer</a></li><li class="lvl-2"><a href="#why-wordpress-vs-php-is-the-wrong-fight-now">Why “WordPress vs PHP” is the wrong fight now</a></li><li class="lvl-2"><a href="#is-wordpress-built-on-php">Is WordPress built on PHP?</a></li><li class="lvl-2"><a href="#where-wordpress-and-php-actually-stand-in-2026">Where WordPress and PHP actually stand in 2026</a></li><li class="lvl-2"><a href="#wordpress-a-php-framework-or-headless-the-comparison">WordPress, a PHP framework, or headless: the comparison</a></li><li class="lvl-2"><a href="#performance-your-php-version-is-not-the-bottleneck">Performance: your PHP version is not the bottleneck</a></li><li class="lvl-2"><a href="#security-the-plugin-story-is-91-true-and-july-2026-showed">Security: the plugin story is 91% true, and July 2026 showed the other 9%</a></li><li class="lvl-2"><a href="#cost-wordpress-moves-the-bill-it-does-not-delete-it">Cost: WordPress moves the bill, it does not delete it</a></li><li class="lvl-2"><a href="#hosting-and-the-boring-operational-stuff">Hosting and the boring operational stuff</a></li><li class="lvl-2"><a href="#what-i-am-doing-with-this-blog-and-why">What I am doing with this blog, and why</a></li><li class="lvl-2"><a href="#so-which-should-you-choose">So which should you choose</a></li><li class="lvl-2"><a href="#faq">FAQ</a></li><li class="lvl-2"><a href="#what-i-would-tell-you-across-a-table">What I would tell you across a table</a></li>
+              </ol>
+            </details>
+          </nav>
+        </div>
+
+        <div class="col-lg-9 col-12">
+          
+          <div class="blog-content">
+            <div class="author_date">
+              <div class="author-bx">
+                <div class="author">
+                  <img class="author-img" src="../../blog/media/2024/12/author-img-1.png" alt="" width="60" height="60">
+                  <p class="author-name">Khurshid Alam</p>
+                </div>
+                <div class="datebx">
+                  <p class="date"><time datetime="2023-01-10T00:00:00+00:00">January 10, 2023</time></p>
+                </div>
+              </div>
+            </div>
+            <span id="blast-off-the-great-divide-between-php-and-wordpress" class="ps-anchor-alias" aria-hidden="true"></span><span id="the-battle-begins-wordpress-vs-php-a-comparative-study" class="ps-anchor-alias" aria-hidden="true"></span><span id="1-custom-design-ui" class="ps-anchor-alias" aria-hidden="true"></span><span id="2-ease-of-development" class="ps-anchor-alias" aria-hidden="true"></span><span id="3-development-expense" class="ps-anchor-alias" aria-hidden="true"></span><span id="4-scalability" class="ps-anchor-alias" aria-hidden="true"></span><span id="6-customizations-and-changes" class="ps-anchor-alias" aria-hidden="true"></span><span id="7-software-integrations" class="ps-anchor-alias" aria-hidden="true"></span><span id="8-seo-friendly" class="ps-anchor-alias" aria-hidden="true"></span><span id="9-number-of-developers" class="ps-anchor-alias" aria-hidden="true"></span><span id="hosting" class="ps-anchor-alias" aria-hidden="true"></span><!-- <h2>WordPress vs PHP Website: Which One Is Better in 2026?</h2> -->
+
+ <p>This blog runs on WordPress. I sell custom development for a living. Those two facts should tell you how honest this comparison is going to be.</p>
+<p>I run Pixel Street, a design studio in Salt Lake, Kolkata. We build for Coca-Cola, ITC and Marico. And we publish everything you are reading on a WordPress install, because for an archive of sixty-odd articles nothing else justified the invoice. If I thought WordPress was the amateur option, my own shopfront would not be sitting on it.</p>
+<p>The decision is almost always framed as WordPress against “custom PHP”. That framing has aged badly, and I want to deal with it before comparing anything. Almost nobody builds a business website by writing PHP from scratch in 2026. The live question is WordPress against a PHP framework, or WordPress against WordPress used differently.</p>
+<h2 id="the-short-answer">The short answer</h2>
+<div class="answer-box"><p>If your website’s job is to publish things and collect enquiries, use WordPress, and spend what you saved on maintenance instead of on the build.</p></div>
+<p>If your website’s job is to <em>run a process</em> that belongs to you — a booking engine, a pricing calculator, a dealer portal, an approvals workflow — use a PHP framework. Laravel or Symfony, not hand-rolled PHP.</p>
+<p>If you need both, keep WordPress as the content store and serve the pages from something else over its REST API. That is what “headless” means, and it is what we are currently doing to this blog.</p>
+<p>Raw, hand-written PHP is not the third option. It is the thing frameworks were invented to replace.</p>
+<p><picture><source media="(max-width: 700px)" srcset="../../blog/diagrams/wordpress-vs-php-publishing-or-processing-narrow.svg" width="380" height="664"><img src="../../blog/diagrams/wordpress-vs-php-publishing-or-processing.svg" alt="Publishing work — pages, posts, landing pages, a contact form — points at WordPress; processing work — bookings, quotes, logins, dashboards — points at Laravel or Symfony; needing both points at headless WordPress over the REST API." width="800" height="434" loading="lazy" decoding="async"></picture></p>
+<h2 id="why-wordpress-vs-php-is-the-wrong-fight-now">Why “WordPress vs PHP” is the wrong fight now</h2>
+<p>PHP is a language. WordPress is an application written in that language. Comparing them is like comparing Hindi to a newspaper. The comparison only ever made sense as shorthand for “a packaged CMS versus something a developer writes for me”, and the second half of that sentence has changed completely.</p>
+<p>Look at what PHP developers actually reach for. JetBrains surveyed 1,720 developers who named PHP as their main language for <a href="https://blog.jetbrains.com/phpstorm/2025/10/state-of-php-2025/" rel="noopener">The State of PHP 2025</a>: 64% use Laravel, 25% use WordPress and 23% use Symfony. In Stack Overflow’s <a href="https://survey.stackoverflow.co/2025/technology" rel="noopener">2025 Developer Survey</a>, across roughly 49,000 respondents, 18.9% had worked with PHP, 13.6% with WordPress, 8.9% with Laravel and 4% with Symfony. Neither survey has a category for “wrote PHP from scratch”, because in professional work that stopped being a plan and became an accident.</p>
+<p>So when an agency quotes you a “custom PHP website”, ask which framework. If the answer is “our own”, you are buying a proprietary CMS with a team of one, and every developer who touches it afterwards will need to learn a codebase that exists nowhere else. I have inherited that situation and it is not a saving. If you are weighing that decision seriously, I have written separately about <a href="../../blog/web-development-framework/">how to choose a web development framework</a> and about <a href="../../blog/best-cms-platforms/">the CMS platforms worth shortlisting</a>.</p>
+<span id="php" class="ps-anchor-alias" aria-hidden="true"></span><span id="wordpress" class="ps-anchor-alias" aria-hidden="true"></span><span id="learning-curve-is-wordpress-built-on-php" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="is-wordpress-built-on-php">Is WordPress built on PHP?</h2>
+<p>Yes. WordPress core is PHP, its data sits in MySQL or MariaDB, and you extend it by writing more PHP. Every argument about “WordPress performance” is therefore partly an argument about PHP performance, and every PHP security practice applies to a WordPress site whether or not anyone on the project knows it.</p>
+<p>That is also why the two are not really rivals. Choosing WordPress <em>is</em> choosing PHP. You are only choosing whether somebody else already wrote the first hundred thousand lines.</p>
+<span id="php-or-wordpress-which-is-better" class="ps-anchor-alias" aria-hidden="true"></span><span id="what-has-actually-changed-since-this-post-was-written" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="where-wordpress-and-php-actually-stand-in-2026">Where WordPress and PHP actually stand in 2026</h2>
+<p>Most comparisons you will find are built on version numbers that have since moved. Here is the state of things on 30 July 2026, with sources, because a comparison built on stale version numbers is worse than no comparison.</p>
+<p><strong>WordPress is on 7.0.</strong> WordPress 7.0 “Armstrong” shipped on <a href="https://wordpress.org/news/2026/05/armstrong/" rel="noopener">20 May 2026</a>, bringing an AI client into core, a redesigned dashboard with a command palette, and a more extensible site editor. The current release as I write is 7.0.2, from <a href="https://wordpress.org/news/2026/07/wordpress-7-0-2-release/" rel="noopener">17 July 2026</a>.</p>
+<p><strong>WordPress now asks for PHP 8.3.</strong> The official <a href="https://wordpress.org/about/requirements/" rel="noopener">requirements page</a> lists PHP “version 8.3 or greater” and MariaDB 10.11+ or MySQL 8.0+, with HTTPS required on every install. It notes that WordPress will still run on PHP 7.4, while pointing out that PHP 7.4 is end of life.</p>
+<p><strong>The supported PHP versions are 8.2 through 8.5.</strong> Per <a href="https://www.php.net/supported-versions.php" rel="noopener">php.net</a>, PHP 8.4 and 8.5 are in active support; 8.2 and 8.3 get security fixes only. PHP 8.2’s security support ends on 31 December 2026, which is five months away. PHP 8.1 <a href="https://www.php.net/eol.php" rel="noopener">reached end of life on 31 December 2025</a>. PHP 7.4 died on 28 November 2022.</p>
+<p><strong>A lot of the web has not noticed.</strong> W3Techs put PHP on 70.6% of all sites whose server-side language it can identify on 30 July 2026, and of those PHP sites, 62.4% run version 8, 29.5% still run version 7 and 8.0% still run version 5 (<a href="https://w3techs.com/technologies/details/pl-php" rel="noopener">W3Techs</a>). Add those last two together and 37.5% of PHP sites on the web are running a branch that stopped receiving security fixes years ago. If you take one operational thing from this post, check which PHP version your host is actually serving before you argue about platforms.</p>
+<p><strong>WordPress powers 41.2% of all websites</strong> and holds 59.1% of the CMS market, measured 30 July 2026 (<a href="https://w3techs.com/technologies/details/cm-wordpress" rel="noopener">W3Techs</a>). That figure gets quoted constantly and almost never qualified, so here is the qualification. W3Techs draws its sample from Google’s Chrome User Experience Report plus a customised Tranco list, treats subdomains as part of the parent site, excludes redirected domains, and describes its universe as “the relevant web” rather than every registered domain. Read it as a share of sites people visit, not a census.</p>
+<h2 id="wordpress-a-php-framework-or-headless-the-comparison">WordPress, a PHP framework, or headless: the comparison</h2>
+<p>The standard version of this comparison runs two pros-and-cons tables, one of which lists “affects speed and performance of the website” and “can impact website speed and performance” as two separate cons for PHP. That is not a comparison, it is padding. This is the table I would actually put in front of a client.</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th scope="col">Criterion</th>
+<th scope="col">WordPress, standard</th>
+<th scope="col">Headless WordPress</th>
+<th scope="col">Laravel or Symfony</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Best fit</td>
+<td>Content, marketing sites, blogs, brochure plus enquiries</td>
+<td>Content-heavy sites needing a custom frontend or several output channels</td>
+<td>Applications with rules of their own: bookings, portals, pricing, workflow</td>
+</tr>
+<tr>
+<td>Time to first launch</td>
+<td>Fastest</td>
+<td>Slower than standard WordPress, two codebases to ship</td>
+<td>Slowest</td>
+</tr>
+<tr>
+<td>Who edits content</td>
+<td>Anyone, on day one</td>
+<td>Anyone, but preview and “view page” need rebuilding</td>
+<td>Nobody until you build an admin for it</td>
+</tr>
+<tr>
+<td>Where the money goes</td>
+<td>Low build, ongoing maintenance and plugin licences</td>
+<td>Higher build, lower runtime, maintenance on both halves</td>
+<td>High build, low licence cost, developer needed for content changes</td>
+</tr>
+<tr>
+<td>Security surface</td>
+<td>Core plus every plugin and theme you install</td>
+<td>Core plus plugins, but the public frontend is not running them</td>
+<td>Core framework plus the Composer packages you chose</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>Anything that runs PHP; managed WordPress hosts add auto-updates</td>
+<td>PHP host for the backend plus static or Node hosting for the frontend</td>
+<td>Any PHP host, though deployment is a real step</td>
+</tr>
+<tr>
+<td>Honest ceiling</td>
+<td>Complex logic gets bolted on and eventually fights the platform</td>
+<td>Operational complexity doubles before traffic justifies it</td>
+<td>Publishing anything is a developer ticket unless you build the tooling</td>
+</tr>
+</tbody>
+</table></div>
+<p>Notice what is missing from that table: a winner. Comparisons like this usually declare winners in nine categories, which reads well and decides nothing, because the categories are not weighted against any actual project.</p>
+<h2 id="performance-your-php-version-is-not-the-bottleneck">Performance: your PHP version is not the bottleneck</h2>
+<p>The claim I keep meeting is that PHP 8 is dramatically faster than PHP 7 and that this settles the performance argument. For a WordPress site, it does not.</p>
+<p>Kinsta benchmarked WordPress 6.8 with no plugins and no caching, using ApacheBench at 15 concurrent connections and 1,000 requests per run on a 30-vCPU Google Cloud machine, five runs per configuration. Requests per second came out at 139.06 on PHP 7.4, 146.09 on 8.2, 142.75 on 8.3, 148.22 on 8.4 and 148.30 on 8.5 (<a href="https://kinsta.com/blog/php-benchmarks/" rel="noopener">Kinsta, updated 13 December 2025</a>). Best case against PHP 7.4, about 6.6%.</p>
+<p>Two things follow. First, upgrade your PHP anyway, because 6.6% is free and the security position is not optional. Second, stop treating the engine as the lever. PHP 8.3 scoring below 8.2 in that run is the tell: at that point the constraint is database queries and I/O, not the interpreter. Your slow WordPress site is slow because of an unoptimised hero image, four page-builder plugins loading their own jQuery, and a shared host in a different country. Rewriting it in Laravel would not fix any of those.</p>
+<p>What Google measures is worth knowing precisely, because there is a lot of confident nonsense about it. The Core Web Vitals thresholds on <a href="https://web.dev/articles/vitals" rel="noopener">web.dev</a> are LCP within 2.5 seconds, INP of 200 milliseconds or less, and CLS of 0.1 or less. INP became a stable Core Web Vital in 2024, replacing First Input Delay, so any audit still reporting FID is running on old assumptions. I have also seen 2.0 seconds quoted as the new LCP target. Google’s own documentation still says 2.5.</p>
+<p>Both platforms can pass. Both routinely fail. The difference is that a framework build fails because someone wrote something slow, and a WordPress build usually fails because someone installed something slow.</p>
+<span id="5-security" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="security-the-plugin-story-is-91-true-and-july-2026-showed">Security: the plugin story is 91% true, and July 2026 showed the other 9%</h2>
+<p>The standard claim is that WordPress is more vulnerable because of third-party plugins, so PHP takes the win. The first half is well evidenced. The second half is lazier than it looks.</p>
+<p>Patchstack recorded 11,334 new vulnerabilities across the WordPress ecosystem in 2025, up 42% year on year. Plugins accounted for 91% and themes for 9%. WordPress core accounted for six, all low priority. Of the total, 1,966 (17%) were high severity, a category that grew 113% year on year, and 46% were still unpatched when they were disclosed publicly. Weighted by how hard they were attacked, the median time from disclosure to first exploitation was five hours (<a href="https://patchstack.com/whitepaper/state-of-wordpress-security-in-2026/" rel="noopener">Patchstack, State of WordPress Security in 2026</a>, data updated 25 February 2026).</p>
+<p>Two caveats I would want if I were reading this. Patchstack counts vulnerabilities entering its own database, not sites compromised, so the 42% rise partly measures how much better the ecosystem got at finding and reporting bugs. And Patchstack sells WordPress security. The numbers are still the best public accounting we have, and the shape of them matches what every host will tell you privately.</p>
+<p>Now the part that stops this being a clean win for custom code. On 17 July 2026 WordPress shipped 7.0.2 to fix two vulnerabilities in core: “a facilitated SQL injection issue” and “a REST API batch-route confusion and SQL injection issue leading to Remote Code Execution” (<a href="https://wordpress.org/documentation/wordpress-version/version-7-0-2/" rel="noopener">WordPress 7.0.2 release notes</a>). Remote code execution, in core, in the REST server and the query class. WordPress.org enabled forced auto-updates on affected branches, which is not a thing you do for a routine patch. Versions before 6.8 were unaffected.</p>
+<p>So core is overwhelmingly not where the holes are, and core is also capable of producing the worst kind of hole there is. Anyone who tells you plugins are the entire story is describing 2025’s data, not July 2026’s.</p>
+<p><picture><source media="(max-width: 700px)" srcset="../../blog/diagrams/wordpress-vs-php-where-the-holes-are-narrow.svg" width="380" height="546"><img src="../../blog/diagrams/wordpress-vs-php-where-the-holes-are.svg" alt="Of 11,334 WordPress ecosystem vulnerabilities logged in 2025, 91% were in plugins, 9% in themes and six in core — yet in July 2026 core itself produced a remote code execution chain, patched in 7.0.2 with forced auto-updates." width="800" height="468" loading="lazy" decoding="async"></picture></p>
+<p>The honest comparison is about who is responsible. On WordPress, thousands of people you have never met patch your dependencies, and your job is to apply those patches within hours rather than months. On a Laravel or Symfony build, you own the schedule and the blame, and your Composer dependencies are a supply chain too. The current <a href="https://owasp.org/Top10/2025/" rel="noopener">OWASP Top 10:2025</a> — drawn from data on over 2.8 million applications contributed by 13 organisations — makes that explicit: Security Misconfiguration is now A02 and Software Supply Chain Failures is a new A03. A page of installed plugins is a software supply chain. So is a <code>composer.json</code>.</p>
+<p>Practically, the platform matters less than three habits: updates applied on a schedule someone is accountable for, a plugin list short enough to audit, and somebody actually testing the thing. If you have never had a build <a href="../../blog/vapt-guide/">put through vulnerability assessment and penetration testing</a>, the platform argument is not your biggest problem.</p>
+<h2 id="cost-wordpress-moves-the-bill-it-does-not-delete-it">Cost: WordPress moves the bill, it does not delete it</h2>
+<p>WordPress is cheaper to start. That is not in dispute and I am not going to pretend otherwise to protect our own quotes.</p>
+<p>What I do dispute is the arithmetic that stops at launch. A WordPress site accrues premium theme and plugin renewals, a maintenance retainer or the risk of not having one, and the slow accumulation of plugins added to solve problems that a small amount of custom code would have solved once. A framework build front-loads almost all of its cost and then charges you for every content change until someone builds the editing tools.</p>
+<p>The projects where I have seen WordPress turn out expensive share one signature: the brief was a website, the reality was an application, and nobody said so out loud. Twenty plugins later, the platform is being asked to do something it was not built to do, and the eventual rebuild costs more than the framework build would have. If you are pricing this exercise for the Indian market, our breakdown of <a href="../../blog/web-designing-cost-in-kolkata/">web design and development cost in Kolkata</a> is more useful than any global average.</p>
+<h2 id="hosting-and-the-boring-operational-stuff">Hosting and the boring operational stuff</h2>
+<p>WordPress runs anywhere PHP runs, which is the point. Managed WordPress hosting adds automatic core updates, staging and a security layer, and takes away some control over the server. The forced auto-updates WordPress.org pushed for 7.0.2 are a good illustration of why that trade is often worth making: on a well-managed host, that patch landed while most owners were asleep.</p>
+<p>A framework build has fewer platform-specific hosting requirements and more deployment requirements. You will want a repository, a build step and a way to roll back. If your team does not have those, that is a real cost, not a detail. For Indian projects there is also the plain latency question of where the server sits, which is why we keep <a href="../../blog/best-hosting-services-in-india/">a current list of hosting services in India</a> rather than defaulting to whatever is cheapest in a US datacentre.</p>
+<h2 id="what-i-am-doing-with-this-blog-and-why">What I am doing with this blog, and why</h2>
+<p>Pixel Street’s blog runs on WordPress, and we are rebuilding it as headless WordPress with a static frontend. WordPress stays as the editorial backend. The public site gets served as pre-built pages instead of being assembled by PHP on every request. The plumbing has been in core since <a href="https://wordpress.org/news/2016/12/vaughan/" rel="noopener">WordPress 4.7 shipped REST API endpoints for posts, comments, terms, users, meta and settings on 6 December 2016</a>, so this is not new technology. It is a decision most sites never bother to make.</p>
+<p>Why bother here. Editors keep the interface they know, which is the single biggest reason WordPress wins arguments it should not win on technical merit. The frontend stops depending on the theme layer and on whatever a plugin decides to enqueue. And the public surface stops executing the plugin stack on every page view, which changes the shape of the security question described above without pretending to remove it. The 7.0.2 hole was in the REST server, and a headless setup leans on the REST API harder than a normal site does, so the backend still needs patching on the same schedule as anyone else’s.</p>
+<p>What headless costs: previewing a draft is no longer free, some plugins that generate frontend HTML simply stop working, and you now have two things to deploy instead of one. I would not recommend it for a ten-page brochure site. For a growing archive that a small team publishes to constantly, the trade looks right to me.</p>
+<p>I am deliberately not quoting before-and-after numbers, because the rebuild is in progress and I have not measured it end to end. When I have, they will go in this post.</p>
+<h2 id="so-which-should-you-choose">So which should you choose</h2>
+<p>Answer these in order and the decision usually makes itself.</p>
+<ol>
+<li><strong>Is the core job publishing, or is it processing?</strong> Pages, posts, case studies, landing pages and a contact form is publishing. Bookings, quotes, logins, dashboards and rules that only your business has is processing. Publishing points to WordPress. Processing points to a framework.</li>
+<li><strong>Who edits it on a Tuesday afternoon?</strong> If that person is not a developer and cannot wait for one, WordPress. This overrides almost every technical preference, and it is the reason my own blog is on it.</li>
+<li><strong>Can you fund maintenance?</strong> An unmaintained WordPress site is a liability with a five-hour exploitation window. If nobody is going to own updates, buy managed hosting or pick something with a smaller dependency surface.</li>
+<li><strong>Would you survive a bus factor of one?</strong> A framework build by a hired freelancer with no documentation is riskier than WordPress ever was, regardless of code quality.</li>
+</ol>
+<p>These two summaries are borrowed from elsewhere, and they hold up reasonably well as a checklist.</p>
+<p><img class="size-full wp-image-6893 aligncenter" src="../../blog/media/2023/01/Why-should-you-choose-wordpress.png" sizes="(max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/01/Why-should-you-choose-wordpress.png 1000w, ../../blog/media/2023/01/Why-should-you-choose-wordpress-300x189.png 300w, ../../blog/media/2023/01/Why-should-you-choose-wordpress-768x483.png 768w" alt="Why should you choose WordPress" width="1000" height="629"></p>
+<p class="aligncenter">Source:<a href="https://www.appventurez.com/blog/php-vs-wordpress">appventurez.com</a></p>
+<p><img class="size-full wp-image-6892 aligncenter" src="../../blog/media/2023/01/Why-should-you-choose-PHP.png" sizes="(max-width: 1000px) 100vw, 1000px" srcset="../../blog/media/2023/01/Why-should-you-choose-PHP.png 1000w, ../../blog/media/2023/01/Why-should-you-choose-PHP-300x189.png 300w, ../../blog/media/2023/01/Why-should-you-choose-PHP-768x483.png 768w" alt="Why should you choose PHP" width="1000" height="629"></p>
+<p class="aligncenter">Source:&nbsp;<a href="https://www.appventurez.com/blog/php-vs-wordpress">appventurez.com</a></p>
+<p>Read the PHP column as “a PHP framework”, not as “PHP written from nothing”. That distinction is the whole argument of this post.</p>
+<h2 id="faq">FAQ</h2>
+<p><strong>Is a custom PHP website faster than WordPress?</strong></p>
+<p>It can be, and usually for reasons that have nothing to do with PHP. A framework build ships only the code it needs, while a typical WordPress site loads a theme and a dozen plugins on every request. But the measured gap between PHP versions running WordPress itself is small: 139.06 requests per second on PHP 7.4 against 148.30 on PHP 8.5 in Kinsta’s December 2025 benchmark. Images, caching, database queries and hosting location move your Core Web Vitals far more than the platform choice does.</p>
+<p><strong>Which PHP version should my site run in 2026?</strong></p>
+<p>PHP 8.4 or 8.5, since those are the only branches in active support per php.net. PHP 8.3 is fine and gets security fixes until 31 December 2027. PHP 8.2 loses security support on 31 December 2026, so treat it as a deadline. Anything on PHP 7 or 5 needs moving now, and that is 37.5% of PHP sites according to W3Techs on 30 July 2026.</p>
+<p><strong>Is WordPress secure enough for a serious business site?</strong></p>
+<p>Yes, if somebody owns updates. Patchstack logged 11,334 ecosystem vulnerabilities in 2025 with 91% in plugins and six in core, and found the median time to first exploitation for heavily attacked bugs was five hours. That is a maintenance problem, not a platform verdict. Note also that core produced a remote code execution chain in July 2026, so “core is fine” is a probability, not a guarantee.</p>
+<p><strong>Do I need headless WordPress?</strong></p>
+<p>Probably not. It suits content-heavy sites with a custom frontend, several output channels, or a genuine need to stop the plugin layer from touching the public site. It costs you preview, some plugin compatibility, and a second deployment pipeline. We are doing it to this blog because the archive keeps growing and a non-developer publishes to it. For a brochure site it is overhead with a nice name.</p>
+<p><strong>Is WordPress better for SEO than a custom build?</strong></p>
+<p>WordPress makes competent SEO easier, mostly through plugins like Yoast or Rank Math handling titles, sitemaps and schema without a developer. Nothing about it is inherently more rankable. A framework build can do all of it, and often does it more cleanly, but only if someone specified it. The failure mode differs: WordPress sites get fat, custom sites forget the basics.</p>
+<p><strong>What about WooCommerce, since it is a WordPress plugin?</strong></p>
+<p>Different question with a different answer, and the platform comparison there turns on payments, catalogue size and who runs the store day to day. I have set that out in <a href="../../blog/shopify-vs-woocommerce/">Shopify vs WooCommerce</a> rather than crowding it in here.</p>
+<span id="conclusion" class="ps-anchor-alias" aria-hidden="true"></span><h2 id="what-i-would-tell-you-across-a-table">What I would tell you across a table</h2>
+<p>Most people asking “WordPress or PHP” are really asking whether choosing WordPress means settling for less. It does not. It means accepting a maintenance obligation in exchange for a much shorter route to a working site, and buying into a platform that 41.2% of the web already runs, with all the plugin availability and all the attack attention that brings.</p>
+<p>Choosing a framework does not mean choosing quality either. It means choosing to own more of the code, which is only an advantage if you also own the discipline to maintain it.</p>
+<p>The projects I have watched go wrong went wrong at the brief, not at the platform. Somebody described an application and bought a website, or described a website and bought an application. Get that sentence right and either technology will serve you. Get it wrong and no amount of PHP 8.5 will save it. Our <a href="../../blog/web-design-process-guide/">web design process</a> exists mostly to force that question early.</p>
+<p>We are a <a href="../../web-design-company-kolkata">website design company</a> in Kolkata that builds on both, and will tell you which one your project needs before you have paid us anything. If you want that conversation, ask for it.</p>
+
+
+
+
+
+
+
+          </div>
+
+          
+          <p class="ps-facts">
+            <span class="ps-facts__item"><i class="ri-time-line" aria-hidden="true"></i> 16 min read</span>
+            <span class="ps-facts__item"><i class="ri-links-line" aria-hidden="true"></i> 22 cited sources</span>
+            <a class="ps-facts__item ps-facts__cat" href="../../blog/category/web-development/">WEB DEVELOPMENT</a>
+          </p>
+
+
+          <div class="ps-share">
+            <p class="ps-share__label">Share</p>
+            <ul class="ps-share__list">
+              <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwordpress-vs-php-website-which-is-better%2F" rel="noopener" target="_blank" aria-label="Share on Facebook"><i class="ri-facebook-fill"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?text=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwordpress-vs-php-website-which-is-better%2F" rel="noopener" target="_blank" aria-label="Share on WhatsApp"><i class="ri-whatsapp-fill"></i></a></li>
+              <li><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwordpress-vs-php-website-which-is-better%2F" rel="noopener" target="_blank" aria-label="Share on LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+              <li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwordpress-vs-php-website-which-is-better%2F&text=WordPress%20vs%20PHP%20Website%3A%20Which%20One%20Is%20Better%20in%202026%3F" rel="noopener" target="_blank" aria-label="Share on X"><i class="ri-twitter-x-fill"></i></a></li>
+              <li><a href="mailto:?subject=WordPress%20vs%20PHP%20Website%3A%20Which%20One%20Is%20Better%20in%202026%3F&#38;body=https%3A%2F%2Fpixelstreet.in%2Fblog%2Fwordpress-vs-php-website-which-is-better%2F" aria-label="Share by email"><i class="ri-mail-line"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="quote">
+            <div class="quote-img"><img src="../../blog/media/2024/12/author-img-1.png" alt="" width="120" height="120" loading="lazy"></div>
+            <div class="quote-text">
+              
+              <h2 class="founder-title">Khurshid Alam</h2>
+              <p class="desg">Author</p>
+              <p class="bio">Khurshid Alam is the founder of Pixel Street, an AI-native design &amp; development studio. Design thinking on weekdays and spreadsheets on weekends.</p>
+              <p class="bio">He writes about growth, design, and AI, mostly because someone has to say the quiet parts out loud.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps-related" aria-labelledby="ps-related-h">
+      <div class="container">
+        <h2 class="ps-related__head" id="ps-related-h">Keep reading</h2>
+        <div class="ps-grid ps-grid--related">
+          <article class="ps-card  all web-development ui-ux-design" data-title="ai website builders vs custom development: where the shiny tools actually break" data-blurb="ai website builders are fast, but are they right for your business? discover where they excel, where they fail, and when custom development is the smarter choice." data-cat="web-development ui-ux-design">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-300x104.png 300w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-768x265.png 768w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_-1024x354.png 1024w, ../../blog/media/2026/07/AI-Website-Builders-vs-Custom-Development_.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">WEB DEVELOPMENT</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/ai-website-builders-vs-custom-development/">AI Website Builders vs Custom Development: Where the Shiny Tools Actually Break</a>
+    </h3>
+
+    <p class="ps-card__blurb">AI website builders are fast, but are they right for your business? Discover where they excel, where they fail, and when custom development is the…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-29T00:00:00+00:00">July 29, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>6 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all seo web-development" data-title="aeo vs geo vs seo: what actually matters in 2026 (and what is just noise)" data-blurb="learn about aeo vs geo vs seo. discover what changed with ai search, what still matters, and how to optimize for google ai overviews, chatgpt, and traditional search in 2026." data-cat="seo web-development">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/AEOvsGEOvsSEO-V2.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/AEOvsGEOvsSEO-V2-300x104.png 300w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2-768x265.png 768w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2-1024x354.png 1024w, ../../blog/media/2026/07/AEOvsGEOvsSEO-V2.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">Digital Marketing</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/aeo-vs-geo-vs-seo/">AEO vs GEO vs SEO: What Actually Matters in 2026 (And What Is Just Noise)</a>
+    </h3>
+
+    <p class="ps-card__blurb">Learn about AEO vs GEO vs SEO. Discover what changed with AI search, what still matters, and how to optimize for Google AI Overviews, ChatGPT, and…</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-27T00:00:00+00:00">July 27, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>10 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all seo web-development" data-title="how to get your brand mentioned by chatgpt: the ultimate india playbook (2026)" data-blurb="want chatgpt to recommend your brand? learn how ai chooses businesses, where citations come from, and practical ways to increase your visibility." data-cat="seo web-development">
+  <div class="ps-card__media">
+    <img src="../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT.png" alt="" width="1476" height="510" loading="lazy" decoding="async" srcset="../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-300x104.png 300w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-768x265.png 768w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT-1024x354.png 1024w, ../../blog/media/2026/07/How-to-Get-Your-Brand-Mentioned-by-ChatGPT.png 1476w" sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+    <span class="ps-card__cat">Digital Marketing</span>
+  </div>
+
+  <div class="ps-card__body">
+    <h3 class="ps-card__title">
+      <a href="../../blog/how-to-get-mentioned-by-chatgpt/">How to Get Your Brand Mentioned by ChatGPT: The Ultimate India Playbook (2026)</a>
+    </h3>
+
+    <p class="ps-card__blurb">Want ChatGPT to recommend your brand? Learn how AI chooses businesses, where citations come from, and practical ways to increase your visibility.</p>
+
+    <p class="ps-card__meta">
+      <time datetime="2026-07-22T00:00:00+00:00">July 22, 2026</time>
+      <span class="ps-card__dot" aria-hidden="true"></span>
+      <span>9 min read</span>
+    </p>
+  </div>
+</article><article class="ps-card  all ui-ux-design web-development"
+            data-title="do you still need a website in 2026? your guide to ai search optimization"
+            data-blurb="a client asked me this on a call last month: “khurshid, everyone just asks chatgpt now. do we even need a website anymore?” he runs a business doing serious revenue. he was not being lazy. he was looking at the same data everyone is looking at. small publishers lost 60% of their search traffic in … continue reading “do you still need a website in 2026? your guide to ai search optimization”"
+            data-cat="ui-ux-design web-development">
+            <div class="ps-card__media">
+              <img src="../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2.png" alt="" width="1476"
+                height="510" loading="lazy" decoding="async"
+                srcset="../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2-300x104.png 300w, ../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2-768x265.png 768w, ../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2-1024x354.png 1024w, ../../blog/media/2026/07/Do-You-Still-Need-a-Website-in-2026_-V2.png 1476w"
+                sizes="(max-width: 575px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 45vw, (max-width: 1199px) 47vw, (max-width: 1599px) 30vw, 370px">
+              <span class="ps-card__cat">Web Design</span>
+            </div>
+
+            <div class="ps-card__body">
+              <h3 class="ps-card__title">
+                <a href="../../blog/ai-search-optimization-guide/">Do You Still Need a Website in 2026? Your Guide to AI
+                  Search Optimization</a>
+              </h3>
+
+              <p class="ps-card__blurb">A client asked me this on a call last month: “Khurshid, everyone just asks
+                ChatGPT now. Do we even need a website anymore?” He runs a business doing…</p>
+
+              <p class="ps-card__meta">
+                <time datetime="2026-07-20T00:00:00+00:00">July 20, 2026</time>
+                <span class="ps-card__dot" aria-hidden="true"></span>
+                <span>9 min read</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer class="psf psf--rule">
+    <div class="container">
+
+        <div class="psf__grid">
+
+            <div class="psf__col psf__contact">
+                <div class="psf__block">
+                    <h2 class="psf__heading">Address</h2>
+                    <p class="psf__text">Martin Burn Business Park, #900B, Salt Lake, Sector - V, Kolkata - 700091</p>
+                </div>
+                <div class="psf__block">
+                    <h2 class="psf__heading">Phone</h2>
+                    <p class="psf__text"><a class="psf__link" href="tel:+919007295096">+91 90072 95096</a></p>
+                </div>
+                <div class="psf__block">
+                    <h2 class="psf__heading">Email</h2>
+                    <p class="psf__text"><a class="psf__link" href="mailto:info@pixelstreet.in">info@pixelstreet.in</a></p>
+                </div>
+            </div>
+
+            <nav class="psf__col" aria-labelledby="psf-quick">
+                <h2 class="psf__heading" id="psf-quick">Quick Links</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../our-work">Our Work</a></li>
+                    <li><a class="psf__link" href="../../about">Team</a></li>
+                    <li><a class="psf__link" href="../../blog/">Blog</a></li>
+                    <li><a class="psf__link" href="../../contact-us">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <nav class="psf__col" aria-labelledby="psf-services">
+                <h2 class="psf__heading" id="psf-services">Services</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../branding-agency-kolkata">Creative Retainer</a></li>
+                    <li><a class="psf__link" href="../../web-design-company-kolkata">Website &amp; eCommerce</a></li>
+                    <li><a class="psf__link" href="../../digital-marketing-agency-kolkata">Social Campaigns</a></li>
+                    <li><a class="psf__link" href="../../video-studio-kolkata">Video Studio</a></li>
+                </ul>
+            </nav>
+
+            <nav class="psf__col" aria-labelledby="psf-cases">
+                <h2 class="psf__heading" id="psf-cases">Case Study</h2>
+                <ul class="psf__list">
+                    <li><a class="psf__link" href="../../case-studies/mangaldeep-3in1">Mangaldeep</a></li>
+                    <li><a class="psf__link" href="../../case-studies/shipzip">Shipzip</a></li>
+                    <li><a class="psf__link" href="../../case-studies/the-hindu-group">The Hindu</a></li>
+                    <li><a class="psf__link" href="../../case-studies/marico">Marico</a></li>
+                </ul>
+            </nav>
+
+            <div class="psf__col psf__social-col">
+                <h2 class="psf__heading">Social Media</h2>
+                <ul class="psf__social">
+                    <li><a class="psf__icon" href="https://www.linkedin.com/company/pixelstreet-in/" target="_blank" rel="noopener" aria-label="Pixel Street on LinkedIn"><i class="ri-linkedin-fill" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.instagram.com/pixelstreet.in/" target="_blank" rel="noopener" aria-label="Pixel Street on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a0275c6c4a16f65:0xae778fbf893d03e8?source=g.page.m.we._" target="_blank" rel="noopener" aria-label="Pixel Street on Google Business Profile"><i class="flaticon-my-business" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://www.behance.net/pixelstreet_in" target="_blank" rel="noopener" aria-label="Pixel Street on Behance"><i class="ri-behance-fill" aria-hidden="true"></i></a></li>
+                    <li><a class="psf__icon" href="https://dribbble.com/pixelstreetagency" target="_blank" rel="noopener" aria-label="Pixel Street on Dribbble"><i class="ri-dribbble-line" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a class="psf__map" href="https://maps.app.goo.gl/omW92ohh4aHYCapa9"
+                   target="_blank" rel="noopener"
+                   aria-label="Get directions to Pixel Street, Salt Lake Sector V, Kolkata (opens Google Maps)">
+                    <span class="psf__map__thumb" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" focusable="false">
+                            <rect width="48" height="48" rx="8" fill="#EEF1F4"/>
+                            <path d="M0 30h48M0 19h48M15 0v48M33 0v48" stroke="#D7DCE2" stroke-width="2"/>
+                            <path d="M0 8h48" stroke="#D7DCE2" stroke-width="1.5"/>
+                            <path d="M24 13c-4 0-7.2 3.2-7.2 7.2 0 5.4 7.2 13.3 7.2 13.3s7.2-7.9 7.2-13.3c0-4-3.2-7.2-7.2-7.2Z" fill="#16181D"/>
+                            <circle cx="24" cy="20" r="2.6" fill="#FDB914"/>
+                        </svg>
+                    </span>
+                    <span class="psf__map__text">Get Directions</span>
+                    <span class="psf__map__arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" focusable="false">
+                            <path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" stroke-width="1.7"
+                                  stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="psf__view"><nav class="hm-toggle" aria-label="Page format"><span class="hm-toggle__label">View</span><span class="hm-toggle__opt" aria-current="true">Human</span><a class="hm-toggle__opt" href="../../blog/ai/wordpress-vs-php-website-which-is-better/" data-hm="machine">Machine</a></nav></div>
+
+        <div class="psf__legal">
+            <a class="psf__brand" href="../../">
+                <img src="../../assets/images/logo1.svg" alt="Pixel Street" width="253" height="59" loading="lazy" decoding="async">
+            </a>
+            <p class="psf__copy">©2026 Pixel Street. All Rights Reserved.</p>
+            <nav class="psf__legal-nav" aria-label="Legal">
+                <ul>
+                    <li><a class="psf__link" href="../../terms">Terms</a></li>
+                    <li><a class="psf__link" href="../../privacy-policy">Privacy</a></li>
+                    <li><a class="psf__link" href="../../privacy-policy" data-ps-consent-open>Cookie preferences</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</footer>
+  <div class="modal fade modalRefer" id="exampleModal" tabindex="-1" aria-label="Discuss a project" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line" aria-hidden="true"></i></button>
+            <div class="modal-body">
+                <div class="border-wrap">
+                    <div class="contact__wrapper">
+                        <div class="row">
+                            <div class="col-xl-12">
+
+                                <div class="formHeader">
+                                    <img src="../../assets/images/contact-1.png" alt="Contact Form Element">
+                                </div>
+
+                                <!-- <h4 class="form-name">Request A Free Quote</h4> -->
+                                <div class="contact__form mt-20">
+                                    <form action="../../assets/email-php/home-contact.php" method="post">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label data-number="01" class="ps-visually-hidden" for="lead-name">Your name</label>
+                                                    <input id="lead-name" type="text" name="name" pattern="^[a-zA-Z\s]{2,50}$" placeholder="What's your name?">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 mt-30">
+                                                <div class="form-group">
+                                                    <label data-number="02" class="ps-visually-hidden" for="lead-phone">Your phone number</label>
+
+                                                    <input id="lead-phone" type="tel" name="phone" required="" pattern="[6789][0-9]{9}" onkeypress="return (event.charCode !=8 &amp;&amp; event.charCode ==0 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57))" placeholder="What's your phone number?">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 mt-30">
+                                                <div class="form-group">
+                                                    <label data-number="03" class="ps-visually-hidden" for="lead-email">Your email address</label>
+                                                    <input id="lead-email" type="email" name="email" required="" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="What's your email?">
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="col-xl-12 col-lg-12 mt-30">
+                                                        <div class="form-group">
+                                                            <label data-number="04" for=""></label>
+
+                                                            <textarea name="message" id="message"
+                                                                placeholder="Enter Your Message"></textarea>
+                                                        </div>
+                                                    </div> -->
+                                            <div class="g-recaptcha mt-3" data-sitekey="6LeqDd4mAAAAAMZZ7uZD9XzsVL5MJu4xRZznSsc7"></div>
+
+                                            <div class="col-xl-12 col-lg-12 mt-20">
+                                                <button type="submit" name="submit" class="submit-site-btn">DISCUSS A PROJECT
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="https://wa.me/+919007295096" target="_blank" class=" position-fixed whatsapp-link"><img src="../../assets/images/whatsapp.png" alt="Whatsapp Button"></a>
+
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.bundle.min.js"></script><script src="../../assets/js/imagesloaded.pkgd.min.js"></script><script src="../../assets/js/pix-js.js"></script><script src="../../assets/js/main.js"></script>
+  <script src="../../blog/ps-behaviours.js"></script>
+  
+  <script src="../../assets/js/ps-nav-a11y.js" defer></script>
+  <script>(function(){try{
+var t=document.querySelector('.hm-toggle');if(!t)return;
+t.addEventListener('click',function(e){var a=e.target.closest('[data-hm]');
+if(a)try{localStorage.setItem('ps-view',a.getAttribute('data-hm'))}catch(_){}},{passive:true});
+}catch(_){}})();</script>
+
+  
+  <script src="../../assets/js/lead-source.js" defer></script>
+<script src="../../assets/js/local-links.js" defer></script>
+</body>
+</html>

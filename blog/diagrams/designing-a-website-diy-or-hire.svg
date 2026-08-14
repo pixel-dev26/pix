@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 422" width="800" height="422" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Where do-it-yourself is the right call, and where it stops being one</title>
+  <desc id="d">The dividing line is not budget but whether the site has a job that can fail. Build it yourself when you are testing the business, the site is a formality, you are the product, or you enjoy it. Stop and hire when you look identical to your competitor, the site must sell something complicated, search and AI visibility are the point, or you have outgrown the plan.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">BUILD IT YOURSELF, OR DO NOT</text>
+
+  <rect x="14" y="46" width="784" height="64" rx="16" fill="#FDB914"/>
+  <rect x="8" y="40" width="784" height="64" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="66" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE DIVIDING LINE</text>
+  <text x="34" y="92" font-size="18" font-weight="700" fill="#0F1115">Not budget. Whether the site has a job that can fail.</text>
+
+  <!-- build it yourself -->
+  <rect x="14" y="132" width="378" height="250" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="126" width="378" height="250" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="144" width="180" height="28" rx="14" ry="14" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="118" y="163" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">BUILD IT YOURSELF</text>
+  <path d="M28 184 L366 184" stroke="#E7E9EC" stroke-width="2"/>
+
+  <circle cx="36" cy="207" r="4" fill="#0F1115"/>
+  <text x="50" y="212" font-size="14" fill="#5C6167">You are testing whether the business<tspan x="50" dy="1.3em">works at all.</tspan></text>
+  <circle cx="36" cy="251" r="4" fill="#0F1115"/>
+  <text x="50" y="256" font-size="14" fill="#5C6167">The site is a formality: address,<tspan x="50" dy="1.3em">hours, phone, a form.</tspan></text>
+  <circle cx="36" cy="295" r="4" fill="#0F1115"/>
+  <text x="50" y="300" font-size="14" fill="#5C6167">You are the product, and a template<tspan x="50" dy="1.3em">with your work in it beats us.</tspan></text>
+  <circle cx="36" cy="339" r="4" fill="#0F1115"/>
+  <text x="50" y="344" font-size="14" fill="#5C6167">You genuinely enjoy it.</text>
+
+  <!-- stop and hire -->
+  <rect x="420" y="132" width="378" height="250" rx="16" fill="#FA6B45"/>
+  <rect x="414" y="126" width="378" height="250" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="434" y="144" width="144" height="28" rx="14" ry="14" fill="#FA6B45" stroke="#0F1115" stroke-width="2"/>
+  <text x="506" y="163" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">STOP AND HIRE</text>
+  <path d="M434 184 L772 184" stroke="#E7E9EC" stroke-width="2"/>
+
+  <circle cx="442" cy="207" r="4" fill="#0F1115"/>
+  <text x="456" y="212" font-size="14" fill="#5C6167">You look identical to your competitor.</text>
+  <circle cx="442" cy="251" r="4" fill="#0F1115"/>
+  <text x="456" y="256" font-size="14" fill="#5C6167">The site has to sell something<tspan x="456" dy="1.3em">complicated.</tspan></text>
+  <circle cx="442" cy="295" r="4" fill="#0F1115"/>
+  <text x="456" y="300" font-size="14" fill="#5C6167">Search and AI visibility are the point.</text>
+  <circle cx="442" cy="339" r="4" fill="#0F1115"/>
+  <text x="456" y="344" font-size="14" fill="#5C6167">You have outgrown the plan, and pay<tspan x="456" dy="1.3em">agency money for template output.</tspan></text>
+
+  <text x="8" y="410" font-size="14" fill="#5C6167">Either answer can be correct. Choosing without knowing which one you picked is the mistake.</text>
+</svg>

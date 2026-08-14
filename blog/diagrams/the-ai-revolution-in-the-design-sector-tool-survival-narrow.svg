@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 618" width="380" height="618" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Which AI design tools survived, and how the rest died</title>
+  <desc id="d">Of seventeen AI design tools checked in July 2026, ten are still worth opening because they sell something other than the AI feature. Every dead one was either a feature pretending to be a company, such as Magician and Designify, or a model with a version number in its name, such as DALL-E 3 and Imagen.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">17 CHECKED, 7 ARE GONE</text>
+
+  <rect x="13" y="39" width="359" height="140" rx="16" fill="#FDB914"/>
+  <rect x="8" y="34" width="359" height="140" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="48" width="104" height="28" rx="14" ry="14" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="76" y="67" font-size="13" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">10 ALIVE</text>
+  <text x="24" y="100" font-size="17" font-weight="700" fill="#0F1115">Sells something other than AI</text>
+  <path d="M24 114 L351 114" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="24" y="138" font-size="14" fill="#5C6167">Adobe, Canva, Figma and Midjourney<tspan x="24" dy="1.4em">are still here. The AI startups are not.</tspan></text>
+
+  <rect x="13" y="191" width="359" height="140" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="186" width="359" height="140" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="200" width="70" height="28" rx="14" ry="14" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="59" y="219" font-size="13" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">GONE</text>
+  <text x="24" y="252" font-size="17" font-weight="700" fill="#0F1115">A feature, not a company</text>
+  <path d="M24 266 L351 266" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="24" y="290" font-size="14" fill="#5C6167">Magician, bought by Figma. Designify,<tspan x="24" dy="1.4em">closed by Canva.</tspan></text>
+
+  <rect x="13" y="343" width="359" height="140" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="338" width="359" height="140" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="352" width="70" height="28" rx="14" ry="14" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="59" y="371" font-size="13" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">GONE</text>
+  <text x="24" y="404" font-size="17" font-weight="700" fill="#0F1115">A version number in a name</text>
+  <path d="M24 418 L351 418" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="24" y="442" font-size="14" fill="#5C6167">DALL&#183;E 3 and Imagen, both replaced<tspan x="24" dy="1.4em">by their own vendors.</tspan></text>
+
+  <rect x="13" y="499" width="359" height="108" rx="16" fill="#FDB914"/>
+  <rect x="8" y="494" width="359" height="108" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="24" y="518" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE TEST</text>
+  <text x="24" y="544" font-size="15" font-weight="700" fill="#0F1115">Does this company make money<tspan x="24" dy="1.4em">from something other than AI?</tspan></text>
+  <text x="24" y="590" font-size="13" fill="#5C6167">If not, expect to migrate in eighteen months.</text>
+</svg>

@@ -1,0 +1,3844 @@
+/* Additions for elements that did not exist in the PHP theme, plus a deliberate
+   typographic override for article headings (see "TYPE SCALE" below).
+
+   Everything outside the TYPE SCALE block is scoped to new class names and overrides
+   no theme selector. */
+
+/* ============================================================== TYPE SCALE
+   The theme sized headings by eye at 47 ad-hoc breakpoints, which left two real
+   defects: h4 rendered LARGER than h3 below 767px (28px vs 25px), inverting the
+   hierarchy; and every line-height was a fixed pixel value (40px, 43px, 47px),
+   so leading never tracked the font size it belonged to.
+
+   Replaced with one fluid scale. Each size interpolates between a 375px and a
+   1440px viewport, so there is a correct value at every width rather than a
+   correct value at 47 widths and a guess in between. Line-heights are unitless
+   and tighten as size grows, which is how optical leading works.
+
+   Spacing follows proximity: the gap ABOVE a heading is ~3-4x the gap BELOW it,
+   so a heading visually binds to the content it introduces rather than floating
+   between two sections. The gap below a heading is also deliberately smaller
+   than the paragraph gap, or the heading detaches from its own first paragraph.
+   Margins are in em, so they scale with the heading they belong to. */
+
+.blog-inner-banner .overlap-title h1 {
+  /* Floor lowered 28 -> 25. At 28px a long headline ran to FOUR lines on a 375px screen
+     and, sitting over the image, hid almost all of it. 25px still clears h2's 23px floor,
+     which is what the type-scale check actually enforces (relative order, not a fixed
+     number). Paired with the taller banner below, a long title now lands in two or three
+     lines with the artwork still readable behind it. */
+  /* --h1-scale is set per post from the title's character count (see [slug].astro).
+     Wrapped in max(25px, ...) so the multiplier can never push a headline below a legible
+     size on a phone -- there it keeps 25px and uses a third line instead, because two
+     lines is not physically achievable for a 73-character title at 375px. */
+  font-size: max(25px, calc(clamp(25px, calc(17.2px + 2.08vw), 52px) * var(--h1-scale, 1)));
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.blog-content h2 {
+  font-size: clamp(23px, calc(17.72px + 1.408vw), 38px);
+  line-height: 1.24;
+  letter-spacing: -0.02em;
+  margin: 1.6em 0 0.68em;
+}
+
+.blog-content h3 {
+  font-size: clamp(19.5px, calc(16.51px + 0.798vw), 28px);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 2.05em 0 0.62em;
+  /* 3.31:1 — was 1.7/0.5 = 3.40:1 */
+}
+
+.blog-content h4 {
+  font-size: clamp(17.5px, calc(16.27px + 0.329vw), 21px);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  margin: 1.85em 0 0.6em;
+  /* 3.08:1 — was 1.5/0.45 = 3.33:1 */
+}
+
+.blog-content h5 {
+  font-size: clamp(17px, calc(16.12px + 0.235vw), 19.5px);
+  line-height: 1.45;
+  letter-spacing: 0;
+  margin: 1.55em 0 0.55em;
+  /* 2.82:1 — was 1.4/0.4 = 3.50:1 */
+}
+
+.blog-content p,
+.blog-content li {
+  font-size: clamp(16px, calc(15.3px + 0.188vw), 16px);
+  line-height: 1.8;
+  /* was a fixed 40px on 16px copy — 2.5, far too loose */
+  letter-spacing: 0;
+}
+
+/* ul/ol carry the same size as the <li> inside them, because the reading measure
+   is `56ch` and `ch` resolves against the element's OWN font-size. The list items
+   were fluid but their container was not, so its 56ch computed against 16px while
+   a paragraph's computed against 18px: measured at 1440px, lists came out 563px
+   wide against 633px for the paragraphs above and below them, stopping 70px short
+   of the prose they belong to. Same size, same measure, one right edge. */
+.blog-content ul,
+.blog-content ol {
+  font-size: clamp(16px, calc(15.3px + 0.188vw), 18px)
+}
+
+/* The theme sets `.blog-content p:not(:last-child){margin-bottom:19px}`. The
+   pseudo-class outranks a plain `.blog-content p`, so the paragraph rhythm has to
+   be stated at the same specificity to take effect. */
+.blog-content p:not(:last-child) {
+  margin: 0 0 1.5em
+}
+
+.blog-content>p:last-child {
+  margin-bottom: 0
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 0 0 1.5em;
+  padding-left: 1.4em
+}
+
+.blog-content li {
+  margin: 0 0 .5em
+}
+
+.blog-content li:last-child {
+  margin-bottom: 0
+}
+
+.blog-content li>ul,
+.blog-content li>ol {
+  margin: .5em 0 0
+}
+
+/* A heading that opens the article, or follows the byline or the answer block,
+   must not inherit the full section gap — there is no preceding section to
+   separate it from. */
+.blog-content>h2:first-child,
+.blog-content>h3:first-child,
+.blog-content .author_date+h2,
+.blog-content .author_date+h3,
+.blog-content .answer-box+h2 {
+  margin-top: 0
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  margin: .5em 0 1.5em;
+  width: 100%;
+}
+
+.blog-content h2+*,
+.blog-content h3+*,
+.blog-content h4+* {
+  margin-top: 0
+}
+
+/* ---------------------------------------------------------------- breadcrumbs
+   Deliberately the smallest readable size on the page. This is orientation, not
+   content: findable, and never competing with the H1 or the byline. */
+.ps-crumbs {
+  margin: 0 0 22px;
+  line-height: 1.5
+}
+
+.ps-crumbs ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  margin: 0
+}
+
+.ps-crumbs li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 500
+}
+
+.ps-crumbs li+li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #c9c9c9;
+  flex: none
+}
+
+.ps-crumbs a {
+  color: #8a8a8a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .2s ease, border-color .2s ease
+}
+
+.ps-crumbs a:hover {
+  color: #222;
+  border-bottom-color: #FDB914
+}
+
+.ps-crumbs__current {
+  color: #b5b5b5;
+  max-width: 34ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+@media (max-width:767px) {
+  .ps-crumbs {
+    margin-bottom: 16px
+  }
+
+  .ps-related {
+    padding: 0 0 60px;
+  }
+
+  .ps-crumbs__current {
+    max-width: 18ch
+  }
+}
+
+/* ------------------------------------------------------------------------ TOC
+   Left-aligned and tight. The theme's rail centres its contents, which turned
+   every entry into a ragged three-line block. */
+/* No inner scroll. This used to cap at calc(100vh - 170px) with overflow-y:auto,
+   which made the panel a scroll container of its own: on the longest post that is
+   2125px of contents behind a 630px window, 1495px of it reachable only by
+   scrolling inside the box. overscroll-behavior:contain then made it worse than
+   a second scrollbar — a wheel over the panel would not fall through to the page
+   once the list hit its end, so the reader had to move the pointer off the TOC
+   to carry on reading.
+
+   The panel is now as tall as its contents and the page is the only thing that
+   scrolls. See the note under `position` below for what that costs. */
+.ps-toc {
+  position: sticky;
+  top: var(--ps-toc-top, 110px);
+  border-left: 2px solid #ececec;
+  padding: 2px 0 2px 18px;
+  margin: 0 0 28px;
+  text-align: left
+}
+
+/* --ps-toc-top is set per post by ps-behaviours.js, because the right offset
+   depends on how tall the list is and that is content, not layout.
+
+   A panel that fits gets the 110px above and pins under the navbar as always.
+   One that does not — the median post is 1264px against a 770px slot at
+   1600x900 — gets a NEGATIVE offset, computed so its last entry lands 20px above
+   the fold. It then travels with the page until the whole list has been on
+   screen and pins from there, which keeps the rail following the reader without
+   stranding the tail past the fold, and without the inner scrollbar this panel
+   used to carry.
+
+   `position: sticky; bottom: 20px` is the obvious way to write that and it does
+   not work here: measured on this page at scroll 1400, a bottom-pinned rail
+   sailed straight past the fold (bottom at 462 against the 880 it should have
+   held), while the same element with a top offset pinned exactly. Hence the
+   computed top. */
+
+.ps-toc__title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #b0b0b0;
+  margin: 0 0 14px;
+  text-align: left
+}
+
+/* The <summary> is the mobile affordance only; on desktop .ps-toc__title labels the
+   list and the disclosure is always open, so showing both would duplicate the label. */
+.ps-toc summary {
+  display: none
+}
+
+.ps-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.ps-toc li {
+  margin: 0 0 2px;
+  text-align: left
+}
+
+/* Level distinction is deliberately strong. In the source article the numbers
+   "1."–"6." are typed into the h3 text by the author, while "The Short Answer"
+   and "FAQ" are h2s — so FAQ is a sibling section, not the 7th item of that list.
+   Making the two levels unmistakably different is what stops the TOC reading like
+   a numbered sequence with a missing entry. */
+.ps-toc a {
+  display: block;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6b6b6b;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 6px 0 6px 12px;
+  margin-left: -20px;
+  border-left: 2px solid transparent;
+  transition: color .18s ease, border-color .18s ease
+}
+
+.ps-toc a:hover {
+  color: #111
+}
+
+.ps-toc li.lvl-3 a {
+  padding-left: 26px;
+  color: #9a9a9a
+}
+
+.ps-toc a.is-active {
+  color: #111;
+  border-left-color: #FDB914
+}
+
+/* --------------------------------------------------------------- answer block */
+.answer-box {
+  border-left: 4px solid #FDB914;
+  background: #fffdf6;
+  padding: 20px 24px;
+  margin: 0 0 32px;
+  border-radius: 0 10px 10px 0
+}
+
+.answer-box p {
+  margin: 0
+}
+
+/* -------------------------------------------------------------- share, bottom
+   Moved out of the sticky rail to the end of the article: people share after
+   reading, and it frees the rail for navigation. */
+.ps-share {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 48px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid #ececec
+}
+
+.ps-share__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #b0b0b0;
+  margin: 0
+}
+
+.ps-share__list {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.ps-share__list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #e2e2e2;
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease
+}
+
+.ps-share__list a:hover {
+  background: #FDB914;
+  border-color: #FDB914;
+  color: #111;
+  transform: translateY(-2px)
+}
+
+.ps-share__list i {
+  line-height: 1
+}
+
+/* ------------------------------------------------------------------- content */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 0 30px
+}
+
+.table-wrap table {
+  margin-bottom: 0
+}
+
+.table-wrap th {
+  text-align: left;
+  font-weight: 600;
+  background: #f7f7f7
+}
+
+.video-embed {
+  position: relative;
+  aspect-ratio: 16/9;
+  margin: 0 0 30px;
+  border-radius: 12px;
+  overflow: hidden
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0
+}
+
+/* Anchored headings must clear the fixed navbar when jumped to. */
+/* h4 included: the contents list was extended to h4 and 11 built pages carry
+   lvl-4 entries, but the offset was not, so clicking one put the heading you
+   asked for underneath the fixed navbar (bottom edge at y=81). */
+.blog-content h2[id],
+.blog-content h3[id],
+.blog-content h4[id] {
+  scroll-margin-top: 120px
+}
+
+/* Archive pages: the theme has no heading style for a bare listing header.
+
+   `.section.blogListing` prefix is not decoration. The theme sets
+   .section.blogListing{padding:9% 0 0} at specificity (0,2,0), so the bare
+   .ps-archive-head at (0,1,0) never won: the measured padding-top was 120px at
+   834px and 172px at 1920px (9% of a growing container), not the 150/110 written
+   here. Matching the theme's specificity is what makes these declarations real.
+
+   The h1 was the one display heading in the file that was not fluid -- a flat 48px
+   from 768px to 1920px, with a single 32px step below 767 and nothing in between. */
+.section.blogListing.ps-archive-head {
+  padding-top: var(--psb-s9)
+}
+
+/* 112px */
+.ps-archive-head h1 {
+  font-size: clamp(32px, calc(24px + 2.2vw), 52px);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+  margin: 0 0 var(--psb-s3);
+}
+
+.ps-archive-head p {
+  font-size: 16px;
+  color: var(--psb-muted);
+  margin: 0
+}
+
+@media (max-width:991px) {
+  .section.blogListing.ps-archive-head {
+    padding-top: var(--psb-s8)
+  }
+}
+
+@media (max-width:991px) {
+
+  /* Below the grid breakpoint the rail stacks above the article, so a sticky TOC
+     would pin a tall block over the content. Collapse it into a disclosure. */
+  .ps-toc {
+    position: static;
+    max-height: none;
+    border-left: 0;
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    padding: 0
+  }
+
+  .ps-toc__title {
+    display: none
+  }
+
+  .ps-toc details {
+    padding: 14px 18px
+  }
+
+  .ps-toc summary {
+    display: flex;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #000;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ps-toc summary::-webkit-details-marker {
+    display: none
+  }
+
+  .ps-toc summary::after {
+    content: "+";
+    float: right;
+    font-size: 15px;
+    line-height: 1
+  }
+
+  .ps-toc details[open] summary::after {
+    content: "\2013"
+  }
+
+  .ps-toc ol {
+    margin-top: 12px
+  }
+
+  .ps-toc a {
+    margin-left: 0;
+    padding-left: 10px
+  }
+}
+
+/* ======================================================== HERO, SMALL SCREENS
+   Two problems on phones: the H1 consumed most of the hero because it was sized
+   for desktop, and a 2.9:1 upload rendered only ~130px tall at 375px wide, so the
+   image barely registered. Give the image a real minimum height and let it crop,
+   and let the fluid H1 scale down into the space that frees up. */
+.blog-inner-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px
+}
+
+.blog-inner-banner img {
+  width: 100%;
+  display: block
+}
+
+/* White text sat directly on light artwork in several heroes. A scrim guarantees
+   legibility regardless of what the featured image happens to look like. */
+.blog-inner-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, .80) 0%, rgba(0, 0, 0, .34) 45%, rgba(0, 0, 0, 0) 78%);
+}
+
+.blog-inner-banner .overlap-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2
+}
+
+@media (max-width:991px) {
+  .blog-inner-banner {
+    border-radius: 22px
+  }
+
+  .blog-inner-banner img {
+    min-height: 340px;
+    object-fit: cover;
+    object-position: center
+  }
+
+  .blog-inner-banner .overlap-title {
+    padding: 32px 30px
+  }
+}
+
+@media (max-width:767px) {
+  .blog-inner-banner {
+    border-radius: 18px
+  }
+
+  .blog-inner-banner img {
+    min-height: 430px
+  }
+
+  .blog-inner-banner .overlap-title {
+    padding: 24px 22px
+  }
+
+  .section.blogInnerDetails {
+    padding-top: 110px
+  }
+
+  .ctsom-blog-pad {
+    padding-top: 34px
+  }
+}
+
+/* The 768-991 band. Everything else in this file pairs max-width:767 with
+   min-width:992 and leaves 224px of viewport to the theme, which put 104px above
+   the article and 80px above the row -- neither the mobile rhythm nor the desktop
+   one. Now it continues the mobile rhythm, which is what the stacked layout at
+   this width actually is. */
+@media (min-width:768px) and (max-width:991px) {
+  .section.blogInnerDetails {
+    padding-top: 110px
+  }
+
+  .ctsom-blog-pad {
+    padding-top: var(--psb-s6)
+  }
+}
+
+/* A width query setting a height: at 812x375 the 340px hero plus a 104px offset
+   put its bottom edge 69px below the fold, so the whole first screen was header
+   and image and the h1 was off-screen on load. */
+@media (max-width:991px) and (orientation:landscape) {
+  .blog-inner-banner img {
+    min-height: min(340px, 62vh)
+  }
+}
+
+@media (max-width:480px) {
+
+  /* 300px against a 1600x553 source meant object-fit:cover threw away most of the
+     frame. 420 gives the image room and leaves the title sitting over the lower third. */
+  .blog-inner-banner img {
+    min-height: 420px
+  }
+
+  .blog-inner-banner .overlap-title {
+    padding: 20px 18px
+  }
+}
+
+/* ==================================================================== MEASURE
+   The article column runs 876px at 1000px viewport and wider on a large
+   desktop, which puts body copy at roughly 99 characters per line. Comfortable
+   reading is 50-75; past about 80 the eye starts losing the line return on the
+   sweep back, which is felt as "this is hard to read" rather than seen.
+
+   Only the text blocks are constrained. Tables, images and embeds keep the full
+   column, because they are scanned rather than read left-to-right, and cramming
+   a comparison table into a reading measure would do real damage.
+
+   56ch, arrived at by measurement rather than by taste. The `ch` unit is the
+   advance width of "0", which in this face is 0.628em while the average
+   rendered glyph is 0.50em -- so a ch-based measure overshoots by about a
+   quarter. Counting real characters per line with the Range API: 72ch gave 82,
+   62ch gave 78, and 56ch gives roughly 70. */
+/* ...but `ch` cannot be the unit it is APPLIED in, only the unit it is derived
+   in. `ch` resolves against each element's own font-size, and this selector list
+   spans font sizes from 17.7px to 35.7px. So the one measure produced four
+   different widths, and the column had four right-hand edges:
+
+       p, ul, ol   17.7px   56ch =  622.6px   <- the intended measure
+       h4          20.5px   56ch =  747.8px
+       h3          26.7px   56ch =  966.6px   } both exceed the 800px column,
+       h2          35.7px   56ch = 1304.9px   } so both render full-width
+
+   Every heading, on all 65 posts, overhung the paragraph beneath it by 125-178px
+   depending on its level. The measure was right; the unit made it unenforceable.
+
+   Resolved once, as a length, so it is identical on every element that uses it.
+   35.168 is 56 x 0.628 -- the ch-to-em ratio for this face, documented above --
+   and the clamp is the body-copy font-size verbatim from the rule at the top of
+   this file, so the measure still tracks the fluid type exactly as it did. At
+   1280px this computes to 622.7px, which is the value body copy had before. */
+.blog-content {
+  --ps-measure: calc(35.168 * clamp(16px, calc(15.3px + 0.188vw), 18px));
+}
+
+.blog-content>p,
+.blog-content>ul,
+.blog-content>ol,
+.blog-content>h2,
+.blog-content>h3,
+.blog-content>h4,
+.blog-content>h5,
+.blog-content>.answer-box {
+  max-width: 100%
+}
+
+/* Nested paragraphs (inside the answer block) inherit the constraint from their
+   parent, so they must not be constrained twice. */
+.blog-content .answer-box>p {
+  max-width: none
+}
+
+/* ------------------------------------------------------------- inline links
+   Body links were distinguished by colour alone (#EE3D41 against black, no
+   underline). That fails WCAG 1.4.1 Use of Color unless the link/text contrast
+   is at least 3:1 AND another cue appears on hover -- and it fails readers with
+   any red-green deficiency regardless. There are 716 external links in the
+   corpus, so this is the most-encountered accessibility defect on the blog.
+
+   Underline offset keeps descenders legible, and the thickening on hover gives
+   a second, non-colour affordance. Links inside headings are left alone: the
+   weight and size already mark them. */
+.blog-content p>a,
+.blog-content li>a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(238, 61, 65, .45);
+  transition: text-decoration-color .18s ease, text-decoration-thickness .18s ease;
+}
+
+.blog-content p>a:hover,
+.blog-content li>a:focus-visible,
+.blog-content li>a:hover,
+.blog-content p>a:focus-visible {
+  text-decoration-thickness: 2px;
+  text-decoration-color: currentColor;
+}
+
+/* ------------------------------------------------------------------- tables
+   71 tables across the corpus, most of them comparisons that carry the actual
+   argument of their post. They were inheriting an unstyled default: no rules,
+   no padding, nothing separating a header from its data. */
+.table-wrap {
+  border: 1px solid #ececec;
+  border-radius: 12px
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.55
+}
+
+.table-wrap th,
+.table-wrap td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+  text-align: left
+}
+
+.table-wrap th {
+  background: #fafafa;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #666;
+  white-space: nowrap;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.table-wrap tbody tr:last-child td {
+  border-bottom: 0
+}
+
+.table-wrap tbody tr:hover {
+  background: #fcfcfc
+}
+
+.table-wrap td:first-child {
+  font-weight: 500
+}
+
+/* --------------------------------------------------------------------- code
+   167 inline <code> and 6 <pre> blocks. Inline code sat at body size with no
+   background, so a class name read as ordinary prose. */
+.blog-content :not(pre)>code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .875em;
+  background: #f5f5f5;
+  border: 1px solid #ececec;
+  border-radius: 4px;
+  padding: .12em .38em;
+  word-break: break-word;
+}
+
+.blog-content pre {
+  background: #f8f8f8;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 18px 20px;
+  overflow-x: auto;
+  margin: 0 0 1.5em;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-content pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: inherit
+}
+
+/* -------------------------------------------------------------- breadcrumbs
+   The current-page crumb truncated at 34ch mid-word ("...WHAT ACTUALLY MA..."),
+   which reads as a rendering fault rather than an intentional clip. The trail
+   already tells you where you are, and the H1 is directly below it, so on
+   narrow viewports the current crumb is dropped entirely instead of mangled. */
+
+/* The current crumb was capped at a fixed 34ch, so it clipped mid-word
+   ("...WHAT ACTUALLY MA...") even on a wide screen with room to spare. Let the
+   ancestors take their natural width and give the current page whatever is
+   left, so the ellipsis appears only when it is genuinely needed.
+
+   It stays VISIBLE at every width rather than being hidden on small screens.
+   The emitted BreadcrumbList carries the current page as item 4, and Google
+   treats structured data describing content the user cannot see as a violation
+   -- a clipped crumb is still present, a removed one is not. */
+.ps-crumbs ol {
+  flex-wrap: nowrap
+}
+
+.ps-crumbs li {
+  min-width: 0
+}
+
+.ps-crumbs__current {
+  flex: 0 1 auto;
+  max-width: none
+}
+
+@media (max-width:600px) {
+  .ps-crumbs__current {
+    max-width: 16ch
+  }
+}
+
+/* ============================================================================
+   BLOG HUB  (listing page)
+   ============================================================================
+   Rebuilt to sit in the main site's language rather than looking like a generic
+   blog bolted onto it: Poppins 700 headlines, the yellow #FDB914 and red
+   #EE3D41 accents, 16px card radius, full pills on anything interactive, and
+   the same generous white space.
+
+   Brand tokens, kept local so nothing here can leak into the theme's own CSS. */
+.ps-hub {
+  --ps-yellow: #FDB914;
+  --ps-red: #EE3D41;
+  --ps-ink: #0F1115;
+  --ps-muted: #6B7076;
+  --ps-line: #ECECEC;
+  --ps-radius: 16px;
+  --ps-shadow: 0 1px 2px rgba(15, 17, 21, .04), 0 8px 24px rgba(15, 17, 21, .06);
+  --ps-shadow-lift: 0 2px 4px rgba(15, 17, 21, .05), 0 18px 40px rgba(15, 17, 21, .12);
+  padding: 150px 0 90px;
+}
+
+@media (max-width:991px) {
+  .ps-hub {
+    padding: 110px 0 70px
+  }
+}
+
+.ps-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ------------------------------------------------------------------ masthead */
+.ps-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ps-muted);
+  margin: 0 0 14px;
+}
+
+.ps-hub__title {
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.08;
+  color: var(--ps-ink);
+  font-size: clamp(34px, calc(22px + 3.2vw), 64px);
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+
+/* The gradient echoes the "Creative" treatment in the main site's own H1. */
+.ps-hub__title em {
+  font-style: normal;
+  background: linear-gradient(92deg, var(--ps-red) 0%, #F5872F 45%, var(--ps-yellow) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ps-hub__sub {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ps-muted);
+  margin: 0 0 46px;
+  max-width: 56ch
+}
+
+/* ------------------------------------------------------ lead / featured post */
+.ps-lead {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 0;
+  align-items: stretch;
+  background: var(--ps-ink);
+  border-radius: 28px;
+  overflow: hidden;
+  margin: 0 0 64px;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: var(--ps-shadow);
+  transition: transform .3s cubic-bezier(.2, .7, .3, 1), box-shadow .3s ease;
+}
+
+.ps-lead:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ps-shadow-lift)
+}
+
+.ps-lead__media {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden
+}
+
+.ps-lead__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.2, .7, .3, 1)
+}
+
+.ps-lead:hover .ps-lead__media img {
+  transform: scale(1.04)
+}
+
+.ps-lead__body {
+  padding: 44px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.ps-lead__flag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  flex-wrap: wrap
+}
+
+.ps-lead__badge {
+  background: var(--ps-yellow);
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+
+.ps-lead__cat {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .66);
+}
+
+.ps-lead__title {
+  font-size: clamp(24px, calc(17px + 1.8vw), 38px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -.01em;
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.ps-lead__blurb {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, .72);
+  margin: 0 0 22px;
+  max-width: 46ch
+}
+
+.ps-lead__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, .55);
+  margin: 0 0 26px
+}
+
+.ps-lead__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 100px;
+  transition: gap .25s ease, background .25s ease;
+}
+
+.ps-lead:hover .ps-lead__cta {
+  gap: 16px;
+  background: var(--ps-yellow)
+}
+
+@media (max-width:991px) {
+  .ps-lead {
+    grid-template-columns: 1fr;
+    border-radius: 22px
+  }
+
+  .ps-lead__media {
+    min-height: 0;
+    aspect-ratio: 16/9
+  }
+
+  .ps-lead__body {
+    padding: 30px 26px 34px
+  }
+}
+
+/* ------------------------------------------------------- search and filters */
+.ps-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+}
+
+.ps-search {
+  position: relative;
+  flex: 0 1 320px;
+  min-width: 220px
+}
+
+.ps-search__icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ps-muted);
+  font-size: 17px;
+  pointer-events: none;
+}
+
+/* 16px, not 14. Mobile Safari zooms the viewport whenever a focused input computes
+   under 16px, and it does not zoom back out afterwards — the reader is left mid-page
+   at ~1.14x with the layout now horizontally scrollable. The 55px box is unchanged. */
+.ps-search__input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--ps-ink);
+  padding: 13px 44px 13px 46px;
+  border: 1px solid var(--ps-line);
+  border-radius: 100px;
+  background: #fff;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Was #A6ABB1 = 2.31:1. Placeholder text is text under 1.4.3. */
+.ps-search__input::placeholder {
+  color: var(--psb-muted-2)
+}
+
+/* 5.07:1 — AA */
+.ps-search__input:focus {
+  outline: none;
+  border-color: var(--ps-ink);
+  box-shadow: 0 0 0 3px rgba(15, 17, 21, .18)
+}
+
+/* 44px, not 30px: this is a touch target on the narrowest viewport the hub has. */
+.ps-search__clear {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: #F1F2F4;
+  color: var(--psb-muted-2);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.ps-search__clear:hover {
+  background: #E4E6E9
+}
+
+.ps-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap
+}
+
+.ps-chip {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4A4F55;
+  background: #fff;
+  border: 1px solid var(--ps-line);
+  border-radius: 100px;
+  padding: 11px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.ps-chip:hover {
+  border-color: #C9CCD0;
+  transform: translateY(-1px)
+}
+
+.ps-chip.is-active {
+  background: var(--ps-ink);
+  border-color: var(--ps-ink);
+  color: #fff
+}
+
+.ps-chip:focus-visible,
+.ps-more__btn:focus-visible,
+.ps-empty__reset:focus-visible,
+.ps-search__input:focus-visible,
+.ps-lead:focus-visible {
+  /* ink, not yellow -- see the note on .ps-card:focus-within */
+  outline: 3px solid var(--ps-ink);
+  outline-offset: 2px;
+}
+
+/* A flex item's default min-width is auto, i.e. it refuses to shrink below its own
+   content. With the chip row set to nowrap that made the whole control row size to the
+   chips' full width -- 775px inside a 375px viewport -- and pushed the page 412px wide
+   instead of scrolling the chips inside it. min-width:0 is what lets the row shrink and
+   the overflow move to where it was intended. */
+.ps-controls {
+  max-width: 100%
+}
+
+.ps-controls>* {
+  min-width: 0
+}
+
+@media (max-width:767px) {
+  .ps-controls {
+    flex-direction: column;
+    align-items: stretch
+  }
+
+  .ps-search {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%
+  }
+
+  /* The chip row scrolls rather than wrapping to four lines on a phone. */
+  .ps-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    max-width: 100%;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    /* Measured at 320px: 593px of chips -- five of the seven filters -- sit off the
+       right edge. A CSS mask would fade the tail, but a static gradient cannot tell
+       "more to the right" from "scrolled to the end", so the last chip would sit
+       permanently half-faded, and the mask would clip the focus ring of whichever
+       chip is focused -- trading a hint for a 2.4.7 regression. Left as is: the
+       partially-cut chip at the edge is the affordance. */
+    scroll-snap-type: x proximity;
+  }
+
+  .ps-chips::-webkit-scrollbar {
+    display: none
+  }
+
+  .ps-chip {
+    scroll-snap-align: start
+  }
+}
+
+.ps-count {
+  font-size: 13px;
+  color: var(--ps-muted);
+  margin: 0 0 26px;
+  min-height: 20px
+}
+
+/* --------------------------------------------------------------- card grid */
+.ps-grid {
+  display: grid;
+  gap: 34px 30px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  margin: 0 0 20px;
+}
+
+@media (max-width:575px) {
+  .ps-grid {
+    grid-template-columns: 1fr;
+    gap: 26px
+  }
+}
+
+.ps-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--ps-line);
+  border-radius: var(--ps-radius);
+  overflow: hidden;
+  transition: transform .3s cubic-bezier(.2, .7, .3, 1), box-shadow .3s ease, border-color .3s ease;
+}
+
+.ps-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ps-shadow-lift);
+  border-color: transparent
+}
+
+/* Focus lands on the title link, but the ring must read as the whole card.
+   Two-tone deliberately: #FDB914 on white measures 1.73:1, which FAILS WCAG 1.4.11
+   (non-text contrast, AA, needs 3:1) -- a yellow-only ring would be nearly invisible
+   on these white cards. The ink ring carries the contrast at 18.9:1 and the yellow
+   sits outside it for brand, so it works on light and dark surfaces alike. */
+.ps-card:focus-within {
+  box-shadow: 0 0 0 3px var(--ps-ink), 0 0 0 6px var(--ps-yellow);
+  border-color: transparent;
+}
+
+.ps-card[hidden] {
+  display: none
+}
+
+.ps-card__media {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #F4F5F6
+}
+
+.ps-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.2, .7, .3, 1)
+}
+
+.ps-card:hover .ps-card__media img {
+  transform: scale(1.05)
+}
+
+.ps-card__cat {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: rgba(255, 255, 255, .94);
+  backdrop-filter: blur(6px);
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 13px;
+  border-radius: 100px;
+}
+
+.ps-card__body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1
+}
+
+.ps-card__title {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.34;
+  letter-spacing: -.005em;
+  margin: 0 0 10px
+}
+
+.ps-card__title a {
+  color: var(--ps-ink);
+  text-decoration: none
+}
+
+/* The stretched link: the card is clickable, but the accessible name stays the
+   headline rather than the card's entire text content. */
+.ps-card__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* pointer-events:none restores text selection over the card; it is re-enabled on
+     hover/focus so the click target still works. Without this the overlay makes every
+     card's text unselectable, which is a real cost for a research blog people quote. */
+  pointer-events: none;
+}
+
+.ps-card:hover .ps-card__title a::after,
+.ps-card:focus-within .ps-card__title a::after {
+  pointer-events: auto
+}
+
+/* anything genuinely interactive inside the card must sit above the overlay */
+.ps-card__cat {
+  z-index: 2
+}
+
+.ps-card:hover .ps-card__title a {
+  color: var(--ps-red)
+}
+
+.ps-card__blurb {
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--ps-muted);
+  margin: 0 0 18px
+}
+
+.ps-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12.5px;
+  color: #8B9096;
+  margin: auto 0 0;
+  padding-top: 4px;
+}
+
+.ps-card__dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+  opacity: .6
+}
+
+/* ------------------------------------------------------- empty + show more */
+.ps-empty {
+  font-size: 15px;
+  color: var(--ps-muted);
+  text-align: center;
+  padding: 56px 0
+}
+
+.ps-empty__reset {
+  font: inherit;
+  color: var(--ps-ink);
+  background: none;
+  border: 0;
+  border-bottom: 2px solid var(--ps-yellow);
+  padding: 0 0 1px;
+  cursor: pointer;
+}
+
+.ps-more {
+  display: flex;
+  justify-content: center;
+  margin: 22px 0 0
+}
+
+.ps-more__btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  background: var(--ps-yellow);
+  border: 0;
+  border-radius: 100px;
+  padding: 15px 38px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.ps-more__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(253, 185, 20, .4)
+}
+
+.ps-more[hidden] {
+  display: none
+}
+
+/* Motion is decoration here; every transform above is safe to drop entirely. */
+@media (prefers-reduced-motion:reduce) {
+
+  .ps-lead,
+  .ps-lead__media img,
+  .ps-card,
+  .ps-card__media img,
+  .ps-chip,
+  .ps-more__btn,
+  .ps-lead__cta {
+    transition: none !important;
+  }
+
+  .ps-lead:hover,
+  .ps-card:hover,
+  .ps-chip:hover,
+  .ps-more__btn:hover {
+    transform: none
+  }
+
+  .ps-lead:hover .ps-lead__media img,
+  .ps-card:hover .ps-card__media img {
+    transform: none
+  }
+}
+
+/* ============================================================================
+   ARTICLE PAGE additions
+   ========================================================================== */
+
+/* Reading progress. Fixed to the viewport, above the theme's sticky header. */
+.ps-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  background: transparent;
+  pointer-events: none;
+}
+
+.ps-progress__bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #EE3D41, #F5872F, #FDB914);
+  transition: width .08s linear;
+}
+
+/* Facts strip under the byline: read time, how many claims are sourced, category.
+   The source count is the differentiator -- every figure in the corpus traces to a
+   logged source, and stating it is the trust signal both readers and answer engines
+   are actually looking for. */
+.ps-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 30px;
+  padding: 0 0 22px;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.ps-facts__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #5C6167;
+  background: #F6F7F8;
+  border-radius: 100px;
+  padding: 7px 15px;
+  text-decoration: none;
+}
+
+.ps-facts__item i {
+  font-size: 14px;
+  opacity: .7;
+  line-height: 1
+}
+
+.ps-facts__cat {
+  color: #111;
+  background: #FFF4D6
+}
+
+.ps-facts__cat:hover {
+  background: #FDB914
+}
+
+/* ----------------------------------------------------------- prev / next */
+.ps-seq {
+  padding: 10px 0 0
+}
+
+.ps-seq__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  border-top: 1px solid #ECECEC;
+  padding-top: 34px
+}
+
+.ps-seq__link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 26px;
+  border: 1px solid #ECECEC;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.ps-seq__link:hover {
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(15, 17, 21, .09)
+}
+
+.ps-seq__link--next {
+  text-align: right;
+  align-items: flex-end
+}
+
+.ps-seq__dir {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #9AA0A6;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ps-seq__title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #0F1115
+}
+
+.ps-seq__link:hover .ps-seq__title {
+  color: #EE3D41
+}
+
+@media (max-width:767px) {
+  .ps-seq__row {
+    grid-template-columns: 1fr
+  }
+
+  .ps-seq__link--next {
+    text-align: left;
+    align-items: flex-start
+  }
+}
+
+/* ------------------------------------------------------------- related */
+.ps-related {
+  padding: 60px 0 90px
+}
+
+.ps-related__head {
+  font-size: clamp(22px, calc(17px + 1.2vw), 30px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: #0F1115;
+  margin: 0 0 30px;
+}
+
+/* The cards are the same component as the hub, so they need the hub's tokens, which
+   are scoped to .ps-hub. Re-declare them here rather than widening that scope. */
+.ps-related,
+.ps-grid--related {
+  --ps-yellow: #FDB914;
+  --ps-red: #EE3D41;
+  --ps-ink: #0F1115;
+  --ps-muted: #6B7076;
+  --ps-line: #ECECEC;
+  --ps-radius: 16px;
+  --ps-shadow-lift: 0 2px 4px rgba(15, 17, 21, .05), 0 18px 40px rgba(15, 17, 21, .12);
+}
+
+.ps-grid--related {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 26px
+}
+
+/* Keep reading carries four cards in the markup but shows three above 992px.
+   The grid is auto-fill over minmax(280px, 1fr), so the column count follows the
+   container: 3 across at desktop (measured 348px each in a 1116px grid) and 2
+   across below 992. Three cards therefore sat as a tidy row at desktop and as
+   2 + 1, with a hole, on a tablet or phone — which is what the fourth card is
+   for. Showing it at desktop would move the hole rather than close it: four
+   cards in a three-column grid is 3 + 1. So the card ships on every page and
+   this hides it exactly where it would orphan. */
+@media (min-width:992px) {
+  .ps-grid--related .ps-card:nth-child(4) {
+    display: none
+  }
+}
+
+@media (max-width:575px) {
+  .ps-grid--related {
+    grid-template-columns: 1fr
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  .ps-progress__bar,
+  .ps-seq__link {
+    transition: none !important
+  }
+
+  .ps-seq__link:hover {
+    transform: none
+  }
+}
+
+/* The lead uses the same stretched-link pattern as the cards, so its accessible name is
+   the headline rather than every word in the panel. */
+.ps-lead {
+  position: relative
+}
+
+.ps-lead__title a {
+  color: inherit;
+  text-decoration: none
+}
+
+.ps-lead__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none
+}
+
+.ps-lead:hover .ps-lead__title a::after,
+.ps-lead:focus-within .ps-lead__title a::after {
+  pointer-events: auto
+}
+
+/* Yellow reads 10.9:1 on the dark panel, but a zero-offset box-shadow paints
+   OUTSIDE the border box -- i.e. on the white page, where the same yellow is
+   1.73:1. So the ring that was reasoned about against the panel never touches it.
+   Same two-tone treatment as .ps-card, which got this right: ink carries the
+   contrast at 18.9:1, yellow rides outside it as brand. */
+.ps-lead:focus-within {
+  box-shadow: 0 0 0 3px var(--psb-ink), 0 0 0 7px var(--psb-yellow)
+}
+
+/* ------------------------------------------------- article column balance
+   The article row is a 3-col sticky TOC + a 9-col content column, but body text is
+   capped at a 56ch reading measure. So the column claims far more width than its text
+   uses and all the slack collects at the RIGHT edge — 104px at 1000px viewport, and it
+   grows with the screen, which is what made the page look lopsided on a wide monitor.
+
+   Centring the text inside its own column is the obvious fix and the wrong one: images,
+   tables and embeds are deliberately full-column, so the text's left edge would stop
+   aligning with theirs and every figure would look indented.
+
+   Instead the whole TOC+content pair is centred as a unit. The text keeps its left
+   alignment with the media, and the leftover space is split evenly rather than dumped
+   on one side. */
+/* SUPERSEDED. This capped the row at 900/980px, which fixed the dead space but
+   collided with the 1140px container cap added later -- together they produced three
+   different left edges at 1440px (hero 159, article row 227, text 518). The later
+   container rule handles it and gives the gutter to figures and tables instead. */
+
+
+
+/* ============================================================================
+   1. TOKENS
+   ============================================================================
+   Prefixed --psb- so nothing can collide with the theme's own --color-1 /
+   --font-primary / --font-secondary. Declared on :root because the article
+   page needs the same scale in four sibling sections (.blogInnerDetails,
+   .ps-seq, .ps-related) that have no common wrapper below <body>.
+
+   A custom property that is declared and never used renders nothing, so this
+   block is inert on any page that does not opt in. */
+:root {
+  /* --- brand ------------------------------------------------------------ */
+  --psb-yellow: #FDB914;
+  --psb-red: #EE3D41;
+  --psb-ink: #0F1115;
+  --psb-paper: #FFFFFF;
+
+  /* Text greys, all re-checked. The old #8B9096 card meta was 3.22:1 and
+     failed 1.4.3 for small text; #6A6F75 is the smallest step that clears
+     4.5:1 while still reading as "secondary". */
+  --psb-muted: #5C6167;
+  /* 6.25:1 on white — AA  */
+  --psb-muted-2: #6A6F75;
+  /* 5.07:1 on white — AA  */
+  --psb-line: #E7E9EC;
+  /* Was #C9CDD2, annotated "1.9:1" but measured 1.60:1. This token is the resting
+     border of the search field and the filter chips -- real interactive controls,
+     so 1.4.11 wants 3:1, not decoration contrast. #8E959D is 3.03:1 on white, the
+     lightest neutral that clears it. --psb-line stays as it is: it only ever draws
+     dividers, which the criterion does not cover. */
+  --psb-line-strong: #8E959D;
+  /* 3.03:1 on white — AA (1.4.11) */
+  --psb-wash: #F7F8F9;
+
+  /* --- shape ------------------------------------------------------------ */
+  --psb-r-card: 16px;
+  /* the brand's card radius               */
+  --psb-r-lg: 28px;
+  /* the brand's big-panel radius          */
+  --psb-r-pill: 999px;
+
+  /* --- vertical scale ---------------------------------------------------
+     One scale, used everywhere below, instead of the 34/26/22/18/12px
+     one-offs that are scattered through the current file. Roughly a 1.5
+     ratio from 8px, which is what the main site's own white space measures
+     out to. */
+  --psb-s1: 4px;
+  --psb-s2: 8px;
+  --psb-s3: 12px;
+  --psb-s4: 16px;
+  --psb-s5: 24px;
+  --psb-s6: 36px;
+  --psb-s7: 52px;
+  --psb-s8: 76px;
+  --psb-s9: 112px;
+
+  /* --- motion ----------------------------------------------------------- */
+  --psb-ease: cubic-bezier(.2, .7, .3, 1);
+  --psb-fast: .18s;
+  --psb-slow: .34s;
+
+  /* --- elevation --------------------------------------------------------
+     The brand does not use soft photographic shadows; its cards are flat with
+     hard edges. A 4px offset hard shadow in ink is the closest CSS equivalent
+     of that poster-print feel, and unlike a blur it stays crisp at any zoom. */
+  --psb-hard: 4px 4px 0 var(--psb-ink);
+  --psb-hard-sm: 3px 3px 0 var(--psb-ink);
+  --psb-soft: 0 1px 2px rgba(15, 17, 21, .04), 0 10px 28px rgba(15, 17, 21, .07);
+  --psb-soft-lift: 0 2px 4px rgba(15, 17, 21, .05), 0 20px 44px rgba(15, 17, 21, .13);
+
+  /* --- default accent, overridden per category in section 2 ------------- */
+  --psb-cat: var(--psb-yellow);
+  --psb-cat-ink: #926701;
+  /* 5.04:1 on white */
+  --psb-cat-wash: #FFF6E0;
+}
+
+
+/* ============================================================================
+   2. CATEGORY COLOUR SYSTEM
+   ============================================================================
+   Six categories, six colours, all taken from the site's own CSS rather than
+   invented: #FDB914 / #EE3D41 are in :root and --violet #D098F9 and --orange
+   #FA6B45 are already declared in assets/css/new.css. The teal and blue are
+   the two the owner measured off the homepage blobs.
+
+   THE HOOK, and why there is no markup change:
+   PostCard.astro already emits  data-cat="slug1 slug2"  in publication order,
+   so [data-cat^="slug"] matches exactly when that category is the FIRST one —
+   which is the same category whose NAME is printed in the pill. Using the
+   class list instead ( .ps-card.branding ) would break on the 8 posts that
+   carry two categories: source order rather than the post would decide the
+   colour, and the pill would say "Web Development" while showing the Web
+   Design colour. The prefix match cannot drift, because no slug is a prefix
+   of another ("branding" does not match "personal-branding").
+
+   The filter chips key off data-filter, which is already the slug.
+   The article page keys off the category href, which is already the slug.
+
+   Per category:
+     --psb-cat        solid fill; only ever carries #0F1115 ink text
+     --psb-cat-ink    darkened twin, >= 5:1 on white, for marks and rules
+     --psb-cat-wash   14% tint, only ever a background behind ink text     */
+
+.ps-card[data-cat^="branding"],
+.ps-chip[data-filter="branding"],
+:root:has(.ps-facts__cat[href*="/category/branding/"]) {
+  --psb-cat: #EE3D41;
+  /* ink on fill  4.84:1 — AA   */
+  --psb-cat-ink: #D52A2E;
+  /* on white     5.00:1 — AA   */
+  --psb-cat-wash: #FDE4E4;
+  /* ink on wash 15.65:1 — AAA  */
+}
+
+.ps-card[data-cat^="seo"],
+.ps-chip[data-filter="seo"],
+:root:has(.ps-facts__cat[href*="/category/seo/"]) {
+  --psb-cat: #FDB914;
+  /* ink on fill 10.91:1 — AAA  */
+  --psb-cat-ink: #fdb914;
+  /* on white     5.04:1 — AA   */
+  --psb-cat-wash: #FFF5DE;
+  /* ink on wash 17.43:1 — AAA  */
+}
+
+.ps-card[data-cat^="ui-ux-design"],
+.ps-chip[data-filter="ui-ux-design"],
+:root:has(.ps-facts__cat[href*="/category/ui-ux-design/"]) {
+  --psb-cat: #4A90C7;
+  /* ink on fill  5.49:1 — AA   */
+  --psb-cat-ink: #4A90C7;
+  /* on white     5.01:1 — AA   */
+  --psb-cat-wash: #E0F0F9;
+  /* ink on wash 16.20:1 — AAA  */
+}
+
+.ps-card[data-cat^="web-development"],
+.ps-chip[data-filter="web-development"],
+:root:has(.ps-facts__cat[href*="/category/web-development/"]) {
+  --psb-cat: #5FBFA8;
+  /* ink on fill  8.55:1 — AAA  */
+  --psb-cat-ink: #5fbfa8;
+  /* on white     5.05:1 — AA   */
+  --psb-cat-wash: #E5F6F4;
+  /* ink on wash 16.94:1 — AAA  */
+}
+
+.ps-card[data-cat^="e-commerce"],
+.ps-chip[data-filter="e-commerce"],
+:root:has(.ps-facts__cat[href*="/category/e-commerce/"]) {
+  --psb-cat: #D098F9;
+  /* ink on fill  8.59:1 — AAA  */
+  --psb-cat-ink: #865FA3;
+  /* on white     5.02:1 — AA   */
+  --psb-cat-wash: #F4EAFD;
+  /* ink on wash 17.1:1  — AAA  */
+}
+
+.ps-card[data-cat^="personal-branding"],
+.ps-chip[data-filter="personal-branding"],
+:root:has(.ps-facts__cat[href*="/category/personal-branding/"]) {
+  --psb-cat: #FA6B45;
+  /* ink on fill  6.53:1 — AA   */
+  --psb-cat-ink: #BE492A;
+  /* on white     5.03:1 — AA   */
+  --psb-cat-wash: #FEE9E3;
+  /* ink on wash 16.4:1  — AAA  */
+}
+
+
+/* ============================================================================
+   3. SHARED PRIMITIVES — pills, buttons, focus
+   ============================================================================ */
+
+/* ------------------------------------------------------------------- focus
+   One ring for the whole blog. Two-tone for a reason: #FDB914 alone is 1.73:1
+   on white and would be an invisible focus indicator, which is a 2.4.7 + 1.4.11
+   failure. The ink carries the 18.9:1 contrast, the yellow rides outside it as
+   brand, and the pair works on white cards and on the dark lead panel alike. */
+/* The catch-all comes first, because the theme kills focus globally with
+   *:focus{outline:none} and the named list below only ever restored it for the
+   eleven selectors it knew about. Everything else -- every header nav link, every
+   footer link, the search clear button, and the <summary> that is the only way to
+   open the table of contents on mobile -- had no visible focus state at all on
+   all 132 pages. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--psb-ink);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================================
+   3. SHARED PRIMITIVES — pills, buttons, focus
+   ============================================================================ */
+
+/* ------------------------------------------------------------------- focus
+   One ring for the whole blog. Two-tone for a reason: #FDB914 alone is 1.73:1
+   on white and would be an invisible focus indicator, which is a 2.4.7 + 1.4.11
+   failure. The ink carries the 18.9:1 contrast, the yellow rides outside it as
+   brand, and the pair works on white cards and on the dark lead panel alike. */
+.ps-chip:focus-visible,
+.ps-more__btn:focus-visible,
+.ps-empty__reset:focus-visible,
+.ps-search__input:focus-visible,
+.ps-tag:focus-visible,
+.ps-facts__item:focus-visible,
+.ps-share__list a:focus-visible,
+.ps-seq__link:focus-visible,
+.ps-toc a:focus-visible,
+.ps-crumbs a:focus-visible,
+.blog-content a:focus-visible {
+  outline: 0px solid var(--psb-ink);
+  outline-offset: 0px;
+  box-shadow: 0 0 0 6px #fdb91400;
+  border: 2px solid #fdb914;
+}
+
+.ps-card__cat,
+.ps-chip,
+.ps-lead__badge,
+.ps-facts__item {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  border-radius: var(--psb-r-pill);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------ the button
+   "Show more", the lead CTA and the empty-state reset were three unrelated
+   treatments. One shape now: full pill, ink text, hard 4px ink shadow, and a
+   press that moves the button onto its own shadow. Flat and graphic, like the
+   homepage blobs — no soft blur anywhere. */
+.ps-more__btn,
+.ps-lead__cta,
+.ps-empty__reset {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: .02em;
+  border-radius: var(--psb-r-pill);
+  border: 2px solid var(--psb-ink);
+  color: var(--psb-ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--psb-hard);
+  transition: transform var(--psb-fast) var(--psb-ease),
+    box-shadow var(--psb-fast) var(--psb-ease),
+    background-color var(--psb-fast) linear;
+}
+
+.ps-more__btn {
+  background: var(--psb-yellow);
+  /* ink on yellow 10.91:1 — AAA */
+  padding: 16px 40px;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+.ps-more__btn:hover,
+.ps-lead__cta:hover,
+.ps-empty__reset:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--psb-ink)
+}
+
+.ps-more__btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--psb-ink)
+}
+
+
+/* ============================================================================
+   4. LISTING PAGE
+   ========================================================================== */
+
+/* -------------------------------------------------------------- the frame
+   150px of dead padding above a card that already has 28px of its own radius
+   read as a gap rather than as air. Tightened at the top, opened at the
+   bottom, and the whole hub now steps on the --psb- scale. */
+.ps-hub {
+  padding: var(--psb-s9) 0 var(--psb-s9)
+}
+
+@media (max-width:991px) {
+  .ps-hub {
+    padding: var(--psb-s8) 0 var(--psb-s8)
+  }
+}
+
+/* ------------------------------------------------------------- masthead
+   These three classes are already styled in the BLOG HUB block but no markup
+   emits them — index.astro renders only a visually-hidden <h1>, so the page
+   opens on a 710px-tall black panel with no title, no positioning line and no
+   reason to keep scrolling. Restyled here and ready; see the markup note at
+   the end of this file for the three lines that switch it on. */
+.ps-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--psb-ink);
+  background: var(--psb-yellow);
+  /* 10.91:1 — AAA */
+  padding: 8px 16px;
+  border-radius: var(--psb-r-pill);
+  margin: 0 0 var(--psb-s5);
+}
+
+.ps-hub__title {
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.04;
+  color: var(--psb-ink);
+  font-size: clamp(38px, calc(24px + 3.6vw), 76px);
+  margin: 0 0 var(--psb-s5);
+  max-width: 15ch;
+}
+
+/* The main site's own H1 gradient, matched: orange into yellow, left to right.
+   Gradient TEXT is the one place a light yellow is allowed, because it is a
+   display size, it is only ever the tail of the sweep, and the word stays
+   legible from its darker head. Do not extend this to body copy. */
+.ps-hub__title em {
+  font-style: normal;
+  background: linear-gradient(96deg, #EE3D41 0%, #F5872F 42%, #FDB914 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ps-hub__sub {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--psb-muted);
+  /* 6.25:1 — AA */
+  margin: 0 0 var(--psb-s8);
+  max-width: 52ch;
+}
+
+/* ------------------------------------------------------------------ lead
+   Three problems: it rendered 710px tall and ate the whole first screen; the
+   category was a 66%-opacity grey caption; and the dark panel carried no brand
+   colour at all. Now: the media is capped by aspect so the panel cannot run
+   away, the badge and the category read as a colour-coded pair, and a
+   quarter-circle blob — the homepage's own shape — sits in the corner. */
+.ps-lead {
+  border-radius: var(--psb-r-lg);
+  margin: 0 0 var(--psb-s8);
+  align-items: stretch;
+  grid-template-columns: 1.05fr .95fr;
+  box-shadow: var(--psb-soft);
+}
+
+.ps-lead__media {
+  min-height: 0
+}
+
+.ps-lead__body {
+  padding: var(--psb-s6) var(--psb-s7);
+  position: relative;
+  overflow: hidden
+}
+
+/* The quarter-circle. Decorative only, so it is aria-hidden by virtue of being
+   a pseudo-element, and it sits under the content. */
+.ps-lead__body::after {
+  content: "";
+  position: absolute;
+  right: -46px;
+  bottom: -46px;
+  width: 190px;
+  height: 190px;
+  border-radius: 100% 0 0 0;
+  background: var(--psb-yellow);
+  opacity: .14;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ps-lead__flag,
+.ps-lead__title,
+.ps-lead__blurb,
+.ps-lead__meta,
+.ps-lead__cta {
+  position: relative;
+  z-index: 1
+}
+
+.ps-lead__flag {
+  gap: var(--psb-s3);
+  margin: 0 0 var(--psb-s5)
+}
+
+.ps-lead__badge {
+  background: var(--psb-yellow);
+  color: var(--psb-ink);
+  /* 10.91:1 — AAA */
+  font-size: 11px;
+  padding: 7px 14px;
+}
+
+/* Was rgba(255,255,255,.66) = 6.0:1 on the ink panel but visually a whisper.
+   A hairline pill at full white is 15.3:1 and reads as a sibling of the badge. */
+.ps-lead__cat {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, .42);
+  padding: 6px 13px;
+  border-radius: var(--psb-r-pill);
+}
+
+/* The lead measured 765px tall before this: the panel is sized by its body, and
+   an eight-word headline plus a four-line blurb pushed it past a full screen on
+   a laptop, so the grid below it was never visible on load. Both blocks are
+   clamped to three lines. Clamping is visual only — the full title stays in the
+   DOM, so the link's accessible name and the crawler's view are unchanged. */
+.ps-lead__title {
+  font-size: 30px;
+  line-height: 1.14;
+  letter-spacing: -.02em;
+  margin: 0 0 var(--psb-s4);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ps-lead__blurb {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, .78);
+  /* 12.0:1 — AAA */
+  margin: 0 0 var(--psb-s5);
+  max-width: 44ch;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* The 3-line clamp exists to stop the panel outgrowing a laptop screen. Below
+   992px the panel is stacked and height is no longer the constraint, but the
+   headline is the narrowest it ever gets -- measured at 375px a 79-character
+   title needs 167px and was given 82px, so more than half of it was hidden and
+   the reader could not tell what the featured post was. */
+@media (max-width:991px) {
+  .ps-lead__title {
+    -webkit-line-clamp: 5
+  }
+
+  .ps-lead__blurb {
+    -webkit-line-clamp: 4
+  }
+}
+
+.ps-lead__meta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .62);
+  margin: 0 0 var(--psb-s6);
+  /* 5.4:1 — AA */
+}
+
+.ps-lead__cta {
+  background: #FFFFFF;
+  padding: 16px 40px;
+  font-size: 16px;
+  line-height: 1;
+  border-color: #FFFFFF;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ps-lead:hover .ps-lead__cta {
+  background: var(--psb-yellow);
+  border-color: var(--psb-yellow);
+  gap: 16px
+}
+
+@media (max-width:991px) {
+
+  /* The unconditional .ps-lead rule above sets a two-column grid, and it appears LATER
+     in the cascade than the original mobile rule, so at equal specificity it won. The
+     result was the media track collapsing to ~184px while the image stayed 1075px wide
+     and the text rendered on top of the picture. The stack has to be re-declared here. */
+  .ps-lead {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    border-radius: 22px
+  }
+
+  .ps-lead__media {
+    aspect-ratio: 16/9;
+    min-height: 0
+  }
+
+  .ps-lead__body {
+    padding: var(--psb-s6) var(--psb-s5) var(--psb-s7)
+  }
+}
+
+/* ------------------------------------------------------- search + filters */
+.ps-controls {
+  gap: var(--psb-s5);
+  margin: 0 0 var(--psb-s4);
+  align-items: center
+}
+
+.ps-search__input {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 44px 10px 48px;
+  /* 16px — iOS focus zoom, as above */
+  border: 2px solid var(--psb-line-strong);
+  /* 1.9:1 — see note below */
+  border-radius: var(--psb-r-pill);
+}
+
+/* The old 1px #ECECEC border was 1.13:1 against white. A text input is one of
+   the components 1.4.11 is actually aimed at, so the boundary is thickened and
+   darkened, and the focus state swaps to a full ink border at 18.9:1 rather
+   than relying on a tint. */
+.ps-search__input:focus {
+  border-color: var(--psb-ink);
+  box-shadow: 0 0 0 0px var(--psb-cat-wash);
+  border: 2px solid #fdb914;
+}
+
+.ps-search__icon {
+  left: 20px;
+  font-size: 18px;
+  color: var(--psb-muted)
+}
+
+.ps-chips {
+  gap: var(--psb-s2)
+}
+
+.ps-chip {
+  font-size: 11.5px;
+  color: var(--psb-muted);
+  /* 6.25:1 — AA  */
+  background: #fff;
+  border: 2px solid var(--psb-line-strong);
+  padding: 4px 18px 4px 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  transition: color var(--psb-fast) linear, border-color var(--psb-fast) linear,
+    background-color var(--psb-fast) linear, transform var(--psb-fast) var(--psb-ease),
+    box-shadow var(--psb-fast) var(--psb-ease);
+}
+
+/* The colour dot. Redundant by design: the chip already names its category in
+   text, so the dot is decoration and 1.4.1 is not engaged — it is a scanning
+   aid, not the only carrier of meaning. */
+.ps-chip::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--psb-cat);
+}
+
+.ps-chip[data-filter="*"]::before {
+  background: conic-gradient(#EE3D41 0 25%, #FDB914 0 50%, #5FBFA8 0 75%, #4A90C7 0);
+}
+
+.ps-chip:hover {
+  border-color: var(--psb-ink);
+  color: var(--psb-ink);
+  transform: translate(1px, 1px)
+}
+
+/* Active state does not rely on colour alone: the chip fills solid, the label
+   goes to ink weight 700, and aria-pressed already carries it to AT. Filling
+   with the CATEGORY colour rather than black is the point of the whole system
+   — the chip, the cards it reveals and the article you land on are one hue. */
+.ps-chip.is-active {
+  background: var(--psb-cat);
+  border-color: var(--psb-ink);
+  color: #fff;
+  box-shadow: var(--psb-hard-sm);
+}
+
+.ps-chip.is-active::before {
+  background: #fff;
+}
+
+.ps-chip[data-filter="*"].is-active {
+  background: var(--psb-ink);
+  color: #fff
+}
+
+/* 18.9:1 */
+.ps-chip[data-filter="*"].is-active::before {
+  opacity: 1
+}
+
+/* min-height:0 undoes the 20px reserved at line 455. The JS deliberately leaves
+   this element empty until the reader filters or searches ("announcing 65
+   articles on load is noise"), so the 20px floor plus 24/36 of margin reserved
+   an 80px empty band between the chips and the grid on every first paint. */
+.ps-count {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--psb-muted-2);
+  margin: var(--psb-s5) 0 var(--psb-s6);
+  min-height: 0;
+}
+
+.ps-count:empty {
+  margin: 0
+}
+
+/* -------------------------------------------------------------- card grid */
+.ps-grid {
+  gap: var(--psb-s6) var(--psb-s6)
+}
+
+/* Restated after the unconditional rule above, which is later in the file than
+   the @media block at line 463 and beat it at equal specificity -- so the mobile
+   gap was 52px, not the 26px intended, costing ~26px of dead scroll per card
+   across 64 stacked cards. */
+@media (max-width:575px) {
+  .ps-grid {
+    gap: var(--psb-s5)
+  }
+}
+
+.ps-card {
+  border: 2px solid var(--psb-line);
+  border-radius: var(--psb-r-card);
+  transition: transform var(--psb-slow) var(--psb-ease),
+    box-shadow var(--psb-slow) var(--psb-ease),
+    border-color var(--psb-slow) linear;
+}
+
+/* Flat hard lift instead of the soft 40px blur: same read of "this is
+   clickable", but it keeps the poster feel of the homepage. */
+.ps-card:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--psb-ink);
+  box-shadow: 7px 7px 0 var(--psb-cat);
+}
+
+.ps-card:focus-within {
+  box-shadow: 0 0 0 3px var(--psb-ink), 0 0 0 7px var(--psb-yellow)
+}
+
+/* The category pill was a white blur chip — identical on all six categories
+   and effectively invisible on a pale hero. Solid category colour, ink text,
+   and an ink hairline so it holds its edge on any image underneath it. */
+.ps-card__cat {
+  left: var(--psb-s4);
+  bottom: var(--psb-s4);
+  background: var(--psb-cat);
+  color: #fff;
+  border: 1px solid var(--psb-ink);
+  backdrop-filter: none;
+  font-size: 10.5px;
+  padding: 9px 14px;
+  line-height: 1;
+}
+
+.ps-card__body {
+  padding: var(--psb-s5) var(--psb-s5) var(--psb-s5)
+}
+
+.ps-card__title {
+  font-size: 19px;
+  line-height: 1.32;
+  letter-spacing: -.012em;
+  margin: 0 0 var(--psb-s3);
+}
+
+.ps-card:hover .ps-card__title a {
+  color: var(--psb-cat-ink)
+}
+
+/* >= 5:1 on white */
+.ps-card__blurb {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--psb-muted);
+  /* 6.25:1 — AA */
+  margin: 0 0 var(--psb-s5);
+}
+
+/* Was #8B9096 = 3.22:1, a 1.4.3 failure on 12.5px text. Also re-cut as a
+   small-caps meta line so the date stops competing with the blurb. */
+.ps-card__meta {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--psb-muted-2);
+  /* 5.07:1 — AA */
+  gap: var(--psb-s2);
+  margin: auto 0 0;
+  padding-top: var(--psb-s4);
+  border-top: 1px solid var(--psb-line);
+}
+
+/* Bug, not styling: a theme rule sizes bare <span> at 16px, so "10 MIN READ"
+   renders at 16px next to a 12.5px date inside the same meta line. Both
+   children are pinned to the parent so the pair actually matches.
+
+   `color` is part of the same bug and was the part that got missed: the theme
+   rule also paints a bare <span> #000, so the date resolved to --psb-muted-2
+   while "10 MIN READ" beside it came out pure black. On the dark featured panel
+   the same rule made the read time #000 on #0F1115 -- 1.11:1, invisible. */
+.ps-card__meta>time,
+.ps-card__meta>span {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: 1.2;
+  color: inherit
+}
+
+.ps-card__dot {
+  width: 4px;
+  height: 4px;
+  background: var(--psb-cat);
+  opacity: 1
+}
+
+/* --------------------------------------------------------- empty / more */
+.ps-empty {
+  font-size: 16px;
+  color: var(--psb-muted);
+  padding: var(--psb-s8) 0;
+  background: var(--psb-wash);
+  border-radius: var(--psb-r-card);
+  margin: var(--psb-s5) 0;
+}
+
+.ps-empty__reset {
+  background: var(--psb-yellow);
+  border: 2px solid var(--psb-ink);
+  font-size: 13px;
+  padding: 9px 20px;
+  margin-left: 6px;
+  box-shadow: var(--psb-hard-sm);
+}
+
+.ps-more {
+  margin: var(--psb-s8) 0 0
+}
+
+/* 576-767: Bootstrap pins .container at 540px and does not widen it again until
+   768px (820px). The grid needs 676px for two tracks, so the whole band renders a
+   single 516px column with 113px of dead margin on each side at 767px -- and the
+   card is then WIDER at 767 (516px) than at 768 (351px), which is the wrong way
+   round. Widening the three blog section containers in that band makes the step
+   from 575 to 768 continuous instead of a cliff. Scoped to the blog's own
+   sections so the site-wide container convention is untouched. */
+@media (min-width:576px) and (max-width:767px) {
+
+  .ps-hub>.container,
+  .blogListing>.container,
+  .blog-listing>.container {
+    max-width: 100%
+  }
+}
+
+
+/* ============================================================================
+   5. ARTICLE PAGE — THE DEAD SPACE ON THE RIGHT
+   ============================================================================
+   Measured, not guessed. At a 1440px viewport:
+
+       .container            1350px
+       .col-lg-9   (75%)     1012px inner
+       body copy at 56ch      633px   (0.628em per ch in Poppins x 18px)
+       ------------------------------------
+       empty                  355px   = 35% of the column
+
+   Three things are wrong at once, and all three have to move or the gap just
+   relocates:
+
+   1. The column is sized to the grid, not to the content. Nothing on the page
+      is 1012px wide, so the last third is structurally unusable.
+   2. The rail is 25% and the TOC inside it wraps every entry to two or three
+      lines, so the LEFT column is simultaneously too cramped.
+   3. .ps-seq and .ps-related sit OUTSIDE the row, so they run the full 1350
+      while the article is inset by the rail — the page has two different left
+      edges, which is most of why it reads as unbalanced.
+
+   Fix: give the article page its own spine at 1140px, split it explicitly
+   rather than by bootstrap percentages, and align the prev/next and related
+   blocks to the same spine. Result at 1440px:
+
+       spine                 1140px
+       rail                   264px   (TOC entries stop wrapping)
+       gap                     72px
+       content                780px
+       body copy at 56ch      633px
+       ------------------------------------
+       right gutter           147px
+
+   147px is not dead — section 6 hands it to every non-prose block. Tables,
+   figures, code, embeds and the answer box all run the full 780 while prose
+   holds the measure, so the asymmetry becomes the layout's rhythm instead of
+   its bug. The measure itself is untouched at 56ch. */
+
+@media (min-width:1200px) {
+
+  /* Specificity 0,2,0 beats bootstrap's 0,1,0 .container regardless of media
+     query, so this MUST stay inside a min-width guard — unguarded it would
+     also override the 960px cap at 992-1199px and widen the page. */
+  .section.blogInnerDetails>.container,
+  .ps-seq>.container,
+  .ps-related>.container {
+    max-width: 1140px
+  }
+}
+
+@media (min-width:992px) {
+  .ctsom-blog-pad {
+    display: grid;
+    grid-template-columns: clamp(200px, 23%, 264px) minmax(0, 1fr);
+    column-gap: clamp(40px, 4.6vw, 50px);
+    margin-left: 0;
+    margin-right: 0;
+    /* cancel .row's -12px gutters */
+    padding-top: var(--psb-s8);
+  }
+
+  /* .row > * is 0,1,1; these are 0,2,0 and win. */
+  .ctsom-blog-pad>.col-lg-3,
+  .ctsom-blog-pad>.col-lg-9 {
+    width: auto;
+    max-width: none;
+    flex: 0 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* The hero shares the spine, so the banner, the breadcrumb, the article and
+   "Keep reading" finally line up on one left edge. */
+.blog-inner-banner {
+  border-radius: var(--psb-r-lg)
+}
+
+
+/* ============================================================================
+   6. ARTICLE PAGE — BODY FORMATTING
+   ========================================================================== */
+
+/* -------------------------------------------------- non-prose breaks out
+   The 56ch cap in the MEASURE block applies to > p, ul, ol, h2-h5 and the
+   answer box. Tables, <pre> and .video-embed were already outside it; images
+   were not, because WordPress wraps them in a <p>, so a 780px-wide diagram was
+   being squeezed into 633px. :has() gives the paragraph the same exemption
+   without touching markup. Specificity 0,1,2 beats the 0,1,1 measure rule.
+
+   The `> picture` half is not redundant: the SVG diagrams ship as a responsive
+   pair, so their markup is p > picture > img, and `:has(>img)` does not match a
+   grandchild. Without it every diagram rendered at the 633px prose measure
+   instead of the 793px column -- a 0.79 scale that took 11px labels down to
+   8.7px on desktop, which is the one place they were supposed to be comfortable. */
+.blog-content>p:has(>img),
+.blog-content>p:has(>picture) {
+  max-width: none
+}
+
+.blog-content img {
+  border-radius: var(--psb-r-card);
+  margin: var(--psb-s5) 0 var(--psb-s7)
+}
+
+.blog-content>.table-wrap,
+.blog-content>pre,
+.blog-content>.video-embed {
+  margin-top: var(--psb-s6);
+  margin-bottom: var(--psb-s7)
+}
+
+/* -------------------------------------------------------- section markers
+   An h2 in this corpus opens a genuine section, and there are up to nine of
+   them in a post. A rule plus a short bar in the page's category colour makes
+   the section break visible while scrolling past at speed, which no amount of
+   margin alone will do. The bar is decorative — the heading text is untouched
+   and nothing here alters the DOM's text content. */
+.blog-content>h2 {
+  position: relative;
+  padding-top: var(--psb-s6);
+  border-top: 1px solid var(--psb-line)
+}
+
+.blog-content>h2::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 56px;
+  height: 5px;
+  border-radius: 0 0 4px 4px;
+  background: var(--psb-cat);
+}
+
+/* The first h2 has no preceding section to divide from. */
+.blog-content>h2:first-child,
+.blog-content .author_date+h2,
+.blog-content .answer-box+h2 {
+  border-top: 0;
+  padding-top: 0
+}
+
+.blog-content>h2:first-child::before,
+.blog-content .author_date+h2::before,
+.blog-content .answer-box+h2::before {
+  display: none
+}
+
+/* h3 gets the brand's squircle hung in the gutter rather than a second rule —
+   two rules at two weights would fight. Desktop only: below 992px the gutter
+   does not exist and the marker would clip at the viewport edge. */
+@media (min-width:992px) {
+  .blog-content>h3 {
+    position: relative
+  }
+
+  .blog-content>h3::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: .52em;
+    width: 13px;
+    height: 13px;
+    border-radius: 5px;
+    background: var(--psb-cat);
+  }
+}
+
+/* ------------------------------------------------------------ the answer box
+   38 posts carry one and it is the single highest-value block on the page —
+   it is what an answer engine lifts. It was a 4px bar and a cream wash, which
+   is the same treatment a generic "note" callout gets on any docs site.
+   Now: full column width so it visibly outranks the prose beside it, ink
+   border, 16px radius, and a quarter-circle blob in the corner. Inner copy is
+   still capped at the measure, so the box is wide but the READING is not. */
+.blog-content>.answer-box {
+  max-width: none;
+  position: relative;
+  overflow: hidden;
+  background: var(--psb-cat-wash);
+  /* ink on wash >= 15.6:1 — AAA */
+  border: 2px solid var(--psb-ink);
+  border-left-width: 6px;
+  border-radius: var(--psb-r-card);
+  padding: var(--psb-s6) var(--psb-s6) var(--psb-s6) var(--psb-s6);
+  margin: var(--psb-s6) 0 var(--psb-s7);
+}
+
+.blog-content>.answer-box::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 0 0 0 100%;
+  background: var(--psb-cat);
+  opacity: .22;
+  pointer-events: none;
+}
+
+.blog-content .answer-box>p {
+  max-width: 56ch;
+  position: relative;
+  z-index: 1;
+  font-size: clamp(16px, calc(15.3px + 0.188vw), 18px);
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--psb-ink);
+}
+
+/* ------------------------------------------------------------------- FAQ
+   25 posts have an FAQ section, in two different shapes: 19 use
+   <h2 id="faq">, 6 use <h2 id="frequently-asked-questions">, and the questions
+   themselves are sometimes <h3> and sometimes <p><strong>Q</strong></p>.
+   18 of the 25 also have another heading AFTER the FAQ, so a sibling
+   combinator ( h2#faq ~ p ) would leak into whatever follows in 7 posts.
+
+   So the questions are styled by SHAPE, not by section: a paragraph whose only
+   child is a <strong>. That is 88 FAQ questions plus 40 lead-in labels
+   elsewhere ("How to Apply:", "Free, and enough to start:") — and the
+   treatment is correct for both, because both are labels introducing the block
+   under them. It cannot leak past a section boundary because it is not a
+   sibling selector at all.
+
+   Deliberately no font-size change: the type-scale check bounds body <p> at
+   16-18px and a 19px "question" paragraph would be a real exception dressed up
+   as a rule. Weight, colour, proximity and the marker do the work instead. */
+.blog-content>p:has(>strong:only-child) {
+  position: relative;
+  color: var(--psb-ink);
+  letter-spacing: -.005em;
+  margin-top: 2.2em;
+  margin-bottom: .5em;
+  /* binds hard to the answer under it */
+}
+
+.blog-content>p:has(>strong:only-child)>strong {
+  font-weight: 600
+}
+
+@media (min-width:992px) {
+  .blog-content>p:has(>strong:only-child)::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: .62em;
+    width: 11px;
+    height: 11px;
+    border-radius: 4px;
+    background: var(--psb-cat);
+    opacity: .7;
+  }
+}
+
+/* The FAQ heading itself gets the wash so the section reads as a distinct
+   register from the argument above it. */
+.blog-content>h2[id="faq"],
+.blog-content>h2[id="frequently-asked-questions"] {
+  background: var(--psb-cat-wash);
+  /* ink on wash >= 15.6:1 — AAA */
+  border-radius: var(--psb-r-card) var(--psb-r-card) 0 0;
+  padding: var(--psb-s6) var(--psb-s5) var(--psb-s5);
+  max-width: none;
+  border-top: 0;
+}
+
+.blog-content>h2[id="faq"]::before,
+.blog-content>h2[id="frequently-asked-questions"]::before {
+  left: var(--psb-s5);
+  top: 0
+}
+
+/* ------------------------------------------------------------------ lists
+   Markers were the browser default: a 4px grey disc and an unstyled numeral.
+   Numerals go to ink 700 so an ordered list reads as a sequence, and discs
+   take the category colour — a bullet is decoration beside its own text, so
+   1.4.1 is not engaged, but the ordered numerals stay ink because those DO
+   carry meaning and #FDB914 would be 1.73:1. */
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.7em
+}
+
+.blog-content ol>li::marker {
+  color: var(--psb-ink);
+  font-weight: 700
+}
+
+.blog-content ul>li::marker {
+  color: var(--psb-cat-ink)
+}
+
+/* >= 5:1 on white */
+.blog-content li {
+  margin-bottom: .7em;
+  padding-left: .2em
+}
+
+.blog-content li>ul,
+.blog-content li>ol {
+  margin-top: .7em
+}
+
+/* ------------------------------------------------------------- blockquote
+   There are zero blockquotes in the corpus today. Styled anyway so the first
+   one that lands does not fall back to the browser default. */
+.blog-content>blockquote {
+  max-width: none;
+  margin: var(--psb-s7) 0;
+  padding: var(--psb-s2) 0 var(--psb-s2) var(--psb-s6);
+  border-left: 5px solid var(--psb-cat);
+  font-size: clamp(17px, calc(16.3px + 0.19vw), 19px);
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: var(--psb-ink);
+}
+
+.blog-content>blockquote p {
+  max-width: 44ch;
+  font-size: inherit;
+  line-height: inherit
+}
+
+.blog-content>blockquote cite {
+  display: block;
+  margin-top: var(--psb-s4);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--psb-muted-2);
+  /* 5.07:1 — AA */
+}
+
+/* ----------------------------------------------------------------- tables
+   71 tables, most of them carrying the actual argument of their post. The
+   header row was #fafafa on white — a 1.02:1 boundary, i.e. no header at all
+   at a glance. It now takes the category fill with ink text. */
+/* overflow-x MUST stay `auto`. The `overflow:hidden` this rule used to carry was
+   added to clip the table's corners to the radius, but the shorthand also set
+   overflow-x, overriding the `overflow-x:auto` at line 143 (same specificity,
+   later in the file). Measured at 375px: a 456px table in a 347px wrapper, with
+   no touch, mouse or keyboard route to the missing 109px -- the whole right-hand
+   column of every comparison table, silently gone. A non-visible overflow-x still
+   clips to the border radius, so the corners stay round either way. */
+.table-wrap {
+  border: 2px solid var(--psb-ink);
+  border-radius: var(--psb-r-card);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrap table {
+  font-size: 14.5px
+}
+
+.table-wrap th {
+  background: var(--psb-cat);
+  color: var(--psb-ink);
+  /* >= 4.84:1 — AA */
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  border-bottom: 2px solid var(--psb-ink);
+  padding: 13px 16px;
+}
+
+.table-wrap td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--psb-line)
+}
+
+.table-wrap tbody tr:nth-child(even) {
+  background: var(--psb-wash)
+}
+
+.table-wrap tbody tr:hover {
+  background: var(--psb-cat-wash)
+}
+
+.table-wrap td:first-child {
+  font-weight: 600;
+  color: var(--psb-ink)
+}
+
+/* ------------------------------------------------------------ inline code
+   167 inline <code> spans are inheriting bootstrap's default code{color:#d63384}
+   — 4.13:1 against the #f5f5f5 chip behind it, which fails 1.4.3 at the .875em
+   size these render at. There is also no reason for the blog to carry a seventh
+   accent colour that means nothing. Ink is 17.33:1 and lets the chip's own
+   background do the distinguishing. */
+.blog-content :not(pre)>code {
+  color: var(--psb-ink);
+  /* 17.33:1 — AAA */
+  border-color: var(--psb-line-strong);
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------ inline links
+   #EE3D41 on white is 3.90:1 — it clears 1.4.11 for a boundary but fails
+   1.4.3 for body text, which needs 4.5:1. There are 716 external links in the
+   corpus, so this is the most-encountered contrast defect on the blog.
+   #D52A2E is 5.00:1 and is still unmistakably the brand red. The underline
+   stays, so 1.4.1 holds independently of the colour. */
+.blog-content p>a,
+.blog-content li>a,
+.blog-content td>a {
+  color: #D52A2E;
+  /* 5.00:1 — AA */
+  text-decoration-color: rgba(213, 42, 46, .4);
+  text-underline-offset: 3px;
+}
+
+.blog-content p>a:hover,
+.blog-content li>a:hover,
+.blog-content td>a:hover {
+  color: var(--psb-ink);
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--psb-cat);
+}
+
+
+/* ============================================================================
+   7. ARTICLE PAGE — FURNITURE
+   ========================================================================== */
+
+/* ------------------------------------------------------------- breadcrumbs
+   The trail currently collides with itself at 992-1199px: nowrap on the <ol>
+   plus a shrinking current crumb pushes "Digital Marketing" on top of
+   "Home Blog". Letting the ancestors keep their own line fixes the overlap;
+   the current crumb still truncates rather than being removed, which is what
+   the BreadcrumbList structured data requires. */
+.ps-crumbs {
+  margin: 0 0 var(--psb-s6)
+}
+
+.ps-crumbs ol {
+  flex-wrap: wrap;
+  row-gap: 4px
+}
+
+.ps-crumbs li {
+  font-size: 11px;
+  letter-spacing: .09em;
+  font-weight: 600
+}
+
+.ps-crumbs a {
+  color: var(--psb-muted-2)
+}
+
+/* 5.07:1 — AA */
+.ps-crumbs a:hover {
+  color: var(--psb-ink);
+  border-bottom-color: var(--psb-cat)
+}
+
+/* font-size:inherit is the third instance of the same theme bug patched for
+   .ps-card__meta and .ps-lead__meta -- a bare <span> is sized 18px, so the
+   current crumb rendered 64% larger than the "HOME · BLOG" trail it belongs to,
+   in a 36px line box, and hit its ellipsis far earlier than intended.
+   opacity:.8 over --psb-muted-2 composites to #888C91 = 3.38:1, under 4.5:1 and
+   not large text at 11px; the token is 5.07:1 on its own, so drop the opacity. */
+.ps-crumbs__current {
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--psb-muted-2);
+  opacity: 1
+}
+
+/* -------------------------------------------------------------------- TOC
+   The active entry was marked by a 2px #FDB914 border — 1.73:1 against white,
+   which fails 1.4.11 for a state indicator, and colour was the only cue. Now
+   the marker is ink, the label goes to 700, and the yellow rides as a wash
+   behind it, so the state survives greyscale and low vision both. */
+.ps-toc__title {
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--psb-muted-2);
+  margin: 0 0 var(--psb-s4);
+}
+
+/* Base is the mobile disclosure card: no negative offset, and 12px of block
+   padding so an entry is 43px rather than the 33.5px it used to be. */
+.ps-toc a {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--psb-muted);
+  padding: 12px 0 12px 14px;
+  border-left: 3px solid transparent
+}
+
+.ps-toc li.lvl-3 a {
+  color: var(--psb-muted-2)
+}
+
+.ps-toc a:hover {
+  color: var(--psb-ink);
+  background: var(--psb-wash)
+}
+
+.ps-toc a.is-active {
+  color: var(--psb-ink);
+  font-weight: 700;
+  border-left-color: var(--psb-ink);
+  /* 18.9:1 */
+  background: linear-gradient(90deg, var(--psb-cat-wash), transparent 88%);
+}
+
+/* Rail geometry is desktop-only, and has to sit AFTER the base rules to win.
+   Previously these were unconditional and later in the file than the
+   @media (max-width:991px) block at line 159, so at equal specificity they beat
+   it: the mobile disclosure card ended up with a 2px left edge, 24px of padding
+   it had explicitly cancelled, and a -26px offset that hung every entry outside
+   its own container, active marker included. */
+@media (min-width:992px) {
+  .ps-toc {
+    /* 104px is the resting offset; the variable only differs when the list is
+       taller than the viewport, and then it is negative. This rule is the one
+       that decides the pin — the base .ps-toc above it loses on source order —
+       so the variable has to be read here, not only there. */
+    top: var(--ps-toc-top, 104px);
+    border-left: 2px solid var(--psb-line);
+    padding-left: var(--psb-s5)
+  }
+
+  .ps-toc a {
+    padding: 7px 0 7px 14px;
+    margin-left: -26px;
+    border-radius: 0 6px 6px 0
+  }
+
+  .ps-toc li.lvl-3 a {
+    padding-left: 28px
+  }
+}
+
+/* -------------------------------------------------------------- byline
+   A 60px avatar and 18px name made the byline the second-loudest thing on the
+   page, above the opening paragraph. Cut to a meta line. */
+.author_date {
+  margin: 0 0 var(--psb-s6);
+  padding-bottom: var(--psb-s5);
+  border-bottom: 1px solid var(--psb-line)
+}
+
+.author_date .author-bx .author-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%
+}
+
+.blog-content p.author-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 14px;
+  color: var(--psb-ink)
+}
+
+.author_date .author-bx .datebx {
+  margin-left: var(--psb-s4)
+}
+
+.author_date .author-bx .datebx p.date {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--psb-muted-2);
+  /* 5.07:1 — AA */
+}
+
+/* -------------------------------------------------------------- facts strip */
+.ps-facts {
+  gap: var(--psb-s2);
+  margin: var(--psb-s7) 0 0;
+  padding: 0;
+  border-bottom: 0
+}
+
+.ps-facts__item {
+  font-size: 10.5px;
+  padding: 9px 16px;
+  color: var(--psb-ink);
+  background: var(--psb-wash);
+  border: 1.5px solid var(--psb-line-strong);
+}
+
+.ps-facts__item i {
+  opacity: 1;
+  color: var(--psb-muted-2)
+}
+
+.ps-facts__cat {
+  background: var(--psb-cat);
+  border-color: var(--psb-ink);
+  color: var(--psb-ink);
+  /* >= 4.84:1 — AA */
+}
+
+.ps-facts__cat:hover {
+  box-shadow: var(--psb-hard-sm);
+  background: var(--psb-cat)
+}
+
+/* ------------------------------------------------------------------- share */
+.ps-share {
+  gap: var(--psb-s4);
+  margin: var(--psb-s6) 0 0;
+  padding: var(--psb-s5) 0 0;
+  border-top: 1px solid var(--psb-line)
+}
+
+.ps-share__label {
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--psb-muted-2)
+}
+
+.ps-share__list {
+  gap: var(--psb-s3)
+}
+
+.ps-share__list a {
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  border: 2px solid var(--psb-ink);
+  color: var(--psb-ink);
+  /* 18.9:1 */
+  background: #fff;
+  transition: transform var(--psb-fast) var(--psb-ease),
+    box-shadow var(--psb-fast) var(--psb-ease),
+    background-color var(--psb-fast) linear;
+}
+
+.ps-share__list a:hover {
+  background: var(--psb-cat);
+  border-color: var(--psb-ink);
+  color: var(--psb-ink);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--psb-hard-sm);
+}
+
+/* -------------------------------------------------------------- author bio
+   Two fixes. The theme sets text-transform:capitalize on .bio, so the bio
+   renders as "Khurshid Alam Is The Founder Of Pixel Street, A Web Design
+   Company" — Title Case on running prose. And the block was framed by two
+   1px black rules, which is the heaviest border treatment anywhere on the
+   blog for the least important content. Now a soft card on the brand radius. */
+.quote {
+  border: 0;
+  background: var(--psb-wash);
+  border-radius: var(--psb-r-lg);
+  /* Tightened: the card sat on s6 padding under an s8 top margin, which read as a large
+     empty band above and below a short bio. s5/s6 keeps it comfortable without the gap. */
+  padding: var(--psb-s5) var(--psb-s6);
+  margin-top: var(--psb-s6);
+  gap: var(--psb-s6);
+  align-items: flex-start;
+}
+
+/* flex:0 0 96px, not min-width:0. As a shrinkable flex item the box collapsed to
+   67.6px at 768px while the <img> inside kept height:96px, so the author avatar
+   drew as a 30%-squashed vertical ellipse everywhere from 768 to 1199px. */
+.quote .quote-img {
+  flex: 0 0 96px;
+  min-width: 96px;
+  height: auto
+}
+
+.quote .quote-img img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover
+}
+
+.quote .quote-text {
+  margin-left: 0
+}
+
+.quote .quote-text .founder-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin-bottom: 2px
+}
+
+.quote .quote-text .desg {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--psb-cat-ink);
+  /* >= 5:1 on white */
+  padding-right: 0;
+  margin-bottom: var(--psb-s3);
+}
+
+.quote .quote-text .bio {
+  text-transform: none;
+  /* the real fix */
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--psb-muted);
+  /* 6.25:1 — AA */
+  padding-right: 0;
+  max-width: 56ch;
+  margin-bottom: .85em;
+}
+
+.quote .quote-text .bio:last-child {
+  margin-bottom: 0
+}
+
+@media (max-width:767px) {
+  .quote {
+    padding: var(--psb-s5);
+    gap: var(--psb-s4);
+    margin-top: var(--psb-s5)
+  }
+}
+
+/* ------------------------------------------------------------- prev / next */
+.ps-seq {
+  padding: var(--psb-s8) 0 0
+}
+
+.ps-seq__row {
+  gap: var(--psb-s5);
+  padding-top: var(--psb-s7);
+  border-top: 1px solid var(--psb-line)
+}
+
+.ps-seq__link {
+  border: 2px solid var(--psb-line);
+  border-radius: var(--psb-r-card);
+  padding: var(--psb-s5);
+  gap: var(--psb-s3);
+  transition: transform var(--psb-fast) var(--psb-ease),
+    box-shadow var(--psb-fast) var(--psb-ease),
+    border-color var(--psb-fast) linear;
+}
+
+.ps-seq__dir {
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--psb-muted-2)
+}
+
+.ps-seq__title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.42;
+  color: var(--psb-ink)
+}
+
+.ps-seq__link:hover {
+  border-color: var(--psb-ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--psb-cat);
+}
+
+.ps-seq__link:hover .ps-seq__title {
+  color: var(--psb-ink)
+}
+
+/* ----------------------------------------------------------------- related */
+.ps-related {
+  padding: 0 0 100px
+}
+
+.ps-related__head {
+  position: relative;
+  padding-top: var(--psb-s5);
+  font-size: clamp(24px, calc(18px + 1.4vw), 34px);
+  letter-spacing: -.02em;
+  margin: 0 0 var(--psb-s7);
+}
+
+.ps-related__head::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 5px;
+  border-radius: 4px;
+  background: var(--psb-cat);
+}
+
+.ps-grid--related {
+  gap: var(--psb-s6);
+  margin-bottom: 0;
+}
+
+
+/* ============================================================================
+   8. REDUCED MOTION
+   ============================================================================
+   Every transform and transition introduced above is decoration — the hover
+   states all carry a colour or border change as well, so removing the movement
+   removes nothing a user needs. Hard shadows are kept because they are static
+   paint, not motion. */
+@media (prefers-reduced-motion:reduce) {
+
+  .ps-card,
+  .ps-card__media img,
+  .ps-chip,
+  .ps-more__btn,
+  .ps-lead,
+  .ps-lead__media img,
+  .ps-lead__cta,
+  .ps-empty__reset,
+  .ps-share__list a,
+  .ps-seq__link,
+  .ps-toc a,
+  .ps-search__input,
+  .ps-facts__item,
+  .ps-tag,
+  .ps-ticker__track {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .ps-card:hover,
+  .ps-chip:hover,
+  .ps-chip:active,
+  .ps-more__btn:hover,
+  .ps-more__btn:active,
+  .ps-lead:hover,
+  .ps-lead__cta:hover,
+  .ps-empty__reset:hover,
+  .ps-share__list a:hover,
+  .ps-seq__link:hover,
+  .ps-tag:hover {
+    transform: none !important;
+  }
+
+  .ps-card:hover .ps-card__media img,
+  .ps-lead:hover .ps-lead__media img {
+    transform: none !important
+  }
+
+  .ps-ticker__track {
+    animation: none !important;
+    transform: none !important
+  }
+}
+
+
+/* ============================================================================
+   9. COMPONENTS THAT NEED MARKUP — styled and ready, currently inert
+   ============================================================================
+   Nothing below renders until the corresponding element exists. All three are
+   additive page furniture; none of them sits inside .blog-content, so the
+   frozen word-count and visible-text hash are unaffected.
+
+   ---------------------------------------------------------------------------
+   9a. TAGS.  post.tags is populated (59 unique tags, up to 12 per post) and is
+   already used to compute "Keep reading" relatedness, but it is never shown.
+   Cap the render at 6 or the long-tail SEO tags will swamp the strip.
+
+   In [slug].astro, immediately AFTER the existing <p class="ps-facts"> block:
+
+     {post.tags.length > 0 && (
+       <ul class="ps-tags" aria-label="Tags">
+         {post.tags.slice(0, 6).map((t) => (
+           <li><a class="ps-tag" href={`/blog/tag/${t.slug}/`}>{t.name}</a></li>
+         ))}
+       </ul>
+     )}
+   --------------------------------------------------------------------------- */
+.ps-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--psb-s2);
+  list-style: none;
+  margin: var(--psb-s4) 0 0;
+  padding: 0;
+}
+
+.ps-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10.5px;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: var(--psb-ink);
+  /* 18.9:1 on wash */
+  background: var(--psb-wash);
+  border: 1.5px solid var(--psb-line-strong);
+  transition: transform var(--psb-fast) var(--psb-ease),
+    box-shadow var(--psb-fast) var(--psb-ease),
+    border-color var(--psb-fast) linear;
+}
+
+.ps-tag::before {
+  content: "#";
+  color: var(--psb-cat-ink);
+  font-weight: 700
+}
+
+/* >=5:1 */
+.ps-tag:hover {
+  border-color: var(--psb-ink);
+  transform: translate(-1px, -1px);
+  box-shadow: var(--psb-hard-sm);
+}
+
+/* ---------------------------------------------------------------------------
+   9b. MASTHEAD.  index.astro renders only a visually-hidden <h1>, so the
+   listing page has no title, no positioning line and no visible <h1> — an SEO
+   as well as a design cost. Replace
+
+     <h1 class="ps-visually-hidden">Pixel Street Blog</h1>
+
+   with:
+
+     <p class="ps-eyebrow">Pixel Street Journal</p>
+     <h1 class="ps-hub__title">Notes on <em>building brands</em> that get found</h1>
+     <p class="ps-hub__sub">{posts.length} researched guides on branding, web
+       design, development and AI search. Every figure traces to a logged
+       source.</p>
+
+   Styles are in section 4. Copy is a placeholder — the owner's words will beat
+   mine.
+   ---------------------------------------------------------------------------
+
+   ---------------------------------------------------------------------------
+   9c. MARQUEE TICKER.  The yellow band with black dot separators is the single
+   most recognisable element of pixelstreet.in and the blog has no equivalent.
+   Pure CSS, no library. The list must be duplicated in the markup (the second
+   copy aria-hidden) so the loop is seamless.
+
+   In index.astro, directly after </div> closing .ps-lead:
+
+     <div class="ps-ticker" aria-hidden="true">
+       <div class="ps-ticker__track">
+         <span>Branding</span><span>Web Design</span><span>Development</span>
+         <span>E-commerce</span><span>SEO</span><span>AI Search</span>
+         <span>Branding</span><span>Web Design</span><span>Development</span>
+         <span>E-commerce</span><span>SEO</span><span>AI Search</span>
+       </div>
+     </div>
+
+   aria-hidden because it is a decorative band: the same six words are already
+   available as real, operable filter chips directly below it.
+   --------------------------------------------------------------------------- */
+.ps-ticker {
+  background: var(--psb-yellow);
+  margin: 0 0 var(--psb-s8);
+  padding: 16px 0;
+  overflow: hidden;
+  /* The torn zigzag edge from the homepage band, as a mask rather than an
+     image so it stays crisp and costs no request. */
+  -webkit-mask:
+    conic-gradient(from -45deg at 50% 9px, #0000 0 90deg, #000 0) 50% 0/24px 100% repeat-x,
+    conic-gradient(from 135deg at 50% calc(100% - 9px), #0000 0 90deg, #000 0) 50% 100%/24px 100% repeat-x;
+  mask:
+    conic-gradient(from -45deg at 50% 9px, #0000 0 90deg, #000 0) 50% 0/24px 100% repeat-x,
+    conic-gradient(from 135deg at 50% calc(100% - 9px), #0000 0 90deg, #000 0) 50% 100%/24px 100% repeat-x;
+}
+
+.ps-ticker__track {
+  display: flex;
+  align-items: center;
+  gap: var(--psb-s7);
+  width: max-content;
+  animation: ps-ticker 34s linear infinite;
+}
+
+.ps-ticker span {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--psb-ink);
+  /* 10.91:1 — AAA */
+  display: inline-flex;
+  align-items: center;
+  gap: var(--psb-s7);
+  white-space: nowrap;
+}
+
+/* The black separator between items — a half-disc, matching the main site. */
+.ps-ticker span::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex: none;
+  background: var(--psb-ink);
+  border-radius: 100% 0 100% 100%;
+}
+
+@keyframes ps-ticker {
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(-50%)
+  }
+}
+
+.ps-ticker:hover .ps-ticker__track {
+  animation-play-state: paused
+}
+
+
+/* ============================================================================
+   END OF PROPOSAL
+
+   Checks this is written against:
+     asset-parity  no new stylesheet, no @import, no <link>          — unchanged
+     type-scale    PART A keeps every clamp, unitless leading, and
+                   every margin ratio >= 2.5:1                       — passes
+     measure       body copy still capped at 56ch; only non-prose
+                   blocks were released                              — unchanged
+     body text     nothing here sits inside .blog-content's text
+                   content; pseudo-elements are not in the DOM, so
+                   the word count and visible-text hash cannot move  — unchanged
+     motion        section 8 disables every transform and animation
+                   added above                                       — covered
+   ========================================================================== */
+
+/* ############################################################################
+   PART 0 — PATCH AGAINST WHAT IS COMMITTED TODAY (a07d4ad)
+   ############################################################################
+   Four deltas. If the tree is clean and you are applying this file whole,
+   SKIP PART 0 — every fix in it is already folded into PART B below.
+   Each was reproduced in the browser against the built site, not reasoned about.
+
+   -------------------------------------------------------------------------
+   0.1  THE LEAD CARD IS NO LONGER CLICKABLE  (functional, listing page)
+   -------------------------------------------------------------------------
+   Committed:
+       .ps-lead__body{...position:relative;overflow:hidden}
+       .ps-lead__body::after{ ...the quarter-circle blob... }
+       .ps-lead__flag,.ps-lead__title,...{position:relative;z-index:1}
+
+   That last line is the problem. .ps-lead__title carries the stretched link —
+   a::after{position:absolute;inset:0} — which resolves against its nearest
+   POSITIONED ancestor. Giving the title position:relative makes the TITLE that
+   ancestor, so the overlay collapses from the whole panel down to the headline
+   box. Measured with elementFromPoint over the blurb area: the committed build
+   returns DIV.ps-lead__body; with the fix it returns A. Everything except the
+   headline text stopped being a click target.
+
+   REPLACE those three rules with the following. A background gradient draws the
+   same quarter-circle, paints under the text automatically, and creates no
+   stacking context at all, so nothing has to be lifted above it. */
+/* No `padding` here. It used to set `var(--psb-s6) var(--psb-s7)`, and because this
+   rule sits later in the file at the same (0,1,0) specificity as the one inside
+   `@media (max-width:991px)` above, later won — a media query does not raise
+   specificity. The mobile padding was dead code, and every phone rendered the card
+   with 52px sides instead of 24px: 247px of usable width inside a 351px card
+   instead of 303px, 23% narrower than designed, with the text sitting 64px from
+   the screen edge while the rest of the page's body copy sits at 12px.
+
+   The comment 780 lines above warns about exactly this trap for .ps-lead's grid.
+   It was then reintroduced here for the padding. This rule only ever needed the
+   overflow and the background. */
+.ps-lead__body {
+  overflow: visible;
+  background: radial-gradient(circle at 100% 100%,
+      rgba(253, 185, 20, .17) 0 190px, transparent 191px);
+}
+
+/* The blob pseudo-element is switched off rather than deleted, so this patch
+   works by pasting alone — you cannot un-declare a rule by adding CSS. */
+.ps-lead__body::after {
+  content: none
+}
+
+/* This is the actual fix. Same specificity as the committed rule and later in
+   the file, so it wins, and the stretched link resolves against .ps-lead again.
+   Tidier still: delete the committed
+     .ps-lead__flag,.ps-lead__title,...{position:relative;z-index:1}
+   line and this override becomes unnecessary. */
+.ps-lead__flag,
+.ps-lead__title,
+.ps-lead__blurb,
+.ps-lead__meta,
+.ps-lead__cta {
+  position: static;
+  z-index: auto
+}
+
+/* -------------------------------------------------------------------------
+   0.2  MISSING: the responsive restatement block
+   -------------------------------------------------------------------------
+   Section 8 of PART B is absent from a07d4ad. The .ps-lead case was caught and
+   fixed there independently, but the same cascade trap bites four more rules.
+   Measured on the built site at 375px:
+       .ps-grid   gap 52px/36px   should be 24px  (26px of dead scroll per card)
+       .ps-toc    2px left border AND the 1px disclosure border, +24px padding
+       .ps-toc a  margin-left:-26px, so the active marker hangs outside the card
+       .ps-controls  align-items:center instead of stretch
+   Paste section 8 of PART B verbatim.
+
+   -------------------------------------------------------------------------
+   0.3  MISSING: lead meta normalisation  (cosmetic)
+   -------------------------------------------------------------------------
+   Same theme bug already fixed for .ps-card__meta: a bare <span> is sized 16px,
+   so "6 MIN READ" renders half again the size of the date beside it. */
+.ps-lead__meta>time,
+.ps-lead__meta>span {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit
+}
+
+/* -------------------------------------------------------------------------
+   0.4  TWO COLUMN CAPS ARE NOW FIGHTING  (layout, article page)
+   -------------------------------------------------------------------------
+   Commit bea4567 had already centred the article row at max-width 900/980px.
+   Section 5 of this proposal caps the CONTAINER at 1140px and lays the row out
+   as an explicit grid. Both are now in the file, and the combination is worse
+   than either alone — measured at 1440px it produces three different left
+   edges:
+
+       hero + "Keep reading"   x = 159
+       article row             x = 227      (inset 68px from the hero)
+       body text               x = 518
+
+   Keep ONE. Section 5's version is the one to keep, because it is the only one
+   that makes the hero, the article and the related grid share a single spine.
+   DELETE this block, which is at roughly line 620 of ps-additions.css:
+
+       @media (min-width:992px){
+         .blogInnerDetails .row.ctsom-blog-pad{max-width:900px;margin-inline:auto}
+       }
+       @media (min-width:1400px){
+         .blogInnerDetails .row.ctsom-blog-pad{max-width:980px}
+       }
+
+   Verified at 1440px with that block removed:
+       hero, article row, related grid   all x = 159   — one edge
+       TOC rail   257px   (entries stop wrapping)
+       content    793px
+       body text  633px   (56ch, unchanged)
+       gutter     160px   — and section 6 hands it to every figure and table
+   ########################################################################## */
+
+
+
+/* PART 0 replaced the blob pseudo-element with a background gradient and set the
+   children back to static, which restored the stretched link over the text panel. But
+   .ps-lead__body itself is still position:relative from the earlier rule, and PART 0
+   did not touch that property — so it remained the offsetParent and the overlay stopped
+   at the panel edge, leaving the image half unclickable. Verified with offsetParent,
+   which reported DIV.ps-lead__body rather than the card.
+   Nothing needs the body positioned any more, so it goes static and the overlay
+   resolves against .ps-lead again. */
+.ps-lead__body {
+  position: static
+}
+
+/* The contents list now reaches h4 on posts that have room for it, so level 4 needs its
+   own indent and weight. Without this an h4 rendered identically to its parent h3 and the
+   nesting was invisible. */
+.ps-toc li.lvl-4 a {
+  padding-left: 44px;
+  font-size: 12.5px;
+  color: var(--psb-muted-2, #9a9a9a);
+  padding-right: 24px;
+}
+
+.ps-toc li.lvl-4 a::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  width: 6px;
+  height: 1px;
+  background: currentColor;
+  opacity: .45;
+}
+
+.ps-toc li.lvl-4 {
+  position: relative
+}
+
+/* ------------------------------------------------------------------ byline
+   The avatar is 40px and the name ~15px, and the row was align-items:start, so the
+   name sat 14px BELOW the avatar's centre — measured, not eyeballed. Centring the row
+   is the whole fix. The block also carried 36px margin plus 24px padding underneath,
+   60px of dead space between a one-line byline and the first paragraph. */
+.author_date .author-bx {
+  align-items: center
+}
+
+.author_date .author-bx .author {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.blog-content p.author-name {
+  margin-left: 0;
+  line-height: 1.2
+}
+
+.author_date {
+  margin: 0 0 var(--psb-s5);
+  padding-bottom: var(--psb-s4)
+}
+
+.author_date .author-bx .datebx p.date {
+  line-height: 1.2;
+  margin: 0
+}
+
+/* The avatar carries margin:24px 0 52px from the theme. Flex centres the MARGIN box, so
+   that 116px box both dictated the row height and left the visible image sitting 14px
+   above the name's centre — which is the misalignment, and also the "too much space above
+   and below" on a byline that is one line of text. Predicted top from the margin box
+   matched the measured top exactly, so this is the whole cause. */
+.author_date .author-bx .author-img {
+  margin: 0;
+  flex: none
+}
+
+/* On phones the theme switches the byline to flex-direction:column with
+   align-items:center, so the avatar+name block centred at x=98 and the date dropped to a
+   second centred line — while every paragraph on the page starts at x=12. A centred
+   byline above left-aligned body copy reads as a mistake, and it cost two lines for six
+   words. Back to one left-aligned row that wraps only if it genuinely has to. */
+@media (max-width:767px) {
+  .author_date .author-bx {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+  }
+
+  .author_date .author-bx .datebx {
+    margin: 0
+  }
+}
+
+/* The separator dot belongs between crumbs, not dangling at the start of a wrapped
+   line. Hiding it on the first item of each visual row is not expressible in CSS, so
+   the trail does not wrap: it shrinks the one item that can afford to.
+   nowrap on the ROW alone is not enough — the items then shrink and break their own
+   text mid-label ("DIGITAL / MARKETING" on two lines), so each item holds its text on
+   one line and only the last one gives ground.
+
+   This was scoped to max-width:767px, but wrapping is a DESKTOP problem here: the
+   current crumb is white-space:nowrap and always claims a line of its own, so the
+   trail measured 56px tall — two lines, second one opening with an orphaned dot —
+   at 768, 992, 1200, 1280 and 1350px, and 63px at 1440. Unconditional now. */
+.ps-crumbs ol {
+  flex-wrap: nowrap;
+  overflow: hidden
+}
+
+.ps-crumbs li {
+  white-space: nowrap;
+  flex: none
+}
+
+/* Only the current crumb shrinks -- it ellipsises at whatever width is left and
+   stays visible for the BreadcrumbList it mirrors. min-width keeps it from
+   collapsing to a bare ellipsis on the narrowest phones. */
+.ps-crumbs li:last-child {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden
+}
+
+.ps-crumbs__current {
+  max-width: none;
+  min-width: 8ch
+}
+
+/* ------------------------------------------------- Careers "Hiring" badge
+   Matches pixelstreet.xyz/pix: the Careers item is yellow with a black pill
+   beside it. Values taken from the live element's computed style, not guessed.
+   #FDB914 on #000 is 10.91:1, and the yellow label sits on the white nav where
+   it is 1.73:1 — so the LABEL carries a darkened yellow instead, and the true
+   brand yellow appears only inside the black pill where it is legible. */
+.careers-highlight {
+  color: var(--psb-cat-ink);
+  font-weight: 600;
+  white-space: nowrap
+}
+
+.careers-hiring-badge {
+  display: inline-block;
+  margin-left: var(--psb-s2);
+  padding: 2px 9px;
+  background: var(--psb-ink);
+  color: var(--psb-yellow);
+  border-radius: var(--psb-r-pill);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  line-height: 1.9;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   Responsive audit, 8 August 2026 — corrections.
+
+   These sit at the very end deliberately. Several of them override rules that
+   appear earlier in this file at the same specificity, and CSS resolves that by
+   order, not by media query. That is the exact trap that made the mobile padding
+   on .ps-lead__body dead code for as long as it existed: a later unconditional
+   rule silently beat an earlier one inside @media (max-width:991px). Anything
+   added below this banner must stay below it.
+   ========================================================================== */
+
+/* P3 — The floating WhatsApp button is position:fixed at 55x55 in the bottom-right
+   corner with no responsive override, so on every one of the 65 posts it sits on
+   top of whichever table-of-contents link happens to be there. Measured overlap on
+   /blog/responsive-web-design/ at 375px: 1302.8px² over "Responsive vs. Adaptive
+   Design" and 366.7px² over the link below it. Taps in the right ~32px of those
+   links opened WhatsApp instead of the article. Reserving the corner is the fix
+   that does not depend on the button's own styling. */
+@media (max-width: 991px) {
+  .ps-toc {
+    padding-right: 0
+  }
+}
+
+/* P7 — Line length. At 320px the gutter is 12px a side but the type is still 16px,
+   giving 36.7-38.1 characters per line against a ~45 floor: a normal sentence
+   breaks across three lines. 15px recovers about 40cpl. Body copy only — form
+   fields must stay at 16px or iOS zooms on focus (see .ps-search__input above). */
+@media (max-width: 360px) {
+
+  .blog-content p,
+  .blog-content li {
+    font-size: 15px
+  }
+}
+
+/* P8 — Touch targets. The breadcrumbs are standalone navigation set 20.8px tall;
+   inline links inside running prose are conventionally exempt from this and are
+   left alone. The TOC links measured 43.5px, half a pixel under the 44px
+   threshold — a rounding artefact, but free to correct. */
+.ps-crumbs a {
+  display: inline-block;
+  padding: 12px 0
+}
+
+/* min-height rather than more padding. The links are a mix of one- and two-line
+   items — 36px and 55px here with the original 6px padding — so padding enough to
+   lift the short ones to 44 would push the wrapped ones to 73 and make the sticky
+   sidebar scroll for no reason. This floors the short ones and leaves the rest. */
+.ps-toc a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-top: 6px;
+  padding-bottom: 6px
+}

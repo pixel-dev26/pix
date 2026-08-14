@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 552" width="380" height="552" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">AI shows up in web design in three separate places</title>
+  <desc id="d">Three stacked cards: production assistance generates layouts and code, runtime intelligence ships inside the site itself, and the third is the audience, because language models now read your website. Most articles cover only the first, which is the layer that gets replaced.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">ONE WORD, THREE DIFFERENT THINGS</text>
+
+  <rect x="13" y="39" width="359" height="112" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="34" width="359" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="52" width="36" height="27" rx="13" fill="#0F1115"/>
+  <text x="44" y="71" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="76" y="72" font-size="18" font-weight="700" fill="#0F1115">Production assistance</text>
+  <text x="26" y="106" font-size="15" fill="#5C6167">Layouts, components, copy,<tspan x="26" dy="1.4em">images and code.</tspan></text>
+
+  <rect x="13" y="171" width="359" height="112" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="166" width="359" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="184" width="36" height="27" rx="13" fill="#0F1115"/>
+  <text x="44" y="203" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="76" y="204" font-size="18" font-weight="700" fill="#0F1115">Runtime intelligence</text>
+  <text x="26" y="238" font-size="15" fill="#5C6167">Recommendations, chat,<tspan x="26" dy="1.4em">personalisation, translation.</tspan></text>
+
+  <rect x="13" y="303" width="359" height="112" rx="16" fill="#D098F9"/>
+  <rect x="8" y="298" width="359" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="316" width="36" height="27" rx="13" fill="#0F1115"/>
+  <text x="44" y="335" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="76" y="336" font-size="18" font-weight="700" fill="#0F1115">The audience</text>
+  <text x="26" y="370" font-size="15" fill="#5C6167">Language models now read<tspan x="26" dy="1.4em">your site, not only write it.</tspan></text>
+
+  <path d="M190 418 L190 436" stroke="#8E959D" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <rect x="13" y="451" width="359" height="76" rx="16" fill="#FDB914"/>
+  <rect x="8" y="446" width="359" height="76" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="474" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHY ARTICLES AGE BADLY</text>
+  <text x="26" y="502" font-size="16" font-weight="700" fill="#0F1115">They cover only the first.</text>
+
+  <text x="8" y="544" font-size="14" fill="#5C6167">That layer is replaced every year.</text>
+</svg>

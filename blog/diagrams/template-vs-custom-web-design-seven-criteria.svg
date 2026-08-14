@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 428" width="800" height="428" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Seven criteria, and which answer each one points at</title>
+  <desc id="d">A table of seven criteria. Budget, complexity, audience, flexibility, outcome, time and functionality each point at a template on one side and at a custom build on the other: a simple site with no frills and a launch this month point at a template, while interactive content, a niche audience, unusual workflows and a presence recognisably yours point at custom.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT DETERMINES THE CHOICE, CRITERION BY CRITERION</text>
+
+  <rect x="14" y="46" width="784" height="328" rx="16" fill="#FDB914"/>
+  <rect x="8" y="40" width="784" height="328" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+
+  <rect x="28" y="136" width="744" height="36" fill="#F7F8F9"/>
+  <rect x="28" y="208" width="744" height="36" fill="#F7F8F9"/>
+  <rect x="28" y="280" width="744" height="36" fill="#F7F8F9"/>
+
+  <rect x="214" y="62" width="180" height="26" rx="999" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="304" y="80" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">POINTS AT A TEMPLATE</text>
+  <rect x="514" y="62" width="152" height="26" rx="999" fill="#0F1115"/>
+  <text x="590" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">POINTS AT CUSTOM</text>
+
+  <path d="M28 100 L772 100 M28 136 L772 136 M28 172 L772 172 M28 208 L772 208 M28 244 L772 244 M28 280 L772 280 M28 316 L772 316 M28 352 L772 352" stroke="#E7E9EC" stroke-width="2"/>
+  <path d="M200 100 L200 352 M500 100 L500 352" stroke="#E7E9EC" stroke-width="2"/>
+
+  <text x="28" y="124" font-size="14" font-weight="700" fill="#0F1115">Budget</text>
+  <text x="214" y="124" font-size="14" fill="#5C6167">What the site must earn is small</text>
+  <text x="514" y="124" font-size="14" fill="#5C6167">A professional service, priced like one</text>
+
+  <text x="28" y="160" font-size="14" font-weight="700" fill="#0F1115">Complexity</text>
+  <text x="214" y="160" font-size="14" fill="#5C6167">A simple site with no frills</text>
+  <text x="514" y="160" font-size="14" fill="#5C6167">Interactive content or e-commerce</text>
+
+  <text x="28" y="196" font-size="14" font-weight="700" fill="#0F1115">Audience</text>
+  <text x="214" y="196" font-size="14" fill="#5C6167">A general market expecting a normal site</text>
+  <text x="514" y="196" font-size="14" fill="#5C6167">A niche templates do not carry</text>
+
+  <text x="28" y="232" font-size="14" font-weight="700" fill="#0F1115">Flexibility</text>
+  <text x="214" y="232" font-size="14" fill="#5C6167">Every extension negotiates with the theme</text>
+  <text x="514" y="232" font-size="14" fill="#5C6167">New functions planned from the start</text>
+
+  <text x="28" y="268" font-size="14" font-weight="700" fill="#0F1115">Outcome</text>
+  <text x="214" y="268" font-size="14" fill="#5C6167">A conventional presence is enough</text>
+  <text x="514" y="268" font-size="14" fill="#5C6167">A presence recognisably yours</text>
+
+  <text x="28" y="304" font-size="14" font-weight="700" fill="#0F1115">Time</text>
+  <text x="214" y="304" font-size="14" fill="#5C6167">Live this month</text>
+  <text x="514" y="304" font-size="14" fill="#5C6167">Three months is the honest minimum</text>
+
+  <text x="28" y="340" font-size="14" font-weight="700" fill="#0F1115">Functionality</text>
+  <text x="214" y="340" font-size="14" fill="#5C6167">Simple transactions</text>
+  <text x="514" y="340" font-size="14" fill="#5C6167">Unusual workflows and integrations</text>
+
+  <text x="8" y="400" font-size="17" font-weight="700" fill="#0F1115">A template is right when the website is a place to be found.</text>
+  <text x="8" y="420" font-size="14" fill="#5C6167">It is wrong when the website is the thing that has to do the persuading.</text>
+</svg>

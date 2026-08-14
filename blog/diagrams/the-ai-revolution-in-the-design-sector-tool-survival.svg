@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 394" width="800" height="394" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Which AI design tools survived, and how the rest died</title>
+  <desc id="d">Of seventeen AI design tools checked in July 2026, ten are still worth opening because they sell something other than the AI feature. Every dead one was either a feature pretending to be a company, such as Magician and Designify, or a model with a version number in its name, such as DALL-E 3 and Imagen.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">SEVENTEEN TOOLS CHECKED, SEVEN ARE GONE</text>
+
+  <!-- survivors -->
+  <rect x="14" y="50" width="246" height="214" rx="16" fill="#FDB914"/>
+  <rect x="8" y="44" width="246" height="214" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="62" width="98" height="28" rx="14" ry="14" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="77" y="81" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">10 ALIVE</text>
+  <text x="28" y="116" font-size="16" font-weight="700" fill="#0F1115">Sells something other<tspan x="28" dy="1.25em">than the AI feature</tspan></text>
+  <path d="M28 150 L234 150" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="28" y="174" font-size="13" fill="#5C6167">Adobe, Canva, Figma and<tspan x="28" dy="1.3em">Midjourney are all still</tspan><tspan x="28" dy="1.3em">here. The standalone AI</tspan><tspan x="28" dy="1.3em">startups mostly are not.</tspan></text>
+
+  <!-- dead kind one -->
+  <rect x="283" y="50" width="246" height="214" rx="16" fill="#EE3D41"/>
+  <rect x="277" y="44" width="246" height="214" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="297" y="62" width="64" height="28" rx="14" ry="14" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="329" y="81" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">GONE</text>
+  <text x="297" y="116" font-size="16" font-weight="700" fill="#0F1115">A feature pretending<tspan x="297" dy="1.25em">to be a company</tspan></text>
+  <path d="M297 150 L503 150" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="297" y="174" font-size="13" fill="#5C6167">Magician, bought by Figma.<tspan x="297" dy="1.3em">Designify, closed by Canva.</tspan><tspan x="297" dy="1.3em">Once the host ships the</tspan><tspan x="297" dy="1.3em">trick, the plugin is over.</tspan></text>
+
+  <!-- dead kind two -->
+  <rect x="552" y="50" width="246" height="214" rx="16" fill="#EE3D41"/>
+  <rect x="546" y="44" width="246" height="214" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="566" y="62" width="64" height="28" rx="14" ry="14" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="598" y="81" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">GONE</text>
+  <text x="566" y="116" font-size="16" font-weight="700" fill="#0F1115">A model with a version<tspan x="566" dy="1.25em">number in its name</tspan></text>
+  <path d="M566 150 L772 150" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="566" y="174" font-size="13" fill="#5C6167">DALL&#183;E 3 and Imagen. The<tspan x="566" dy="1.3em">vendor was always going</tspan><tspan x="566" dy="1.3em">to replace them and shut</tspan><tspan x="566" dy="1.3em">the old endpoints off.</tspan></text>
+
+  <!-- the test -->
+  <rect x="14" y="286" width="784" height="96" rx="16" fill="#FDB914"/>
+  <rect x="8" y="280" width="784" height="96" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="308" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE TEST BEFORE YOU ADD ONE TO A WORKFLOW</text>
+  <text x="34" y="336" font-size="17" font-weight="700" fill="#0F1115">Does this company make money from something other than this AI feature?</text>
+  <text x="34" y="362" font-size="14" fill="#5C6167">If not, expect to migrate within eighteen months, and do not build a client-facing process on it.</text>
+</svg>

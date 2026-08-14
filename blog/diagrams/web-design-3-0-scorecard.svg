@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 416" width="800" height="416" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The eight Web Design 3.0 predictions, marked in July 2026</title>
+  <desc id="d">Four verdict groups. Three arrived: ethical design as law, adaptive design as personalisation, collaborative design tools. One arrived in a shape the forecast would not recognise: AI and machine learning. Three did not happen: VR and AR, voice interfaces, the Internet of Things. One is unproven: sustainable web design.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">EIGHT PREDICTIONS, MARKED IN JULY 2026</text>
+
+  <!-- arrived -->
+  <rect x="14" y="46" width="380" height="148" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="40" width="380" height="148" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="32" y="92" font-size="40" font-weight="700" fill="#0F1115">3</text>
+  <rect x="72" y="66" width="80" height="26" rx="999" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="112" y="84" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">ARRIVED</text>
+  <text x="32" y="122" font-size="14" fill="#5C6167">Ethical design, arrived as law<tspan x="32" dy="1.4em">Adaptive design, as personalisation</tspan><tspan x="32" dy="1.4em">Collaborative design tools</tspan></text>
+
+  <!-- arrived, reshaped -->
+  <rect x="418" y="46" width="380" height="148" rx="16" fill="#FDB914"/>
+  <rect x="412" y="40" width="380" height="148" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="436" y="92" font-size="40" font-weight="700" fill="#0F1115">1</text>
+  <rect x="476" y="66" width="152" height="26" rx="999" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="552" y="84" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">ARRIVED, RESHAPED</text>
+  <text x="436" y="122" font-size="14" fill="#5C6167">AI and machine learning. The forecast<tspan x="436" dy="1.4em">put it inside the design process. It</tspan><tspan x="436" dy="1.4em">landed in front of the website instead.</tspan></text>
+
+  <!-- did not happen -->
+  <rect x="14" y="222" width="380" height="148" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="216" width="380" height="148" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="32" y="268" font-size="40" font-weight="700" fill="#0F1115">3</text>
+  <rect x="72" y="242" width="130" height="26" rx="999" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="137" y="260" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">DID NOT HAPPEN</text>
+  <text x="32" y="298" font-size="14" fill="#5C6167">Virtual and augmented reality on the web<tspan x="32" dy="1.4em">Voice and conversational interfaces</tspan><tspan x="32" dy="1.4em">Integration with the Internet of Things</tspan></text>
+
+  <!-- unproven -->
+  <rect x="418" y="222" width="380" height="148" rx="16" fill="#E7E9EC"/>
+  <rect x="412" y="216" width="380" height="148" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="436" y="268" font-size="40" font-weight="700" fill="#0F1115">1</text>
+  <rect x="476" y="242" width="88" height="26" rx="999" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <text x="520" y="260" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">UNPROVEN</text>
+  <text x="436" y="298" font-size="14" fill="#5C6167">Sustainable web design. The argument is<tspan x="436" dy="1.4em">sound and the tooling exists; there is no</tspan><tspan x="436" dy="1.4em">evidence it changed what clients specify.</tspan></text>
+
+  <text x="8" y="402" font-size="15" font-weight="700" fill="#0F1115">The largest change of the period &#8212; AI answers taking the clicks &#8212; was on nobody's list.</text>
+</svg>

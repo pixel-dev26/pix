@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Traffic tactics ordered by how long they take and what they are worth</title>
+  <desc id="d">Three bands. In days: internal linking and a sharper title, an afternoon and no money. In weeks to months: consolidating pages that compete and covering a subject properly. Slowest and highest value: publishing something only your business could have written, which Google names as the strongest lever and which a competitor cannot copy in an afternoon.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">NOTHING HERE WORKS IN MINUTES</text>
+
+  <rect x="14" y="46" width="784" height="94" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="40" width="784" height="94" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="32" y="62" width="76" height="26" rx="999" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="70" y="80" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">DAYS</text>
+  <text x="128" y="82" font-size="18" font-weight="700" fill="#0F1115">Internal linking, and a sharper title</text>
+  <text x="128" y="112" font-size="14" fill="#5C6167">An afternoon and no money, and it can show up within a crawl cycle.</text>
+
+  <rect x="14" y="160" width="784" height="94" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="154" width="784" height="94" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="32" y="176" width="152" height="26" rx="999" fill="#4A90C7" stroke="#0F1115" stroke-width="2"/>
+  <text x="108" y="194" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">WEEKS TO MONTHS</text>
+  <text x="204" y="196" font-size="18" font-weight="700" fill="#0F1115">Consolidating pages that compete; covering a subject</text>
+  <text x="204" y="226" font-size="14" fill="#5C6167">A new page competing for anything worth having takes weeks to months.</text>
+
+  <rect x="14" y="274" width="784" height="120" rx="16" fill="#FDB914"/>
+  <rect x="8" y="268" width="784" height="120" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="32" y="290" width="198" height="26" rx="999" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="131" y="308" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">SLOWEST, HIGHEST VALUE</text>
+  <text x="250" y="310" font-size="18" font-weight="700" fill="#0F1115">Publishing what only your business could write</text>
+  <text x="250" y="340" font-size="14" fill="#5C6167">Google names it the strongest lever it has, and the only item</text>
+  <text x="250" y="360" font-size="14" fill="#5C6167">that a competitor cannot copy from you in an afternoon.</text>
+
+  <text x="8" y="424" font-size="15" font-weight="700" fill="#0F1115">List the ten pages nothing links to, and link them from the pages that already get read.</text>
+</svg>

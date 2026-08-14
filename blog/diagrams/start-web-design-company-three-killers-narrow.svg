@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 546" width="380" height="546" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The three things that actually kill a web design company</title>
+  <desc id="d">Cash: design work is delivered before it is paid, so a company can be profitable on paper and dead in the bank on the same Tuesday. Concentration: one client at 60 percent of revenue is an employer who can fire you without notice or severance. Dependence: leads, portfolio and client relationships should not live inside a platform that can change its rules.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">NOT COMPETITION &#8212; THESE THREE</text>
+
+  <rect x="13" y="39" width="359" height="132" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="34" width="359" height="132" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="40" cy="68" r="14" fill="#0F1115"/>
+  <text x="40" y="73" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="66" y="74" font-size="17" font-weight="700" fill="#0F1115">Cash</text>
+  <text x="26" y="106" font-size="13" fill="#5C6167">Design work is delivered before it is paid.<tspan x="26" dy="1.45em">Profitable on paper and dead in the bank</tspan><tspan x="26" dy="1.45em">on the same Tuesday.</tspan></text>
+
+  <rect x="13" y="191" width="359" height="132" rx="16" fill="#FA6B45"/>
+  <rect x="8" y="186" width="359" height="132" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="40" cy="220" r="14" fill="#0F1115"/>
+  <text x="40" y="225" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="66" y="226" font-size="17" font-weight="700" fill="#0F1115">Concentration</text>
+  <text x="26" y="258" font-size="13" fill="#5C6167">One client at 60% of revenue is not a<tspan x="26" dy="1.45em">client. It is an employer who can fire you</tspan><tspan x="26" dy="1.45em">without notice or severance.</tspan></text>
+
+  <rect x="13" y="343" width="359" height="132" rx="16" fill="#FDB914"/>
+  <rect x="8" y="338" width="359" height="132" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="40" cy="372" r="14" fill="#0F1115"/>
+  <text x="40" y="377" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="66" y="378" font-size="17" font-weight="700" fill="#0F1115">Dependence</text>
+  <text x="26" y="410" font-size="13" fill="#5C6167">Your leads, portfolio and client relations<tspan x="26" dy="1.45em">should not live inside a platform that</tspan><tspan x="26" dy="1.45em">can change its rules on a Tuesday.</tspan></text>
+
+  <text x="8" y="510" font-size="14" font-weight="700" fill="#0F1115">None of the three is a design problem.<tspan x="8" dy="1.4em">Kerning has never killed a studio.</tspan></text>
+</svg>

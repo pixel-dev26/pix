@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 356" width="800" height="356" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Delegate the SEO jobs where a wrong answer announces itself</title>
+  <desc id="d">One axis runs from a wrong answer showing in ten seconds to a wrong answer staying invisible for six months. Safe to hand over: regular expressions and redirect rules, sorting a keyword list by intent, small scripts, alt text and meta descriptions, arguing with your own draft. Keep: statistics and reference links, keyword research and volume, writing the article, producing pages at volume, rephrasing to dodge plagiarism.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8E959D"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">HOW FAST DOES A WRONG ANSWER ANNOUNCE ITSELF?</text>
+
+  <text x="8" y="46" font-size="13" font-weight="700" fill="#0F1115">Wrong in ten seconds</text>
+  <text x="596" y="46" font-size="13" font-weight="700" fill="#0F1115">Invisible for six months</text>
+  <path d="M8 60 L784 60" stroke="#8E959D" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- safe to hand over -->
+  <rect x="14" y="86" width="380" height="200" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="80" width="380" height="200" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="30" y="102" width="120" height="26" rx="999" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="90" y="120" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">HAND IT OVER</text>
+  <circle cx="38" cy="143" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="54" y="148" font-size="15" fill="#0F1115">Regular expressions and redirect rules</text>
+  <circle cx="38" cy="169" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="54" y="174" font-size="15" fill="#0F1115">Sorting your keyword list by intent</text>
+  <circle cx="38" cy="195" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="54" y="200" font-size="15" fill="#0F1115">Small scripts for repetitive jobs</text>
+  <circle cx="38" cy="221" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="54" y="226" font-size="15" fill="#0F1115">Alt text, meta descriptions, titles</text>
+  <circle cx="38" cy="247" r="4" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="54" y="252" font-size="15" fill="#0F1115">Arguing with your own draft</text>
+
+  <!-- keep -->
+  <rect x="418" y="86" width="380" height="200" rx="16" fill="#EE3D41"/>
+  <rect x="412" y="80" width="380" height="200" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="434" y="102" width="84" height="26" rx="999" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="476" y="120" font-size="12" font-weight="700" fill="#0F1115" text-anchor="middle">KEEP IT</text>
+  <circle cx="442" cy="143" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="458" y="148" font-size="15" fill="#0F1115">Statistics and reference links</text>
+  <circle cx="442" cy="169" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="458" y="174" font-size="15" fill="#0F1115">Keyword research and search volume</text>
+  <circle cx="442" cy="195" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="458" y="200" font-size="15" fill="#0F1115">Writing the article</text>
+  <circle cx="442" cy="221" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="458" y="226" font-size="15" fill="#0F1115">Producing pages at volume</text>
+  <circle cx="442" cy="247" r="4" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="458" y="252" font-size="15" fill="#0F1115">Rephrasing to dodge plagiarism</text>
+
+  <text x="8" y="320" font-size="15" font-weight="700" fill="#0F1115">Hand over the jobs where being confidently wrong is instantly visible.</text>
+  <text x="8" y="344" font-size="14" fill="#5C6167">Keep the jobs where being confidently wrong stays invisible for six months.</text>
+</svg>

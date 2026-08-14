@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 580" width="380" height="580" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The three factors Google names for local ranking</title>
+  <desc id="d">Relevance is how well the profile matches the search and you control it with categories, services and your website. Distance is how far you are from the searcher and it is fixed. Prominence is how well known you are, built from links and reviews, and it is earned slowly. Social posts, geotagged photos and directory count are not on the list.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">GOOGLE NAMES THREE FACTORS</text>
+
+  <!-- Relevance -->
+  <rect x="13" y="39" width="359" height="112" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="34" width="359" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="74" font-size="18" font-weight="700" fill="#0F1115">Relevance</text>
+  <rect x="230" y="52" width="120" height="26" rx="999" fill="#0F1115"/>
+  <text x="290" y="70" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">You control it</text>
+  <text x="26" y="106" font-size="13" fill="#5C6167">How well your profile matches the search.<tspan x="26" dy="1.4em">Set by categories, services, your website.</tspan></text>
+
+  <!-- Distance -->
+  <rect x="13" y="163" width="359" height="112" rx="16" fill="#8E959D"/>
+  <rect x="8" y="158" width="359" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="198" font-size="18" font-weight="700" fill="#0F1115">Distance</text>
+  <rect x="286" y="176" width="64" height="26" rx="999" fill="#0F1115"/>
+  <text x="318" y="194" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Fixed</text>
+  <text x="26" y="230" font-size="13" fill="#5C6167">How far you are from the person searching.<tspan x="26" dy="1.4em">Settled the day you signed the lease.</tspan></text>
+
+  <!-- Prominence -->
+  <rect x="13" y="287" width="359" height="112" rx="16" fill="#FDB914"/>
+  <rect x="8" y="282" width="359" height="112" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="322" font-size="18" font-weight="700" fill="#0F1115">Prominence</text>
+  <rect x="238" y="300" width="112" height="26" rx="999" fill="#0F1115"/>
+  <text x="294" y="318" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Earned slowly</text>
+  <text x="26" y="354" font-size="13" fill="#5C6167">How well known you are: links to your<tspan x="26" dy="1.4em">business, and how many reviews you have.</tspan></text>
+
+  <!-- not on the list -->
+  <rect x="13" y="419" width="359" height="150" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="414" width="359" height="150" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="440" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">NOT ON THAT LIST</text>
+  <text x="26" y="466" font-size="14" fill="#5C6167">Social posts, geotagged photos,<tspan x="26" dy="1.4em">directory count.</tspan></text>
+  <text x="26" y="522" font-size="14" font-weight="700" fill="#0F1115">And there is no way to request<tspan x="26" dy="1.4em">or pay for a better local ranking.</tspan></text>
+</svg>

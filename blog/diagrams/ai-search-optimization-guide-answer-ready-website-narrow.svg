@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 658" width="380" height="658" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The Answer-Ready Website: two audiences, three jobs</title>
+  <desc id="d">One site serving AI systems that read, trust and quote it, and the humans who arrive from those answers. Its three jobs are citation source, feeding clear structured quotable answers to machines; verification layer, letting buyers who heard about you from ChatGPT confirm you are real; and agent interface, giving agents the hard facts they scan for.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">TWO AUDIENCES, ONE SITE</text>
+
+  <rect x="8" y="34" width="359" height="38" rx="999" fill="#0F1115"/>
+  <text x="187" y="58" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">AI systems that read and quote it</text>
+  <rect x="8" y="80" width="359" height="38" rx="999" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="187" y="104" font-size="14" font-weight="700" fill="#0F1115" text-anchor="middle">Humans who then have to convert</text>
+
+  <!-- job 1 -->
+  <rect x="13" y="139" width="359" height="110" rx="16" fill="#0F1115"/>
+  <rect x="8" y="134" width="359" height="110" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="236" y="154" width="114" height="24" rx="999" fill="#0F1115"/>
+  <text x="293" y="171" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">FOR MACHINES</text>
+  <text x="26" y="172" font-size="18" font-weight="700" fill="#0F1115">Citation source</text>
+  <text x="26" y="200" font-size="13" fill="#5C6167">Clear, structured, quotable answers, so<tspan x="26" dy="1.4em">your brand appears in recommendations.</tspan></text>
+
+  <!-- job 2 -->
+  <rect x="13" y="265" width="359" height="110" rx="16" fill="#FDB914"/>
+  <rect x="8" y="260" width="359" height="110" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="251" y="280" width="99" height="24" rx="999" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="300" y="297" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">FOR HUMANS</text>
+  <text x="26" y="298" font-size="18" font-weight="700" fill="#0F1115">Verification layer</text>
+  <text x="26" y="326" font-size="13" fill="#5C6167">Buyers who heard about you from<tspan x="26" dy="1.4em">ChatGPT still visit to check you are real.</tspan></text>
+
+  <!-- job 3 -->
+  <rect x="13" y="391" width="359" height="110" rx="16" fill="#0F1115"/>
+  <rect x="8" y="386" width="359" height="110" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="236" y="406" width="114" height="24" rx="999" fill="#0F1115"/>
+  <text x="293" y="423" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">FOR MACHINES</text>
+  <text x="26" y="424" font-size="18" font-weight="700" fill="#0F1115">Agent interface</text>
+  <text x="26" y="452" font-size="13" fill="#5C6167">Agents scan for hard facts: what you do,<tspan x="26" dy="1.4em">what it costs, proof that it works.</tspan></text>
+
+  <!-- the gap -->
+  <rect x="13" y="521" width="359" height="130" rx="16" fill="#FA6B45"/>
+  <rect x="8" y="516" width="359" height="130" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="542" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHERE MOST SITES FAIL</text>
+  <text x="26" y="568" font-size="15" font-weight="700" fill="#0F1115">Adobe&#8217;s readability scan</text>
+  <text x="26" y="594" font-size="14" fill="#5C6167">Home pages 75%, category 74%,<tspan x="26" dy="1.4em">product pages 66% &#8212; the worst.</tspan></text>
+</svg>

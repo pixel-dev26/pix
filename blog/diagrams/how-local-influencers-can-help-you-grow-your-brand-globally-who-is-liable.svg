@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 426" width="800" height="426" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">In India the influencer and the brand are both liable</title>
+  <desc id="d">The influencer must make the disclosure and the advertiser must ensure the posted advertisement complies. The CCPA penalties reach manufacturers, advertisers and endorsers alike: up to ten lakh rupees, up to fifty lakh for a repeat, and a ban on endorsing for up to one year, three on repeat.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHO CARRIES THE LIABILITY FOR AN UNDISCLOSED POST</text>
+
+  <rect x="14" y="40" width="384" height="170" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="34" width="384" height="170" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="30" y="54" width="158" height="28" rx="14" fill="#0F1115"/>
+  <text x="109" y="73" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">THE INFLUENCER</text>
+  <text x="30" y="118" font-size="19" font-weight="700" fill="#0F1115">Must make the disclosure</text>
+  <text x="30" y="152" font-size="14" fill="#5C6167">Upfront and prominent. Not in the bio, not<tspan x="30" dy="1.4em">at the end, not buried in a hashtag block.</tspan></text>
+
+  <rect x="414" y="40" width="384" height="170" rx="16" fill="#FA6B45"/>
+  <rect x="408" y="34" width="384" height="170" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="430" y="54" width="132" height="28" rx="14" fill="#0F1115"/>
+  <text x="496" y="73" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">THE ADVERTISER</text>
+  <text x="430" y="118" font-size="19" font-weight="700" fill="#0F1115">Must ensure it complies</text>
+  <text x="430" y="152" font-size="14" fill="#5C6167">Including calling on the influencer to edit<tspan x="430" dy="1.4em">or delete a non-compliant post.</tspan></text>
+
+  <path d="M200 210 L200 238" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M600 210 L600 238" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="14" y="250" width="784" height="140" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="244" width="784" height="140" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="274" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WHAT THE CCPA CAN IMPOSE ON ADVERTISERS AND ENDORSERS ALIKE</text>
+
+  <rect x="34" y="290" width="232" height="72" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="54" y="322" font-size="17" font-weight="700" fill="#0F1115">Up to &#8377;10 lakh</text>
+  <text x="54" y="344" font-size="13" fill="#5C6167">for a misleading advertisement</text>
+
+  <rect x="284" y="290" width="232" height="72" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="304" y="322" font-size="17" font-weight="700" fill="#0F1115">Up to &#8377;50 lakh</text>
+  <text x="304" y="344" font-size="13" fill="#5C6167">for a subsequent contravention</text>
+
+  <rect x="534" y="290" width="232" height="72" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="554" y="322" font-size="17" font-weight="700" fill="#0F1115">No endorsing at all</text>
+  <text x="554" y="344" font-size="13" fill="#5C6167">up to 1 year, 3 if repeated</text>
+
+  <text x="8" y="414" font-size="13" fill="#5C6167">ASCI guidelines in force 14 June 2021; CCPA guidelines notified 9 June 2022 under the Consumer Protection Act, 2019.</text>
+</svg>

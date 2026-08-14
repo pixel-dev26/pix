@@ -1,0 +1,184 @@
+/* ============================================================================
+   Legal pages — Terms & Conditions, Privacy Policy
+
+   Loaded only by those two pages, not site-wide: nothing else uses these rules and
+   there is no reason for 200 other pages to download them.
+
+   Content comes from data/legal/*.md via scripts/build-legal.mjs. Every value below
+   is a token from data/brand.json — no hardcoded colour, size, space or radius.
+
+   A legal page has one job: be read and be found in. So the measure is narrower than
+   the site's, the heading hierarchy is unambiguous, and every h2 is a link target
+   with a visible anchor, because people cite these by section.
+   ========================================================================== */
+
+.ps-legal {
+  /* space-11 at the top, not space-10: the header is fixed and ~100px tall, and at
+     space-10 the h1 started underneath it. */
+  padding: var(--ps-space-11) 0 var(--ps-space-11);
+  background: var(--ps-surface-page);
+  font-family: var(--ps-font-body);
+  color: var(--ps-ink-default);
+}
+
+/* ------------------------------------------------------------------- masthead */
+
+.ps-legal__head {
+  max-width: 46rem;
+  margin: 0 0 var(--ps-space-8);
+  padding-bottom: var(--ps-space-5);
+  border-bottom: 1px solid var(--ps-line-hairline);
+}
+
+.ps-legal__title {
+  margin: 0 0 var(--ps-space-3);
+  font-size: var(--ps-text-h1);
+  font-weight: var(--ps-text-h1-weight);
+  line-height: var(--ps-text-h1-leading);
+  letter-spacing: var(--ps-text-h1-tracking);
+  color: var(--ps-ink-strongest);
+}
+
+.ps-legal__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ps-space-2);
+  margin: 0;
+  font-size: var(--ps-text-small);
+  color: var(--ps-ink-subtle);
+}
+
+.ps-legal__sep { color: var(--ps-line-strong); }
+
+/* ----------------------------------------------------------------------- body */
+
+/* 42rem ≈ 70 characters at the body size — the same measure the blog settled on,
+   stated as a length rather than in ch so it does not resolve differently against
+   each element's own font-size. That mistake produced four right-hand edges on the
+   blog; see the note on --ps-measure in ps-additions.css. */
+.ps-legal__body { max-width: 42rem; }
+
+.ps-legal__p {
+  margin: 0 0 var(--ps-space-4);
+  font-size: var(--ps-text-body);
+  line-height: var(--ps-text-body-leading);
+  color: var(--ps-ink-default);
+}
+
+.ps-legal__h2 {
+  margin: var(--ps-space-9) 0 var(--ps-space-4);
+  font-size: var(--ps-text-h3);
+  font-weight: var(--ps-text-h3-weight);
+  line-height: var(--ps-text-h3-leading);
+  letter-spacing: var(--ps-text-h3-tracking);
+  color: var(--ps-ink-strongest);
+  scroll-margin-top: var(--ps-space-11);   /* clears the sticky header on a #link */
+}
+
+.ps-legal__h3 {
+  margin: var(--ps-space-7) 0 var(--ps-space-3);
+  font-size: var(--ps-text-h5);
+  font-weight: var(--ps-text-h5-weight);
+  line-height: var(--ps-text-h5-leading);
+  color: var(--ps-ink-strongest);
+  scroll-margin-top: var(--ps-space-11);
+}
+
+/* A yellow rule under each section number, so the eye finds the boundaries when
+   scanning a long document. Decorative only — it carries no meaning. */
+.ps-legal__h2::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-top: var(--ps-space-3);
+  border-radius: var(--ps-radius-sm);
+  background: var(--ps-yellow);
+}
+
+.ps-legal__list {
+  margin: 0 0 var(--ps-space-4);
+  padding-left: var(--ps-space-5);
+  font-size: var(--ps-text-body);
+  line-height: var(--ps-text-body-leading);
+}
+
+.ps-legal__list li { margin-bottom: var(--ps-space-2); }
+.ps-legal__list li::marker { color: var(--ps-yellow); }
+
+.ps-legal__body a {
+  color: var(--ps-ink-default);
+  text-decoration: underline;
+  text-decoration-color: var(--ps-yellow);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.ps-legal__body a:hover,
+.ps-legal__body a:focus-visible { color: var(--ps-ink-strongest); }
+
+.ps-legal__body a:focus-visible {
+  outline: var(--ps-focus-width) solid var(--ps-ink-strongest);
+  outline-offset: var(--ps-focus-offset);
+  box-shadow: 0 0 0 6px var(--ps-focus-colour);
+  border-radius: var(--ps-radius-sm);
+}
+
+.ps-legal__body code {
+  padding: 0.1em 0.35em;
+  border-radius: var(--ps-radius-sm);
+  background: var(--ps-surface-sunken);
+  font-family: var(--ps-font-mono);
+  font-size: 0.9em;
+}
+
+/* ---------------------------------------------------------------------- table */
+
+/* Scrolls inside its own container. A table that widens the page is the single most
+   common cause of horizontal scroll on a phone, and these carry the third-party and
+   retention disclosures — the rows people most need to read on a small screen. */
+.ps-legal__table-wrap {
+  margin: 0 0 var(--ps-space-5);
+  overflow-x: auto;
+  border: 1px solid var(--ps-line-hairline);
+  border-radius: var(--ps-radius-lg);
+}
+
+.ps-legal__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--ps-text-small);
+}
+
+.ps-legal__table th,
+.ps-legal__table td {
+  padding: var(--ps-space-3) var(--ps-space-4);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--ps-line-hairline);
+}
+
+.ps-legal__table thead th {
+  background: var(--ps-surface-sunken);
+  font-size: var(--ps-text-label);
+  font-weight: var(--ps-text-label-weight);
+  letter-spacing: var(--ps-text-label-tracking);
+  text-transform: uppercase;
+  color: var(--ps-ink-subtle);
+  white-space: nowrap;
+}
+
+.ps-legal__table tbody tr:last-child td { border-bottom: 0; }
+
+/* --------------------------------------------------------------------- phone */
+
+@media (max-width: 47.999rem) {
+  .ps-legal { padding: var(--ps-space-8) 0 var(--ps-space-9); }
+  .ps-legal__h2 { margin-top: var(--ps-space-8); }
+}
+
+@media print {
+  .ps-legal { padding: 0; }
+  .ps-legal__body { max-width: none; }
+  .ps-legal__table-wrap { overflow: visible; }
+}

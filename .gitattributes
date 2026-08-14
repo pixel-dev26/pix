@@ -1,0 +1,25 @@
+# Line endings
+#
+# Every source file in this project uses LF, including on Windows. Git for
+# Windows ships with core.autocrlf=true at system level, which would rewrite the
+# whole tree to CRLF on checkout — `git add` warned on all ~3,600 files here.
+# This pins the behaviour to the repo so it holds for anyone who clones it,
+# rather than depending on each machine's global config.
+#
+# `-text` = never convert, store and check out exactly the bytes committed.
+* -text
+
+# Binary assets: no diffing, no conversion, ever.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.mp4  binary
+*.mov  binary
+*.woff  binary
+*.woff2 binary
+*.ttf  binary
+*.eot  binary
+*.pdf  binary

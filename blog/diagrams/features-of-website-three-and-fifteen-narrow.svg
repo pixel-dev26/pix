@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 566" width="380" height="566" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Three features decide the outcome; the other fifteen are hygiene</title>
+  <desc id="d">Three cards carry the decisive features: saying something no competitor could say, staying fast on a mid-range phone, and telling a visitor what to do next. A band underneath lists the remaining fifteen features as hygiene: not optional, but not why anyone chose a supplier.</desc>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">EIGHTEEN FEATURES, WEIGHTED</text>
+
+  <rect x="13" y="39" width="359" height="64" rx="16" fill="#FDB914"/>
+  <rect x="8" y="34" width="359" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="40" cy="66" r="14" fill="#0F1115"/>
+  <text x="40" y="71" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="66" y="72" font-size="15" font-weight="700" fill="#0F1115">Says something no one else could</text>
+
+  <rect x="13" y="117" width="359" height="64" rx="16" fill="#FDB914"/>
+  <rect x="8" y="112" width="359" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="40" cy="144" r="14" fill="#0F1115"/>
+  <text x="40" y="149" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="66" y="150" font-size="15" font-weight="700" fill="#0F1115">Fast on a mid-range phone</text>
+
+  <rect x="13" y="195" width="359" height="64" rx="16" fill="#FDB914"/>
+  <rect x="8" y="190" width="359" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="40" cy="222" r="14" fill="#0F1115"/>
+  <text x="40" y="227" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="66" y="228" font-size="15" font-weight="700" fill="#0F1115">Tells a visitor what to do next</text>
+
+  <!-- the fifteen -->
+  <rect x="13" y="291" width="359" height="262" rx="16" fill="#8E959D"/>
+  <rect x="8" y="286" width="359" height="262" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="314" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE OTHER FIFTEEN</text>
+  <text x="26" y="340" font-size="15" font-weight="700" fill="#0F1115">Hygiene. Not optional, and not<tspan x="26" dy="1.4em">why anyone chose a supplier.</tspan></text>
+
+  <circle cx="32" cy="388" r="3" fill="#8E959D"/>
+  <text x="44" y="392" font-size="13" fill="#5C6167">Brand and logo</text>
+  <circle cx="32" cy="407" r="3" fill="#8E959D"/>
+  <text x="44" y="411" font-size="13" fill="#5C6167">Domain name</text>
+  <circle cx="32" cy="426" r="3" fill="#8E959D"/>
+  <text x="44" y="430" font-size="13" fill="#5C6167">Navigation</text>
+  <circle cx="32" cy="445" r="3" fill="#8E959D"/>
+  <text x="44" y="449" font-size="13" fill="#5C6167">Responsive design</text>
+  <circle cx="32" cy="464" r="3" fill="#8E959D"/>
+  <text x="44" y="468" font-size="13" fill="#5C6167">SEO basics</text>
+  <circle cx="32" cy="483" r="3" fill="#8E959D"/>
+  <text x="44" y="487" font-size="13" fill="#5C6167">Contact details</text>
+  <circle cx="32" cy="502" r="3" fill="#8E959D"/>
+  <text x="44" y="506" font-size="13" fill="#5C6167">SSL certificate</text>
+  <circle cx="32" cy="521" r="3" fill="#8E959D"/>
+  <text x="44" y="525" font-size="13" fill="#5C6167">Live chat support</text>
+
+  <circle cx="198" cy="388" r="3" fill="#8E959D"/>
+  <text x="210" y="392" font-size="13" fill="#5C6167">Testimonials</text>
+  <circle cx="198" cy="407" r="3" fill="#8E959D"/>
+  <text x="210" y="411" font-size="13" fill="#5C6167">Analytics</text>
+  <circle cx="198" cy="426" r="3" fill="#8E959D"/>
+  <text x="210" y="430" font-size="13" fill="#5C6167">About Us page</text>
+  <circle cx="198" cy="445" r="3" fill="#8E959D"/>
+  <text x="210" y="449" font-size="13" fill="#5C6167">Footer links</text>
+  <circle cx="198" cy="464" r="3" fill="#8E959D"/>
+  <text x="210" y="468" font-size="13" fill="#5C6167">Blog</text>
+  <circle cx="198" cy="483" r="3" fill="#8E959D"/>
+  <text x="210" y="487" font-size="13" fill="#5C6167">FAQs</text>
+  <circle cx="198" cy="502" r="3" fill="#8E959D"/>
+  <text x="210" y="506" font-size="13" fill="#5C6167">Site search</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">WCAG 2.5.8: white space is a permitted substitute for target size</title>
+  <desc id="d">Two panels. On the left, two undersized tap targets sit so close that the 24 pixel circles drawn around them intersect, which fails. On the right, the same targets are spaced so no circle touches another target or another circle, which passes at Level AA.</desc>
+
+  <rect x="14" y="40" width="384" height="246" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="34" width="384" height="246" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="30" y="54" width="88" height="28" rx="14" fill="#0F1115"/>
+  <text x="74" y="73" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">FAILS</text>
+  <text x="30" y="104" font-size="17" font-weight="700" fill="#0F1115">Targets too close together</text>
+  <circle cx="150" cy="164" r="48" fill="none" stroke="#EE3D41" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="215" cy="164" r="48" fill="none" stroke="#EE3D41" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="132" y="146" width="36" height="36" rx="6" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <rect x="197" y="146" width="36" height="36" rx="6" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="150" y="230" font-size="12" fill="#6A6F75" text-anchor="middle">24 px circle</text>
+  <text x="30" y="258" font-size="14" fill="#5C6167">The circles intersect, so this fails at AA.</text>
+
+  <rect x="414" y="40" width="384" height="246" rx="16" fill="#5FBFA8"/>
+  <rect x="408" y="34" width="384" height="246" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="430" y="54" width="146" height="28" rx="14" fill="#0F1115"/>
+  <text x="503" y="73" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">PASSES AT AA</text>
+  <text x="430" y="104" font-size="17" font-weight="700" fill="#0F1115">Same targets, kept clear</text>
+  <circle cx="510" cy="164" r="48" fill="none" stroke="#5FBFA8" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="660" cy="164" r="48" fill="none" stroke="#5FBFA8" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="492" y="146" width="36" height="36" rx="6" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <rect x="642" y="146" width="36" height="36" rx="6" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="510" y="230" font-size="12" fill="#6A6F75" text-anchor="middle">24 px circle</text>
+  <text x="430" y="258" font-size="14" fill="#5C6167">Nothing was resized. Only the space changed.</text>
+
+  <rect x="14" y="306" width="784" height="88" rx="16" fill="#FDB914"/>
+  <rect x="8" y="300" width="784" height="88" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="330" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">WCAG 2.2 SC 2.5.8 TARGET SIZE (MINIMUM), LEVEL AA</text>
+  <text x="34" y="362" font-size="18" font-weight="700" fill="#0F1115">White space is a permitted substitute for size.</text>
+
+  <text x="8" y="420" font-size="13" fill="#5C6167">Draw a 24 CSS pixel circle on each undersized target. No circle may intersect another target or another circle.</text>
+</svg>

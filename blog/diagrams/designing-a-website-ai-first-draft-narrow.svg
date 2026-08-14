@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 528" width="380" height="528" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">What the AI pass gives you, and what you add after it</title>
+  <desc id="d">The generator produces a hero, an about section, three services and a testimonial slot in ninety seconds. What you add afterwards is your actual photographs, your actual prices, and the objection your customers really raise answered where they raise it.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE FIRST TEN MINUTES ARE AI</text>
+
+  <rect x="13" y="39" width="359" height="204" rx="16" fill="#8E959D"/>
+  <rect x="8" y="34" width="359" height="204" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="48" width="252" height="28" rx="14" ry="14" fill="#E7E9EC" stroke="#0F1115" stroke-width="2"/>
+  <text x="150" y="67" font-size="13" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">GENERATED IN 90 SECONDS</text>
+  <path d="M24 90 L351 90" stroke="#E7E9EC" stroke-width="2"/>
+
+  <circle cx="30" cy="109" r="4" fill="#0F1115"/>
+  <text x="44" y="114" font-size="15" fill="#5C6167">A hero</text>
+  <circle cx="30" cy="145" r="4" fill="#0F1115"/>
+  <text x="44" y="150" font-size="15" fill="#5C6167">An about section</text>
+  <circle cx="30" cy="181" r="4" fill="#0F1115"/>
+  <text x="44" y="186" font-size="15" fill="#5C6167">Three services</text>
+  <circle cx="30" cy="217" r="4" fill="#0F1115"/>
+  <text x="44" y="222" font-size="15" fill="#5C6167">A testimonial slot</text>
+
+  <path d="M190 252 L190 272" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="13" y="289" width="359" height="204" rx="16" fill="#FDB914"/>
+  <rect x="8" y="284" width="359" height="204" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="298" width="144" height="28" rx="14" ry="14" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="96" y="317" font-size="13" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">WHAT YOU ADD</text>
+  <path d="M24 340 L351 340" stroke="#E7E9EC" stroke-width="2"/>
+
+  <circle cx="30" cy="363" r="4" fill="#0F1115"/>
+  <text x="44" y="368" font-size="15" fill="#5C6167">Your actual photographs, not stock.</text>
+  <circle cx="30" cy="399" r="4" fill="#0F1115"/>
+  <text x="44" y="404" font-size="15" fill="#5C6167">Your actual prices.</text>
+  <circle cx="30" cy="435" r="4" fill="#0F1115"/>
+  <text x="44" y="440" font-size="15" fill="#5C6167">The objection your customers really<tspan x="44" dy="1.35em">raise, answered where it is raised.</tspan></text>
+
+  <text x="8" y="516" font-size="14" fill="#5C6167">It looks finished. It is not.</text>
+</svg>

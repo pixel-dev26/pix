@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 684" width="380" height="684" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The fidelity ladder decides what gets argued about</title>
+  <desc id="d">Low fidelity keeps the structure open and invites change. Medium fidelity is for hierarchy, once the structure is agreed. High fidelity is for behaviour, states and real data density, and it is the stage that starts costing money. Jumping straight to high fidelity collects the wrong notes.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">FIDELITY DECIDES THE ARGUMENT</text>
+
+  <!-- low -->
+  <rect x="13" y="39" width="359" height="132" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="34" width="359" height="132" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="52" width="120" height="26" rx="999" fill="#0F1115"/>
+  <text x="86" y="70" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">LOW FIDELITY</text>
+  <text x="160" y="72" font-size="17" font-weight="700" fill="#0F1115">Structure is open</text>
+  <text x="26" y="106" font-size="14" fill="#5C6167">Grey boxes, no type or brand colour.</text>
+  <text x="26" y="132" font-size="14" fill="#5C6167">It looks unfinished, so people feel<tspan x="26" dy="1.35em">invited to change it.</tspan></text>
+
+  <!-- medium -->
+  <rect x="13" y="191" width="359" height="132" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="186" width="359" height="132" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="204" width="150" height="26" rx="999" fill="#0F1115"/>
+  <text x="101" y="222" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">MEDIUM FIDELITY</text>
+  <text x="190" y="224" font-size="17" font-weight="700" fill="#0F1115">Hierarchy</text>
+  <text x="26" y="258" font-size="14" fill="#5C6167">The structure is agreed. The argument<tspan x="26" dy="1.35em">is now size: what is large, what is</tspan><tspan x="26" dy="1.35em">small, what the eye lands on first.</tspan></text>
+
+  <!-- high -->
+  <rect x="13" y="343" width="359" height="132" rx="16" fill="#FA6B45"/>
+  <rect x="8" y="338" width="359" height="132" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="26" y="356" width="130" height="26" rx="999" fill="#0F1115"/>
+  <text x="91" y="374" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">HIGH FIDELITY</text>
+  <text x="170" y="376" font-size="17" font-weight="700" fill="#0F1115">Behaviour</text>
+  <text x="26" y="410" font-size="14" fill="#5C6167">States, interactions and real data</text>
+  <text x="26" y="436" font-size="14" fill="#5C6167">density. This is the stage that<tspan x="26" dy="1.35em">starts costing money.</tspan></text>
+
+  <path d="M40 502 L340 502" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="8" y="528" font-size="13" fill="#5C6167">cheap to change</text>
+  <text x="372" y="528" font-size="13" fill="#5C6167" text-anchor="end">starts costing money</text>
+
+  <!-- the mistake -->
+  <rect x="13" y="551" width="359" height="124" rx="16" fill="#FDB914"/>
+  <rect x="8" y="546" width="359" height="124" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="574" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">THE MOST EXPENSIVE MISTAKE</text>
+  <text x="26" y="602" font-size="15" font-weight="700" fill="#0F1115">Jumping straight to high fidelity<tspan x="26" dy="1.4em">because it demos better.</tspan></text>
+  <text x="26" y="652" font-size="13" fill="#5C6167">It collects the wrong notes.</text>
+</svg>

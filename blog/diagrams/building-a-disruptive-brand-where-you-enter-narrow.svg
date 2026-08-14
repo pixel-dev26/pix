@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 434" width="380" height="434" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Disruption is about where you enter, not how bold you are</title>
+  <desc id="d">The market drawn as four tiers. Tesla started at the top of the market and worked downward. Uber started with the customers incumbents already wanted. Classic disruption starts in the overlooked low end or with people buying nothing at all, is worse by mainstream standards, improves, then moves upmarket.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">WHERE AN ENTRANT COMES IN</text>
+
+  <path d="M18 296 L18 50" fill="none" stroke="#0F1115" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#ar)"/>
+
+  <rect x="39" y="39" width="333" height="64" rx="16" fill="#E7E9EC"/>
+  <rect x="34" y="34" width="333" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="50" y="60" font-size="15" font-weight="700" fill="#0F1115">The top of the market</text>
+  <text x="50" y="82" font-size="13" fill="#5C6167">Tesla started here, and worked down.</text>
+
+  <rect x="39" y="111" width="333" height="64" rx="16" fill="#E7E9EC"/>
+  <rect x="34" y="106" width="333" height="64" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="50" y="132" font-size="15" font-weight="700" fill="#0F1115">The customers incumbents want</text>
+  <text x="50" y="154" font-size="13" fill="#5C6167">Uber started here.</text>
+
+  <rect x="39" y="183" width="333" height="64" rx="16" fill="#0F1115"/>
+  <rect x="34" y="178" width="333" height="64" rx="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="50" y="204" font-size="15" font-weight="700" fill="#0F1115">The overlooked low end</text>
+  <text x="50" y="226" font-size="13" fill="#0F1115">A foothold. Classic disruption starts here.</text>
+
+  <rect x="39" y="255" width="333" height="64" rx="16" fill="#0F1115"/>
+  <rect x="34" y="250" width="333" height="64" rx="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <text x="50" y="276" font-size="15" font-weight="700" fill="#0F1115">People buying nothing at all</text>
+  <text x="50" y="298" font-size="13" fill="#0F1115">A foothold, and not in anybody&#8217;s data.</text>
+
+  <rect x="39" y="339" width="333" height="82" rx="16" fill="#FDB914"/>
+  <rect x="34" y="334" width="333" height="82" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="50" y="362" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">AND THEN</text>
+  <text x="50" y="386" font-size="15" font-weight="700" fill="#0F1115">Worse by mainstream standards.<tspan x="50" dy="1.35em">It improves. Then it moves up.</tspan></text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 362" width="800" height="362" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The framework support calendar, read on 30 July 2026</title>
+  <desc id="d">On the left, versions already out of support: AngularJS since January 2022, Vue 2 since 31 December 2023, Create React App since 14 February 2025, Laravel 11 since 12 March 2026, and Django 5.1 and earlier. On the right, versions with a published end date: .NET 8 and 9 on 10 November 2026, Laravel 12 on 24 February 2027, Laravel 13 on 17 March 2028, Django 5.2 LTS in April 2028 and .NET 10 on 14 November 2028.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE SUPPORT CALENDAR, READ 30 JULY 2026</text>
+
+  <path d="M403 44 L403 326" stroke="#8E959D" stroke-width="2" stroke-dasharray="5 5"/>
+
+  <!-- out of support -->
+  <rect x="14" y="58" width="370" height="264" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="52" width="370" height="264" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="70" width="164" height="28" rx="14" ry="14" fill="#EE3D41" stroke="#0F1115" stroke-width="2"/>
+  <text x="110" y="89" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">OUT OF SUPPORT</text>
+  <path d="M28 116 L358 116" stroke="#E7E9EC" stroke-width="2"/>
+
+  <text x="28" y="148" font-size="14" font-weight="700" fill="#0F1115">AngularJS</text>
+  <text x="358" y="148" font-size="14" fill="#5C6167" text-anchor="end">January 2022</text>
+  <text x="28" y="184" font-size="14" font-weight="700" fill="#0F1115">Vue 2</text>
+  <text x="358" y="184" font-size="14" fill="#5C6167" text-anchor="end">31 December 2023</text>
+  <text x="28" y="220" font-size="14" font-weight="700" fill="#0F1115">Create React App</text>
+  <text x="358" y="220" font-size="14" fill="#5C6167" text-anchor="end">14 February 2025</text>
+  <text x="28" y="256" font-size="14" font-weight="700" fill="#0F1115">Laravel 11</text>
+  <text x="358" y="256" font-size="14" fill="#5C6167" text-anchor="end">12 March 2026</text>
+  <text x="28" y="292" font-size="14" font-weight="700" fill="#0F1115">Django 5.1 and earlier</text>
+  <text x="358" y="292" font-size="14" fill="#5C6167" text-anchor="end">no security fixes</text>
+
+  <!-- supported until -->
+  <rect x="428" y="58" width="370" height="264" rx="16" fill="#5FBFA8"/>
+  <rect x="422" y="52" width="370" height="264" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="442" y="70" width="170" height="28" rx="14" ry="14" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <text x="527" y="89" font-size="12" font-weight="700" letter-spacing="1" fill="#0F1115" text-anchor="middle">SUPPORTED UNTIL</text>
+  <path d="M442 116 L772 116" stroke="#E7E9EC" stroke-width="2"/>
+
+  <text x="442" y="148" font-size="14" font-weight="700" fill="#0F1115">.NET 8 and .NET 9</text>
+  <text x="772" y="148" font-size="14" fill="#5C6167" text-anchor="end">10 November 2026</text>
+  <text x="442" y="184" font-size="14" font-weight="700" fill="#0F1115">Laravel 12</text>
+  <text x="772" y="184" font-size="14" fill="#5C6167" text-anchor="end">24 February 2027</text>
+  <text x="442" y="220" font-size="14" font-weight="700" fill="#0F1115">Laravel 13</text>
+  <text x="772" y="220" font-size="14" fill="#5C6167" text-anchor="end">17 March 2028</text>
+  <text x="442" y="256" font-size="14" font-weight="700" fill="#0F1115">Django 5.2 LTS</text>
+  <text x="772" y="256" font-size="14" fill="#5C6167" text-anchor="end">April 2028</text>
+  <text x="442" y="292" font-size="14" font-weight="700" fill="#0F1115">.NET 10, current LTS</text>
+  <text x="772" y="292" font-size="14" fill="#5C6167" text-anchor="end">14 November 2028</text>
+
+  <text x="8" y="350" font-size="14" fill="#5C6167">Node.js has no date here: v24 and v22 are the LTS lines, and production belongs on one.</text>
+</svg>

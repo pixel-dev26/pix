@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 434" width="800" height="434" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Publishing points at WordPress, processing at a framework</title>
+  <desc id="d">Three answers. If the job is publishing — pages, posts, case studies, landing pages, a contact form — use WordPress. If it is processing — bookings, quotes, logins, dashboards, rules only your business has — use Laravel or Symfony. If it is both, keep WordPress as the content store and serve the pages over its REST API.</desc>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">IS THE CORE JOB PUBLISHING, OR IS IT PROCESSING?</text>
+
+  <!-- publishing -->
+  <rect x="14" y="46" width="246" height="230" rx="16" fill="#FDB914"/>
+  <rect x="8" y="40" width="246" height="230" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="62" width="120" height="26" rx="999" fill="#0F1115"/>
+  <text x="88" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">PUBLISHING</text>
+  <text x="28" y="124" font-size="18" font-weight="700" fill="#0F1115">WordPress</text>
+  <path d="M28 146 L234 146" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="28" y="172" font-size="14" fill="#5C6167">Pages, posts, case studies,<tspan x="28" dy="1.3em">landing pages, a contact form.</tspan></text>
+  <text x="28" y="226" font-size="14" fill="#5C6167">Spend what you saved on<tspan x="28" dy="1.3em">maintenance, not the build.</tspan></text>
+
+  <!-- processing -->
+  <rect x="283" y="46" width="246" height="230" rx="16" fill="#4A90C7"/>
+  <rect x="277" y="40" width="246" height="230" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="297" y="62" width="124" height="26" rx="999" fill="#0F1115"/>
+  <text x="359" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROCESSING</text>
+  <text x="297" y="124" font-size="18" font-weight="700" fill="#0F1115">Laravel or Symfony</text>
+  <path d="M297 146 L503 146" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="297" y="172" font-size="14" fill="#5C6167">Bookings, quotes, logins,<tspan x="297" dy="1.3em">dashboards, and rules that</tspan><tspan x="297" dy="1.3em">only your business has.</tspan></text>
+  <text x="297" y="244" font-size="14" font-weight="700" fill="#0F1115">Not hand-written PHP.</text>
+
+  <!-- both -->
+  <rect x="552" y="46" width="246" height="230" rx="16" fill="#5FBFA8"/>
+  <rect x="546" y="40" width="246" height="230" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="566" y="62" width="80" height="26" rx="999" fill="#0F1115"/>
+  <text x="606" y="80" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">BOTH</text>
+  <text x="566" y="124" font-size="18" font-weight="700" fill="#0F1115">Headless WordPress</text>
+  <path d="M566 146 L772 146" stroke="#E7E9EC" stroke-width="2"/>
+  <text x="566" y="172" font-size="14" fill="#5C6167">WordPress stays the content<tspan x="566" dy="1.3em">store; something else serves</tspan><tspan x="566" dy="1.3em">the pages over its REST API.</tspan></text>
+  <text x="566" y="244" font-size="14" font-weight="700" fill="#0F1115">What we are doing here.</text>
+
+  <!-- the override -->
+  <rect x="14" y="316" width="784" height="104" rx="16" fill="#0F1115"/>
+  <rect x="8" y="310" width="784" height="104" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="34" y="340" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THE QUESTION THAT OVERRIDES THE REST</text>
+  <text x="34" y="366" font-size="17" font-weight="700" fill="#0F1115">Who edits it on a Tuesday afternoon?</text>
+  <text x="34" y="388" font-size="14" fill="#5C6167">If that person is not a developer and cannot wait for one, WordPress.</text>
+  <text x="34" y="408" font-size="14" fill="#5C6167">Raw, hand-written PHP is not the third option. It is the thing frameworks were invented to replace.</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 662" width="380" height="662" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Which channel to start with</title>
+  <desc id="d">A two-way decision. Start with Google Ads if you need revenue this quarter, do not yet know which services people search for, sell against unambiguous search intent, or have a margin that covers a cost per lead you worked out yourself. Start with SEO if your buyer researches for weeks, you are routinely compared against other firms, your cost per click is punishing, or you want to be quotable by AI assistants as well as rankable.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">ONE QUESTION, TWO ANSWERS</text>
+
+  <rect x="13" y="39" width="359" height="46" rx="999" fill="#FDB914"/>
+  <rect x="8" y="34" width="359" height="46" rx="999" fill="#0F1115"/>
+  <text x="187" y="63" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Which do you start with?</text>
+
+  <path d="M187 88 L187 106" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- Google Ads -->
+  <rect x="13" y="119" width="359" height="196" rx="16" fill="#FA6B45"/>
+  <rect x="8" y="114" width="359" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="150" font-size="17" font-weight="700" fill="#0F1115">Start with Google Ads if</text>
+  <circle cx="30" cy="180" r="4" fill="#0F1115"/>
+  <text x="44" y="185" font-size="14" fill="#5C6167">You need revenue this quarter</text>
+  <circle cx="30" cy="214" r="4" fill="#0F1115"/>
+  <text x="44" y="219" font-size="14" fill="#5C6167">You do not know what people search</text>
+  <circle cx="30" cy="248" r="4" fill="#0F1115"/>
+  <text x="44" y="253" font-size="14" fill="#5C6167">The buyer&#8217;s search is unambiguous</text>
+  <circle cx="30" cy="282" r="4" fill="#0F1115"/>
+  <text x="44" y="287" font-size="14" fill="#5C6167">Your margin covers a cost per lead</text>
+
+  <!-- SEO -->
+  <rect x="13" y="335" width="359" height="196" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="330" width="359" height="196" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="366" font-size="17" font-weight="700" fill="#0F1115">Start with SEO if</text>
+  <circle cx="30" cy="396" r="4" fill="#0F1115"/>
+  <text x="44" y="401" font-size="14" fill="#5C6167">Your buyer researches for weeks</text>
+  <circle cx="30" cy="430" r="4" fill="#0F1115"/>
+  <text x="44" y="435" font-size="14" fill="#5C6167">You are compared before anyone calls</text>
+  <circle cx="30" cy="464" r="4" fill="#0F1115"/>
+  <text x="44" y="469" font-size="14" fill="#5C6167">Your cost per click is punishing</text>
+  <circle cx="30" cy="498" r="4" fill="#0F1115"/>
+  <text x="44" y="503" font-size="14" fill="#5C6167">You want to be quotable, not ranked</text>
+
+  <!-- both -->
+  <rect x="13" y="551" width="359" height="104" rx="16" fill="#FDB914"/>
+  <rect x="8" y="546" width="359" height="104" rx="16" fill="#F7F8F9" stroke="#0F1115" stroke-width="2"/>
+  <text x="26" y="572" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">IF YOU CAN AFFORD BOTH</text>
+  <text x="26" y="598" font-size="15" font-weight="700" fill="#0F1115">Run both. Paid search teaches<tspan x="26" dy="1.35em">you in weeks what organic</tspan><tspan x="26" dy="1.35em">would take a year to teach.</tspan></text>
+</svg>

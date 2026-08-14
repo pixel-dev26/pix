@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 580" width="380" height="580" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The branding process is a schedule of decisions, cheapest first</title>
+  <desc id="d">The eight stages run in order from strategy to advocacy, and the cost of changing your mind rises as you go. A decision changed in stage one costs a meeting; the same decision in stage four costs a reprint, a rebuild and an apology.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">EIGHT STAGES, IN ORDER</text>
+
+  <rect x="13" y="39" width="359" height="66" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="34" width="359" height="66" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="60" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">CHEAP TO CHANGE</text>
+  <text x="28" y="86" font-size="16" font-weight="700" fill="#0F1115">Stage 1 costs a meeting</text>
+
+  <path d="M190 106 L190 126" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="8" y="134" width="359" height="32" rx="16" fill="#5FBFA8" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="32" cy="150" r="12" fill="#0F1115"/>
+  <text x="32" y="155" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="56" y="155" font-size="15" font-weight="700" fill="#0F1115">Strategy</text>
+
+  <rect x="8" y="174" width="359" height="32" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="32" cy="190" r="12" fill="#0F1115"/>
+  <text x="32" y="195" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="56" y="195" font-size="15" font-weight="700" fill="#0F1115">Identity</text>
+
+  <rect x="8" y="214" width="359" height="32" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="32" cy="230" r="12" fill="#0F1115"/>
+  <text x="32" y="235" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="56" y="235" font-size="15" font-weight="700" fill="#0F1115">Messaging</text>
+
+  <rect x="8" y="254" width="359" height="32" rx="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="32" cy="270" r="12" fill="#0F1115"/>
+  <text x="32" y="275" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="56" y="275" font-size="15" font-weight="700" fill="#0F1115">Assets</text>
+
+  <rect x="8" y="294" width="359" height="32" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="32" cy="310" r="12" fill="#0F1115"/>
+  <text x="32" y="315" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="56" y="315" font-size="15" font-weight="700" fill="#0F1115">Guidelines</text>
+
+  <rect x="8" y="334" width="359" height="32" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="32" cy="350" r="12" fill="#0F1115"/>
+  <text x="32" y="355" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+  <text x="56" y="355" font-size="15" font-weight="700" fill="#0F1115">Communication</text>
+
+  <rect x="8" y="374" width="359" height="32" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="32" cy="390" r="12" fill="#0F1115"/>
+  <text x="32" y="395" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text>
+  <text x="56" y="395" font-size="15" font-weight="700" fill="#0F1115">Review</text>
+
+  <rect x="8" y="414" width="359" height="32" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <circle cx="32" cy="430" r="12" fill="#0F1115"/>
+  <text x="32" y="435" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">8</text>
+  <text x="56" y="435" font-size="15" font-weight="700" fill="#0F1115">Advocacy</text>
+
+  <rect x="13" y="475" width="359" height="86" rx="16" fill="#EE3D41"/>
+  <rect x="8" y="470" width="359" height="86" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <text x="28" y="496" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">EXPENSIVE TO CHANGE</text>
+  <text x="28" y="522" font-size="16" font-weight="700" fill="#0F1115">Stage 4 costs a reprint,<tspan x="28" dy="1.3em">a rebuild and an apology</tspan></text>
+</svg>

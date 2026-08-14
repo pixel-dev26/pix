@@ -1,0 +1,29 @@
+$flaticon_pixelstreet-font: "flaticon_pixelstreet";
+
+@font-face {
+    font-family: $flaticon_pixelstreet-font;
+    src: url("./flaticon_pixelstreet.woff2?2d287d5a33c106682d47b4fac1245496") format("woff2"),
+url("./flaticon_pixelstreet.woff?2d287d5a33c106682d47b4fac1245496") format("woff"),
+url("./flaticon_pixelstreet.eot?2d287d5a33c106682d47b4fac1245496#iefix") format("embedded-opentype"),
+url("./flaticon_pixelstreet.ttf?2d287d5a33c106682d47b4fac1245496") format("truetype"),
+url("./flaticon_pixelstreet.svg?2d287d5a33c106682d47b4fac1245496#flaticon_pixelstreet") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_pixelstreet !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_pixelstreet-map: (
+    "my-business": "\f101",
+);
+
+.flaticon-my-business:before {
+    content: map-get($flaticon_pixelstreet-map, "my-business");
+}

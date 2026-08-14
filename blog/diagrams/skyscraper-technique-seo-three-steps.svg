@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 304" width="800" height="304" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">The Skyscraper Technique's three steps, and which one still works</title>
+  <desc id="d">Step one, identify the best-linked page, still works and is the research half worth keeping. Step two, publish a longer version, is broken because Google's own guidance names that output as commodity content. Step three, email everyone who linked to the original, is broken because only 8.5 per cent of outreach emails get any reply.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">THREE STEPS, ONE SURVIVOR</text>
+
+  <!-- 1. Identify -->
+  <rect x="14" y="54" width="246" height="210" rx="16" fill="#5FBFA8"/>
+  <rect x="8" y="48" width="246" height="210" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="28" y="68" width="118" height="26" rx="999" fill="#5FBFA8"/>
+  <text x="87" y="86" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">STILL WORKS</text>
+  <text x="28" y="126" font-size="19" font-weight="700" fill="#0F1115">1. Identify</text>
+  <text x="28" y="154" font-size="14" fill="#5C6167">Find the page in your<tspan x="28" dy="1.4em">subject with the most links.</tspan></text>
+  <text x="28" y="204" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">VERDICT</text>
+  <text x="28" y="228" font-size="14" font-weight="700" fill="#0F1115">Still one of the most<tspan x="28" dy="1.35em">useful hours in SEO.</tspan></text>
+
+  <!-- 2. Improve -->
+  <rect x="283" y="54" width="246" height="210" rx="16" fill="#EE3D41"/>
+  <rect x="277" y="48" width="246" height="210" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="297" y="68" width="86" height="26" rx="999" fill="#EE3D41"/>
+  <text x="340" y="86" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">BROKEN</text>
+  <text x="297" y="126" font-size="19" font-weight="700" fill="#0F1115">2. Improve</text>
+  <text x="297" y="154" font-size="14" fill="#5C6167">Publish a version that is<tspan x="297" dy="1.4em">longer or more thorough.</tspan></text>
+  <text x="297" y="204" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">VERDICT</text>
+  <text x="297" y="228" font-size="14" font-weight="700" fill="#0F1115">Google&#8217;s own guidance<tspan x="297" dy="1.35em">calls that commodity content.</tspan></text>
+
+  <!-- 3. Promote -->
+  <rect x="552" y="54" width="246" height="210" rx="16" fill="#EE3D41"/>
+  <rect x="546" y="48" width="246" height="210" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="566" y="68" width="86" height="26" rx="999" fill="#EE3D41"/>
+  <text x="609" y="86" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">BROKEN</text>
+  <text x="566" y="126" font-size="19" font-weight="700" fill="#0F1115">3. Promote</text>
+  <text x="566" y="154" font-size="14" fill="#5C6167">Email every site that linked<tspan x="566" dy="1.4em">to the original.</tspan></text>
+  <text x="566" y="204" font-size="11" font-weight="700" letter-spacing="1" fill="#6A6F75">VERDICT</text>
+  <text x="566" y="228" font-size="14" font-weight="700" fill="#0F1115">12 million emails measured:<tspan x="566" dy="1.35em">8.5% get any reply at all.</tspan></text>
+
+  <path d="M258 153 L272 153" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M527 153 L541 153" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <text x="8" y="292" font-size="14" fill="#5C6167">Two of the three steps are obsolete. The research half is the one worth keeping.</text>
+</svg>

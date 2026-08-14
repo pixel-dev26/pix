@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 568" width="380" height="568" role="img" aria-labelledby="t d" font-family="Poppins, 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Web design, web development, and the middle where the handoff happens</title>
+  <desc id="d">Two clearly owned columns with a contested band between them. Design decides what a site looks like, says and asks a visitor to do. Development makes it exist and keep working. Between them sits the handoff — design to development, the feedback loop and joint problem-solving — which is where projects go wrong.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0F1115"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="16" font-size="13" font-weight="700" letter-spacing="1" fill="#6A6F75">TWO ROLES, ONE MIDDLE</text>
+
+  <!-- design -->
+  <rect x="13" y="45" width="359" height="150" rx="16" fill="#D098F9"/>
+  <rect x="8" y="40" width="359" height="150" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="58" width="100" height="26" rx="999" fill="#D098F9"/>
+  <text x="74" y="76" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">DESIGN</text>
+  <text x="140" y="77" font-size="18" font-weight="700" fill="#0F1115">Web design</text>
+  <text x="24" y="108" font-size="14" fill="#5C6167">Decides what it looks like and says.</text>
+  <text x="24" y="136" font-size="14" fill="#5C6167">Layout, hierarchy, contrast</text>
+  <text x="24" y="160" font-size="14" fill="#5C6167">Typography and colour</text>
+  <text x="24" y="182" font-size="14" fill="#5C6167">Wireframes and navigation</text>
+
+  <path d="M190 196 L190 216" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- the middle -->
+  <rect x="13" y="223" width="359" height="150" rx="16" fill="#0F1115"/>
+  <rect x="8" y="218" width="359" height="150" rx="16" fill="#FDB914" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="236" width="126" height="26" rx="999" fill="#0F1115"/>
+  <text x="87" y="254" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">THE MIDDLE</text>
+  <text x="166" y="255" font-size="18" font-weight="700" fill="#0F1115">The handoff</text>
+  <text x="24" y="286" font-size="14" fill="#0F1115">Where it happens, or quietly does not.</text>
+  <text x="24" y="314" font-size="14" fill="#0F1115">Design to development</text>
+  <text x="24" y="338" font-size="14" fill="#0F1115">Feedback loop</text>
+  <text x="24" y="360" font-size="14" fill="#0F1115">Joint problem-solving</text>
+
+  <path d="M190 374 L190 394" stroke="#0F1115" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- development -->
+  <rect x="13" y="401" width="359" height="150" rx="16" fill="#4A90C7"/>
+  <rect x="8" y="396" width="359" height="150" rx="16" fill="#FFFFFF" stroke="#0F1115" stroke-width="2"/>
+  <rect x="24" y="414" width="150" height="26" rx="999" fill="#4A90C7"/>
+  <text x="99" y="432" font-size="13" font-weight="700" fill="#0F1115" text-anchor="middle">DEVELOPMENT</text>
+  <text x="190" y="433" font-size="18" font-weight="700" fill="#0F1115">Web dev</text>
+  <text x="24" y="464" font-size="14" fill="#5C6167">Makes it exist, and makes it keep working.</text>
+  <text x="24" y="492" font-size="14" fill="#5C6167">Structure and markup</text>
+  <text x="24" y="516" font-size="14" fill="#5C6167">Front end and back end</text>
+  <text x="24" y="538" font-size="14" fill="#5C6167">Hosting, security, Git</text>
+
+  <text x="8" y="562" font-size="14" font-weight="700" fill="#0F1115">Ask who owns the middle.</text>
+</svg>
