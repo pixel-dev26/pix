@@ -6665,7 +6665,7 @@
   }
 
   .ps-related__head {
-    margin: 0 0 var(--psb-s6)!important;
+    margin: 0 0 var(--psb-s6) !important;
   }
 
   .blog-content>p,

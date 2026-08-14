@@ -2320,7 +2320,7 @@ textarea:focus-visible,
 
 /* -------------------------------------------------------------- card grid */
 .ps-grid {
-  gap: var(--psb-s6) var(--psb-s6)
+  gap: var(--psb-s7) var(--psb-s7)
 }
 
 /* Restated after the unconditional rule above, which is later in the file than
@@ -3762,11 +3762,24 @@ textarea:focus-visible,
 /* ------------------------------------------------- Careers "Hiring" badge
    Matches pixelstreet.xyz/pix: the Careers item is yellow with a black pill
    beside it. Values taken from the live element's computed style, not guessed.
-   #FDB914 on #000 is 10.91:1, and the yellow label sits on the white nav where
-   it is 1.73:1 — so the LABEL carries a darkened yellow instead, and the true
-   brand yellow appears only inside the black pill where it is legible. */
+   The label is the brand yellow here for the same reason it is on every page of
+   the main site — `.careers-highlight` in main.css is a flat #FDB914, and the
+   navbar is the one component that must look identical on both properties.
+
+   It used to be var(--psb-cat-ink), reaching for that token because its default
+   #926701 is a darkened yellow that clears 5:1 on white. But --psb-cat-ink is the
+   CATEGORY accent, and the `:root:has(.ps-facts__cat…)` rules in section 2
+   reassign it on every article page — so the nav item took the colour of whatever
+   post was open: #D52A2E red on branding, #4A90C7 blue on UI/UX, #5FBFA8 teal on
+   web-development, #865FA3 purple on e-commerce, and the #926701 default on the
+   hub. Chrome cannot repaint itself per article.
+
+   The contrast reading behind that choice still holds — #FDB914 is 1.73:1 on the
+   white nav — so the item leans on its weight and the black pill to be findable
+   rather than on the label colour. If that is ever revisited it belongs in
+   main.css, once, for both properties at the same time. */
 .careers-highlight {
-  color: var(--psb-cat-ink);
+  color: var(--psb-yellow);
   font-weight: 600;
   white-space: nowrap
 }

@@ -4122,10 +4122,21 @@
         padding-left: 0
     }
 
+    .mh-section .mh-card {
+        --mh-card-pad: 173px;
+        padding: 130px var(--mh-card-pad) 66px;
+        --mh-line-bleed: 13.98%;
+    }
+
     .social-links a i.flaticon-my-business {
         padding-top: 5px;
         font-size: 28px;
         z-index: 1
+    }
+
+    .mh-section .mh-avatars img {
+        width: 70px !important;
+        height: 70px !important;
     }
 
     .social-links a i.ri-instagram-line {
@@ -4334,6 +4345,15 @@
     .case-content ul.casePointers,
     .headingLogo {
         display: block
+    }
+
+    .mh-section .mh-avatars img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .section.ourWork.homework {
+        padding-bottom: 0;
     }
 
     .mh-section .mh-hero p.mh-subtitle {
@@ -6109,7 +6129,7 @@
     }
 
     .section.ourWork {
-        padding-bottom: 0;
+        padding-bottom: 80px;
     }
 
     .navbtn-wrap {
@@ -8637,8 +8657,16 @@
         width: 322px !important;
     }
 
+    .mh-section .mh-title {
+        font-size: 30px;
+    }
+
     .main-title .textture-text {
         font-size: 40px;
+    }
+
+    .mh-title .textture-text {
+        font-size: 30px;
     }
 
     .tech-logos {
@@ -9744,7 +9772,7 @@
 
     .pointersWork li::before {
         margin-right: 7px;
-        margin-top: 9px
+        margin-top: 0;
     }
 
     .wokImg img.dm-ds {
@@ -9834,7 +9862,7 @@
     }
 
     .referTabs .tab-content {
-        margin-top: 60px
+        margin-top: 30px
     }
 
     .blog-content h3 img {
@@ -10019,6 +10047,10 @@
     .main-title {
         font-size: 50px;
         margin-bottom: 20px
+    }
+
+    h1.main-title.workTitle {
+        text-align: center!important;
     }
 
     .logo-btm img {
@@ -11099,7 +11131,7 @@
     }
 
     .ProjectCard {
-        height: 493px
+        height: 593px
     }
 
     .bgImgwork {
@@ -11237,7 +11269,7 @@
     }
 
     .pointersWork li {
-        font-size: 13px
+        font-size: 9px
     }
 
     .wokImg img.ava-im1 {
@@ -11699,7 +11731,7 @@
     }
 
     .ProjectCard {
-        height: 511px
+        height: 581px
     }
 
     .wokImg img.nad-ship {
@@ -12988,7 +13020,7 @@
     }
 
     .ProjectCard {
-        height: 491px
+        height: 541px
     }
 
     .wokImg img.dm-ncb {

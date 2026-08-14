@@ -7475,6 +7475,7 @@ h4.proj-comp img {
     right: 60px;
     width: 100%;
     object-fit: cover;
+    object-position: bottom;
 }
 
 .wokImg img.th-work {
@@ -11871,7 +11872,7 @@ a.faq-tab .faq-tab-1 p {
     }
 
     .svc-card__body {
-        padding: 26px 24px
+        justify-content: end;
     }
 
     .svc-card--video .svc-card__link::before {
@@ -12903,9 +12904,8 @@ a.faq-tab .faq-tab-1 p {
 
 @media (max-width: 1199px) {
     .mh-section .mh-card {
-        --mh-card-pad: 44px;
+        --mh-card-pad: 190px;
         padding: 118px var(--mh-card-pad) 56px;
-
         --mh-line-bleed: 16.11%;
     }
 

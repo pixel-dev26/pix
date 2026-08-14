@@ -120,6 +120,7 @@
   height: 44px;
   display: grid;
   place-items: center;
+  top: 23px;
 }
 
 .nav-close .navclose-icon {
@@ -449,7 +450,7 @@
    ========================================================================== */
 
 .case-video .psv-card__play {
-  aspect-ratio: 493 / 380;
+  aspect-ratio: 493 / 330;
   border-radius: 0;
 }
 
@@ -770,6 +771,11 @@
     border-radius: 20px;
     background-color: #111;
     box-shadow: 0 18px 40px rgba(17, 17, 17, 0.22);
+    box-shadow: 0 3px 8px 0 #00000026;
+    background: #1a1d1fd6;
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border-radius: 14px;
   }
 
   .tabselect__item {
@@ -811,6 +817,7 @@
     color: #111;
   }
 }
+
 /* -------------------------------------------------------------------- B11 --
    video-studio-kolkata, Our Work: the play tile inside a .ProjectCard.
 
@@ -836,4 +843,221 @@
   margin-top: auto;
   border-radius: 20px;
   overflow: hidden;
+}
+
+/* -------------------------------------------------------------------- B12 --
+   Hero strip, 15px corners on the tiles. Carried by all four service pages:
+   branding (cr-ban-1..6), digital-marketing (dm-ban-1..7), web-design
+   (wd-ban-1..7) and video-studio (vs-ban-1..6).
+
+   The artwork these strips ran before carried its corners in the file itself —
+   every frame*-min.webp, dm-1..5.webp and brand-ban-*.webp has an alpha channel
+   with the corners cut out of it — so the theme never needed a radius here and
+   .scroll-section img (main.css:7872) declares none.
+
+   All four replacement sets are opaque and square-edged, so the shape has to
+   come from CSS now. This could fold into .scroll-section img itself now that no
+   page is left on the old artwork, but it stays a modifier: that selector is the
+   theme's, and a strip added later with corners already in the file would get
+   them clipped a second time by an unconditional rule.
+   ========================================================================== */
+
+.scroll-section--rounded img {
+  border-radius: 15px;
+}
+
+/* -------------------------------------------------------------------- B13 --
+   digital-marketing-agency-kolkata, Express Roadways card: white plate behind
+   the logo.
+
+   Every other logo on this carousel sits on a flat card colour picked to carry
+   it. This one sits on the artwork, because .marico-w fills the card — and the
+   artwork's ground where the logo lands is #8674E3 against a lockup drawn in
+   #40308A. That is 2.8:1, so the mark reads as a smudge of the background
+   rather than a logo. On white it is 10.5:1.
+
+   The background goes on the <img> and not on .compLogo because .compLogo is a
+   full-width block, so a background there would run the whole width of the card
+   instead of hugging the lockup. content-box means the padding adds around the
+   logo rather than eating into it.
+
+   The site already does this on the UPL card (main.css:7264), so the pattern is
+   not new — only the radius is, to match the 15px corners the hero strips took.
+
+   Sizing has to be stated because the lockup is 4.65:1 and the generic rules are
+   written for uprightish marks: .compLogo img is 63px tall (main.css:7254),
+   dropping to 40px at <=1500px (responsive.css:2720). Left alone this logo would
+   change width between those two breakpoints and, at 40px, render its tagline at
+   about 6px. 220px wide with height:auto is what .ncbLogo and .wlLogo already use
+   for the wide lockups on this same carousel (main.css:7281), so it lines up with
+   its neighbours and holds one size at every width.
+   ========================================================================== */
+
+.compLogo img.expLogo {
+  box-sizing: content-box;
+  width: 220px;
+  height: auto;
+  padding: 9px 14px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+/* The card colour. It is almost never seen, because .marico-w artwork covers the
+   card edge to edge — but the artwork is lazy-loaded, so this is what shows for
+   the moment before it arrives. The class it replaced was .dsGrn (#496141), which
+   flashed green on a purple card. #8674E3 is sampled from the artwork's own ground. */
+.ProjectCard.expWork {
+  background-color: #8674E3;
+}
+
+/* Between 768 and 991px .ProjectCard ul goes display:block (responsive.css:6779)
+   and the three pointers stack one per row instead of two. On every other card
+   that is free — their artwork sits below the copy. Here the artwork fills the
+   card, and the third row lands at 222-249px, which is exactly where the phone's
+   white top edge reaches (225px). Measured against white body text that is
+   1.00:1 — "Content Strategy" disappears into the mockup.
+
+   Restoring the two-column flow keeps three pointers in two rows, which ends at
+   ~221px and clears the phone. Scoped to this card so the other four keep the
+   stacked layout the breakpoint intends for them. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .ProjectCard.expWork .pointersWork {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .ProjectCard.expWork .pointersWork li {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+/* -------------------------------------------------------------------- B14 --
+   digital-marketing-agency-kolkata, Our Work: the Satguru, Dhol and Instayaar
+   cards.
+
+   Same shape as B13 — .marico-w artwork filling the card, copy overlaid on the
+   empty ground each piece of artwork leaves at the top — so the same two
+   questions have to be answered per card: what shows before the lazy artwork
+   arrives, and does the copy survive landing on it.
+
+   Grounds are sampled from the artwork itself, so the pre-load frame matches
+   what replaces it.
+   ========================================================================== */
+
+.ProjectCard.satWork {
+  background-color: #D1B635;
+}
+
+.ProjectCard.dholWork {
+  background-color: #D21043;
+}
+
+.ProjectCard.instaWork {
+  background-color: #A11EBD;
+}
+
+/* Logo plates, same treatment as .expLogo (B13). Both of these lockups are drawn
+   in a tint of their own card colour and vanish without one: the Satguru globe is
+   1.06:1 on its gold, the Dhol mark 1.63:1 on its crimson. Pinned to a 47px
+   artwork height so the plates match the 65px one on the Express card.
+
+   Instayaar needs no plate — it is an app icon that ships its own opaque
+   background, so it is only pinned to the 63px the theme gives unnamed logos
+   above 1500px, to stop it dropping to 40px below that (responsive.css:2720). */
+.compLogo img.satLogo,
+.compLogo img.dholLogo {
+  box-sizing: content-box;
+  width: auto;
+  height: 47px;
+  padding: 9px 14px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+/* Dhol's lockup is the widest of the plated set — 2.92:1 against Satguru's 1.91
+   — so at the shared 47px it reached the plate's edges and looked crowded. The
+   mark drops to 40px and the padding grows by exactly what the mark gave up, so
+   the plate stays the 165x65 it already was and only the artwork inside it
+   shrinks. */
+.compLogo img.dholLogo {
+  height: 40px;
+  padding: 12.5px 24px;
+}
+
+.compLogo img.instaLogo {
+  width: auto;
+  height: 63px;
+}
+
+/* -------------------------------------------------------------------- B15 --
+   video-studio-kolkata, Our Work: the five cards now carry their own artwork.
+
+   Each still is a full-card composition — a flat brand ground down to about half
+   height, then a white-bordered tile holding the frame. Measured, the tile lands
+   at 51-95% of the image; the play control sits at 53-95% of the card. They were
+   drawn to line up, so the artwork goes in as .marico-w (fills the card, cover,
+   bottom-anchored, same as the digital-marketing cards) and the control lands on
+   the tile rather than beside it.
+
+   Two consequences follow from that:
+
+   - The poster <img> inside each button is gone. It was the same CMMC placeholder
+     on all five and would now cover the artwork it is supposed to sit on. The
+     popup never read it — ps-work-video.js takes the film, poster and title from
+     the button's data- attributes (ps-work-video.js:43-52), so the element was
+     purely decorative and removing it changes no behaviour.
+   - .psv-card__play paints a #0b0d10 ground (ps-fixes.css:280). With the poster
+     gone that black would sit over the artwork's tile, so it is cleared here. The
+     control keeps its box, its radius and its Play badge.
+
+   Card colours are sampled from each still, for the moment before the lazy
+   artwork arrives. They replace theme colours that were picked for the old flat
+   cards and no longer match — .opusWork was #2495d2 blue under yellow artwork. */
+.ProjectCard.case-video.opusWork {
+  background-color: #E4A718;
+}
+
+.ProjectCard.case-video.quickcommWork {
+  background-color: #EE0303;
+}
+
+.ProjectCard.case-video.trailerWork {
+  background-color: #765233;
+}
+
+.ProjectCard.case-video.cellestaWork {
+  background-color: #0E8BEE;
+}
+
+.ProjectCard.case-video.avanzaWork {
+  background-color: #08110E;
+}
+
+.ProjectCard.case-video .case-video__play {
+  background: transparent;
+}
+
+/* Most of the five logos are roughly upright and take the theme's own sizing
+   (.compLogo img, 63px falling to 40px below 1500px), so they need nothing here.
+   The Avanza wordmark is 8:1 — at 63px tall it computes 510px wide against 359px
+   of usable card, so it is capped by width instead. */
+.compLogo img.avanzaLogo {
+  width: 200px;
+  height: auto;
+}
+
+/* Cellesta gets the plate the Satguru and Dhol logos have (B14). This one is a
+   little different: the file is already opaque with white baked in edge to edge,
+   so what was showing was a hard white rectangle. The background here is
+   therefore only doing the padding ring — the radius is what matters, since it
+   clips the image's own corners along with the padding box and turns that
+   rectangle into the same rounded plate.
+
+   No height of its own on purpose: it keeps following .compLogo img like its
+   neighbours, so the plate grows and shrinks with them across the breakpoint. */
+.compLogo img.cellestaLogo {
+  box-sizing: content-box;
+  padding: 9px 14px;
+  border-radius: 14px;
+  background: #fff;
 }
