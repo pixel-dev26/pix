@@ -53,7 +53,7 @@ A consistent, subscription-focused creative system supporting The Hindu Group's 
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

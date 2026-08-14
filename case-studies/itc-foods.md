@@ -37,7 +37,7 @@ A POSM and key-visual system now deployed across ITC Foods' retail footprint.
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

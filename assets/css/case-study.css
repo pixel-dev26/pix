@@ -443,7 +443,7 @@
    -2px at 55px, so it does not over-tighten as the size comes down. */
 .cs-page .cs-hero__title {
   margin: 0;
-  max-width: 33ch;
+  max-width: 27ch;
   font-size: clamp(34px, calc(26.61px + 1.97vw), 55px);
   font-weight: 700;
   line-height: 1.12;
@@ -551,6 +551,7 @@
 .cs-page .cs-band img {
   display: block;
   width: 100%;
+  object-fit: cover;
   height: auto;
   border-radius: var(--cs-r-lg);
   background: var(--cs-wash);
@@ -1156,6 +1157,29 @@
 
 .cs-page .cs-gallery figure {
   margin: 0
+}
+
+/* The band-4 triptych: the project's three verticals, held at three across.
+
+   The auto-fit track above is right for a gallery of unknown length, but this row
+   is always exactly three and reads as one picture in three panels. Left to auto-fit
+   it broke to 2 + 1 as soon as the window came under about 1000px — an orphan on the
+   second line, on the most common laptop width there is.
+
+   Three 509x602 verticals in the 800px shell at 768 come out 250px wide, which is
+   still a legible thumbnail of a page design; below that they stack, because two
+   verticals side by side on a phone is 165px each and shows nothing. 767.98 rather
+   than 767 so no width between the two rules is unstyled on a fractional viewport. */
+@media (min-width: 768px) {
+  .cs-page .cs-band-4 .cs-gallery__grid {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cs-page .cs-band-4 .cs-gallery__grid {
+    grid-template-columns: 1fr
+  }
 }
 
 /* ------------------------------------------------------------------ 9. next

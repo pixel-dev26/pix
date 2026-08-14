@@ -38,7 +38,7 @@ A consistent, scalable creative system now running live across India's leading q
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

@@ -51,7 +51,7 @@ A dynamic, search-ready travel portal that gives Satguru Travels' Russia operati
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

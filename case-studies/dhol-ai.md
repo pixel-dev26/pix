@@ -36,7 +36,7 @@ A digital presence that positions Dhol as a distinct, trust-led alternative in a
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

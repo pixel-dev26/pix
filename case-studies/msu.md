@@ -54,7 +54,7 @@ A measurable rise in admissions inquiries and stronger organic visibility, deliv
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

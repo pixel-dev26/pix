@@ -37,7 +37,7 @@ A premium creative system now running consistently across Schweppes' quick-comme
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

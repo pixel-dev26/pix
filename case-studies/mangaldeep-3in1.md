@@ -55,7 +55,7 @@ Three years and counting as Mangaldeep's creative partner across five product ra
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

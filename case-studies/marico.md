@@ -52,7 +52,7 @@ A platform-first, digital-forward visual system across Marico's brand portfolio,
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

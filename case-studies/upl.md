@@ -50,7 +50,7 @@ Cohesive, trust-building visual communication for UPL's repellent and safety spr
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

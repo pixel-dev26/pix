@@ -37,7 +37,7 @@ A consistent, platform-native social and email presence for Satguru Travels acro
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

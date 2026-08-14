@@ -52,7 +52,7 @@ A number-one ranking across most targeted keywords, a rise in store visits, call
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

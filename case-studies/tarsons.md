@@ -44,7 +44,7 @@ The challenge was to create a robust and scalable website that could accommodate
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

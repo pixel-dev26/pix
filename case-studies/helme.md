@@ -51,7 +51,7 @@ A new, fully functional e-commerce platform that gave Helme's innovative clamp r
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

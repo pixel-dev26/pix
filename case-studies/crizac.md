@@ -50,7 +50,7 @@ A seamless user experience from public-facing content to private, day-to-day int
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

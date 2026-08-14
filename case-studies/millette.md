@@ -52,7 +52,7 @@ A cohesive brand identity and packaging system positioned to make a meaningful i
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

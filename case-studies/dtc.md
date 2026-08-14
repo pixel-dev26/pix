@@ -60,11 +60,11 @@ A stronger, more cohesive brand identity across the Group's portfolio, sharper e
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 
-- Client: s and investors. Our approach underscored the value of custom development and strategic content planning to build a strong, unified brand presence across varied markets. More work Next projectHelmeClamp RetailNext projectMaison AhmedFashion & Lifestyle Have a project that looks like this one? Start a conversation See more work Address Martin Burn Business Park, #900B, Salt Lake, Sector - V, Kolkata - 700091 Phone +91 90072 95096 Email info@pixelstreet.in Quick Links Our Work Team Blog Contact Us Services Creative Retainer Website & eCommerce Social Campaigns Video Studio Case Study Mangaldeep Shipzip The Hindu Marico Social Media Get Directions ViewHumanMachine ©2026 Pixel Street. All Rights Reserved. Terms Privacy Cookie preferences DISCUSS A PROJECT DISCUSS A PROJECT
+- Client: s and investors. Our approach underscored the value of custom development and strategic content planning to build a strong, unified brand presence across varied markets. More work Next projectHelmeClamp RetailNext projectMaison AhmedFashion & Lifestyle Have a project in mind? Start a conversation See more work Address Martin Burn Business Park, #900B, Salt Lake, Sector - V, Kolkata - 700091 Phone +91 90072 95096 Email info@pixelstreet.in Quick Links Our Work Team Blog Contact Us Services Creative Retainer Website & eCommerce Social Campaigns Video Studio Case Study Mangaldeep Shipzip The Hindu Marico Social Media Get Directions ViewHumanMachine ©2026 Pixel Street. All Rights Reserved. Terms Privacy Cookie preferences DISCUSS A PROJECT DISCUSS A PROJECT
 
 ---
 

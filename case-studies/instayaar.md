@@ -39,7 +39,7 @@ A distinct, clearly understood brand identity for Instayaar as it enters India's
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 

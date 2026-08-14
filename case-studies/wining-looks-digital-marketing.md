@@ -51,7 +51,7 @@ A significant rise in online engagement and sales, with a notable uptick in webs
 
 ## More work
 
-## Have a project that looks like this one?
+## Have a project in mind?
 
 ## Project record
 
