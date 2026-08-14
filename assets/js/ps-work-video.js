@@ -38,6 +38,23 @@
     video.hidden = true;
   });
 
+  // The dialog takes its shape from the film, not the other way round.
+  //
+  // These five films are not one shape: the trailer is 1280x720, the contest
+  // cut is vertical. A fixed 16:9 frame letterboxes the vertical ones into a
+  // pillar of black wider than the picture itself.
+  //
+  // The ratio is not known until metadata arrives, so it is published as two
+  // custom properties the CSS consumes — one for aspect-ratio, one as a bare
+  // number so the dialog's max-width can be derived from the height cap. Both
+  // land on the modal root, and are cleared on close so the next film starts
+  // from the 16:9 default rather than inheriting the last one's shape.
+  video.addEventListener('loadedmetadata', function () {
+    if (!video.videoWidth || !video.videoHeight) return;
+    modalEl.style.setProperty('--psvm-ar', video.videoWidth + ' / ' + video.videoHeight);
+    modalEl.style.setProperty('--psvm-ar-num', String(video.videoWidth / video.videoHeight));
+  });
+
   for (var i = 0; i < triggers.length; i++) {
     triggers[i].addEventListener('click', function (event) {
       var button = event.currentTarget;
@@ -75,5 +92,9 @@
     // load() is what actually drops the buffered data; without it the element
     // keeps the old media around until it is next given a source.
     video.load();
+    // Back to the 16:9 default. Without this the next film opens at the last
+    // one's shape and snaps when its own metadata lands.
+    modalEl.style.removeProperty('--psvm-ar');
+    modalEl.style.removeProperty('--psvm-ar-num');
   });
 })();
