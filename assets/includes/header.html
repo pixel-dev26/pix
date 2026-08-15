@@ -18,39 +18,42 @@
 
                     <div class="navbar-menu-inner">
 
-                        <a href="javascript:void(0);" class="navbar-link-item w-inline-block">
+                        <!-- The Services label sits beside the dropdown, not around it. An <a>
+                             cannot contain another <a>: while the label wrapped the whole block
+                             the parser closed it and reopened it around each nested link, so the
+                             menu rendered with four extra empty focusable anchors, two of them
+                             <a> children of <ul>. The blog templates already carry this shape. -->
+                        <div class="navbar-link-text position-relative hover-mnu-reveal">
 
-                            <div class="navbar-link-text position-relative hover-mnu-reveal">Services
+                            <a href="javascript:void(0);" class="navbar-link-item w-inline-block">Services</a>
 
-                                <div class="dropdown">
+                            <div class="dropdown">
 
-                                    <ul class="list-unstyled">
+                                <ul class="list-unstyled">
 
-                                        <li>
+                                    <li>
 
-                                            <a href="/branding-agency-kolkata">Creative Retainer</a>
+                                        <a href="/branding-agency-kolkata">Creative Retainer</a>
 
-                                        </li>
+                                    </li>
 
-                                        <li> <a href="/web-design-company-kolkata">Website & eCommerce</a>
+                                    <li> <a href="/web-design-company-kolkata">Website & eCommerce</a>
 
-                                        </li>
+                                    </li>
 
-                                        <li> <a href="/digital-marketing-agency-kolkata">Social Campaigns</a>
+                                    <li> <a href="/digital-marketing-agency-kolkata">Social Campaigns</a>
 
-                                        </li>
+                                    </li>
 
-                                        <li> <a href="/video-studio-kolkata">Video Studio</a>
+                                    <li> <a href="/video-studio-kolkata">Video Studio</a>
 
-                                        </li>
+                                    </li>
 
-                                    </ul>
-
-                                </div>
+                                </ul>
 
                             </div>
 
-                        </a>
+                        </div>
 
                         <a href="/our-work" class="navbar-link-item w-inline-block ">
 

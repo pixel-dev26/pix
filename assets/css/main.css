@@ -372,18 +372,16 @@ span {
     border: 1px solid #ffffff00
 }
 
-.navbar-menu-inner .hover-mnu-reveal .dropdown ul li:nth-child(3) {
+/* One hairline between neighbouring items, none under the last. This was
+   written as :nth-child(3) and :nth-child(4), which counted a phantom <a>
+   the parser used to inject as the ul's first child when the Services label
+   still wrapped its own dropdown. With that anchor gone the indices pointed
+   one row too low, dropping the first divider and hanging a stray rule under
+   the last item. Keying off li + li instead cannot drift with the DOM. */
+.navbar-menu-inner .hover-mnu-reveal .dropdown ul li+li {
     margin: 0;
     padding: 17px 15px;
-    border-top: 1px solid #ffffff2b;
-    border-bottom: 1px solid #ffffff2b
-}
-
-.navbar-menu-inner .hover-mnu-reveal .dropdown ul li:nth-child(4) {
-    margin: 0;
-    padding: 17px 15px;
-    border-top: 0px solid #ffffff2b;
-    border-bottom: 1px solid #ffffff2b
+    border-top: 1px solid #ffffff2b
 }
 
 .section-heading .sub-title {

@@ -51,4 +51,41 @@
             link.setAttribute('aria-current', 'page');
         }
     });
+
+    // The four service pages have no nav link of their own: they are reached
+    // from the Services dropdown, whose parent is href="javascript:void(0);"
+    // on desktop and a plain <div> on mobile, so neither can ever match the
+    // pass above. Mark that parent whenever the page being viewed is one of
+    // its children, so Services reads as active on all four service pages.
+    document.querySelectorAll('.nav-group .dropdown, .nav-group .dropdown-mob').forEach(function (menu) {
+        var holdsCurrentPage = false;
+
+        menu.querySelectorAll('a[href]').forEach(function (link) {
+            if (normalize(link.pathname) === currentPath) {
+                holdsCurrentPage = true;
+            }
+        });
+
+        if (!holdsCurrentPage) {
+            return;
+        }
+
+        // Desktop: the label is a sibling <a class="navbar-link-item"> sharing
+        // the .navbar-link-text wrapper. Mobile: the wrapper is itself the
+        // styled .nav-item-link. new.css already colours both when current.
+        // Only the class goes on; aria-current="page" stays on the child link
+        // that genuinely is this page, so it is announced exactly once.
+        var wrapper = menu.parentElement;
+        if (!wrapper) {
+            return;
+        }
+
+        var label = wrapper.matches('.navbar-link-item, .nav-item-link')
+            ? wrapper
+            : wrapper.querySelector('.navbar-link-item, .nav-item-link');
+
+        if (label) {
+            label.classList.add('w--current');
+        }
+    });
 })();
